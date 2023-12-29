@@ -1,0 +1,204 @@
+// MARK: - TAB BAR:
+
+"Main" = "MAIN";
+"Statistic" = "STATISTIC";
+"Add jump" = "NEW JUMP";
+"Notes" = "NOTES";
+"Account" = "ACCOUNT";
+
+// MARK: - MAIN:
+
+"Save" = "Save";
+"Clean" = "Clean";
+"Close" = "Close";
+"Delete" = "Delete";
+"Calculate" = "Calculate";
+"Update" = "Update";
+
+"Ok" = "Ok";
+"Yes" = "Yes";
+"No" = "No";
+
+"ago" = "ago";
+"back" = "Back";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "miles";
+"feet" = "feet";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "h.";
+"d." = "d.";
+"mon." = "mon.";
+"y." = "y.";
+
+// MARK: - Main:
+
+"First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the 'Add' section.\n\nTo add your own locations, aircraft and parachutes, go to the 'Account' section.\n\nEnjoy your use and safe jumps!\n";
+"Delete jump?" = "Delete jump?";
+"This action cannot be undone." = "This action cannot be undone.";
+
+// MARK: - CellJump:
+
+"Location" = "Location";
+"Aircraft" = "Aircraft";
+"Canopy" = "Canopy";
+"Mission" = "Mission";
+"Height" = "Высота";
+"Time" = "Время";
+"Comment" = "Comment";
+
+// MARK: - Statistic:
+
+"saving data" = "Saving data";
+"saving data text" = "In order not to lose all recorded jumps, make a backup copy periodically in the Account section. Especially when changing the device.";
+"jumps by year" = "Jumps by year";
+"year" = "year";
+"Categories USPA" = "Categories USPA";
+"Categories USPA List" = "\nA: 25 jumps\nFree fall time: 10 min. (600s.)\n\nB: 50 jumps\nFree fall time: 30 min. (1800s.)\n\nC: 200 jumps\nFree fall time: 60 min. (3600s.)\n\nD: 500 jumps\nFree fall time: 180 min. (10800s.)\n";
+"Maximum time" = "Maximum time";
+"Maximum time alert" = "The jump with the maximum free fall time was completed";
+"Maximum height" = "Maximum height";
+"Maximum height alert" = "The jump with the maximum height of the compartment was completed";
+"Minimum height" = "Minimum height";
+"Minimum height alert" = "The jump with the minimum height of the compartment was completed";
+"Max in one day" = "Max in one day";
+"Average height" = "Average height of jump";
+"Average time" = "Average free fall time of jump";
+"Max count of jumps" = "Сount of jumps";
+"Max count of jumps text" = "The maximum number of jumps in one day was completed";
+"Jumps no found" = "Jumps no found";
+"Сount of cutaways" = "Сount of cutaways";
+"Date last jump" = "Last jump";
+"Date first jump" = "First jump";
+"List aircrafts" = "List aircrafts";
+"List canopies" = "List canopies";
+"List locations" = "List locations";
+
+// MARK: - Cell Statistic:
+
+"Total jumps" = "Total jumps";
+"In this year" = "In this year";
+"Category" = "Category";
+"General info" = "General info";
+"Total height" = "Total height";
+"Total time" = "Total time";
+"Average info" = "Average info";
+"Max. time" = "Max. time";
+"Max. height" = "Max. height";
+"Min. height" = "Min. height";
+"Max. in day" = "Max. in day";
+"CutawayStatistic" = "Cutaway";
+"Last jump" = "Last jump";
+"First jump" = "First jump";
+"Missions" = "Missions";
+"Aircraft" = "Aircraft";
+"Canopies" = "Canopies";
+"Locations" = "Locations";
+
+"Accuracy" = "Accuracy";
+"Acrobatics" = "Acrobatics";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Canopy formation";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "Fun";
+"Group" = "Group";
+"Instructor" = "Instructor";
+"Military" = "Military";
+"Para-ski" = "Para-ski";
+"Proximity" = "Proximity";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Static-line";
+"Piloting" = "Piloting";
+"Tandem" = "Tandem";
+"Vertical" = "Vertical";
+"Video" = "Video";
+"Wingsuit" = "Wingsuit";
+"Formation" = "Formation";
+"Top 10:" = "Тop 10:";
+
+// MARK: - CellNewJump:
+
+"Date" = "Date";
+"Location" = "Location";
+"Aircraft" = "Aircraft";
+"Canopy" = "Canopy";
+"Mission" = "Mission";
+"Height" = "Height";
+"Time" = "Time";
+"Cutaway" = "Cutaway";
+"Comment" = "Comment";
+
+"Date placeholder" = "dd.mm.yyyy.";
+"Location placeholder" = "Dropzone";
+"Aircraft placeholder" = "Type aircraft";
+"Canopy placeholder" = "Main canopy";
+"Mission placeholder" = "Type of jump";
+"Height placeholder" = "Meters";
+"Time placeholder" = "Seconds";
+"Cutaway placeholder" = "No / Yes";
+"Comment placeholder" = "Optional";
+
+// MARK: - NOTES:
+"New note" = "New note";
+"Delete note?" = "Delete note?";
+
+// MARK: - ACCOUNT:
+
+"Edit locations" = "Edit locations";
+"Delete location?" = "Delete location?";
+"Edit aircrafts" = "Edit aircrafts";
+"Delete aircraft?" = "Delete aircraft?";
+"Edit canopies" = "Edit canopies";
+"Delete canopy?" = "Delete canopy?";
+"Backup copy" = "Backup copy";
+"Calculator loading" = "Calculator loading";
+"Information" = "Information";
+"Premium version" = "Premium version";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Total weight";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "Square canopy";
+"1-50A" = "Parachute type: Student.\nCategory: A.\nNumber of jumps: 1-50 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
+
+"51-200B" = "Parachute type: Transition.\nCategory: B.\nNumber of jumps: 51-200 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
+
+"201-500C" = "Parachute type: Medium-speed.\nCategory: C.\nNumber of jumps: 201-500 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
+
+"501-1000D1" = "Parachute type: Speed/elliptical.\nCategory: D.\nNumber of jumps: 501-1000 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
+
+"1000D2" = "Parachute type: High-speed.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
+
+"1000D3" = "Parachute type: High-speed/crossbraced.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
+
+// MARK: - INFO:
+
+"App version" = "App version";
+"Privacy policy" = "Privacy policy";
+"Terms of use" = "Terms of use";
+"Info text" = "\nSkydive Logbook\n\nIt is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the Skydive Logbook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.\n\nThe data on the loading of the main dome are reference information and are not of a recommendatory nature for choosing parachute equipment.\n\nAll permits for the operation of parachutes must be issued by a valid instructor.\n";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nIn the free version of the app, you can save 50 jumps.\n\n⭐️ ⭐️ ⭐️\n\nThe premium version of the app allows you to save an unlimited number of jumps.\n";
+"1 month" = "Every month\n9.99$/month";
+"12 months" = "Every year 34.99$\n2.99$/month";
+"Restore purchases" = "Restore purchases";
+"Buy status" = "Buy find / buy no find";
+
+// MARK: - SYSTEM:
+
+"System" = "SYSTEM";
+"Delete system?" = "Delete system?";

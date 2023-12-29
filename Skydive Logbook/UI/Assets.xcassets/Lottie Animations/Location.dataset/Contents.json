@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "Location.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

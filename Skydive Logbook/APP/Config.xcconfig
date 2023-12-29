@@ -1,0 +1,14 @@
+//
+//  Config.xcconfig
+//  Skydive Logbook
+//
+//  Created by MALYSHEW ANDREW on 20.12.23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+IDELogRedirectionPolicy = oslogToStdio
+
+
+// НУЖЕН ЛИ ЭТОТ ФАЙЛ И САМА ЭТА ЗАПИСЬ? ДОБАВИЛ ДЛЯ ТОГО ЧТОБЫ БОЛЬШОЙ ОБЬЕМ ДАННЫХ НА СТРАНИЦЫ СТАТИСТИКИ ОТОБРАЖАЛСЯ БЕЗ ЗАДЕРЖЕК
