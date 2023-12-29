@@ -135,6 +135,11 @@ extension AccountVC: AccountCellDelegate {
         navigationController?.pushViewController(editCanopies, animated: true)
     }
     
+    func tapPermissionButton() {
+        let permission = PermissionVC()
+        navigationController?.pushViewController(permission, animated: true)
+    }
+    
     func tapBackupButton() {
         let backup = BackupVC()
         navigationController?.pushViewController(backup, animated: true)
