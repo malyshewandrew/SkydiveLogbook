@@ -34,7 +34,7 @@ final class SystemVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(systemLottie, confettiLottie, confettiButton, tableView, newSystemButton)
+        view.addSubviews(confettiLottie, systemLottie, confettiButton, tableView, newSystemButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -53,7 +53,7 @@ final class SystemVC: UIViewController {
 
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
         confettiLottie.centerXAnchor.constraint(equalTo: systemLottie.centerXAnchor).isActive = true
-        confettiLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor).isActive = true
+        confettiLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor, constant: -10).isActive = true
         confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
         confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
