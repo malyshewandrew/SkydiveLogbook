@@ -531,7 +531,7 @@ class EditJumpCell: UITableViewCell {
         
         // MARK: SAVE BUTTON:
 
-        saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        saveButton.setTitle("Обновить", for: .normal)
         saveButton.backgroundColor = colorCell
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.white, for: .normal)
