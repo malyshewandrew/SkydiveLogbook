@@ -32,6 +32,8 @@ final class MainVC: UIViewController {
         tableView.isHidden = true
         navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = true
+        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
+        navigationItem.title = ""
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -287,7 +289,9 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         // MARK: EDIT JUMP:
 
         let editAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
-            print("test")
+            let editJumpViewController = EditJumpVC()
+            editJumpViewController.indexPath = indexPath.row
+            self.navigationController?.pushViewController(editJumpViewController, animated: true)
             completion(true)
         }
         editAction.image = UIImage(systemName: "slider.horizontal.2.square")

@@ -131,5 +131,6 @@ extension EditSystemVC: EditSystemCellDelegate {
     func saveSystem(_ system: SystemStructure) {
         arraySystem.remove(at: indexPath)
         arraySystem.insert(system, at: indexPath)
+        navigationController?.popViewController(animated: true)
     }
 }
