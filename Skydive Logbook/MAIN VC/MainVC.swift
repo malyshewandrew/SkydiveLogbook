@@ -287,7 +287,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         // MARK: EDIT JUMP:
 
         let editAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
-            print("test")
+            print("Test commit")
             completion(true)
         }
         editAction.image = UIImage(systemName: "slider.horizontal.2.square")
