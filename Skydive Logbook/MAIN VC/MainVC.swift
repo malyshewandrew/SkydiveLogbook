@@ -14,13 +14,17 @@ final class MainVC: UIViewController {
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     
+    private let stackView = UIStackView()
+    private let medicineLabel = UILabel()
+    private let insuranceLabel = UILabel()
+    private let reserveCanopyLabel = UILabel()
     private let nicknameLabel = UILabel()
-    
+
     private let tableView = UITableView()
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
     private var selectedJump: JumpStructure?
-    
+
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -29,6 +33,7 @@ final class MainVC: UIViewController {
         configureConstrains()
         configureUI()
         firstMessage()
+        configureUser()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
@@ -40,6 +45,7 @@ final class MainVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        configureUser()
         firstMessage()
         tableView.reloadData()
 
@@ -62,7 +68,8 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, nicknameLabel, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
+        view.addSubviews(mainLottie, confettiLottie, confettiButton, stackView, nicknameLabel, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
+        stackView.addArrangedSubviews(medicineLabel, insuranceLabel, reserveCanopyLabel)
         loadingView.addSubview(loadingLottie)
     }
 
@@ -109,14 +116,41 @@ final class MainVC: UIViewController {
         confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        
+        
+        // MARK: STACK VIEW:
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -2).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
+        stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
+        
+        // MARK: MEDICINE LABEL:
+
+        medicineLabel.translatesAutoresizingMaskIntoConstraints = false
+        medicineLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
+        medicineLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        
+        // MARK: INSURANCE LABEL:
+
+        insuranceLabel.translatesAutoresizingMaskIntoConstraints = false
+        insuranceLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
+        insuranceLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        
+        // MARK: RESERVE CANOPY LABEL:
+
+        reserveCanopyLabel.translatesAutoresizingMaskIntoConstraints = false
+        reserveCanopyLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
+        reserveCanopyLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
 
         // MARK: NICKNAME LABEL:
+
         nicknameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nicknameLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
-        nicknameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
-        nicknameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        nicknameLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -2).isActive = true
+        nicknameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        nicknameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
         nicknameLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        
+
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -158,9 +192,36 @@ final class MainVC: UIViewController {
 
         view.backgroundColor = colorBackground
         
+        // MARK: STACK VIEW:
+        
+        stackView.axis = .vertical
+        stackView.spacing = 1
+        stackView.alignment = .bottom
+        stackView.distribution = .equalSpacing
+        
+        // MARK: MEDICINE LABEL:
+
+        medicineLabel.font = fontStackView
+        medicineLabel.textColor = colorWhite
+        medicineLabel.textAlignment = .left
+        
+        // MARK: INSURANCE LABEL:
+
+        insuranceLabel.font = fontStackView
+        insuranceLabel.textColor = colorWhite
+        insuranceLabel.textAlignment = .left
+        
+        // MARK: RESERVE CANOPY LABEL:
+
+        reserveCanopyLabel.font = fontStackView
+        reserveCanopyLabel.textColor = colorWhite
+        reserveCanopyLabel.textAlignment = .left
+
         // MARK: NICKNAME LABEL:
+
         nicknameLabel.font = fontBoldStandart10
         nicknameLabel.textColor = colorWhite
+        nicknameLabel.textAlignment = .right
 
         // MARK: TABLE VIEW:
 
@@ -227,6 +288,43 @@ final class MainVC: UIViewController {
             confettiLottie.isHidden = false
             confettiButton.isHidden = false
         }
+    }
+
+    // MARK: - CONFIGURE USER:
+
+    private func configureUser() {
+        if arrayAccount.count == 0 {
+            nicknameLabel.text = ""
+            
+        } else {
+            guard arrayAccount[0].nickname == arrayAccount[0].nickname else { return }
+            nicknameLabel.text = arrayAccount[0].nickname
+        }
+        
+        if arrayAccount.count == 0 {
+            medicineLabel.text = ""
+            
+        } else {
+            guard arrayAccount[0].medicine == arrayAccount[0].medicine else { return }
+            medicineLabel.text = "Справка до:" + arrayAccount[0].medicine
+        }
+        
+        if arrayAccount.count == 0 {
+            insuranceLabel.text = ""
+            
+        } else {
+            guard arrayAccount[0].insurance == arrayAccount[0].insurance else { return }
+            insuranceLabel.text = "Страховка до:" + arrayAccount[0].insurance
+        }
+        
+        if arrayAccount.count == 0 {
+            reserveCanopyLabel.text = ""
+            
+        } else {
+            guard arrayAccount[0].reserveCanopy == arrayAccount[0].reserveCanopy else { return }
+            reserveCanopyLabel.text = "Запасной до:" + arrayAccount[0].reserveCanopy
+        }
+        
     }
 
     // MARK: - PRIVATE OBJC FUNCTIONS:
