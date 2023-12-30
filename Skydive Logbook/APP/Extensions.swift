@@ -9,3 +9,12 @@ extension UIView {
         }
     }
 }
+
+// MARK: - STACKVIEW ADD SUBVIEWS:
+extension UIStackView {
+    func addArrangedSubviews(_ views: UIView...) {
+        for view in views {
+            addArrangedSubview(view)
+        }
+    }
+}

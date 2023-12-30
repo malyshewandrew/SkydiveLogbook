@@ -34,7 +34,7 @@ final class SystemVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(systemLottie, confettiLottie, confettiButton, tableView, newSystemButton)
+        view.addSubviews(confettiLottie, systemLottie, confettiButton, tableView, newSystemButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -53,7 +53,7 @@ final class SystemVC: UIViewController {
 
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
         confettiLottie.centerXAnchor.constraint(equalTo: systemLottie.centerXAnchor).isActive = true
-        confettiLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor).isActive = true
+        confettiLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor, constant: -10).isActive = true
         confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
         confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
@@ -150,7 +150,7 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let alertDelete = UIAlertController(title: NSLocalizedString("Delete parachute?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
+            let alertDelete = UIAlertController(title: NSLocalizedString("Delete system?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
                 arraySystem.remove(at: indexPath.row)
