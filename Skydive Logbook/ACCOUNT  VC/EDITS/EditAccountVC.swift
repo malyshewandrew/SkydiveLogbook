@@ -25,7 +25,12 @@ final class EditAccountVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
+        configureAccount()
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureAccount()
     }
     
     //MARK: - ADD SUBVIEWS:
@@ -194,19 +199,37 @@ final class EditAccountVC: UIViewController {
         saveButton.addTarget(self, action: #selector(tapOnSaveButtom), for: .touchUpInside)
     }
     
+    private func configureAccount() {
+        if arrayAccount.count == 0 {
+            nicknameTextField.text = ""
+            medicineTextField.text = ""
+            insuranceTextField.text = ""
+            reserveCanopyTextField.text = ""
+        } else {
+            nicknameTextField.text = arrayAccount[0].nickname
+            medicineTextField.text = arrayAccount[0].medicine
+            insuranceTextField.text = arrayAccount[0].insurance
+            reserveCanopyTextField.text = arrayAccount[0].reserveCanopy
+        }
+    }
+    
     @objc private func tapOnSaveButtom() {
         saveNewAccount()
         actionButtonSaveGreenColor()
         vibrationOn.vibrationSucces()
         playSoundSucces()
-        clearTextViews()
         resignFirstResponders()
     }
     
     private func saveNewAccount() {
         let account: AccountStructure = AccountStructure(nickname: nicknameTextField.text ?? "", medicine: medicineTextField.text ?? "", insurance: insuranceTextField.text ?? "", reserveCanopy: reserveCanopyTextField.text ?? "")
-        arrayAccount.remove(at: 0)
-        arrayAccount.insert(account, at: 0)
+        
+        if arrayAccount.count == 0 {
+            arrayAccount.insert(account, at: 0)
+        } else {
+            arrayAccount.remove(at: 0)
+            arrayAccount.insert(account, at: 0)
+        }
     }
     
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
@@ -225,15 +248,6 @@ final class EditAccountVC: UIViewController {
         guard let url = url else { return }
         player = try! AVAudioPlayer(contentsOf: url)
         player.play()
-    }
-    
-    // MARK: CLEAR ALL TEXT FIELDS:
-    
-    private func clearTextViews() {
-        nicknameTextField.text = ""
-        medicineTextField.text = ""
-        insuranceTextField.text = ""
-        reserveCanopyTextField.text = ""
     }
     
     // MARK: CLOSE ALL TEXT FIELDS:

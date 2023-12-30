@@ -17,22 +17,17 @@ final class AccountCell: UITableViewCell {
     
     // MARK: - PRIVATE PROPERTIES:
     
+    private let editAccountButton = UIButton()
     private let editLocationsButton = UIButton()
     private let editAircraftsButton = UIButton()
     private let editCanopiesButton = UIButton()
-    
-    private let editAccountButton = UIButton()
-    
     private let backupButton = UIButton()
     private let calculatorButton = UIButton()
-
     private let weatherButton = UIButton()
-
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
     private let starImage = UIImageView()
     private let restoreButton = UIButton()
-    
     var delegate: AccountCellDelegate?
 
     // MARK: - LIFECYCLE:
@@ -50,17 +45,26 @@ final class AccountCell: UITableViewCell {
  
     // MARK: - ADD SUBVIEWS:
     private func addSubviews() {
-        contentView.addSubviews(editLocationsButton, editAircraftsButton, editCanopiesButton, editAccountButton, backupButton, calculatorButton, weatherButton, infoButton, premiumButton, restoreButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, calculatorButton, weatherButton, infoButton, premiumButton, restoreButton)
         premiumButton.addSubview(starImage)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: EDIT ACCOUNT:
+
+        editAccountButton.translatesAutoresizingMaskIntoConstraints = false
+        editAccountButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 45).isActive = true
+        editAccountButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        editAccountButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        editAccountButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        
         // MARK: EDIT LOCATIONS:
 
         editLocationsButton.translatesAutoresizingMaskIntoConstraints = false
-        editLocationsButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 45).isActive = true
+        editLocationsButton.topAnchor.constraint(equalTo: editAccountButton.bottomAnchor, constant: 15).isActive = true
         editLocationsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         editLocationsButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         editLocationsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -81,18 +85,10 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         editCanopiesButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
         
-        // MARK: PERMISSSION:
-
-        editAccountButton.translatesAutoresizingMaskIntoConstraints = false
-        editAccountButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 15).isActive = true
-        editAccountButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        editAccountButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        editAccountButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-
         // MARK: BACKUP BUTTON:
 
         backupButton.translatesAutoresizingMaskIntoConstraints = false
-        backupButton.topAnchor.constraint(equalTo: editAccountButton.bottomAnchor, constant: 45).isActive = true
+        backupButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 45).isActive = true
         backupButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         backupButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -137,6 +133,15 @@ final class AccountCell: UITableViewCell {
         contentView.backgroundColor = colorBackground
         selectionStyle = .none
         
+        // MARK: EDIT ACCOUNT:
+
+        editAccountButton.setTitle("Редактировать аккаунт", for: .normal)
+        editAccountButton.layer.cornerRadius = cornerRadius10
+        editAccountButton.backgroundColor = colorCell
+        editAccountButton.titleLabel?.font = fontMediumStandart14
+        editAccountButton.setTitleColor(.white, for: .normal)
+        editAccountButton.addTarget(self, action: #selector(tapOnEditAccountButton), for: .touchUpInside)
+        
         // MARK: EDIT LOCATIONS:
 
         editLocationsButton.setTitle(NSLocalizedString("Edit locations", comment: ""), for: .normal)
@@ -163,15 +168,6 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.titleLabel?.font = fontMediumStandart14
         editCanopiesButton.setTitleColor(.white, for: .normal)
         editCanopiesButton.addTarget(self, action: #selector(tapOnEditCanopiesButton), for: .touchUpInside)
-        
-        // MARK: PERMISSSION:
-
-        editAccountButton.setTitle("Редактировать аккаунт", for: .normal)
-        editAccountButton.layer.cornerRadius = cornerRadius10
-        editAccountButton.backgroundColor = colorCell
-        editAccountButton.titleLabel?.font = fontMediumStandart14
-        editAccountButton.setTitleColor(.white, for: .normal)
-        editAccountButton.addTarget(self, action: #selector(tapOnEditAccountButton), for: .touchUpInside)
 
         // MARK: BACKUP BUTTON:
 
@@ -218,6 +214,12 @@ final class AccountCell: UITableViewCell {
     
     // MARK: - HELPERS:
     
+    // MARK: FUNC FOR EDIT ACCOUNT:
+
+    @objc func tapOnEditAccountButton() {
+        delegate?.tapEditAccountButton()
+    }
+    
     // MARK: FUNC FOR EDIT LOCATIONS:
 
     @objc func tapOnEditLocationsButton() {
@@ -234,12 +236,6 @@ final class AccountCell: UITableViewCell {
 
     @objc func tapOnEditCanopiesButton() {
         delegate?.tapEditCanopiesButton()
-    }
-    
-    // MARK: FUNC FOR EDIT ACCOUNT:
-
-    @objc func tapOnEditAccountButton() {
-        delegate?.tapEditAccountButton()
     }
 
     // MARK: FUNC FOR BACKUP:

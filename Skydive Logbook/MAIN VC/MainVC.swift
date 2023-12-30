@@ -13,7 +13,7 @@ final class MainVC: UIViewController {
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
-    
+
     private let stackView = UIStackView()
     private let medicineLabel = UILabel()
     private let insuranceLabel = UILabel()
@@ -33,7 +33,7 @@ final class MainVC: UIViewController {
         configureConstrains()
         configureUI()
         firstMessage()
-        configureUser()
+        configureAccount()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
@@ -45,7 +45,7 @@ final class MainVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        configureUser()
+        configureAccount()
         firstMessage()
         tableView.reloadData()
 
@@ -116,27 +116,26 @@ final class MainVC: UIViewController {
         confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
-        
-        
+
         // MARK: STACK VIEW:
-        
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -2).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
-        
+
         // MARK: MEDICINE LABEL:
 
         medicineLabel.translatesAutoresizingMaskIntoConstraints = false
         medicineLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
         medicineLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
-        
+
         // MARK: INSURANCE LABEL:
 
         insuranceLabel.translatesAutoresizingMaskIntoConstraints = false
         insuranceLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
         insuranceLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
-        
+
         // MARK: RESERVE CANOPY LABEL:
 
         reserveCanopyLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -191,26 +190,26 @@ final class MainVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
-        
+
         // MARK: STACK VIEW:
-        
+
         stackView.axis = .vertical
         stackView.spacing = 1
         stackView.alignment = .bottom
         stackView.distribution = .equalSpacing
-        
+
         // MARK: MEDICINE LABEL:
 
         medicineLabel.font = fontStackView
         medicineLabel.textColor = colorWhite
         medicineLabel.textAlignment = .left
-        
+
         // MARK: INSURANCE LABEL:
 
         insuranceLabel.font = fontStackView
         insuranceLabel.textColor = colorWhite
         insuranceLabel.textAlignment = .left
-        
+
         // MARK: RESERVE CANOPY LABEL:
 
         reserveCanopyLabel.font = fontStackView
@@ -292,39 +291,59 @@ final class MainVC: UIViewController {
 
     // MARK: - CONFIGURE USER:
 
-    private func configureUser() {
+    // MARK: NICKNAME LABEL:
+
+    private func configureAccount() {
+
         if arrayAccount.count == 0 {
             nicknameLabel.text = ""
-            
         } else {
-            guard arrayAccount[0].nickname == arrayAccount[0].nickname else { return }
-            nicknameLabel.text = arrayAccount[0].nickname
+            if arrayAccount[0].nickname.isEmpty {
+                nicknameLabel.isHidden = true
+            } else {
+                nicknameLabel.isHidden = false
+                nicknameLabel.text = arrayAccount[0].nickname
+            }
         }
-        
+
+        // MARK: MEDICINE LABEL:
+
         if arrayAccount.count == 0 {
             medicineLabel.text = ""
-            
         } else {
-            guard arrayAccount[0].medicine == arrayAccount[0].medicine else { return }
-            medicineLabel.text = "Справка до:" + arrayAccount[0].medicine
+            if arrayAccount[0].medicine == "" {
+                medicineLabel.isHidden = true
+            } else {
+                medicineLabel.isHidden = false
+                medicineLabel.text = "Справка до:" + arrayAccount[0].medicine
+            }
         }
-        
+
+        // MARK: INSURANCE LABEL:
+
         if arrayAccount.count == 0 {
             insuranceLabel.text = ""
-            
         } else {
-            guard arrayAccount[0].insurance == arrayAccount[0].insurance else { return }
-            insuranceLabel.text = "Страховка до:" + arrayAccount[0].insurance
+            if arrayAccount[0].insurance == "" {
+                insuranceLabel.isHidden = true
+            } else {
+                insuranceLabel.isHidden = false
+                insuranceLabel.text = "Страховка до:" + arrayAccount[0].insurance
+            }
         }
-        
+
+        // MARK: RESERVE CANOPY LABEL:
+
         if arrayAccount.count == 0 {
             reserveCanopyLabel.text = ""
-            
         } else {
-            guard arrayAccount[0].reserveCanopy == arrayAccount[0].reserveCanopy else { return }
-            reserveCanopyLabel.text = "Запасной до:" + arrayAccount[0].reserveCanopy
+            if arrayAccount[0].reserveCanopy == "" {
+                reserveCanopyLabel.isHidden = true
+            } else {
+                reserveCanopyLabel.isHidden = false
+                reserveCanopyLabel.text = "Запасной до:" + arrayAccount[0].reserveCanopy
+            }
         }
-        
     }
 
     // MARK: - PRIVATE OBJC FUNCTIONS:
