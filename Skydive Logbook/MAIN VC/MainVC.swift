@@ -315,7 +315,7 @@ final class MainVC: UIViewController {
                 medicineLabel.isHidden = true
             } else {
                 medicineLabel.isHidden = false
-                medicineLabel.text = "Справка до:" + arrayAccount[0].medicine
+                medicineLabel.text = "Справка до: " + arrayAccount[0].medicine
             }
         }
 
@@ -328,7 +328,7 @@ final class MainVC: UIViewController {
                 insuranceLabel.isHidden = true
             } else {
                 insuranceLabel.isHidden = false
-                insuranceLabel.text = "Страховка до:" + arrayAccount[0].insurance
+                insuranceLabel.text = "Страховка до: " + arrayAccount[0].insurance
             }
         }
 
@@ -341,7 +341,7 @@ final class MainVC: UIViewController {
                 reserveCanopyLabel.isHidden = true
             } else {
                 reserveCanopyLabel.isHidden = false
-                reserveCanopyLabel.text = "Запасной до:" + arrayAccount[0].reserveCanopy
+                reserveCanopyLabel.text = "Запасной до: " + arrayAccount[0].reserveCanopy
             }
         }
     }

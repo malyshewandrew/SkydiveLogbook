@@ -119,7 +119,7 @@ final class EditAccountVC: UIViewController {
         
         // MARK: NICKNAME:
         
-        nicknameButton.setTitle("Никнейм*", for: .normal)
+        nicknameButton.setTitle("Никнейм", for: .normal)
         nicknameButton.backgroundColor = colorCell
         nicknameButton.setTitleColor(colorLightGray, for: .normal)
         nicknameButton.contentVerticalAlignment = textAligmentTop
@@ -137,7 +137,7 @@ final class EditAccountVC: UIViewController {
         
         // MARK: MEDICINE:
         
-        medicineButton.setTitle("Справка до:*", for: .normal)
+        medicineButton.setTitle("Справка до:", for: .normal)
         medicineButton.backgroundColor = colorCell
         medicineButton.setTitleColor(colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop
@@ -155,7 +155,7 @@ final class EditAccountVC: UIViewController {
         
         // MARK: INSURANCE:
         
-        insuranceButton.setTitle("Страховка до:*", for: .normal)
+        insuranceButton.setTitle("Страховка до:", for: .normal)
         insuranceButton.backgroundColor = colorCell
         insuranceButton.setTitleColor(colorLightGray, for: .normal)
         insuranceButton.contentVerticalAlignment = textAligmentTop
@@ -173,7 +173,7 @@ final class EditAccountVC: UIViewController {
         
         // MARK: RESERVE CANOPY:
         
-        reserveCanopyButton.setTitle("Запасной до: *", for: .normal)
+        reserveCanopyButton.setTitle("Запасной до:", for: .normal)
         reserveCanopyButton.backgroundColor = colorCell
         reserveCanopyButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyButton.contentVerticalAlignment = textAligmentTop
