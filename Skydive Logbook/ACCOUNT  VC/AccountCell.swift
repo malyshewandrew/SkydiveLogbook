@@ -6,7 +6,7 @@ protocol AccountCellDelegate {
     func tapEditLocationsButton()
     func tapEditAircraftsButton()
     func tapEditCanopiesButton()
-    func tapPermissionButton()
+    func tapEditAccountButton()
     func tapBackupButton()
     func tapCalculatorButton()
     func tapInfoButton()
@@ -21,7 +21,7 @@ final class AccountCell: UITableViewCell {
     private let editAircraftsButton = UIButton()
     private let editCanopiesButton = UIButton()
     
-    private let permissionButton = UIButton()
+    private let editAccountButton = UIButton()
     
     private let backupButton = UIButton()
     private let calculatorButton = UIButton()
@@ -50,7 +50,7 @@ final class AccountCell: UITableViewCell {
  
     // MARK: - ADD SUBVIEWS:
     private func addSubviews() {
-        contentView.addSubviews(editLocationsButton, editAircraftsButton, editCanopiesButton, permissionButton, backupButton, calculatorButton, weatherButton, infoButton, premiumButton, restoreButton)
+        contentView.addSubviews(editLocationsButton, editAircraftsButton, editCanopiesButton, editAccountButton, backupButton, calculatorButton, weatherButton, infoButton, premiumButton, restoreButton)
         premiumButton.addSubview(starImage)
     }
     
@@ -83,16 +83,16 @@ final class AccountCell: UITableViewCell {
         
         // MARK: PERMISSSION:
 
-        permissionButton.translatesAutoresizingMaskIntoConstraints = false
-        permissionButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 15).isActive = true
-        permissionButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        permissionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        permissionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        editAccountButton.translatesAutoresizingMaskIntoConstraints = false
+        editAccountButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 15).isActive = true
+        editAccountButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        editAccountButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        editAccountButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: BACKUP BUTTON:
 
         backupButton.translatesAutoresizingMaskIntoConstraints = false
-        backupButton.topAnchor.constraint(equalTo: permissionButton.bottomAnchor, constant: 45).isActive = true
+        backupButton.topAnchor.constraint(equalTo: editAccountButton.bottomAnchor, constant: 45).isActive = true
         backupButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         backupButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -166,12 +166,12 @@ final class AccountCell: UITableViewCell {
         
         // MARK: PERMISSSION:
 
-        permissionButton.setTitle("Разрешения", for: .normal)
-        permissionButton.layer.cornerRadius = cornerRadius10
-        permissionButton.backgroundColor = colorCell
-        permissionButton.titleLabel?.font = fontMediumStandart14
-        permissionButton.setTitleColor(.white, for: .normal)
-        permissionButton.addTarget(self, action: #selector(tapOnPermissionButton), for: .touchUpInside)
+        editAccountButton.setTitle("Редактировать аккаунт", for: .normal)
+        editAccountButton.layer.cornerRadius = cornerRadius10
+        editAccountButton.backgroundColor = colorCell
+        editAccountButton.titleLabel?.font = fontMediumStandart14
+        editAccountButton.setTitleColor(.white, for: .normal)
+        editAccountButton.addTarget(self, action: #selector(tapOnEditAccountButton), for: .touchUpInside)
 
         // MARK: BACKUP BUTTON:
 
@@ -236,10 +236,10 @@ final class AccountCell: UITableViewCell {
         delegate?.tapEditCanopiesButton()
     }
     
-    // MARK: FUNC FOR PERMISSION:
+    // MARK: FUNC FOR EDIT ACCOUNT:
 
-    @objc func tapOnPermissionButton() {
-        delegate?.tapPermissionButton()
+    @objc func tapOnEditAccountButton() {
+        delegate?.tapEditAccountButton()
     }
 
     // MARK: FUNC FOR BACKUP:

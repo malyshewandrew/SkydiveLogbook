@@ -1,27 +1,35 @@
 import UIKit
 
-final class PermissionVC: UIViewController {
+final class EditAccountVC: UIViewController {
     
     //MARK: - PROPERTIES:
 
+    private let nicknameTextField = UITextField()
     private let medicineTextField = UITextField()
     private let insuranceTextField = UITextField()
     private let reserveCanopyTextField = UITextField()
     private let saveButtom = UIButton()
     
-    
     //MARK: - ADD SUBVIEWS:
     func addSubviews() {
-        view.addSubviews(medicineTextField, insuranceTextField, reserveCanopyTextField, saveButtom)
+        view.addSubviews(nicknameTextField, medicineTextField, insuranceTextField, reserveCanopyTextField, saveButtom)
     }
     
     //MARK: - CONFIGURE CONSTRAINS:
     func configureConstrains() {
         
+        // MARK: NICKNAME:
+        
+        nicknameTextField.translatesAutoresizingMaskIntoConstraints = false
+        nicknameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        nicknameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nicknameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        nicknameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        
         // MARK: MEDICINE:
         
         medicineTextField.translatesAutoresizingMaskIntoConstraints = false
-        medicineTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        medicineTextField.topAnchor.constraint(equalTo: nicknameTextField.bottomAnchor, constant: 15).isActive = true
         medicineTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         medicineTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         medicineTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
@@ -58,6 +66,10 @@ final class PermissionVC: UIViewController {
         
         view.backgroundColor = colorBackground
         
+        // MARK: NICKNAME:
+        
+        nicknameTextField.backgroundColor = colorDarkGray
+        
         // MARK: MEDICINE:
         
         medicineTextField.backgroundColor = colorDarkGray
@@ -77,7 +89,8 @@ final class PermissionVC: UIViewController {
     }
     
     @objc private func tapOnSaveButtom() {
-        print("test")
+        var user: AccountStructure = AccountStructure(nickname: nicknameTextField.text ?? "", medicine: medicineTextField.text ?? "", insurance: insuranceTextField.text ?? "", reserveCanopy: reserveCanopyTextField.text ?? "")
+        print(user)
     }
     
     //MARK: - LIFECYCLE:

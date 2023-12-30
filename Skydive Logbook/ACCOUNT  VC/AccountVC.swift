@@ -120,6 +120,7 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
 
 
 extension AccountVC: AccountCellDelegate {
+    
     func tapEditLocationsButton() {
         let editLocations = EditLocationsVC()
         navigationController?.pushViewController(editLocations, animated: true)
@@ -135,9 +136,9 @@ extension AccountVC: AccountCellDelegate {
         navigationController?.pushViewController(editCanopies, animated: true)
     }
     
-    func tapPermissionButton() {
-        let permission = PermissionVC()
-        navigationController?.pushViewController(permission, animated: true)
+    func tapEditAccountButton() {
+        let editAccount = EditAccountVC()
+        navigationController?.pushViewController(editAccount, animated: true)
     }
     
     func tapBackupButton() {

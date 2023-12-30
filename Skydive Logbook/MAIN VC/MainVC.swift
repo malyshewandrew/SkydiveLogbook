@@ -13,11 +13,14 @@ final class MainVC: UIViewController {
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
+    
+    private let nicknameLabel = UILabel()
+    
     private let tableView = UITableView()
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
     private var selectedJump: JumpStructure?
-
+    
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -59,7 +62,7 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
+        view.addSubviews(mainLottie, confettiLottie, confettiButton, nicknameLabel, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
         loadingView.addSubview(loadingLottie)
     }
 
@@ -107,6 +110,13 @@ final class MainVC: UIViewController {
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
+        // MARK: NICKNAME LABEL:
+        nicknameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nicknameLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        nicknameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
+        nicknameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        nicknameLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -147,6 +157,10 @@ final class MainVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
+        
+        // MARK: NICKNAME LABEL:
+        nicknameLabel.font = fontBoldStandart10
+        nicknameLabel.textColor = colorWhite
 
         // MARK: TABLE VIEW:
 
