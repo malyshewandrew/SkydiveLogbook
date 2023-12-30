@@ -1,7 +1,7 @@
 import UIKit
 
 final class MainCell: UITableViewCell {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let cellView = UIView()
     private let numberLabel = UILabel()
@@ -15,9 +15,6 @@ final class MainCell: UITableViewCell {
     private let cutawayLabel = UILabel()
     private let commentLabel = UILabel()
     private let cellButton = UIButton()
-
-    // MARK: CLOSURE:
-
     var tapOnCell: (() -> ())?
     
     // MARK: - LIFECYCLE:
@@ -26,7 +23,7 @@ final class MainCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
         configureConstrains()
-        configureUI()
+        configureUserInterface()
     }
 
     required init?(coder: NSCoder) {
@@ -106,19 +103,11 @@ final class MainCell: UITableViewCell {
         heightLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
         heightLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.25).isActive = true
         heightLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -2).isActive = true
-
-        // MARK: ALL CELL BUTTON:
-
-//        cellButton.translatesAutoresizingMaskIntoConstraints = false
-//        cellButton.centerXAnchor.constraint(equalTo: cellView.centerXAnchor).isActive = true
-//        cellButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
-//        cellButton.heightAnchor.constraint(equalTo: cellView.heightAnchor, multiplier: 1).isActive = true
-//        cellButton.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 1).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
 
-    private func configureUI() {
+    private func configureUserInterface() {
         // MARK: VIEW:
 
         selectionStyle = .none
@@ -184,9 +173,6 @@ final class MainCell: UITableViewCell {
         heightLabel.numberOfLines = numberOfLines1
         heightLabel.textAlignment = .right
         heightLabel.adjustsFontSizeToFitWidth = true
-
-        // MARK: CLOSURE:
-//        cellButton.addTarget(self, action: #selector(transitionVC), for: .touchUpInside)
     }
 
     // MARK: - ACTION FOR CLOSURE:
@@ -194,7 +180,7 @@ final class MainCell: UITableViewCell {
         tapOnCell?()
     }
 
-    // MARK: - CONFIGURE FOR MAIN VIEW CONTROLLER:
+    // MARK: - CONFIGURE:
     func configure(number: String, date: String, location: String, aircraft: String, canopy: String, mission: String, height: String, time: String, cutaway: String, comment: String) {
         numberLabel.text = number
         dateLabel.text = date

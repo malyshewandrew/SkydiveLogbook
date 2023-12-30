@@ -7,9 +7,6 @@ final class JumpVC: UIViewController {
     private let tableView = UITableView()
     private var selectedJump: JumpStructure
     var jumpNumber: Int = 0
-    
-    // MARK: CLOSURE:
-
     var onTap: (() -> ())?
 
     init(selectedJump: JumpStructure) {
@@ -27,11 +24,8 @@ final class JumpVC: UIViewController {
         super.viewDidLoad()
         addSubviews()
         configureConstrains()
-        configureUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(JumpCell.self, forCellReuseIdentifier: "JumpCell")
-        navigationController?.navigationBar.isHidden = true
+        configureUserInterface()
+        configureTableView()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -52,15 +46,22 @@ final class JumpVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    private func configureUI() {
+    private func configureUserInterface() {
         
         // MARK: VIEW:
         
+        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = colorBackground
 
         // MARK: TABLE VIEW:
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
+    }
+    
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(JumpCell.self, forCellReuseIdentifier: "JumpCell")
     }
 }
 

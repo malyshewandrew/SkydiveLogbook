@@ -4,7 +4,7 @@ import Lottie
 import UIKit
 
 final class MainVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let loadingView = UIView()
     private let loadingLottie = LottieAnimationView(name: "Loading")
@@ -13,13 +13,11 @@ final class MainVC: UIViewController {
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
-
     private let stackView = UIStackView()
     private let medicineLabel = UILabel()
     private let insuranceLabel = UILabel()
     private let reserveCanopyLabel = UILabel()
     private let nicknameLabel = UILabel()
-
     private let tableView = UITableView()
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
@@ -31,37 +29,18 @@ final class MainVC: UIViewController {
         super.viewDidLoad()
         addSubviews()
         configureConstrains()
-        configureUI()
+        configureUserInterface()
+        configureTableView()
+        configureGestures()
         firstMessage()
         configureAccount()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
-        tableView.isHidden = true
-        navigationController?.navigationBar.isHidden = true
-        tabBarController?.tabBar.isHidden = true
-        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
-        navigationItem.title = ""
     }
 
     override func viewWillAppear(_ animated: Bool) {
         configureAccount()
         firstMessage()
         tableView.reloadData()
-
-        // MARK: SORT ARRAY:
-
-        arrayJumps.sort { jump1, jump2 -> Bool in
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
-                return date1 < date2
-            }
-            return false
-        }
-
-        // MARK: REVERSE ARRAY:
-
+        sortArray()
         arrayJumps.reverse()
     }
 
@@ -161,13 +140,7 @@ final class MainVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    private func configureUI() {
-        // MARK: THREE TAP FOR PLAY ANIMATIONS:
-
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
-        confettiGesture.numberOfTapsRequired = 3
-        confettiButton.addGestureRecognizer(confettiGesture)
-
+    private func configureUserInterface() {
         // MARK: LOADING VIEW:
 
         loadingView.backgroundColor = colorBackground
@@ -189,6 +162,10 @@ final class MainVC: UIViewController {
 
         // MARK: VIEW:
 
+        navigationController?.navigationBar.isHidden = true
+        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
+        navigationItem.title = ""
+        tabBarController?.tabBar.isHidden = true
         view.backgroundColor = colorBackground
 
         // MARK: STACK VIEW:
@@ -226,6 +203,25 @@ final class MainVC: UIViewController {
 
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
+    }
+
+    // MARK: - CONFIGURE TABLE VIEW:
+
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
+        tableView.isHidden = true
+    }
+
+    // MARK: - CONFIGURE GESTURES:
+
+    private func configureGestures() {
+        // MARK: THREE TAP FOR PLAY ANIMATIONS:
+
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
+        confettiGesture.numberOfTapsRequired = 3
+        confettiButton.addGestureRecognizer(confettiGesture)
     }
 
     // MARK: - FIRST MESSAGE:
@@ -288,13 +284,14 @@ final class MainVC: UIViewController {
             confettiButton.isHidden = false
         }
     }
+    
+
 
     // MARK: - CONFIGURE USER:
 
     // MARK: NICKNAME LABEL:
 
     private func configureAccount() {
-
         if arrayAccount.count == 0 {
             nicknameLabel.text = ""
         } else {
@@ -346,7 +343,20 @@ final class MainVC: UIViewController {
         }
     }
 
-    // MARK: - PRIVATE OBJC FUNCTIONS:
+    // MARK: SORT ARRAY:
+
+    private func sortArray() {
+        arrayJumps.sort { jump1, jump2 -> Bool in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
+                return date1 < date2
+            }
+            return false
+        }
+    }
+    
+    // MARK: - HELPERS:
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
 
@@ -354,7 +364,7 @@ final class MainVC: UIViewController {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
-
+    
     // MARK: FUNC FOR CLOSED LOADING LOTTIE:
 
     @objc private func hideAnimation() {
@@ -384,7 +394,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    // MARK: TRANSSITION ON JUMP VIEW CONTROLLER:
+    // MARK: TRANSSITION ON "JUMP VIEW CONTROLLER":
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let jump = arrayJumps[indexPath.row]
@@ -402,6 +412,9 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         // MARK: DELETE JUMP:
 
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
+            
+            // MARK: DELETE JUMP:
+            
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
@@ -432,32 +445,3 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return configuration
     }
 }
-
-// MARK: - OLD VERSIONS FOR: TRANSITION ON JUMP VIEW CONTROLLER AND DELETE JUMP:
-
-// Transition on JUMP viewController:
-//        cell.tapOnCell = { [weak self] in
-//            guard let self = self else { return }
-//            let jumpViewController = JumpVC(selectedJump: jump)
-//            jumpViewController.jumpNumber = arrayJumps.count - indexPath.row
-//            let navigationController = UINavigationController(rootViewController: jumpViewController)
-//            self.present(navigationController, animated: true, completion: nil)
-//            self.selectedJump = jump
-//        }
-
-// MARK: DELETE CELL:
-
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
-//            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-//            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-//                arrayJumps.remove(at: indexPath.row)
-//                tableView.deleteRows(at: [indexPath], with: .middle)
-//                self.vibrationOn.vibrationSucces()
-//                tableView.reloadData()
-//                self.firstMessage() // вызывается после каждого удаления прыжка (на случай если все прыжки удалятся - покажется first message)
-//            }))
-//            present(alertDelete, animated: true)
-//        }
-//    }
