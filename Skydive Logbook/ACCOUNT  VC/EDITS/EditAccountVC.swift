@@ -1,11 +1,9 @@
-import UIKit
 import AudioToolbox
 import AVFoundation
+import UIKit
 
 final class EditAccountVC: UIViewController {
-    
-    //MARK: - PROPERTIES:
-
+    // MARK: - PROPERTIES:
     
     private let nicknameButton = UIButton()
     private let nicknameTextField = UITextField()
@@ -19,21 +17,23 @@ final class EditAccountVC: UIViewController {
     private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
     
-    //MARK: - LIFECYCLE:
+    // MARK: - LIFECYCLE:
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         configureConstrains()
         configureUI()
+        configureGestures()
         configureAccount()
-        navigationController?.navigationBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         configureAccount()
     }
     
-    //MARK: - ADD SUBVIEWS:
+    // MARK: - ADD SUBVIEWS:
+
     func addSubviews() {
         view.addSubviews(nicknameButton, medicineButton, insuranceButton, reserveCanopyButton, saveButton)
         nicknameButton.addSubview(nicknameTextField)
@@ -42,9 +42,9 @@ final class EditAccountVC: UIViewController {
         reserveCanopyButton.addSubview(reserveCanopyTextField)
     }
     
-    //MARK: - CONFIGURE CONSTRAINS:
+    // MARK: - CONFIGURE CONSTRAINS:
+
     func configureConstrains() {
-        
         // MARK: NICKNAME:
         
         nicknameButton.translatesAutoresizingMaskIntoConstraints = false
@@ -106,16 +106,20 @@ final class EditAccountVC: UIViewController {
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         saveButton.topAnchor.constraint(equalTo: reserveCanopyTextField.bottomAnchor, constant: 15).isActive = true
         saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        saveButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
     }
     
-    //MARK: - CONFIGURE UI:
-    func configureUI() {
+    // MARK: - CONFIGURE UI:
 
+    func configureUI() {
         // MARK: VIEW:
         
         view.backgroundColor = colorBackground
+
+        // MARK: NAVIGATION CONTROLLER:
+        
+        navigationController?.navigationBar.isHidden = false
         
         // MARK: NICKNAME:
         
@@ -199,6 +203,17 @@ final class EditAccountVC: UIViewController {
         saveButton.addTarget(self, action: #selector(tapOnSaveButtom), for: .touchUpInside)
     }
     
+    // MARK: - CONFIGURE GESTURES:
+    
+    private func configureGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: - HELPERS:
+    
+    // MARK: CONFIGURE ACCOUNT:
+
     private func configureAccount() {
         if arrayAccount.count == 0 {
             nicknameTextField.text = ""
@@ -213,16 +228,20 @@ final class EditAccountVC: UIViewController {
         }
     }
     
+    // MARK: ACTION BUTTON SAVE:
+    
     @objc private func tapOnSaveButtom() {
         saveNewAccount()
+        resignFirstResponders()
         actionButtonSaveGreenColor()
         vibrationOn.vibrationSucces()
         playSoundSucces()
-        resignFirstResponders()
     }
     
+    // MARK: SAVE FUNC:
+
     private func saveNewAccount() {
-        let account: AccountStructure = AccountStructure(nickname: nicknameTextField.text ?? "", medicine: medicineTextField.text ?? "", insurance: insuranceTextField.text ?? "", reserveCanopy: reserveCanopyTextField.text ?? "")
+        let account = AccountStructure(nickname: nicknameTextField.text ?? "", medicine: medicineTextField.text ?? "", insurance: insuranceTextField.text ?? "", reserveCanopy: reserveCanopyTextField.text ?? "")
         
         if arrayAccount.count == 0 {
             arrayAccount.insert(account, at: 0)
@@ -230,24 +249,6 @@ final class EditAccountVC: UIViewController {
             arrayAccount.remove(at: 0)
             arrayAccount.insert(account, at: 0)
         }
-    }
-    
-    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
-
-    private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
-        }
-    }
-    
-    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
-
-    private func playSoundSucces() {
-        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
-        guard let url = url else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        player.play()
     }
     
     // MARK: CLOSE ALL TEXT FIELDS:
@@ -259,4 +260,27 @@ final class EditAccountVC: UIViewController {
         reserveCanopyTextField.resignFirstResponder()
     }
     
+    // MARK: CHANGE COLORS BUTTON "SAVE":
+
+    private func actionButtonSaveGreenColor() {
+        saveButton.backgroundColor = colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = colorCell
+        }
+    }
+    
+    // MARK: PLAY SOUND BUTTON "SAVE":
+
+    private func playSoundSucces() {
+        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
+        guard let url = url else { return }
+        player = try! AVAudioPlayer(contentsOf: url)
+        player.play()
+    }
+    
+    // MARK: GESTURES:
+
+    @objc func tapGestureDone() {
+        view.endEditing(true)
+    }
 }

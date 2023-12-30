@@ -315,7 +315,7 @@ final class MainVC: UIViewController {
                 medicineLabel.isHidden = true
             } else {
                 medicineLabel.isHidden = false
-                medicineLabel.text = "Справка до: " + arrayAccount[0].medicine
+                medicineLabel.text = "Медицина до: " + arrayAccount[0].medicine
             }
         }
 
