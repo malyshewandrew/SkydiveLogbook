@@ -9,7 +9,7 @@ final class AccountVC: UIViewController {
     private let accountLottie = LottieAnimationView(name: "Account")
     private let confettiLottie = LottieAnimationView(name: "AccountConfetti")
     private let confettiButton = UIButton()
-    private let vibrationOn = Vibration()    
+    private let vibrationOn = Vibration()
     private let tableView = UITableView()
 
     // MARK: - LIFECYCLE:
@@ -63,8 +63,9 @@ final class AccountVC: UIViewController {
         confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
-        
+
         // MARK: TABLE VIEW:
+
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: accountLottie.bottomAnchor, constant: 5).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -81,9 +82,9 @@ final class AccountVC: UIViewController {
 
         accountLottie.play()
         accountLottie.loopMode = .autoReverse
-        
+
         // MARK: TABLE VIEW:
-        
+
         tableView.separatorStyle = .none
         tableView.backgroundColor = colorBackground
 
@@ -108,48 +109,52 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath) as? AccountCell else { return UITableViewCell() }
         cell.delegate = self
         return cell
     }
-    
-    
 }
 
-
 extension AccountVC: AccountCellDelegate {
+    // MARK: EDIT ACCOUNT:
+
+    func tapEditAccountButton() {
+        let editAccount = EditAccountVC()
+        navigationController?.pushViewController(editAccount, animated: true)
+    }
+
     func tapEditLocationsButton() {
         let editLocations = EditLocationsVC()
         navigationController?.pushViewController(editLocations, animated: true)
     }
-    
+
     func tapEditAircraftsButton() {
         let editAircrafts = EditAircraftsVC()
         navigationController?.pushViewController(editAircrafts, animated: true)
     }
-    
+
     func tapEditCanopiesButton() {
         let editCanopies = EditCanopiesVC()
         navigationController?.pushViewController(editCanopies, animated: true)
     }
-    
+
     func tapBackupButton() {
         let backup = BackupVC()
         navigationController?.pushViewController(backup, animated: true)
     }
-    
+
     func tapCalculatorButton() {
         let calculator = CalculatorVC()
         navigationController?.pushViewController(calculator, animated: true)
     }
-    
+
     func tapInfoButton() {
         let info = InfoVC()
         navigationController?.pushViewController(info, animated: true)
     }
-    
+
     func tapPremiumButton() {
         let premium = PremiumVC()
         navigationController?.pushViewController(premium, animated: true)
