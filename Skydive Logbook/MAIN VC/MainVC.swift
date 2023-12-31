@@ -17,6 +17,8 @@ final class MainVC: UIViewController {
     private let medicineLabel = UILabel()
     private let insuranceLabel = UILabel()
     private let reserveCanopyLabel = UILabel()
+    private let notesImage = UIImageView()
+    private let notesButton = UIButton()
     private let nicknameLabel = UILabel()
     private let tableView = UITableView()
     private let firstMessageView = UIView()
@@ -47,7 +49,7 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, stackView, nicknameLabel, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
+        view.addSubviews(mainLottie, confettiLottie, confettiButton, stackView, notesImage, notesButton, nicknameLabel, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
         stackView.addArrangedSubviews(medicineLabel, insuranceLabel, reserveCanopyLabel)
         loadingView.addSubview(loadingLottie)
     }
@@ -120,6 +122,20 @@ final class MainVC: UIViewController {
         reserveCanopyLabel.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
         reserveCanopyLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        
+        // MARK: NOTES IMAGE:
+        
+        notesImage.translatesAutoresizingMaskIntoConstraints = false
+        notesImage.bottomAnchor.constraint(equalTo: nicknameLabel.topAnchor, constant: -5).isActive = true
+        notesImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        
+        // MARK: NOTES BUTTON:
+        notesButton.translatesAutoresizingMaskIntoConstraints = false
+        notesButton.bottomAnchor.constraint(equalTo: nicknameLabel.topAnchor, constant: 0).isActive = true
+        notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
+        notesButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        notesButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
 
         // MARK: NICKNAME LABEL:
 
@@ -155,7 +171,13 @@ final class MainVC: UIViewController {
         loadingLottie.layer.shadowOpacity = 0.5
         perform(#selector(hideAnimation), with: nil, afterDelay: 2) // closed loading lottie after 2.5 sec.
 
-        // MARK: ANIMATIONS:
+        // MARK: CONFETTI LOTTIE:
+        
+        confettiLottie.layer.shadowRadius = 20
+        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowOpacity = 1
+        
+        // MARK: MAIN LOTTIE:
 
         mainLottie.play()
         mainLottie.loopMode = .autoReverse
@@ -192,6 +214,14 @@ final class MainVC: UIViewController {
         reserveCanopyLabel.font = fontStackView
         reserveCanopyLabel.textColor = colorWhite
         reserveCanopyLabel.textAlignment = .left
+        
+        // MARK: NOTES IMAGE:
+        
+        notesImage.image = UIImage(systemName: "list.bullet.clipboard.fill")
+        notesImage.tintColor = colorWhite
+        
+        // MARK: NOTES BUTTON:
+        notesButton.addTarget(self, action: #selector(tapOnNotesButton), for: .touchUpInside)
 
         // MARK: NICKNAME LABEL:
 
@@ -212,6 +242,13 @@ final class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
         tableView.isHidden = true
+    }
+    
+    // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
+    
+    @objc private func tapOnNotesButton() {
+        let notesViewController = NotesVC()
+        present(notesViewController, animated: true, completion: nil)
     }
 
     // MARK: - CONFIGURE GESTURES:
@@ -355,7 +392,7 @@ final class MainVC: UIViewController {
             return false
         }
     }
-    
+        
     // MARK: - HELPERS:
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
