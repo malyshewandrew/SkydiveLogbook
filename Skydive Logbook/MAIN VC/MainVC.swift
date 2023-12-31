@@ -131,10 +131,10 @@ final class MainVC: UIViewController {
         
         // MARK: NOTES BUTTON:
         notesButton.translatesAutoresizingMaskIntoConstraints = false
-        notesButton.bottomAnchor.constraint(equalTo: nicknameLabel.topAnchor, constant: 0).isActive = true
-        notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
-        notesButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        notesButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        notesButton.bottomAnchor.constraint(equalTo: nicknameLabel.topAnchor, constant: 5).isActive = true
+        notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        notesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        notesButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
 
         // MARK: NICKNAME LABEL:
@@ -217,7 +217,8 @@ final class MainVC: UIViewController {
         
         // MARK: NOTES IMAGE:
         
-        notesImage.image = UIImage(systemName: "list.bullet.clipboard.fill")
+        let configuration = UIImage.SymbolConfiguration(pointSize: 24)
+        notesImage.image = UIImage(systemName: "book.pages.fill", withConfiguration: configuration)
         notesImage.tintColor = colorWhite
         
         // MARK: NOTES BUTTON:
