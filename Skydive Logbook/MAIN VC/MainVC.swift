@@ -31,7 +31,7 @@ final class MainVC: UIViewController {
         super.viewDidLoad()
         addSubviews()
         configureConstrains()
-        configureUserInterface()
+        configureUI()
         configureTableView()
         configureGestures()
         firstMessage()
@@ -156,7 +156,7 @@ final class MainVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    private func configureUserInterface() {
+    private func configureUI() {
         // MARK: LOADING VIEW:
 
         loadingView.backgroundColor = colorBackground
@@ -202,18 +202,21 @@ final class MainVC: UIViewController {
         medicineLabel.font = fontStackView
         medicineLabel.textColor = colorWhite
         medicineLabel.textAlignment = .left
+        medicineLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: INSURANCE LABEL:
 
         insuranceLabel.font = fontStackView
         insuranceLabel.textColor = colorWhite
         insuranceLabel.textAlignment = .left
+        insuranceLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: RESERVE CANOPY LABEL:
 
         reserveCanopyLabel.font = fontStackView
         reserveCanopyLabel.textColor = colorWhite
         reserveCanopyLabel.textAlignment = .left
+        reserveCanopyLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: NOTES IMAGE:
         
@@ -229,6 +232,7 @@ final class MainVC: UIViewController {
         nicknameLabel.font = fontBoldStandart10
         nicknameLabel.textColor = colorWhite
         nicknameLabel.textAlignment = .right
+        nicknameLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: TABLE VIEW:
 
@@ -268,6 +272,10 @@ final class MainVC: UIViewController {
         mainLottie.isHidden = true
         confettiLottie.isHidden = true
         confettiButton.isHidden = true
+        stackView.isHidden = true
+        nicknameLabel.isHidden = true
+        notesImage.isHidden = true
+        notesButton.isHidden = true
 
         // MARK: ANIMATION MAIN LOTTIE:
 
@@ -320,6 +328,10 @@ final class MainVC: UIViewController {
             mainLottie.isHidden = false
             confettiLottie.isHidden = false
             confettiButton.isHidden = false
+            stackView.isHidden = false
+            nicknameLabel.isHidden = false
+            notesImage.isHidden = false
+            notesButton.isHidden = false
         }
     }
     

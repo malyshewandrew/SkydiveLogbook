@@ -105,7 +105,7 @@ final class InfoVC: UIViewController {
         // MARK: INFO TEXT LABEL:
 
         infoTextLabel.textColor = .white
-        infoTextLabel.font = .systemFont(ofSize: 8, weight: .medium, width: .standard)
+        infoTextLabel.font = fontRegularStandart8
         infoTextLabel.numberOfLines = 0
         infoTextLabel.adjustsFontSizeToFitWidth = true
         infoTextLabel.text = NSLocalizedString("Info text", comment: "")

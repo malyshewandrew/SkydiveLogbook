@@ -88,7 +88,7 @@ final class NotesVC: UIViewController {
 
         notesLottie.translatesAutoresizingMaskIntoConstraints = false
         notesLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        notesLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        notesLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         notesLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         notesLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
@@ -104,14 +104,14 @@ final class NotesVC: UIViewController {
 
         confettiButton.translatesAutoresizingMaskIntoConstraints = false
         confettiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
         // MARK: NOTE BUTTON:
 
         noteButton.translatesAutoresizingMaskIntoConstraints = false
-        noteButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 140).isActive = true
+        noteButton.topAnchor.constraint(equalTo: notesLottie.bottomAnchor, constant: 10).isActive = true
         noteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noteButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         noteButton.heightAnchor.constraint(equalTo: noteButton.widthAnchor, multiplier: 0.3).isActive = true

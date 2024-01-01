@@ -40,6 +40,7 @@ let fontStatisticMissions: UIFont = .systemFont(ofSize: 9, weight: .medium, widt
 let fontCalculatorText: UIFont = .systemFont(ofSize: 10, weight: .regular, width: .standard)
 
 
+let fontRegularStandart8: UIFont = .systemFont(ofSize: 8, weight: .regular, width: .standard)
 let fontStackView: UIFont = .systemFont(ofSize: 8, weight: .regular, width: .standard)
 let fontBoldStandart10: UIFont = .systemFont(ofSize: 10, weight: .bold, width: .standard)
 let fontRegularStandart10: UIFont = .systemFont(ofSize: 10, weight: .regular, width: .standard)
