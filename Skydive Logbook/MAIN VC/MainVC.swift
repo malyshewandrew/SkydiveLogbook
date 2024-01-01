@@ -94,13 +94,13 @@ final class MainVC: UIViewController {
         // MARK: ACCOUNT IMAGE:
 
         accountImage.translatesAutoresizingMaskIntoConstraints = false
-        accountImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        accountImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
         accountImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
 
         // MARK: ACCOUNT BUTTON:
 
         accountButton.translatesAutoresizingMaskIntoConstraints = false
-        accountButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 5).isActive = true
+        accountButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
         accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         accountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         accountButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -108,13 +108,13 @@ final class MainVC: UIViewController {
         // MARK: NOTES IMAGE:
 
         notesImage.translatesAutoresizingMaskIntoConstraints = false
-        notesImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        notesImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
         notesImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
 
         // MARK: NOTES BUTTON:
 
         notesButton.translatesAutoresizingMaskIntoConstraints = false
-        notesButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 5).isActive = true
+        notesButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
         notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         notesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         notesButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -145,7 +145,6 @@ final class MainVC: UIViewController {
         loadingLottie.layer.shadowOpacity = 0.5
         perform(#selector(hideAnimation), with: nil, afterDelay: 2) // closed loading lottie after 2.5 sec.
 
-        
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
@@ -167,7 +166,7 @@ final class MainVC: UIViewController {
 
         // MARK: ACCOUNT IMAGE:
 
-        let configuration = UIImage.SymbolConfiguration(pointSize: 30)
+        let configuration = UIImage.SymbolConfiguration(pointSize: 32)
         accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configuration)
         accountImage.tintColor = colorDarkGray
 
@@ -177,7 +176,7 @@ final class MainVC: UIViewController {
 
         // MARK: NOTES IMAGE:
 
-        notesImage.image = UIImage(systemName: "book.pages.fill", withConfiguration: configuration)
+        notesImage.image = UIImage(systemName: "book.circle.fill", withConfiguration: configuration)
         notesImage.tintColor = colorDarkGray
 
         // MARK: NOTES BUTTON:
