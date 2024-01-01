@@ -141,7 +141,7 @@ final class EditAccountVC: UIViewController {
         
         // MARK: MEDICINE:
         
-        medicineButton.setTitle("Справка до:", for: .normal)
+        medicineButton.setTitle("Медицина до:", for: .normal)
         medicineButton.backgroundColor = colorCell
         medicineButton.setTitleColor(colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop

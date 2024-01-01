@@ -13,13 +13,10 @@ final class MainVC: UIViewController {
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
-    private let stackView = UIStackView()
-    private let medicineLabel = UILabel()
-    private let insuranceLabel = UILabel()
-    private let reserveCanopyLabel = UILabel()
+    private let accountImage = UIImageView()
+    private let accountButton = UIButton()
     private let notesImage = UIImageView()
     private let notesButton = UIButton()
-    private let nicknameLabel = UILabel()
     private let tableView = UITableView()
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
@@ -35,11 +32,9 @@ final class MainVC: UIViewController {
         configureTableView()
         configureGestures()
         firstMessage()
-        configureAccount()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        configureAccount()
         firstMessage()
         tableView.reloadData()
         sortArray()
@@ -49,8 +44,7 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, stackView, notesImage, notesButton, nicknameLabel, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
-        stackView.addArrangedSubviews(medicineLabel, insuranceLabel, reserveCanopyLabel)
+        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, notesImage, notesButton, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
         loadingView.addSubview(loadingLottie)
     }
 
@@ -98,52 +92,33 @@ final class MainVC: UIViewController {
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
-        // MARK: STACK VIEW:
+        // MARK: ACCOUNT IMAGE:
 
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -2).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
-        stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
+        accountImage.translatesAutoresizingMaskIntoConstraints = false
+        accountImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        accountImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
 
-        // MARK: MEDICINE LABEL:
+        // MARK: ACCOUNT BUTTON:
 
-        medicineLabel.translatesAutoresizingMaskIntoConstraints = false
-        medicineLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
-        medicineLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        accountButton.translatesAutoresizingMaskIntoConstraints = false
+        accountButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 5).isActive = true
+        accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        accountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        accountButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
 
-        // MARK: INSURANCE LABEL:
-
-        insuranceLabel.translatesAutoresizingMaskIntoConstraints = false
-        insuranceLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
-        insuranceLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
-
-        // MARK: RESERVE CANOPY LABEL:
-
-        reserveCanopyLabel.translatesAutoresizingMaskIntoConstraints = false
-        reserveCanopyLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1).isActive = true
-        reserveCanopyLabel.heightAnchor.constraint(equalToConstant: 8).isActive = true
-        
         // MARK: NOTES IMAGE:
-        
+
         notesImage.translatesAutoresizingMaskIntoConstraints = false
-        notesImage.bottomAnchor.constraint(equalTo: nicknameLabel.topAnchor, constant: -5).isActive = true
+        notesImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
         notesImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        
+
         // MARK: NOTES BUTTON:
+
         notesButton.translatesAutoresizingMaskIntoConstraints = false
-        notesButton.bottomAnchor.constraint(equalTo: nicknameLabel.topAnchor, constant: 5).isActive = true
+        notesButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: 5).isActive = true
         notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         notesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         notesButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
-
-        // MARK: NICKNAME LABEL:
-
-        nicknameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nicknameLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -2).isActive = true
-        nicknameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        nicknameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
-        nicknameLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -172,11 +147,11 @@ final class MainVC: UIViewController {
         perform(#selector(hideAnimation), with: nil, afterDelay: 2) // closed loading lottie after 2.5 sec.
 
         // MARK: CONFETTI LOTTIE:
-        
+
         confettiLottie.layer.shadowRadius = 20
         confettiLottie.layer.shadowColor = colorBlueCG
         confettiLottie.layer.shadowOpacity = 1
-        
+
         // MARK: MAIN LOTTIE:
 
         mainLottie.play()
@@ -190,49 +165,24 @@ final class MainVC: UIViewController {
         tabBarController?.tabBar.isHidden = true
         view.backgroundColor = colorBackground
 
-        // MARK: STACK VIEW:
+        // MARK: ACCOUNT IMAGE:
 
-        stackView.axis = .vertical
-        stackView.spacing = 1
-        stackView.alignment = .bottom
-        stackView.distribution = .equalSpacing
+        let configuration = UIImage.SymbolConfiguration(pointSize: 30)
+        accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configuration)
+        accountImage.tintColor = colorDarkGray
 
-        // MARK: MEDICINE LABEL:
+        // MARK: ACCOUNT BUTTON:
 
-        medicineLabel.font = fontStackView
-        medicineLabel.textColor = colorWhite
-        medicineLabel.textAlignment = .left
-        medicineLabel.adjustsFontSizeToFitWidth = true
+        accountButton.addTarget(self, action: #selector(tapOnAccountButton), for: .touchUpInside)
 
-        // MARK: INSURANCE LABEL:
-
-        insuranceLabel.font = fontStackView
-        insuranceLabel.textColor = colorWhite
-        insuranceLabel.textAlignment = .left
-        insuranceLabel.adjustsFontSizeToFitWidth = true
-
-        // MARK: RESERVE CANOPY LABEL:
-
-        reserveCanopyLabel.font = fontStackView
-        reserveCanopyLabel.textColor = colorWhite
-        reserveCanopyLabel.textAlignment = .left
-        reserveCanopyLabel.adjustsFontSizeToFitWidth = true
-        
         // MARK: NOTES IMAGE:
-        
-        let configuration = UIImage.SymbolConfiguration(pointSize: 24)
+
         notesImage.image = UIImage(systemName: "book.pages.fill", withConfiguration: configuration)
-        notesImage.tintColor = colorWhite
-        
+        notesImage.tintColor = colorDarkGray
+
         // MARK: NOTES BUTTON:
+
         notesButton.addTarget(self, action: #selector(tapOnNotesButton), for: .touchUpInside)
-
-        // MARK: NICKNAME LABEL:
-
-        nicknameLabel.font = fontBoldStandart10
-        nicknameLabel.textColor = colorWhite
-        nicknameLabel.textAlignment = .right
-        nicknameLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: TABLE VIEW:
 
@@ -248,9 +198,72 @@ final class MainVC: UIViewController {
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
         tableView.isHidden = true
     }
-    
+
+    // MARK: - ACCOUNT ALERT:
+
+    @objc private func tapOnAccountButton() {
+        // MARK: NICKNAME:
+
+        var nickname = ""
+        if arrayAccount.count == 0 {
+            nickname = ""
+        } else {
+            if arrayAccount[0].nickname.isEmpty {
+            } else {
+                nickname = arrayAccount[0].nickname
+            }
+        }
+
+        // MARK: MEDICINE:
+
+        var medicine = ""
+        if arrayAccount.count == 0 {
+            medicine = ""
+        } else {
+            if arrayAccount[0].medicine == "" {
+            } else {
+                medicine = "Медицина до: " + arrayAccount[0].medicine + "\n"
+            }
+        }
+
+        // MARK: INSURANCE LABEL:
+
+        var insurance = ""
+        if arrayAccount.count == 0 {
+            insurance = ""
+        } else {
+            if arrayAccount[0].insurance == "" {
+            } else {
+                insurance = "Страховка до: " + arrayAccount[0].insurance + "\n"
+            }
+        }
+
+        // MARK: RESERVE CANOPY LABEL:
+
+        var reserveCanopy = ""
+        if arrayAccount.count == 0 {
+            reserveCanopy = ""
+        } else {
+            if arrayAccount[0].reserveCanopy == "" {
+            } else {
+                reserveCanopy = "Запасной до: " + arrayAccount[0].reserveCanopy
+            }
+        }
+
+        let alert = UIAlertController(title: nickname.uppercased(),
+                                      message: "\n\(medicine)\(insurance)\(reserveCanopy)",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+
+        }))
+        alert.view.backgroundColor = .black
+        alert.view.layer.masksToBounds = true
+        alert.view.layer.cornerRadius = 20
+        present(alert, animated: true)
+    }
+
     // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
-    
+
     @objc private func tapOnNotesButton() {
         let notesViewController = NotesVC()
         present(notesViewController, animated: true, completion: nil)
@@ -272,8 +285,8 @@ final class MainVC: UIViewController {
         mainLottie.isHidden = true
         confettiLottie.isHidden = true
         confettiButton.isHidden = true
-        stackView.isHidden = true
-        nicknameLabel.isHidden = true
+        accountImage.isHidden = true
+        accountButton.isHidden = true
         notesImage.isHidden = true
         notesButton.isHidden = true
 
@@ -328,68 +341,10 @@ final class MainVC: UIViewController {
             mainLottie.isHidden = false
             confettiLottie.isHidden = false
             confettiButton.isHidden = false
-            stackView.isHidden = false
-            nicknameLabel.isHidden = false
+            accountImage.isHidden = false
+            accountButton.isHidden = false
             notesImage.isHidden = false
             notesButton.isHidden = false
-        }
-    }
-    
-
-
-    // MARK: - CONFIGURE USER:
-
-    // MARK: NICKNAME LABEL:
-
-    private func configureAccount() {
-        if arrayAccount.count == 0 {
-            nicknameLabel.text = ""
-        } else {
-            if arrayAccount[0].nickname.isEmpty {
-                nicknameLabel.isHidden = true
-            } else {
-                nicknameLabel.isHidden = false
-                nicknameLabel.text = arrayAccount[0].nickname
-            }
-        }
-
-        // MARK: MEDICINE LABEL:
-
-        if arrayAccount.count == 0 {
-            medicineLabel.text = ""
-        } else {
-            if arrayAccount[0].medicine == "" {
-                medicineLabel.isHidden = true
-            } else {
-                medicineLabel.isHidden = false
-                medicineLabel.text = "Медицина до: " + arrayAccount[0].medicine
-            }
-        }
-
-        // MARK: INSURANCE LABEL:
-
-        if arrayAccount.count == 0 {
-            insuranceLabel.text = ""
-        } else {
-            if arrayAccount[0].insurance == "" {
-                insuranceLabel.isHidden = true
-            } else {
-                insuranceLabel.isHidden = false
-                insuranceLabel.text = "Страховка до: " + arrayAccount[0].insurance
-            }
-        }
-
-        // MARK: RESERVE CANOPY LABEL:
-
-        if arrayAccount.count == 0 {
-            reserveCanopyLabel.text = ""
-        } else {
-            if arrayAccount[0].reserveCanopy == "" {
-                reserveCanopyLabel.isHidden = true
-            } else {
-                reserveCanopyLabel.isHidden = false
-                reserveCanopyLabel.text = "Запасной до: " + arrayAccount[0].reserveCanopy
-            }
         }
     }
 
@@ -405,7 +360,7 @@ final class MainVC: UIViewController {
             return false
         }
     }
-        
+
     // MARK: - HELPERS:
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
@@ -414,7 +369,7 @@ final class MainVC: UIViewController {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
-    
+
     // MARK: FUNC FOR CLOSED LOADING LOTTIE:
 
     @objc private func hideAnimation() {
@@ -462,9 +417,9 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         // MARK: DELETE JUMP:
 
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
-            
+
             // MARK: DELETE JUMP:
-            
+
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
