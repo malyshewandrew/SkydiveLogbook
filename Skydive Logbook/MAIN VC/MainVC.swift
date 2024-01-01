@@ -70,7 +70,6 @@ final class MainVC: UIViewController {
         // MARK: ANIMATION MAIN LOTTIE:
 
         mainLottie.translatesAutoresizingMaskIntoConstraints = false
-        mainLottie.translatesAutoresizingMaskIntoConstraints = false
         mainLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mainLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         mainLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
@@ -146,9 +145,10 @@ final class MainVC: UIViewController {
         loadingLottie.layer.shadowOpacity = 0.5
         perform(#selector(hideAnimation), with: nil, afterDelay: 2) // closed loading lottie after 2.5 sec.
 
+        
         // MARK: CONFETTI LOTTIE:
 
-        confettiLottie.layer.shadowRadius = 20
+        confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = colorBlueCG
         confettiLottie.layer.shadowOpacity = 1
 

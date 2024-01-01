@@ -81,6 +81,12 @@ final class StatisticVC: UIViewController {
 
         statisticLottie.play()
         statisticLottie.loopMode = .autoReverse
+        
+        // MARK: CONFETTI LOTTIE:
+
+        confettiLottie.layer.shadowRadius = 15
+        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowOpacity = 1
 
         // MARK: TABLE VIEW:
 

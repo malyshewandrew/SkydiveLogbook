@@ -82,6 +82,12 @@ final class AccountVC: UIViewController {
 
         accountLottie.play()
         accountLottie.loopMode = .autoReverse
+        
+        // MARK: CONFETTI LOTTIE:
+
+        confettiLottie.layer.shadowRadius = 15
+        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowOpacity = 1
 
         // MARK: TABLE VIEW:
 

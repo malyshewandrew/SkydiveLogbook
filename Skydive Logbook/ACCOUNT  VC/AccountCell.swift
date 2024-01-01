@@ -56,7 +56,7 @@ final class AccountCell: UITableViewCell {
         // MARK: EDIT ACCOUNT:
 
         editAccountButton.translatesAutoresizingMaskIntoConstraints = false
-        editAccountButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 45).isActive = true
+        editAccountButton.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         editAccountButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         editAccountButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         editAccountButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true

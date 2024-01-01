@@ -3,7 +3,7 @@ import UIKit
 final class MainCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
-    private let cellView = UIView()
+    private let containerView = UIView()
     private let numberLabel = UILabel()
     private let dateLabel = UILabel()
     private let locationLabel = UILabel()
@@ -33,7 +33,7 @@ final class MainCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(cellView, numberLabel, dateLabel, locationLabel, aircraftLabel, canopyLabel, missionLabel, heightLabel, timeLabel, cutawayLabel, commentLabel, cellButton)
+        contentView.addSubviews(containerView, numberLabel, dateLabel, locationLabel, aircraftLabel, canopyLabel, missionLabel, heightLabel, timeLabel, cutawayLabel, commentLabel, cellButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -41,68 +41,68 @@ final class MainCell: UITableViewCell {
     private func configureConstrains() {
         // MARK: CELL VIEW:
 
-        cellView.translatesAutoresizingMaskIntoConstraints = false
-        cellView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
-        cellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
-        cellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
 
         // MARK: NUMBER LABEL:
 
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
-        numberLabel.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 8).isActive = true
-        numberLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
+        numberLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8).isActive = true
+        numberLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         numberLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        numberLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.25).isActive = true
+        numberLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
 
         // MARK: CANOPY LABEL:
 
         canopyLabel.translatesAutoresizingMaskIntoConstraints = false
-        canopyLabel.centerXAnchor.constraint(equalTo: cellView.centerXAnchor).isActive = true
-        canopyLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 5).isActive = true
+        canopyLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        canopyLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5).isActive = true
         canopyLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        canopyLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.46).isActive = true
+        canopyLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.46).isActive = true
 
         // MARK: MISSION LABEL:
 
         missionLabel.translatesAutoresizingMaskIntoConstraints = false
-        missionLabel.centerXAnchor.constraint(equalTo: cellView.centerXAnchor).isActive = true
+        missionLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         missionLabel.topAnchor.constraint(equalTo: canopyLabel.bottomAnchor, constant: 5).isActive = true
         missionLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        missionLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.46).isActive = true
+        missionLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.46).isActive = true
 
         // MARK: DATE LABEL:
 
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 2).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -8).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 2).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
         dateLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
-        dateLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.25).isActive = true
+        dateLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
 
         // MARK: LOCATION LABEL:
 
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 2).isActive = true
-        locationLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -8).isActive = true
+        locationLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
         locationLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
-        locationLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.25).isActive = true
+        locationLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
 
         // MARK: AIRCRAFT LABEL:
 
         aircraftLabel.translatesAutoresizingMaskIntoConstraints = false
         aircraftLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 2).isActive = true
-        aircraftLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -8).isActive = true
+        aircraftLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
         aircraftLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
-        aircraftLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.25).isActive = true
+        aircraftLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
 
         // MARK: HEIGHT LABEL:
 
         heightLabel.translatesAutoresizingMaskIntoConstraints = false
         heightLabel.topAnchor.constraint(equalTo: aircraftLabel.bottomAnchor, constant: 2).isActive = true
-        heightLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -8).isActive = true
+        heightLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
         heightLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
-        heightLabel.widthAnchor.constraint(equalTo: cellView.widthAnchor, multiplier: 0.25).isActive = true
-        heightLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -2).isActive = true
+        heightLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
+        heightLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -2).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -115,8 +115,8 @@ final class MainCell: UITableViewCell {
 
         // MARK: CELL VIEW:
 
-        cellView.backgroundColor = colorCell
-        cellView.layer.cornerRadius = cornerRadius10
+        containerView.backgroundColor = colorCell
+        containerView.layer.cornerRadius = cornerRadius10
 
         // MARK: NUMBER LABEL:
 

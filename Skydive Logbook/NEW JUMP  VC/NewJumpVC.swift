@@ -75,6 +75,12 @@ final class NewJumpVC: UIViewController {
         newJumpLottie.play()
         newJumpLottie.loopMode = .autoReverse
         
+        // MARK: CONFETTI LOTTIE:
+
+        confettiLottie.layer.shadowRadius = 15
+        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowOpacity = 1
+        
         // MARK: THREE TAP FOR ANIMATIONS:
 
         let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))

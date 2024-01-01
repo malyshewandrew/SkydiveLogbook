@@ -160,6 +160,12 @@ final class NotesVC: UIViewController {
 
         notesLottie.play()
         notesLottie.loopMode = .autoReverse
+        
+        // MARK: CONFETTI LOTTIE:
+
+        confettiLottie.layer.shadowRadius = 15
+        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowOpacity = 1
 
         // MARK: THREE TAP FOR ANIMATIONS:
 
