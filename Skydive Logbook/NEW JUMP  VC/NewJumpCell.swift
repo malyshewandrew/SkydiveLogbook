@@ -69,6 +69,37 @@ class NewJumpCell: UITableViewCell {
     private var player = AVAudioPlayer()
     private let saveLottie = LottieAnimationView(name: "Save")
     
+    // MARK: - LIFECYCLE:
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        addSubviews()
+        configureConstrains()
+        configureUI()
+        
+        canopyPickerView.delegate = self
+        missionPickerView.delegate = self
+        locationPickerView.delegate = self
+        aircraftPickerView.delegate = self
+        cutawayPickerView.delegate = self
+        
+        canopyPickerView.dataSource = self
+        missionPickerView.dataSource = self
+        locationPickerView.dataSource = self
+        aircraftPickerView.dataSource = self
+        cutawayPickerView.dataSource = self
+        
+        dateTextField.delegate = self
+        heightTextField.delegate = self
+        timeTextField.delegate = self
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - PRIVATE FUNCTIONS:
     
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
@@ -137,37 +168,6 @@ class NewJumpCell: UITableViewCell {
         aircraftTextField.text = ""
         cutawayTextField.text = ""
         commentTextField.text = ""
-    }
-    
-    // MARK: - LIFECYCLE:
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        addSubviews()
-        configureConstrains()
-        configureUI()
-        
-        canopyPickerView.delegate = self
-        missionPickerView.delegate = self
-        locationPickerView.delegate = self
-        aircraftPickerView.delegate = self
-        cutawayPickerView.delegate = self
-        
-        canopyPickerView.dataSource = self
-        missionPickerView.dataSource = self
-        locationPickerView.dataSource = self
-        aircraftPickerView.dataSource = self
-        cutawayPickerView.dataSource = self
-        
-        dateTextField.delegate = self
-        heightTextField.delegate = self
-        timeTextField.delegate = self
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - ADD SUBVIEWS:

@@ -11,7 +11,8 @@ final class SystemVC: UIViewController {
     private let tableView = UITableView()
     private let newSystemButton = UIButton()
     private var selectedSystem: SystemStructure?
-
+    private var indexSysytem: Int = 0
+    
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -148,12 +149,14 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemCell", for: indexPath) as? SystemCell else { return UITableViewCell() }
         let system = arraySystem[indexPath.row]
+        cell.indexPath = indexPath
         cell.configure(system)
         cell.tapEditButton = { [weak self] in 
             let editSystemViewController = EditSystemVC()
             editSystemViewController.indexPath = indexPath.row
             self?.navigationController?.pushViewController(editSystemViewController, animated: true)
         }
+        cell.delegate = self
         return cell
     }
 
@@ -179,4 +182,28 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
 //        editSystemViewController.indexPath = indexPath.row
 //        navigationController?.pushViewController(editSystemViewController, animated: true)
 //    }
+}
+
+extension SystemVC: SystemCellDelegate {
+    func tapCommentButton(_ indexPath: IndexPath) {
+        
+        var comment = ""
+        
+        if arraySystem[indexPath.row].comment == "" {
+            comment = "Комментариев нет"
+        } else {
+            comment = arraySystem[indexPath.row].comment
+        }
+
+        let alert = UIAlertController(title: "Комментарий:",
+                                      message: "\n" + comment,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+
+        }))
+        alert.view.backgroundColor = .black
+        alert.view.layer.masksToBounds = true
+        alert.view.layer.cornerRadius = 20
+        present(alert, animated: true)
+    }
 }

@@ -166,7 +166,7 @@ final class MainVC: UIViewController {
 
         // MARK: ACCOUNT IMAGE:
 
-        let configuration = UIImage.SymbolConfiguration(pointSize: 28)
+        let configuration = UIImage.SymbolConfiguration(pointSize: 24)
         accountImage.image = UIImage(systemName: "text.justify", withConfiguration: configuration)
         accountImage.tintColor = colorWhite
 

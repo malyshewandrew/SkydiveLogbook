@@ -1,9 +1,15 @@
 import UIKit
 
+protocol SystemCellDelegate {
+    func tapCommentButton(_ index: IndexPath)
+}
+
 final class SystemCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
     private let containerView = UIView()
+    private let commentImage = UIImageView()
+    private let commentButton = UIButton()
     private let editButton = UIButton()
     
     private let systemNameLabel = UILabel()
@@ -41,9 +47,9 @@ final class SystemCell: UITableViewCell {
     private let reserveCanopyDatePackLabel = UILabel()
     private let reserveCanopyExpirationDateLabel = UILabel()
     
-    private let systemCommentLabel = UILabel()
-    
     var tapEditButton: (() -> ())?
+    var delegate: SystemCellDelegate?
+    var indexPath: IndexPath?
     
     // MARK: - LIFECYCLE:
 
@@ -65,7 +71,7 @@ final class SystemCell: UITableViewCell {
 
     private func addSubviews() {
         contentView.addSubviews(containerView)
-        containerView.addSubviews(editButton, systemNameLabel,
+        containerView.addSubviews(commentImage, commentButton, editButton, systemNameLabel,
                                   
                                   containerLabel, containerNameLabel, containerSerialNumberLabel, containerDomLabel, containerServiceLifeYearsLabel, containerExpirationDateLabel,
                                   
@@ -73,8 +79,7 @@ final class SystemCell: UITableViewCell {
                                   
                                   mainCanopyLabel, mainCanopyNameLabel, mainCanopySerialNumberLabel, mainCanopyDomLabel, mainCanopyServiceLifeYearsLabel, mainCanopyServiceLifeJumpsLabel, mainCanopyCountJumpsLabel, mainCanopyExpirationDateLabel, mainCanopyRemainedCountLabel,
                                   
-                                  reserveCanopyLabel, reserveCanopyNameLabel, reserveCanopySerialNumberLabel, reserveCanopyDomLabel, reserveCanopyServiceLifeYearsLabel, reserveCanopyCountRepackLabel, reserveCanopyDatePackLabel, reserveCanopyExpirationDateLabel,
-                                  systemCommentLabel)
+                                  reserveCanopyLabel, reserveCanopyNameLabel, reserveCanopySerialNumberLabel, reserveCanopyDomLabel, reserveCanopyServiceLifeYearsLabel, reserveCanopyCountRepackLabel, reserveCanopyDatePackLabel, reserveCanopyExpirationDateLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -83,11 +88,22 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER VIEW:
 
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
+        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        
+        // MARK: COMMENT BUTTON:
+
+        commentImage.translatesAutoresizingMaskIntoConstraints = false
+        commentImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        commentImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
+        
+        commentButton.translatesAutoresizingMaskIntoConstraints = false
+        commentButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        commentButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
+        commentButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        commentButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.2).isActive = true
         
         // MARK: EDIT BUTTON:
 
@@ -272,6 +288,7 @@ final class SystemCell: UITableViewCell {
         mainCanopyRemainedCountLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
         mainCanopyRemainedCountLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.45).isActive = true
         mainCanopyRemainedCountLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        mainCanopyRemainedCountLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10).isActive = true
         
         // MARK: RESERVE CANOPY LABEL:
         
@@ -336,14 +353,6 @@ final class SystemCell: UITableViewCell {
         reserveCanopyDatePackLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
         reserveCanopyDatePackLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.45).isActive = true
         reserveCanopyDatePackLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        
-        // MARK: SYSTEM COMMENT:
-
-        systemCommentLabel.translatesAutoresizingMaskIntoConstraints = false
-        systemCommentLabel.topAnchor.constraint(equalTo: mainCanopyRemainedCountLabel.bottomAnchor, constant: 5).isActive = true
-        systemCommentLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
-        systemCommentLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
-        systemCommentLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -358,6 +367,13 @@ final class SystemCell: UITableViewCell {
 
         containerView.backgroundColor = colorTabBar
         containerView.layer.cornerRadius = 10
+        
+        // MARK: COMMENT IMAGE AND BUTTON:
+
+        let configuration = UIImage.SymbolConfiguration(pointSize: 20)
+        commentImage.image = UIImage(systemName: "info.circle", withConfiguration: configuration)
+        commentImage.tintColor = colorBlue
+        commentButton.addTarget(self, action: #selector(tapOnCommentButton), for: .touchUpInside)
         
         // MARK: EDIT BUTTON:
 
@@ -580,13 +596,6 @@ final class SystemCell: UITableViewCell {
         reserveCanopyDatePackLabel.font = fontRegularStandart12
         reserveCanopyDatePackLabel.textAlignment = .right
         reserveCanopyDatePackLabel.adjustsFontSizeToFitWidth = true
-        
-        // MARK: SYSTEM COMMENT:
-        
-        systemCommentLabel.textColor = colorWhite
-        systemCommentLabel.font = fontRegularStandart10
-        systemCommentLabel.textAlignment = .center
-        systemCommentLabel.adjustsFontSizeToFitWidth = true
     }
         
     // MARK: - HELPERS:
@@ -620,7 +629,6 @@ final class SystemCell: UITableViewCell {
         reserveCanopyCountRepackLabel.text = "Переукладок: " + system.reserveCanopy.countRepack + "/" + system.reserveCanopy.serviceLifeYears
         reserveCanopyDatePackLabel.text = "Уложен: " + system.reserveCanopy.datePack
         reserveCanopyExpirationDateLabel.text = "Годен до: " + setReserveCanopyExpirationDate(system)
-        systemCommentLabel.text = system.comment
     }
     
     // MARK: CONTAINER SERVICE LIFE YEARS:
@@ -725,5 +733,10 @@ final class SystemCell: UITableViewCell {
     
     @objc private func tapOnEditButton() {
         tapEditButton?()
+    }
+    
+    @objc private func tapOnCommentButton() {
+        guard let indexPath = indexPath else { return }
+        delegate?.tapCommentButton(indexPath)
     }
 }
