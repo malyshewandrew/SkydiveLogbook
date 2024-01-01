@@ -102,8 +102,8 @@ final class SystemCell: UITableViewCell {
         commentButton.translatesAutoresizingMaskIntoConstraints = false
         commentButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
         commentButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
-        commentButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        commentButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.2).isActive = true
+        commentButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        commentButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.10).isActive = true
         
         // MARK: EDIT BUTTON:
 
