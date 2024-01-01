@@ -166,9 +166,9 @@ final class MainVC: UIViewController {
 
         // MARK: ACCOUNT IMAGE:
 
-        let configuration = UIImage.SymbolConfiguration(pointSize: 32)
-        accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configuration)
-        accountImage.tintColor = colorDarkGray
+        let configuration = UIImage.SymbolConfiguration(pointSize: 28)
+        accountImage.image = UIImage(systemName: "text.justify", withConfiguration: configuration)
+        accountImage.tintColor = colorWhite
 
         // MARK: ACCOUNT BUTTON:
 
@@ -176,8 +176,8 @@ final class MainVC: UIViewController {
 
         // MARK: NOTES IMAGE:
 
-        notesImage.image = UIImage(systemName: "book.circle.fill", withConfiguration: configuration)
-        notesImage.tintColor = colorDarkGray
+        notesImage.image = UIImage(systemName: "text.justify.leading", withConfiguration: configuration)
+        notesImage.tintColor = colorWhite
 
         // MARK: NOTES BUTTON:
 

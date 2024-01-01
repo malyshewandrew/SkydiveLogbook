@@ -4,6 +4,8 @@ final class SystemCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
     private let containerView = UIView()
+    private let editButton = UIButton()
+    
     private let systemNameLabel = UILabel()
     
     private let containerLabel = UILabel()
@@ -41,6 +43,8 @@ final class SystemCell: UITableViewCell {
     
     private let systemCommentLabel = UILabel()
     
+    var tapEditButton: (() -> ())?
+    
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -61,7 +65,7 @@ final class SystemCell: UITableViewCell {
 
     private func addSubviews() {
         contentView.addSubviews(containerView)
-        containerView.addSubviews(systemNameLabel,
+        containerView.addSubviews(editButton, systemNameLabel,
                                   
                                   containerLabel, containerNameLabel, containerSerialNumberLabel, containerDomLabel, containerServiceLifeYearsLabel, containerExpirationDateLabel,
                                   
@@ -84,6 +88,14 @@ final class SystemCell: UITableViewCell {
         containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        
+        // MARK: EDIT BUTTON:
+
+        editButton.translatesAutoresizingMaskIntoConstraints = false
+        editButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5).isActive = true
+        editButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5).isActive = true
+        editButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        editButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.2).isActive = true
         
         // MARK: SYSTEM NAME:
         
@@ -346,6 +358,12 @@ final class SystemCell: UITableViewCell {
 
         containerView.backgroundColor = colorTabBar
         containerView.layer.cornerRadius = 10
+        
+        // MARK: EDIT BUTTON:
+
+        editButton.setTitle(NSLocalizedString("Edit", comment: ""), for: .normal)
+        editButton.setTitleColor(colorBlue, for: .normal)
+        editButton.addTarget(self, action: #selector(tapOnEditButton), for: .touchUpInside)
         
         // MARK: SYSTEM NAME:
         
@@ -703,5 +721,9 @@ final class SystemCell: UITableViewCell {
             }
         }
         return expirationDateReserveCanopy
+    }
+    
+    @objc private func tapOnEditButton() {
+        tapEditButton?()
     }
 }

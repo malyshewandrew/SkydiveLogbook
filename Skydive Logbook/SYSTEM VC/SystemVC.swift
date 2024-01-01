@@ -22,7 +22,7 @@ final class SystemVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SystemCell.self, forCellReuseIdentifier: "SystemCell")
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
     }
@@ -86,7 +86,7 @@ final class SystemVC: UIViewController {
 
     private func configureUI() {
         view.backgroundColor = colorBackground
-        
+                
         // MARK: ANIMATIONS:
 
         systemLottie.play()
@@ -149,6 +149,11 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemCell", for: indexPath) as? SystemCell else { return UITableViewCell() }
         let system = arraySystem[indexPath.row]
         cell.configure(system)
+        cell.tapEditButton = { [weak self] in 
+            let editSystemViewController = EditSystemVC()
+            editSystemViewController.indexPath = indexPath.row
+            self?.navigationController?.pushViewController(editSystemViewController, animated: true)
+        }
         return cell
     }
 
@@ -169,9 +174,9 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     // MARK: TRANSITION ON EDIT VIEW CONTROLLER:
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let editSystemViewController = EditSystemVC()
-        editSystemViewController.indexPath = indexPath.row
-        navigationController?.pushViewController(editSystemViewController, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let editSystemViewController = EditSystemVC()
+//        editSystemViewController.indexPath = indexPath.row
+//        navigationController?.pushViewController(editSystemViewController, animated: true)
+//    }
 }
