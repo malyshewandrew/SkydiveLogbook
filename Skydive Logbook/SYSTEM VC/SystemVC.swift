@@ -23,12 +23,13 @@ final class SystemVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SystemCell.self, forCellReuseIdentifier: "SystemCell")
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
         tableView.reloadData()
     }
 
