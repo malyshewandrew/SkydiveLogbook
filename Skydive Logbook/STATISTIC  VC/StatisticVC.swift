@@ -418,33 +418,44 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE FIRST:
 
     func tapDateFirstButton() {
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-
-        if let jumpDateString = arrayJumps.first?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
-            let userCalendar = Calendar.current
-            let dayMonthYearPassed = userCalendar.dateComponents([.day, .month, .year], from: jumpDate, to: currentDate)
-
-            guard let year = dayMonthYearPassed.year,
-                  let month = dayMonthYearPassed.month,
-                  let day = dayMonthYearPassed.day else { return }
-
-            var message = ""
-            if arrayJumps.count == 0 {
-                message = "\n" + NSLocalizedString("no jumps", comment: "")
-            } else {
-                message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))"
-            }
-
+        if arrayJumps.count == 0 {
             let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
-                                          message: message,
+                                          message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alert.view.backgroundColor = .black
             alert.view.layer.masksToBounds = true
             alert.view.layer.cornerRadius = 20
             present(alert, animated: true)
+        } else {
+            let currentDate = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+
+            if let jumpDateString = arrayJumps.first?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
+                let userCalendar = Calendar.current
+                let dayMonthYearPassed = userCalendar.dateComponents([.day, .month, .year], from: jumpDate, to: currentDate)
+
+                guard let year = dayMonthYearPassed.year,
+                      let month = dayMonthYearPassed.month,
+                      let day = dayMonthYearPassed.day else { return }
+
+                var message = ""
+                if arrayJumps.count == 0 {
+                    message = "\n" + NSLocalizedString("no jumps", comment: "")
+                } else {
+                    message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))"
+                }
+
+                let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
+                                              message: message,
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+                alert.view.backgroundColor = .black
+                alert.view.layer.masksToBounds = true
+                alert.view.layer.cornerRadius = 20
+                present(alert, animated: true)
+            }
         }
     }
 
@@ -481,28 +492,39 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE LAST:
 
     func tapDateLastButton() {
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-
-        if let jumpDateString = arrayJumps.last?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
-            let userCalendar = Calendar.current
-            let dayMonthYearPassed = userCalendar.dateComponents([.day, .month, .year], from: jumpDate, to: currentDate)
-
-            guard let year = dayMonthYearPassed.year,
-                  let month = dayMonthYearPassed.month,
-                  let day = dayMonthYearPassed.day else { return }
-
-            let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
-                                          message: """
-                                          \n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))
-                                          """,
+        if arrayJumps.count == 0 {
+            let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
+                                          message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alert.view.backgroundColor = .black
             alert.view.layer.masksToBounds = true
             alert.view.layer.cornerRadius = 20
             present(alert, animated: true)
+        } else {
+            let currentDate = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+
+            if let jumpDateString = arrayJumps.last?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
+                let userCalendar = Calendar.current
+                let dayMonthYearPassed = userCalendar.dateComponents([.day, .month, .year], from: jumpDate, to: currentDate)
+
+                guard let year = dayMonthYearPassed.year,
+                      let month = dayMonthYearPassed.month,
+                      let day = dayMonthYearPassed.day else { return }
+
+                let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
+                                              message: """
+                                              \n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))
+                                              """,
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+                alert.view.backgroundColor = .black
+                alert.view.layer.masksToBounds = true
+                alert.view.layer.cornerRadius = 20
+                present(alert, animated: true)
+            }
         }
     }
 
