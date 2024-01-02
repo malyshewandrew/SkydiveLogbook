@@ -202,7 +202,7 @@ final class MainVC: UIViewController {
 
     @objc private func tapOnAccountButton() {
         // MARK: NICKNAME:
-
+        
         var nickname = ""
         if arrayAccount.count == 0 {
             nickname = ""
@@ -212,9 +212,9 @@ final class MainVC: UIViewController {
                 nickname = arrayAccount[0].nickname
             }
         }
-
+        
         // MARK: MEDICINE:
-
+        
         var medicine = ""
         if arrayAccount.count == 0 {
             medicine = ""
@@ -224,9 +224,9 @@ final class MainVC: UIViewController {
                 medicine = "Медицина до: " + arrayAccount[0].medicine + "\n"
             }
         }
-
+        
         // MARK: INSURANCE LABEL:
-
+        
         var insurance = ""
         if arrayAccount.count == 0 {
             insurance = ""
@@ -236,9 +236,9 @@ final class MainVC: UIViewController {
                 insurance = "Страховка до: " + arrayAccount[0].insurance + "\n"
             }
         }
-
+        
         // MARK: RESERVE CANOPY LABEL:
-
+        
         var reserveCanopy = ""
         if arrayAccount.count == 0 {
             reserveCanopy = ""
@@ -248,17 +248,31 @@ final class MainVC: UIViewController {
                 reserveCanopy = "Запасной до: " + arrayAccount[0].reserveCanopy
             }
         }
-
-        let alert = UIAlertController(title: nickname.uppercased(),
-                                      message: "\n\(medicine)\(insurance)\(reserveCanopy)",
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-
-        }))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
-        present(alert, animated: true)
+        
+        if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
+            let alert = UIAlertController(title: "Данные не внесены",
+                                          message: "\nДля заполнения перейдите в раздел \"Аккаунт\"",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+                
+            }))
+            alert.view.backgroundColor = .black
+            alert.view.layer.masksToBounds = true
+            alert.view.layer.cornerRadius = 20
+            present(alert, animated: true)
+        } else {
+            
+            let alert = UIAlertController(title: nickname.uppercased(),
+                                          message: "\n\(medicine)\(insurance)\(reserveCanopy)",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+                
+            }))
+            alert.view.backgroundColor = .black
+            alert.view.layer.masksToBounds = true
+            alert.view.layer.cornerRadius = 20
+            present(alert, animated: true)
+        }
     }
 
     // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:

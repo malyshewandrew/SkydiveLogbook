@@ -81,7 +81,7 @@ final class StatisticVC: UIViewController {
 
         statisticLottie.play()
         statisticLottie.loopMode = .autoReverse
-        
+
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
@@ -139,7 +139,9 @@ extension StatisticVC: StatisticCellDelegate {
 
         var timeMessage = ""
         switch sumTime {
-        case 0...150:
+        case 0...1:
+            timeMessage = ""
+        case 1...150:
             timeMessage = "Наберись еще опыта (0 - 2,5 минут)"
         case 150...300:
             timeMessage = "Время одной музыкальной композиции (2,5 - 5 минут)"
@@ -195,6 +197,8 @@ extension StatisticVC: StatisticCellDelegate {
         }
         var heightMessage = "Придумать"
         switch sumHeight {
+        case 0...1:
+            heightMessage = ""
         case 0...150:
             heightMessage = "Придумать"
         case 150...300:
@@ -203,13 +207,20 @@ extension StatisticVC: StatisticCellDelegate {
             heightMessage = "Придумать"
         }
 
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = """
+            \nСуммарная высота \(sumHeight) м.
+            \(heightMessage)\n
+            \nВремя свободнго падения: \(sumTime) c.
+            \(timeMessage)\n
+            """
+        }
+
         let alert = UIAlertController(title: NSLocalizedString("General info", comment: "") + ":",
-                                      message: """
-                                      \nСуммарная высота \(sumHeight) м.
-                                      \(heightMessage)\n
-                                      \nВремя свободнго падения: \(sumTime) c.
-                                      \(timeMessage)\n
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -279,8 +290,12 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        for (year, count) in yearsCount.sorted(by: { $0 > $1 }) {
-            message += "\(year) \(NSLocalizedString("year", comment: "")): \(count)\n"
+        if arrayJumps.count == 0 {
+            message = NSLocalizedString("no jumps", comment: "")
+        } else {
+            for (year, count) in yearsCount.sorted(by: { $0 > $1 }) {
+                message += "\(year) \(NSLocalizedString("year", comment: "")): \(count)\n"
+            }
         }
 
         let alert = UIAlertController(title: NSLocalizedString("jumps by year", comment: "") + ":",
@@ -321,8 +336,15 @@ extension StatisticVC: StatisticCellDelegate {
             }
         }
 
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = "\n\(NSLocalizedString("Maximum height alert", comment: "")): \(maxHeightDate)"
+        }
+
         let alert = UIAlertController(title: NSLocalizedString("Maximum height", comment: "") + ":",
-                                      message: "\n\(NSLocalizedString("Maximum height alert", comment: "")): \(maxHeightDate)",
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -340,17 +362,21 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var averageHeight = 0
-
         if arrayJumps.count == 0 {
             averageHeight = 0
         } else {
             averageHeight = sumAverageHeight / arrayJumps.count
         }
 
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = "\n\(NSLocalizedString("Average height", comment: "")): \(averageHeight) \(NSLocalizedString("m.", comment: ""))"
+        }
+
         let alert = UIAlertController(title: "Средняя высота",
-                                      message: """
-                                      \n\(NSLocalizedString("Average height", comment: "")): \(averageHeight) \(NSLocalizedString("m.", comment: ""))
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -372,8 +398,15 @@ extension StatisticVC: StatisticCellDelegate {
             }
         }
 
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = "\n\(NSLocalizedString("Minimum height alert", comment: "")): \(minHeightDate)"
+        }
+
         let alert = UIAlertController(title: NSLocalizedString("Minimum height", comment: "") + ":",
-                                      message: "\n\(NSLocalizedString("Minimum height alert", comment: "")): \(minHeightDate)",
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -397,10 +430,15 @@ extension StatisticVC: StatisticCellDelegate {
                   let month = dayMonthYearPassed.month,
                   let day = dayMonthYearPassed.day else { return }
 
+            var message = ""
+            if arrayJumps.count == 0 {
+                message = "\n" + NSLocalizedString("no jumps", comment: "")
+            } else {
+                message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))"
+            }
+
             let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
-                                          message: """
-                                          \n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))
-                                          """,
+                                          message: message,
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alert.view.backgroundColor = .black
@@ -423,8 +461,15 @@ extension StatisticVC: StatisticCellDelegate {
             }
         }
 
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = "\n\(NSLocalizedString("Maximum time alert", comment: "")): \(maxTimeDate)"
+        }
+
         let alert = UIAlertController(title: NSLocalizedString("Maximum time", comment: "") + ":",
-                                      message: "\n\(NSLocalizedString("Maximum time alert", comment: "")): \(maxTimeDate)",
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -466,7 +511,6 @@ extension StatisticVC: StatisticCellDelegate {
     func tapMaxDayButton() {
         var jumpsMaxDay: [String: Int] = [:]
         var dayWithMostJumps = ""
-        var numberOfJumps = 0
 
         for jump in arrayJumps {
             if let count = jumpsMaxDay[jump.date] {
@@ -478,17 +522,19 @@ extension StatisticVC: StatisticCellDelegate {
 
         if let maxDay = jumpsMaxDay.max(by: { $0.value < $1.value }) {
             dayWithMostJumps = maxDay.key
-            numberOfJumps = maxDay.value
         } else {
             dayWithMostJumps = ""
-            numberOfJumps = 0
+        }
+
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = "\n\(NSLocalizedString("Max count of jumps text", comment: "")): \(dayWithMostJumps)"
         }
 
         let alert = UIAlertController(title: NSLocalizedString("Max in one day", comment: "") + ":",
-                                      message: """
-                                      \n\(NSLocalizedString("Max count of jumps", comment: "")): \(numberOfJumps)
-                                      \n\(NSLocalizedString("Max count of jumps text", comment: "")): \(dayWithMostJumps)
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -506,17 +552,21 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var averageTime = 0
-
         if arrayJumps.count == 0 {
             averageTime = 0
         } else {
             averageTime = sumAverageTime / arrayJumps.count
         }
 
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = " \n\(NSLocalizedString("Average time", comment: "")): \(averageTime) \(NSLocalizedString("s.", comment: ""))"
+        }
+
         let alert = UIAlertController(title: "Среднее время:",
-                                      message: """
-                                      \n\(NSLocalizedString("Average time", comment: "")): \(averageTime) \(NSLocalizedString("s.", comment: ""))
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -540,11 +590,19 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         let resultString = dataWithCutawayYes.map { "\($0.date)\n\($0.comment)" }.joined(separator: "\n\n")
+
+        var message = ""
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            message = """
+            \n\(NSLocalizedString("Сount of cutaways", comment: "")): \(countCutaway)\n
+            \(resultString)
+            """
+        }
+
         let alert = UIAlertController(title: NSLocalizedString("CutawayStatistic", comment: "") + ":",
-                                      message: """
-                                      \n\(NSLocalizedString("Сount of cutaways", comment: "")): \(countCutaway)\n
-                                      \(resultString)
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -572,14 +630,16 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        for (aircraft, count) in aircraftCount.sorted(by: { $0.value > $1.value }) {
-            message += "\(aircraft): \(count)\n"
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            for (aircraft, count) in aircraftCount.sorted(by: { $0.value > $1.value }) {
+                message += "\n\(aircraft): \(count)\n"
+            }
         }
 
         let alert = UIAlertController(title: NSLocalizedString("List aircrafts", comment: "") + ":",
-                                      message: """
-                                      \n\(message)
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -607,14 +667,16 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        for (canopy, count) in canopyCount.sorted(by: { $0.value > $1.value }) {
-            message += "\(canopy): \(count)\n"
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            for (canopy, count) in canopyCount.sorted(by: { $0.value > $1.value }) {
+                message += "\n\(canopy): \(count)\n"
+            }
         }
 
         let alert = UIAlertController(title: NSLocalizedString("List canopies", comment: "") + ":",
-                                      message: """
-                                      \n\(message)
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black
@@ -642,15 +704,16 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-
-        for (location, count) in locationCount.sorted(by: { $0.value > $1.value }) {
-            message += "\(location): \(count)\n"
+        if arrayJumps.count == 0 {
+            message = "\n" + NSLocalizedString("no jumps", comment: "")
+        } else {
+            for (location, count) in locationCount.sorted(by: { $0.value > $1.value }) {
+                message += "\n\(location): \(count)\n"
+            }
         }
 
         let alert = UIAlertController(title: NSLocalizedString("List locations", comment: "") + ":",
-                                      message: """
-                                      \n\(message)
-                                      """,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.backgroundColor = .black

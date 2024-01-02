@@ -41,7 +41,7 @@
 
 // MARK: - Main:
 
-"First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the 'Add' section.\n\nTo add your own locations, aircraft and parachutes, go to the 'Account' section.\n\nEnjoy your use and safe jumps!\n";
+"First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Account\" section.\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
 "This action cannot be undone." = "This action cannot be undone.";
 
@@ -57,8 +57,9 @@
 
 // MARK: - Statistic:
 
+"no jumps" = "To display statistics, you need to make at least one jump.";
 "saving data" = "Saving data";
-"saving data text" = "In order not to lose all recorded jumps, make a backup copy periodically in the Account section. Especially when changing the device.";
+"saving data text" = "To save your complete jump history, it is recommended that you periodically create backups in the \"Account\" section. \nThis is especially important when switching to a new device.";
 "jumps by year" = "Jumps by year";
 "year" = "year";
 "Categories USPA" = "Categories USPA";
