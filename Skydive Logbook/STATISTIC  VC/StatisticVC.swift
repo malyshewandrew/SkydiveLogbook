@@ -493,7 +493,7 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapDateLastButton() {
         if arrayJumps.count == 0 {
-            let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
+            let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
