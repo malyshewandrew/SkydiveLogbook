@@ -15,6 +15,7 @@ final class NewSystemVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
+        configureNotificationCenter()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NewSystemCell.self, forCellReuseIdentifier: "NewSystemCell")
@@ -69,6 +70,38 @@ final class NewSystemVC: UIViewController {
         
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
+    }
+    
+    // MARK: - NOTIFICATION CENTER:
+
+    // MARK: UP AND DOWN KEYBOARD:
+
+    private func configureNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    // MARK: KEYBOARD UP:
+
+    @objc private func keyboardShow(_ notification: Notification) {
+        if let keyboardSize = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.cgRectValue.height, right: 0)
+            tableView.contentInset = contentInsets
+            tableView.scrollIndicatorInsets = contentInsets
+            UIView.animate(withDuration: CATransaction.animationDuration()) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+
+    // MARK: KEYBOARD DOWN:
+
+    @objc private func keyboardHide() {
+        tableView.contentInset = .zero
+        tableView.scrollIndicatorInsets = .zero
+        UIView.animate(withDuration: CATransaction.animationDuration()) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     // MARK: - MANUAL ALERT:

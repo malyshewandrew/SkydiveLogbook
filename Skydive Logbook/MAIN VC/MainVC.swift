@@ -250,7 +250,7 @@ final class MainVC: UIViewController {
         }
         
         if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
-            let alert = UIAlertController(title: "Данные не внесены",
+            let alert = UIAlertController(title: "Аккаунт",
                                           message: "\nДля заполнения перейдите в раздел \"Аккаунт\"",
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in

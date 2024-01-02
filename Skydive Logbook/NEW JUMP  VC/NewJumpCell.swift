@@ -101,7 +101,7 @@ class NewJumpCell: UITableViewCell {
     }
     
     // MARK: - PRIVATE FUNCTIONS:
-    
+        
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
     private func actionButtonSaveGreenColor() {

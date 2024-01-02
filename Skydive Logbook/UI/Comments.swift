@@ -1,29 +1,29 @@
 import Foundation
 
-/*
-MARK: - ПОДНЯТИЕ ЯЧЕЙКИ ДЛЯ ВВОДА КОММЕНТАРИЯ:
- file NewJump
- 
- viewDidLoad:
 
- NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
- NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+//MARK: - ПОДНЯТИЕ ЯЧЕЙКИ ДЛЯ ВВОДА КОММЕНТАРИЯ:
+// file NewJump
+// 
+// viewDidLoad:
+//
+// NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+// NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+// 
+// AFTER CLASS:
+// // MARK: - ПОДНЯТИЕ ЯЧЕЙКИ ДЛЯ ВВОДА КОММЕНТАРИЯ:
+// @objc func keyboardWillShow(notification: Notification) {
+//     if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+//         tableView.contentInset = contentInsets
+//         tableView.scrollIndicatorInsets = contentInsets
+//     }
+// }
+// 
+// @objc func keyboardWillHide(notification: Notification) {
+//     tableView.contentInset = .zero
+//     tableView.scrollIndicatorInsets = .zero
+// }
  
- AFTER CLASS:
- // MARK: - ПОДНЯТИЕ ЯЧЕЙКИ ДЛЯ ВВОДА КОММЕНТАРИЯ:
- @objc func keyboardWillShow(notification: Notification) {
-     if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-         tableView.contentInset = contentInsets
-         tableView.scrollIndicatorInsets = contentInsets
-     }
- }
- 
- @objc func keyboardWillHide(notification: Notification) {
-     tableView.contentInset = .zero
-     tableView.scrollIndicatorInsets = .zero
- }
- */
 
 /*
  // MARK: - ЧЕРЕЗ FOR EACH:
