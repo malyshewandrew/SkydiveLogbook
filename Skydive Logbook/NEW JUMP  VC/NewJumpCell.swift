@@ -84,15 +84,15 @@ class NewJumpCell: UITableViewCell {
         aircraftPickerView.delegate = self
         cutawayPickerView.delegate = self
         
+        dateTextField.delegate = self
+        heightTextField.delegate = self
+        timeTextField.delegate = self
+        
         canopyPickerView.dataSource = self
         missionPickerView.dataSource = self
         locationPickerView.dataSource = self
         aircraftPickerView.dataSource = self
         cutawayPickerView.dataSource = self
-        
-        dateTextField.delegate = self
-        heightTextField.delegate = self
-        timeTextField.delegate = self
     }
     
     @available(*, unavailable)

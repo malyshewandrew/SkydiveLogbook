@@ -4,7 +4,7 @@ import Lottie
 import UIKit
 
 class JumpCell: UITableViewCell {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
     
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let circleAirplaneLottie = LottieAnimationView(name: "CircleAirplane")
@@ -26,19 +26,6 @@ class JumpCell: UITableViewCell {
     private let commentLabel = UILabel()
     private let vibrationOn = Vibration()
     private var statusAnimation: Bool = false
-    
-    // MARK: - PRIVATE FUNCTIONS:
-    
-    private func playCircleAnimation() {
-        confettiLottie.play()
-        circleAirplaneLottie.isHidden = false
-        circleAirplaneLottie.play()
-        circleAirplaneLottie.loopMode = .loop
-        vibrationOn.vibrationSucces()
-        UIView.animate(withDuration: 2.0, animations: {
-            self.circleAirplaneLottie.alpha = 1.0
-        })
-    }
     
     // MARK: - LIFECYCLE:
 
@@ -206,8 +193,8 @@ class JumpCell: UITableViewCell {
     private func configureUI() {
         // MARK: VIEW:
 
-        contentView.backgroundColor = colorBackground
         selectionStyle = .none
+        contentView.backgroundColor = colorBackground
         
         // MARK: ANIMATIONS:
         
@@ -360,20 +347,7 @@ class JumpCell: UITableViewCell {
         commentLabel.adjustsFontSizeToFitWidth = true
     }
     
-    // MARK: - FUNC FOR TAP ON CIRCLE BUTTON:
-    
-    @objc private func tapOnCircleAnimationButton() {
-        if statusAnimation == false {
-            playCircleAnimation()
-        } else {
-            UIView.animate(withDuration: 1.0, animations: {
-                self.circleAirplaneLottie.alpha = 0.0
-            })
-        }
-        statusAnimation.toggle()
-    }
-    
-    // MARK: - FUNC FOR CONFIGURE IN TABLE VIEW:
+    // MARK: - CONFIGURE:
 
     func configure(number: String, date: String, location: String, aircraft: String, canopy: String, mission: String, height: String, time: String, cutaway: String, comment: String) {
         circleButton.setTitle(number, for: .normal)
@@ -387,7 +361,11 @@ class JumpCell: UITableViewCell {
         commentLabel.text = comment
         if commentLabel.text == "" {
             commentButton.isHidden = true
+            heightButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        } else {
+            commentButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         }
+        // MARK: COLOR FOR CIRCLE (GREEN / RED):
         if cutaway == NSLocalizedString("Yes", comment: "") {
             circleButton.layer.shadowRadius = 25
             circleButton.layer.shadowColor = colorRedCG
@@ -397,5 +375,36 @@ class JumpCell: UITableViewCell {
             circleButton.layer.shadowColor = colorSystemGreenCG
             circleButton.layer.shadowOpacity = 0.5
         }
+    }
+    
+    // MARK: - HELPERS:
+    
+    // MARK: FUNC FOR TAP ON CIRCLE BUTTON:
+    
+    @objc private func tapOnCircleAnimationButton() {
+        if statusAnimation == false {
+            playCircleAnimation()
+        } else {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.circleAirplaneLottie.alpha = 0.0
+            })
+        }
+        statusAnimation.toggle()
+    }
+    
+    // MARK: PLAY CIRCLE ANIMATION:
+    
+    private func playCircleAnimation() {
+        confettiLottie.play()
+        confettiLottie.layer.shadowRadius = 10
+        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowOpacity = 1
+        circleAirplaneLottie.isHidden = false
+        circleAirplaneLottie.play()
+        circleAirplaneLottie.loopMode = .loop
+        vibrationOn.vibrationSucces()
+        UIView.animate(withDuration: 2.0, animations: {
+            self.circleAirplaneLottie.alpha = 1.0
+        })
     }
 }

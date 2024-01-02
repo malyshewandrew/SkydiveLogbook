@@ -16,52 +16,6 @@ final class NotesVC: UIViewController {
     private let tableView = UITableView()
     private var player = AVAudioPlayer()
 
-    // MARK: - PRIVATE FUNCTIONS:
-
-    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
-
-    private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
-        }
-    }
-
-    private func actionButtonSaveRedColor() {
-        saveButton.backgroundColor = colorRed
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
-        }
-    }
-
-    private func actionButtonCleanChangeColor() {
-        cleanButton.backgroundColor = colorGreen
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.cleanButton.backgroundColor = colorTabBar
-        }
-    }
-
-    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
-
-    private func playSoundSucces() {
-        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
-        guard let url = url else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        player.play()
-    }
-    
-    // MARK: SAVE AND ADD NEW NOTE IN ARRAYNOTES:
-    
-    private func saveNewNote() {
-        arrayNotes.append(noteTextView.text ?? "")
-        actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
-        noteTextView.resignFirstResponder()
-        noteTextView.text = ""
-        tableView.reloadData()
-        playSoundSucces()
-    }
-
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -69,10 +23,8 @@ final class NotesVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(NotesCell.self, forCellReuseIdentifier: "NotesCell")
-        navigationController?.navigationBar.isHidden = true
+        configureTableView()
+        configureGestures()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -156,22 +108,20 @@ final class NotesVC: UIViewController {
 
         view.backgroundColor = colorBackground
 
+        // MARK: NAVIGATION CONTROLLER:
+
+        navigationController?.navigationBar.isHidden = true
+
         // MARK: ANIMATIONS:
 
         notesLottie.play()
         notesLottie.loopMode = .autoReverse
-        
+
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = colorBlueCG
         confettiLottie.layer.shadowOpacity = 1
-
-        // MARK: THREE TAP FOR ANIMATIONS:
-
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(playConfetti))
-        confettiGesture.numberOfTapsRequired = 3
-        confettiButton.addGestureRecognizer(confettiGesture)
 
         // MARK: NOTE BUTTON:
 
@@ -207,25 +157,45 @@ final class NotesVC: UIViewController {
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius10
         cleanButton.addTarget(self, action: #selector(tapClean), for: .touchUpInside)
+    }
 
-        // MARK: TABLE VIEW:
+    // MARK: - CONFIGURE TABLE VIEW:
 
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(NotesCell.self, forCellReuseIdentifier: "NotesCell")
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
+    }
 
+    // MARK: - CONFIGURE GESTURES:
+
+    private func configureGestures() {
         // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         view.addGestureRecognizer(tapGesture)
+
+        // MARK: THREE TAP FOR ANIMATIONS:
+
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(playConfetti))
+        confettiGesture.numberOfTapsRequired = 3
+        confettiButton.addGestureRecognizer(confettiGesture)
     }
 
     // MARK: - HELPERS:
 
-    // MARK: FUNC FOR CONFETTI + VIBRATION:
+    // MARK: SAVE AND ADD NEW NOTE IN ARRAY NOTES:
 
-    @objc private func playConfetti() {
+    private func saveNewNote() {
+        arrayNotes.append(noteTextView.text ?? "")
+        actionButtonSaveGreenColor()
         vibrationOn.vibrationSucces()
-        confettiLottie.play()
+        noteTextView.resignFirstResponder()
+        noteTextView.text = ""
+        tableView.reloadData()
+        playSoundSucces()
     }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
@@ -247,6 +217,45 @@ final class NotesVC: UIViewController {
         vibrationOn.vibrationSucces()
         tableView.reloadData()
         noteTextView.resignFirstResponder()
+    }
+
+    // MARK: FUNC FOR CONFETTI + VIBRATION:
+
+    @objc private func playConfetti() {
+        vibrationOn.vibrationSucces()
+        confettiLottie.play()
+    }
+
+    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
+
+    private func actionButtonSaveGreenColor() {
+        saveButton.backgroundColor = colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = colorCell
+        }
+    }
+
+    private func actionButtonSaveRedColor() {
+        saveButton.backgroundColor = colorRed
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = colorCell
+        }
+    }
+
+    private func actionButtonCleanChangeColor() {
+        cleanButton.backgroundColor = colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.cleanButton.backgroundColor = colorTabBar
+        }
+    }
+
+    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
+
+    private func playSoundSucces() {
+        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
+        guard let url = url else { return }
+        player = try! AVAudioPlayer(contentsOf: url)
+        player.play()
     }
 
     // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:

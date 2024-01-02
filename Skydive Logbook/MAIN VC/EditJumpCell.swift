@@ -75,69 +75,6 @@ class EditJumpCell: UITableViewCell {
     // Delegate:
     var delegate: EditJumpCellDelegate?
     
-    // MARK: - PRIVATE FUNCTIONS:
-    
-    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
-
-    private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
-        }
-    }
-    
-    private func actionButtonSaveRedColor() {
-        saveButton.backgroundColor = colorRed
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
-        }
-    }
-    
-    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
-
-    private func playSoundSucces() {
-        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
-        guard let url = url else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        player.play()
-    }
-    
-    // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
-
-    private func saveNewJump() {
-        let newJump = JumpStructure(date: dateTextField.text ?? "", location: locationTextField.text ?? "", aircraft: aircraftTextField.text ?? "", canopy: canopyTextField.text ?? "", mission: missionTextField.text ?? "", height: heightTextField.text ?? "", time: timeTextField.text ?? "", cutaway: cutawayTextField.text ?? "", comment: commentTextField.text ?? "")
-        
-        delegate?.saveJump(newJump)
-    }
-    
-    // MARK: CLOSE ALL TEXT FIELDS:
-    
-    private func resignFirstResponders() {
-        dateTextField.resignFirstResponder()
-        canopyTextField.resignFirstResponder()
-        missionTextField.resignFirstResponder()
-        heightTextField.resignFirstResponder()
-        timeTextField.resignFirstResponder()
-        locationTextField.resignFirstResponder()
-        aircraftTextField.resignFirstResponder()
-        cutawayTextField.resignFirstResponder()
-        commentTextField.resignFirstResponder()
-    }
-    
-    // MARK: CLEAR ALL TEXT FIELDS:
-    
-    private func clearTextViews() {
-        dateTextField.text = ""
-        canopyTextField.text = ""
-        missionTextField.text = ""
-        heightTextField.text = ""
-        timeTextField.text = ""
-        locationTextField.text = ""
-        aircraftTextField.text = ""
-        cutawayTextField.text = ""
-        commentTextField.text = ""
-    }
-    
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -146,6 +83,7 @@ class EditJumpCell: UITableViewCell {
         addSubviews()
         configureConstrains()
         configureUI()
+        configureGestures()
         
         canopyPickerView.delegate = self
         missionPickerView.delegate = self
@@ -153,15 +91,15 @@ class EditJumpCell: UITableViewCell {
         aircraftPickerView.delegate = self
         cutawayPickerView.delegate = self
         
+        dateTextField.delegate = self
+        heightTextField.delegate = self
+        timeTextField.delegate = self
+        
         canopyPickerView.dataSource = self
         missionPickerView.dataSource = self
         locationPickerView.dataSource = self
         aircraftPickerView.dataSource = self
         cutawayPickerView.dataSource = self
-        
-        dateTextField.delegate = self
-        heightTextField.delegate = self
-        timeTextField.delegate = self
     }
     
     @available(*, unavailable)
@@ -537,7 +475,11 @@ class EditJumpCell: UITableViewCell {
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
-        
+    }
+    
+    // MARK: CONFIGURE GESTURES:
+
+    private func configureGestures() {
         // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS:
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
@@ -546,6 +488,8 @@ class EditJumpCell: UITableViewCell {
     
     // MARK: - HELPERS:
     
+    // MARK: CONFIGURE MODEL:
+
     func configure(_ jump: JumpStructure) {
         dateTextField.text = jump.date
         locationTextField.text = jump.location
@@ -556,6 +500,67 @@ class EditJumpCell: UITableViewCell {
         timeTextField.text = jump.time
         cutawayTextField.text = jump.cutaway
         commentTextField.text = jump.comment
+    }
+
+    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
+
+    private func actionButtonSaveGreenColor() {
+        saveButton.backgroundColor = colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = colorCell
+        }
+    }
+    
+    private func actionButtonSaveRedColor() {
+        saveButton.backgroundColor = colorRed
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = colorCell
+        }
+    }
+    
+    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
+
+    private func playSoundSucces() {
+        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
+        guard let url = url else { return }
+        player = try! AVAudioPlayer(contentsOf: url)
+        player.play()
+    }
+    
+    // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
+
+    private func saveNewJump() {
+        let newJump = JumpStructure(date: dateTextField.text ?? "", location: locationTextField.text ?? "", aircraft: aircraftTextField.text ?? "", canopy: canopyTextField.text ?? "", mission: missionTextField.text ?? "", height: heightTextField.text ?? "", time: timeTextField.text ?? "", cutaway: cutawayTextField.text ?? "", comment: commentTextField.text ?? "")
+        
+        delegate?.saveJump(newJump)
+    }
+    
+    // MARK: CLOSE ALL TEXT FIELDS:
+    
+    private func resignFirstResponders() {
+        dateTextField.resignFirstResponder()
+        canopyTextField.resignFirstResponder()
+        missionTextField.resignFirstResponder()
+        heightTextField.resignFirstResponder()
+        timeTextField.resignFirstResponder()
+        locationTextField.resignFirstResponder()
+        aircraftTextField.resignFirstResponder()
+        cutawayTextField.resignFirstResponder()
+        commentTextField.resignFirstResponder()
+    }
+    
+    // MARK: CLEAR ALL TEXT FIELDS:
+    
+    private func clearTextViews() {
+        dateTextField.text = ""
+        canopyTextField.text = ""
+        missionTextField.text = ""
+        heightTextField.text = ""
+        timeTextField.text = ""
+        locationTextField.text = ""
+        aircraftTextField.text = ""
+        cutawayTextField.text = ""
+        commentTextField.text = ""
     }
     
     // MARK: - DATE PICKER:
@@ -618,7 +623,6 @@ extension EditJumpCell: UIPickerViewDelegate {
     // MARK: ФУНКЦИЯ КОТОРАЯ ПРИСВАИВАЕТ ЗНАЧЕНИЕ ИЗ ПИКЕР ВЬЮ В ТЕКСТ ФИЛД:
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         if arrayCanopiesPickerViewValues.count == 0 {
             return
         }

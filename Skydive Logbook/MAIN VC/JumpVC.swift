@@ -24,7 +24,7 @@ final class JumpVC: UIViewController {
         super.viewDidLoad()
         addSubviews()
         configureConstrains()
-        configureUserInterface()
+        configureUI()
         configureTableView()
     }
 
@@ -46,7 +46,7 @@ final class JumpVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    private func configureUserInterface() {
+    private func configureUI() {
         
         // MARK: VIEW:
         
@@ -80,11 +80,5 @@ extension JumpVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JumpCell", for: indexPath) as? JumpCell else { return UITableViewCell() }
         cell.configure(number: String(jumpNumber), date: selectedJump.date, location: selectedJump.location, aircraft: selectedJump.aircraft, canopy: selectedJump.canopy, mission: selectedJump.mission, height: selectedJump.height, time: selectedJump.time, cutaway: selectedJump.cutaway, comment: selectedJump.comment)
         return cell
-    }
-
-    // MARK: - HEIGHT OF CUSTOM CELL:
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        650
     }
 }

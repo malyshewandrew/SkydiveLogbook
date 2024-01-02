@@ -16,7 +16,7 @@ final class MainCell: UITableViewCell {
     private let commentLabel = UILabel()
     private let cellButton = UIButton()
     var tapOnCell: (() -> ())?
-    
+
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -26,6 +26,7 @@ final class MainCell: UITableViewCell {
         configureUserInterface()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -175,12 +176,8 @@ final class MainCell: UITableViewCell {
         heightLabel.adjustsFontSizeToFitWidth = true
     }
 
-    // MARK: - ACTION FOR CLOSURE:
-    @objc private func transitionVC() {
-        tapOnCell?()
-    }
-
     // MARK: - CONFIGURE:
+
     func configure(number: String, date: String, location: String, aircraft: String, canopy: String, mission: String, height: String, time: String, cutaway: String, comment: String) {
         numberLabel.text = number
         dateLabel.text = date
@@ -192,5 +189,11 @@ final class MainCell: UITableViewCell {
         timeLabel.text = time
         cutawayLabel.text = cutaway
         commentLabel.text = comment
+    }
+    
+    // MARK: - ACTION FOR CLOSURE:
+
+    @objc private func transitionVC() {
+        tapOnCell?()
     }
 }

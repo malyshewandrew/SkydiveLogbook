@@ -17,11 +17,9 @@ final class NewJumpVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
+        configureTableView()
         configureNotificationCenter()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(NewJumpCell.self, forCellReuseIdentifier: "NewJumpCell")
-        navigationController?.navigationBar.isHidden = true
+        configureGestures()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -69,7 +67,13 @@ final class NewJumpVC: UIViewController {
     // MARK: - CONFIGURE UI:
 
     private func configureUI() {
+        // MARK: VIEW:
+
         view.backgroundColor = colorBackground
+
+        // MARK: NAVIGATION CONTROLLER:
+
+        navigationController?.navigationBar.isHidden = true
 
         // MARK: ANIMATIONS:
 
@@ -81,17 +85,24 @@ final class NewJumpVC: UIViewController {
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = colorBlueCG
         confettiLottie.layer.shadowOpacity = 1
+    }
 
-        // MARK: THREE TAP FOR ANIMATIONS:
-
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
-        confettiGesture.numberOfTapsRequired = 3
-        confettiButton.addGestureRecognizer(confettiGesture)
-
-        // MARK: TABLE VIEW:
-
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(NewJumpCell.self, forCellReuseIdentifier: "NewJumpCell")
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
+    }
+    
+    // MARK: - CONFIGURE GESTURES:
+
+    private func configureGestures() {
+        // MARK: THREE TAP FOR ANIMATIONS:
+
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfetti))
+        confettiGesture.numberOfTapsRequired = 3
+        confettiButton.addGestureRecognizer(confettiGesture)
     }
 
     // MARK: - NOTIFICATION CENTER:
@@ -128,7 +139,7 @@ final class NewJumpVC: UIViewController {
 
     // MARK: - FUNC FOR CONFETTI + VIBRATION:
 
-    @objc func confetti() {
+    @objc private func tapOnConfetti() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }

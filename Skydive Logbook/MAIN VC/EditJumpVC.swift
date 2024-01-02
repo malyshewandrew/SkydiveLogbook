@@ -10,7 +10,7 @@ final class EditJumpVC: UIViewController {
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
     var indexPath: Int = 0
-    
+
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -18,19 +18,17 @@ final class EditJumpVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
+        configureTableView()
+        configureGestures()
         configureNotificationCenter()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(EditJumpCell.self, forCellReuseIdentifier: "EditJumpCell")
-        navigationController?.navigationBar.isHidden = false
     }
-    
+
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
         view.addSubviews(confettiLottie, tableView, newJumpLottie, confettiButton)
     }
-    
+
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
@@ -41,7 +39,7 @@ final class EditJumpVC: UIViewController {
         newJumpLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
         newJumpLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         newJumpLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
-        
+
         // MARK: ANIMATION LOTTIE CONFETTI:
 
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +47,7 @@ final class EditJumpVC: UIViewController {
         confettiLottie.centerYAnchor.constraint(equalTo: newJumpLottie.centerYAnchor).isActive = true
         confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
         confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        
+
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
         confettiButton.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +55,7 @@ final class EditJumpVC: UIViewController {
         confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
-        
+
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,29 +64,42 @@ final class EditJumpVC: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
     }
-    
+
     // MARK: - CONFIGURE UI:
 
     private func configureUI() {
+        // MARK: VIEW:
+
         view.backgroundColor = colorBackground
-        
+
+        // MARK: NAVIGATION CONTROLLER:
+
+        navigationController?.navigationBar.isHidden = false
+
         // MARK: ANIMATIONS:
 
         newJumpLottie.play()
         newJumpLottie.loopMode = .autoReverse
-        
+    }
+
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(EditJumpCell.self, forCellReuseIdentifier: "EditJumpCell")
+        tableView.backgroundColor = colorBackground
+        tableView.separatorStyle = .none
+    }
+    
+    // MARK: - CONFIGURE GESTURES:
+
+    private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
 
         let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
-        
-        // MARK: TABLE VIEW:
-
-        tableView.backgroundColor = colorBackground
-        tableView.separatorStyle = .none
     }
-    
+
     // MARK: - NOTIFICATION CENTER:
 
     // MARK: UP AND DOWN KEYBOARD:
@@ -120,7 +131,7 @@ final class EditJumpVC: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
+
     // MARK: - FUNC FOR CONFETTI + VIBRATION:
 
     @objc func confetti() {
@@ -128,7 +139,7 @@ final class EditJumpVC: UIViewController {
         confettiLottie.play()
     }
 }
-    
+
 // MARK: - EXTENSION FOR TABLE VIEW:
 
 extension EditJumpVC: UITableViewDelegate, UITableViewDataSource {
@@ -148,7 +159,7 @@ extension EditJumpVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: EXTENSION FOR UPDATE SYSTEM:
+// MARK: EXTENSION FOR UPDATE EDIT JUMP:
 
 extension EditJumpVC: EditJumpCellDelegate {
     func saveJump(_ jump: JumpStructure) {

@@ -145,6 +145,20 @@ final class MainVC: UIViewController {
         loadingLottie.layer.shadowOpacity = 0.5
         perform(#selector(hideAnimation), with: nil, afterDelay: 2) // closed loading lottie after 2.5 sec.
 
+        // MARK: VIEW:
+
+        view.backgroundColor = colorBackground
+
+        // MARK: NAVIGATION BAR CONTROLLER:
+
+        navigationController?.navigationBar.isHidden = true
+        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
+        navigationItem.title = ""
+
+        // MARK: TAB BAR CONTROLLER:
+
+        tabBarController?.tabBar.isHidden = true
+
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
@@ -155,14 +169,6 @@ final class MainVC: UIViewController {
 
         mainLottie.play()
         mainLottie.loopMode = .autoReverse
-
-        // MARK: VIEW:
-
-        navigationController?.navigationBar.isHidden = true
-        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
-        navigationItem.title = ""
-        tabBarController?.tabBar.isHidden = true
-        view.backgroundColor = colorBackground
 
         // MARK: ACCOUNT IMAGE:
 
@@ -196,100 +202,6 @@ final class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
         tableView.isHidden = true
-    }
-
-    // MARK: - ACCOUNT ALERT:
-
-    @objc private func tapOnAccountButton() {
-        // MARK: NICKNAME:
-        
-        var nickname = ""
-        if arrayAccount.count == 0 {
-            nickname = ""
-        } else {
-            if arrayAccount[0].nickname.isEmpty {
-            } else {
-                nickname = arrayAccount[0].nickname
-            }
-        }
-        
-        // MARK: MEDICINE:
-        
-        var medicine = ""
-        if arrayAccount.count == 0 {
-            medicine = ""
-        } else {
-            if arrayAccount[0].medicine == "" {
-            } else {
-                medicine = "Медицина до: " + arrayAccount[0].medicine + "\n"
-            }
-        }
-        
-        // MARK: INSURANCE LABEL:
-        
-        var insurance = ""
-        if arrayAccount.count == 0 {
-            insurance = ""
-        } else {
-            if arrayAccount[0].insurance == "" {
-            } else {
-                insurance = "Страховка до: " + arrayAccount[0].insurance + "\n"
-            }
-        }
-        
-        // MARK: RESERVE CANOPY LABEL:
-        
-        var reserveCanopy = ""
-        if arrayAccount.count == 0 {
-            reserveCanopy = ""
-        } else {
-            if arrayAccount[0].reserveCanopy == "" {
-            } else {
-                reserveCanopy = "Запасной до: " + arrayAccount[0].reserveCanopy
-            }
-        }
-        
-        if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
-            let alert = UIAlertController(title: "Аккаунт",
-                                          message: "\nДля заполнения перейдите в раздел \"Аккаунт\"",
-                                          preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-                
-            }))
-            alert.view.backgroundColor = .black
-            alert.view.layer.masksToBounds = true
-            alert.view.layer.cornerRadius = 20
-            present(alert, animated: true)
-        } else {
-            
-            let alert = UIAlertController(title: nickname.uppercased(),
-                                          message: "\n\(medicine)\(insurance)\(reserveCanopy)",
-                                          preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-                
-            }))
-            alert.view.backgroundColor = .black
-            alert.view.layer.masksToBounds = true
-            alert.view.layer.cornerRadius = 20
-            present(alert, animated: true)
-        }
-    }
-
-    // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
-
-    @objc private func tapOnNotesButton() {
-        let notesViewController = NotesVC()
-        present(notesViewController, animated: true, completion: nil)
-    }
-
-    // MARK: - CONFIGURE GESTURES:
-
-    private func configureGestures() {
-        // MARK: THREE TAP FOR PLAY ANIMATIONS:
-
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
-        confettiGesture.numberOfTapsRequired = 3
-        confettiButton.addGestureRecognizer(confettiGesture)
     }
 
     // MARK: - FIRST MESSAGE:
@@ -361,6 +273,101 @@ final class MainVC: UIViewController {
         }
     }
 
+    // MARK: - HELPERS:
+
+    // MARK: ACCOUNT ALERT:
+
+    @objc private func tapOnAccountButton() {
+        // MARK: NICKNAME:
+
+        var nickname = ""
+        if arrayAccount.count == 0 {
+            nickname = ""
+        } else {
+            if arrayAccount[0].nickname.isEmpty {
+            } else {
+                nickname = arrayAccount[0].nickname
+            }
+        }
+
+        // MARK: MEDICINE:
+
+        var medicine = ""
+        if arrayAccount.count == 0 {
+            medicine = ""
+        } else {
+            if arrayAccount[0].medicine == "" {
+            } else {
+                medicine = "Медицина до: " + arrayAccount[0].medicine + "\n"
+            }
+        }
+
+        // MARK: INSURANCE LABEL:
+
+        var insurance = ""
+        if arrayAccount.count == 0 {
+            insurance = ""
+        } else {
+            if arrayAccount[0].insurance == "" {
+            } else {
+                insurance = "Страховка до: " + arrayAccount[0].insurance + "\n"
+            }
+        }
+
+        // MARK: RESERVE CANOPY LABEL:
+
+        var reserveCanopy = ""
+        if arrayAccount.count == 0 {
+            reserveCanopy = ""
+        } else {
+            if arrayAccount[0].reserveCanopy == "" {
+            } else {
+                reserveCanopy = "Запасной до: " + arrayAccount[0].reserveCanopy
+            }
+        }
+
+        if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
+            let alert = UIAlertController(title: "Аккаунт",
+                                          message: "\nДля заполнения перейдите в раздел \"Аккаунт\"",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+
+            }))
+            alert.view.backgroundColor = .black
+            alert.view.layer.masksToBounds = true
+            alert.view.layer.cornerRadius = 20
+            present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: nickname.uppercased(),
+                                          message: "\n\(medicine)\(insurance)\(reserveCanopy)",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+
+            }))
+            alert.view.backgroundColor = .black
+            alert.view.layer.masksToBounds = true
+            alert.view.layer.cornerRadius = 20
+            present(alert, animated: true)
+        }
+    }
+
+    // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
+
+    @objc private func tapOnNotesButton() {
+        let notesViewController = NotesVC()
+        present(notesViewController, animated: true, completion: nil)
+    }
+
+    // MARK: - CONFIGURE GESTURES:
+
+    private func configureGestures() {
+        // MARK: THREE TAP FOR PLAY ANIMATIONS:
+
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
+        confettiGesture.numberOfTapsRequired = 3
+        confettiButton.addGestureRecognizer(confettiGesture)
+    }
+
     // MARK: SORT ARRAY:
 
     private func sortArray() {
@@ -373,8 +380,6 @@ final class MainVC: UIViewController {
             return false
         }
     }
-
-    // MARK: - HELPERS:
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
 
