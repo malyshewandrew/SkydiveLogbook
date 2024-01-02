@@ -16,10 +16,10 @@ let colorLightGray = #colorLiteral(red: 0.5568621755, green: 0.5568631887, blue:
 
 // MARK: - COLORS CG:
 
+let colorBackgroundCG: CGColor = #colorLiteral(red: 0.001496930607, green: 0.04223745316, blue: 0.05422458798, alpha: 1)
+let colorCellCG: CGColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
 let colorWhiteCG: CGColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 let colorBlackCG: CGColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-let colorCellCG: CGColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
-let colorBackgroundCG: CGColor = #colorLiteral(red: 0.001496930607, green: 0.04223745316, blue: 0.05422458798, alpha: 1)
 let colorSystemGreenCG: CGColor = #colorLiteral(red: 0.1744495332, green: 0.7518933415, blue: 0.3197995424, alpha: 1)
 let colorBlueCG: CGColor = #colorLiteral(red: 0.5799726248, green: 0.7478471398, blue: 0.9699549079, alpha: 1)
 let colorGreenCG: CGColor = #colorLiteral(red: 0, green: 0.9652737975, blue: 0, alpha: 1)
@@ -38,7 +38,6 @@ let fontStatisticTop10: UIFont = .systemFont(ofSize: 9, weight: .medium, width: 
 let fontStatisticMissions: UIFont = .systemFont(ofSize: 9, weight: .medium, width: .standard)
 
 let fontCalculatorText: UIFont = .systemFont(ofSize: 10, weight: .regular, width: .standard)
-
 
 let fontRegularStandart8: UIFont = .systemFont(ofSize: 8, weight: .regular, width: .standard)
 let fontStackView: UIFont = .systemFont(ofSize: 8, weight: .regular, width: .standard)

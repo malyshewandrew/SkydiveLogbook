@@ -152,7 +152,8 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
         let system = arraySystem[indexPath.row]
         cell.indexPath = indexPath
         cell.configure(system)
-        cell.tapEditButton = { [weak self] in 
+        // MARK: TRANSITION ON EDIT VIEW CONTROLLER:
+        cell.tapEditButton = { [weak self] in
             let editSystemViewController = EditSystemVC()
             editSystemViewController.indexPath = indexPath.row
             self?.navigationController?.pushViewController(editSystemViewController, animated: true)

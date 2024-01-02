@@ -935,7 +935,7 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyCountRepackButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyCountRepackButton.titleLabel?.font = fontMediumStandart10
         reserveCanopyCountRepackButton.layer.cornerRadius = cornerRadius10
-        reserveCanopyCountRepackTextField.placeholder = "#"
+        reserveCanopyCountRepackTextField.placeholder = "0-20"
         reserveCanopyCountRepackTextField.backgroundColor = colorTabBar
         reserveCanopyCountRepackTextField.font = fontRegularStandart12
         reserveCanopyCountRepackTextField.textColor = colorWhite
