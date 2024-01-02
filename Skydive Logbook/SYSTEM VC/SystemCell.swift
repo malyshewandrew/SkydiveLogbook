@@ -378,6 +378,7 @@ final class SystemCell: UITableViewCell {
         // MARK: EDIT BUTTON:
 
         editButton.setTitle(NSLocalizedString("Edit", comment: ""), for: .normal)
+        editButton.titleLabel?.font = fontRegularStandart18
         editButton.setTitleColor(colorBlue, for: .normal)
         editButton.addTarget(self, action: #selector(tapOnEditButton), for: .touchUpInside)
         
