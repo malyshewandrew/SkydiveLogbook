@@ -54,8 +54,7 @@ final class MainCell: UITableViewCell {
         numberLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8).isActive = true
         numberLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         numberLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        numberLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
-
+        
         // MARK: CANOPY LABEL:
 
         canopyLabel.translatesAutoresizingMaskIntoConstraints = false
