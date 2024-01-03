@@ -49,16 +49,16 @@ final class NotesCell: UITableViewCell {
     // MARK: - CONFIGURE UI:
 
     func configureUI() {
-        // MARK: - CELL SETTINGS:
+        // MARK: CONTENT VIEW:
 
         contentView.backgroundColor = colorBackground
 
-        // MARK: - VIEW:
+        // MARK: VIEW:
 
         view.backgroundColor = colorTabBar
         view.layer.cornerRadius = cornerRadius10
 
-        // MARK: - NOTE LABEL:
+        // MARK: NOTE LABEL:
 
         noteLabel.textColor = colorWhite
         noteLabel.numberOfLines = numberOfLines0
@@ -67,7 +67,7 @@ final class NotesCell: UITableViewCell {
         noteLabel.lineBreakMode = .byWordWrapping
     }
 
-    // MARK: - FUNC FOR CONFIGURE IN TABLE VIEW:
+    // MARK: - CONFIGURE MODEL:
 
     func configure(text: String) {
         noteLabel.text = text

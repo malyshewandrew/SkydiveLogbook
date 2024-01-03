@@ -3,6 +3,8 @@ import AVFoundation
 import Lottie
 import UIKit
 
+// MARK: - PROTOCOL:
+
 protocol EditJumpCellDelegate {
     func saveJump(_ jump: JumpStructure)
 }
@@ -72,7 +74,7 @@ class EditJumpCell: UITableViewCell {
     private var player = AVAudioPlayer()
     private let saveLottie = LottieAnimationView(name: "Save")
     
-    // Delegate:
+    let dateFormatter = DateFormatter()
     var delegate: EditJumpCellDelegate?
     
     // MARK: - LIFECYCLE:
@@ -477,10 +479,10 @@ class EditJumpCell: UITableViewCell {
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }
     
-    // MARK: CONFIGURE GESTURES:
+    // MARK: - CONFIGURE GESTURES:
 
     private func configureGestures() {
-        // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS:
+        // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS:
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         contentView.addGestureRecognizer(tapGesture)
@@ -500,87 +502,6 @@ class EditJumpCell: UITableViewCell {
         timeTextField.text = jump.time
         cutawayTextField.text = jump.cutaway
         commentTextField.text = jump.comment
-    }
-
-    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
-
-    private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
-        }
-    }
-    
-    private func actionButtonSaveRedColor() {
-        saveButton.backgroundColor = colorRed
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
-        }
-    }
-    
-    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
-
-    private func playSoundSucces() {
-        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
-        guard let url = url else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        player.play()
-    }
-    
-    // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
-
-    private func saveNewJump() {
-        let newJump = JumpStructure(date: dateTextField.text ?? "", location: locationTextField.text ?? "", aircraft: aircraftTextField.text ?? "", canopy: canopyTextField.text ?? "", mission: missionTextField.text ?? "", height: heightTextField.text ?? "", time: timeTextField.text ?? "", cutaway: cutawayTextField.text ?? "", comment: commentTextField.text ?? "")
-        
-        delegate?.saveJump(newJump)
-    }
-    
-    // MARK: CLOSE ALL TEXT FIELDS:
-    
-    private func resignFirstResponders() {
-        dateTextField.resignFirstResponder()
-        canopyTextField.resignFirstResponder()
-        missionTextField.resignFirstResponder()
-        heightTextField.resignFirstResponder()
-        timeTextField.resignFirstResponder()
-        locationTextField.resignFirstResponder()
-        aircraftTextField.resignFirstResponder()
-        cutawayTextField.resignFirstResponder()
-        commentTextField.resignFirstResponder()
-    }
-    
-    // MARK: CLEAR ALL TEXT FIELDS:
-    
-    private func clearTextViews() {
-        dateTextField.text = ""
-        canopyTextField.text = ""
-        missionTextField.text = ""
-        heightTextField.text = ""
-        timeTextField.text = ""
-        locationTextField.text = ""
-        aircraftTextField.text = ""
-        cutawayTextField.text = ""
-        commentTextField.text = ""
-    }
-    
-    // MARK: - DATE PICKER:
-
-    @objc func datePickerValueChanged() {
-        getDateFromPicker()
-    }
-    
-    // MARK: - DATE FORMATTER:
-
-    func getDateFromPicker() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        dateTextField.text = dateFormatter.string(from: datePickerView.date)
-    }
-    
-    // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
-
-    @objc func tapGestureDone() {
-        contentView.endEditing(true)
     }
     
     // MARK: - ACTION BUTTON SAVE:
@@ -610,10 +531,90 @@ class EditJumpCell: UITableViewCell {
         perform(#selector(hideAnimation), with: nil, afterDelay: 2)
     }
     
-    // MARK: - HIDE SAVE ANIMATION:
+    // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
+
+    private func saveNewJump() {
+        let newJump = JumpStructure(date: dateTextField.text ?? "", location: locationTextField.text ?? "", aircraft: aircraftTextField.text ?? "", canopy: canopyTextField.text ?? "", mission: missionTextField.text ?? "", height: heightTextField.text ?? "", time: timeTextField.text ?? "", cutaway: cutawayTextField.text ?? "", comment: commentTextField.text ?? "")
+        
+        delegate?.saveJump(newJump)
+    }
+    
+    // MARK: CLEAR ALL TEXT FIELDS:
+    
+    private func clearTextViews() {
+        dateTextField.text = ""
+        canopyTextField.text = ""
+        missionTextField.text = ""
+        heightTextField.text = ""
+        timeTextField.text = ""
+        locationTextField.text = ""
+        aircraftTextField.text = ""
+        cutawayTextField.text = ""
+        commentTextField.text = ""
+    }
+    
+    // MARK: CLOSE ALL TEXT FIELDS:
+    
+    private func resignFirstResponders() {
+        dateTextField.resignFirstResponder()
+        canopyTextField.resignFirstResponder()
+        missionTextField.resignFirstResponder()
+        heightTextField.resignFirstResponder()
+        timeTextField.resignFirstResponder()
+        locationTextField.resignFirstResponder()
+        aircraftTextField.resignFirstResponder()
+        cutawayTextField.resignFirstResponder()
+        commentTextField.resignFirstResponder()
+    }
+    
+    // MARK: HIDE SAVE ANIMATION:
 
     @objc private func hideAnimation() {
         saveLottie.isHidden = true
+    }
+
+    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
+
+    private func actionButtonSaveGreenColor() {
+        saveButton.backgroundColor = colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = colorCell
+        }
+    }
+    
+    private func actionButtonSaveRedColor() {
+        saveButton.backgroundColor = colorRed
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = colorCell
+        }
+    }
+    
+    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
+
+    private func playSoundSucces() {
+        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
+        guard let url = url else { return }
+        player = try! AVAudioPlayer(contentsOf: url)
+        player.play()
+    }
+    
+    // MARK: DATE PICKER:
+
+    @objc func datePickerValueChanged() {
+        getDateFromPicker()
+    }
+    
+    // MARK: DATE FORMATTER:
+
+    func getDateFromPicker() {
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateTextField.text = dateFormatter.string(from: datePickerView.date)
+    }
+    
+    // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
+
+    @objc func tapGestureDone() {
+        contentView.endEditing(true)
     }
 }
 
@@ -660,13 +661,13 @@ extension EditJumpCell: UIPickerViewDelegate {
 // MARK: - EXTENSIONS FOR PICKER VIEW DATA SOURSE:
 
 extension EditJumpCell: UIPickerViewDataSource {
-    // MARK: - КОЛИЧЕСТВО КОЛОНОК В PICKER VIEW:
+    // MARK: КОЛИЧЕСТВО КОЛОНОК В PICKER VIEW:
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
     
-    // MARK: - КОЛИЧЕСТВО ТЕКСТОВЫХ ВАРИАНТОВ ДЛЯ ПИКЕРА ИЗ МАССИВА:
+    // MARK: КОЛИЧЕСТВО ТЕКСТОВЫХ ВАРИАНТОВ ДЛЯ ПИКЕРА ИЗ МАССИВА:
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == canopyPickerView {
@@ -683,7 +684,7 @@ extension EditJumpCell: UIPickerViewDataSource {
         return 0
     }
     
-    // MARK: - ВАРИАНТЫ ДЛЯ ЗАПОЛНЕНИЯ ПИКЕРА ТЕКСТОМ ИЗ ЗНАЧЕНИЙ В МАССИВЕ:
+    // MARK: ВАРИАНТЫ ДЛЯ ЗАПОЛНЕНИЯ ПИКЕРА ТЕКСТОМ ИЗ ЗНАЧЕНИЙ В МАССИВЕ:
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == canopyPickerView {

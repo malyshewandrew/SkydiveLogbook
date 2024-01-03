@@ -70,7 +70,7 @@ final class SystemVC: UIViewController {
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 140).isActive = true
+        tableView.topAnchor.constraint(equalTo: systemLottie.bottomAnchor, constant: 0).isActive = true
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: newSystemButton.topAnchor, constant: -10).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true

@@ -50,18 +50,19 @@ final class JumpVC: UIViewController {
         
         // MARK: VIEW:
         
-        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = colorBackground
-
-        // MARK: TABLE VIEW:
-        tableView.backgroundColor = colorBackground
-        tableView.separatorStyle = .none
+        
+        // MARK: NAVIGATION CONTROLLER:
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(JumpCell.self, forCellReuseIdentifier: "JumpCell")
+        tableView.backgroundColor = colorBackground
+        tableView.separatorStyle = .none
     }
 }
 

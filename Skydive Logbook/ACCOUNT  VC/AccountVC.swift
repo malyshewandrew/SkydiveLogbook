@@ -96,14 +96,14 @@ final class AccountVC: UIViewController {
 
         // MARK: - THREE TAP FOR ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
 
     // MARK: - FUNC FOR CONFETTI + VIBRATION:
 
-    @objc func confetti() {
+    @objc func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }

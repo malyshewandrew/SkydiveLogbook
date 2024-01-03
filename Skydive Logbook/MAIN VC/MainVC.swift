@@ -21,6 +21,7 @@ final class MainVC: UIViewController {
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
     private var selectedJump: JumpStructure?
+    private let dateFormatter = DateFormatter()
 
     // MARK: - LIFECYCLE:
 
@@ -143,7 +144,7 @@ final class MainVC: UIViewController {
         loadingLottie.layer.shadowRadius = 100
         loadingLottie.layer.shadowColor = colorBlueCG
         loadingLottie.layer.shadowOpacity = 0.5
-        perform(#selector(hideAnimation), with: nil, afterDelay: 2) // closed loading lottie after 2.5 sec.
+        perform(#selector(hideAnimation), with: nil, afterDelay: 2)
 
         // MARK: CONFETTI LOTTIE:
 
@@ -185,8 +186,7 @@ final class MainVC: UIViewController {
 
         // MARK: TABLE VIEW:
 
-        tableView.backgroundColor = colorBackground
-        tableView.separatorStyle = .none
+
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -196,6 +196,8 @@ final class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
         tableView.isHidden = true
+        tableView.backgroundColor = colorBackground
+        tableView.separatorStyle = .none
     }
 
     // MARK: - ACCOUNT ALERT:
@@ -250,7 +252,7 @@ final class MainVC: UIViewController {
         }
         
         if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
-            let alert = UIAlertController(title: "Данные не внесены",
+            let alert = UIAlertController(title: "Аккаунт",
                                           message: "\nДля заполнения перейдите в раздел \"Аккаунт\"",
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
@@ -287,7 +289,7 @@ final class MainVC: UIViewController {
     private func configureGestures() {
         // MARK: THREE TAP FOR PLAY ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
@@ -365,7 +367,6 @@ final class MainVC: UIViewController {
 
     private func sortArray() {
         arrayJumps.sort { jump1, jump2 -> Bool in
-            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
             if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
                 return date1 < date2
@@ -378,7 +379,7 @@ final class MainVC: UIViewController {
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
 
-    @objc private func confetti() {
+    @objc private func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
@@ -421,7 +422,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         jumpViewController.jumpNumber = arrayJumps.count - indexPath.row
         let navigationController = UINavigationController(rootViewController: jumpViewController)
         present(navigationController, animated: true, completion: nil)
-        print("test")
     }
 
     // MARK: COSTUM SWIPE RIGHT (DELETE AND EDIT):

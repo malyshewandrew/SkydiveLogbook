@@ -81,6 +81,8 @@ final class EditJumpVC: UIViewController {
         newJumpLottie.play()
         newJumpLottie.loopMode = .autoReverse
     }
+    
+    // MARK: CONFIGURE TABLE VIEW:
 
     private func configureTableView() {
         tableView.delegate = self
@@ -95,7 +97,7 @@ final class EditJumpVC: UIViewController {
     private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
@@ -134,7 +136,7 @@ final class EditJumpVC: UIViewController {
 
     // MARK: - FUNC FOR CONFETTI + VIBRATION:
 
-    @objc func confetti() {
+    @objc func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
