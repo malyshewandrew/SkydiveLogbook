@@ -158,16 +158,17 @@ final class MainVC: UIViewController {
         mainLottie.loopMode = .autoReverse
 
         // MARK: VIEW:
-        
+
         view.backgroundColor = colorBackground
-        
+
         // MARK: NAVIAGTION CONTROLLER:
-        
+
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
-        
+
         // MARK: TAB BAR CONTROLLER:
+
         tabBarController?.tabBar.isHidden = true
 
         // MARK: ACCOUNT IMAGE:
@@ -205,7 +206,7 @@ final class MainVC: UIViewController {
 
     @objc private func tapOnAccountButton() {
         // MARK: NICKNAME:
-        
+
         var nickname = ""
         if arrayAccount.count == 0 {
             nickname = ""
@@ -215,9 +216,33 @@ final class MainVC: UIViewController {
                 nickname = arrayAccount[0].nickname
             }
         }
-        
+
+        // MARK: LICENSE TYPE:
+
+        var licenseType = ""
+        if arrayAccount.count == 0 {
+            licenseType = ""
+        } else {
+            if arrayAccount[0].licenseType.isEmpty {
+            } else {
+                licenseType = "Лицензия " + "\"" + arrayAccount[0].licenseType + "\""
+            }
+        }
+
+        // MARK: LICENSE DATE:
+
+        var licenseDate = ""
+        if arrayAccount.count == 0 {
+            licenseDate = ""
+        } else {
+            if arrayAccount[0].licenseDate.isEmpty {
+            } else {
+                licenseDate = " до: " + arrayAccount[0].licenseDate + "\n"
+            }
+        }
+
         // MARK: MEDICINE:
-        
+
         var medicine = ""
         if arrayAccount.count == 0 {
             medicine = ""
@@ -227,9 +252,9 @@ final class MainVC: UIViewController {
                 medicine = "Медицина до: " + arrayAccount[0].medicine + "\n"
             }
         }
-        
+
         // MARK: INSURANCE LABEL:
-        
+
         var insurance = ""
         if arrayAccount.count == 0 {
             insurance = ""
@@ -239,9 +264,9 @@ final class MainVC: UIViewController {
                 insurance = "Страховка до: " + arrayAccount[0].insurance + "\n"
             }
         }
-        
+
         // MARK: RESERVE CANOPY LABEL:
-        
+
         var reserveCanopy = ""
         if arrayAccount.count == 0 {
             reserveCanopy = ""
@@ -251,25 +276,24 @@ final class MainVC: UIViewController {
                 reserveCanopy = "Запасной до: " + arrayAccount[0].reserveCanopy
             }
         }
-        
+
         if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
             let alert = UIAlertController(title: "Аккаунт",
                                           message: "\nДля заполнения перейдите в раздел \"Аккаунт\"",
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-                
+
             }))
             alert.view.backgroundColor = .black
             alert.view.layer.masksToBounds = true
             alert.view.layer.cornerRadius = 20
             present(alert, animated: true)
         } else {
-            
             let alert = UIAlertController(title: nickname.uppercased(),
-                                          message: "\n\(medicine)\(insurance)\(reserveCanopy)",
+                                          message: "\n\(licenseType)\(licenseDate)\(medicine)\(insurance)\(reserveCanopy)",
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-                
+
             }))
             alert.view.backgroundColor = .black
             alert.view.layer.masksToBounds = true
@@ -365,7 +389,7 @@ final class MainVC: UIViewController {
     }
 
     // MARK: - HELPERS:
-    
+
     // MARK: SORT ARRAY:
 
     private func sortArray() {
@@ -429,6 +453,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // MARK: DELETE JUMP:
+
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))

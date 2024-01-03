@@ -7,6 +7,13 @@ final class EditAccountVC: UIViewController {
     
     private let nicknameButton = UIButton()
     private let nicknameTextField = UITextField()
+    
+    private let licenseTypeButton = UIButton()
+    private let licenseTypeTextField = UITextField()
+    
+    private let licenseDateButton = UIButton()
+    private let licenseDateTextField = UITextField()
+    
     private let medicineButton = UIButton()
     private let medicineTextField = UITextField()
     private let insuranceButton = UIButton()
@@ -35,7 +42,9 @@ final class EditAccountVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     func addSubviews() {
-        view.addSubviews(nicknameButton, medicineButton, insuranceButton, reserveCanopyButton, saveButton)
+        view.addSubviews(nicknameButton, licenseTypeButton, licenseDateButton, medicineButton, insuranceButton, reserveCanopyButton, saveButton)
+        licenseTypeButton.addSubview(licenseTypeTextField)
+        licenseDateButton.addSubview(licenseDateTextField)
         nicknameButton.addSubview(nicknameTextField)
         medicineButton.addSubview(medicineTextField)
         insuranceButton.addSubview(insuranceTextField)
@@ -59,10 +68,38 @@ final class EditAccountVC: UIViewController {
         nicknameTextField.trailingAnchor.constraint(equalTo: nicknameButton.trailingAnchor).isActive = true
         nicknameTextField.heightAnchor.constraint(equalTo: nicknameButton.heightAnchor, multiplier: 0.5).isActive = true
         
+        // MARK: LICENSE TYPE:
+        
+        licenseTypeButton.translatesAutoresizingMaskIntoConstraints = false
+        licenseTypeButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
+        licenseTypeButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -10).isActive = true
+        licenseTypeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        licenseTypeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.327).isActive = true
+        
+        licenseTypeTextField.translatesAutoresizingMaskIntoConstraints = false
+        licenseTypeTextField.bottomAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor).isActive = true
+        licenseTypeTextField.leadingAnchor.constraint(equalTo: licenseTypeButton.leadingAnchor).isActive = true
+        licenseTypeTextField.trailingAnchor.constraint(equalTo: licenseTypeButton.trailingAnchor).isActive = true
+        licenseTypeTextField.heightAnchor.constraint(equalTo: licenseTypeButton.heightAnchor, multiplier: 0.5).isActive = true
+        
+        // MARK: LICENSE DATE:
+        
+        licenseDateButton.translatesAutoresizingMaskIntoConstraints = false
+        licenseDateButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
+        licenseDateButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
+        licenseDateButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        licenseDateButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.327).isActive = true
+        
+        licenseDateTextField.translatesAutoresizingMaskIntoConstraints = false
+        licenseDateTextField.bottomAnchor.constraint(equalTo: licenseDateButton.bottomAnchor).isActive = true
+        licenseDateTextField.leadingAnchor.constraint(equalTo: licenseDateButton.leadingAnchor).isActive = true
+        licenseDateTextField.trailingAnchor.constraint(equalTo: licenseDateButton.trailingAnchor).isActive = true
+        licenseDateTextField.heightAnchor.constraint(equalTo: licenseDateButton.heightAnchor, multiplier: 0.5).isActive = true
+        
         // MARK: MEDICINE:
         
         medicineButton.translatesAutoresizingMaskIntoConstraints = false
-        medicineButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
+        medicineButton.topAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor, constant: 15).isActive = true
         medicineButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         medicineButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         medicineButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -139,9 +176,46 @@ final class EditAccountVC: UIViewController {
         nicknameTextField.tintColor = colorWhite
         nicknameTextField.layer.masksToBounds = true
         
+        // MARK: LICENSE TYPE:
+        
+        licenseTypeButton.setTitle("Лицензия", for: .normal)
+        licenseTypeButton.backgroundColor = colorCell
+        licenseTypeButton.setTitleColor(colorLightGray, for: .normal)
+        licenseTypeButton.contentVerticalAlignment = textAligmentTop
+        licenseTypeButton.titleLabel?.font = fontMediumStandart12
+        licenseTypeButton.layer.cornerRadius = cornerRadius10
+        licenseTypeTextField.placeholder = "Тип/номер"
+        licenseTypeTextField.backgroundColor = colorTabBar
+        licenseTypeTextField.font = fontMediumStandart18
+        licenseTypeTextField.textColor = colorWhite
+        licenseTypeTextField.layer.cornerRadius = cornerRadius10
+        licenseTypeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        licenseTypeTextField.textAlignment = textAligmentCenter
+        licenseTypeTextField.tintColor = colorWhite
+        licenseTypeTextField.layer.masksToBounds = true
+        
+        // MARK: LICENSE DATE:
+        
+        licenseDateButton.setTitle("Действительна до", for: .normal)
+        licenseDateButton.backgroundColor = colorCell
+        licenseDateButton.setTitleColor(colorLightGray, for: .normal)
+        licenseDateButton.contentVerticalAlignment = textAligmentTop
+        licenseDateButton.titleLabel?.font = fontMediumStandart12
+        licenseDateButton.layer.cornerRadius = cornerRadius10
+        licenseDateTextField.placeholder = "мм.дд.гггг"
+        licenseDateTextField.backgroundColor = colorTabBar
+        licenseDateTextField.font = fontMediumStandart18
+        licenseDateTextField.textColor = colorWhite
+        licenseDateTextField.layer.cornerRadius = cornerRadius10
+        licenseDateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        licenseDateTextField.textAlignment = textAligmentCenter
+        licenseDateTextField.tintColor = colorWhite
+        licenseDateTextField.layer.masksToBounds = true
+        
+        
         // MARK: MEDICINE:
         
-        medicineButton.setTitle("Медицина до:", for: .normal)
+        medicineButton.setTitle("Медицина действительна до:", for: .normal)
         medicineButton.backgroundColor = colorCell
         medicineButton.setTitleColor(colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop
@@ -159,7 +233,7 @@ final class EditAccountVC: UIViewController {
         
         // MARK: INSURANCE:
         
-        insuranceButton.setTitle("Страховка до:", for: .normal)
+        insuranceButton.setTitle("Страховка действительна до:", for: .normal)
         insuranceButton.backgroundColor = colorCell
         insuranceButton.setTitleColor(colorLightGray, for: .normal)
         insuranceButton.contentVerticalAlignment = textAligmentTop
@@ -177,7 +251,7 @@ final class EditAccountVC: UIViewController {
         
         // MARK: RESERVE CANOPY:
         
-        reserveCanopyButton.setTitle("Запасной до:", for: .normal)
+        reserveCanopyButton.setTitle("Запасной действителен до:", for: .normal)
         reserveCanopyButton.backgroundColor = colorCell
         reserveCanopyButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyButton.contentVerticalAlignment = textAligmentTop
@@ -217,11 +291,15 @@ final class EditAccountVC: UIViewController {
     private func configureAccount() {
         if arrayAccount.count == 0 {
             nicknameTextField.text = ""
+            licenseDateTextField.text = ""
+            licenseDateTextField.text = ""
             medicineTextField.text = ""
             insuranceTextField.text = ""
             reserveCanopyTextField.text = ""
         } else {
             nicknameTextField.text = arrayAccount[0].nickname
+            licenseTypeTextField.text = arrayAccount[0].licenseType
+            licenseDateTextField.text = arrayAccount[0].licenseDate
             medicineTextField.text = arrayAccount[0].medicine
             insuranceTextField.text = arrayAccount[0].insurance
             reserveCanopyTextField.text = arrayAccount[0].reserveCanopy
@@ -241,7 +319,7 @@ final class EditAccountVC: UIViewController {
     // MARK: SAVE FUNC:
 
     private func saveNewAccount() {
-        let account = AccountStructure(nickname: nicknameTextField.text ?? "", medicine: medicineTextField.text ?? "", insurance: insuranceTextField.text ?? "", reserveCanopy: reserveCanopyTextField.text ?? "")
+        let account = AccountStructure(nickname: nicknameTextField.text ?? "", licenseType: licenseTypeTextField.text ?? "", licenseDate: licenseDateTextField.text ?? "", medicine: medicineTextField.text ?? "", insurance: insuranceTextField.text ?? "", reserveCanopy: reserveCanopyTextField.text ?? "")
         
         if arrayAccount.count == 0 {
             arrayAccount.insert(account, at: 0)
