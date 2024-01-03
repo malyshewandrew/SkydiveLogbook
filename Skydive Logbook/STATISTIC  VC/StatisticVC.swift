@@ -9,6 +9,7 @@ final class StatisticVC: UIViewController {
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
+    private let dateFormatter = DateFormatter()
 
     // MARK: - LIFECYCLE:
 
@@ -17,11 +18,8 @@ final class StatisticVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(StatisticCell.self, forCellReuseIdentifier: "CellStatistic")
-        navigationController?.navigationBar.isHidden = true
-        tableView.reloadData()
+        configureTableView()
+        configureGestures()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -76,6 +74,10 @@ final class StatisticVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
+        
+        // MARK: NAVIGATION CONTROLLER:
+        
+        navigationController?.navigationBar.isHidden = true
 
         // MARK: ANIMATIONS:
 
@@ -92,17 +94,28 @@ final class StatisticVC: UIViewController {
 
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
-
+    }
+    
+    // MARK: - CONFIGURE TABLE VIEW:
+    
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(StatisticCell.self, forCellReuseIdentifier: "CellStatistic")
+        tableView.reloadData()
+    }
+    
+    private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confetti))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
 
     // MARK: - FUNC FOR CONFETTI + VIBRATION:
 
-    @objc private func confetti() {
+    @objc private func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
@@ -268,7 +281,6 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapYearButton() {
         var arrayYears: [String] = []
-        let dateFormatter = DateFormatter()
 
         for jump in arrayJumps {
             dateFormatter.dateFormat = "dd.MM.yyyy"
@@ -429,7 +441,7 @@ extension StatisticVC: StatisticCellDelegate {
             present(alert, animated: true)
         } else {
             let currentDate = Date()
-            let dateFormatter = DateFormatter()
+
             dateFormatter.dateFormat = "dd.MM.yyyy"
 
             if let jumpDateString = arrayJumps.first?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
@@ -503,7 +515,6 @@ extension StatisticVC: StatisticCellDelegate {
             present(alert, animated: true)
         } else {
             let currentDate = Date()
-            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
 
             if let jumpDateString = arrayJumps.last?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {

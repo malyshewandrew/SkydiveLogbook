@@ -1,6 +1,6 @@
 import UIKit
 
-// MARK: - PROTOCOL DELEGATE:
+// MARK: - PROTOCOL:
 
 protocol StatisticCellDelegate {
     func tapGeneralInfoButton()
@@ -22,7 +22,7 @@ protocol StatisticCellDelegate {
 }
 
 final class StatisticCell: UITableViewCell {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
     
     private let generalInfoButton = UIButton()
     private let generalInfoLabel = UILabel()
@@ -68,8 +68,7 @@ final class StatisticCell: UITableViewCell {
     private let topMissionButton = UIButton()
     private let topMissionLabel = UILabel()
     
-    // MARK: PROTOCOL DELEGATE:
-
+    let dateFormatter = DateFormatter()
     var delegate: StatisticCellDelegate?
     
     // MARK: - LIFECYCLE:
@@ -395,7 +394,7 @@ final class StatisticCell: UITableViewCell {
     // MARK: - CONFIGURE UI:
 
     private func configureUI() {
-        // MARK: - SETTINGS CELL:
+        // MARK: - CONTENT VIEW:
         
         selectionStyle = .none
         contentView.backgroundColor = colorBackground
@@ -742,7 +741,6 @@ final class StatisticCell: UITableViewCell {
     
     private func setJumpsYear() {
         let currentYear = Calendar.current.component(.year, from: Date())
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
 
         let jumpsThisYearCount = arrayJumps.reduce(0) { count, jump in
@@ -853,7 +851,6 @@ final class StatisticCell: UITableViewCell {
     
     private func setDateFirst() {
         arrayJumps.sort { jump1, jump2 -> Bool in
-            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
             if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
                 return date1 < date2
@@ -881,7 +878,6 @@ final class StatisticCell: UITableViewCell {
     
     private func setDateLast() {
         arrayJumps.sort { jump1, jump2 -> Bool in
-            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
             if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
                 return date1 < date2
