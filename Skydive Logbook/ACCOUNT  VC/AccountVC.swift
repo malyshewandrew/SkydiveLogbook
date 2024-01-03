@@ -19,12 +19,8 @@ final class AccountVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(AccountCell.self, forCellReuseIdentifier: "AccountCell")
-        navigationController?.navigationBar.isHidden = true
-        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
-        navigationItem.title = ""
+        configureTableView()
+        configureGestures()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +36,7 @@ final class AccountVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        // MARK: - ANIMATION ACCOUNT LOTTIE:
+        // MARK: ANIMATION ACCOUNT LOTTIE:
 
         accountLottie.translatesAutoresizingMaskIntoConstraints = false
         accountLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -48,7 +44,7 @@ final class AccountVC: UIViewController {
         accountLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         accountLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
-        // MARK: - ANIMATION LOTTIE CONFETTI:
+        // MARK: ANIMATION LOTTIE CONFETTI:
 
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
         confettiLottie.centerXAnchor.constraint(equalTo: accountLottie.centerXAnchor).isActive = true
@@ -56,7 +52,7 @@ final class AccountVC: UIViewController {
         confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
         confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
-        // MARK: - BUTTON FOR ANIMATION LOTTIE CONFETTI:
+        // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
         confettiButton.translatesAutoresizingMaskIntoConstraints = false
         confettiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -78,30 +74,47 @@ final class AccountVC: UIViewController {
     private func configureUI() {
         view.backgroundColor = colorBackground
 
+        // MARK: NAVIGATION CONTROLLER:
+
+        navigationController?.navigationBar.isHidden = true
+        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
+        navigationItem.title = ""
+
         // MARK: ANIMATIONS:
 
         accountLottie.play()
         accountLottie.loopMode = .autoReverse
-        
+
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = colorBlueCG
         confettiLottie.layer.shadowOpacity = 1
+    }
 
-        // MARK: TABLE VIEW:
+    // MARK: CONFIGURE TABLE VIEW:
 
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(AccountCell.self, forCellReuseIdentifier: "AccountCell")
         tableView.separatorStyle = .none
         tableView.backgroundColor = colorBackground
+    }
 
-        // MARK: - THREE TAP FOR ANIMATIONS:
+    // MARK: CONFIGURE GESTURES:
+
+    private func configureGestures() {
+        // MARK: THREE TAP FOR ANIMATIONS:
 
         let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
 
-    // MARK: - FUNC FOR CONFETTI + VIBRATION:
+    // MARK: - HELPERS:
+
+    // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()

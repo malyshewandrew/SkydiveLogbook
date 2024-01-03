@@ -1,7 +1,7 @@
 import UIKit
 
 class EditAircraftsCell: UITableViewCell {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let view = UIView()
     private let aircraftLabel = UILabel()
@@ -30,7 +30,7 @@ class EditAircraftsCell: UITableViewCell {
     // MARK: - CONFIGURE CONSTRAINS:
 
     func configureConstrains() {
-        // MARK: - VIEW:
+        // MARK: VIEW:
 
         view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
@@ -38,7 +38,7 @@ class EditAircraftsCell: UITableViewCell {
         view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
         view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
 
-        // MARK: - LOCATION LABEL:
+        // MARK: LOCATION LABEL:
 
         aircraftLabel.translatesAutoresizingMaskIntoConstraints = false
         aircraftLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
@@ -50,16 +50,16 @@ class EditAircraftsCell: UITableViewCell {
     // MARK: - CONFIGURE UI:
 
     func configureUI() {
-        // MARK: - CONTENT VIEW:
+        // MARK: CONTENT VIEW:
 
         contentView.backgroundColor = colorBackground
 
-        // MARK: - VIEW:
+        // MARK: VIEW:
 
         view.backgroundColor = colorTabBar
         view.layer.cornerRadius = cornerRadius10
 
-        // MARK: - LOCATION LABEL:
+        // MARK: LOCATION LABEL:
 
         aircraftLabel.textColor = colorWhite
         aircraftLabel.numberOfLines = numberOfLines1
@@ -67,7 +67,7 @@ class EditAircraftsCell: UITableViewCell {
         aircraftLabel.textAlignment = textAligmentLeft
     }
 
-    // MARK: - CONFIGURE FUNC:
+    // MARK: - CONFIGURE MODEL:
 
     func configure(text: String) {
         aircraftLabel.text = text

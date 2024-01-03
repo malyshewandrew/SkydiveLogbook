@@ -2,7 +2,7 @@ import Lottie
 import UIKit
 
 final class PremiumVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let premiumAccountLottie = LottieAnimationView(name: "PremiumAccount")
     private let infoTextView = UIView()
@@ -19,7 +19,6 @@ final class PremiumVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        navigationController?.navigationBar.isHidden = false
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -103,6 +102,10 @@ final class PremiumVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
+        
+        // NAVIGATION CONTROLLER:
+        
+        navigationController?.navigationBar.isHidden = false
         
         // MARK: ANIMATION:
 

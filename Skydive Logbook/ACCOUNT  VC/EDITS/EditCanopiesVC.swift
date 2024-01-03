@@ -3,7 +3,7 @@ import Lottie
 import UIKit
 
 final class EditCanopiesVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let vibrationOn = Vibration()
     private let canopiesLottie = LottieAnimationView(name: "Canopies")
@@ -13,7 +13,157 @@ final class EditCanopiesVC: UIViewController {
     private let tableView = UITableView()
     private var player = AVAudioPlayer()
 
-    // MARK: - FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
+    // MARK: - LIFECYCLE:
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addSubviews()
+        configureConstrains()
+        configureUI()
+        configureTableView()
+        configureGestures()
+        navigationController?.navigationBar.isHidden = false
+        enterTextTextField.delegate = self
+    }
+
+    // MARK: - ADD SUBVIEWS:
+
+    func addSubviews() {
+        view.addSubviews(canopiesLottie, enterTextTextField, saveButton, cleanButton, tableView)
+    }
+
+    // MARK: - CONFIGURE CONSTRAINS:
+
+    func configureConstrains() {
+        // MARK: ANIMATION:
+
+        canopiesLottie.translatesAutoresizingMaskIntoConstraints = false
+        canopiesLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        canopiesLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        canopiesLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        canopiesLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+
+        // MARK: TEXT VIEW:
+
+        enterTextTextField.translatesAutoresizingMaskIntoConstraints = false
+        enterTextTextField.topAnchor.constraint(equalTo: canopiesLottie.bottomAnchor, constant: 20).isActive = true
+        enterTextTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        enterTextTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        enterTextTextField.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
+
+        // MARK: SAVE BUTTON:
+
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.topAnchor.constraint(equalTo: enterTextTextField.bottomAnchor, constant: 15).isActive = true
+        saveButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 5).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.24).isActive = true
+
+        // MARK: CLEAN BUTTON:
+
+        cleanButton.translatesAutoresizingMaskIntoConstraints = false
+        cleanButton.topAnchor.constraint(equalTo: enterTextTextField.bottomAnchor, constant: 15).isActive = true
+        cleanButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -5).isActive = true
+        cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        cleanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.24).isActive = true
+
+        // MARK: TABLE VIEW:
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 30).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+    }
+
+    // MARK: - CONFIGURE UI:
+
+    func configureUI() {
+        // MARK: VIEW:
+
+        view.backgroundColor = colorBackground
+
+        // MARK: ANIMATION:
+
+        canopiesLottie.play()
+        canopiesLottie.loopMode = .loop
+
+        // MARK: TEXT VIEW:
+
+        enterTextTextField.backgroundColor = colorTabBar
+        enterTextTextField.textColor = colorWhite
+        enterTextTextField.layer.borderColor = colorWhiteCG
+        enterTextTextField.layer.borderWidth = borderWidth05
+        enterTextTextField.layer.cornerRadius = cornerRadius10
+        enterTextTextField.textAlignment = textAligmentCenter
+
+        // MARK: SAVE BUTTON:
+
+        saveButton.backgroundColor = colorCell
+        saveButton.titleLabel?.font = fontMediumStandart14
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        saveButton.layer.cornerRadius = cornerRadius10
+        saveButton.addTarget(self, action: #selector(tapOnSaveButton), for: .touchUpInside)
+
+        // MARK: CLEAN BUTTON:
+
+        cleanButton.backgroundColor = colorTabBar
+        cleanButton.titleLabel?.font = fontMediumStandart14
+        cleanButton.setTitleColor(.white, for: .normal)
+        cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
+        cleanButton.layer.cornerRadius = cornerRadius10
+        cleanButton.addTarget(self, action: #selector(tapOnCleanButton), for: .touchUpInside)
+    }
+
+    // MARK: - CONFIGURE TABLE VIEW:
+
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(EditCanopiesCell.self, forCellReuseIdentifier: "EditCanopiesCell")
+        tableView.backgroundColor = colorBackground
+        tableView.separatorStyle = .none
+    }
+
+    // MARK: - CONFIGURE GESTURES:
+
+    private func configureGestures() {
+        // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    // MARK: - HELPERS:
+
+    // MARK: ACTION FOR TAP ON SAVE BUTTON:
+
+    @objc private func tapOnSaveButton() {
+        guard enterTextTextField.text != "" else {
+            actionButtonSaveRedColor()
+            vibrationOn.vibrationError()
+            return
+        }
+        arrayCanopiesPickerViewValues.append(enterTextTextField.text ?? "")
+        actionButtonSaveGreenColor()
+        vibrationOn.vibrationSucces()
+        playSoundSucces()
+        enterTextTextField.text = ""
+        enterTextTextField.resignFirstResponder() // скрывает клавиатуру
+        tableView.reloadData()
+    }
+
+    // MARK: ACTION FOR TAP ON CLEAN BUTTON:
+
+    @objc private func tapOnCleanButton() {
+        enterTextTextField.text = ""
+        actionButtonCleanChangeColor()
+        vibrationOn.vibrationSucces()
+        tableView.reloadData()
+    }
+
+    // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
     private func actionButtonSaveGreenColor() {
         saveButton.backgroundColor = colorGreen
@@ -36,7 +186,7 @@ final class EditCanopiesVC: UIViewController {
         }
     }
 
-    // MARK: - CUSTOM SOUND PLAY FOR BUTTON SAVE:
+    // MARK: CUSTOM SOUND PLAY FOR BUTTON SAVE:
 
     private func playSoundSucces() {
         let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
@@ -44,150 +194,10 @@ final class EditCanopiesVC: UIViewController {
         player = try! AVAudioPlayer(contentsOf: url)
         player.play()
     }
-    
-    // MARK: - LIFECYCLE:
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        addSubviews()
-        configureConstrains()
-        configureUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(EditCanopiesCell.self, forCellReuseIdentifier: "EditCanopiesCell")
-        navigationController?.navigationBar.isHidden = false
-        enterTextTextField.delegate = self
-    }
+    // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
-    // MARK: - ADD SUBVIEWS:
-
-    func addSubviews() {
-        view.addSubviews(canopiesLottie, enterTextTextField, saveButton, cleanButton, tableView)
-    }
-
-    // MARK: - CONFIGURE CONSTRAINS:
-
-    func configureConstrains() {
-        // MARK: - ANIMATION:
-
-        canopiesLottie.translatesAutoresizingMaskIntoConstraints = false
-        canopiesLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        canopiesLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        canopiesLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        canopiesLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-
-        // MARK: - TEXT VIEW:
-
-        enterTextTextField.translatesAutoresizingMaskIntoConstraints = false
-        enterTextTextField.topAnchor.constraint(equalTo: canopiesLottie.bottomAnchor, constant: 20).isActive = true
-        enterTextTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        enterTextTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        enterTextTextField.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
-
-        // MARK: - SAVE BUTTON:
-
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
-        saveButton.topAnchor.constraint(equalTo: enterTextTextField.bottomAnchor, constant: 15).isActive = true
-        saveButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 5).isActive = true
-        saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.24).isActive = true
-
-        // MARK: - CLEAN BUTTON:
-
-        cleanButton.translatesAutoresizingMaskIntoConstraints = false
-        cleanButton.topAnchor.constraint(equalTo: enterTextTextField.bottomAnchor, constant: 15).isActive = true
-        cleanButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -5).isActive = true
-        cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        cleanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.24).isActive = true
-
-        // MARK: - TABLE VIEW:
-
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 30).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-    }
-
-    // MARK: - CONFIGURE UI:
-
-    func configureUI() {
-        // MARK: - VIEW:
-
-        view.backgroundColor = colorBackground
-
-        // MARK: - ANIMATION:
-
-        canopiesLottie.play()
-        canopiesLottie.loopMode = .loop
-
-        // MARK: - TEXT VIEW:
-
-        enterTextTextField.backgroundColor = colorTabBar
-        enterTextTextField.textColor = colorWhite
-        enterTextTextField.layer.borderColor = colorWhiteCG
-        enterTextTextField.layer.borderWidth = borderWidth05
-        enterTextTextField.layer.cornerRadius = cornerRadius10
-        enterTextTextField.textAlignment = textAligmentCenter
-
-        // MARK: - SAVE BUTTON:
-
-        saveButton.backgroundColor = colorCell
-        saveButton.titleLabel?.font = fontMediumStandart14
-        saveButton.setTitleColor(.white, for: .normal)
-        saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
-        saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.addTarget(self, action: #selector(tapSave), for: .touchUpInside)
-
-        // MARK: - CLEAN BUTTON:
-
-        cleanButton.backgroundColor = colorTabBar
-        cleanButton.titleLabel?.font = fontMediumStandart14
-        cleanButton.setTitleColor(.white, for: .normal)
-        cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
-        cleanButton.layer.cornerRadius = cornerRadius10
-        cleanButton.addTarget(self, action: #selector(tapClean), for: .touchUpInside)
-
-        // MARK: - TABLE VIEW:
-
-        tableView.backgroundColor = colorBackground
-        tableView.separatorStyle = .none
-
-        // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
-        view.addGestureRecognizer(tapGesture)
-    }
-
-    // MARK: - ACTION FOR TAP ON SAVE BUTTON:
-
-    @objc func tapSave() {
-        guard enterTextTextField.text != "" else {
-            actionButtonSaveRedColor()
-            vibrationOn.vibrationError()
-            return
-        }
-        arrayCanopiesPickerViewValues.append(enterTextTextField.text ?? "")
-        actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
-        playSoundSucces()
-        enterTextTextField.text = ""
-        enterTextTextField.resignFirstResponder() // скрывает клавиатуру
-        tableView.reloadData()
-    }
-
-    // MARK: - ACTION FOR TAP ON SAVE BUTTON:
-
-    @objc func tapClean() {
-        enterTextTextField.text = ""
-        actionButtonCleanChangeColor()
-        vibrationOn.vibrationSucces()
-        tableView.reloadData()
-    }
-
-    // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
-
-    @objc func tapGestureDone() {
+    @objc private func tapGestureDone() {
         view.endEditing(true)
     }
 }

@@ -31,7 +31,7 @@ final class CalculatorVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        navigationController?.navigationBar.isHidden = false
+        configureGestures()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -176,6 +176,10 @@ final class CalculatorVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
+        
+        // MARK: NAVIGATION CONTROLLER:
+        
+        navigationController?.navigationBar.isHidden = false
 
         // MARK: ANIMATION:
 
@@ -252,8 +256,12 @@ final class CalculatorVC: UIViewController {
         textLabel.numberOfLines = numberOfLines0
         textLabel.font = fontCalculatorText
         textLabel.textColor = colorWhite
-
-        // MARK: TAP ON FREE SPACE FOR CLOSE AL LVIEWS ACTION:
+    }
+    
+    // MARK: CONFIGURE GESTURES:
+    
+    private func configureGestures() {
+        // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         view.addGestureRecognizer(tapGesture)

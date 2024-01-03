@@ -20,7 +20,6 @@ final class InfoVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        navigationController?.navigationBar.isHidden = false
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -88,6 +87,10 @@ final class InfoVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
+        
+        // MARK: NAVIGATION CONTROLLER
+        
+        navigationController?.navigationBar.isHidden = false
         
         // MARK: ANIMATION:
 
