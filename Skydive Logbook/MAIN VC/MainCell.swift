@@ -110,8 +110,8 @@ final class MainCell: UITableViewCell {
     private func configureUserInterface() {
         // MARK: VIEW:
 
-        selectionStyle = .none
         contentView.backgroundColor = colorBackground
+        selectionStyle = .none
 
         // MARK: CELL VIEW:
 
@@ -175,7 +175,10 @@ final class MainCell: UITableViewCell {
         heightLabel.adjustsFontSizeToFitWidth = true
     }
 
-    // MARK: - CONFIGURE:
+    
+    // MARK: - HELPERS:
+    
+    // MARK: CONFIGURE MODEL:
 
     func configure(number: String, date: String, location: String, aircraft: String, canopy: String, mission: String, height: String, time: String, cutaway: String, comment: String) {
         numberLabel.text = number
@@ -190,7 +193,7 @@ final class MainCell: UITableViewCell {
         commentLabel.text = comment
     }
     
-    // MARK: - ACTION FOR CLOSURE:
+    // MARK: ACTION FOR CLOSURE:
 
     @objc private func transitionVC() {
         tapOnCell?()

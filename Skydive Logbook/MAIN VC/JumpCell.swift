@@ -193,8 +193,8 @@ class JumpCell: UITableViewCell {
     private func configureUI() {
         // MARK: VIEW:
 
-        selectionStyle = .none
         contentView.backgroundColor = colorBackground
+        selectionStyle = .none
         
         // MARK: ANIMATIONS:
         
@@ -347,7 +347,9 @@ class JumpCell: UITableViewCell {
         commentLabel.adjustsFontSizeToFitWidth = true
     }
     
-    // MARK: - CONFIGURE:
+    // MARK: - HELPERS:
+    
+    // MARK: CONFIGURE MODEL:
 
     func configure(number: String, date: String, location: String, aircraft: String, canopy: String, mission: String, height: String, time: String, cutaway: String, comment: String) {
         circleButton.setTitle(number, for: .normal)
@@ -376,9 +378,7 @@ class JumpCell: UITableViewCell {
             circleButton.layer.shadowOpacity = 0.5
         }
     }
-    
-    // MARK: - HELPERS:
-    
+        
     // MARK: FUNC FOR TAP ON CIRCLE BUTTON:
     
     @objc private func tapOnCircleAnimationButton() {

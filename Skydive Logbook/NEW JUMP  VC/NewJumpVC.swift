@@ -2,7 +2,7 @@ import Lottie
 import UIKit
 
 final class NewJumpVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let newJumpLottie = LottieAnimationView(name: "NewJump")
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
@@ -86,6 +86,8 @@ final class NewJumpVC: UIViewController {
         confettiLottie.layer.shadowColor = colorBlueCG
         confettiLottie.layer.shadowOpacity = 1
     }
+    
+    // MARK: - CONFIGURE TABLE VIEW:
 
     private func configureTableView() {
         tableView.delegate = self

@@ -10,22 +10,29 @@ final class BackupVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        navigationController?.navigationBar.isHidden = false
     }
 
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {}
+    private func addSubviews() {
+        
+    }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
-    func configureConstrains() {}
+    private func configureConstrains() {
+        
+    }
 
     // MARK: - CONFIGURE UI:
 
-    func configureUI() {
-        // MARK: - VIEW:
+    private func configureUI() {
+        // MARK: VIEW:
 
         view.backgroundColor = colorBackground
+
+        // MARK: NAVIGATION CONTROLLER:
+
+        navigationController?.navigationBar.isHidden = false
     }
 }

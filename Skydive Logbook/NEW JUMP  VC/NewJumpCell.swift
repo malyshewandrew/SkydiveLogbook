@@ -541,7 +541,7 @@ class NewJumpCell: UITableViewCell {
         perform(#selector(hideAnimation), with: nil, afterDelay: 2)
     }
     
-    // MARK: - ACTION BUTTON CLEAN:
+    // MARK: ACTION BUTTON CLEAN:
 
     @objc private func actionButtonCleanTap() {
         actionButtonCleanChangeColor()

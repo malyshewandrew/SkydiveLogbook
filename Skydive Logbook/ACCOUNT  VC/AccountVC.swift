@@ -4,7 +4,7 @@ import UIKit
 import WebKit
 
 final class AccountVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let accountLottie = LottieAnimationView(name: "Account")
     private let confettiLottie = LottieAnimationView(name: "AccountConfetti")
@@ -92,7 +92,7 @@ final class AccountVC: UIViewController {
         confettiLottie.layer.shadowOpacity = 1
     }
 
-    // MARK: CONFIGURE TABLE VIEW:
+    // MARK: - CONFIGURE TABLE VIEW:
 
     private func configureTableView() {
         tableView.dataSource = self
@@ -102,7 +102,7 @@ final class AccountVC: UIViewController {
         tableView.backgroundColor = colorBackground
     }
 
-    // MARK: CONFIGURE GESTURES:
+    // MARK: - CONFIGURE GESTURES:
 
     private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
@@ -122,7 +122,7 @@ final class AccountVC: UIViewController {
     }
 }
 
-// MARK: - TABLE VIEW:
+// MARK: - EXTENSION:
 
 extension AccountVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -137,7 +137,6 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension AccountVC: AccountCellDelegate {
-    // MARK: EDIT ACCOUNT:
 
     func tapEditAccountButton() {
         let editAccount = EditAccountVC()

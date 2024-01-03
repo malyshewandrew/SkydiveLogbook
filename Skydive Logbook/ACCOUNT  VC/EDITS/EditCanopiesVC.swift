@@ -22,7 +22,6 @@ final class EditCanopiesVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
-        navigationController?.navigationBar.isHidden = false
         enterTextTextField.delegate = self
     }
 
@@ -82,6 +81,10 @@ final class EditCanopiesVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
+        
+        // MARK: NAVIGATION CONTROLLER:
+        
+        navigationController?.navigationBar.isHidden = false
 
         // MARK: ANIMATION:
 
@@ -205,13 +208,13 @@ final class EditCanopiesVC: UIViewController {
 // MARK: - EXTENSIONS:
 
 extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
-    // MARK: - COUNTS OF CELLS:
+    // MARK: COUNTS OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         arrayCanopiesPickerViewValues.count
     }
 
-    // MARK: - COSTUM CELL:
+    // MARK: COSTUM CELL:
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditCanopiesCell", for: indexPath) as? EditCanopiesCell else { return UITableViewCell() }
@@ -222,7 +225,7 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    // MARK: - DELETE CELL:
+    // MARK: DELETE CELL:
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

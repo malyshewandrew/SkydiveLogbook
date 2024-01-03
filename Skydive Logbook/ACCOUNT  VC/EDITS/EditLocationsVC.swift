@@ -214,7 +214,7 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
         arrayLocationPickerViewValues.count
     }
 
-    // MARK: - COSTUM CELL:
+    // MARK: COSTUM CELL:
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditLocationsCell", for: indexPath) as? EditLocationsCell else { return UITableViewCell() }

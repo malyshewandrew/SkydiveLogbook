@@ -2,7 +2,7 @@ import Lottie
 import UIKit
 
 final class JumpVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let tableView = UITableView()
     private var selectedJump: JumpStructure

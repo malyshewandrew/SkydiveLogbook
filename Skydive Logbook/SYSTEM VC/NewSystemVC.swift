@@ -15,11 +15,8 @@ final class NewSystemVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
+        configureTableView()
         configureNotificationCenter()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(NewSystemCell.self, forCellReuseIdentifier: "NewSystemCell")
-        navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: - ADD SUBVIEWS:
@@ -55,8 +52,9 @@ final class NewSystemVC: UIViewController {
         
         view.backgroundColor = colorBackground
         
-        // MARK: NAVIGATION RIGHT BUTTON:
-
+        // MARK: NAVIGATION CONTROLLER:
+        
+        navigationController?.navigationBar.isHidden = false
         let manualButton = UIBarButtonItem(image: UIImage(systemName: "book.pages.fill"), style: .plain, target: self, action: #selector(tapOnManualButton))
         navigationItem.rightBarButtonItem = manualButton
         navigationItem.backButtonTitle = ""
@@ -65,9 +63,14 @@ final class NewSystemVC: UIViewController {
         
         newSystemLottie.play()
         newSystemLottie.loopMode = .loop
-        
-        // MARK: TABLE VIEW:
-        
+    }
+    
+    // MARK: - CONFIGURE TABLE VIEW:
+    
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(NewSystemCell.self, forCellReuseIdentifier: "NewSystemCell")
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
     }

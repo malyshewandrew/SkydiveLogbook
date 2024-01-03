@@ -15,7 +15,7 @@ protocol AccountCellDelegate {
 
 final class AccountCell: UITableViewCell {
     
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
     
     private let editAccountButton = UIButton()
     private let editLocationsButton = UIButton()
@@ -216,49 +216,49 @@ final class AccountCell: UITableViewCell {
     
     // MARK: FUNC FOR EDIT ACCOUNT:
 
-    @objc func tapOnEditAccountButton() {
+    @objc private func tapOnEditAccountButton() {
         delegate?.tapEditAccountButton()
     }
     
     // MARK: FUNC FOR EDIT LOCATIONS:
 
-    @objc func tapOnEditLocationsButton() {
+    @objc private func tapOnEditLocationsButton() {
         delegate?.tapEditLocationsButton()
     }
 
     // MARK: FUNC FOR EDIT AIRCRAFTS:
 
-    @objc func tapOnEditAircraftsButton() {
+    @objc private func tapOnEditAircraftsButton() {
         delegate?.tapEditAircraftsButton()
     }
 
     // MARK: FUNC FOR EDIT CANOPIES:
 
-    @objc func tapOnEditCanopiesButton() {
+    @objc private func tapOnEditCanopiesButton() {
         delegate?.tapEditCanopiesButton()
     }
 
     // MARK: FUNC FOR BACKUP:
 
-    @objc func tapOnBackupButton() {
+    @objc private func tapOnBackupButton() {
         delegate?.tapBackupButton()
     }
 
     // MARK: FUNC FOR CALCULATOR:
 
-    @objc func tapOnCalculatorButton() {
+    @objc private func tapOnCalculatorButton() {
         delegate?.tapCalculatorButton()
     }
 
     // MARK: FUNC FOR INFO BUTTON:
 
-    @objc func tapOnInfoButton() {
+    @objc private func tapOnInfoButton() {
         delegate?.tapInfoButton()
     }
 
     // MARK: FUNC FOR PREMIUM BUTTON:
 
-    @objc func tapOnPremiumButton() {
+    @objc private func tapOnPremiumButton() {
         delegate?.tapPremiumButton()
     }
 }

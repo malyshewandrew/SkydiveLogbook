@@ -10,7 +10,7 @@ protocol EditJumpCellDelegate {
 }
 
 class EditJumpCell: UITableViewCell {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
     
     private let dateButton = UIButton()
     private let dateTextField = UITextField()
@@ -504,7 +504,7 @@ class EditJumpCell: UITableViewCell {
         commentTextField.text = jump.comment
     }
     
-    // MARK: - ACTION BUTTON SAVE:
+    // MARK: ACTION BUTTON SAVE:
 
     @objc func actionButtonSaveTap() {
         guard dateTextField.text != "",
@@ -611,7 +611,7 @@ class EditJumpCell: UITableViewCell {
         dateTextField.text = dateFormatter.string(from: datePickerView.date)
     }
     
-    // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
+    // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
     @objc func tapGestureDone() {
         contentView.endEditing(true)

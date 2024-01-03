@@ -147,7 +147,7 @@ final class NotesVC: UIViewController {
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.addTarget(self, action: #selector(tapSave), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(tapOnSaveButton), for: .touchUpInside)
 
         // MARK: CLEAN BUTTON:
 
@@ -156,7 +156,7 @@ final class NotesVC: UIViewController {
         cleanButton.setTitleColor(.white, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius10
-        cleanButton.addTarget(self, action: #selector(tapClean), for: .touchUpInside)
+        cleanButton.addTarget(self, action: #selector(tapOnCleanButton), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -179,7 +179,7 @@ final class NotesVC: UIViewController {
 
         // MARK: THREE TAP FOR ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(playConfetti))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
@@ -200,7 +200,7 @@ final class NotesVC: UIViewController {
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
-    @objc private func tapSave() {
+    @objc private func tapOnSaveButton() {
         guard noteTextView.text != "" else {
             actionButtonSaveRedColor()
             vibrationOn.vibrationError()
@@ -211,7 +211,7 @@ final class NotesVC: UIViewController {
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
-    @objc private func tapClean() {
+    @objc private func tapOnCleanButton() {
         noteTextView.text = ""
         actionButtonCleanChangeColor()
         vibrationOn.vibrationSucces()
@@ -221,7 +221,7 @@ final class NotesVC: UIViewController {
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
-    @objc private func playConfetti() {
+    @objc private func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
@@ -278,10 +278,8 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell", for: indexPath) as? NotesCell else { return UITableViewCell() }
-
         let note = arrayNotes[indexPath.row]
         cell.configure(text: note)
-
         return cell
     }
 

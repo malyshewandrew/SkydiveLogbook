@@ -1,5 +1,5 @@
-import UIKit
 import Lottie
+import UIKit
 
 final class SystemVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -12,7 +12,7 @@ final class SystemVC: UIViewController {
     private let newSystemButton = UIButton()
     private var selectedSystem: SystemStructure?
     private var indexSysytem: Int = 0
-    
+
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -20,12 +20,8 @@ final class SystemVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(SystemCell.self, forCellReuseIdentifier: "SystemCell")
-        navigationController?.navigationBar.isHidden = true
-        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
-        navigationItem.title = ""
+        configureTableView()
+        configureGestures()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +38,6 @@ final class SystemVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        
         // MARK: ANIMATION SYSTEM LOTTIE:
 
         systemLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +69,7 @@ final class SystemVC: UIViewController {
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: newSystemButton.topAnchor, constant: -10).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: NEW SYSTEM:
 
         newSystemButton.translatesAutoresizingMaskIntoConstraints = false
@@ -87,24 +82,26 @@ final class SystemVC: UIViewController {
     // MARK: - CONFIGURE UI:
 
     private func configureUI() {
+        // MARK: VIEW:
+
         view.backgroundColor = colorBackground
-                
+
+        // MARK: NAVIGATION CONTROLLER:
+
+        navigationController?.navigationBar.isHidden = true
+        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
+        navigationItem.title = ""
+
         // MARK: ANIMATIONS:
 
         systemLottie.play()
         systemLottie.loopMode = .autoReverse
-        
+
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = colorBlueCG
         confettiLottie.layer.shadowOpacity = 1
-
-        // MARK: THREE TAP FOR ANIMATIONS:
-
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(playConfetti))
-        confettiGesture.numberOfTapsRequired = 3
-        confettiButton.addGestureRecognizer(confettiGesture)
 
         // MARK: NEW SYSTEM:
 
@@ -114,20 +111,37 @@ final class SystemVC: UIViewController {
         newSystemButton.titleLabel?.font = fontMediumStandart14
         newSystemButton.setTitleColor(.white, for: .normal)
         newSystemButton.addTarget(self, action: #selector(tapOnNewSystemButton), for: .touchUpInside)
+    }
 
-        // MARK: TABLE VIEW:
+    // MARK: - CONFIGURE TABLE VIEW:
 
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(SystemCell.self, forCellReuseIdentifier: "SystemCell")
         tableView.separatorStyle = .none
         tableView.backgroundColor = colorBackground
     }
+    
+    // MARK: - CONFIGURE GESTURES:
+    
+    private func configureGestures() {
+        // MARK: THREE TAP FOR ANIMATIONS:
 
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(playConfetti))
+        confettiGesture.numberOfTapsRequired = 3
+        confettiButton.addGestureRecognizer(confettiGesture)
+    }
+
+    // MARK: - TRANSITION ON NEW SYSTEM VC:
+    
     @objc private func tapOnNewSystemButton() {
         let newSystemVC = NewSystemVC()
         navigationController?.pushViewController(newSystemVC, animated: true)
     }
-    
+
     // MARK: - HELPERS:
-    
+
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func playConfetti() {
@@ -152,7 +166,9 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
         let system = arraySystem[indexPath.row]
         cell.indexPath = indexPath
         cell.configure(system)
+
         // MARK: TRANSITION ON EDIT VIEW CONTROLLER:
+
         cell.tapEditButton = { [weak self] in
             let editSystemViewController = EditSystemVC()
             editSystemViewController.indexPath = indexPath.row
@@ -161,7 +177,7 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         return cell
     }
-
+    
     // MARK: DELETE CELL:
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -177,20 +193,12 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
             present(alertDelete, animated: true)
         }
     }
-    
-    // MARK: TRANSITION ON EDIT VIEW CONTROLLER:
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let editSystemViewController = EditSystemVC()
-//        editSystemViewController.indexPath = indexPath.row
-//        navigationController?.pushViewController(editSystemViewController, animated: true)
-//    }
 }
 
 extension SystemVC: SystemCellDelegate {
     func tapCommentButton(_ indexPath: IndexPath) {
-        
         var comment = ""
-        
+
         if arraySystem[indexPath.row].comment == "" {
             comment = "Комментариев нет"
         } else {

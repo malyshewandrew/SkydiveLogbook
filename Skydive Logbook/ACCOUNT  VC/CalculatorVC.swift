@@ -76,7 +76,7 @@ final class CalculatorVC: UIViewController {
         cleanButton.topAnchor.constraint(equalTo: sizeCanopyTextField.bottomAnchor, constant: 30).isActive = true
         cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         cleanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
-        
+
         // MARK: RESULT BUTTON:
 
         resultButton.translatesAutoresizingMaskIntoConstraints = false
@@ -128,9 +128,9 @@ final class CalculatorVC: UIViewController {
         viewLoadCategoryB.widthAnchor.constraint(equalTo: resultLabel.widthAnchor, multiplier: 0.30).isActive = true
         viewLoadCategoryB.backgroundColor = .systemGreen
         viewLoadCategoryB.isHidden = true
-        
+
         // MARK: VIE LOAD CATEGORY C:
-        
+
         viewLoadCategoryC.translatesAutoresizingMaskIntoConstraints = false
         viewLoadCategoryC.leadingAnchor.constraint(equalTo: resultLabel.leadingAnchor, constant: 10).isActive = true
         viewLoadCategoryC.bottomAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: -5).isActive = true
@@ -138,9 +138,9 @@ final class CalculatorVC: UIViewController {
         viewLoadCategoryC.widthAnchor.constraint(equalTo: resultLabel.widthAnchor, multiplier: 0.45).isActive = true
         viewLoadCategoryC.backgroundColor = .systemYellow
         viewLoadCategoryC.isHidden = true
-        
+
         // MARK: VIE LOAD CATEGORY D:
-        
+
         viewLoadCategoryD.translatesAutoresizingMaskIntoConstraints = false
         viewLoadCategoryD.leadingAnchor.constraint(equalTo: resultLabel.leadingAnchor, constant: 10).isActive = true
         viewLoadCategoryD.bottomAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: -5).isActive = true
@@ -148,9 +148,9 @@ final class CalculatorVC: UIViewController {
         viewLoadCategoryD.widthAnchor.constraint(equalTo: resultLabel.widthAnchor, multiplier: 0.60).isActive = true
         viewLoadCategoryD.backgroundColor = .systemOrange
         viewLoadCategoryD.isHidden = true
-        
+
         // MARK: VIE LOAD CATEGORY D1:
-        
+
         viewLoadCategoryD1.translatesAutoresizingMaskIntoConstraints = false
         viewLoadCategoryD1.leadingAnchor.constraint(equalTo: resultLabel.leadingAnchor, constant: 10).isActive = true
         viewLoadCategoryD1.bottomAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: -5).isActive = true
@@ -158,9 +158,9 @@ final class CalculatorVC: UIViewController {
         viewLoadCategoryD1.widthAnchor.constraint(equalTo: resultLabel.widthAnchor, multiplier: 0.80).isActive = true
         viewLoadCategoryD1.backgroundColor = .systemRed
         viewLoadCategoryD1.isHidden = true
-        
+
         // MARK: VIE LOAD CATEGORY D2:
-        
+
         viewLoadCategoryD2.translatesAutoresizingMaskIntoConstraints = false
         viewLoadCategoryD2.leadingAnchor.constraint(equalTo: resultLabel.leadingAnchor, constant: 10).isActive = true
         viewLoadCategoryD2.bottomAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: -5).isActive = true
@@ -176,9 +176,9 @@ final class CalculatorVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
-        
+
         // MARK: NAVIGATION CONTROLLER:
-        
+
         navigationController?.navigationBar.isHidden = false
 
         // MARK: ANIMATION:
@@ -243,7 +243,7 @@ final class CalculatorVC: UIViewController {
         resultLabel.textAlignment = .center
         resultLabel.font = fontMediumStandart16
         resultLabel.isHidden = true
-        
+
         // MARK: INFO VIEW:
 
         textView.backgroundColor = colorCell
@@ -257,9 +257,9 @@ final class CalculatorVC: UIViewController {
         textLabel.font = fontCalculatorText
         textLabel.textColor = colorWhite
     }
-    
+
     // MARK: CONFIGURE GESTURES:
-    
+
     private func configureGestures() {
         // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
@@ -267,48 +267,11 @@ final class CalculatorVC: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
 
-    // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
-
-    @objc func tapGestureDone() {
-        view.endEditing(true)
-    }
-    
     // MARK: - HELPERS:
-    // MARK: FUNCTIONS FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
-
-    private func actionButtonSaveGreenColor() {
-        resultButton.backgroundColor = colorGreen
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.resultButton.backgroundColor = colorCell
-        }
-    }
-
-    private func actionButtonSaveRedColor() {
-        resultButton.backgroundColor = colorRed
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.resultButton.backgroundColor = colorCell
-        }
-    }
-
-    private func actionButtonCleanChangeColor() {
-        cleanButton.backgroundColor = colorGreen
-        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.cleanButton.backgroundColor = colorTabBar
-        }
-    }
-
-    // MARK: PLAY CUSTOM SOUND FOR BUTTON SAVE:
-
-    private func playSoundSucces() {
-        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
-        guard let url = url else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        player.play()
-    }
 
     // MARK: MATH RESULT FOR LOAD CANOPY:
 
-    func giveCanopyResult(heightSkydiver: String, sizeCanopy: String) -> String {
+    private func giveCanopyResult(heightSkydiver: String, sizeCanopy: String) -> String {
         let result: Float = (Float(heightSkydiver) ?? 0.0) / 0.453 / (Float(sizeCanopy) ?? 0.0)
         return String(result)
     }
@@ -367,7 +330,7 @@ final class CalculatorVC: UIViewController {
 
     // MARK: ACTION BUTTON SAVE:
 
-    @objc func actionButtonSaveTap() {
+    @objc private func actionButtonSaveTap() {
         guard weightTextField.text != "",
               sizeCanopyTextField.text != "",
               weightTextField.text != "0",
@@ -396,22 +359,69 @@ final class CalculatorVC: UIViewController {
         actionButtonSaveGreenColor()
         vibrationOn.vibrationSucces()
         playSoundSucces()
-        weightTextField.text = ""
-        sizeCanopyTextField.text = ""
-        weightTextField.resignFirstResponder()
-        sizeCanopyTextField.resignFirstResponder()
+        cleanTextViews()
+        resignFirstResponders()
     }
 
     // MARK: ACTION BUTTON CLEAN:
 
-    @objc func actionButtonCleanTap() {
+    @objc private func actionButtonCleanTap() {
         actionButtonCleanChangeColor()
         vibrationOn.vibrationSucces()
-        weightTextField.text = ""
-        sizeCanopyTextField.text = ""
+        cleanTextViews()
         resultLabel.isHidden = true
         textView.isHidden = true
+    }
+
+    // MARK: CLEAN ALL TEXT FIELDS:
+
+    private func cleanTextViews() {
+        weightTextField.text = ""
+        sizeCanopyTextField.text = ""
+    }
+
+    // MARK: CLOSE ALL TEXT FIELDS:
+
+    private func resignFirstResponders() {
         weightTextField.resignFirstResponder()
         sizeCanopyTextField.resignFirstResponder()
+    }
+
+    // MARK: FUNCTIONS FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
+
+    private func actionButtonSaveGreenColor() {
+        resultButton.backgroundColor = colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.resultButton.backgroundColor = colorCell
+        }
+    }
+
+    private func actionButtonSaveRedColor() {
+        resultButton.backgroundColor = colorRed
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.resultButton.backgroundColor = colorCell
+        }
+    }
+
+    private func actionButtonCleanChangeColor() {
+        cleanButton.backgroundColor = colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.cleanButton.backgroundColor = colorTabBar
+        }
+    }
+
+    // MARK: PLAY CUSTOM SOUND FOR BUTTON SAVE:
+
+    private func playSoundSucces() {
+        let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
+        guard let url = url else { return }
+        player = try! AVAudioPlayer(contentsOf: url)
+        player.play()
+    }
+
+    // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
+
+    @objc func tapGestureDone() {
+        view.endEditing(true)
     }
 }

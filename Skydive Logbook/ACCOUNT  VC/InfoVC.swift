@@ -197,7 +197,7 @@ final class InfoVC: UIViewController {
     }
 }
 
-// MARK: - SAFARI VIEW CONTROLLER DLEGATE:
+// MARK: - EXTENSION. SAFARI VIEW CONTROLLER DELEGATE:
 
 extension InfoVC: SFSafariViewControllerDelegate {
     func safariViewControllerWillOpenInBrowser(_ controller: SFSafariViewController) {

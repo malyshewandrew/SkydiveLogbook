@@ -129,7 +129,7 @@ final class EditAircraftsVC: UIViewController {
         tableView.separatorStyle = .none
     }
 
-    // MARK: CONFIGURE - GESTURES:
+    // MARK: - CONFIGURE GESTURES:
 
     private func configureGestures() {
         // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
@@ -208,13 +208,13 @@ final class EditAircraftsVC: UIViewController {
 // MARK: - EXTENSIONS:
 
 extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
-    // MARK: - COUNTS OF CELLS:
+    // MARK: COUNTS OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         arrayAircraftPickerViewValues.count
     }
 
-    // MARK: - COSTUM CELL:
+    // MARK: COSTUM CELL:
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditAircraftsCell", for: indexPath) as? EditAircraftsCell else { return UITableViewCell() }
@@ -225,7 +225,7 @@ extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    // MARK: - DELETE CELL:
+    // MARK: DELETE CELL:
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

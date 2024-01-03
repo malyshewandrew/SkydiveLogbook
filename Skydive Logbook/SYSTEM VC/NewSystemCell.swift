@@ -5,11 +5,9 @@ import UIKit
 final class NewSystemCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
-    // NAME SYSTEM:
     private let nameSystemButton = UIButton()
     private let nameSystemTextField = UITextField()
     
-    // CONTAINER:
     private let containerNameButton = UIButton()
     private let containerNameTextField = UITextField()
     
@@ -23,11 +21,8 @@ final class NewSystemCell: UITableViewCell {
     private let containerServiceLifeYearsButton = UIButton()
     private let containerServiceLifeYearsTextField = UITextField()
     
-    // LINE ONE:
-    
     private let lineOneView = UIView()
     
-    // AAD:
     private let aadNameButton = UIButton()
     private let aadNameTextField = UITextField()
     
@@ -41,11 +36,8 @@ final class NewSystemCell: UITableViewCell {
     private let aadServiceLifeYearsButton = UIButton()
     private let aadServiceLifeYearsTextField = UITextField()
     
-    // LINE TWO:
-    
     private let lineTwoView = UIView()
     
-    // MAIN CANOPY:
     private let mainCanopyNameButton = UIButton()
     private let mainCanopyNameTextField = UITextField()
     private let mainCanopyPickerView = UIPickerView()
@@ -66,11 +58,8 @@ final class NewSystemCell: UITableViewCell {
     private let mainCanopyCountJumpsButton = UIButton()
     private let mainCanopyCountJumpsTextField = UITextField()
     
-    // LINE THREE:
-    
     private let lineThreeView = UIView()
     
-    // RESERVE CANOPY:
     private let reserveCanopyNameButton = UIButton()
     private let reserveCanopyNameTextField = UITextField()
     
@@ -91,15 +80,14 @@ final class NewSystemCell: UITableViewCell {
     private let reserveCanopyDatePackTextField = UITextField()
     private let reserveCanopyDatePackPickerView = UIDatePicker()
     
-    // COMMENT:
     private let commentSystemButton = UIButton()
     private let commentSystemTextField = UITextField()
     
-    // CLEAR AND SAVE BUTTONS:
     private let cleanButton = UIButton()
     private let saveButton = UIButton()
     
-    // HELPERS:
+    private let dateFormatter = DateFormatter()
+    
     private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
     
@@ -110,6 +98,7 @@ final class NewSystemCell: UITableViewCell {
         addSubviews()
         configureConstrains()
         configureUI()
+        configureGestures()
         mainCanopyPickerView.delegate = self
         mainCanopyPickerView.dataSource = self
     }
@@ -1003,8 +992,12 @@ final class NewSystemCell: UITableViewCell {
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
-        
-        // MARK: - TAP ON FREE SPACE FOR CLOSE ALL VIEWS:
+    }
+    
+    // MARK: - CONFIGURE GESTURES:
+    
+    private func configureGestures() {
+        // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS:
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         contentView.addGestureRecognizer(tapGesture)
@@ -1157,7 +1150,7 @@ final class NewSystemCell: UITableViewCell {
         contentView.endEditing(true)
     }
 
-    // MARK: - DATE PICKERS:
+    // MARK: DATE PICKERS:
 
     @objc func containerDomPickerValueChanged() {
         getDateFromPickerToContainer()
@@ -1182,31 +1175,26 @@ final class NewSystemCell: UITableViewCell {
     // MARK: DATE FORMATTERS:
 
     func getDateFromPickerToContainer() {
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         containerDomTextField.text = dateFormatter.string(from: containerDomPickerView.date)
     }
     
     func getDateFromPickerToAad() {
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         aadDomTextField.text = dateFormatter.string(from: aadDomPickerView.date)
     }
     
     func getDateFromPickerToMainCanopy() {
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         mainCanopyDomTextField.text = dateFormatter.string(from: mainCanopyDomPickerView.date)
     }
     
     func getDateFromPickerToReserveCanopy() {
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         reserveCanopyDomTextField.text = dateFormatter.string(from: reserveCanopyDomPickerView.date)
     }
     
     func getDateFromPickerToReserveCanopyDatePack() {
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         reserveCanopyDatePackTextField.text = dateFormatter.string(from: reserveCanopyDatePackPickerView.date)
     }

@@ -158,12 +158,17 @@ final class MainVC: UIViewController {
         mainLottie.loopMode = .autoReverse
 
         // MARK: VIEW:
-
+        
+        view.backgroundColor = colorBackground
+        
+        // MARK: NAVIAGTION CONTROLLER:
+        
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
+        
+        // MARK: TAB BAR CONTROLLER:
         tabBarController?.tabBar.isHidden = true
-        view.backgroundColor = colorBackground
 
         // MARK: ACCOUNT IMAGE:
 
@@ -183,10 +188,6 @@ final class MainVC: UIViewController {
         // MARK: NOTES BUTTON:
 
         notesButton.addTarget(self, action: #selector(tapOnNotesButton), for: .touchUpInside)
-
-        // MARK: TABLE VIEW:
-
-
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -363,6 +364,8 @@ final class MainVC: UIViewController {
         }
     }
 
+    // MARK: - HELPERS:
+    
     // MARK: SORT ARRAY:
 
     private func sortArray() {
@@ -374,8 +377,6 @@ final class MainVC: UIViewController {
             return false
         }
     }
-
-    // MARK: - HELPERS:
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
 
@@ -428,11 +429,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // MARK: DELETE JUMP:
-
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
-
-            // MARK: DELETE JUMP:
-
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in

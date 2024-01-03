@@ -60,8 +60,6 @@ final class SystemCell: UITableViewCell {
         configureUI()
     }
     
-    override func prepareForReuse() {}
-
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -360,8 +358,8 @@ final class SystemCell: UITableViewCell {
     private func configureUI() {
         // MARK: CONTENT VIEW:
 
-        selectionStyle = .none
         contentView.backgroundColor = colorBackground
+        selectionStyle = .none
 
         // MARK: CONTAINER VIEW:
 
@@ -601,7 +599,7 @@ final class SystemCell: UITableViewCell {
         
     // MARK: - HELPERS:
     
-    // MARK: CONFIGURE:
+    // MARK: CONFIGURE MODEL:
 
     func configure(_ system: SystemStructure) {
         systemNameLabel.text = system.name.uppercased()
@@ -732,10 +730,13 @@ final class SystemCell: UITableViewCell {
         return expirationDateReserveCanopy
     }
     
+    
+    // MARK: CLOSURE FOR EDIT BUTTON:
     @objc private func tapOnEditButton() {
         tapEditButton?()
     }
     
+    // MARK: DELEGATE FOR COMMENT BUTTON:
     @objc private func tapOnCommentButton() {
         guard let indexPath = indexPath else { return }
         delegate?.tapCommentButton(indexPath)

@@ -1,7 +1,7 @@
 import UIKit
 
 final class NotesCell: UITableViewCell {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let view = UIView()
     private let noteLabel = UILabel()
@@ -29,7 +29,7 @@ final class NotesCell: UITableViewCell {
     // MARK: - CONFIGURE CONSTRAINS:
 
     func configureConstrains() {
-        // MARK: - VIEW:
+        // MARK: VIEW:
 
         view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
@@ -37,7 +37,7 @@ final class NotesCell: UITableViewCell {
         view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
         view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
 
-        // MARK: - NOTE LABEL:
+        // MARK: NOTE LABEL:
 
         noteLabel.translatesAutoresizingMaskIntoConstraints = false
         noteLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true

@@ -2,7 +2,7 @@ import Lottie
 import UIKit
 
 final class StatisticVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let statisticLottie = LottieAnimationView(name: "Statistic")
     private let confettiLottie = LottieAnimationView(name: "StatisticConfetti")
@@ -74,9 +74,9 @@ final class StatisticVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = colorBackground
-        
+
         // MARK: NAVIGATION CONTROLLER:
-        
+
         navigationController?.navigationBar.isHidden = true
 
         // MARK: ANIMATIONS:
@@ -95,16 +95,18 @@ final class StatisticVC: UIViewController {
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
     }
-    
+
     // MARK: - CONFIGURE TABLE VIEW:
-    
+
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StatisticCell.self, forCellReuseIdentifier: "CellStatistic")
         tableView.reloadData()
     }
-    
+
+    // MARK: - CONFIGURE GESTURES:
+
     private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
 
@@ -113,7 +115,9 @@ final class StatisticVC: UIViewController {
         confettiButton.addGestureRecognizer(confettiGesture)
     }
 
-    // MARK: - FUNC FOR CONFETTI + VIBRATION:
+    // MARK: - HELPERS:
+
+    // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()

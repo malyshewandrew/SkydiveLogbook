@@ -2,7 +2,7 @@ import Lottie
 import UIKit
 
 final class EditJumpVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let newJumpLottie = LottieAnimationView(name: "NewJump")
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
