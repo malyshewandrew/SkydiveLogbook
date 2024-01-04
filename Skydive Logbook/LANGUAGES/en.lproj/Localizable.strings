@@ -44,6 +44,7 @@
 "First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Account\" section.\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
 "This action cannot be undone." = "This action cannot be undone.";
+"License" = "License";
 
 // MARK: - CellJump:
 
@@ -54,6 +55,10 @@
 "Height" = "Высота";
 "Time" = "Время";
 "Comment" = "Comment";
+
+// MARK: - NOTES:
+"New note" = "New note";
+"Delete note?" = "Delete note?";
 
 // MARK: - Statistic:
 
@@ -149,10 +154,6 @@
 "Time placeholder" = "Seconds";
 "Cutaway placeholder" = "No / Yes";
 "Comment placeholder" = "Optional";
-
-// MARK: - NOTES:
-"New note" = "New note";
-"Delete note?" = "Delete note?";
 
 // MARK: - ACCOUNT:
 

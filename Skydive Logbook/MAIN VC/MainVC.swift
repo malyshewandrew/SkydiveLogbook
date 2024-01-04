@@ -225,7 +225,7 @@ final class MainVC: UIViewController {
         } else {
             if arrayAccount[0].licenseType.isEmpty {
             } else {
-                licenseType = "Лицензия " + "\"" + arrayAccount[0].licenseType + "\""
+                licenseType = "\(NSLocalizedString("License", comment: "")) " + "\"" + arrayAccount[0].licenseType + "\""
             }
         }
 
