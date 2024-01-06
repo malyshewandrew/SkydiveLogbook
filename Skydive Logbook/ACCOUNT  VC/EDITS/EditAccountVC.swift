@@ -73,9 +73,9 @@ final class EditAccountVC: UIViewController {
         
         licenseTypeButton.translatesAutoresizingMaskIntoConstraints = false
         licenseTypeButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
-        licenseTypeButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -10).isActive = true
+        licenseTypeButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -8).isActive = true
         licenseTypeButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
-        licenseTypeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.327).isActive = true
+        licenseTypeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
         
         licenseTypeTextField.translatesAutoresizingMaskIntoConstraints = false
         licenseTypeTextField.bottomAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor).isActive = true
@@ -87,9 +87,9 @@ final class EditAccountVC: UIViewController {
         
         licenseDateButton.translatesAutoresizingMaskIntoConstraints = false
         licenseDateButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
-        licenseDateButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
+        licenseDateButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 8).isActive = true
         licenseDateButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
-        licenseDateButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.327).isActive = true
+        licenseDateButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
         
         licenseDateTextField.translatesAutoresizingMaskIntoConstraints = false
         licenseDateTextField.bottomAnchor.constraint(equalTo: licenseDateButton.bottomAnchor).isActive = true
