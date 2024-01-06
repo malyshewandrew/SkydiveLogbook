@@ -36,6 +36,7 @@ final class MainVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         firstMessage()
         tableView.reloadData()
         sortArray()
