@@ -122,9 +122,9 @@ final class SystemVC: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = colorBackground
     }
-    
+
     // MARK: - CONFIGURE GESTURES:
-    
+
     private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
 
@@ -134,7 +134,7 @@ final class SystemVC: UIViewController {
     }
 
     // MARK: - TRANSITION ON NEW SYSTEM VC:
-    
+
     @objc private func tapOnNewSystemButton() {
         let newSystemVC = NewSystemVC()
         navigationController?.pushViewController(newSystemVC, animated: true)
@@ -177,7 +177,7 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         return cell
     }
-    
+
     // MARK: DELETE CELL:
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

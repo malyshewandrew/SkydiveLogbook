@@ -1,6 +1,6 @@
 import UIKit
 
-protocol SystemCellDelegate {
+protocol SystemCellDelegate: AnyObject {
     func tapCommentButton(_ index: IndexPath)
 }
 
@@ -48,7 +48,7 @@ final class SystemCell: UITableViewCell {
     private let reserveCanopyExpirationDateLabel = UILabel()
     
     var tapEditButton: (() -> ())?
-    var delegate: SystemCellDelegate?
+    weak var delegate: SystemCellDelegate?
     var indexPath: IndexPath?
     
     // MARK: - LIFECYCLE:

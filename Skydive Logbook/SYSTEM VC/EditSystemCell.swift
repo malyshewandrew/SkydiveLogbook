@@ -2,7 +2,7 @@ import AudioToolbox
 import AVFoundation
 import UIKit
 
-protocol EditSystemCellDelegate {
+protocol EditSystemCellDelegate: AnyObject {
     func saveSystem(_ system: SystemStructure)
 }
 
@@ -94,7 +94,7 @@ final class EditSystemCell: UITableViewCell {
     private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
     
-    var delegate: EditSystemCellDelegate?
+    weak var delegate: EditSystemCellDelegate?
     
     // MARK: - LIFECYCLE:
 

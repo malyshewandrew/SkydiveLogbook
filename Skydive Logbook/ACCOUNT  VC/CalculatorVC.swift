@@ -421,7 +421,7 @@ final class CalculatorVC: UIViewController {
 
     // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
-    @objc func tapGestureDone() {
+    @objc private func tapGestureDone() {
         view.endEditing(true)
     }
 }
