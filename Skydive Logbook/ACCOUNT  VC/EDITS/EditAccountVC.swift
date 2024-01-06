@@ -60,84 +60,84 @@ final class EditAccountVC: UIViewController {
         nicknameButton.translatesAutoresizingMaskIntoConstraints = false
         nicknameButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         nicknameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nicknameButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        nicknameButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         nicknameButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         nicknameTextField.translatesAutoresizingMaskIntoConstraints = false
         nicknameTextField.bottomAnchor.constraint(equalTo: nicknameButton.bottomAnchor).isActive = true
         nicknameTextField.leadingAnchor.constraint(equalTo: nicknameButton.leadingAnchor).isActive = true
         nicknameTextField.trailingAnchor.constraint(equalTo: nicknameButton.trailingAnchor).isActive = true
-        nicknameTextField.heightAnchor.constraint(equalTo: nicknameButton.heightAnchor, multiplier: 0.5).isActive = true
+        nicknameTextField.heightAnchor.constraint(equalTo: nicknameButton.heightAnchor, multiplier: 0.6).isActive = true
         
         // MARK: LICENSE TYPE:
         
         licenseTypeButton.translatesAutoresizingMaskIntoConstraints = false
         licenseTypeButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
         licenseTypeButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -10).isActive = true
-        licenseTypeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        licenseTypeButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         licenseTypeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.327).isActive = true
         
         licenseTypeTextField.translatesAutoresizingMaskIntoConstraints = false
         licenseTypeTextField.bottomAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor).isActive = true
         licenseTypeTextField.leadingAnchor.constraint(equalTo: licenseTypeButton.leadingAnchor).isActive = true
         licenseTypeTextField.trailingAnchor.constraint(equalTo: licenseTypeButton.trailingAnchor).isActive = true
-        licenseTypeTextField.heightAnchor.constraint(equalTo: licenseTypeButton.heightAnchor, multiplier: 0.5).isActive = true
+        licenseTypeTextField.heightAnchor.constraint(equalTo: licenseTypeButton.heightAnchor, multiplier: 0.6).isActive = true
         
         // MARK: LICENSE DATE:
         
         licenseDateButton.translatesAutoresizingMaskIntoConstraints = false
         licenseDateButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
         licenseDateButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
-        licenseDateButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        licenseDateButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         licenseDateButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.327).isActive = true
         
         licenseDateTextField.translatesAutoresizingMaskIntoConstraints = false
         licenseDateTextField.bottomAnchor.constraint(equalTo: licenseDateButton.bottomAnchor).isActive = true
         licenseDateTextField.leadingAnchor.constraint(equalTo: licenseDateButton.leadingAnchor).isActive = true
         licenseDateTextField.trailingAnchor.constraint(equalTo: licenseDateButton.trailingAnchor).isActive = true
-        licenseDateTextField.heightAnchor.constraint(equalTo: licenseDateButton.heightAnchor, multiplier: 0.5).isActive = true
+        licenseDateTextField.heightAnchor.constraint(equalTo: licenseDateButton.heightAnchor, multiplier: 0.6).isActive = true
         
         // MARK: MEDICINE:
         
         medicineButton.translatesAutoresizingMaskIntoConstraints = false
         medicineButton.topAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor, constant: 15).isActive = true
         medicineButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        medicineButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        medicineButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         medicineButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         medicineTextField.translatesAutoresizingMaskIntoConstraints = false
         medicineTextField.bottomAnchor.constraint(equalTo: medicineButton.bottomAnchor).isActive = true
         medicineTextField.leadingAnchor.constraint(equalTo: medicineButton.leadingAnchor).isActive = true
         medicineTextField.trailingAnchor.constraint(equalTo: medicineButton.trailingAnchor).isActive = true
-        medicineTextField.heightAnchor.constraint(equalTo: medicineButton.heightAnchor, multiplier: 0.5).isActive = true
+        medicineTextField.heightAnchor.constraint(equalTo: medicineButton.heightAnchor, multiplier: 0.6).isActive = true
         
         // MARK: INSURANCE:
         
         insuranceButton.translatesAutoresizingMaskIntoConstraints = false
         insuranceButton.topAnchor.constraint(equalTo: medicineButton.bottomAnchor, constant: 15).isActive = true
         insuranceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        insuranceButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        insuranceButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         insuranceButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         insuranceTextField.translatesAutoresizingMaskIntoConstraints = false
         insuranceTextField.bottomAnchor.constraint(equalTo: insuranceButton.bottomAnchor).isActive = true
         insuranceTextField.leadingAnchor.constraint(equalTo: insuranceButton.leadingAnchor).isActive = true
         insuranceTextField.trailingAnchor.constraint(equalTo: insuranceButton.trailingAnchor).isActive = true
-        insuranceTextField.heightAnchor.constraint(equalTo: insuranceButton.heightAnchor, multiplier: 0.5).isActive = true
+        insuranceTextField.heightAnchor.constraint(equalTo: insuranceButton.heightAnchor, multiplier: 0.6).isActive = true
         
         // MARK: RESERVE CANOPY:
         
         reserveCanopyButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyButton.topAnchor.constraint(equalTo: insuranceButton.bottomAnchor, constant: 15).isActive = true
         reserveCanopyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        reserveCanopyButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        reserveCanopyButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
         reserveCanopyButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         reserveCanopyTextField.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyTextField.bottomAnchor.constraint(equalTo: reserveCanopyButton.bottomAnchor).isActive = true
         reserveCanopyTextField.leadingAnchor.constraint(equalTo: reserveCanopyButton.leadingAnchor).isActive = true
         reserveCanopyTextField.trailingAnchor.constraint(equalTo: reserveCanopyButton.trailingAnchor).isActive = true
-        reserveCanopyTextField.heightAnchor.constraint(equalTo: reserveCanopyButton.heightAnchor, multiplier: 0.5).isActive = true
+        reserveCanopyTextField.heightAnchor.constraint(equalTo: reserveCanopyButton.heightAnchor, multiplier: 0.6).isActive = true
         
         // MARK: SAVE BUTTOM:
         

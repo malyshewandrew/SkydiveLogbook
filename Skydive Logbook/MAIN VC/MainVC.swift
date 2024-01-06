@@ -37,6 +37,7 @@ final class MainVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
         firstMessage()
         tableView.reloadData()
         sortArray()
@@ -174,8 +175,8 @@ final class MainVC: UIViewController {
 
         // MARK: ACCOUNT IMAGE:
 
-        let configuration = UIImage.SymbolConfiguration(pointSize: 24)
-        accountImage.image = UIImage(systemName: "text.justify", withConfiguration: configuration)
+        let configuration = UIImage.SymbolConfiguration(pointSize: 26)
+        accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configuration)
         accountImage.tintColor = colorWhite
 
         // MARK: ACCOUNT BUTTON:
@@ -184,7 +185,7 @@ final class MainVC: UIViewController {
 
         // MARK: NOTES IMAGE:
 
-        notesImage.image = UIImage(systemName: "text.justify.leading", withConfiguration: configuration)
+        notesImage.image = UIImage(systemName: "book.circle.fill", withConfiguration: configuration)
         notesImage.tintColor = colorWhite
 
         // MARK: NOTES BUTTON:
