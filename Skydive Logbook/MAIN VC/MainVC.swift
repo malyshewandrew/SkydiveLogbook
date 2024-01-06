@@ -239,7 +239,7 @@ final class MainVC: UIViewController {
         } else {
             if arrayAccount[0].licenseDate.isEmpty {
             } else {
-                licenseDate = " до: " + arrayAccount[0].licenseDate + "\n"
+                licenseDate = " \(NSLocalizedString("until", comment: "")): " + arrayAccount[0].licenseDate + "\n"
             }
         }
 
@@ -251,7 +251,7 @@ final class MainVC: UIViewController {
         } else {
             if arrayAccount[0].medicine == "" {
             } else {
-                medicine = "Медицина до: " + arrayAccount[0].medicine + "\n"
+                medicine = NSLocalizedString("Medicine until", comment: "") + ": " + arrayAccount[0].medicine + "\n"
             }
         }
 
@@ -263,7 +263,7 @@ final class MainVC: UIViewController {
         } else {
             if arrayAccount[0].insurance == "" {
             } else {
-                insurance = "Страховка до: " + arrayAccount[0].insurance + "\n"
+                insurance = NSLocalizedString("Insurance until", comment: "") + ": " + arrayAccount[0].insurance + "\n"
             }
         }
 
@@ -275,13 +275,13 @@ final class MainVC: UIViewController {
         } else {
             if arrayAccount[0].reserveCanopy == "" {
             } else {
-                reserveCanopy = "Запасной до: " + arrayAccount[0].reserveCanopy
+                reserveCanopy = NSLocalizedString("Reserve canopy until", comment: "") + ": " + arrayAccount[0].reserveCanopy
             }
         }
 
         if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
-            let alert = UIAlertController(title: "Аккаунт",
-                                          message: "\nДля заполнения перейдите в раздел \"Аккаунт\"",
+            let alert = UIAlertController(title: NSLocalizedString("Account", comment: ""),
+                                          message: "\n" + NSLocalizedString("Edit/add account", comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
 

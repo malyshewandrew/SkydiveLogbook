@@ -44,7 +44,15 @@
 "First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Account\" section.\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
 "This action cannot be undone." = "This action cannot be undone.";
+
 "License" = "License";
+"until" = "until";
+"Medicine until" = "Medicine until";
+"Insurance until" = "Insurance until";
+"Reserve canopy until" = "Reserve canopy until";
+
+"Account" = "Account";
+"Edit/add account" = "To fill it out, go to the \"Account\" section";
 
 // MARK: - CellJump:
 
