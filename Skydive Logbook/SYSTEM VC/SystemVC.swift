@@ -108,7 +108,7 @@ final class SystemVC: UIViewController {
 
         newSystemButton.backgroundColor = colorCell
         newSystemButton.layer.cornerRadius = 10
-        newSystemButton.setTitle("Добавить новую систему", for: .normal)
+        newSystemButton.setTitle(NSLocalizedString("Add a new system", comment: ""), for: .normal)
         newSystemButton.titleLabel?.font = fontMediumStandart14
         newSystemButton.setTitleColor(.white, for: .normal)
         newSystemButton.addTarget(self, action: #selector(tapOnNewSystemButton), for: .touchUpInside)
@@ -201,12 +201,12 @@ extension SystemVC: SystemCellDelegate {
         var comment = ""
 
         if arraySystem[indexPath.row].comment == "" {
-            comment = "Комментариев нет"
+            comment = NSLocalizedString("No comment", comment: "")
         } else {
             comment = arraySystem[indexPath.row].comment
         }
 
-        let alert = UIAlertController(title: "Комментарий:",
+        let alert = UIAlertController(title: NSLocalizedString("Comment", comment: "") + ":",
                                       message: "\n" + comment,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in

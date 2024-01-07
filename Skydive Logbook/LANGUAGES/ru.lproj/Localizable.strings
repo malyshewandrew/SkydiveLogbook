@@ -168,6 +168,11 @@
 "Cutaway placeholder" = "Нет / Да";
 "Comment placeholder" = "Опционально";
 
+// MARK: - SYSTEM:
+"Add a new system" = "Добавить новую систему";
+"Comment" = "Комментарий";
+"No comment" = "Комментариев нет";
+
 // MARK: - ACCOUNT:
 
 "Edit locations" = "Редактировать локации";

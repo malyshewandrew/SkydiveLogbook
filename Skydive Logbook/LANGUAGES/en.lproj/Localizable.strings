@@ -168,6 +168,11 @@
 "Cutaway placeholder" = "No / Yes";
 "Comment placeholder" = "Optional";
 
+// MARK: - SYSTEM:
+"Add a new system" = "Add a new system";
+"Comment" = "Comment";
+"No comments" = "Comments not found";
+
 // MARK: - ACCOUNT:
 
 "Edit locations" = "Edit locations";
