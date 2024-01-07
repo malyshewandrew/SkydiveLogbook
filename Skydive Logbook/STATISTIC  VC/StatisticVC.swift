@@ -230,9 +230,9 @@ extension StatisticVC: StatisticCellDelegate {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = """
-            \nСуммарная высота \(sumHeight) м.
+            \n\(NSLocalizedString("Total height", comment: "")): \(sumHeight) \(NSLocalizedString("m.", comment: ""))
             \(heightMessage)\n
-            \nВремя свободнго падения: \(sumTime) c.
+            \n\(NSLocalizedString("Free fall time", comment: "")): \(sumTime) \(NSLocalizedString("s.", comment: ""))
             \(timeMessage)\n
             """
         }
@@ -389,10 +389,10 @@ extension StatisticVC: StatisticCellDelegate {
         if arrayJumps.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
-            message = "\n\(NSLocalizedString("Average height", comment: "")): \(averageHeight) \(NSLocalizedString("m.", comment: ""))"
+            message = "\n\(NSLocalizedString("Average height of jump", comment: "")): \(averageHeight) \(NSLocalizedString("m.", comment: ""))"
         }
 
-        let alert = UIAlertController(title: "Средняя высота",
+        let alert = UIAlertController(title: NSLocalizedString("Average height", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
@@ -600,10 +600,10 @@ extension StatisticVC: StatisticCellDelegate {
         if arrayJumps.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
-            message = " \n\(NSLocalizedString("Average time", comment: "")): \(averageTime) \(NSLocalizedString("s.", comment: ""))"
+            message = " \n\(NSLocalizedString("Average free fall time of jump", comment: "")): \(averageTime) \(NSLocalizedString("s.", comment: ""))"
         }
 
-        let alert = UIAlertController(title: "Среднее время:",
+        let alert = UIAlertController(title: NSLocalizedString("Average time", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))

@@ -265,7 +265,7 @@ class EditJumpCell: UITableViewCell {
         saveButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
         saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         
-        // MARK: SAVE CONFETTI:
+        // MARK: SAVE LOTTIE:
 
         saveLottie.translatesAutoresizingMaskIntoConstraints = false
         saveLottie.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
@@ -471,7 +471,7 @@ class EditJumpCell: UITableViewCell {
         
         // MARK: SAVE BUTTON:
 
-        saveButton.setTitle("Обновить", for: .normal)
+        saveButton.setTitle(NSLocalizedString("Update", comment: ""), for: .normal)
         saveButton.backgroundColor = colorCell
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.white, for: .normal)

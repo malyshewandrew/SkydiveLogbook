@@ -482,7 +482,7 @@ final class StatisticCell: UITableViewCell {
         
         // MARK: AVERAGE HEIGHT:
 
-        averageHeightButton.setTitle("Средн. высота:", for: .normal)
+        averageHeightButton.setTitle(NSLocalizedString("Av. height", comment: "") + ":", for: .normal)
         averageHeightButton.setTitleColor(colorLightGray, for: .normal)
         averageHeightButton.titleLabel?.font = fontMediumStandart12
         averageHeightButton.contentVerticalAlignment = textAligmentTop
@@ -581,7 +581,7 @@ final class StatisticCell: UITableViewCell {
         
         // MARK: AVERAGE TIME:
 
-        averageTimeButton.setTitle("Средн. время:", for: .normal)
+        averageTimeButton.setTitle(NSLocalizedString("Av. time", comment: "") + ":", for: .normal)
         averageTimeButton.setTitleColor(colorLightGray, for: .normal)
         averageTimeButton.titleLabel?.font = fontMediumStandart12
         averageTimeButton.contentVerticalAlignment = textAligmentTop

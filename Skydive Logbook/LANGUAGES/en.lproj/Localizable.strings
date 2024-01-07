@@ -63,6 +63,7 @@
 "Height" = "Высота";
 "Time" = "Время";
 "Comment" = "Comment";
+"Update" = "Update";
 
 // MARK: - NOTES:
 "New note" = "New note";
@@ -73,6 +74,8 @@
 "no jumps" = "To display statistics, you need to make at least one jump.";
 "saving data" = "Saving data";
 "saving data text" = "To save your complete jump history, it is recommended that you periodically create backups in the \"Account\" section. \nThis is especially important when switching to a new device.";
+"Total height" = "Total height";
+"Free fall time" = "Free fall time";
 "jumps by year" = "Jumps by year";
 "year" = "year";
 "Categories USPA" = "Categories USPA";
@@ -81,11 +84,13 @@
 "Maximum time alert" = "The jump with the maximum free fall time was completed";
 "Maximum height" = "Maximum height";
 "Maximum height alert" = "The jump with the maximum height of the compartment was completed";
+"Average height" = "Average height";
 "Minimum height" = "Minimum height";
 "Minimum height alert" = "The jump with the minimum height of the compartment was completed";
 "Max in one day" = "Max in one day";
-"Average height" = "Average height of jump";
-"Average time" = "Average free fall time of jump";
+"Average height of jump" = "Average height of jump";
+"Average free fall time of jump" = "Average free fall time of jump";
+"Av. time" = "Av. time";
 "Max count of jumps" = "Сount of jumps";
 "Max count of jumps text" = "The maximum number of jumps in one day was completed";
 "Jumps no found" = "Jumps no found";
