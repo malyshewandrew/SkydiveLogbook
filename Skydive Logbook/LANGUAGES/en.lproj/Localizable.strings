@@ -172,6 +172,22 @@
 "Add a new system" = "Add a new system";
 "Comment" = "Comment";
 "No comments" = "Comments not found";
+"Container system" = "Container";
+"AAD system" = "ADD";
+"Main canopy system" = "Main canopy";
+"Reserve canopy system" = "Reserve canopy";
+
+"Number system" = "Number";
+"DOM system" = "DOM";
+"Service life system" = "Service life";
+"Valid until system" = "Valid until";
+"Counts of the jumps system" = "Counts of the jumps";
+"Resource system" = "Resource";
+"Counts of repack system" = "Counts of repack";
+"Packed system" = "Packed";
+
+"years system" = "years";
+"jumps system" = "jumps";
 
 // MARK: - ACCOUNT:
 

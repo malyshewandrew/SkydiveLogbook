@@ -172,6 +172,22 @@
 "Add a new system" = "Добавить новую систему";
 "Comment" = "Комментарий";
 "No comment" = "Комментариев нет";
+"Container system" = "Ранец";
+"AAD system" = "Страхующий прибор";
+"Main canopy system" = "Main canopy";
+"Reserve canopy system" = "Reserve canopy";
+
+"Number system" = "Номер";
+"DOM system" = "Изготовлен";
+"Service life system" = "Срок службы";
+"Valid until system" = "Годен до";
+"Counts of the jumps system" = "Прыжков на куполе";
+"Resource system" = "Ресурс";
+"Counts of repack system" = "Переукладок";
+"Packed system" = "Уложен";
+
+"years system" = "лет";
+"jumps system" = "прыжков";
 
 // MARK: - ACCOUNT:
 

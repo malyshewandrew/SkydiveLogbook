@@ -389,7 +389,7 @@ final class SystemCell: UITableViewCell {
         
         // MARK: CONTAINER LABEL:
         
-        containerLabel.text = "Ранец:".uppercased()
+        containerLabel.text = "\(NSLocalizedString("Container system", comment: "")): ".uppercased()
         containerLabel.textColor = colorLightGray
         containerLabel.font = fontBoldStandart10
         containerLabel.textAlignment = .left
@@ -431,7 +431,7 @@ final class SystemCell: UITableViewCell {
         
         // MARK: AAD LABEL:
         
-        aadLabel.text = "Страхующий прибор:".uppercased()
+        aadLabel.text = "\(NSLocalizedString("AAD system", comment: "")): ".uppercased()
         aadLabel.textColor = colorLightGray
         aadLabel.font = fontBoldStandart10
         aadLabel.textAlignment = .right
@@ -475,7 +475,7 @@ final class SystemCell: UITableViewCell {
         
         // MARK: MAIN CANOPY LABEL:
         
-        mainCanopyLabel.text = "Основной парашют:".uppercased()
+        mainCanopyLabel.text = "\(NSLocalizedString("Main canopy system", comment: "")): ".uppercased()
         mainCanopyLabel.textColor = colorLightGray
         mainCanopyLabel.font = fontBoldStandart10
         mainCanopyLabel.textAlignment = .left
@@ -540,7 +540,7 @@ final class SystemCell: UITableViewCell {
         
         // MARK: RESERVE CANOPY LABEL:
         
-        reserveCanopyLabel.text = "Запасной парашют:".uppercased()
+        reserveCanopyLabel.text = "\(NSLocalizedString("Reserve canopy system", comment: "")): ".uppercased()
         reserveCanopyLabel.textColor = colorLightGray
         reserveCanopyLabel.font = fontBoldStandart10
         reserveCanopyLabel.textAlignment = .right
@@ -604,30 +604,30 @@ final class SystemCell: UITableViewCell {
     func configure(_ system: SystemStructure) {
         systemNameLabel.text = system.name.uppercased()
         containerNameLabel.text = system.container.name
-        containerSerialNumberLabel.text = "Номер: " + system.container.serialNumber
-        containerDomLabel.text = "Изготовлен: " + system.container.dom
-        containerServiceLifeYearsLabel.text = "Срок службы: " + system.container.serviceLifeYears + " лет"
-        containerExpirationDateLabel.text = "Годен до: " + setContainerExpirationDate(system)
+        containerSerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.container.serialNumber
+        containerDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.container.dom
+        containerServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.container.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
+        containerExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setContainerExpirationDate(system)
         aadNameLabel.text = system.aad.name
-        aadSerialNumberLabel.text = "Номер: " + system.aad.serialNumber
-        aadDomLabel.text = "Изготовлен: " + system.aad.dom
-        aadServiceLifeYearsLabel.text = "Срок службы: " + system.aad.serviceLifeYears + " лет"
-        aadExpirationDateLabel.text = "Годен до: " + setAadExpirationDate(system)
+        aadSerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.aad.serialNumber
+        aadDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.aad.dom
+        aadServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.aad.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
+        aadExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setAadExpirationDate(system)
         mainCanopyNameLabel.text = system.mainCanopy.name
-        mainCanopySerialNumberLabel.text = "Номер: " + system.mainCanopy.serialNumber
-        mainCanopyDomLabel.text = "Изготовлен: " + system.mainCanopy.dom
-        mainCanopyServiceLifeYearsLabel.text = "Срок службы: " + system.mainCanopy.serviceLifeYears + " лет"
-        mainCanopyExpirationDateLabel.text = "Годен до: " + setMainCanopyExpirationDate(system)
-        mainCanopyServiceLifeJumpsLabel.text = "Срок службы: " + system.mainCanopy.serviceLifeJumps + " прыжков"
-        mainCanopyCountJumpsLabel.text = "Прыжков на куполе: " + setMainCanopyCountTotalJumps(system, arrayJumps)
-        mainCanopyRemainedCountLabel.text = "Ресурс: " + setMainCanopyRemainedCountJumps(system, arrayJumps) + " прыжков"
+        mainCanopySerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.mainCanopy.serialNumber
+        mainCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.mainCanopy.dom
+        mainCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.mainCanopy.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
+        mainCanopyExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setMainCanopyExpirationDate(system)
+        mainCanopyServiceLifeJumpsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.mainCanopy.serviceLifeJumps + " " + NSLocalizedString("jumps system", comment: "")
+        mainCanopyCountJumpsLabel.text = NSLocalizedString("Counts of the jumps system", comment: "") + ": " + setMainCanopyCountTotalJumps(system, arrayJumps)
+        mainCanopyRemainedCountLabel.text = NSLocalizedString("Resource system", comment: "") + ": " + setMainCanopyRemainedCountJumps(system, arrayJumps) + " " + NSLocalizedString("jumps system", comment: "")
         reserveCanopyNameLabel.text = system.reserveCanopy.name
-        reserveCanopySerialNumberLabel.text = "Номер: " + system.reserveCanopy.serialNumber
-        reserveCanopyDomLabel.text = "Изготовлен: " + system.reserveCanopy.dom
-        reserveCanopyServiceLifeYearsLabel.text = "Срок службы: " + system.reserveCanopy.serviceLifeYears + " лет"
-        reserveCanopyCountRepackLabel.text = "Переукладок: " + system.reserveCanopy.countRepack + "/" + system.reserveCanopy.serviceLifeYears
-        reserveCanopyDatePackLabel.text = "Уложен: " + system.reserveCanopy.datePack
-        reserveCanopyExpirationDateLabel.text = "Годен до: " + setReserveCanopyExpirationDate(system)
+        reserveCanopySerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.reserveCanopy.serialNumber
+        reserveCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.reserveCanopy.dom
+        reserveCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.reserveCanopy.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
+        reserveCanopyCountRepackLabel.text = NSLocalizedString("Counts of repack system", comment: "") + ": " + system.reserveCanopy.countRepack + "/" + system.reserveCanopy.serviceLifeYears
+        reserveCanopyDatePackLabel.text = NSLocalizedString("Packed system", comment: "") + ": " + system.reserveCanopy.datePack
+        reserveCanopyExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setReserveCanopyExpirationDate(system)
     }
     
     // MARK: CONTAINER SERVICE LIFE YEARS:
