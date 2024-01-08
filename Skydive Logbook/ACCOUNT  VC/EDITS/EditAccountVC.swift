@@ -161,13 +161,13 @@ final class EditAccountVC: UIViewController {
         
         // MARK: NICKNAME:
         
-        nicknameButton.setTitle("Никнейм", for: .normal)
+        nicknameButton.setTitle(NSLocalizedString("Nickname / edit account vc", comment: "") + ":", for: .normal)
         nicknameButton.backgroundColor = colorCell
         nicknameButton.setTitleColor(colorLightGray, for: .normal)
         nicknameButton.contentVerticalAlignment = textAligmentTop
         nicknameButton.titleLabel?.font = fontMediumStandart12
         nicknameButton.layer.cornerRadius = cornerRadius10
-        nicknameTextField.placeholder = "Имя пользователя"
+        nicknameTextField.placeholder = NSLocalizedString("Name user / edit account vc", comment: "")
         nicknameTextField.backgroundColor = colorTabBar
         nicknameTextField.font = fontMediumStandart18
         nicknameTextField.textColor = colorWhite
@@ -179,13 +179,13 @@ final class EditAccountVC: UIViewController {
         
         // MARK: LICENSE TYPE:
         
-        licenseTypeButton.setTitle("Лицензия", for: .normal)
+        licenseTypeButton.setTitle(NSLocalizedString("License / edit account vc", comment: "") + ":", for: .normal)
         licenseTypeButton.backgroundColor = colorCell
         licenseTypeButton.setTitleColor(colorLightGray, for: .normal)
         licenseTypeButton.contentVerticalAlignment = textAligmentTop
         licenseTypeButton.titleLabel?.font = fontMediumStandart12
         licenseTypeButton.layer.cornerRadius = cornerRadius10
-        licenseTypeTextField.placeholder = "Тип/номер"
+        licenseTypeTextField.placeholder = NSLocalizedString("Type / number / edit account vc", comment: "")
         licenseTypeTextField.backgroundColor = colorTabBar
         licenseTypeTextField.font = fontMediumStandart18
         licenseTypeTextField.textColor = colorWhite
@@ -197,13 +197,13 @@ final class EditAccountVC: UIViewController {
         
         // MARK: LICENSE DATE:
         
-        licenseDateButton.setTitle("Действительна до", for: .normal)
+        licenseDateButton.setTitle(NSLocalizedString("Valid until / edit account vc", comment: "") + ":", for: .normal)
         licenseDateButton.backgroundColor = colorCell
         licenseDateButton.setTitleColor(colorLightGray, for: .normal)
         licenseDateButton.contentVerticalAlignment = textAligmentTop
         licenseDateButton.titleLabel?.font = fontMediumStandart12
         licenseDateButton.layer.cornerRadius = cornerRadius10
-        licenseDateTextField.placeholder = "мм.дд.гггг"
+        licenseDateTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         licenseDateTextField.backgroundColor = colorTabBar
         licenseDateTextField.font = fontMediumStandart18
         licenseDateTextField.textColor = colorWhite
@@ -216,13 +216,13 @@ final class EditAccountVC: UIViewController {
         
         // MARK: MEDICINE:
         
-        medicineButton.setTitle("Медицина действительна до:", for: .normal)
+        medicineButton.setTitle(NSLocalizedString("Medicine / edit account vc", comment: "") + ":", for: .normal)
         medicineButton.backgroundColor = colorCell
         medicineButton.setTitleColor(colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop
         medicineButton.titleLabel?.font = fontMediumStandart12
         medicineButton.layer.cornerRadius = cornerRadius10
-        medicineTextField.placeholder = "мм.дд.гггг"
+        medicineTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         medicineTextField.backgroundColor = colorTabBar
         medicineTextField.font = fontMediumStandart18
         medicineTextField.textColor = colorWhite
@@ -234,13 +234,13 @@ final class EditAccountVC: UIViewController {
         
         // MARK: INSURANCE:
         
-        insuranceButton.setTitle("Страховка действительна до:", for: .normal)
+        insuranceButton.setTitle(NSLocalizedString("Insurance / edit account vc", comment: "") + ":", for: .normal)
         insuranceButton.backgroundColor = colorCell
         insuranceButton.setTitleColor(colorLightGray, for: .normal)
         insuranceButton.contentVerticalAlignment = textAligmentTop
         insuranceButton.titleLabel?.font = fontMediumStandart12
         insuranceButton.layer.cornerRadius = cornerRadius10
-        insuranceTextField.placeholder = "мм.дд.гггг"
+        insuranceTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         insuranceTextField.backgroundColor = colorTabBar
         insuranceTextField.font = fontMediumStandart18
         insuranceTextField.textColor = colorWhite
@@ -252,13 +252,13 @@ final class EditAccountVC: UIViewController {
         
         // MARK: RESERVE CANOPY:
         
-        reserveCanopyButton.setTitle("Запасной действителен до:", for: .normal)
+        reserveCanopyButton.setTitle(NSLocalizedString("Reserve canopy / edit account vc", comment: "") + ":", for: .normal)
         reserveCanopyButton.backgroundColor = colorCell
         reserveCanopyButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyButton.titleLabel?.font = fontMediumStandart12
         reserveCanopyButton.layer.cornerRadius = cornerRadius10
-        reserveCanopyTextField.placeholder = "дд.мм.гггг"
+        reserveCanopyTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         reserveCanopyTextField.backgroundColor = colorTabBar
         reserveCanopyTextField.font = fontMediumStandart18
         reserveCanopyTextField.textColor = colorWhite

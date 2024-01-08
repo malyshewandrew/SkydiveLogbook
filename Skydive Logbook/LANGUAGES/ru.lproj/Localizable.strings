@@ -248,6 +248,7 @@
 
 // MARK: - ACCOUNT:
 
+"Edit account" = "Редактировать аккаунт";
 "Edit locations" = "Редактировать локации";
 "Delete location?" = "Удалить локацию?";
 "Edit aircrafts" = "Редактировать авиатехнику";
@@ -258,6 +259,18 @@
 "Calculator loading" = "Калькулятор загрузки";
 "Information" = "Справочная информация";
 "Premium version" = "Премиум версия";
+
+// MARK: - EDIT ACCOUNT:
+"Nickname / edit account vc" = "Никнейм";
+"Name user / edit account vc" = "Имя пользователя";
+"License / edit account vc" = "Лицензия";
+"Type / number / edit account vc" = "Тип / номер";
+"Valid until / edit account vc" = "Срок действия (до)";
+"Date / dd.mm.yyyy / edit account vc" = "дд.мм.гггг";
+"Medicine / edit account vc" = "Медицина";
+"Valid until + dd.mm.yyyy / edit account vc" = "Срок действия (до) дд.мм.гггг";
+"Insurance / edit account vc" = "Страховка";
+"Reserve canopy / edit account vc" = "Запасной парашют";
 
 // MARK: - CALCULATOR:
 

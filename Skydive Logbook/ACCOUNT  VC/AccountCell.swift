@@ -135,7 +135,7 @@ final class AccountCell: UITableViewCell {
         
         // MARK: EDIT ACCOUNT:
 
-        editAccountButton.setTitle("Редактировать аккаунт", for: .normal)
+        editAccountButton.setTitle(NSLocalizedString("Edit account", comment: ""), for: .normal)
         editAccountButton.layer.cornerRadius = cornerRadius10
         editAccountButton.backgroundColor = colorCell
         editAccountButton.titleLabel?.font = fontMediumStandart14

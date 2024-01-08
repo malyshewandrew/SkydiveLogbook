@@ -248,6 +248,7 @@
 
 // MARK: - ACCOUNT:
 
+"Edit account" = "Edit account";
 "Edit locations" = "Edit locations";
 "Delete location?" = "Delete location?";
 "Edit aircrafts" = "Edit aircrafts";
@@ -258,6 +259,18 @@
 "Calculator loading" = "Calculator loading";
 "Information" = "Information";
 "Premium version" = "Premium version";
+
+// MARK: - EDIT ACCOUNT:
+"Nickname / edit account vc" = "Nickname";
+"Name user / edit account vc" = "Name user";
+"License / edit account vc" = "License";
+"Type / number / edit account vc" = "Type / number";
+"Valid until / edit account vc" = "Valid until";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "Medicine";
+"Valid until + dd.mm.yyyy / edit account vc" = "Valid until dd.mm.yyyy";
+"Insurance / edit account vc" = "Insurance";
+"Reserve canopy / edit account vc" = "Reserve canopy";
 
 // MARK: - CALCULATOR:
 
