@@ -51,7 +51,7 @@
 "Insurance until" = "Страховка до";
 "Reserve canopy until" = "Запасной до";
 
-"Account main aler" = "Аккаунт";
+"Account main alert" = "Аккаунт";
 "Edit/add account" = "Для заполнения перейдите в раздел \"Аккаунт\"";
 
 // MARK: - CellJump:
@@ -90,6 +90,7 @@
 "Max in one day" = "Макс. прыжков за 1 день";
 "Average height" = "Средняя высота прыжка";
 "Average free fall time of jump" = "Среднее время свободного падения";
+"Average time of jump" = "Среднее время падения";
 "Av. time" = "Средн. время";
 "Max count of jumps" = "Количество прыжков";
 "Max count of jumps text" = "Максимальное количество прыжков за один день было совершено";
@@ -113,6 +114,7 @@
 "Max. time" = "Макс. время";
 "Max. height" = "Макс. высота";
 "Min. height" = "Мин. высота";
+"Av. height" = "Средн. высота";
 "Max. in day" = "Макс. в день";
 "CutawayStatistic" = "Отцепки";
 "Last jump" = "Крайний прыжок";

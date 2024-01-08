@@ -51,7 +51,7 @@
 "Insurance until" = "Insurance until";
 "Reserve canopy until" = "Reserve canopy until";
 
-"Account main aler" = "Account";
+"Account main alert" = "Account";
 "Edit/add account" = "To fill it out, go to the \"Account\" section";
 
 // MARK: - CellJump:
@@ -90,6 +90,7 @@
 "Max in one day" = "Max in one day";
 "Average height of jump" = "Average height of jump";
 "Average free fall time of jump" = "Average free fall time of jump";
+"Average time of jump" = "Average free fall";
 "Av. time" = "Av. time";
 "Max count of jumps" = "Сount of jumps";
 "Max count of jumps text" = "The maximum number of jumps in one day was completed";
@@ -112,6 +113,7 @@
 "Average info" = "Average info";
 "Max. time" = "Max. time";
 "Max. height" = "Max. height";
+"Av. height" = "Max. height";
 "Min. height" = "Min. height";
 "Max. in day" = "Max. in day";
 "CutawayStatistic" = "Cutaway";
