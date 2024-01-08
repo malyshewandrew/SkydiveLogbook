@@ -233,11 +233,12 @@
 "Name AAD / new system cell" = "Name AAD";
 
 "Main canopy / new system cell" = "Main canopy";
-"Name main canopy / new system cell" = "Name main canopy";
+"Name main canopy / new system cell" = "Name canopy";
 "Counts of jumps main canopy / new system cell" = "Counts of jumps";
-"The value of the purchase / new system cell" = "The value of the purchase";
+"The value of the purchase / new system cell" = "Value of the purchase";
 
 "Reserve canopy / new system cell" = "Reserve canopy";
+"Name reserve canopy / new system cell" = "Name canopy";
 "Counts of repack reserve canopy / new system cell" = "Counts of repack";
 "Date of packing reserve canopy / new system cell" = "Date of packing";
 "Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";

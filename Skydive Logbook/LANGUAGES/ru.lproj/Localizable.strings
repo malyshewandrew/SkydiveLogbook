@@ -238,6 +238,7 @@
 "The value of the purchase / new system cell" = "Значение при покупке";
 
 "Reserve canopy / new system cell" = "Запасной парашют";
+"Name reserve canopy / new system cell" = "Название парашюта";
 "Counts of repack reserve canopy / new system cell" = "Количество переукладок";
 "Date of packing reserve canopy / new system cell" = "Дата укладки";
 "Date dd.mm.yyyy / new system cell" = "дд.мм.гггг";

@@ -630,13 +630,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: AAD NAME:
         
-        aadNameButton.setTitle("Страхующий прибор*", for: .normal)
+        aadNameButton.setTitle(NSLocalizedString("AAD / new system cell", comment: "") + "*", for: .normal)
         aadNameButton.backgroundColor = colorCell
         aadNameButton.setTitleColor(colorLightGray, for: .normal)
         aadNameButton.contentVerticalAlignment = textAligmentTop
         aadNameButton.titleLabel?.font = fontMediumStandart10
         aadNameButton.layer.cornerRadius = cornerRadius10
-        aadNameTextField.placeholder = "Название прибора"
+        aadNameTextField.placeholder = NSLocalizedString("Name AAD / new system cell", comment: "")
         aadNameTextField.backgroundColor = colorTabBar
         aadNameTextField.font = fontRegularStandart12
         aadNameTextField.textColor = colorWhite
@@ -654,7 +654,7 @@ final class NewSystemCell: UITableViewCell {
         aadDomButton.contentVerticalAlignment = textAligmentTop
         aadDomButton.titleLabel?.font = fontMediumStandart10
         aadDomButton.layer.cornerRadius = cornerRadius10
-        aadDomTextField.placeholder = "мм.гггг"
+        aadDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         aadDomTextField.backgroundColor = colorTabBar
         aadDomTextField.font = fontRegularStandart12
         aadDomTextField.textColor = colorWhite
@@ -697,7 +697,7 @@ final class NewSystemCell: UITableViewCell {
         aadServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
         aadServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
         aadServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
-        aadServiceLifeYearsTextField.placeholder = "Количество лет"
+        aadServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         aadServiceLifeYearsTextField.backgroundColor = colorTabBar
         aadServiceLifeYearsTextField.font = fontRegularStandart12
         aadServiceLifeYearsTextField.textColor = colorWhite
@@ -714,13 +714,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: MAIN CANOPY NAME:
         
-        mainCanopyNameButton.setTitle("Основной парашют*", for: .normal)
+        mainCanopyNameButton.setTitle(NSLocalizedString("Main canopy / new system cell", comment: "") + "*", for: .normal)
         mainCanopyNameButton.backgroundColor = colorCell
         mainCanopyNameButton.setTitleColor(colorLightGray, for: .normal)
         mainCanopyNameButton.contentVerticalAlignment = textAligmentTop
         mainCanopyNameButton.titleLabel?.font = fontMediumStandart10
         mainCanopyNameButton.layer.cornerRadius = cornerRadius10
-        mainCanopyNameTextField.placeholder = "Название парашюта"
+        mainCanopyNameTextField.placeholder = NSLocalizedString("Name main canopy / new system cell", comment: "")
         mainCanopyNameTextField.backgroundColor = colorTabBar
         mainCanopyNameTextField.font = fontRegularStandart12
         mainCanopyNameTextField.textColor = colorWhite
@@ -740,7 +740,7 @@ final class NewSystemCell: UITableViewCell {
         mainCanopyDomButton.contentVerticalAlignment = textAligmentTop
         mainCanopyDomButton.titleLabel?.font = fontMediumStandart10
         mainCanopyDomButton.layer.cornerRadius = cornerRadius10
-        mainCanopyDomTextField.placeholder = "мм.гггг"
+        mainCanopyDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         mainCanopyDomTextField.backgroundColor = colorTabBar
         mainCanopyDomTextField.font = fontRegularStandart12
         mainCanopyDomTextField.textColor = colorWhite
@@ -783,7 +783,7 @@ final class NewSystemCell: UITableViewCell {
         mainCanopyServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
         mainCanopyServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
         mainCanopyServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
-        mainCanopyServiceLifeYearsTextField.placeholder = "Количество лет"
+        mainCanopyServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         mainCanopyServiceLifeYearsTextField.backgroundColor = colorTabBar
         mainCanopyServiceLifeYearsTextField.font = fontRegularStandart12
         mainCanopyServiceLifeYearsTextField.textColor = colorWhite
@@ -802,7 +802,7 @@ final class NewSystemCell: UITableViewCell {
         mainCanopyServiceLifeJumpsButton.contentVerticalAlignment = textAligmentTop
         mainCanopyServiceLifeJumpsButton.titleLabel?.font = fontMediumStandart10
         mainCanopyServiceLifeJumpsButton.layer.cornerRadius = cornerRadius10
-        mainCanopyServiceLifeJumpsTextField.placeholder = "Количество прыжков"
+        mainCanopyServiceLifeJumpsTextField.placeholder = NSLocalizedString("Counts of jumps / new system cell", comment: "")
         mainCanopyServiceLifeJumpsTextField.backgroundColor = colorTabBar
         mainCanopyServiceLifeJumpsTextField.font = fontRegularStandart12
         mainCanopyServiceLifeJumpsTextField.textColor = colorWhite
@@ -815,13 +815,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: MAIN CANOPY COUNT JUMPS:
         
-        mainCanopyCountJumpsButton.setTitle("Количество применений*", for: .normal)
+        mainCanopyCountJumpsButton.setTitle(NSLocalizedString("Counts of jumps main canopy / new system cell", comment: "") + "*", for: .normal)
         mainCanopyCountJumpsButton.backgroundColor = colorCell
         mainCanopyCountJumpsButton.setTitleColor(colorLightGray, for: .normal)
         mainCanopyCountJumpsButton.contentVerticalAlignment = textAligmentTop
         mainCanopyCountJumpsButton.titleLabel?.font = fontMediumStandart10
         mainCanopyCountJumpsButton.layer.cornerRadius = cornerRadius10
-        mainCanopyCountJumpsTextField.placeholder = "Значение при покупке"
+        mainCanopyCountJumpsTextField.placeholder = NSLocalizedString("The value of the purchase / new system cell", comment: "")
         mainCanopyCountJumpsTextField.backgroundColor = colorTabBar
         mainCanopyCountJumpsTextField.font = fontRegularStandart12
         mainCanopyCountJumpsTextField.textColor = colorWhite
@@ -838,13 +838,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: RESERVE CANOPY NAME:
         
-        reserveCanopyNameButton.setTitle("Запасной парашют*", for: .normal)
+        reserveCanopyNameButton.setTitle(NSLocalizedString("Reserve canopy / new system cell", comment: "") + "*", for: .normal)
         reserveCanopyNameButton.backgroundColor = colorCell
         reserveCanopyNameButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyNameButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyNameButton.titleLabel?.font = fontMediumStandart10
         reserveCanopyNameButton.layer.cornerRadius = cornerRadius10
-        reserveCanopyNameTextField.placeholder = "Название парашюта"
+        reserveCanopyNameTextField.placeholder = NSLocalizedString("Name reserve canopy / new system cell", comment: "")
         reserveCanopyNameTextField.backgroundColor = colorTabBar
         reserveCanopyNameTextField.font = fontRegularStandart12
         reserveCanopyNameTextField.textColor = colorWhite
@@ -862,7 +862,7 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyDomButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyDomButton.titleLabel?.font = fontMediumStandart10
         reserveCanopyDomButton.layer.cornerRadius = cornerRadius10
-        reserveCanopyDomTextField.placeholder = "мм.гггг"
+        reserveCanopyDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         reserveCanopyDomTextField.backgroundColor = colorTabBar
         reserveCanopyDomTextField.font = fontRegularStandart12
         reserveCanopyDomTextField.textColor = colorWhite
@@ -905,7 +905,7 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
         reserveCanopyServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
-        reserveCanopyServiceLifeYearsTextField.placeholder = "Количество лет"
+        reserveCanopyServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         reserveCanopyServiceLifeYearsTextField.backgroundColor = colorTabBar
         reserveCanopyServiceLifeYearsTextField.font = fontRegularStandart12
         reserveCanopyServiceLifeYearsTextField.textColor = colorWhite
@@ -918,7 +918,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: RESERVE CANOPY COUNT REPACK:
         
-        reserveCanopyCountRepackButton.setTitle("Количество переукладок*", for: .normal)
+        reserveCanopyCountRepackButton.setTitle(NSLocalizedString("Counts of repack reserve canopy / new system cell", comment: "") + "*", for: .normal)
         reserveCanopyCountRepackButton.backgroundColor = colorCell
         reserveCanopyCountRepackButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyCountRepackButton.contentVerticalAlignment = textAligmentTop
@@ -937,13 +937,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: RESERVE CANOPY DATE PACK:
 
-        reserveCanopyDatePackButton.setTitle("Дата укладки", for: .normal)
+        reserveCanopyDatePackButton.setTitle(NSLocalizedString("Date of packing reserve canopy / new system cell", comment: ""), for: .normal)
         reserveCanopyDatePackButton.backgroundColor = colorCell
         reserveCanopyDatePackButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyDatePackButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyDatePackButton.titleLabel?.font = fontMediumStandart10
         reserveCanopyDatePackButton.layer.cornerRadius = cornerRadius10
-        reserveCanopyDatePackTextField.placeholder = "дд.мм.гггг"
+        reserveCanopyDatePackTextField.placeholder = NSLocalizedString("Date dd.mm.yyyy / new system cell", comment: "")
         reserveCanopyDatePackTextField.backgroundColor = colorTabBar
         reserveCanopyDatePackTextField.font = fontRegularStandart12
         reserveCanopyDatePackTextField.textColor = colorWhite
@@ -961,13 +961,13 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyDatePackPickerView.addTarget(self, action: #selector(reserveCanopyDatePackPickerValueChanged), for: .valueChanged)
         
         // COMMENT SYSTEM:
-        commentSystemButton.setTitle("Комментарий", for: .normal)
+        commentSystemButton.setTitle(NSLocalizedString("Comment / new system cell", comment: ""), for: .normal)
         commentSystemButton.backgroundColor = colorCell
         commentSystemButton.setTitleColor(colorLightGray, for: .normal)
         commentSystemButton.contentVerticalAlignment = textAligmentTop
         commentSystemButton.titleLabel?.font = fontMediumStandart12
         commentSystemButton.layer.cornerRadius = cornerRadius10
-        commentSystemTextField.placeholder = "Опционально"
+        commentSystemTextField.placeholder = NSLocalizedString("Optional / new system cell", comment: "")
         commentSystemTextField.backgroundColor = colorTabBar
         commentSystemTextField.font = fontRegularStandart12
         commentSystemTextField.textColor = colorWhite
