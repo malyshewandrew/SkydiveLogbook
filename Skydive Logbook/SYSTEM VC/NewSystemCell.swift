@@ -527,13 +527,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: NAME SYSTEM:
         
-        nameSystemButton.setTitle("Название системы*", for: .normal)
+        nameSystemButton.setTitle(NSLocalizedString("Name system / new system cell", comment: "") + "*", for: .normal)
         nameSystemButton.backgroundColor = colorCell
         nameSystemButton.setTitleColor(colorLightGray, for: .normal)
         nameSystemButton.contentVerticalAlignment = textAligmentTop
         nameSystemButton.titleLabel?.font = fontMediumStandart12
         nameSystemButton.layer.cornerRadius = cornerRadius10
-        nameSystemTextField.placeholder = "Название"
+        nameSystemTextField.placeholder = NSLocalizedString("Name / new system cell", comment: "")
         nameSystemTextField.backgroundColor = colorTabBar
         nameSystemTextField.font = fontMediumStandart18
         nameSystemTextField.textColor = colorWhite
@@ -545,13 +545,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: CONTAINER NAME:
 
-        containerNameButton.setTitle("Ранец*", for: .normal)
+        containerNameButton.setTitle(NSLocalizedString("Container / new system cell", comment: "") + "*", for: .normal)
         containerNameButton.backgroundColor = colorCell
         containerNameButton.setTitleColor(colorLightGray, for: .normal)
         containerNameButton.contentVerticalAlignment = textAligmentTop
         containerNameButton.titleLabel?.font = fontMediumStandart10
         containerNameButton.layer.cornerRadius = cornerRadius10
-        containerNameTextField.placeholder = "Название ранца"
+        containerNameTextField.placeholder = NSLocalizedString("Name container / new system cell", comment: "")
         containerNameTextField.backgroundColor = colorTabBar
         containerNameTextField.font = fontRegularStandart12
         containerNameTextField.textColor = colorWhite
@@ -563,13 +563,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: CONTAINER DOM:
         
-        containerDomButton.setTitle("Дата изготовления*", for: .normal)
+        containerDomButton.setTitle(NSLocalizedString("DOM / new system cell", comment: "") + "*", for: .normal)
         containerDomButton.backgroundColor = colorCell
         containerDomButton.setTitleColor(colorLightGray, for: .normal)
         containerDomButton.contentVerticalAlignment = textAligmentTop
         containerDomButton.titleLabel?.font = fontMediumStandart10
         containerDomButton.layer.cornerRadius = cornerRadius10
-        containerDomTextField.placeholder = "мм.гггг"
+        containerDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         containerDomTextField.backgroundColor = colorTabBar
         containerDomTextField.font = fontRegularStandart12
         containerDomTextField.textColor = colorWhite
@@ -589,7 +589,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: CONTAINER SERIAL NUMBER:
         
-        containerSerialNumberButton.setTitle("Серийный номер*", for: .normal)
+        containerSerialNumberButton.setTitle(NSLocalizedString("Serial number / new system cell", comment: "") + "*", for: .normal)
         containerSerialNumberButton.backgroundColor = colorCell
         containerSerialNumberButton.setTitleColor(colorLightGray, for: .normal)
         containerSerialNumberButton.contentVerticalAlignment = textAligmentTop
@@ -607,13 +607,13 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: CONTAINER SERVICE LIFE:
         
-        containerServiceLifeYearsButton.setTitle("Гарантийный ресурс*", for: .normal)
+        containerServiceLifeYearsButton.setTitle(NSLocalizedString("Warranty resource / new system cell", comment: "") + "*", for: .normal)
         containerServiceLifeYearsButton.backgroundColor = colorCell
         containerServiceLifeYearsButton.setTitleColor(colorLightGray, for: .normal)
         containerServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
         containerServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
         containerServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
-        containerServiceLifeYearsTextField.placeholder = "Количество лет"
+        containerServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         containerServiceLifeYearsTextField.backgroundColor = colorTabBar
         containerServiceLifeYearsTextField.font = fontRegularStandart12
         containerServiceLifeYearsTextField.textColor = colorWhite
@@ -648,7 +648,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: AAD DOM:
         
-        aadDomButton.setTitle("Дата изготовления*", for: .normal)
+        aadDomButton.setTitle(NSLocalizedString("DOM / new system cell", comment: "") + "*", for: .normal)
         aadDomButton.backgroundColor = colorCell
         aadDomButton.setTitleColor(colorLightGray, for: .normal)
         aadDomButton.contentVerticalAlignment = textAligmentTop
@@ -673,7 +673,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: AAD SERIAL NUMBER:
         
-        aadSerialNumberButton.setTitle("Серийный номер*", for: .normal)
+        aadSerialNumberButton.setTitle(NSLocalizedString("Serial number / new system cell", comment: "") + "*", for: .normal)
         aadSerialNumberButton.backgroundColor = colorCell
         aadSerialNumberButton.setTitleColor(colorLightGray, for: .normal)
         aadSerialNumberButton.contentVerticalAlignment = textAligmentTop
@@ -691,7 +691,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: AAD SERVISE LIFE YEARS:
         
-        aadServiceLifeYearsButton.setTitle("Гарантийный ресурс*", for: .normal)
+        aadServiceLifeYearsButton.setTitle(NSLocalizedString("Warranty resource / new system cell", comment: "") + "*", for: .normal)
         aadServiceLifeYearsButton.backgroundColor = colorCell
         aadServiceLifeYearsButton.setTitleColor(colorLightGray, for: .normal)
         aadServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
@@ -734,7 +734,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: MAIN CANOPY DOM:
         
-        mainCanopyDomButton.setTitle("Дата изготовления*", for: .normal)
+        mainCanopyDomButton.setTitle(NSLocalizedString("DOM / new system cell", comment: "") + "*", for: .normal)
         mainCanopyDomButton.backgroundColor = colorCell
         mainCanopyDomButton.setTitleColor(colorLightGray, for: .normal)
         mainCanopyDomButton.contentVerticalAlignment = textAligmentTop
@@ -759,7 +759,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: MAIN CANOPY SERIAL NUMBER:
         
-        mainCanopySerialNumberButton.setTitle("Серийный номер*", for: .normal)
+        mainCanopySerialNumberButton.setTitle(NSLocalizedString("Serial number / new system cell", comment: "") + "*", for: .normal)
         mainCanopySerialNumberButton.backgroundColor = colorCell
         mainCanopySerialNumberButton.setTitleColor(colorLightGray, for: .normal)
         mainCanopySerialNumberButton.contentVerticalAlignment = textAligmentTop
@@ -777,7 +777,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: MAIN CANOPY SERVICE LIFE YEARS:
         
-        mainCanopyServiceLifeYearsButton.setTitle("Гарантийный ресурс*", for: .normal)
+        mainCanopyServiceLifeYearsButton.setTitle(NSLocalizedString("Warranty resource / new system cell", comment: "") + "*", for: .normal)
         mainCanopyServiceLifeYearsButton.backgroundColor = colorCell
         mainCanopyServiceLifeYearsButton.setTitleColor(colorLightGray, for: .normal)
         mainCanopyServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
@@ -796,7 +796,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: MAIN CANOPY SERVICE LIFE JUMPS:
         
-        mainCanopyServiceLifeJumpsButton.setTitle("Гарантийный ресурс*", for: .normal)
+        mainCanopyServiceLifeJumpsButton.setTitle(NSLocalizedString("Warranty resource / new system cell", comment: "") + "*", for: .normal)
         mainCanopyServiceLifeJumpsButton.backgroundColor = colorCell
         mainCanopyServiceLifeJumpsButton.setTitleColor(colorLightGray, for: .normal)
         mainCanopyServiceLifeJumpsButton.contentVerticalAlignment = textAligmentTop
@@ -856,7 +856,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: RESERVE CANOPY DOM:
         
-        reserveCanopyDomButton.setTitle("Дата изготовления*", for: .normal)
+        reserveCanopyDomButton.setTitle(NSLocalizedString("DOM / new system cell", comment: "") + "*", for: .normal)
         reserveCanopyDomButton.backgroundColor = colorCell
         reserveCanopyDomButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyDomButton.contentVerticalAlignment = textAligmentTop
@@ -881,7 +881,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: RESERVE CANOPY SERIAL NUMBER:
         
-        reserveCanopySerialNumberButton.setTitle("Серийный номер*", for: .normal)
+        reserveCanopySerialNumberButton.setTitle(NSLocalizedString("Serial number / new system cell", comment: "") + "*", for: .normal)
         reserveCanopySerialNumberButton.backgroundColor = colorCell
         reserveCanopySerialNumberButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopySerialNumberButton.contentVerticalAlignment = textAligmentTop
@@ -899,7 +899,7 @@ final class NewSystemCell: UITableViewCell {
         
         // MARK: RESERVE CANOPY SERVICE LIFE YEARS:
         
-        reserveCanopyServiceLifeYearsButton.setTitle("Гарантийный ресурс*", for: .normal)
+        reserveCanopyServiceLifeYearsButton.setTitle(NSLocalizedString("Warranty resource / new system cell", comment: "") + "*", for: .normal)
         reserveCanopyServiceLifeYearsButton.backgroundColor = colorCell
         reserveCanopyServiceLifeYearsButton.setTitleColor(colorLightGray, for: .normal)
         reserveCanopyServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop

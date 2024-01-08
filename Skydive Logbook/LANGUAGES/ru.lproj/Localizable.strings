@@ -217,6 +217,34 @@
 
 // MARK: - NEW SYSTEM CELL:
 
+"Name system / new system cell" = "Название системы";
+"Name / new system cell" = "Название";
+"Container / new system cell" = "Ранец";
+"Name container / new system cell" = "Название ранца";
+
+"DOM / new system cell" = "Дата изготовления";
+"Date mm.yyyy / new system cell" = "мм.гггг";
+"Serial number / new system cell" = "Серийный номер";
+"Warranty resource / new system cell" = "Гарантийный ресурс";
+"Counts of years / new system cell" = "Количество лет";
+"Counts of jumps / new system cell" = "Количество прыжков";
+
+"AAD / new system cell" = "Страхующий прибор";
+"Name AAD / new system cell" = "Название прибора";
+
+"Main canopy / new system cell" = "Основной парашют";
+"Name main canopy / new system cell" = "Название парашюта";
+"Counts of jumps main canopy / new system cell" = "Количество применений";
+"The value of the purchase / new system cell" = "Значение при покупке";
+
+"Reserve canopy / new system cell" = "Запасной парашют";
+"Counts of repack reserve canopy / new system cell" = "Количество переукладок";
+"Date of packing reserve canopy / new system cell" = "Дата укладки";
+"Date dd.mm.yyyy / new system cell" = "дд.мм.гггг";
+
+"Comment / new system cell" = "Комментарий";
+"Optional / new system cell" = "Опционально";
+
 // MARK: - ACCOUNT:
 
 "Edit locations" = "Редактировать локации";

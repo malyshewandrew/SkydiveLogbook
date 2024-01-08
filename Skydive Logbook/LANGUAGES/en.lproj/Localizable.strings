@@ -217,6 +217,34 @@
 
 // MARK: - NEW SYSTEM CELL:
 
+"Name system / new system cell" = "Name system";
+"Name / new system cell" = "Name";
+"Container / new system cell" = "Container";
+"Name container / new system cell" = "Name container";
+
+"DOM / new system cell" = "Date of manufacture";
+"Date mm.yyyy / new system cell" = "mm.yyyy";
+"Serial number / new system cell" = "Serial number";
+"Warranty resource / new system cell" = "Warranty resource";
+"Counts of years / new system cell" = "Counts of years";
+"Counts of jumps / new system cell" = "Counts of jumps";
+
+"AAD / new system cell" = "AAD";
+"Name AAD / new system cell" = "Name AAD";
+
+"Main canopy / new system cell" = "Main canopy";
+"Name main canopy / new system cell" = "Name main canopy";
+"Counts of jumps main canopy / new system cell" = "Counts of jumps";
+"The value of the purchase / new system cell" = "The value of the purchase";
+
+"Reserve canopy / new system cell" = "Reserve canopy";
+"Counts of repack reserve canopy / new system cell" = "Counts of repack";
+"Date of packing reserve canopy / new system cell" = "Date of packing";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+
+"Comment / new system cell" = "Comment";
+"Optional / new system cell" = "Optional";
+
 // MARK: - ACCOUNT:
 
 "Edit locations" = "Edit locations";
