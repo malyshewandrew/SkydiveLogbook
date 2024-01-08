@@ -177,6 +177,8 @@
 "Main canopy system" = "Main canopy";
 "Reserve canopy system" = "Reserve canopy";
 
+// MARK: - SYSTEM CELL:
+
 "Number system" = "Номер";
 "DOM system" = "Изготовлен";
 "Service life system" = "Срок службы";
@@ -188,6 +190,26 @@
 
 "years system" = "лет";
 "jumps system" = "прыжков";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Добавить систему";
+"Container alert" = "Ранец";
+"AAD alert" = "Страхующий прибор";
+"Main canopy alert" = "Основной парашют";
+"Reserve canopy alert" = "Запасной парашют";
+
+"Name and model container alert" = "Название и модель ранца";
+"Name and model AAD alert" = "Название и модель прибора";
+"Name and model main canopy alert" = "Название и модель парашюта";
+"Name and model reserve canopy alert" = "Название и модель парашюта";
+
+"DOM alert" = "Дата изготовления";
+"Serial number alert" = "Серийный номер";
+"Warranty resource container alert" = "Гарантийный ресурс (обычно производитель указывает 10-20 лет, либо по техническому состоянию)";
+"Warranty resource AAD alert" = "Гарантийный ресурс (гарантийное количество лет, либо количество лет до регламентных работ)";
+"Warranty resource main canopy alert" = "Гарантийный ресурс по годам (обычно производитель указывает 10-20 лет, либо по техническому состоянию)";
+"Warranty resource reserve canopy alert" = "Гарантийный ресурс (обычно производитель указывает 10-20 лет, либо по техническому состоянию)";
 
 // MARK: - ACCOUNT:
 

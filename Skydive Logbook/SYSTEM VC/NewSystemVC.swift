@@ -115,29 +115,29 @@ final class NewSystemVC: UIViewController {
     // MARK: - MANUAL ALERT:
 
     @objc private func tapOnManualButton() {
-        let alert = UIAlertController(title: "Добавление системы:", message: """
-        \nРанец:\n
-        1. Название и модель ранца
-        2. Дата изготовления
-        3. Серийный номер
-        4. Гарантийный ресурс (обычно производитель указывает 10-20 лет, либо по техническому состоянию)
-        \nСтрахующий прибор:\n
-        1. Название и модель прибора
-        2. Дата изготовления
-        3. Серийный номер
-        4. Гарантийный ресурс (гарантийное количество лет, либо количество лет до регламентных работ)
-        \nОсновной парашют:\n
-        1. Название и модель парашюта
-        2. Дата изготовления
-        3. Серийный номер
-        4. Гарантийный ресурс по годам (обычно производитель указывает 10-20 лет, либо по техническому состоянию)
+        let alert = UIAlertController(title: NSLocalizedString("Add system alert", comment: "") + ":", message: """
+        \n\(NSLocalizedString("Container alert", comment: "")):\n
+        1. \(NSLocalizedString("Name and model container alert", comment: ""))
+        2. \(NSLocalizedString("DOM alert", comment: ""))
+        3. \(NSLocalizedString("Serial number alert", comment: ""))
+        4. \(NSLocalizedString("Warranty resource container alert", comment: ""))
+        \n\(NSLocalizedString("AAD alert", comment: "")):\n
+        1. \(NSLocalizedString("Name and model AAD alert", comment: ""))
+        2. \(NSLocalizedString("DOM alert", comment: ""))
+        3. \(NSLocalizedString("Serial number alert", comment: ""))
+        4. \(NSLocalizedString("Warranty resource AAD alert", comment: ""))
+        \n\(NSLocalizedString("Main canopy alert", comment: "")):\n
+        1. \(NSLocalizedString("Name and model main canopy alert", comment: ""))
+        2. \(NSLocalizedString("DOM alert", comment: ""))
+        3. \(NSLocalizedString("Serial number alert", comment: ""))
+        4. \(NSLocalizedString("Warranty resource main canopy alert", comment: ""))
         5. Гарантийный ресурс по прыжкам (обычно производитель указывает 500 прыжков, либо по техническому состоянию до 1000 прыжков)
         6. Количество применений (в случае если парашют покупался не новым и на нем уже были совершены прыжки - укажите это количество). Для корректного подсчета - тут необходимо указать только то количество прыжков, которые не были ранее записаны в общий список прыжков этого приложения
-        \nЗапасной парашют:\n
-        1. Название и модель парашюта
-        2. Дата изготовления
-        3. Серийный номер
-        4. Гарантийный ресурс (обычно производитель указывает 10-20 лет, либо по техническому состоянию)
+        \n\(NSLocalizedString("Reserve canopy alert", comment: "")):\n
+        1. \(NSLocalizedString("Name and model reserve canopy alert", comment: ""))
+        2. \(NSLocalizedString("DOM alert", comment: ""))
+        3. \(NSLocalizedString("Serial number alert", comment: ""))
+        4. \(NSLocalizedString("Warranty resource reserve canopy alert", comment: ""))
         5. В случае если парашют покупался не новым и на нем уже были совершены укладки - укажите это количество
         6. Дата укладки
         """, preferredStyle: .alert)

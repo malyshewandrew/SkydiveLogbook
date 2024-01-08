@@ -177,6 +177,8 @@
 "Main canopy system" = "Main canopy";
 "Reserve canopy system" = "Reserve canopy";
 
+// MARK: - SYSTEM CELL:
+
 "Number system" = "Number";
 "DOM system" = "DOM";
 "Service life system" = "Service life";
@@ -188,6 +190,26 @@
 
 "years system" = "years";
 "jumps system" = "jumps";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Add system";
+"Container alert" = "Container";
+"AAD alert" = "AAD";
+"Main canopy alert" = "Main canopy";
+"Reserve canopy alert" = "Reserve canopy";
+
+"Name and model container alert" = "Name and model container";
+"Name and model AAD alert" = "Name and model AAD";
+"Name and model main canopy alert" = "Name and model main canopy";
+"Name and model reserve canopy alert" = "Name and model reserve canopy";
+
+"DOM alert" = "Date of manufacture";
+"Serial number alert" = "Serial number";
+"Warranty resource container alert" = "Warranty life (usually the manufacturer indicates 10-20 years, or according to technical condition)";
+"Warranty resource AAD alert" = "Warranty life (the guaranteed number of years, or the number of years before routine maintenance)";
+"Warranty resource main canopy alert" = "Warranty life by years (usually the manufacturer indicates 10-20 years, or by technical condition)";
+"Warranty resource reserve canopy alert" = "Warranty life (usually the manufacturer indicates 10-20 years, or according to technical condition)";
 
 // MARK: - ACCOUNT:
 
