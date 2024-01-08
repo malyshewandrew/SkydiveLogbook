@@ -51,7 +51,7 @@
 "Insurance until" = "Страховка до";
 "Reserve canopy until" = "Запасной до";
 
-"Account" = "Аккаунт";
+"Account main aler" = "Аккаунт";
 "Edit/add account" = "Для заполнения перейдите в раздел \"Аккаунт\"";
 
 // MARK: - CellJump:
@@ -214,6 +214,8 @@
 "Warranty resource reserve canopy alert" = "Гарантийный ресурс (обычно производитель указывает 10-20 лет, либо по техническому состоянию)";
 "Counts of repack reserve canopy alert" = "В случае если парашют покупался не новым и на нем уже были совершены укладки - укажите это количество";
 "Date of pack reserve canopy alert" = "Дата укладки";
+
+// MARK: - NEW SYSTEM CELL:
 
 // MARK: - ACCOUNT:
 

@@ -51,7 +51,7 @@
 "Insurance until" = "Insurance until";
 "Reserve canopy until" = "Reserve canopy until";
 
-"Account" = "Account";
+"Account main aler" = "Account";
 "Edit/add account" = "To fill it out, go to the \"Account\" section";
 
 // MARK: - CellJump:
@@ -214,6 +214,8 @@
 "Warranty resource reserve canopy alert" = "Warranty life (usually the manufacturer indicates 10-20 years, or according to technical condition)";
 "Counts of repack reserve canopy alert" = "If the parachute was not bought new and it has already been stowed, specify this amount";
 "Date of pack reserve canopy alert" = "Date of packing";
+
+// MARK: - NEW SYSTEM CELL:
 
 // MARK: - ACCOUNT:
 

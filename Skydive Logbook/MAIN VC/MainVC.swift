@@ -280,7 +280,7 @@ final class MainVC: UIViewController {
         }
 
         if nickname == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
-            let alert = UIAlertController(title: NSLocalizedString("Account", comment: ""),
+            let alert = UIAlertController(title: NSLocalizedString("Account main alert", comment: ""),
                                           message: "\n" + NSLocalizedString("Edit/add account", comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
