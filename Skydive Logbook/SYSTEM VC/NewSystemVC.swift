@@ -131,15 +131,15 @@ final class NewSystemVC: UIViewController {
         2. \(NSLocalizedString("DOM alert", comment: ""))
         3. \(NSLocalizedString("Serial number alert", comment: ""))
         4. \(NSLocalizedString("Warranty resource main canopy alert", comment: ""))
-        5. Гарантийный ресурс по прыжкам (обычно производитель указывает 500 прыжков, либо по техническому состоянию до 1000 прыжков)
-        6. Количество применений (в случае если парашют покупался не новым и на нем уже были совершены прыжки - укажите это количество). Для корректного подсчета - тут необходимо указать только то количество прыжков, которые не были ранее записаны в общий список прыжков этого приложения
+        5. \(NSLocalizedString("Warranty resource jumps main canopy alert", comment: ""))
+        6. \(NSLocalizedString("Counts of jumps main canopy alert", comment: ""))
         \n\(NSLocalizedString("Reserve canopy alert", comment: "")):\n
         1. \(NSLocalizedString("Name and model reserve canopy alert", comment: ""))
         2. \(NSLocalizedString("DOM alert", comment: ""))
         3. \(NSLocalizedString("Serial number alert", comment: ""))
         4. \(NSLocalizedString("Warranty resource reserve canopy alert", comment: ""))
-        5. В случае если парашют покупался не новым и на нем уже были совершены укладки - укажите это количество
-        6. Дата укладки
+        5. \(NSLocalizedString("Counts of repack reserve canopy alert", comment: ""))
+        6. \(NSLocalizedString("Date of pack reserve canopy alert", comment: ""))
         """, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default))
         present(alert, animated: true)

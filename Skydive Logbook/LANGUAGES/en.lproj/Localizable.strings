@@ -1,10 +1,10 @@
 // MARK: - TAB BAR:
 
-"Main" = "MAIN";
-"Statistic" = "STATISTIC";
-"Add jump" = "NEW JUMP";
-"Notes" = "NOTES";
-"Account" = "ACCOUNT";
+"Main tab bar" = "MAIN";
+"Statistic tab bar" = "STATISTIC";
+"Add jump tab bar" = "NEW JUMP";
+"System tab bar" = "SYSTEM";
+"Account tab bar" = "ACCOUNT";
 
 // MARK: - MAIN:
 
@@ -209,7 +209,11 @@
 "Warranty resource container alert" = "Warranty life (usually the manufacturer indicates 10-20 years, or according to technical condition)";
 "Warranty resource AAD alert" = "Warranty life (the guaranteed number of years, or the number of years before routine maintenance)";
 "Warranty resource main canopy alert" = "Warranty life by years (usually the manufacturer indicates 10-20 years, or by technical condition)";
+"Warranty resource jumps main canopy alert" = "The warranty resource for jumps (usually the manufacturer indicates 500 jumps, or according to the technical condition up to 1000 jumps)";
+"Counts of jumps main canopy alert" = "The number of applications (if the parachute was not bought new and jumps have already been made on it, specify this number). For correct calculation, it is necessary to specify only the number of jumps that were not previously recorded in the general list of jumps of this application";
 "Warranty resource reserve canopy alert" = "Warranty life (usually the manufacturer indicates 10-20 years, or according to technical condition)";
+"Counts of repack reserve canopy alert" = "If the parachute was not bought new and it has already been stowed, specify this amount";
+"Date of pack reserve canopy alert" = "Date of packing";
 
 // MARK: - ACCOUNT:
 

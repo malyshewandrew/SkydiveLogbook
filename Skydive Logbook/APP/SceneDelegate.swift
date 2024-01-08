@@ -16,23 +16,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // MARK: - TAB BAR ITEMS:
 
         let mainViewController = MainVC()
-        mainViewController.title = NSLocalizedString("Main", comment: "")
+        mainViewController.title = NSLocalizedString("Main tab bar", comment: "")
         mainViewController.tabBarItem.image = UIImage(systemName: "house.fill")
 
         let statisticViewController = StatisticVC()
-        statisticViewController.title = NSLocalizedString("Statistic", comment: "")
+        statisticViewController.title = NSLocalizedString("Statistic tab bar", comment: "")
         statisticViewController.tabBarItem.image = UIImage(systemName: "list.bullet.clipboard.fill")
 
         let addNewJumpViewController = NewJumpVC()
-        addNewJumpViewController.title = NSLocalizedString("Add jump", comment: "")
+        addNewJumpViewController.title = NSLocalizedString("Add jump tab bar", comment: "")
         addNewJumpViewController.tabBarItem.image = UIImage(systemName: "plus.rectangle.portrait.fill")
 
         let systemViewController = SystemVC()
-        systemViewController.title = NSLocalizedString("System", comment: "")
+        systemViewController.title = NSLocalizedString("System tab bar", comment: "")
         systemViewController.tabBarItem.image = UIImage(systemName: "gym.bag.fill")
 
         let accountViewController = AccountVC()
-        accountViewController.title = NSLocalizedString("Account", comment: "")
+        accountViewController.title = NSLocalizedString("Account tab bar", comment: "")
         accountViewController.tabBarItem.image = UIImage(systemName: "person.fill")
 
         // MARK: - NAVIGATION BAR ITEMS:
