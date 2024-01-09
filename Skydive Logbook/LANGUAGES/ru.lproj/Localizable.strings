@@ -66,6 +66,7 @@
 "Update" = "Обновить";
 
 // MARK: - NOTES:
+
 "New note" = "Новая заметка";
 "Delete note?" = "Удалить заметку?";
 
@@ -90,7 +91,7 @@
 "Max in one day" = "Макс. прыжков за 1 день";
 "Average height" = "Средняя высота прыжка";
 "Average free fall time of jump" = "Среднее время свободного падения";
-"Av. time" = "Средн. время";
+"Average time" = "Средее время прыжка";
 "Max count of jumps" = "Количество прыжков";
 "Max count of jumps text" = "Максимальное количество прыжков за один день было совершено";
 "Jumps no found" = "Прыжков нет";
@@ -103,24 +104,28 @@
 
 // MARK: - Cell Statistic:
 
-"Total jumps" = "Всего прыжков";
-"In this year" = "В этом году";
-"Category" = "Категория";
 "General info" = "Общие данные";
 "Total height" = "Общая высота";
 "Total time" = "Общее время";
+"Total jumps" = "Всего прыжков";
+"In this year" = "В этом году";
+"Category" = "Категория";
+
 "Average info" = "Средние данные";
-"Max. time" = "Макс. время";
+
 "Max. height" = "Макс. высота";
+"Av. height" = "Средн. высота";
 "Min. height" = "Мин. высота";
-"Max. in day" = "Макс. в день";
-"CutawayStatistic" = "Отцепки";
-"Last jump" = "Крайний прыжок";
 "First jump" = "Первый прыжок";
-"Missions" = "Типы прыжков";
+"Max. time" = "Макс. время";
+"Last jump" = "Крайний прыжок";
+"Max. in day" = "Макс. в день";
+"Av. time" = "Средн. время";
+"CutawayStatistic" = "Отцепки";
 "Aircraft" = "Авиатехника";
 "Canopies" = "Парашюты";
 "Locations" = "Локации";
+"Missions" = "Типы прыжков";
 
 "Accuracy" = "Точность";
 "Acrobatics" = "Акробатика";
@@ -169,6 +174,7 @@
 "Comment placeholder" = "Опционально";
 
 // MARK: - SYSTEM:
+
 "Add a new system" = "Добавить новую систему";
 "Comment" = "Комментарий";
 "No comment" = "Комментариев нет";
@@ -261,6 +267,7 @@
 "Premium version" = "Премиум версия";
 
 // MARK: - EDIT ACCOUNT:
+
 "Nickname / edit account vc" = "Никнейм";
 "Name user / edit account vc" = "Имя пользователя";
 "License / edit account vc" = "Лицензия";
@@ -271,6 +278,12 @@
 "Valid until + dd.mm.yyyy / edit account vc" = "Срок действия (до) дд.мм.гггг";
 "Insurance / edit account vc" = "Страховка";
 "Reserve canopy / edit account vc" = "Запасной парашют";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Аэродром";
+"Enter aircraft" = "Воздушное судно";
+"Enter canopy" = "Купол";
 
 // MARK: - CALCULATOR:
 

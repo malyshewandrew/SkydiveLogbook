@@ -66,6 +66,7 @@
 "Update" = "Update";
 
 // MARK: - NOTES:
+
 "New note" = "New note";
 "Delete note?" = "Delete note?";
 
@@ -90,7 +91,7 @@
 "Max in one day" = "Max in one day";
 "Average height of jump" = "Average height of jump";
 "Average free fall time of jump" = "Average free fall time of jump";
-"Av. time" = "Av. time";
+"Average time" = "Average time of jump";
 "Max count of jumps" = "Сount of jumps";
 "Max count of jumps text" = "The maximum number of jumps in one day was completed";
 "Jumps no found" = "Jumps no found";
@@ -103,24 +104,28 @@
 
 // MARK: - Cell Statistic:
 
-"Total jumps" = "Total jumps";
-"In this year" = "In this year";
-"Category" = "Category";
 "General info" = "General info";
 "Total height" = "Total height";
 "Total time" = "Total time";
+"Total jumps" = "Total jumps";
+"In this year" = "In this year";
+"Category" = "Category";
+
 "Average info" = "Average info";
-"Max. time" = "Max. time";
+
 "Max. height" = "Max. height";
+"Av. height" = "Av. height";
 "Min. height" = "Min. height";
-"Max. in day" = "Max. in day";
-"CutawayStatistic" = "Cutaway";
-"Last jump" = "Last jump";
 "First jump" = "First jump";
-"Missions" = "Missions";
+"Max. time" = "Max. time";
+"Last jump" = "Last jump";
+"Max. in day" = "Max. in day";
+"Av. time" = "Av. time";
+"CutawayStatistic" = "Cutaway";
 "Aircraft" = "Aircraft";
 "Canopies" = "Canopies";
 "Locations" = "Locations";
+"Missions" = "Missions";
 
 "Accuracy" = "Accuracy";
 "Acrobatics" = "Acrobatics";
@@ -169,6 +174,7 @@
 "Comment placeholder" = "Optional";
 
 // MARK: - SYSTEM:
+
 "Add a new system" = "Add a new system";
 "Comment" = "Comment";
 "No comments" = "Comments not found";
@@ -261,6 +267,7 @@
 "Premium version" = "Premium version";
 
 // MARK: - EDIT ACCOUNT:
+
 "Nickname / edit account vc" = "Nickname";
 "Name user / edit account vc" = "Name user";
 "License / edit account vc" = "License";
@@ -271,6 +278,12 @@
 "Valid until + dd.mm.yyyy / edit account vc" = "Valid until dd.mm.yyyy";
 "Insurance / edit account vc" = "Insurance";
 "Reserve canopy / edit account vc" = "Reserve canopy";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Name drop zone";
+"Enter aircraft" = "Name aircraft";
+"Enter canopy" = "Name canopy";
 
 // MARK: - CALCULATOR:
 

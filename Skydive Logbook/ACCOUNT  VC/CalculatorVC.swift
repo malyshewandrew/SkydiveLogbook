@@ -194,8 +194,6 @@ final class CalculatorVC: UIViewController {
         weightTextField.textColor = colorWhite
         weightTextField.layer.cornerRadius = cornerRadius10
         weightTextField.textAlignment = textAligmentCenter
-        weightTextField.layer.borderWidth = borderWidth05
-        weightTextField.layer.borderColor = colorWhiteCG
         weightTextField.setValue(colorWhite, forKeyPath: "textColor")
         weightTextField.layer.masksToBounds = true
         weightTextField.keyboardType = .numberPad
@@ -209,8 +207,6 @@ final class CalculatorVC: UIViewController {
         sizeCanopyTextField.textColor = colorWhite
         sizeCanopyTextField.layer.cornerRadius = cornerRadius10
         sizeCanopyTextField.textAlignment = textAligmentCenter
-        sizeCanopyTextField.layer.borderWidth = borderWidth05
-        sizeCanopyTextField.layer.borderColor = colorWhiteCG
         sizeCanopyTextField.setValue(colorWhite, forKeyPath: "textColor")
         sizeCanopyTextField.layer.masksToBounds = true
         sizeCanopyTextField.keyboardType = .numberPad

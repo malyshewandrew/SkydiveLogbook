@@ -95,10 +95,9 @@ final class EditLocationsVC: UIViewController {
 
         enterTextTextField.backgroundColor = colorTabBar
         enterTextTextField.textColor = colorWhite
-        enterTextTextField.layer.borderColor = colorWhiteCG
-        enterTextTextField.layer.borderWidth = borderWidth05
         enterTextTextField.layer.cornerRadius = cornerRadius10
         enterTextTextField.textAlignment = textAligmentCenter
+        enterTextTextField.placeholder = NSLocalizedString("Enter location", comment: "")
 
         // MARK: SAVE BUTTON:
 

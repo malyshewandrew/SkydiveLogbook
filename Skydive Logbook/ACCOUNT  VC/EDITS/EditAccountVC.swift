@@ -24,6 +24,8 @@ final class EditAccountVC: UIViewController {
     private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
     
+    private let keyboardHeightOffset: CGFloat = -170
+    
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ final class EditAccountVC: UIViewController {
         configureConstrains()
         configureUI()
         configureGestures()
+        configureNotificationCenter()
         configureAccount()
     }
     
@@ -284,6 +287,39 @@ final class EditAccountVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         view.addGestureRecognizer(tapGesture)
     }
+    
+    // MARK: - NOTIFICATION CENTER:
+
+    // MARK: UP AND DOWN KEYBOARD:
+
+    private func configureNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: KEYBOARD UP:
+
+        @objc private func keyboardShow(_ notification: Notification) {
+            if let keyboardSize = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let contentYOffset = keyboardSize.cgRectValue.height + keyboardHeightOffset
+                UIView.animate(withDuration: 0.3) {
+                    self.view.frame.origin.y -= contentYOffset
+                }
+            }
+        }
+
+        // MARK: KEYBOARD DOWN:
+
+        @objc private func keyboardHide() {
+            UIView.animate(withDuration: 0.3) {
+                self.view.frame.origin.y = 0
+            }
+        }
     
     // MARK: - HELPERS:
     

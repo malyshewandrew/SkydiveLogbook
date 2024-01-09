@@ -604,17 +604,17 @@ final class SystemCell: UITableViewCell {
     func configure(_ system: SystemStructure) {
         systemNameLabel.text = system.name.uppercased()
         containerNameLabel.text = system.container.name
-        containerSerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.container.serialNumber
+        containerSerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.container.serialNumber
         containerDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.container.dom
         containerServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.container.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
         containerExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setContainerExpirationDate(system)
         aadNameLabel.text = system.aad.name
-        aadSerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.aad.serialNumber
+        aadSerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.aad.serialNumber
         aadDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.aad.dom
         aadServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.aad.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
         aadExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setAadExpirationDate(system)
         mainCanopyNameLabel.text = system.mainCanopy.name
-        mainCanopySerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.mainCanopy.serialNumber
+        mainCanopySerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.mainCanopy.serialNumber
         mainCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.mainCanopy.dom
         mainCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.mainCanopy.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
         mainCanopyExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setMainCanopyExpirationDate(system)
@@ -622,7 +622,7 @@ final class SystemCell: UITableViewCell {
         mainCanopyCountJumpsLabel.text = NSLocalizedString("Counts of the jumps system", comment: "") + ": " + setMainCanopyCountTotalJumps(system, arrayJumps)
         mainCanopyRemainedCountLabel.text = NSLocalizedString("Resource system", comment: "") + ": " + setMainCanopyRemainedCountJumps(system, arrayJumps) + " " + NSLocalizedString("jumps system", comment: "")
         reserveCanopyNameLabel.text = system.reserveCanopy.name
-        reserveCanopySerialNumberLabel.text = NSLocalizedString("Number", comment: "") + ": " + system.reserveCanopy.serialNumber
+        reserveCanopySerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.reserveCanopy.serialNumber
         reserveCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.reserveCanopy.dom
         reserveCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.reserveCanopy.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
         reserveCanopyCountRepackLabel.text = NSLocalizedString("Counts of repack system", comment: "") + ": " + system.reserveCanopy.countRepack + "/" + system.reserveCanopy.serviceLifeYears

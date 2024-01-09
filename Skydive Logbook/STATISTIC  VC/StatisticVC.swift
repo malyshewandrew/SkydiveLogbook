@@ -633,10 +633,7 @@ extension StatisticVC: StatisticCellDelegate {
         if arrayJumps.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
-            message = """
-            \n\(NSLocalizedString("Сount of cutaways", comment: "")): \(countCutaway)\n
-            \(resultString)
-            """
+            message = "\n\(resultString)"
         }
 
         let alert = UIAlertController(title: NSLocalizedString("CutawayStatistic", comment: "") + ":",
