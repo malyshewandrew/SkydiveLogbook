@@ -603,7 +603,7 @@ extension StatisticVC: StatisticCellDelegate {
             message = " \n\(NSLocalizedString("Average free fall time of jump", comment: "")): \(averageTime) \(NSLocalizedString("s.", comment: ""))"
         }
 
-        let alert = UIAlertController(title: NSLocalizedString("Average time of jump", comment: "") + ":",
+        let alert = UIAlertController(title: NSLocalizedString("Average time", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
