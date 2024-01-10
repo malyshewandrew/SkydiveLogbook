@@ -79,6 +79,8 @@ let borderWidth05: CGFloat = 0.5
 
 // MARK: - HEIGHTS:
 
+let height11: CGFloat = 11
+let height20: CGFloat = 20
 let height40: CGFloat = 40
 let height65: CGFloat = 65
 let height75: CGFloat = 75

@@ -139,6 +139,7 @@ final class PremiumVC: UIViewController {
         buy1Button.titleLabel?.numberOfLines = 0
         buy1Button.titleLabel?.textAlignment = .center
         buy1Button.titleLabel?.adjustsFontSizeToFitWidth = true
+        buy1Button.addTarget(self, action: #selector(tapOnBuy1Button), for: .touchUpInside)
         
         // MARK: BUY 12 BUTTON:
         
@@ -150,6 +151,7 @@ final class PremiumVC: UIViewController {
         buy12Button.titleLabel?.numberOfLines = 0
         buy12Button.titleLabel?.textAlignment = .center
         buy12Button.titleLabel?.adjustsFontSizeToFitWidth = true
+        buy12Button.addTarget(self, action: #selector(tapOnBuy12Button), for: .touchUpInside)
         
         // MARK: RESTORE BUTTON:
 
@@ -163,11 +165,26 @@ final class PremiumVC: UIViewController {
     
     // MARK: - HELPERS:
     
+    // MARK: TAP ON 1 BUTTON:
+    
+    @objc private func tapOnBuy1Button() {
+        print("Tap on 1 month")
+    }
+    
+    // MARK: TAP ON 12 BUTTON:
+    
+    @objc private func tapOnBuy12Button() {
+        print("Tap on 12 month")
+    }
+    
     // MARK: FUNC FOR ALERT RESTORE BUTTON:
 
     @objc private func tapOnRestoreButton() {
-        let alertAboutApplicationButton = UIAlertController(title: NSLocalizedString("Restore purchases", comment: ""), message: NSLocalizedString("Buy status", comment: ""), preferredStyle: .alert)
-        alertAboutApplicationButton.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        present(alertAboutApplicationButton, animated: true)
+        let alert = UIAlertController(title: NSLocalizedString("Restore purchases", comment: ""), message: NSLocalizedString("Buy status", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.view.backgroundColor = .black
+        alert.view.layer.masksToBounds = true
+        alert.view.layer.cornerRadius = 20
+        present(alert, animated: true)
     }
 }

@@ -91,8 +91,8 @@ final class MainVC: UIViewController {
         confettiButton.translatesAutoresizingMaskIntoConstraints = false
         confettiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        confettiButton.heightAnchor.constraint(equalTo: mainLottie.heightAnchor, multiplier: 1).isActive = true
+        confettiButton.widthAnchor.constraint(equalTo: mainLottie.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: ACCOUNT IMAGE:
 
@@ -379,7 +379,6 @@ final class MainVC: UIViewController {
             mainStartLottie.isHidden = true
             firstMessageView.isHidden = true
             firstMessageLabel.isHidden = true
-
             mainLottie.isHidden = false
             confettiLottie.isHidden = false
             confettiButton.isHidden = false
