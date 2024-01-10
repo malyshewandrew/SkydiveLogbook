@@ -34,7 +34,6 @@ final class EditAccountVC: UIViewController {
         configureConstrains()
         configureUI()
         configureGestures()
-        configureNotificationCenter()
         configureAccount()
     }
     
@@ -61,9 +60,9 @@ final class EditAccountVC: UIViewController {
         // MARK: NICKNAME:
         
         nicknameButton.translatesAutoresizingMaskIntoConstraints = false
-        nicknameButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        nicknameButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         nicknameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nicknameButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        nicknameButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
         nicknameButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         nicknameTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +76,7 @@ final class EditAccountVC: UIViewController {
         licenseTypeButton.translatesAutoresizingMaskIntoConstraints = false
         licenseTypeButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
         licenseTypeButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -8).isActive = true
-        licenseTypeButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        licenseTypeButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
         licenseTypeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
         
         licenseTypeTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -91,7 +90,7 @@ final class EditAccountVC: UIViewController {
         licenseDateButton.translatesAutoresizingMaskIntoConstraints = false
         licenseDateButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
         licenseDateButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 8).isActive = true
-        licenseDateButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        licenseDateButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
         licenseDateButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
         
         licenseDateTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +104,7 @@ final class EditAccountVC: UIViewController {
         medicineButton.translatesAutoresizingMaskIntoConstraints = false
         medicineButton.topAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor, constant: 15).isActive = true
         medicineButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        medicineButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        medicineButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
         medicineButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         medicineTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -119,7 +118,7 @@ final class EditAccountVC: UIViewController {
         insuranceButton.translatesAutoresizingMaskIntoConstraints = false
         insuranceButton.topAnchor.constraint(equalTo: medicineButton.bottomAnchor, constant: 15).isActive = true
         insuranceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        insuranceButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        insuranceButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
         insuranceButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         insuranceTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -133,7 +132,7 @@ final class EditAccountVC: UIViewController {
         reserveCanopyButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyButton.topAnchor.constraint(equalTo: insuranceButton.bottomAnchor, constant: 15).isActive = true
         reserveCanopyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        reserveCanopyButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
+        reserveCanopyButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
         reserveCanopyButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         reserveCanopyTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -287,39 +286,6 @@ final class EditAccountVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         view.addGestureRecognizer(tapGesture)
     }
-    
-    // MARK: - NOTIFICATION CENTER:
-
-    // MARK: UP AND DOWN KEYBOARD:
-
-    private func configureNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    // MARK: KEYBOARD UP:
-
-        @objc private func keyboardShow(_ notification: Notification) {
-            if let keyboardSize = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-                let contentYOffset = keyboardSize.cgRectValue.height + keyboardHeightOffset
-                UIView.animate(withDuration: 0.3) {
-                    self.view.frame.origin.y -= contentYOffset
-                }
-            }
-        }
-
-        // MARK: KEYBOARD DOWN:
-
-        @objc private func keyboardHide() {
-            UIView.animate(withDuration: 0.3) {
-                self.view.frame.origin.y = 0
-            }
-        }
     
     // MARK: - HELPERS:
     

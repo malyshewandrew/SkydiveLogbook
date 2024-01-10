@@ -122,7 +122,7 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER LABEL:
         
         containerLabel.translatesAutoresizingMaskIntoConstraints = false
-        containerLabel.topAnchor.constraint(equalTo: systemNameLabel.bottomAnchor, constant: 15).isActive = true
+        containerLabel.topAnchor.constraint(equalTo: systemNameLabel.bottomAnchor, constant: 10).isActive = true
         containerLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
         containerLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.45).isActive = true
         containerLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
@@ -170,7 +170,7 @@ final class SystemCell: UITableViewCell {
         // MARK: AAD LABEL:
         
         aadLabel.translatesAutoresizingMaskIntoConstraints = false
-        aadLabel.topAnchor.constraint(equalTo: systemNameLabel.bottomAnchor, constant: 15).isActive = true
+        aadLabel.topAnchor.constraint(equalTo: systemNameLabel.bottomAnchor, constant: 10).isActive = true
         aadLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
         aadLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.45).isActive = true
         aadLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
@@ -218,7 +218,7 @@ final class SystemCell: UITableViewCell {
         // MARK: MAIN CANOPY LABEL:
         
         mainCanopyLabel.translatesAutoresizingMaskIntoConstraints = false
-        mainCanopyLabel.topAnchor.constraint(equalTo: containerExpirationDateLabel.bottomAnchor, constant: 30).isActive = true
+        mainCanopyLabel.topAnchor.constraint(equalTo: containerExpirationDateLabel.bottomAnchor, constant: 15).isActive = true
         mainCanopyLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
         mainCanopyLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.45).isActive = true
         mainCanopyLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
@@ -291,7 +291,7 @@ final class SystemCell: UITableViewCell {
         // MARK: RESERVE CANOPY LABEL:
         
         reserveCanopyLabel.translatesAutoresizingMaskIntoConstraints = false
-        reserveCanopyLabel.topAnchor.constraint(equalTo: aadExpirationDateLabel.bottomAnchor, constant: 30).isActive = true
+        reserveCanopyLabel.topAnchor.constraint(equalTo: aadExpirationDateLabel.bottomAnchor, constant: 15).isActive = true
         reserveCanopyLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
         reserveCanopyLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.45).isActive = true
         reserveCanopyLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
