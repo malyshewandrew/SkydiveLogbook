@@ -600,7 +600,7 @@ class EditJumpCell: UITableViewCell {
     
     // MARK: DATE PICKER:
 
-    @objc func datePickerValueChanged() {
+    @objc private func datePickerValueChanged() {
         getDateFromPicker()
     }
     
@@ -613,7 +613,7 @@ class EditJumpCell: UITableViewCell {
     
     // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
-    @objc func tapGestureDone() {
+    @objc private func tapGestureDone() {
         contentView.endEditing(true)
     }
 }
