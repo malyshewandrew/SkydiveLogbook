@@ -600,20 +600,20 @@ class EditJumpCell: UITableViewCell {
     
     // MARK: DATE PICKER:
 
-    @objc private func datePickerValueChanged() {
+    @objc func datePickerValueChanged() {
         getDateFromPicker()
     }
     
     // MARK: DATE FORMATTER:
 
-    private func getDateFromPicker() {
+    func getDateFromPicker() {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         dateTextField.text = dateFormatter.string(from: datePickerView.date)
     }
     
     // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
-    @objc private func tapGestureDone() {
+    @objc func tapGestureDone() {
         contentView.endEditing(true)
     }
 }

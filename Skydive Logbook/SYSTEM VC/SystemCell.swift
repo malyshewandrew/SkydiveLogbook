@@ -730,14 +730,13 @@ final class SystemCell: UITableViewCell {
         return expirationDateReserveCanopy
     }
     
+    
     // MARK: CLOSURE FOR EDIT BUTTON:
-
     @objc private func tapOnEditButton() {
         tapEditButton?()
     }
     
     // MARK: DELEGATE FOR COMMENT BUTTON:
-
     @objc private func tapOnCommentButton() {
         guard let indexPath = indexPath else { return }
         delegate?.tapCommentButton(indexPath)

@@ -53,22 +53,22 @@ final class MainCell: UITableViewCell {
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
         numberLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8).isActive = true
         numberLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        numberLabel.heightAnchor.constraint(equalToConstant: height20).isActive = true
+        numberLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         // MARK: CANOPY LABEL:
 
         canopyLabel.translatesAutoresizingMaskIntoConstraints = false
         canopyLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         canopyLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5).isActive = true
-        canopyLabel.heightAnchor.constraint(equalToConstant: height20).isActive = true
+        canopyLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         canopyLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.46).isActive = true
 
         // MARK: MISSION LABEL:
 
         missionLabel.translatesAutoresizingMaskIntoConstraints = false
         missionLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        missionLabel.topAnchor.constraint(equalTo: canopyLabel.bottomAnchor, constant: 1).isActive = true
-        missionLabel.heightAnchor.constraint(equalToConstant: height20).isActive = true
+        missionLabel.topAnchor.constraint(equalTo: canopyLabel.bottomAnchor, constant: 5).isActive = true
+        missionLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
         missionLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.46).isActive = true
 
         // MARK: DATE LABEL:
@@ -76,7 +76,7 @@ final class MainCell: UITableViewCell {
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 2).isActive = true
         dateLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
-        dateLabel.heightAnchor.constraint(equalToConstant: height11).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
         dateLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
 
         // MARK: LOCATION LABEL:
@@ -84,7 +84,7 @@ final class MainCell: UITableViewCell {
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 2).isActive = true
         locationLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
-        locationLabel.heightAnchor.constraint(equalToConstant: height11).isActive = true
+        locationLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
         locationLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
 
         // MARK: AIRCRAFT LABEL:
@@ -92,7 +92,7 @@ final class MainCell: UITableViewCell {
         aircraftLabel.translatesAutoresizingMaskIntoConstraints = false
         aircraftLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 2).isActive = true
         aircraftLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
-        aircraftLabel.heightAnchor.constraint(equalToConstant: height11).isActive = true
+        aircraftLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
         aircraftLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
 
         // MARK: HEIGHT LABEL:
@@ -100,7 +100,7 @@ final class MainCell: UITableViewCell {
         heightLabel.translatesAutoresizingMaskIntoConstraints = false
         heightLabel.topAnchor.constraint(equalTo: aircraftLabel.bottomAnchor, constant: 2).isActive = true
         heightLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8).isActive = true
-        heightLabel.heightAnchor.constraint(equalToConstant: height11).isActive = true
+        heightLabel.heightAnchor.constraint(equalToConstant: 11).isActive = true
         heightLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25).isActive = true
         heightLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -2).isActive = true
     }

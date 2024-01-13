@@ -1,7 +1,7 @@
 import Foundation
 
-// MARK: - ДОБАВЛЕНИЕ VIEWS ЧЕРЕЗ FOR EACH:
 
+// MARK: - ДОБАВЛЕНИЕ VIEWS ЧЕРЕЗ FOR EACH:
 /*
 
  // MARK: - ADD SUBVIEWS:
@@ -44,24 +44,6 @@ import Foundation
              alert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: nil))
              present(alert, animated: true)
          }
-     }
- }
- */
-
-// MARK: - SINGLE TON FOR VIBRATION:
-
-/*
- class Vibration: UINotificationFeedbackGenerator {
-     static let vibrationNotification = Vibration()
-
-     private override init() {}
-
-     func vibrationSucces() {
-         Vibration.vibrationNotification.notificationOccurred(.success)
-     }
-
-     func vibrationError() {
-         Vibration.vibrationNotification.notificationOccurred(.error)
      }
  }
  */
