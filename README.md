@@ -14,6 +14,13 @@ iOS Application for skydivers.
 - Calculator loading for canopies
 - Create notes
 
+## Frameworks
+
+- UIKit
+- Lottie
+- Realm
+- UserDefaults
+
 ## Localization
 
 The language of the application automatically adjusts to the language of the phone:
