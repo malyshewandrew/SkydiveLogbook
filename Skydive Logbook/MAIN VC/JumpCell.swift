@@ -2,6 +2,7 @@ import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 class JumpCell: UITableViewCell {
     // MARK: - PROPERTIES:

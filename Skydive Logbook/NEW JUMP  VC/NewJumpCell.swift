@@ -2,6 +2,7 @@ import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 class NewJumpCell: UITableViewCell {
     // MARK: - PRIVATE PROPERTIES:
@@ -69,6 +70,7 @@ class NewJumpCell: UITableViewCell {
     private var player = AVAudioPlayer()
     private let saveLottie = LottieAnimationView(name: "Save")
     private let dateFormatter = DateFormatter()
+    private let realmManager = RealmManager()
     
     // MARK: - LIFECYCLE:
 
@@ -78,6 +80,9 @@ class NewJumpCell: UITableViewCell {
         addSubviews()
         configureConstrains()
         configureUI()
+        loadLocationsUserDefaults()
+        loadAircraftsUserDefaults()
+        loadCanopiesUserDefaults()
         configureGestures()
         
         canopyPickerView.delegate = self
@@ -95,6 +100,12 @@ class NewJumpCell: UITableViewCell {
         locationPickerView.dataSource = self
         aircraftPickerView.dataSource = self
         cutawayPickerView.dataSource = self
+    }
+    
+    override func prepareForReuse() {
+        loadLocationsUserDefaults()
+        loadAircraftsUserDefaults()
+        loadCanopiesUserDefaults()
     }
     
     @available(*, unavailable)
@@ -490,6 +501,24 @@ class NewJumpCell: UITableViewCell {
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }
     
+    // MARK: LOAD LOCATIONS USER DEFAULTS:
+    
+    private func loadLocationsUserDefaults() {
+        arrayLocationPickerViewValues = UserDefaults.standard.array(forKey: "arrayLocationPickerViewValues") as? [String] ?? []
+    }
+    
+    // MARK: LOAD AIRCRAFTS USER DEFAULTS:
+    
+    private func loadAircraftsUserDefaults() {
+        arrayAircraftPickerViewValues = UserDefaults.standard.array(forKey: "arrayAircraftPickerViewValues") as? [String] ?? []
+    }
+    
+    // MARK: LOAD CANOPIES USER DEFAULTS:
+    
+    private func loadCanopiesUserDefaults() {
+        arrayCanopiesPickerViewValues = UserDefaults.standard.array(forKey: "arrayCanopiesPickerViewValues") as? [String] ?? []
+    }
+    
     // MARK: - CONFIGURE GESTURES:
     
     private func configureGestures() {
@@ -553,9 +582,21 @@ class NewJumpCell: UITableViewCell {
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
 
     private func saveNewJump() {
-        let newJump = JumpStructure(date: dateTextField.text ?? "", location: locationTextField.text ?? "", aircraft: aircraftTextField.text ?? "", canopy: canopyTextField.text ?? "", mission: missionTextField.text ?? "", height: heightTextField.text ?? "", time: timeTextField.text ?? "", cutaway: cutawayTextField.text ?? "", comment: commentTextField.text ?? "")
+        let newJump = JumpClassRealm()
         
-        arrayJumps.append(newJump)
+        newJump.date = dateTextField.text ?? ""
+        newJump.location = locationTextField.text ?? ""
+        newJump.aircraft = aircraftTextField.text ?? ""
+        newJump.canopy = canopyTextField.text ?? ""
+        newJump.mission = missionTextField.text ?? ""
+        newJump.height = heightTextField.text ?? ""
+        newJump.time = timeTextField.text ?? ""
+        newJump.cutaway = cutawayTextField.text ?? ""
+        newJump.comment = commentTextField.text ?? ""
+        
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newJump, update: .all)
+        }
     }
     
     // MARK: HIDE SAVE ANIMATION:

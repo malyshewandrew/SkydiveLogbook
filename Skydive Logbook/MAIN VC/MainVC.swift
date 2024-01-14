@@ -2,6 +2,7 @@ import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -20,8 +21,10 @@ final class MainVC: UIViewController {
     private let tableView = UITableView()
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
-    private var selectedJump: JumpStructure?
+    private var selectedJump: JumpClassRealm?
     private let dateFormatter = DateFormatter()
+    
+    private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -31,17 +34,21 @@ final class MainVC: UIViewController {
         configureConstrains()
         configureUI()
         configureTableView()
+        loadJumps()
         configureGestures()
         firstMessage()
+        loadArrayAccount()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadJumps()
         navigationController?.navigationBar.isHidden = true
         firstMessage()
         tableView.reloadData()
         sortArray()
-        arrayJumps.reverse()
+        arrayJumpsRealm.reverse()
+        loadArrayAccount()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -203,10 +210,18 @@ final class MainVC: UIViewController {
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
     }
+    
+    // MARK: - LOAD JUMPS FROM REALM:
+    
+    private func loadJumps() {
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map({
+            $0 })
+    }
 
     // MARK: - ACCOUNT ALERT:
 
     @objc private func tapOnAccountButton() {
+        
         // MARK: NICKNAME:
 
         var nickname = ""
@@ -369,7 +384,7 @@ final class MainVC: UIViewController {
         firstMessageLabel.adjustsFontSizeToFitWidth = true
         firstMessageLabel.text = NSLocalizedString("First Message", comment: "")
 
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             firstMessageView.isHidden = false
             firstMessageLabel.isHidden = false
             mainStartLottie.isHidden = false
@@ -391,11 +406,20 @@ final class MainVC: UIViewController {
     }
 
     // MARK: - HELPERS:
+    
+    // MARK: LOAD ACCOUNT FROM USER DEFAULTS:
+    
+    private func loadArrayAccount() {
+        if let savedData = UserDefaults.standard.data(forKey: "arrayAccount"),
+           let loadedArray = try? JSONDecoder().decode([AccountStructure].self, from: savedData) {
+            arrayAccount = loadedArray
+        }
+    }
 
     // MARK: SORT ARRAY:
 
     private func sortArray() {
-        arrayJumps.sort { jump1, jump2 -> Bool in
+        arrayJumpsRealm.sort { jump1, jump2 -> Bool in
             dateFormatter.dateFormat = "dd.MM.yyyy"
             if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
                 return date1 < date2
@@ -427,7 +451,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COUNT OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayJumps.count
+        arrayJumpsRealm.count
     }
 
     // MARK: CUSTUM CELL:
@@ -435,18 +459,18 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell else { return UITableViewCell() }
 
-        let jump = arrayJumps[indexPath.row]
-        cell.configure(number: String(arrayJumps.count - indexPath.row), date: jump.date, location: jump.location, aircraft: jump.aircraft, canopy: jump.canopy, mission: jump.mission, height: jump.height, time: jump.time, cutaway: jump.cutaway, comment: jump.comment)
+        let jump = arrayJumpsRealm[indexPath.row]
+        cell.configure(number: String(arrayJumpsRealm.count - indexPath.row), date: jump.date, location: jump.location, aircraft: jump.aircraft, canopy: jump.canopy, mission: jump.mission, height: jump.height, time: jump.time, cutaway: jump.cutaway, comment: jump.comment)
         return cell
     }
 
     // MARK: TRANSSITION ON "JUMP VIEW CONTROLLER":
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let jump = arrayJumps[indexPath.row]
+        let jump = arrayJumpsRealm[indexPath.row]
         let jumpViewController = JumpVC(selectedJump: jump)
         selectedJump = jump
-        jumpViewController.jumpNumber = arrayJumps.count - indexPath.row
+        jumpViewController.jumpNumber = arrayJumpsRealm.count - indexPath.row
         let navigationController = UINavigationController(rootViewController: jumpViewController)
         present(navigationController, animated: true, completion: nil)
     }
@@ -455,20 +479,26 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // MARK: DELETE JUMP:
-
+        
+        let deleteJump = arrayJumpsRealm[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                arrayJumps.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .middle)
-                self.vibrationOn.vibrationSucces()
+                
+                try? self.realmManager.localRealm.write {
+                    self.realmManager.localRealm.delete(deleteJump)
+                }
+                
+                self.loadJumps()
                 tableView.reloadData()
+                self.vibrationOn.vibrationSucces()
                 self.firstMessage()
             }))
             self.present(alertDelete, animated: true)
             completion(true)
         }
+
         deleteAction.image = UIImage(systemName: "trash")
         deleteAction.backgroundColor = .systemRed
 

@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 // MARK: - PROTOCOL:
 
@@ -708,7 +709,7 @@ final class StatisticCell: UITableViewCell {
     
     private func setGeneralInfo() {
         var sumTime = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumTime += Int(jump.time) ?? 0
         }
         let seconds = sumTime % 60
@@ -719,7 +720,7 @@ final class StatisticCell: UITableViewCell {
         let daysRemainder = hours % 24
         
         var sumHeight = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumHeight += Int(jump.height) ?? 0
         }
         let kilometers = sumHeight / 1000
@@ -734,7 +735,7 @@ final class StatisticCell: UITableViewCell {
     // MARK: TOTAL JUMPS:
 
     private func setTotalJumps() {
-        totalJumpsLabel.text = String(arrayJumps.count)
+        totalJumpsLabel.text = String(arrayJumpsRealm.count)
     }
     
     // MARK: JUMPS YEAR:
@@ -743,7 +744,7 @@ final class StatisticCell: UITableViewCell {
         let currentYear = Calendar.current.component(.year, from: Date())
         dateFormatter.dateFormat = "dd.MM.yyyy"
 
-        let jumpsThisYearCount = arrayJumps.reduce(0) { count, jump in
+        let jumpsThisYearCount = arrayJumpsRealm.reduce(0) { count, jump in
             guard let jumpDate = dateFormatter.date(from: jump.date),
                   Calendar.current.component(.year, from: jumpDate) == currentYear
             else {
@@ -759,20 +760,20 @@ final class StatisticCell: UITableViewCell {
     
     private func setCategories() {
         var sumTime = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumTime += Int(jump.time) ?? 0
         }
         
         var categoryCount = ""
         var categoryTime = ""
         
-        if arrayJumps.count >= 25 && arrayJumps.count <= 49 {
+        if arrayJumpsRealm.count >= 25 && arrayJumpsRealm.count <= 49 {
             categoryCount = "A"
-        } else if arrayJumps.count >= 50 && arrayJumps.count <= 199 {
+        } else if arrayJumpsRealm.count >= 50 && arrayJumpsRealm.count <= 199 {
             categoryCount = "B"
-        } else if arrayJumps.count >= 200 && arrayJumps.count <= 499 {
+        } else if arrayJumpsRealm.count >= 200 && arrayJumpsRealm.count <= 499 {
             categoryCount = "C"
-        } else if arrayJumps.count >= 500 {
+        } else if arrayJumpsRealm.count >= 500 {
             categoryCount = "D"
         }
         
@@ -805,7 +806,7 @@ final class StatisticCell: UITableViewCell {
     
     private func setMaxHeight() {
         var maxHeight = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let jumpHeight = Int(jump.height), jumpHeight > maxHeight {
                 maxHeight = jumpHeight
             }
@@ -818,14 +819,14 @@ final class StatisticCell: UITableViewCell {
     
     private func setAverageHeight() {
         var sumAverageHeight = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumAverageHeight += Int(jump.height) ?? 0
         }
         
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             averageHeightLabel.text = "0"
         } else {
-            let averageHeight = sumAverageHeight / arrayJumps.count
+            let averageHeight = sumAverageHeight / arrayJumpsRealm.count
             averageHeightLabel.text = "\(averageHeight)"
         }
     }
@@ -834,13 +835,13 @@ final class StatisticCell: UITableViewCell {
     
     private func setMinHeight() {
         var minHeight = Int.max
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let jumpHeight = Int(jump.height), jumpHeight < minHeight {
                 minHeight = jumpHeight
             }
         }
         
-        if arrayJumps.count != 0 {
+        if arrayJumpsRealm.count != 0 {
             minHeightLabel.text = String(minHeight)
         } else {
             minHeightLabel.text = "0"
@@ -850,7 +851,7 @@ final class StatisticCell: UITableViewCell {
     // MARK: DATE FIRST:
     
     private func setDateFirst() {
-        arrayJumps.sort { jump1, jump2 -> Bool in
+        arrayJumpsRealm.sort { jump1, jump2 -> Bool in
             dateFormatter.dateFormat = "dd.MM.yyyy"
             if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
                 return date1 < date2
@@ -858,14 +859,14 @@ final class StatisticCell: UITableViewCell {
             return false
         }
         
-        dateFirstLabel.text = arrayJumps.first?.date ?? "0"
+        dateFirstLabel.text = arrayJumpsRealm.first?.date ?? "0"
     }
     
     // MARK: MAX TIME:
     
     private func setMaxTime() {
         var maxTime = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let jumpTime = Int(jump.time), jumpTime > maxTime {
                 maxTime = jumpTime
             }
@@ -877,7 +878,7 @@ final class StatisticCell: UITableViewCell {
     // MARK: DATE LAST:
     
     private func setDateLast() {
-        arrayJumps.sort { jump1, jump2 -> Bool in
+        arrayJumpsRealm.sort { jump1, jump2 -> Bool in
             dateFormatter.dateFormat = "dd.MM.yyyy"
             if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
                 return date1 < date2
@@ -885,7 +886,7 @@ final class StatisticCell: UITableViewCell {
             return false
         }
         
-        dateLastLabel.text = arrayJumps.last?.date ?? "0"
+        dateLastLabel.text = arrayJumpsRealm.last?.date ?? "0"
     }
     
     // MARK: MAX DAY:
@@ -893,7 +894,7 @@ final class StatisticCell: UITableViewCell {
     private func setMaxDay() {
         var jumpsMaxDay: [String: Int] = [:]
         
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let count = jumpsMaxDay[jump.date] {
                 jumpsMaxDay[jump.date] = count + 1
             } else {
@@ -913,14 +914,14 @@ final class StatisticCell: UITableViewCell {
     
     private func setAverageTime() {
         var sumAverageTime = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumAverageTime += Int(jump.time) ?? 0
         }
         
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             averageTimeLabel.text = "0"
         } else {
-            let averageTime = sumAverageTime / arrayJumps.count
+            let averageTime = sumAverageTime / arrayJumpsRealm.count
             averageTimeLabel.text = "\(averageTime)"
         }
     }
@@ -929,7 +930,7 @@ final class StatisticCell: UITableViewCell {
     
     private func setCountCutaway() {
         var countCutaway = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if jump.cutaway == NSLocalizedString("Yes", comment: "") {
                 countCutaway += 1
             }
@@ -942,7 +943,7 @@ final class StatisticCell: UITableViewCell {
     
     private func setAircrafts() {
         var setAircrafts: Set<String> = []
-        for canopy in arrayJumps {
+        for canopy in arrayJumpsRealm {
             setAircrafts.insert(canopy.aircraft)
         }
         
@@ -953,7 +954,7 @@ final class StatisticCell: UITableViewCell {
     
     private func setCanopies() {
         var setCanopies: Set<String> = []
-        for canopy in arrayJumps {
+        for canopy in arrayJumpsRealm {
             setCanopies.insert(canopy.canopy)
         }
         
@@ -964,7 +965,7 @@ final class StatisticCell: UITableViewCell {
     
     private func setLocations() {
         var setLocations: Set<String> = []
-        for canopy in arrayJumps {
+        for canopy in arrayJumpsRealm {
             setLocations.insert(canopy.location)
         }
         
@@ -974,78 +975,78 @@ final class StatisticCell: UITableViewCell {
     // MARK: MISSIONS ONE:
     
     private func setMissionsOne() {
-        var arrayJumpsAccuracy: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsAccuracy: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Accuracy", comment: "") {
                 arrayJumpsAccuracy.append(jump)
             }
         }
         
-        var arrayJumpsAcrobatic: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsAcrobatic: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Acrobatics", comment: "") {
                 arrayJumpsAcrobatic.append(jump)
             }
         }
         
-        var arrayJumpsAff: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsAff: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("AFF", comment: "") {
                 arrayJumpsAff.append(jump)
             }
         }
       
-        var arrayJumpsBase: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsBase: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Base", comment: "") {
                 arrayJumpsBase.append(jump)
             }
         }
         
-        var arrayJumpsBaseWingsuit: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsBaseWingsuit: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Base/Wingsuit", comment: "") {
                 arrayJumpsBaseWingsuit.append(jump)
             }
         }
         
-        var arrayJumpsCanopyFormation: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsCanopyFormation: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Canopy formation", comment: "") {
                 arrayJumpsCanopyFormation.append(jump)
             }
         }
 
-        var arrayJumpsFreeFly: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsFreeFly: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Freefly", comment: "") {
                 arrayJumpsFreeFly.append(jump)
             }
         }
         
-        var arrayJumpsFreeStyle: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsFreeStyle: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Freestyle", comment: "") {
                 arrayJumpsFreeStyle.append(jump)
             }
         }
         
-        var arrayJumpsFun: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsFun: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Fun", comment: "") {
                 arrayJumpsFun.append(jump)
             }
         }
 
-        var arrayJumpsGroup: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsGroup: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Group", comment: "") {
                 arrayJumpsGroup.append(jump)
             }
         }
         
-        var arrayJumpsInstructor: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsInstructor: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Instructor", comment: "") {
                 arrayJumpsInstructor.append(jump)
             }
@@ -1071,7 +1072,7 @@ final class StatisticCell: UITableViewCell {
     private func setTopMisson() {
         var missionCounts: [String: Int] = [:]
 
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let count = missionCounts[jump.mission] {
                 missionCounts[jump.mission] = count + 1
             } else {
@@ -1096,78 +1097,78 @@ final class StatisticCell: UITableViewCell {
     // MARK: MISSIONS TWO:
     
     private func setMissionsTwo() {
-        var arrayJumpsParachuting: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsParachuting: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Military", comment: "") {
                 arrayJumpsParachuting.append(jump)
             }
         }
         
-        var arrayJumpsParaSki: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsParaSki: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Para-ski", comment: "") {
                 arrayJumpsParaSki.append(jump)
             }
         }
         
-        var arrayJumpsProximity: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsProximity: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Proximity", comment: "") {
                 arrayJumpsProximity.append(jump)
             }
         }
 
-        var arrayJumpsSkySurfing: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsSkySurfing: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Skysurfing", comment: "") {
                 arrayJumpsSkySurfing.append(jump)
             }
         }
         
-        var arrayJumpsStaticLine: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsStaticLine: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Static-line", comment: "") {
                 arrayJumpsStaticLine.append(jump)
             }
         }
         
-        var arrayJumpsSwoop: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsSwoop: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Piloting", comment: "") {
                 arrayJumpsSwoop.append(jump)
             }
         }
         
-        var arrayJumpsTandem: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsTandem: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Tandem", comment: "") {
                 arrayJumpsTandem.append(jump)
             }
         }
         
-        var arrayJumpsVerticalAcro: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsVerticalAcro: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Vertical", comment: "") {
                 arrayJumpsVerticalAcro.append(jump)
             }
         }
         
-        var arrayJumpsVideo: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsVideo: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Video", comment: "") {
                 arrayJumpsVideo.append(jump)
             }
         }
         
-        var arrayJumpsWingsuit: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsWingsuit: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Wingsuit", comment: "") {
                 arrayJumpsWingsuit.append(jump)
             }
         }
         
-        var arrayJumpsFormation: [JumpStructure] = []
-        for jump in arrayJumps {
+        var arrayJumpsFormation: [JumpClassRealm] = []
+        for jump in arrayJumpsRealm {
             if jump.mission == NSLocalizedString("Formation", comment: "") {
                 arrayJumpsFormation.append(jump)
             }

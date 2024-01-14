@@ -2,11 +2,12 @@ import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 // MARK: - PROTOCOL:
 
 protocol EditJumpCellDelegate {
-    func saveJump(_ jump: JumpStructure)
+    func saveJump(_ jump: JumpClassRealm)
 }
 
 class EditJumpCell: UITableViewCell {
@@ -492,7 +493,7 @@ class EditJumpCell: UITableViewCell {
     
     // MARK: CONFIGURE MODEL:
 
-    func configure(_ jump: JumpStructure) {
+    func configure(_ jump: JumpClassRealm) {
         dateTextField.text = jump.date
         locationTextField.text = jump.location
         aircraftTextField.text = jump.aircraft
@@ -534,7 +535,16 @@ class EditJumpCell: UITableViewCell {
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
 
     private func saveNewJump() {
-        let newJump = JumpStructure(date: dateTextField.text ?? "", location: locationTextField.text ?? "", aircraft: aircraftTextField.text ?? "", canopy: canopyTextField.text ?? "", mission: missionTextField.text ?? "", height: heightTextField.text ?? "", time: timeTextField.text ?? "", cutaway: cutawayTextField.text ?? "", comment: commentTextField.text ?? "")
+        let newJump = JumpClassRealm()
+        newJump.date = dateTextField.text ?? ""
+        newJump.location = locationTextField.text ?? ""
+        newJump.aircraft = aircraftTextField.text ?? ""
+        newJump.canopy = canopyTextField.text ?? ""
+        newJump.mission = missionTextField.text ?? ""
+        newJump.height = heightTextField.text ?? ""
+        newJump.time = timeTextField.text ?? ""
+        newJump.cutaway = cutawayTextField.text ?? ""
+        newJump.comment = commentTextField.text ?? ""
         
         delegate?.saveJump(newJump)
     }

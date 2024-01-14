@@ -2,6 +2,7 @@ import Lottie
 import SafariServices
 import UIKit
 import WebKit
+import RealmSwift
 
 final class InfoVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:

@@ -1,5 +1,6 @@
 import Lottie
 import UIKit
+import RealmSwift
 
 final class StatisticVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -10,6 +11,8 @@ final class StatisticVC: UIViewController {
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
     private let dateFormatter = DateFormatter()
+    
+    let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -19,11 +22,13 @@ final class StatisticVC: UIViewController {
         configureConstrains()
         configureUI()
         configureTableView()
+        loadJumps()
         configureGestures()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadJumps()
         tableView.reloadData()
     }
 
@@ -105,6 +110,13 @@ final class StatisticVC: UIViewController {
         tableView.register(StatisticCell.self, forCellReuseIdentifier: "CellStatistic")
         tableView.reloadData()
     }
+    
+    // MARK: - LOAD JUMPS FROM REALM:
+    
+    private func loadJumps() {
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map({
+            $0 })
+    }
 
     // MARK: - CONFIGURE GESTURES:
 
@@ -151,7 +163,7 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapGeneralInfoButton() {
         var sumTime = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumTime += Int(jump.time) ?? 0
         }
 
@@ -210,7 +222,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var sumHeight = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumHeight += Int(jump.height) ?? 0
         }
         var heightMessage = "Придумать"
@@ -226,7 +238,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = """
@@ -287,7 +299,7 @@ extension StatisticVC: StatisticCellDelegate {
     func tapYearButton() {
         var arrayYears: [String] = []
 
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             dateFormatter.dateFormat = "dd.MM.yyyy"
             if let date = dateFormatter.date(from: jump.date) {
                 dateFormatter.dateFormat = "yyyy"
@@ -307,7 +319,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = NSLocalizedString("no jumps", comment: "")
         } else {
             for (year, count) in yearsCount.sorted(by: { $0 > $1 }) {
@@ -346,7 +358,7 @@ extension StatisticVC: StatisticCellDelegate {
         var maxJumpHeight = 0
         var maxHeightDate = ""
 
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let height = Int(jump.height), height > maxJumpHeight {
                 maxJumpHeight = height
                 maxHeightDate = jump.date
@@ -354,7 +366,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = "\n\(NSLocalizedString("Maximum height alert", comment: "")): \(maxHeightDate)"
@@ -374,19 +386,19 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapAverageHeightButton() {
         var sumAverageHeight = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumAverageHeight += Int(jump.height) ?? 0
         }
 
         var averageHeight = 0
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             averageHeight = 0
         } else {
-            averageHeight = sumAverageHeight / arrayJumps.count
+            averageHeight = sumAverageHeight / arrayJumpsRealm.count
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = "\n\(NSLocalizedString("Average height of jump", comment: "")): \(averageHeight) \(NSLocalizedString("m.", comment: ""))"
@@ -408,7 +420,7 @@ extension StatisticVC: StatisticCellDelegate {
         var minJumpHeight = Int.max
         var minHeightDate = ""
 
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let height = Int(jump.height), height < minJumpHeight {
                 minJumpHeight = height
                 minHeightDate = jump.date
@@ -416,7 +428,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = "\n\(NSLocalizedString("Minimum height alert", comment: "")): \(minHeightDate)"
@@ -435,7 +447,7 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE FIRST:
 
     func tapDateFirstButton() {
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
@@ -449,7 +461,7 @@ extension StatisticVC: StatisticCellDelegate {
 
             dateFormatter.dateFormat = "dd.MM.yyyy"
 
-            if let jumpDateString = arrayJumps.first?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
+            if let jumpDateString = arrayJumpsRealm.first?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
                 let userCalendar = Calendar.current
                 let dayMonthYearPassed = userCalendar.dateComponents([.day, .month, .year], from: jumpDate, to: currentDate)
 
@@ -458,7 +470,7 @@ extension StatisticVC: StatisticCellDelegate {
                       let day = dayMonthYearPassed.day else { return }
 
                 var message = ""
-                if arrayJumps.count == 0 {
+                if arrayJumpsRealm.count == 0 {
                     message = "\n" + NSLocalizedString("no jumps", comment: "")
                 } else {
                     message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))"
@@ -482,7 +494,7 @@ extension StatisticVC: StatisticCellDelegate {
         var maxJumpHeight = 0
         var maxTimeDate = ""
 
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let height = Int(jump.time), height > maxJumpHeight {
                 maxJumpHeight = height
                 maxTimeDate = jump.date
@@ -490,7 +502,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = "\n\(NSLocalizedString("Maximum time alert", comment: "")): \(maxTimeDate)"
@@ -509,7 +521,7 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE LAST:
 
     func tapDateLastButton() {
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
@@ -522,7 +534,7 @@ extension StatisticVC: StatisticCellDelegate {
             let currentDate = Date()
             dateFormatter.dateFormat = "dd.MM.yyyy"
 
-            if let jumpDateString = arrayJumps.last?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
+            if let jumpDateString = arrayJumpsRealm.last?.date, let jumpDate = dateFormatter.date(from: jumpDateString) {
                 let userCalendar = Calendar.current
                 let dayMonthYearPassed = userCalendar.dateComponents([.day, .month, .year], from: jumpDate, to: currentDate)
 
@@ -550,7 +562,7 @@ extension StatisticVC: StatisticCellDelegate {
         var jumpsMaxDay: [String: Int] = [:]
         var dayWithMostJumps = ""
 
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if let count = jumpsMaxDay[jump.date] {
                 jumpsMaxDay[jump.date] = count + 1
             } else {
@@ -565,7 +577,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = "\n\(NSLocalizedString("Max count of jumps text", comment: "")): \(dayWithMostJumps)"
@@ -585,19 +597,19 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapAverageTimeButton() {
         var sumAverageTime = 0
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             sumAverageTime += Int(jump.time) ?? 0
         }
 
         var averageTime = 0
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             averageTime = 0
         } else {
-            averageTime = sumAverageTime / arrayJumps.count
+            averageTime = sumAverageTime / arrayJumpsRealm.count
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             message = " \n\(NSLocalizedString("Average free fall time of jump", comment: "")): \(averageTime) \(NSLocalizedString("s.", comment: ""))"
@@ -619,7 +631,7 @@ extension StatisticVC: StatisticCellDelegate {
         var countCutaway = 0
         var dataWithCutawayYes: [(date: String, comment: String)] = []
 
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             if jump.cutaway == NSLocalizedString("Yes", comment: "") {
                 countCutaway += 1
                 let jumpData = (date: jump.date, comment: jump.comment)
@@ -630,10 +642,10 @@ extension StatisticVC: StatisticCellDelegate {
         let resultString = dataWithCutawayYes.map { "\($0.date)\n\($0.comment)" }.joined(separator: "\n\n")
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
-            message = "\n\(resultString)"
+            message = "\n\(NSLocalizedString("Count cutaway", comment: "")): \(countCutaway)\n\n\(resultString)"
         }
 
         let alert = UIAlertController(title: NSLocalizedString("CutawayStatistic", comment: "") + ":",
@@ -650,7 +662,7 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapAircraftsButton() {
         var arrayAircrafts: [String] = []
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             arrayAircrafts.append(jump.aircraft)
         }
 
@@ -665,7 +677,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             for (aircraft, count) in aircraftCount.sorted(by: { $0.value > $1.value }) {
@@ -687,7 +699,7 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapCanopiesButton() {
         var arrayCanopies: [String] = []
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             arrayCanopies.append(jump.canopy)
         }
 
@@ -702,7 +714,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             for (canopy, count) in canopyCount.sorted(by: { $0.value > $1.value }) {
@@ -724,7 +736,7 @@ extension StatisticVC: StatisticCellDelegate {
 
     func tapLocationsButton() {
         var arrayLocations: [String] = []
-        for jump in arrayJumps {
+        for jump in arrayJumpsRealm {
             arrayLocations.append(jump.location)
         }
 
@@ -739,7 +751,7 @@ extension StatisticVC: StatisticCellDelegate {
         }
 
         var message = ""
-        if arrayJumps.count == 0 {
+        if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             for (location, count) in locationCount.sorted(by: { $0.value > $1.value }) {

@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 protocol SystemCellDelegate: AnyObject {
     func tapCommentButton(_ index: IndexPath)
@@ -601,41 +602,41 @@ final class SystemCell: UITableViewCell {
     
     // MARK: CONFIGURE MODEL:
 
-    func configure(_ system: SystemStructure) {
+    func configure(_ system: SystemClassRealm) {
         systemNameLabel.text = system.name.uppercased()
-        containerNameLabel.text = system.container.name
-        containerSerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.container.serialNumber
-        containerDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.container.dom
-        containerServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.container.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
+        containerNameLabel.text = system.container?.name
+        containerSerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + (system.container?.serialNumber ?? "")
+        containerDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + (system.container?.dom ?? "")
+        containerServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + (system.container?.serviceLifeYears ?? "") + " " + NSLocalizedString("years system", comment: "")
         containerExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setContainerExpirationDate(system)
-        aadNameLabel.text = system.aad.name
-        aadSerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.aad.serialNumber
-        aadDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.aad.dom
-        aadServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.aad.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
+        aadNameLabel.text = system.aad?.name
+        aadSerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + (system.aad?.serialNumber ?? "")
+        aadDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + (system.aad?.dom ?? "")
+        aadServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + (system.aad?.serviceLifeYears ?? "") + " " + NSLocalizedString("years system", comment: "")
         aadExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setAadExpirationDate(system)
-        mainCanopyNameLabel.text = system.mainCanopy.name
-        mainCanopySerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.mainCanopy.serialNumber
-        mainCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.mainCanopy.dom
-        mainCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.mainCanopy.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
+        mainCanopyNameLabel.text = system.mainCanopy?.name
+        mainCanopySerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + (system.mainCanopy?.serialNumber ?? "")
+        mainCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + (system.mainCanopy?.dom ?? "")
+        mainCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + (system.mainCanopy?.serviceLifeYears ?? "") + " " + NSLocalizedString("years system", comment: "")
         mainCanopyExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setMainCanopyExpirationDate(system)
-        mainCanopyServiceLifeJumpsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.mainCanopy.serviceLifeJumps + " " + NSLocalizedString("jumps system", comment: "")
-        mainCanopyCountJumpsLabel.text = NSLocalizedString("Counts of the jumps system", comment: "") + ": " + setMainCanopyCountTotalJumps(system, arrayJumps)
-        mainCanopyRemainedCountLabel.text = NSLocalizedString("Resource system", comment: "") + ": " + setMainCanopyRemainedCountJumps(system, arrayJumps) + " " + NSLocalizedString("jumps system", comment: "")
-        reserveCanopyNameLabel.text = system.reserveCanopy.name
-        reserveCanopySerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + system.reserveCanopy.serialNumber
-        reserveCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + system.reserveCanopy.dom
-        reserveCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + system.reserveCanopy.serviceLifeYears + " " + NSLocalizedString("years system", comment: "")
-        reserveCanopyCountRepackLabel.text = NSLocalizedString("Counts of repack system", comment: "") + ": " + system.reserveCanopy.countRepack + "/" + system.reserveCanopy.serviceLifeYears
-        reserveCanopyDatePackLabel.text = NSLocalizedString("Packed system", comment: "") + ": " + system.reserveCanopy.datePack
+        mainCanopyServiceLifeJumpsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + (system.mainCanopy?.serviceLifeJumps ?? "") + " " + NSLocalizedString("jumps system", comment: "")
+        mainCanopyCountJumpsLabel.text = NSLocalizedString("Counts of the jumps system", comment: "") + ": " + setMainCanopyCountTotalJumps(system, arrayJumpsRealm)
+        mainCanopyRemainedCountLabel.text = NSLocalizedString("Resource system", comment: "") + ": " + setMainCanopyRemainedCountJumps(system, arrayJumpsRealm) + " " + NSLocalizedString("jumps system", comment: "")
+        reserveCanopyNameLabel.text = system.reserveCanopy?.name
+        reserveCanopySerialNumberLabel.text = NSLocalizedString("Number system", comment: "") + ": " + (system.reserveCanopy?.serialNumber ?? "")
+        reserveCanopyDomLabel.text = NSLocalizedString("DOM system", comment: "") + ": " + (system.reserveCanopy?.dom ?? "")
+        reserveCanopyServiceLifeYearsLabel.text = NSLocalizedString("Service life system", comment: "") + ": " + (system.reserveCanopy?.serviceLifeYears ?? "") + " " + NSLocalizedString("years system", comment: "")
+        reserveCanopyCountRepackLabel.text = NSLocalizedString("Counts of repack system", comment: "") + ": " + (system.reserveCanopy?.countRepack ?? "") + "/" + (system.reserveCanopy?.serviceLifeYears ?? "")
+        reserveCanopyDatePackLabel.text = NSLocalizedString("Packed system", comment: "") + ": " + (system.reserveCanopy?.datePack ?? "")
         reserveCanopyExpirationDateLabel.text = NSLocalizedString("Valid until system", comment: "") + ": " + setReserveCanopyExpirationDate(system)
     }
     
     // MARK: CONTAINER SERVICE LIFE YEARS:
     
-    private func setContainerExpirationDate(_ system: SystemStructure) -> String {
+    private func setContainerExpirationDate(_ system: SystemClassRealm) -> String {
         var expirationDateContainer = ""
-        let containerDomLabelText = system.container.dom
-        let containerServiceLifeYears = Int(system.container.serviceLifeYears)
+        guard let containerDomLabelText = system.container?.dom else { return "" }
+        let containerServiceLifeYears = Int(system.container?.serviceLifeYears ?? "")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         if let date = dateFormatter.date(from: containerDomLabelText) {
@@ -650,10 +651,10 @@ final class SystemCell: UITableViewCell {
     
     // MARK: AAD SERVICE LIFE YEARS:
     
-    private func setAadExpirationDate(_ system: SystemStructure) -> String {
+    private func setAadExpirationDate(_ system: SystemClassRealm) -> String {
         var expirationDateAad = ""
-        let aadDomLabelText = system.aad.dom
-        let aadServiceLifeYears = Int(system.aad.serviceLifeYears)
+        guard let aadDomLabelText = system.aad?.dom else { return "" }
+        let aadServiceLifeYears = Int(system.aad?.serviceLifeYears ?? "")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         if let date = dateFormatter.date(from: aadDomLabelText) {
@@ -668,10 +669,10 @@ final class SystemCell: UITableViewCell {
     
     // MARK: MAIN CANOPY SERVICE LIFE YEARS:
     
-    private func setMainCanopyExpirationDate(_ system: SystemStructure) -> String {
+    private func setMainCanopyExpirationDate(_ system: SystemClassRealm) -> String {
         var expirationDateMainCanopy = ""
-        let mainCanopyDomLabelText = system.mainCanopy.dom
-        let mainCanopyServiceLifeYears = Int(system.mainCanopy.serviceLifeYears)
+        guard let mainCanopyDomLabelText = system.mainCanopy?.dom else { return "" }
+        let mainCanopyServiceLifeYears = Int(system.mainCanopy?.serviceLifeYears ?? "")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         if let date = dateFormatter.date(from: mainCanopyDomLabelText) {
@@ -686,38 +687,38 @@ final class SystemCell: UITableViewCell {
     
     // MARK: MAIN CANOPY TOTAL JUMPS:
     
-    private func setMainCanopyCountTotalJumps(_ system: SystemStructure, _ arrayJumps: [JumpStructure]) -> String {
+    private func setMainCanopyCountTotalJumps(_ system: SystemClassRealm, _ arrayJumps: [JumpClassRealm]) -> String {
         var totalJumps = 0
         for jump in arrayJumps {
-            if jump.canopy == system.mainCanopy.name {
+            if jump.canopy == system.mainCanopy?.name {
                 totalJumps += 1
             }
         }
-        let mainCanopyCountJumps = Int(system.mainCanopy.countJumps) ?? 0
+        let mainCanopyCountJumps = Int(system.mainCanopy?.countJumps ?? "") ?? 0
         return String(mainCanopyCountJumps + totalJumps)
     }
     
     // MARK: MAIN CANOPY REMAINED COUNT:
     
-    private func setMainCanopyRemainedCountJumps(_ system: SystemStructure, _ arrayJumps: [JumpStructure]) -> String {
+    private func setMainCanopyRemainedCountJumps(_ system: SystemClassRealm, _ arrayJumps: [JumpClassRealm]) -> String {
         var totalJumps = 0
         for jump in arrayJumps {
-            if jump.canopy == system.mainCanopy.name {
+            if jump.canopy == system.mainCanopy?.name {
                 totalJumps += 1
             }
         }
-        let mainCanopyCountJumps = Int(system.mainCanopy.countJumps) ?? 0
+        let mainCanopyCountJumps = Int(system.mainCanopy?.countJumps ?? "") ?? 0
         let sumMainCanopyCountJumps = mainCanopyCountJumps + totalJumps
-        let remainedMainCanopyCountJumps = (Int(system.mainCanopy.serviceLifeJumps) ?? 0) - sumMainCanopyCountJumps
+        let remainedMainCanopyCountJumps = (Int(system.mainCanopy?.serviceLifeJumps ?? "") ?? 0) - sumMainCanopyCountJumps
         return String(remainedMainCanopyCountJumps)
     }
     
     // MARK: RESERVE CANOPY SERVICE LIFE YEARS:
     
-    private func setReserveCanopyExpirationDate(_ system: SystemStructure) -> String {
+    private func setReserveCanopyExpirationDate(_ system: SystemClassRealm) -> String {
         var expirationDateReserveCanopy = ""
-        let reserveCanopyDomLabelText = system.reserveCanopy.dom
-        let reserveCanopyServiceLifeYears = Int(system.reserveCanopy.serviceLifeYears)
+        guard let reserveCanopyDomLabelText = system.reserveCanopy?.dom else { return "" }
+        let reserveCanopyServiceLifeYears = Int(system.reserveCanopy?.serviceLifeYears ?? "")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.yyyy"
         if let date = dateFormatter.date(from: reserveCanopyDomLabelText) {

@@ -25,6 +25,12 @@ final class NotesVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
+        loadNotesUserDefaults()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadNotesUserDefaults()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -185,17 +191,11 @@ final class NotesVC: UIViewController {
     }
 
     // MARK: - HELPERS:
-
-    // MARK: SAVE AND ADD NEW NOTE IN ARRAY NOTES:
-
-    private func saveNewNote() {
-        arrayNotes.append(noteTextView.text ?? "")
-        actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
-        noteTextView.resignFirstResponder()
-        noteTextView.text = ""
-        tableView.reloadData()
-        playSoundSucces()
+    
+    // MARK: LOAD USER DEFAULTS:
+    
+    private func loadNotesUserDefaults() {
+        arrayNotes = UserDefaults.standard.array(forKey: "arrayNotes") as? [String] ?? []
     }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
@@ -208,8 +208,27 @@ final class NotesVC: UIViewController {
         }
         saveNewNote()
     }
+    
+    // MARK: SAVE AND ADD NEW NOTE IN ARRAY NOTES:
 
-    // MARK: ACTION FOR TAP ON SAVE BUTTON:
+    private func saveNewNote() {
+        arrayNotes.append(noteTextView.text ?? "")
+        actionButtonSaveGreenColor()
+        vibrationOn.vibrationSucces()
+        noteTextView.resignFirstResponder()
+        noteTextView.text = ""
+        tableView.reloadData()
+        playSoundSucces()
+        saveNotesUserDefaults()
+    }
+    
+    // MARK: SAVE IN USER DEFAULTS:
+    
+    private func saveNotesUserDefaults() {
+        UserDefaults.standard.set(arrayNotes, forKey: "arrayNotes")
+    }
+    
+    // MARK: ACTION FOR TAP ON CLEAN BUTTON:
 
     @objc private func tapOnCleanButton() {
         noteTextView.text = ""
@@ -294,6 +313,7 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
+                self.saveNotesUserDefaults()
             }))
             present(alertDelete, animated: true)
         }
@@ -303,9 +323,10 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let fixAction = UIContextualAction(style: .destructive, title: "Favorite") { _, _, completion in
-            let noneFix = arrayNotes.remove(at: indexPath.row)
-            arrayNotes.insert(noneFix, at: 0)
+            let noteFix = arrayNotes.remove(at: indexPath.row)
+            arrayNotes.insert(noteFix, at: 0)
             tableView.reloadData()
+            self.saveNotesUserDefaults()
             completion(true)
         }
         fixAction.image = UIImage(systemName: "star")

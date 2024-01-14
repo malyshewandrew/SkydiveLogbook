@@ -35,11 +35,13 @@ final class EditAccountVC: UIViewController {
         configureUI()
         configureGestures()
         configureAccount()
+        _ = loadAccount()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureAccount()
+        _ = loadAccount()
     }
     
     // MARK: - ADD SUBVIEWS:
@@ -289,23 +291,29 @@ final class EditAccountVC: UIViewController {
     
     // MARK: - HELPERS:
     
+    // MARK: LOAD ACCOUNT FROM USER DEFAULTS:
+    
+    func loadAccount() -> AccountStructure? {
+        if let savedData = UserDefaults.standard.data(forKey: "account") {
+            let loadedAccount = try? JSONDecoder().decode(AccountStructure.self, from: savedData)
+            return loadedAccount
+        }
+        return nil
+    }
+    
     // MARK: CONFIGURE ACCOUNT:
 
     private func configureAccount() {
-        if arrayAccount.count == 0 {
-            nicknameTextField.text = ""
-            licenseDateTextField.text = ""
-            licenseDateTextField.text = ""
-            medicineTextField.text = ""
-            insuranceTextField.text = ""
-            reserveCanopyTextField.text = ""
-        } else {
-            nicknameTextField.text = arrayAccount[0].nickname
-            licenseTypeTextField.text = arrayAccount[0].licenseType
-            licenseDateTextField.text = arrayAccount[0].licenseDate
-            medicineTextField.text = arrayAccount[0].medicine
-            insuranceTextField.text = arrayAccount[0].insurance
-            reserveCanopyTextField.text = arrayAccount[0].reserveCanopy
+        if let loadedAccount = loadAccount() {
+            arrayAccount.removeAll()
+            arrayAccount.append(loadedAccount)
+            
+            nicknameTextField.text = loadedAccount.nickname
+            licenseTypeTextField.text = loadedAccount.licenseType
+            licenseDateTextField.text = loadedAccount.licenseDate
+            medicineTextField.text = loadedAccount.medicine
+            insuranceTextField.text = loadedAccount.insurance
+            reserveCanopyTextField.text = loadedAccount.reserveCanopy
         }
     }
     
@@ -322,13 +330,28 @@ final class EditAccountVC: UIViewController {
     // MARK: SAVE FUNC:
 
     private func saveNewAccount() {
-        let account = AccountStructure(nickname: nicknameTextField.text ?? "", licenseType: licenseTypeTextField.text ?? "", licenseDate: licenseDateTextField.text ?? "", medicine: medicineTextField.text ?? "", insurance: insuranceTextField.text ?? "", reserveCanopy: reserveCanopyTextField.text ?? "")
+        let account = AccountStructure(nickname: nicknameTextField.text ?? "",
+                                       licenseType: licenseTypeTextField.text ?? "",
+                                       licenseDate: licenseDateTextField.text ?? "",
+                                       medicine: medicineTextField.text ?? "",
+                                       insurance: insuranceTextField.text ?? "",
+                                       reserveCanopy: reserveCanopyTextField.text ?? "")
         
-        if arrayAccount.count == 0 {
-            arrayAccount.insert(account, at: 0)
-        } else {
-            arrayAccount.remove(at: 0)
-            arrayAccount.insert(account, at: 0)
+        // Сохраняем данные в UserDefaults
+        if let encodedData = try? JSONEncoder().encode(account) {
+            UserDefaults.standard.set(encodedData, forKey: "account")
+        }
+        
+        // Обновляем массив arrayAccount и сохраняем в UserDefaults
+        arrayAccount.removeAll()
+        arrayAccount.append(account)
+        saveArrayAccount()
+    }
+    
+    // Сохранение массива arrayAccount в UserDefaults
+    private func saveArrayAccount() {
+        if let encodedData = try? JSONEncoder().encode(arrayAccount) {
+            UserDefaults.standard.set(encodedData, forKey: "arrayAccount")
         }
     }
     

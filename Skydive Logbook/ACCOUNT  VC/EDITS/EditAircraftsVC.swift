@@ -1,6 +1,7 @@
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 final class EditAircraftsVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -22,7 +23,13 @@ final class EditAircraftsVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
+        loadAircraftsUserDefaults()
         enterTextTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadAircraftsUserDefaults()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -138,6 +145,12 @@ final class EditAircraftsVC: UIViewController {
     }
 
     // MARK: - HELPERS:
+    
+    // MARK: LOAD AIRCRAFTS USER DEFAULTS:
+    
+    private func loadAircraftsUserDefaults() {
+        arrayAircraftPickerViewValues = UserDefaults.standard.array(forKey: "arrayAircraftPickerViewValues") as? [String] ?? []
+    }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
@@ -154,6 +167,13 @@ final class EditAircraftsVC: UIViewController {
         enterTextTextField.text = ""
         enterTextTextField.resignFirstResponder()
         tableView.reloadData()
+        saveAircraftsUserDefaults()
+    }
+    
+    // MARK: SAVE AIRCRAFT IN USER DEFAULTS:
+    
+    private func saveAircraftsUserDefaults() {
+        UserDefaults.standard.set(arrayAircraftPickerViewValues, forKey: "arrayAircraftPickerViewValues")
     }
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
@@ -235,6 +255,7 @@ extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
+                self.saveAircraftsUserDefaults()
             }))
             present(alertDelete, animated: true)
         }

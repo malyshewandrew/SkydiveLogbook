@@ -1,9 +1,10 @@
 import AudioToolbox
 import AVFoundation
 import UIKit
+import RealmSwift
 
 protocol EditSystemCellDelegate: AnyObject {
-    func saveSystem(_ system: SystemStructure)
+    func saveSystem(_ system: SystemClassRealm)
 }
 
 final class EditSystemCell: UITableViewCell {
@@ -994,28 +995,28 @@ final class EditSystemCell: UITableViewCell {
     
     // MARK: CONFIGURE MODEL:
     
-    func configure(_ system: SystemStructure) {
+    func configure(_ system: SystemClassRealm) {
         nameSystemTextField.text = system.name
-        containerNameTextField.text = system.container.name
-        containerDomTextField.text = system.container.dom
-        containerSerialNumberTextField.text = system.container.serialNumber
-        containerServiceLifeYearsTextField.text = system.container.serviceLifeYears
-        aadNameTextField.text = system.aad.name
-        aadDomTextField.text = system.aad.dom
-        aadSerialNumberTextField.text = system.aad.serialNumber
-        aadServiceLifeYearsTextField.text = system.aad.serviceLifeYears
-        mainCanopyNameTextField.text = system.mainCanopy.name
-        mainCanopyDomTextField.text = system.mainCanopy.dom
-        mainCanopySerialNumberTextField.text = system.mainCanopy.serialNumber
-        mainCanopyServiceLifeYearsTextField.text = system.mainCanopy.serviceLifeYears
-        mainCanopyServiceLifeJumpsTextField.text = system.mainCanopy.serviceLifeJumps
-        mainCanopyCountJumpsTextField.text = system.mainCanopy.countJumps
-        reserveCanopyNameTextField.text = system.reserveCanopy.name
-        reserveCanopyDomTextField.text = system.reserveCanopy.dom
-        reserveCanopySerialNumberTextField.text = system.reserveCanopy.serialNumber
-        reserveCanopyServiceLifeYearsTextField.text = system.reserveCanopy.serviceLifeYears
-        reserveCanopyCountRepackTextField.text = system.reserveCanopy.countRepack
-        reserveCanopyDatePackTextField.text = system.reserveCanopy.datePack
+        containerNameTextField.text = system.container?.name
+        containerDomTextField.text = system.container?.dom
+        containerSerialNumberTextField.text = system.container?.serialNumber
+        containerServiceLifeYearsTextField.text = system.container?.serviceLifeYears
+        aadNameTextField.text = system.aad?.name
+        aadDomTextField.text = system.aad?.dom
+        aadSerialNumberTextField.text = system.aad?.serialNumber
+        aadServiceLifeYearsTextField.text = system.aad?.serviceLifeYears
+        mainCanopyNameTextField.text = system.mainCanopy?.name
+        mainCanopyDomTextField.text = system.mainCanopy?.dom
+        mainCanopySerialNumberTextField.text = system.mainCanopy?.serialNumber
+        mainCanopyServiceLifeYearsTextField.text = system.mainCanopy?.serviceLifeYears
+        mainCanopyServiceLifeJumpsTextField.text = system.mainCanopy?.serviceLifeJumps
+        mainCanopyCountJumpsTextField.text = system.mainCanopy?.countJumps
+        reserveCanopyNameTextField.text = system.reserveCanopy?.name
+        reserveCanopyDomTextField.text = system.reserveCanopy?.dom
+        reserveCanopySerialNumberTextField.text = system.reserveCanopy?.serialNumber
+        reserveCanopyServiceLifeYearsTextField.text = system.reserveCanopy?.serviceLifeYears
+        reserveCanopyCountRepackTextField.text = system.reserveCanopy?.countRepack
+        reserveCanopyDatePackTextField.text = system.reserveCanopy?.datePack
         commentSystemTextField.text = system.comment
     }
     
@@ -1059,7 +1060,40 @@ final class EditSystemCell: UITableViewCell {
     // MARK: SAVE AND ADD NEW SYSTEM IN ARRAY SYSTEM:
 
     func saveNewSystem() {
-        let newSystem = SystemStructure(name: nameSystemTextField.text ?? "", container: .init(name: containerNameTextField.text ?? "", dom: containerDomTextField.text ?? "", serialNumber: containerSerialNumberTextField.text ?? "", serviceLifeYears: containerServiceLifeYearsTextField.text ?? ""), aad: .init(name: aadNameTextField.text ?? "", dom: aadDomTextField.text ?? "", serialNumber: aadSerialNumberTextField.text ?? "", serviceLifeYears: aadServiceLifeYearsTextField.text ?? ""), mainCanopy: .init(name: mainCanopyNameTextField.text ?? "", dom: mainCanopyDomTextField.text ?? "", serialNumber: mainCanopySerialNumberTextField.text ?? "", serviceLifeYears: mainCanopyServiceLifeYearsTextField.text ?? "", serviceLifeJumps: mainCanopyServiceLifeJumpsTextField.text ?? "", countJumps: mainCanopyCountJumpsTextField.text ?? ""), reserveCanopy: .init(name: reserveCanopyNameTextField.text ?? "", dom: reserveCanopyDomTextField.text ?? "", serialNumber: reserveCanopySerialNumberTextField.text ?? "", serviceLifeYears: reserveCanopyServiceLifeYearsTextField.text ?? "", countRepack: reserveCanopyCountRepackTextField.text ?? "", datePack: reserveCanopyDatePackTextField.text ?? ""), comment: commentSystemTextField.text ?? "")
+        let newSystem = SystemClassRealm()
+        
+        newSystem.container = Container()
+        newSystem.aad = Aad()
+        newSystem.mainCanopy = MainCanopy()
+        newSystem.reserveCanopy = ReserveCanopy()
+        
+        newSystem.name = nameSystemTextField.text ?? ""
+        newSystem.container?.name = containerNameTextField.text ?? ""
+        newSystem.container?.dom = containerDomTextField.text ?? ""
+        newSystem.container?.serialNumber = containerSerialNumberTextField.text ?? ""
+        newSystem.container?.serviceLifeYears = containerServiceLifeYearsTextField.text ?? ""
+        
+        newSystem.aad?.name = aadNameTextField.text ?? ""
+        newSystem.aad?.dom = aadDomTextField.text ?? ""
+        newSystem.aad?.serialNumber = aadSerialNumberTextField.text ?? ""
+        newSystem.aad?.serviceLifeYears = aadServiceLifeYearsTextField.text ?? ""
+        
+        newSystem.mainCanopy?.name = mainCanopyNameTextField.text ?? ""
+        newSystem.mainCanopy?.dom = mainCanopyDomTextField.text ?? ""
+        newSystem.mainCanopy?.serialNumber = mainCanopySerialNumberTextField.text ?? ""
+        newSystem.mainCanopy?.serviceLifeYears = mainCanopyServiceLifeYearsTextField.text ?? ""
+        newSystem.mainCanopy?.serviceLifeJumps = mainCanopyServiceLifeJumpsTextField.text ?? ""
+        newSystem.mainCanopy?.countJumps = mainCanopyCountJumpsTextField.text ?? ""
+        
+        newSystem.reserveCanopy?.name = reserveCanopyNameTextField.text ?? ""
+        newSystem.reserveCanopy?.dom = reserveCanopyDomTextField.text ?? ""
+        newSystem.reserveCanopy?.serialNumber = reserveCanopySerialNumberTextField.text ?? ""
+        newSystem.reserveCanopy?.serviceLifeYears = reserveCanopyServiceLifeYearsTextField.text ?? ""
+        newSystem.reserveCanopy?.countRepack = reserveCanopyCountRepackTextField.text ?? ""
+        newSystem.reserveCanopy?.datePack = reserveCanopyDatePackTextField.text ?? ""
+        
+        newSystem.comment = commentSystemTextField.text ?? ""
+        
         delegate?.saveSystem(newSystem)
     }
     

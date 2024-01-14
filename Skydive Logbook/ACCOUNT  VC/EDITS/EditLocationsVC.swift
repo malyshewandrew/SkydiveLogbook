@@ -1,6 +1,7 @@
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 final class EditLocationsVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
@@ -22,7 +23,13 @@ final class EditLocationsVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
+        loadLocationsUserDefaults()
         enterTextTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadLocationsUserDefaults()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -138,6 +145,12 @@ final class EditLocationsVC: UIViewController {
     }
 
     // MARK: - HELPERS:
+    
+    // MARK: LOAD LOCATIONS USER DEFAULTS:
+    
+    private func loadLocationsUserDefaults() {
+        arrayLocationPickerViewValues = UserDefaults.standard.array(forKey: "arrayLocationPickerViewValues") as? [String] ?? []
+    }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
@@ -154,6 +167,13 @@ final class EditLocationsVC: UIViewController {
         enterTextTextField.text = ""
         enterTextTextField.resignFirstResponder()
         tableView.reloadData()
+        saveLocationsUserDefaults()
+    }
+    
+    // MARK: SAVE LOCATION IN USER DEFAULTS:
+    
+    private func saveLocationsUserDefaults() {
+        UserDefaults.standard.set(arrayLocationPickerViewValues, forKey: "arrayLocationPickerViewValues")
     }
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
@@ -235,6 +255,7 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
+                self.saveLocationsUserDefaults()
             }))
             present(alertDelete, animated: true)
         }

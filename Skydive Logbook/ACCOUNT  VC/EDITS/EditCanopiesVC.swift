@@ -1,6 +1,7 @@
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 final class EditCanopiesVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -22,7 +23,13 @@ final class EditCanopiesVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
+        loadCanopiesUserDefaults()
         enterTextTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadCanopiesUserDefaults()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -138,6 +145,12 @@ final class EditCanopiesVC: UIViewController {
     }
 
     // MARK: - HELPERS:
+    
+    // MARK: LOAD CANOPIES USER DEFAULTS:
+    
+    private func loadCanopiesUserDefaults() {
+        arrayCanopiesPickerViewValues = UserDefaults.standard.array(forKey: "arrayCanopiesPickerViewValues") as? [String] ?? []
+    }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
@@ -154,6 +167,13 @@ final class EditCanopiesVC: UIViewController {
         enterTextTextField.text = ""
         enterTextTextField.resignFirstResponder() // скрывает клавиатуру
         tableView.reloadData()
+        saveCanopiesUserDefaults()
+    }
+    
+    // MARK: SAVE AIRCRAFT IN USER DEFAULTS:
+    
+    private func saveCanopiesUserDefaults() {
+        UserDefaults.standard.set(arrayCanopiesPickerViewValues, forKey: "arrayCanopiesPickerViewValues")
     }
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
@@ -235,6 +255,7 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
+                self.saveCanopiesUserDefaults()
             }))
             present(alertDelete, animated: true)
         }

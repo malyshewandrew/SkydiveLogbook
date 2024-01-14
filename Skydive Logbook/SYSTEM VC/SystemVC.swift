@@ -1,4 +1,5 @@
 import Lottie
+import RealmSwift
 import UIKit
 
 final class SystemVC: UIViewController {
@@ -10,8 +11,9 @@ final class SystemVC: UIViewController {
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
     private let newSystemButton = UIButton()
-    private var selectedSystem: SystemStructure?
+    private var selectedSystem: SystemClassRealm?
     private var indexSysytem: Int = 0
+    private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -21,12 +23,14 @@ final class SystemVC: UIViewController {
         configureConstrains()
         configureUI()
         configureTableView()
+        loadSystem()
         configureGestures()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        loadSystem()
         tableView.reloadData()
     }
 
@@ -124,6 +128,14 @@ final class SystemVC: UIViewController {
         tableView.backgroundColor = colorBackground
     }
 
+    // MARK: - LOAD SYSTEM FROM REALM:
+
+    private func loadSystem() {
+        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map {
+            $0
+        }
+    }
+
     // MARK: - CONFIGURE GESTURES:
 
     private func configureGestures() {
@@ -157,14 +169,14 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COUNT CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arraySystem.count
+        arraySystemsRealm.count
     }
 
     // MARK: COSTUM CELL:
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemCell", for: indexPath) as? SystemCell else { return UITableViewCell() }
-        let system = arraySystem[indexPath.row]
+        let system = arraySystemsRealm[indexPath.row]
         cell.indexPath = indexPath
         cell.configure(system)
 
@@ -183,13 +195,18 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let deleteSystem = arraySystemsRealm[indexPath.row]
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete system?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                arraySystem.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
-                self.vibrationOn.vibrationSucces()
+
+                try? self.realmManager.localRealm.write {
+                    self.realmManager.localRealm.delete(deleteSystem)
+                }
+                
+                self.loadSystem()
                 tableView.reloadData()
+                self.vibrationOn.vibrationSucces()
             }))
             present(alertDelete, animated: true)
         }
@@ -200,10 +217,10 @@ extension SystemVC: SystemCellDelegate {
     func tapCommentButton(_ indexPath: IndexPath) {
         var comment = ""
 
-        if arraySystem[indexPath.row].comment == "" {
+        if arraySystemsRealm[indexPath.row].comment == "" {
             comment = NSLocalizedString("No comment", comment: "")
         } else {
-            comment = arraySystem[indexPath.row].comment
+            comment = arraySystemsRealm[indexPath.row].comment
         }
 
         let alert = UIAlertController(title: NSLocalizedString("Comment", comment: "") + ":",

@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 final class NotesCell: UITableViewCell {
     // MARK: - PROPERTIES:

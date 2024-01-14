@@ -1,15 +1,16 @@
 import Lottie
 import UIKit
+import RealmSwift
 
 final class JumpVC: UIViewController {
     // MARK: - PROPERTIES:
 
     private let tableView = UITableView()
-    private var selectedJump: JumpStructure
+    private var selectedJump: JumpClassRealm
     var jumpNumber: Int = 0
     var onTap: (() -> ())?
 
-    init(selectedJump: JumpStructure) {
+    init(selectedJump: JumpClassRealm) {
         self.selectedJump = selectedJump
         super.init(nibName: nil, bundle: nil)
     }

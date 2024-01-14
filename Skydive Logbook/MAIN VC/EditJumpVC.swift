@@ -10,6 +10,7 @@ final class EditJumpVC: UIViewController {
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
     var indexPath: Int = 0
+    let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -81,7 +82,7 @@ final class EditJumpVC: UIViewController {
         newJumpLottie.play()
         newJumpLottie.loopMode = .autoReverse
     }
-    
+
     // MARK: CONFIGURE TABLE VIEW:
 
     private func configureTableView() {
@@ -91,7 +92,7 @@ final class EditJumpVC: UIViewController {
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
     }
-    
+
     // MARK: - CONFIGURE GESTURES:
 
     private func configureGestures() {
@@ -110,7 +111,7 @@ final class EditJumpVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -160,7 +161,7 @@ extension EditJumpVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditJumpCell", for: indexPath) as? EditJumpCell else { return UITableViewCell() }
-        cell.configure(arrayJumps[self.indexPath])
+        cell.configure(arrayJumpsRealm[self.indexPath])
         cell.delegate = self
         return cell
     }
@@ -169,9 +170,17 @@ extension EditJumpVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: EXTENSION FOR UPDATE EDIT JUMP:
 
 extension EditJumpVC: EditJumpCellDelegate {
-    func saveJump(_ jump: JumpStructure) {
-        arrayJumps.remove(at: indexPath)
-        arrayJumps.insert(jump, at: indexPath)
+    func saveJump(_ jump: JumpClassRealm) {
+        let deleteJump = arrayJumpsRealm[indexPath]
+
+        try? realmManager.localRealm.write {
+            self.realmManager.localRealm.delete(deleteJump)
+        }
+
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(jump, update: .modified)
+        }
+
         navigationController?.popViewController(animated: true)
     }
 }

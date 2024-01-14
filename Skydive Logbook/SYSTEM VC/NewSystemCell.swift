@@ -1,6 +1,7 @@
 import AudioToolbox
 import AVFoundation
 import UIKit
+import RealmSwift
 
 final class NewSystemCell: UITableViewCell {
     // MARK: - PROPERTIES:
@@ -87,6 +88,7 @@ final class NewSystemCell: UITableViewCell {
     private let saveButton = UIButton()
     
     private let dateFormatter = DateFormatter()
+    private let realmManager = RealmManager()
     
     private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
@@ -1054,9 +1056,45 @@ final class NewSystemCell: UITableViewCell {
     // MARK: SAVE AND ADD NEW SYSTEM IN ARRAY SYSTEM:
 
     private func saveNewSystem() {
-        let newSystem = SystemStructure(name: nameSystemTextField.text ?? "", container: .init(name: containerNameTextField.text ?? "", dom: containerDomTextField.text ?? "", serialNumber: containerSerialNumberTextField.text ?? "", serviceLifeYears: containerServiceLifeYearsTextField.text ?? ""), aad: .init(name: aadNameTextField.text ?? "", dom: aadDomTextField.text ?? "", serialNumber: aadSerialNumberTextField.text ?? "", serviceLifeYears: aadServiceLifeYearsTextField.text ?? ""), mainCanopy: .init(name: mainCanopyNameTextField.text ?? "", dom: mainCanopyDomTextField.text ?? "", serialNumber: mainCanopySerialNumberTextField.text ?? "", serviceLifeYears: mainCanopyServiceLifeYearsTextField.text ?? "", serviceLifeJumps: mainCanopyServiceLifeJumpsTextField.text ?? "", countJumps: mainCanopyCountJumpsTextField.text ?? ""), reserveCanopy: .init(name: reserveCanopyNameTextField.text ?? "", dom: reserveCanopyDomTextField.text ?? "", serialNumber: reserveCanopySerialNumberTextField.text ?? "", serviceLifeYears: reserveCanopyServiceLifeYearsTextField.text ?? "", countRepack: reserveCanopyCountRepackTextField.text ?? "", datePack: reserveCanopyDatePackTextField.text ?? ""), comment: commentSystemTextField.text ?? "")
-        arraySystem.append(newSystem)
+        let newSystem = SystemClassRealm()
+        
+        newSystem.container = Container()
+        newSystem.aad = Aad()
+        newSystem.mainCanopy = MainCanopy()
+        newSystem.reserveCanopy = ReserveCanopy()
+        
+        newSystem.name = nameSystemTextField.text ?? ""
+        newSystem.container?.name = containerNameTextField.text ?? ""
+        newSystem.container?.dom = containerDomTextField.text ?? ""
+        newSystem.container?.serialNumber = containerSerialNumberTextField.text ?? ""
+        newSystem.container?.serviceLifeYears = containerServiceLifeYearsTextField.text ?? ""
+        
+        newSystem.aad?.name = aadNameTextField.text ?? ""
+        newSystem.aad?.dom = aadDomTextField.text ?? ""
+        newSystem.aad?.serialNumber = aadSerialNumberTextField.text ?? ""
+        newSystem.aad?.serviceLifeYears = aadServiceLifeYearsTextField.text ?? ""
+        
+        newSystem.mainCanopy?.name = mainCanopyNameTextField.text ?? ""
+        newSystem.mainCanopy?.dom = mainCanopyDomTextField.text ?? ""
+        newSystem.mainCanopy?.serialNumber = mainCanopySerialNumberTextField.text ?? ""
+        newSystem.mainCanopy?.serviceLifeYears = mainCanopyServiceLifeYearsTextField.text ?? ""
+        newSystem.mainCanopy?.serviceLifeJumps = mainCanopyServiceLifeJumpsTextField.text ?? ""
+        newSystem.mainCanopy?.countJumps = mainCanopyCountJumpsTextField.text ?? ""
+        
+        newSystem.reserveCanopy?.name = reserveCanopyNameTextField.text ?? ""
+        newSystem.reserveCanopy?.dom = reserveCanopyDomTextField.text ?? ""
+        newSystem.reserveCanopy?.serialNumber = reserveCanopySerialNumberTextField.text ?? ""
+        newSystem.reserveCanopy?.serviceLifeYears = reserveCanopyServiceLifeYearsTextField.text ?? ""
+        newSystem.reserveCanopy?.countRepack = reserveCanopyCountRepackTextField.text ?? ""
+        newSystem.reserveCanopy?.datePack = reserveCanopyDatePackTextField.text ?? ""
+        
+        newSystem.comment = commentSystemTextField.text ?? ""
+        
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newSystem, update: .all)
+        }
     }
+
     
     // MARK: CLEAR ALL TEXT FIELDS:
     

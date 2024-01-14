@@ -1,6 +1,6 @@
 import Foundation
 
-struct AccountStructure {
+struct AccountStructure: Codable {
     var nickname: String
     var licenseType: String
     var licenseDate: String

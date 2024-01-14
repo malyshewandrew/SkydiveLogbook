@@ -1,12 +1,14 @@
 import Lottie
+import RealmSwift
 import UIKit
 
 final class EditSystemVC: UIViewController {
     // MARK: - PROPERTIES:
-    
+
     private let manualButton = UIBarButtonItem()
     private let newSystemLottie = LottieAnimationView(name: "NewParachute")
     private let tableView = UITableView()
+    let realmManager = RealmManager()
     var indexPath: Int = 0
 
     // MARK: - LIFECYCLE:
@@ -19,55 +21,55 @@ final class EditSystemVC: UIViewController {
         configureNotificationCenter()
         configureTableView()
     }
-    
+
     // MARK: - ADD SUBVIEWS:
 
     func addSubviews() {
         view.addSubviews(newSystemLottie, tableView)
     }
-    
+
     // MARK: - CONFIGURE CONSTRAINS:
 
     func configureConstrains() {
         // MARK: ANIMATION:
-        
+
         newSystemLottie.translatesAutoresizingMaskIntoConstraints = false
         newSystemLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
         newSystemLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         newSystemLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         newSystemLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        
+
         // MARK: TABLE VIEW:
-        
+
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: newSystemLottie.bottomAnchor, constant: 10).isActive = true
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
     }
-    
+
     // MARK: - CONFIGURE UI:
 
     func configureUI() {
         // MARK: VIEW:
-        
+
         view.backgroundColor = colorBackground
-        
+
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = false
         let manualButton = UIBarButtonItem(image: UIImage(systemName: "book.pages.fill"), style: .plain, target: self, action: #selector(tapOnManualButton))
         navigationItem.rightBarButtonItem = manualButton
         navigationItem.backButtonTitle = ""
-        
+
         // MARK: ANIMATION:
-        
+
         newSystemLottie.play()
         newSystemLottie.loopMode = .loop
     }
-    
+
     // MARK: - CONFIGURE TABLE VIEW:
-    
+
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -75,7 +77,7 @@ final class EditSystemVC: UIViewController {
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
     }
-    
+
     // MARK: - NOTIFICATION CENTER:
 
     // MARK: UP AND DOWN KEYBOARD:
@@ -89,7 +91,7 @@ final class EditSystemVC: UIViewController {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     // MARK: KEYBOARD UP:
 
     @objc private func keyboardShow(_ notification: Notification) {
@@ -112,9 +114,9 @@ final class EditSystemVC: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
+
     // MARK: - HELPERS:
-    
+
     // MARK: MANUAL ALERT:
 
     @objc private func tapOnManualButton() {
@@ -153,16 +155,16 @@ final class EditSystemVC: UIViewController {
 
 extension EditSystemVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COUNT CELLS:
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
-    
+
     // MARK: CUSTOM CELL:
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditSystemCell", for: indexPath) as? EditSystemCell else { return UITableViewCell() }
-        cell.configure(arraySystem[self.indexPath])
+        cell.configure(arraySystemsRealm[self.indexPath])
         cell.delegate = self
         return cell
     }
@@ -171,9 +173,17 @@ extension EditSystemVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: EXTENSION FOR UPDATE SYSTEM:
 
 extension EditSystemVC: EditSystemCellDelegate {
-    func saveSystem(_ system: SystemStructure) {
-        arraySystem.remove(at: indexPath)
-        arraySystem.insert(system, at: indexPath)
+    func saveSystem(_ system: SystemClassRealm) {
+        let deleteSystem = arraySystemsRealm[indexPath]
+
+        try? realmManager.localRealm.write {
+            self.realmManager.localRealm.delete(deleteSystem)
+        }
+
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(system, update: .modified)
+        }
+
         navigationController?.popViewController(animated: true)
     }
 }

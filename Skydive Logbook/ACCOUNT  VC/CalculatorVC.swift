@@ -2,6 +2,7 @@ import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
+import RealmSwift
 
 final class CalculatorVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:

@@ -1,5 +1,6 @@
 import Lottie
 import UIKit
+import RealmSwift
 
 final class PremiumVC: UIViewController {
     // MARK: - PROPERTIES:

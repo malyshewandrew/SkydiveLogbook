@@ -1,5 +1,6 @@
 import Lottie
 import UIKit
+import RealmSwift
 
 final class NewJumpVC: UIViewController {
     // MARK: - PROPERTIES:
