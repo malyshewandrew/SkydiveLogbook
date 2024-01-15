@@ -208,7 +208,7 @@
 
 "Name and model container alert" = "Name and model container";
 "Name and model AAD alert" = "Name and model AAD";
-"Name and model main canopy alert" = "Name and model main canopy";
+"Name and model main canopy alert" = "Name and model main canopy. You must first add in the \"Account\" -> \"Edit canopies\" section";
 "Name and model reserve canopy alert" = "Name and model reserve canopy";
 
 "DOM alert" = "Date of manufacture";

@@ -208,8 +208,8 @@
 
 "Name and model container alert" = "Название и модель ранца";
 "Name and model AAD alert" = "Название и модель прибора";
-"Name and model main canopy alert" = "Название и модель парашюта";
-"Name and model reserve canopy alert" = "Название и модель парашюта";
+"Name and model main canopy alert" = "Название и модель основного парашюта. Необходимо сначала добавить в разделе \"Аккаунт\" -> \"Редактировать парашюты\"";
+"Name and model reserve canopy alert" = "Название и модель запасного парашюта";
 
 "DOM alert" = "Дата изготовления";
 "Serial number alert" = "Серийный номер";
