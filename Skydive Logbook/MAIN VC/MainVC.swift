@@ -1,8 +1,8 @@
 import AudioToolbox
 import AVFoundation
 import Lottie
-import UIKit
 import RealmSwift
+import UIKit
 
 final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -23,7 +23,7 @@ final class MainVC: UIViewController {
     private let firstMessageLabel = UILabel()
     private var selectedJump: JumpClassRealm?
     private let dateFormatter = DateFormatter()
-    
+
     private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
@@ -35,9 +35,12 @@ final class MainVC: UIViewController {
         configureUI()
         configureTableView()
         loadJumps()
+        loadArrayAccount()
+        loadLocationsUserDefaults()
+        loadAircraftsUserDefaults()
+        loadCanopiesUserDefaults()
         configureGestures()
         firstMessage()
-        loadArrayAccount()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,8 +50,11 @@ final class MainVC: UIViewController {
         firstMessage()
         tableView.reloadData()
         sortArray()
-        arrayJumpsRealm.reverse()
         loadArrayAccount()
+        loadLocationsUserDefaults()
+        loadAircraftsUserDefaults()
+        loadCanopiesUserDefaults()
+        arrayJumpsRealm.reverse()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -210,18 +216,18 @@ final class MainVC: UIViewController {
         tableView.backgroundColor = colorBackground
         tableView.separatorStyle = .none
     }
-    
+
     // MARK: - LOAD JUMPS FROM REALM:
-    
+
     private func loadJumps() {
-        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map({
-            $0 })
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map {
+            $0
+        }
     }
 
     // MARK: - ACCOUNT ALERT:
 
     @objc private func tapOnAccountButton() {
-        
         // MARK: NICKNAME:
 
         var nickname = ""
@@ -406,14 +412,33 @@ final class MainVC: UIViewController {
     }
 
     // MARK: - HELPERS:
-    
+
     // MARK: LOAD ACCOUNT FROM USER DEFAULTS:
-    
+
     private func loadArrayAccount() {
         if let savedData = UserDefaults.standard.data(forKey: "arrayAccount"),
-           let loadedArray = try? JSONDecoder().decode([AccountStructure].self, from: savedData) {
+           let loadedArray = try? JSONDecoder().decode([AccountStructure].self, from: savedData)
+        {
             arrayAccount = loadedArray
         }
+    }
+
+    // MARK: LOAD LOCATIONS USER DEFAULTS:
+
+    private func loadLocationsUserDefaults() {
+        arrayLocationPickerViewValues = UserDefaults.standard.array(forKey: "arrayLocationPickerViewValues") as? [String] ?? []
+    }
+
+    // MARK: LOAD AIRCRAFTS USER DEFAULTS:
+
+    private func loadAircraftsUserDefaults() {
+        arrayAircraftPickerViewValues = UserDefaults.standard.array(forKey: "arrayAircraftPickerViewValues") as? [String] ?? []
+    }
+
+    // MARK: LOAD CANOPIES USER DEFAULTS:
+
+    private func loadCanopiesUserDefaults() {
+        arrayCanopiesPickerViewValues = UserDefaults.standard.array(forKey: "arrayCanopiesPickerViewValues") as? [String] ?? []
     }
 
     // MARK: SORT ARRAY:
@@ -479,17 +504,17 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // MARK: DELETE JUMP:
-        
+
         let deleteJump = arrayJumpsRealm[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                
+
                 try? self.realmManager.localRealm.write {
                     self.realmManager.localRealm.delete(deleteJump)
                 }
-                
+
                 self.loadJumps()
                 tableView.reloadData()
                 self.vibrationOn.vibrationSucces()

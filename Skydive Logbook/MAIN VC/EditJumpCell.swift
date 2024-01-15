@@ -2,7 +2,6 @@ import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
-import RealmSwift
 
 // MARK: - PROTOCOL:
 

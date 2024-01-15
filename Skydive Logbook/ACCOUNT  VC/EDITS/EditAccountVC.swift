@@ -337,18 +337,15 @@ final class EditAccountVC: UIViewController {
                                        insurance: insuranceTextField.text ?? "",
                                        reserveCanopy: reserveCanopyTextField.text ?? "")
         
-        // Сохраняем данные в UserDefaults
         if let encodedData = try? JSONEncoder().encode(account) {
             UserDefaults.standard.set(encodedData, forKey: "account")
         }
         
-        // Обновляем массив arrayAccount и сохраняем в UserDefaults
         arrayAccount.removeAll()
         arrayAccount.append(account)
         saveArrayAccount()
     }
     
-    // Сохранение массива arrayAccount в UserDefaults
     private func saveArrayAccount() {
         if let encodedData = try? JSONEncoder().encode(arrayAccount) {
             UserDefaults.standard.set(encodedData, forKey: "arrayAccount")
