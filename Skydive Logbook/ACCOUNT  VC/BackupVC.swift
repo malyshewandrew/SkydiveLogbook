@@ -67,24 +67,20 @@ final class BackupVC: UIViewController {
         
     @objc private func createBackup() {
         do {
-            // Создаем уникальное имя файла на основе времени
+            let jsonData = try JSONSerialization.data(withJSONObject: arrayJumpsRealm.map { $0.toDictionary() }, options: .prettyPrinted)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
             let currentDateTime = dateFormatter.string(from: Date())
-            let fileName = "backup_\(currentDateTime).realm"
-                
-            // Получаем директорию для сохранения файла
+            let fileName = "backup_\(currentDateTime).json"
+
             let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-                
-            // Создаем копию данных и сохраняем в Realm
             let backupPath = documentsDirectory.appendingPathComponent(fileName)
-                
-            try realmManager.localRealm.writeCopy(toFile: backupPath)
-                
-            // Создаем ActivityViewController для предоставления пользователю возможности сохранения файла
+
+            try jsonData.write(to: backupPath, options: .atomic)
+
             let activityViewController = UIActivityViewController(activityItems: [backupPath], applicationActivities: nil)
             present(activityViewController, animated: true, completion: nil)
-                
+
             print("Копия данных успешно создана и предоставлена пользователю для сохранения.")
         } catch {
             print("Ошибка при создании и сохранении копии данных: \(error)")
@@ -102,24 +98,49 @@ final class BackupVC: UIViewController {
 
 extension BackupVC: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard let sourceURL = urls.first else { return }
-            
+        guard let sourceURL = urls.first else {
+            print("Ошибка: URL выбранного файла nil.")
+            return
+        }
+
+        // Проверяем существование файла
+        guard FileManager.default.fileExists(atPath: sourceURL.path) else {
+            print("Ошибка: Файл по выбранному URL не существует.")
+            return
+        }
+
         do {
-            if controller.allowsMultipleSelection {
-                // Режим сохранения копии данных
-                try createBackupCopy(from: sourceURL)
-                    
-                print("Копия данных успешно создана и предоставлена пользователю для сохранения.")
-            } else {
-                // Режим восстановления копии данных
-                try restoreBackupCopy(from: sourceURL)
-                    
-                print("Копия данных успешно восстановлена из \(sourceURL.absoluteString).")
+            let data = try Data(contentsOf: sourceURL)
+            let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
+
+            guard let unwrappedJsonArray = jsonArray else {
+                print("Ошибка: Неверный формат JSON.")
+                return
             }
+
+            // Восстанавливаем данные из JSON
+            let decodedData = unwrappedJsonArray.compactMap { JumpClassRealm(value: $0) }
+
+            // Очищаем текущий массив и добавляем в него восстановленные данные
+            arrayJumpsRealm.removeAll()
+            arrayJumpsRealm.append(contentsOf: decodedData)
+
+            print("Восстановленные данные: \(arrayJumpsRealm)")
+
+            // Сохраняем восстановленные данные обратно в Realm
+            try realmManager.localRealm.write {
+                realmManager.localRealm.deleteAll() // Очищаем все существующие данные в Realm
+                realmManager.localRealm.add(arrayJumpsRealm) // Добавляем восстановленные данные в Realm
+            }
+
+            // Обновите ваш интерфейс, как описано ранее
+            // Например, если у вас есть таблица, то вызовите reloadData()
+            // yourTableView.reloadData()
         } catch {
             print("Ошибка при операции с копией данных: \(error)")
         }
     }
+
         
     private func createBackupCopy(from sourceURL: URL) throws {
         // Получаем директорию для сохранения файла
@@ -144,9 +165,39 @@ extension BackupVC: UIDocumentPickerDelegate {
             
         // Создаем копию данных в директории приложения
         let destinationURL = tempDirectory.appendingPathComponent(sourceURL.lastPathComponent)
-        try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
-            
+        
+        // Проверяем существование файла
+        guard FileManager.default.fileExists(atPath: sourceURL.path) else {
+            throw NSError(domain: "FileNotFoundError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Файл не найден"])
+        }
+        
+        // Пытаемся скопировать файл
+        do {
+            try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
+        } catch let copyError {
+            print("Ошибка при копировании файла: \(copyError)")
+            throw copyError
+        }
+
         // Обновляем Realm с использованием скопированных данных
-        try realmManager.localRealm.writeCopy(toFile: destinationURL)
+        do {
+            var newConfiguration = realmManager.localRealm.configuration
+            newConfiguration.fileURL = destinationURL
+            
+            let newRealm = try Realm(configuration: newConfiguration)
+            
+            try realmManager.localRealm.write {
+                realmManager.localRealm.deleteAll() // Очищаем все существующие данные в Realm
+                realmManager.localRealm.add(newRealm.objects(JumpClassRealm.self)) // Замените YourObjectType на тип объекта в вашей Realm-базе данных
+            }
+            
+            print("Копия данных успешно восстановлена в Realm.")
+        } catch let realmError {
+            print("Ошибка при записи копии данных в Realm: \(realmError)")
+            throw realmError
+        }
     }
+
+
+
 }
