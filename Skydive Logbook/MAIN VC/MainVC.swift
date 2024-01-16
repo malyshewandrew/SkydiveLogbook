@@ -23,7 +23,6 @@ final class MainVC: UIViewController {
     private let firstMessageLabel = UILabel()
     private var selectedJump: JumpClassRealm?
     private let dateFormatter = DateFormatter()
-
     private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
@@ -45,8 +44,8 @@ final class MainVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadJumps()
         navigationController?.navigationBar.isHidden = true
+        loadJumps()
         firstMessage()
         tableView.reloadData()
         sortArray()

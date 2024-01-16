@@ -140,7 +140,7 @@ final class EditJumpVC: UIViewController {
         }
     }
 
-    // MARK: - FUNC FOR CONFETTI + VIBRATION:
+    // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc func tapOnConfettiButton() {
         vibrationOn.vibrationSucces()
@@ -151,7 +151,7 @@ final class EditJumpVC: UIViewController {
 // MARK: - EXTENSION FOR TABLE VIEW:
 
 extension EditJumpVC: UITableViewDelegate, UITableViewDataSource {
-    // MARK: - COUNT OF CELLS:
+    // MARK: COUNT OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
