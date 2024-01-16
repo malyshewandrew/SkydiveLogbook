@@ -159,15 +159,15 @@ extension AccountVC: AccountCellDelegate {
         let editCanopies = EditCanopiesVC()
         navigationController?.pushViewController(editCanopies, animated: true)
     }
+    
+    func tapCalculatorButton() {
+        let calculator = CalculatorVC()
+        navigationController?.pushViewController(calculator, animated: true)
+    }
 
     func tapBackupButton() {
         let backup = BackupVC()
         navigationController?.pushViewController(backup, animated: true)
-    }
-
-    func tapCalculatorButton() {
-        let calculator = CalculatorVC()
-        navigationController?.pushViewController(calculator, animated: true)
     }
 
     func tapInfoButton() {
