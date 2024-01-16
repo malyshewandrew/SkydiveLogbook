@@ -290,6 +290,11 @@
 "Enter aircraft" = "Name aircraft";
 "Enter canopy" = "Name canopy";
 
+// MARK: - BACKUP:
+"Info / backup" = "\nThe backup only creates a copy of all your changes made to the main table. By creating a backup, you will save only the main jumps and statistics.\n\nLocal data is not saved in a backup, so it is recommended to write out the previously recorded data before changing the device:\n\nNickname, License, Medicine, Insurance, Reserve canopy, Airfields, Aircraft, Canopies, Systems.\n";
+"Backup / backup" = "Create backup";
+"Restore / backup" = "Restore"; 
+
 // MARK: - CALCULATOR:
 
 "Total weight" = "Total weight";

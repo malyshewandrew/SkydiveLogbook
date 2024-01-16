@@ -35,7 +35,7 @@ final class BackupVC: UIViewController {
         infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         infoView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
         infoView.heightAnchor.constraint(greaterThanOrEqualTo: infoLabel.heightAnchor, constant: 10).isActive = true
-        infoView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
+        infoView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: FIRST MESSAGE LABEL:
 
@@ -75,7 +75,7 @@ final class BackupVC: UIViewController {
         
         infoView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
         infoView.layer.cornerRadius = 10
-        infoView.layer.shadowRadius = 100
+        infoView.layer.shadowRadius = 50
         infoView.layer.shadowColor = colorBlueCG
         infoView.layer.shadowOpacity = 0.5
             
@@ -86,20 +86,20 @@ final class BackupVC: UIViewController {
         infoLabel.numberOfLines = 0
         infoLabel.textAlignment = .center
         infoLabel.adjustsFontSizeToFitWidth = true
-        infoLabel.text = NSLocalizedString("First Message", comment: "")
+        infoLabel.text = NSLocalizedString("Info / backup", comment: "")
         
         // MARK: BACKUP BUTTON:
         
         backupButton.backgroundColor = .red
         backupButton.setTitleColor(.green, for: .normal)
-        backupButton.setTitle("Создать копию", for: .normal)
+        backupButton.setTitle(NSLocalizedString("Backup / backup", comment: ""), for: .normal)
         backupButton.addTarget(self, action: #selector(createBackup), for: .touchUpInside)
             
         // MARK: RESTORE BUTTON:
             
         restoreButton.backgroundColor = .red
         restoreButton.setTitleColor(.green, for: .normal)
-        restoreButton.setTitle("Загрузить копию", for: .normal)
+        restoreButton.setTitle(NSLocalizedString("Restore / backup", comment: ""), for: .normal)
         restoreButton.addTarget(self, action: #selector(restoreBackup), for: .touchUpInside)
     }
         
