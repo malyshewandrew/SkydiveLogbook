@@ -5,10 +5,11 @@ import UniformTypeIdentifiers
 final class BackupVC: UIViewController {
     // MARK: - PROPERTIES:
         
+    private let infoView = UIView()
+    private let infoLabel = UILabel()
+    private let backupButton = UIButton()
+    private let restoreButton = UIButton()
     private let realmManager = RealmManager()
-    
-    private var backupButton = UIButton()
-    private var restoreButton = UIButton()
         
     // MARK: - LIFECYCLE:
         
@@ -22,32 +23,71 @@ final class BackupVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
         
     private func addSubviews() {
-        view.addSubview(backupButton)
-        view.addSubview(restoreButton)
+        view.addSubviews(infoView, infoLabel, backupButton, restoreButton)
     }
         
     // MARK: - CONFIGURE CONSTRAINTS:
         
     private func configureConstraints() {
+        // MARK: INFO LABEL:
+
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        infoView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
+        infoView.heightAnchor.constraint(greaterThanOrEqualTo: infoLabel.heightAnchor, constant: 10).isActive = true
+        infoView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
+
+        // MARK: FIRST MESSAGE LABEL:
+
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+        infoLabel.centerXAnchor.constraint(equalTo: infoView.centerXAnchor).isActive = true
+        infoLabel.centerYAnchor.constraint(equalTo: infoView.centerYAnchor).isActive = true
+        infoLabel.leadingAnchor.constraint(equalTo: infoView.leadingAnchor, constant: 10).isActive = true
+        infoLabel.trailingAnchor.constraint(equalTo: infoView.trailingAnchor, constant: -10).isActive = true
+
         // MARK: BACKUP BUTTON:
             
         backupButton.translatesAutoresizingMaskIntoConstraints = false
         backupButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backupButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
+        backupButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20).isActive = true
             
         // MARK: RESTORE BUTTON:
             
         restoreButton.translatesAutoresizingMaskIntoConstraints = false
         restoreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        restoreButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50).isActive = true
+        restoreButton.centerYAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 50).isActive = true
     }
         
     // MARK: - CONFIGURE UI:
         
     private func configureUI() {
-        view.backgroundColor = .white
+        // MARK: VIEW:
+
+        view.backgroundColor = colorBackground
+
+        // MARK: NAVIAGTION CONTROLLER:
+
         navigationController?.navigationBar.isHidden = false
+        navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
+        navigationItem.title = ""
+        
+        // MARK: INFO VIEW:
+        
+        infoView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
+        infoView.layer.cornerRadius = 10
+        infoView.layer.shadowRadius = 100
+        infoView.layer.shadowColor = colorBlueCG
+        infoView.layer.shadowOpacity = 0.5
             
+        // MARK: INFO LABEL:
+
+        infoLabel.textColor = .white
+        infoLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
+        infoLabel.numberOfLines = 0
+        infoLabel.textAlignment = .center
+        infoLabel.adjustsFontSizeToFitWidth = true
+        infoLabel.text = NSLocalizedString("First Message", comment: "")
+        
         // MARK: BACKUP BUTTON:
         
         backupButton.backgroundColor = .red
@@ -141,7 +181,6 @@ extension BackupVC: UIDocumentPickerDelegate {
         }
     }
 
-        
     private func createBackupCopy(from sourceURL: URL) throws {
         // Получаем директорию для сохранения файла
         let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -197,7 +236,4 @@ extension BackupVC: UIDocumentPickerDelegate {
             throw realmError
         }
     }
-
-
-
 }
