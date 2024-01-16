@@ -152,6 +152,10 @@
 "Formation" = "Formation";
 "Top 10:" = "Тop 10:";
 
+// MARK: - NewJump:
+"Add new jump / new jump" = "New jump";
+"Manual / new jump" = "In order to be able to add:\n\nLocations\nAircrafts\nCanopies\n\ngo to the \"Account\" section and enter the appropriate data";
+
 // MARK: - CellNewJump:
 
 "Date" = "Date";

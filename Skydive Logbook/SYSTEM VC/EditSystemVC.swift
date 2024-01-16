@@ -58,7 +58,7 @@ final class EditSystemVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = false
-        let manualButton = UIBarButtonItem(image: UIImage(systemName: "book.pages.fill"), style: .plain, target: self, action: #selector(tapOnManualButton))
+        let manualButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.square.fill"), style: .plain, target: self, action: #selector(tapOnManualButton))
         navigationItem.rightBarButtonItem = manualButton
         navigationItem.backButtonTitle = ""
 
