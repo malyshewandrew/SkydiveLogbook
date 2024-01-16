@@ -1,10 +1,12 @@
 import RealmSwift
 import UIKit
+import Lottie
 import UniformTypeIdentifiers
 
 final class BackupVC: UIViewController {
     // MARK: - PROPERTIES:
         
+    private let backupLottie = LottieAnimationView(name: "Backup")
     private let infoView = UIView()
     private let infoLabel = UILabel()
     private let backupButton = UIButton()
@@ -23,12 +25,21 @@ final class BackupVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
         
     private func addSubviews() {
-        view.addSubviews(infoView, infoLabel, backupButton, restoreButton)
+        view.addSubviews(backupLottie, infoView, infoLabel, backupButton, restoreButton)
     }
         
     // MARK: - CONFIGURE CONSTRAINTS:
         
     private func configureConstraints() {
+        
+        // MARK: ANIMATION:
+
+        backupLottie.translatesAutoresizingMaskIntoConstraints = false
+        backupLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        backupLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
+        backupLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        backupLottie.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
         // MARK: INFO LABEL:
 
         infoView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +85,11 @@ final class BackupVC: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
+        
+        // MARK: ANIMATION:
+
+        backupLottie.play()
+        backupLottie.loopMode = .loop
         
         // MARK: INFO VIEW:
         
