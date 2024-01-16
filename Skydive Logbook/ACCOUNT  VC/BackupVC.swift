@@ -50,12 +50,16 @@ final class BackupVC: UIViewController {
         backupButton.translatesAutoresizingMaskIntoConstraints = false
         backupButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         backupButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20).isActive = true
+        backupButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        backupButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
             
         // MARK: RESTORE BUTTON:
             
         restoreButton.translatesAutoresizingMaskIntoConstraints = false
         restoreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         restoreButton.centerYAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 50).isActive = true
+        restoreButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        restoreButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
     }
         
     // MARK: - CONFIGURE UI:
@@ -90,16 +94,26 @@ final class BackupVC: UIViewController {
         
         // MARK: BACKUP BUTTON:
         
-        backupButton.backgroundColor = .red
-        backupButton.setTitleColor(.green, for: .normal)
         backupButton.setTitle(NSLocalizedString("Backup / backup", comment: ""), for: .normal)
+        backupButton.setTitleColor(colorWhite, for: .normal)
+        backupButton.backgroundColor = colorBlue
+        backupButton.layer.cornerRadius = cornerRadius10
+        backupButton.titleLabel?.font = fontMediumStandart14
+        backupButton.titleLabel?.numberOfLines = 0
+        backupButton.titleLabel?.textAlignment = .center
+        backupButton.titleLabel?.adjustsFontSizeToFitWidth = true
         backupButton.addTarget(self, action: #selector(createBackup), for: .touchUpInside)
-            
+        
         // MARK: RESTORE BUTTON:
             
-        restoreButton.backgroundColor = .red
-        restoreButton.setTitleColor(.green, for: .normal)
         restoreButton.setTitle(NSLocalizedString("Restore / backup", comment: ""), for: .normal)
+        restoreButton.setTitleColor(colorWhite, for: .normal)
+        restoreButton.backgroundColor = colorTabBar
+        restoreButton.layer.cornerRadius = cornerRadius10
+        restoreButton.titleLabel?.font = fontMediumStandart14
+        restoreButton.titleLabel?.numberOfLines = 0
+        restoreButton.titleLabel?.textAlignment = .center
+        restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restoreButton.addTarget(self, action: #selector(restoreBackup), for: .touchUpInside)
     }
         
@@ -109,9 +123,10 @@ final class BackupVC: UIViewController {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: arrayJumpsRealm.map { $0.toDictionary() }, options: .prettyPrinted)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
+//            dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
+            dateFormatter.dateFormat = "dd.MM.yyyy, HH.mm.ss"
             let currentDateTime = dateFormatter.string(from: Date())
-            let fileName = "backup_\(currentDateTime).json"
+            let fileName = "JUMPS (\(currentDateTime)).json"
 
             let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let backupPath = documentsDirectory.appendingPathComponent(fileName)

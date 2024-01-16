@@ -1,6 +1,6 @@
 import Lottie
-import UIKit
 import RealmSwift
+import UIKit
 
 final class PremiumVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -79,14 +79,6 @@ final class PremiumVC: UIViewController {
         percentLabel.centerYAnchor.constraint(equalTo: buy12Button.topAnchor, constant: 8).isActive = true
         percentLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         percentLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        percentLabel.backgroundColor = .systemGreen
-        percentLabel.layer.masksToBounds = true
-        percentLabel.layer.cornerRadius = 15
-        percentLabel.text = "-85%"
-        percentLabel.textAlignment = .center
-        percentLabel.font = .systemFont(ofSize: 12, weight: .bold, width: .standard)
-        percentLabel.transform = CGAffineTransform(rotationAngle: 0.5)
-        percentLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESTORE BUTTON:
 
@@ -151,6 +143,17 @@ final class PremiumVC: UIViewController {
         buy12Button.titleLabel?.numberOfLines = 0
         buy12Button.titleLabel?.textAlignment = .center
         buy12Button.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        // MARK: PERCENT LABEL:
+        
+        percentLabel.backgroundColor = .systemGreen
+        percentLabel.layer.masksToBounds = true
+        percentLabel.layer.cornerRadius = 15
+        percentLabel.text = "-85%"
+        percentLabel.textAlignment = .center
+        percentLabel.font = .systemFont(ofSize: 12, weight: .bold, width: .standard)
+        percentLabel.transform = CGAffineTransform(rotationAngle: 0.5)
+        percentLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESTORE BUTTON:
 
