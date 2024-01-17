@@ -13,6 +13,7 @@ iOS Application for skydivers.
 - Add / delete / edit parachute systems
 - Calculator loading for canopies
 - Create notes
+- Backup / restore data
 
 ## Frameworks
 
