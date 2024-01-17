@@ -17,9 +17,12 @@ iOS Application for skydivers.
 ## Frameworks
 
 - UIKit
-- Lottie
-- Realm
 - UserDefaults
+- Realm
+- Lottie
+- AlertKit
+
+
 
 ## Localization
 
