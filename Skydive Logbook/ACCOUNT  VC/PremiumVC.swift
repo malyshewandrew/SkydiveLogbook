@@ -200,7 +200,7 @@ final class PremiumVC: UIViewController {
                 print("Purchase Failed: \(error)")
                 // Добавьте код для обработки ошибки
             case .deferred(purchase: let purchase):
-                print("Purchase test")
+                print("Purchase \(purchase)")
             }
         }
     }
