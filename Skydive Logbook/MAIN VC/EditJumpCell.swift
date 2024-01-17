@@ -2,6 +2,7 @@ import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
+import AlertKit
 
 // MARK: - PROTOCOL:
 
@@ -70,9 +71,7 @@ class EditJumpCell: UITableViewCell {
     
     private let saveButton = UIButton()
     
-    private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
-    private let saveLottie = LottieAnimationView(name: "Save")
     
     let dateFormatter = DateFormatter()
     var delegate: EditJumpCellDelegate?
@@ -112,7 +111,7 @@ class EditJumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(dateButton, dateTextField, locationButton, locationTextField, aircraftButton, aircraftTextField, canopyButton, canopyTextField, missionButton, missionTextField, heightButton, heightTextField, timeButton, timeTextField, cutawayButton, cutawayTextField, commentButton, commentTextField, saveButton, saveLottie)
+        contentView.addSubviews(dateButton, dateTextField, locationButton, locationTextField, aircraftButton, aircraftTextField, canopyButton, canopyTextField, missionButton, missionTextField, heightButton, heightTextField, timeButton, timeTextField, cutawayButton, cutawayTextField, commentButton, commentTextField, saveButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -264,15 +263,6 @@ class EditJumpCell: UITableViewCell {
         saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         saveButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
         saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        
-        // MARK: SAVE LOTTIE:
-
-        saveLottie.translatesAutoresizingMaskIntoConstraints = false
-        saveLottie.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        saveLottie.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        saveLottie.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        saveLottie.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        saveLottie.isHidden = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -517,18 +507,15 @@ class EditJumpCell: UITableViewCell {
         else {
             resignFirstResponders()
             actionButtonSaveRedColor()
-            vibrationOn.vibrationError()
+            alertKitError()
             return
         }
         saveNewJump()
         actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
         playSoundSucces()
         resignFirstResponders()
         clearTextViews()
-        saveLottie.isHidden = false
-        saveLottie.play()
-        perform(#selector(hideAnimation), with: nil, afterDelay: 2)
+        alertKitSuccess()
     }
     
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
@@ -575,12 +562,6 @@ class EditJumpCell: UITableViewCell {
         cutawayTextField.resignFirstResponder()
         commentTextField.resignFirstResponder()
     }
-    
-    // MARK: HIDE SAVE ANIMATION:
-
-    @objc private func hideAnimation() {
-        saveLottie.isHidden = true
-    }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
@@ -624,6 +605,28 @@ class EditJumpCell: UITableViewCell {
 
     @objc private func tapGestureDone() {
         contentView.endEditing(true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 }
 

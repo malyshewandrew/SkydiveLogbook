@@ -178,6 +178,9 @@
 "Cutaway placeholder" = "No / Yes";
 "Comment placeholder" = "Optional";
 
+"Success / cell new jump" = "Success";
+"Error / cell new jump" = "Error";
+
 // MARK: - SYSTEM:
 
 "Add a new system" = "Add a new system";

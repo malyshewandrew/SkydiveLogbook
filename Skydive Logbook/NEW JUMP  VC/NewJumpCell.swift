@@ -1,8 +1,9 @@
+import AlertKit
 import AudioToolbox
 import AVFoundation
 import Lottie
-import UIKit
 import RealmSwift
+import UIKit
 
 class NewJumpCell: UITableViewCell {
     // MARK: - PRIVATE PROPERTIES:
@@ -66,9 +67,7 @@ class NewJumpCell: UITableViewCell {
     private let saveButton = UIButton()
     private let cleanButton = UIButton()
     
-    private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
-    private let saveLottie = LottieAnimationView(name: "Save")
     private let dateFormatter = DateFormatter()
     private let realmManager = RealmManager()
     
@@ -116,7 +115,7 @@ class NewJumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(dateButton, dateTextField, locationButton, locationTextField, aircraftButton, aircraftTextField, canopyButton, canopyTextField, missionButton, missionTextField, heightButton, heightTextField, timeButton, timeTextField, cutawayButton, cutawayTextField, commentButton, commentTextField, saveButton, cleanButton, saveLottie)
+        contentView.addSubviews(dateButton, dateTextField, locationButton, locationTextField, aircraftButton, aircraftTextField, canopyButton, canopyTextField, missionButton, missionTextField, heightButton, heightTextField, timeButton, timeTextField, cutawayButton, cutawayTextField, commentButton, commentTextField, saveButton, cleanButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -277,15 +276,6 @@ class NewJumpCell: UITableViewCell {
         saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         saveButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.34).isActive = true
         saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        
-        // MARK: SAVE CONFETTI:
-
-        saveLottie.translatesAutoresizingMaskIntoConstraints = false
-        saveLottie.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        saveLottie.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        saveLottie.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        saveLottie.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        saveLottie.isHidden = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -556,27 +546,24 @@ class NewJumpCell: UITableViewCell {
         else {
             resignFirstResponders()
             actionButtonSaveRedColor()
-            vibrationOn.vibrationError()
+            alertKitError()
             return
         }
         saveNewJump()
         actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
         playSoundSucces()
         resignFirstResponders()
         clearTextViews()
-        saveLottie.isHidden = false
-        saveLottie.play()
-        perform(#selector(hideAnimation), with: nil, afterDelay: 2)
+        alertKitSuccess()
     }
     
     // MARK: ACTION BUTTON CLEAN:
 
     @objc private func actionButtonCleanTap() {
         actionButtonCleanChangeColor()
-        vibrationOn.vibrationSucces()
         clearTextViews()
         resignFirstResponders()
+        alertKitSuccess()
     }
     
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
@@ -597,12 +584,6 @@ class NewJumpCell: UITableViewCell {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(newJump, update: .all)
         }
-    }
-    
-    // MARK: HIDE SAVE ANIMATION:
-
-    @objc private func hideAnimation() {
-        saveLottie.isHidden = true
     }
     
     // MARK: CLEAR ALL TEXT FIELDS:
@@ -669,6 +650,28 @@ class NewJumpCell: UITableViewCell {
 
     @objc private func tapGestureDone() {
         contentView.endEditing(true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 }
 

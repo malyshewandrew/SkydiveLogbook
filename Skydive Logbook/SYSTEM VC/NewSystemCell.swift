@@ -2,6 +2,7 @@ import AudioToolbox
 import AVFoundation
 import UIKit
 import RealmSwift
+import AlertKit
 
 final class NewSystemCell: UITableViewCell {
     // MARK: - PROPERTIES:
@@ -90,7 +91,6 @@ final class NewSystemCell: UITableViewCell {
     private let dateFormatter = DateFormatter()
     private let realmManager = RealmManager()
     
-    private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
     
     // MARK: - LIFECYCLE:
@@ -1033,24 +1033,24 @@ final class NewSystemCell: UITableViewCell {
         else {
             resignFirstResponders()
             actionButtonSaveRedColor()
-            vibrationOn.vibrationError()
+            alertKitError()
             return
         }
         saveNewSystem()
         actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
         playSoundSucces()
         resignFirstResponders()
         clearTextViews()
+        alertKitSuccess()
     }
     
     // MARK: ACTION BUTTON CLEAN:
 
     @objc private func actionButtonCleanTap() {
         actionButtonCleanChangeColor()
-        vibrationOn.vibrationSucces()
         clearTextViews()
         resignFirstResponders()
+        alertKitSuccess()
     }
     
     // MARK: SAVE AND ADD NEW SYSTEM IN ARRAY SYSTEM:
@@ -1186,6 +1186,28 @@ final class NewSystemCell: UITableViewCell {
 
     @objc func tapGestureDone() {
         contentView.endEditing(true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 
     // MARK: DATE PICKERS:

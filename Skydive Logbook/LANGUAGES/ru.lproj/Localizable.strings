@@ -178,6 +178,9 @@
 "Cutaway placeholder" = "Нет / Да";
 "Comment placeholder" = "Опционально";
 
+"Success / cell new jump" = "Выполнено";
+"Error / cell new jump" = "Ошибка";
+
 // MARK: - SYSTEM:
 
 "Add a new system" = "Добавить новую систему";
