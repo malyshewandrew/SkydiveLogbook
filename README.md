@@ -19,6 +19,7 @@ iOS Application for skydivers.
 
 - UIKit
 - UserDefaults
+- NotificationCenter
 - Realm
 - Lottie
 - AlertKit
