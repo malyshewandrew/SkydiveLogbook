@@ -3,6 +3,7 @@ import AVFoundation
 import Lottie
 import UIKit
 import RealmSwift
+import AlertKit
 
 final class CalculatorVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
@@ -15,7 +16,6 @@ final class CalculatorVC: UIViewController {
     private let resultLabel = UILabel()
     private let textView = UIView()
     private let textLabel = UILabel()
-    private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
 
     private let viewLoadCategoryA = UIView()
@@ -334,7 +334,7 @@ final class CalculatorVC: UIViewController {
               sizeCanopyTextField.text != "0"
         else {
             actionButtonSaveRedColor()
-            vibrationOn.vibrationError()
+            alertKitError()
             weightTextField.resignFirstResponder()
             sizeCanopyTextField.resignFirstResponder()
             return
@@ -354,20 +354,20 @@ final class CalculatorVC: UIViewController {
         textView.isHidden = false
 
         actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
         playSoundSucces()
         cleanTextViews()
         resignFirstResponders()
+        alertKitSuccess()
     }
 
     // MARK: ACTION BUTTON CLEAN:
 
     @objc private func actionButtonCleanTap() {
         actionButtonCleanChangeColor()
-        vibrationOn.vibrationSucces()
         cleanTextViews()
         resultLabel.isHidden = true
         textView.isHidden = true
+        alertKitSuccess()
     }
 
     // MARK: CLEAN ALL TEXT FIELDS:
@@ -420,5 +420,27 @@ final class CalculatorVC: UIViewController {
 
     @objc private func tapGestureDone() {
         view.endEditing(true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 }

@@ -1,6 +1,7 @@
 import AudioToolbox
 import AVFoundation
 import UIKit
+import AlertKit
 
 final class EditAccountVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -21,7 +22,6 @@ final class EditAccountVC: UIViewController {
     private let reserveCanopyButton = UIButton()
     private let reserveCanopyTextField = UITextField()
     private let saveButton = UIButton()
-    private let vibrationOn = Vibration()
     private var player = AVAudioPlayer()
     
     private let keyboardHeightOffset: CGFloat = -170
@@ -323,8 +323,8 @@ final class EditAccountVC: UIViewController {
         saveNewAccount()
         resignFirstResponders()
         actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
         playSoundSucces()
+        alertKitSuccess()
     }
     
     // MARK: SAVE FUNC:
@@ -383,5 +383,27 @@ final class EditAccountVC: UIViewController {
 
     @objc func tapGestureDone() {
         view.endEditing(true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 }

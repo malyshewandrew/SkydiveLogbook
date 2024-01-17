@@ -204,7 +204,7 @@ final class NotesVC: UIViewController {
     @objc private func tapOnSaveButton() {
         guard noteTextView.text != "" else {
             actionButtonSaveRedColor()
-            vibrationOn.vibrationError()
+            alertKitError()
             return
         }
         saveNewNote()
@@ -215,12 +215,12 @@ final class NotesVC: UIViewController {
     private func saveNewNote() {
         arrayNotes.append(noteTextView.text ?? "")
         actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
         noteTextView.resignFirstResponder()
         noteTextView.text = ""
         tableView.reloadData()
         playSoundSucces()
         saveNotesUserDefaults()
+        alertKitSuccess()
     }
     
     // MARK: SAVE IN USER DEFAULTS:
@@ -234,9 +234,9 @@ final class NotesVC: UIViewController {
     @objc private func tapOnCleanButton() {
         noteTextView.text = ""
         actionButtonCleanChangeColor()
-        vibrationOn.vibrationSucces()
         tableView.reloadData()
         noteTextView.resignFirstResponder()
+        alertKitSuccess()
     }
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
@@ -282,6 +282,28 @@ final class NotesVC: UIViewController {
 
     @objc func tapGestureDone() {
         view.endEditing(true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 }
 

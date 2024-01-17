@@ -516,6 +516,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
                 self.loadJumps()
                 tableView.reloadData()
+                self.sortArray()
+                arrayJumpsRealm.reverse()
                 self.vibrationOn.vibrationSucces()
                 self.firstMessage()
             }))

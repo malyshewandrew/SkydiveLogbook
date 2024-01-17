@@ -2,6 +2,7 @@ import AVFoundation
 import Lottie
 import UIKit
 import RealmSwift
+import AlertKit
 
 final class EditAircraftsVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -157,17 +158,17 @@ final class EditAircraftsVC: UIViewController {
     @objc private func tapOnSaveButton() {
         guard enterTextTextField.text != "" else {
             actionButtonSaveRedColor()
-            vibrationOn.vibrationError()
+            alertKitError()
             return
         }
         arrayAircraftPickerViewValues.append(enterTextTextField.text ?? "")
         actionButtonSaveGreenColor()
-        vibrationOn.vibrationSucces()
         playSoundSucces()
         enterTextTextField.text = ""
         enterTextTextField.resignFirstResponder()
         tableView.reloadData()
         saveAircraftsUserDefaults()
+        alertKitSuccess()
     }
     
     // MARK: SAVE AIRCRAFT IN USER DEFAULTS:
@@ -181,8 +182,8 @@ final class EditAircraftsVC: UIViewController {
     @objc private func tapOnCleanButton() {
         enterTextTextField.text = ""
         actionButtonCleanChangeColor()
-        vibrationOn.vibrationSucces()
         tableView.reloadData()
+        alertKitSuccess()
     }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
@@ -221,6 +222,28 @@ final class EditAircraftsVC: UIViewController {
 
     @objc private func tapGestureDone() {
         view.endEditing(true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 }
 
