@@ -203,10 +203,6 @@ extension BackupVC: UIDocumentPickerDelegate {
                 realmManager.localRealm.deleteAll() // Очищаем все существующие данные в Realm
                 realmManager.localRealm.add(arrayJumpsRealm) // Добавляем восстановленные данные в Realm
             }
-
-            // Обновите ваш интерфейс, как описано ранее
-            // Например, если у вас есть таблица, то вызовите reloadData()
-            // yourTableView.reloadData()
         } catch {
             print("Ошибка при операции с копией данных: \(error)")
         }
@@ -258,9 +254,8 @@ extension BackupVC: UIDocumentPickerDelegate {
             
             try realmManager.localRealm.write {
                 realmManager.localRealm.deleteAll() // Очищаем все существующие данные в Realm
-                realmManager.localRealm.add(newRealm.objects(JumpClassRealm.self)) // Замените YourObjectType на тип объекта в вашей Realm-базе данных
+                realmManager.localRealm.add(newRealm.objects(JumpClassRealm.self))
             }
-            
             print("Копия данных успешно восстановлена в Realm.")
         } catch let realmError {
             print("Ошибка при записи копии данных в Realm: \(realmError)")
