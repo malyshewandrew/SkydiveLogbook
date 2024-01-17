@@ -1,5 +1,6 @@
 import Lottie
 import RealmSwift
+import SwiftyStoreKit
 import UIKit
 
 final class PremiumVC: UIViewController {
@@ -132,6 +133,7 @@ final class PremiumVC: UIViewController {
         buy1Button.titleLabel?.numberOfLines = 0
         buy1Button.titleLabel?.textAlignment = .center
         buy1Button.titleLabel?.adjustsFontSizeToFitWidth = true
+        buy1Button.addTarget(self, action: #selector(tapOnBuy1Button), for: .touchUpInside)
         
         // MARK: BUY 12 BUTTON:
         
@@ -143,6 +145,7 @@ final class PremiumVC: UIViewController {
         buy12Button.titleLabel?.numberOfLines = 0
         buy12Button.titleLabel?.textAlignment = .center
         buy12Button.titleLabel?.adjustsFontSizeToFitWidth = true
+        buy12Button.addTarget(self, action: #selector(tapOnBuy12Button), for: .touchUpInside)
         
         // MARK: PERCENT LABEL:
         
@@ -166,6 +169,41 @@ final class PremiumVC: UIViewController {
     }
     
     // MARK: - HELPERS:
+    
+    // MARK: FUNC FOR BUY 1:
+    
+    @objc private func tapOnBuy1Button() {
+        print("TEST 1")
+        purchaseProduct()
+    }
+    
+    // MARK: FUNC FOR BUY 12:
+    
+    @objc private func tapOnBuy12Button() {
+        print("TEST 12")
+        purchaseProduct()
+    }
+    
+    
+    // MARK: PURCHASE PRODUCT:
+    func purchaseProduct() {
+        let productId = "your_product_id" // Замените на свой идентификатор товара
+
+        SwiftyStoreKit.purchaseProduct(productId) { result in
+            switch result {
+            case .success(let purchase):
+                // Покупка успешно завершена
+                print("Purchase Success: \(purchase.productId)")
+                // Добавьте код для предоставления пользователю доступа к функциональности после покупки
+            case .error(let error):
+                // Произошла ошибка при покупке
+                print("Purchase Failed: \(error)")
+                // Добавьте код для обработки ошибки
+            case .deferred(purchase: let purchase):
+                print("Purchase test")
+            }
+        }
+    }
     
     // MARK: FUNC FOR ALERT RESTORE BUTTON:
 
