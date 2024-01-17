@@ -140,7 +140,6 @@ final class BackupVC: UIViewController {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: arrayJumpsRealm.map { $0.toDictionary() }, options: .prettyPrinted)
             let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
             dateFormatter.dateFormat = "dd.MM.yyyy, HH.mm.ss"
             let currentDateTime = dateFormatter.string(from: Date())
             let fileName = "JUMPS (\(currentDateTime)).json"
@@ -153,7 +152,7 @@ final class BackupVC: UIViewController {
             let activityViewController = UIActivityViewController(activityItems: [backupPath], applicationActivities: nil)
             present(activityViewController, animated: true, completion: nil)
 
-            print("Копия данных успешно создана и предоставлена пользователю для сохранения.")
+            print("КОПИЯ ДАННЫХ УСПЕШНО СОЗДАНА И ПРЕДОСТАВЛЕНА ПОЛЬЗОВАТЕЛЮ ДЛЯ СОХРАНЕНИЯ.")
         } catch {
             print("Ошибка при создании и сохранении копии данных: \(error)")
         }
@@ -198,6 +197,13 @@ extension BackupVC: UIDocumentPickerDelegate {
             arrayJumpsRealm.append(contentsOf: decodedData)
 
             print("Восстановленные данные: \(arrayJumpsRealm)")
+            
+            AlertKitAPI.present(
+                title: NSLocalizedString("Success / cell new jump", comment: ""),
+                icon: .done,
+                style: .iOS17AppleMusic,
+                haptic: .success
+            )
 
             // Сохраняем восстановленные данные обратно в Realm
             try realmManager.localRealm.write {
