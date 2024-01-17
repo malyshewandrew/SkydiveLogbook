@@ -40,9 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
-        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
 
-        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger2)
+        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request, withCompletionHandler: nil)
     }
