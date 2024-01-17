@@ -45,7 +45,7 @@ final class BackupVC: UIViewController {
 
         infoView.translatesAutoresizingMaskIntoConstraints = false
         infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
+        infoView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -15).isActive = true
         infoView.heightAnchor.constraint(greaterThanOrEqualTo: infoLabel.heightAnchor, constant: 10).isActive = true
         infoView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
@@ -61,7 +61,7 @@ final class BackupVC: UIViewController {
             
         backupButton.translatesAutoresizingMaskIntoConstraints = false
         backupButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backupButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20).isActive = true
+        backupButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 15).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         backupButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
             
@@ -69,7 +69,7 @@ final class BackupVC: UIViewController {
             
         restoreButton.translatesAutoresizingMaskIntoConstraints = false
         restoreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        restoreButton.centerYAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 50).isActive = true
+        restoreButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 15).isActive = true
         restoreButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         restoreButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
     }
@@ -98,7 +98,7 @@ final class BackupVC: UIViewController {
         infoView.layer.cornerRadius = 10
         infoView.layer.shadowRadius = 50
         infoView.layer.shadowColor = colorBlueCG
-        infoView.layer.shadowOpacity = 0.5
+        infoView.layer.shadowOpacity = 0.3
             
         // MARK: INFO LABEL:
 

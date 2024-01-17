@@ -1,6 +1,7 @@
 import AVFoundation
 import Lottie
 import UIKit
+import AlertKit
 
 final class NotesVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
@@ -328,6 +329,12 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadData()
             self.saveNotesUserDefaults()
             completion(true)
+            AlertKitAPI.present(
+                title: NSLocalizedString("Success / cell new jump", comment: ""),
+                icon: .heart,
+                style: .iOS17AppleMusic,
+                haptic: .success
+            )
         }
         fixAction.image = UIImage(systemName: "star")
         fixAction.backgroundColor = colorGreen
