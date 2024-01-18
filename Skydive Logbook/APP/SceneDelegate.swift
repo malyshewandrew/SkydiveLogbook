@@ -10,11 +10,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        // MARK: - WINDOW:
+        // MARK: WINDOW:
 
         let window = UIWindow(windowScene: windowScene)
 
-        // MARK: - TAB BAR ITEMS:
+        // MARK: TAB BAR ITEMS:
 
         let mainViewController = MainVC()
         mainViewController.title = NSLocalizedString("Main tab bar", comment: "")
@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         accountViewController.title = NSLocalizedString("Account tab bar", comment: "")
         accountViewController.tabBarItem.image = UIImage(systemName: "person.fill")
 
-        // MARK: - NAVIGATION BAR ITEMS:
+        // MARK: NAVIGATION BAR ITEMS:
 
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
         let statisticNavigationController = UINavigationController(rootViewController: statisticViewController)
@@ -44,12 +44,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let systemNavigationController = UINavigationController(rootViewController: systemViewController)
         let accountNavigationController = UINavigationController(rootViewController: accountViewController)
 
-        // MARK: - ROOT:
+        // MARK: ROOT:
 
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([mainNavigationController, statisticNavigationController, addNewJumpNavigationController, systemNavigationController, accountNavigationController], animated: true)
 
-        // MARK: - TAB BAR UI CONFIGURATE:
+        // MARK: TAB BAR UI CONFIGURATE:
 
         tabBarController.tabBar.unselectedItemTintColor = colorLightGray
         tabBarController.tabBar.tintColor = .systemBlue
@@ -57,7 +57,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.tabBar.layer.cornerRadius = 10
         tabBarController.tabBar.selectedItem?.badgeColor = .white
 
-        // MARK: - HELPERS:
+        // MARK: HELPERS:
 
         self.window = window
         window.rootViewController = tabBarController
