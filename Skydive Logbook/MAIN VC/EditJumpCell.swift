@@ -1,8 +1,8 @@
+import AlertKit
 import AudioToolbox
 import AVFoundation
 import Lottie
 import UIKit
-import AlertKit
 
 // MARK: - PROTOCOL:
 
@@ -531,8 +531,8 @@ class EditJumpCell: UITableViewCell {
         newJump.time = timeTextField.text ?? ""
         newJump.cutaway = cutawayTextField.text ?? ""
         newJump.comment = commentTextField.text ?? ""
-        
         delegate?.saveJump(newJump)
+        resetSelectPickerView()
     }
     
     // MARK: CLEAR ALL TEXT FIELDS:
@@ -561,6 +561,13 @@ class EditJumpCell: UITableViewCell {
         aircraftTextField.resignFirstResponder()
         cutawayTextField.resignFirstResponder()
         commentTextField.resignFirstResponder()
+    }
+    
+    private func resetSelectPickerView() {
+        locationPickerView.selectRow(0, inComponent: 0, animated: true)
+        aircraftPickerView.selectRow(0, inComponent: 0, animated: true)
+        canopyPickerView.selectRow(0, inComponent: 0, animated: true)
+        missionPickerView.selectRow(0, inComponent: 0, animated: true)
     }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":

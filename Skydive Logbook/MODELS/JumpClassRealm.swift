@@ -49,3 +49,12 @@ extension JumpClassRealm {
         comment = dictionary["comment"] as? String ?? ""
     }
 }
+
+//enum Mission: String {
+//    case freeFly
+//    case tandem
+//    
+//    var localizedValue: String {
+//        NSLocalizedString(self.rawValue, comment: "")
+//    }
+//}

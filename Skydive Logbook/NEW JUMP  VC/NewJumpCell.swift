@@ -564,6 +564,7 @@ class NewJumpCell: UITableViewCell {
         clearTextViews()
         resignFirstResponders()
         alertKitSuccess()
+        resetSelectPickerView()
     }
     
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
@@ -584,18 +585,19 @@ class NewJumpCell: UITableViewCell {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(newJump, update: .all)
         }
+        resetSelectPickerView()
     }
     
     // MARK: CLEAR ALL TEXT FIELDS:
     
     private func clearTextViews() {
         dateTextField.text = ""
+        locationTextField.text = ""
+        aircraftTextField.text = ""
         canopyTextField.text = ""
         missionTextField.text = ""
         heightTextField.text = ""
         timeTextField.text = ""
-        locationTextField.text = ""
-        aircraftTextField.text = ""
         cutawayTextField.text = ""
         commentTextField.text = ""
     }
@@ -612,6 +614,13 @@ class NewJumpCell: UITableViewCell {
         aircraftTextField.resignFirstResponder()
         cutawayTextField.resignFirstResponder()
         commentTextField.resignFirstResponder()
+    }
+    
+    private func resetSelectPickerView() {
+        locationPickerView.selectRow(0, inComponent: 0, animated: true)
+        aircraftPickerView.selectRow(0, inComponent: 0, animated: true)
+        canopyPickerView.selectRow(0, inComponent: 0, animated: true)
+        missionPickerView.selectRow(0, inComponent: 0, animated: true)
     }
     
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
