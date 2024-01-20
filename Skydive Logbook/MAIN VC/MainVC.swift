@@ -395,7 +395,7 @@ final class MainVC: UIViewController {
             mainStartLottie.isHidden = false
             mainStartLottie.play()
             mainStartLottie.loopMode = .autoReverse
-        } else {
+        } else { 
             mainStartLottie.isHidden = true
             firstMessageView.isHidden = true
             firstMessageLabel.isHidden = true
