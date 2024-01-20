@@ -1,5 +1,6 @@
-import UIKit
 import RealmSwift
+import SwiftyStoreKit
+import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -62,6 +63,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
+
+        // MARK: - SWIFTY STORE KIT:
+
+        SwiftyStoreKit.completeTransactions { purchases in
+            for purchase in purchases {
+                if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {
+                    // Обработайте успешные покупки или восстановленные покупки здесь
+                    // Например, обновите статус подписки в вашем приложении
+                }
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -208,8 +208,35 @@ final class PremiumVC: UIViewController {
     // MARK: FUNC FOR ALERT RESTORE BUTTON:
 
     @objc private func tapOnRestoreButton() {
-        let alertAboutApplicationButton = UIAlertController(title: NSLocalizedString("Restore purchases", comment: ""), message: NSLocalizedString("Buy status", comment: ""), preferredStyle: .alert)
-        alertAboutApplicationButton.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        present(alertAboutApplicationButton, animated: true)
+        SwiftyStoreKit.restorePurchases { results in
+            if results.restoreFailedPurchases.isEmpty {
+                // Восстановление завершено успешно
+                self.showRestoreSuccessAlert()
+            } else if results.restoreFailedPurchases.count > 0 {
+                // Произошла ошибка при восстановлении каких-то покупок
+                self.showRestoreErrorAlert()
+            } else {
+                // Нет предыдущих покупок для восстановления
+                self.showNoPurchasesToRestoreAlert()
+            }
+        }
+    }
+
+    private func showRestoreSuccessAlert() {
+        let alert = UIAlertController(title: NSLocalizedString("Restore Successful", comment: ""), message: NSLocalizedString("All purchases have been successfully restored.", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    private func showRestoreErrorAlert() {
+        let alert = UIAlertController(title: NSLocalizedString("Restore Failed", comment: ""), message: NSLocalizedString("Some purchases could not be restored. Please try again later.", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    private func showNoPurchasesToRestoreAlert() {
+        let alert = UIAlertController(title: NSLocalizedString("No Purchases to Restore", comment: ""), message: NSLocalizedString("There are no previous purchases to restore.", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: nil))
+        present(alert, animated: true)
     }
 }

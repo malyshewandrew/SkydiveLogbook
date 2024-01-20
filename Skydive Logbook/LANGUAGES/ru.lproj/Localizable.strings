@@ -331,6 +331,13 @@
 "Restore purchases" = "Восстановить покупки";
 "Buy status" = "Покупка найдена / не найдена.";
 
+"Restore Successful" = "Восстановление прошло успешно";
+"All purchases have been successfully restored." = "Все покупки были успешно восстановлены.";
+"Restore Failed" = "Не удалось восстановить";
+"Some purchases could not be restored. Please try again later." = "Некоторые покупки восстановить не удалось. Пожалуйста, повторите попытку позже.";
+"No Purchases to Restore" = "Нет покупок для восстановления";
+"There are no previous purchases to restore." = "Предыдущих покупок для восстановления нет.";
+
 // MARK: - SYSTEM:
 
 "System" = "СИСТЕМА";

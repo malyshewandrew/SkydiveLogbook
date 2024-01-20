@@ -331,6 +331,13 @@
 "Restore purchases" = "Restore purchases";
 "Buy status" = "Buy find / buy no find";
 
+"Restore Successful" = "Restore Successful";
+"All purchases have been successfully restored." = "All purchases have been successfully restored.";
+"Restore Failed" = "Restore Failed";
+"Some purchases could not be restored. Please try again later." = "Some purchases could not be restored. Please try again later.";
+"No Purchases to Restore" = "No Purchases to Restore";
+"There are no previous purchases to restore." = "There are no previous purchases to restore.";
+
 // MARK: - SYSTEM:
 
 "System" = "SYSTEM";

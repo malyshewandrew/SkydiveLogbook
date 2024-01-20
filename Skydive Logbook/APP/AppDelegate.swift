@@ -1,5 +1,6 @@
 import RealmSwift
 import UIKit
+import SwiftyStoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
