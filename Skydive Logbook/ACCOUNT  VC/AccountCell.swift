@@ -140,7 +140,7 @@ final class AccountCell: UITableViewCell {
         editAccountButton.layer.cornerRadius = cornerRadius10
         editAccountButton.backgroundColor = .colorCell
         editAccountButton.titleLabel?.font = fontMediumStandart14
-        editAccountButton.setTitleColor(.white, for: .normal)
+        editAccountButton.setTitleColor(.colorWhite, for: .normal)
         editAccountButton.addTarget(self, action: #selector(tapOnEditAccountButton), for: .touchUpInside)
         
         // MARK: EDIT LOCATIONS:
@@ -149,7 +149,7 @@ final class AccountCell: UITableViewCell {
         editLocationsButton.layer.cornerRadius = cornerRadius10
         editLocationsButton.backgroundColor = .colorCell
         editLocationsButton.titleLabel?.font = fontMediumStandart14
-        editLocationsButton.setTitleColor(.white, for: .normal)
+        editLocationsButton.setTitleColor(.colorWhite, for: .normal)
         editLocationsButton.addTarget(self, action: #selector(tapOnEditLocationsButton), for: .touchUpInside)
 
         // MARK: EDIT AIRCRAFTS:
@@ -158,7 +158,7 @@ final class AccountCell: UITableViewCell {
         editAircraftsButton.layer.cornerRadius = cornerRadius10
         editAircraftsButton.backgroundColor = .colorCell
         editAircraftsButton.titleLabel?.font = fontMediumStandart14
-        editAircraftsButton.setTitleColor(.white, for: .normal)
+        editAircraftsButton.setTitleColor(.colorWhite, for: .normal)
         editAircraftsButton.addTarget(self, action: #selector(tapOnEditAircraftsButton), for: .touchUpInside)
 
         // MARK: EDIT CANOPIES:
@@ -167,7 +167,7 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.layer.cornerRadius = cornerRadius10
         editCanopiesButton.backgroundColor = .colorCell
         editCanopiesButton.titleLabel?.font = fontMediumStandart14
-        editCanopiesButton.setTitleColor(.white, for: .normal)
+        editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
         editCanopiesButton.addTarget(self, action: #selector(tapOnEditCanopiesButton), for: .touchUpInside)
         
         // MARK: CALCULATOR:
@@ -176,7 +176,7 @@ final class AccountCell: UITableViewCell {
         calculatorButton.layer.cornerRadius = cornerRadius10
         calculatorButton.backgroundColor = .colorCell
         calculatorButton.titleLabel?.font = fontMediumStandart14
-        calculatorButton.setTitleColor(.white, for: .normal)
+        calculatorButton.setTitleColor(.colorWhite, for: .normal)
         calculatorButton.addTarget(self, action: #selector(tapOnCalculatorButton), for: .touchUpInside)
 
         // MARK: BACKUP BUTTON:
@@ -185,7 +185,7 @@ final class AccountCell: UITableViewCell {
         backupButton.layer.cornerRadius = cornerRadius10
         backupButton.backgroundColor = .colorCell
         backupButton.titleLabel?.font = fontMediumStandart14
-        backupButton.setTitleColor(.white, for: .normal)
+        backupButton.setTitleColor(.colorWhite, for: .normal)
         backupButton.addTarget(self, action: #selector(tapOnBackupButton), for: .touchUpInside)
 
         // MARK: ABOUT BUTTON:
@@ -194,7 +194,7 @@ final class AccountCell: UITableViewCell {
         infoButton.layer.cornerRadius = cornerRadius10
         infoButton.backgroundColor = .colorCell
         infoButton.titleLabel?.font = fontMediumStandart14
-        infoButton.setTitleColor(.white, for: .normal)
+        infoButton.setTitleColor(.colorWhite, for: .normal)
         infoButton.addTarget(self, action: #selector(tapOnInfoButton), for: .touchUpInside)
 
         // MARK: PREMIUM BUTTON:
@@ -203,7 +203,7 @@ final class AccountCell: UITableViewCell {
         premiumButton.layer.cornerRadius = cornerRadius10
         premiumButton.backgroundColor = .colorCell
         premiumButton.titleLabel?.font = fontMediumStandart14
-        premiumButton.setTitleColor(.white, for: .normal)
+        premiumButton.setTitleColor(.colorWhite, for: .normal)
         premiumButton.addTarget(self, action: #selector(tapOnPremiumButton), for: .touchUpInside)
 
         // MARK: STAR:

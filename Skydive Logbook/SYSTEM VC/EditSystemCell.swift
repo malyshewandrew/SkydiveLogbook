@@ -973,7 +973,7 @@ final class EditSystemCell: UITableViewCell {
         saveButton.setTitle(NSLocalizedString("Update", comment: ""), for: .normal)
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
     }
     

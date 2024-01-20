@@ -368,7 +368,7 @@ final class MainVC: UIViewController {
         firstMessageView.heightAnchor.constraint(greaterThanOrEqualTo: firstMessageLabel.heightAnchor, constant: 10).isActive = true
         firstMessageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
 
-        firstMessageView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
+        firstMessageView.backgroundColor = .colorCell
         firstMessageView.layer.cornerRadius = 10
         firstMessageView.layer.shadowRadius = 100
         firstMessageView.layer.shadowColor = UIColor.colorLightBlue.cgColor
@@ -382,7 +382,7 @@ final class MainVC: UIViewController {
         firstMessageLabel.leadingAnchor.constraint(equalTo: firstMessageView.leadingAnchor, constant: 10).isActive = true
         firstMessageLabel.trailingAnchor.constraint(equalTo: firstMessageView.trailingAnchor, constant: -10).isActive = true
 
-        firstMessageLabel.textColor = .white
+        firstMessageLabel.textColor = .colorWhite
         firstMessageLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
         firstMessageLabel.numberOfLines = 0
         firstMessageLabel.textAlignment = .center

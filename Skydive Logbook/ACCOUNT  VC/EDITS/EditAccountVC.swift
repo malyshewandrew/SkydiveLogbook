@@ -277,7 +277,7 @@ final class EditAccountVC: UIViewController {
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
         saveButton.addTarget(self, action: #selector(tapOnSaveButtom), for: .touchUpInside)
     }

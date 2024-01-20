@@ -448,7 +448,7 @@ class EditJumpCell: UITableViewCell {
         saveButton.setTitle(NSLocalizedString("Update", comment: ""), for: .normal)
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }
@@ -706,7 +706,7 @@ extension EditJumpCell: UIPickerViewDataSource {
         } else if pickerView == cutawayPickerView {
             title = cutawayPickerViewValues.sorted()[row].localizedValue
         }
-        let attributedString = NSAttributedString(string: title, attributes: [.foregroundColor: UIColor.white])
+        let attributedString = NSAttributedString(string: title, attributes: [.foregroundColor: UIColor.colorWhite])
         return attributedString
     }
 }

@@ -979,7 +979,7 @@ final class NewSystemCell: UITableViewCell {
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.layer.cornerRadius = cornerRadius10
-        cleanButton.setTitleColor(.white, for: .normal)
+        cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.titleLabel?.font = fontMediumStandart14
         
         // MARK: SAVE BUTTON:
@@ -987,7 +987,7 @@ final class NewSystemCell: UITableViewCell {
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
     }
     

@@ -52,11 +52,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // MARK: TAB BAR UI CONFIGURATE:
 
-        tabBarController.tabBar.unselectedItemTintColor = .colorLightGray
-        tabBarController.tabBar.tintColor = .systemBlue
         tabBarController.tabBar.backgroundColor = .colorTabBar
+        tabBarController.tabBar.unselectedItemTintColor = .colorTabBarUnselected
+        tabBarController.tabBar.tintColor = .colorTabBarSelected
         tabBarController.tabBar.layer.cornerRadius = 10
-        tabBarController.tabBar.selectedItem?.badgeColor = .white
 
         // MARK: HELPERS:
 

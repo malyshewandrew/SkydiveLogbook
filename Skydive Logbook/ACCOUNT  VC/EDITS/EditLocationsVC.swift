@@ -111,7 +111,7 @@ final class EditLocationsVC: UIViewController {
 
         saveButton.backgroundColor = .colorCell
         saveButton.titleLabel?.font = fontMediumStandart14
-        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.addTarget(self, action: #selector(tapSave), for: .touchUpInside)
@@ -120,7 +120,7 @@ final class EditLocationsVC: UIViewController {
 
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.titleLabel?.font = fontMediumStandart14
-        cleanButton.setTitleColor(.white, for: .normal)
+        cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius10
         cleanButton.addTarget(self, action: #selector(tapOnCleanButton), for: .touchUpInside)

@@ -116,7 +116,7 @@ final class PremiumVC: UIViewController {
         
         // MARK: INFO TEXT LABEL:
 
-        infoTextLabel.textColor = .white
+        infoTextLabel.textColor = .colorWhite
         infoTextLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
         infoTextLabel.numberOfLines = 0
         infoTextLabel.textAlignment = .center
@@ -164,7 +164,7 @@ final class PremiumVC: UIViewController {
         restoreButton.layer.cornerRadius = cornerRadius10
         restoreButton.backgroundColor = .colorTabBar
         restoreButton.titleLabel?.font = fontMediumStandart14
-        restoreButton.setTitleColor(.white, for: .normal)
+        restoreButton.setTitleColor(.colorWhite, for: .normal)
         restoreButton.addTarget(self, action: #selector(tapOnRestoreButton), for: .touchUpInside)
     }
     
@@ -184,8 +184,8 @@ final class PremiumVC: UIViewController {
         purchaseProduct()
     }
     
-    
     // MARK: PURCHASE PRODUCT:
+
     func purchaseProduct() {
         let productId = "your_product_id" // Замените на свой идентификатор товара
 
@@ -194,11 +194,11 @@ final class PremiumVC: UIViewController {
             case .success(let purchase):
                 // Покупка успешно завершена
                 print("Purchase Success: \(purchase.productId)")
-                // Добавьте код для предоставления пользователю доступа к функциональности после покупки
+            // Добавьте код для предоставления пользователю доступа к функциональности после покупки
             case .error(let error):
                 // Произошла ошибка при покупке
                 print("Purchase Failed: \(error)")
-                // Добавьте код для обработки ошибки
+            // Добавьте код для обработки ошибки
             case .deferred(purchase: let purchase):
                 print("Purchase \(purchase)")
             }

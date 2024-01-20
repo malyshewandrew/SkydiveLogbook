@@ -94,7 +94,7 @@ final class BackupVC: UIViewController {
         
         // MARK: INFO VIEW:
         
-        infoView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
+        infoView.backgroundColor = .colorCell
         infoView.layer.cornerRadius = 10
         infoView.layer.shadowRadius = 50
         infoView.layer.shadowColor = UIColor.colorLightBlue.cgColor
@@ -102,7 +102,7 @@ final class BackupVC: UIViewController {
             
         // MARK: INFO LABEL:
 
-        infoLabel.textColor = .white
+        infoLabel.textColor = .colorWhite
         infoLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
         infoLabel.numberOfLines = 0
         infoLabel.textAlignment = .center
