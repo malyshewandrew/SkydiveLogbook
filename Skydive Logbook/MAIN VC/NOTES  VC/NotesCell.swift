@@ -52,16 +52,16 @@ final class NotesCell: UITableViewCell {
     func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = colorBackground
+        contentView.backgroundColor = .colorBackground
 
         // MARK: VIEW:
 
-        view.backgroundColor = colorTabBar
+        view.backgroundColor = .colorTabBar
         view.layer.cornerRadius = cornerRadius10
 
         // MARK: NOTE LABEL:
 
-        noteLabel.textColor = colorWhite
+        noteLabel.textColor = .colorWhite
         noteLabel.numberOfLines = numberOfLines0
         noteLabel.font = fontMediumStandart16
         noteLabel.textAlignment = textAligmentLeft

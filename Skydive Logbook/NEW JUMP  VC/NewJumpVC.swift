@@ -79,7 +79,7 @@ final class NewJumpVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER:
 
@@ -93,7 +93,7 @@ final class NewJumpVC: UIViewController {
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
-        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
         
         // MARK: MANUAL BUTTON:
@@ -108,7 +108,7 @@ final class NewJumpVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NewJumpCell.self, forCellReuseIdentifier: "NewJumpCell")
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
     }
     

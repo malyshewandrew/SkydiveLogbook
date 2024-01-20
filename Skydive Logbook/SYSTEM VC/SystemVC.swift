@@ -89,7 +89,7 @@ final class SystemVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER:
 
@@ -105,12 +105,12 @@ final class SystemVC: UIViewController {
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
-        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
 
         // MARK: NEW SYSTEM:
 
-        newSystemButton.backgroundColor = colorCell
+        newSystemButton.backgroundColor = .colorCell
         newSystemButton.layer.cornerRadius = 10
         newSystemButton.setTitle(NSLocalizedString("Add a new system", comment: ""), for: .normal)
         newSystemButton.titleLabel?.font = fontMediumStandart14
@@ -125,7 +125,7 @@ final class SystemVC: UIViewController {
         tableView.dataSource = self
         tableView.register(SystemCell.self, forCellReuseIdentifier: "SystemCell")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
     }
 
     // MARK: - LOAD SYSTEM FROM REALM:

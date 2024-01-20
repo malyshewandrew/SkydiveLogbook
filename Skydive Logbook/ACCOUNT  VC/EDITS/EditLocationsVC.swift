@@ -88,7 +88,7 @@ final class EditLocationsVC: UIViewController {
     func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER
 
@@ -101,15 +101,15 @@ final class EditLocationsVC: UIViewController {
 
         // MARK: TEXT VIEW:
 
-        enterTextTextField.backgroundColor = colorTabBar
-        enterTextTextField.textColor = colorWhite
+        enterTextTextField.backgroundColor = .colorTabBar
+        enterTextTextField.textColor = .colorWhite
         enterTextTextField.layer.cornerRadius = cornerRadius10
         enterTextTextField.textAlignment = textAligmentCenter
         enterTextTextField.placeholder = NSLocalizedString("Enter location", comment: "")
 
         // MARK: SAVE BUTTON:
 
-        saveButton.backgroundColor = colorCell
+        saveButton.backgroundColor = .colorCell
         saveButton.titleLabel?.font = fontMediumStandart14
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
@@ -118,7 +118,7 @@ final class EditLocationsVC: UIViewController {
 
         // MARK: CLEAN BUTTON:
 
-        cleanButton.backgroundColor = colorTabBar
+        cleanButton.backgroundColor = .colorTabBar
         cleanButton.titleLabel?.font = fontMediumStandart14
         cleanButton.setTitleColor(.white, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
@@ -132,7 +132,7 @@ final class EditLocationsVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EditLocationsCell.self, forCellReuseIdentifier: "EditLocationsCell")
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
     }
 
@@ -189,23 +189,23 @@ final class EditLocationsVC: UIViewController {
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
     private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
+        saveButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
+            self.saveButton.backgroundColor = .colorCell
         }
     }
 
     private func actionButtonSaveRedColor() {
-        saveButton.backgroundColor = colorRed
+        saveButton.backgroundColor = .colorRed
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
+            self.saveButton.backgroundColor = .colorCell
         }
     }
 
     private func actionButtonCleanChangeColor() {
-        cleanButton.backgroundColor = colorGreen
+        cleanButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.cleanButton.backgroundColor = colorTabBar
+            self.cleanButton.backgroundColor = .colorTabBar
         }
     }
 

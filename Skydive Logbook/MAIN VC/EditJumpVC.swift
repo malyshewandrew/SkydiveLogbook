@@ -71,7 +71,7 @@ final class EditJumpVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER:
 
@@ -89,7 +89,7 @@ final class EditJumpVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EditJumpCell.self, forCellReuseIdentifier: "EditJumpCell")
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
     }
 

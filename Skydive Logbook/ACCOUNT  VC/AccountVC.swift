@@ -74,7 +74,7 @@ final class AccountVC: UIViewController {
     // MARK: - CONFIGURE UI:
 
     private func configureUI() {
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER:
 
@@ -90,7 +90,7 @@ final class AccountVC: UIViewController {
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
-        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
     }
 
@@ -101,7 +101,7 @@ final class AccountVC: UIViewController {
         tableView.delegate = self
         tableView.register(AccountCell.self, forCellReuseIdentifier: "AccountCell")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
     }
 
     // MARK: - CONFIGURE GESTURES:

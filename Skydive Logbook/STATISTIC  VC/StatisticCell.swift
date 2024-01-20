@@ -397,300 +397,300 @@ final class StatisticCell: UITableViewCell {
     private func configureUI() {
         // MARK: - CONTENT VIEW:
         
-        contentView.backgroundColor = colorBackground
+        contentView.backgroundColor = .colorBackground
         selectionStyle = .none
         
         // MARK: GENERAL INFO:
 
         generalInfoButton.setTitle(NSLocalizedString("General info", comment: "") + ":", for: .normal)
-        generalInfoButton.setTitleColor(colorLightGray, for: .normal)
+        generalInfoButton.setTitleColor(.colorLightGray, for: .normal)
         generalInfoButton.titleLabel?.font = fontMediumStandart12
         generalInfoButton.contentVerticalAlignment = textAligmentTop
-        generalInfoButton.backgroundColor = colorCell
+        generalInfoButton.backgroundColor = .colorCell
         generalInfoButton.layer.cornerRadius = cornerRadius20
         generalInfoButton.addTarget(self, action: #selector(tapOnGeneralInfoButton), for: .touchUpInside)
         
         generalInfoLabel.textAlignment = .center
         generalInfoLabel.baselineAdjustment = .alignCenters
         generalInfoLabel.font = fontMediumStandart12
-        generalInfoLabel.textColor = colorWhite
+        generalInfoLabel.textColor = .colorWhite
         generalInfoLabel.numberOfLines = 0
         generalInfoLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: TOTAL JUMPS:
 
         totalJumpsButton.setTitle(NSLocalizedString("Total jumps", comment: "") + ":", for: .normal)
-        totalJumpsButton.setTitleColor(colorLightGray, for: .normal)
+        totalJumpsButton.setTitleColor(.colorLightGray, for: .normal)
         totalJumpsButton.titleLabel?.font = fontMediumStandart12
         totalJumpsButton.contentVerticalAlignment = textAligmentTop
-        totalJumpsButton.backgroundColor = colorCell
+        totalJumpsButton.backgroundColor = .colorCell
         totalJumpsButton.layer.cornerRadius = cornerRadius20
         totalJumpsButton.addTarget(self, action: #selector(tapOnTotalButton), for: .touchUpInside)
         
         totalJumpsLabel.textAlignment = .center
         totalJumpsLabel.baselineAdjustment = .alignCenters
         totalJumpsLabel.font = fontBoldStandart30
-        totalJumpsLabel.textColor = colorWhite
+        totalJumpsLabel.textColor = .colorWhite
         totalJumpsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: JUMPS YEAR:
 
         jumpsYearButton.setTitle(NSLocalizedString("In this year", comment: "") + ":", for: .normal)
-        jumpsYearButton.setTitleColor(colorLightGray, for: .normal)
+        jumpsYearButton.setTitleColor(.colorLightGray, for: .normal)
         jumpsYearButton.titleLabel?.font = fontMediumStandart12
         jumpsYearButton.contentVerticalAlignment = textAligmentTop
-        jumpsYearButton.backgroundColor = colorCell
+        jumpsYearButton.backgroundColor = .colorCell
         jumpsYearButton.layer.cornerRadius = cornerRadius20
         jumpsYearButton.addTarget(self, action: #selector(tapOnYearButton), for: .touchUpInside)
         
         jumpsYearLabel.textAlignment = .center
         jumpsYearLabel.baselineAdjustment = .alignCenters
         jumpsYearLabel.font = fontBoldStandart30
-        jumpsYearLabel.textColor = colorWhite
+        jumpsYearLabel.textColor = .colorWhite
         jumpsYearLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: CATEGORY:
 
         categoryButton.setTitle(NSLocalizedString("Category", comment: "") + ":", for: .normal)
-        categoryButton.setTitleColor(colorLightGray, for: .normal)
+        categoryButton.setTitleColor(.colorLightGray, for: .normal)
         categoryButton.titleLabel?.font = fontMediumStandart12
         categoryButton.contentVerticalAlignment = textAligmentTop
-        categoryButton.backgroundColor = colorCell
+        categoryButton.backgroundColor = .colorCell
         categoryButton.layer.cornerRadius = cornerRadius20
         categoryButton.addTarget(self, action: #selector(tapOnCategoryButton), for: .touchUpInside)
         
         categoryLabel.textAlignment = .center
         categoryLabel.baselineAdjustment = .alignCenters
         categoryLabel.font = fontBoldStandart30
-        categoryLabel.textColor = colorWhite
+        categoryLabel.textColor = .colorWhite
         categoryLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAXIMUM HEIGHT:
 
         maxHeightButton.setTitle(NSLocalizedString("Max. height", comment: "") + ":", for: .normal)
-        maxHeightButton.setTitleColor(colorLightGray, for: .normal)
+        maxHeightButton.setTitleColor(.colorLightGray, for: .normal)
         maxHeightButton.titleLabel?.font = fontMediumStandart12
         maxHeightButton.contentVerticalAlignment = textAligmentTop
-        maxHeightButton.backgroundColor = colorCell
+        maxHeightButton.backgroundColor = .colorCell
         maxHeightButton.layer.cornerRadius = cornerRadius20
         maxHeightButton.addTarget(self, action: #selector(tapOnMaxHeightButton), for: .touchUpInside)
         
         maxHeightLabel.textAlignment = .center
         maxHeightLabel.baselineAdjustment = .alignCenters
         maxHeightLabel.font = fontBoldStandart30
-        maxHeightLabel.textColor = colorWhite
+        maxHeightLabel.textColor = .colorWhite
         maxHeightLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: AVERAGE HEIGHT:
 
         averageHeightButton.setTitle(NSLocalizedString("Av. height", comment: "") + ":", for: .normal)
-        averageHeightButton.setTitleColor(colorLightGray, for: .normal)
+        averageHeightButton.setTitleColor(.colorLightGray, for: .normal)
         averageHeightButton.titleLabel?.font = fontMediumStandart12
         averageHeightButton.contentVerticalAlignment = textAligmentTop
-        averageHeightButton.backgroundColor = colorCell
+        averageHeightButton.backgroundColor = .colorCell
         averageHeightButton.layer.cornerRadius = cornerRadius20
         averageHeightButton.addTarget(self, action: #selector(tapOnAverageHeightButton), for: .touchUpInside)
         
         averageHeightLabel.textAlignment = .center
         averageHeightLabel.baselineAdjustment = .alignCenters
         averageHeightLabel.font = fontBoldStandart30
-        averageHeightLabel.textColor = colorWhite
+        averageHeightLabel.textColor = .colorWhite
         averageHeightLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MINIMUM HEIGHT:
 
         minHeightButton.setTitle(NSLocalizedString("Min. height", comment: "") + ":", for: .normal)
-        minHeightButton.setTitleColor(colorLightGray, for: .normal)
+        minHeightButton.setTitleColor(.colorLightGray, for: .normal)
         minHeightButton.titleLabel?.font = fontMediumStandart12
         minHeightButton.contentVerticalAlignment = textAligmentTop
-        minHeightButton.backgroundColor = colorCell
+        minHeightButton.backgroundColor = .colorCell
         minHeightButton.layer.cornerRadius = cornerRadius20
         minHeightButton.addTarget(self, action: #selector(tapOnMinHeightButton), for: .touchUpInside)
         
         minHeightLabel.textAlignment = .center
         minHeightLabel.baselineAdjustment = .alignCenters
         minHeightLabel.font = fontBoldStandart30
-        minHeightLabel.textColor = colorWhite
+        minHeightLabel.textColor = .colorWhite
         minHeightLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: DATE FIRST:
 
         dateFirstButton.setTitle(NSLocalizedString("First jump", comment: "") + ":", for: .normal)
-        dateFirstButton.setTitleColor(colorLightGray, for: .normal)
+        dateFirstButton.setTitleColor(.colorLightGray, for: .normal)
         dateFirstButton.titleLabel?.font = fontMediumStandart12
         dateFirstButton.contentVerticalAlignment = textAligmentTop
-        dateFirstButton.backgroundColor = colorCell
+        dateFirstButton.backgroundColor = .colorCell
         dateFirstButton.layer.cornerRadius = cornerRadius20
         dateFirstButton.addTarget(self, action: #selector(tapOnDateFirstButton), for: .touchUpInside)
         
         dateFirstLabel.textAlignment = .center
         dateFirstLabel.baselineAdjustment = .alignCenters
         dateFirstLabel.font = fontBoldStandart20
-        dateFirstLabel.textColor = colorWhite
+        dateFirstLabel.textColor = .colorWhite
         dateFirstLabel.numberOfLines = 1
         dateFirstLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAX TIME:
 
         maxTimeButton.setTitle(NSLocalizedString("Max. time", comment: "") + ":", for: .normal)
-        maxTimeButton.setTitleColor(colorLightGray, for: .normal)
+        maxTimeButton.setTitleColor(.colorLightGray, for: .normal)
         maxTimeButton.titleLabel?.font = fontMediumStandart12
         maxTimeButton.contentVerticalAlignment = textAligmentTop
-        maxTimeButton.backgroundColor = colorCell
+        maxTimeButton.backgroundColor = .colorCell
         maxTimeButton.layer.cornerRadius = cornerRadius20
         maxTimeButton.addTarget(self, action: #selector(tapOnMaxTimeButton), for: .touchUpInside)
         
         maxTimeLabel.textAlignment = .center
         maxTimeLabel.baselineAdjustment = .alignCenters
         maxTimeLabel.font = fontBoldStandart30
-        maxTimeLabel.textColor = colorWhite
+        maxTimeLabel.textColor = .colorWhite
         maxTimeLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: DATE LAST:
 
         dateLastButton.setTitle(NSLocalizedString("Last jump", comment: "") + ":", for: .normal)
-        dateLastButton.setTitleColor(colorLightGray, for: .normal)
+        dateLastButton.setTitleColor(.colorLightGray, for: .normal)
         dateLastButton.titleLabel?.font = fontMediumStandart12
         dateLastButton.contentVerticalAlignment = textAligmentTop
-        dateLastButton.backgroundColor = colorCell
+        dateLastButton.backgroundColor = .colorCell
         dateLastButton.layer.cornerRadius = cornerRadius20
         dateLastButton.addTarget(self, action: #selector(tapOnDateLastButton), for: .touchUpInside)
         
         dateLastLabel.textAlignment = .center
         dateLastLabel.baselineAdjustment = .alignCenters
         dateLastLabel.font = fontBoldStandart20
-        dateLastLabel.textColor = colorWhite
+        dateLastLabel.textColor = .colorWhite
         dateLastLabel.numberOfLines = 1
         dateLastLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAX DAY:
 
         maxDayButton.setTitle(NSLocalizedString("Max. in day", comment: "") + ":", for: .normal)
-        maxDayButton.setTitleColor(colorLightGray, for: .normal)
+        maxDayButton.setTitleColor(.colorLightGray, for: .normal)
         maxDayButton.titleLabel?.font = fontMediumStandart12
         maxDayButton.contentVerticalAlignment = textAligmentTop
-        maxDayButton.backgroundColor = colorCell
+        maxDayButton.backgroundColor = .colorCell
         maxDayButton.layer.cornerRadius = cornerRadius20
         maxDayButton.addTarget(self, action: #selector(tapOnMaxDayButton), for: .touchUpInside)
         
         maxDayLabel.textAlignment = .center
         maxDayLabel.baselineAdjustment = .alignCenters
         maxDayLabel.font = fontBoldStandart30
-        maxDayLabel.textColor = colorWhite
+        maxDayLabel.textColor = .colorWhite
         maxDayLabel.numberOfLines = 1
         maxDayLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: AVERAGE TIME:
 
         averageTimeButton.setTitle(NSLocalizedString("Av. time", comment: "") + ":", for: .normal)
-        averageTimeButton.setTitleColor(colorLightGray, for: .normal)
+        averageTimeButton.setTitleColor(.colorLightGray, for: .normal)
         averageTimeButton.titleLabel?.font = fontMediumStandart12
         averageTimeButton.contentVerticalAlignment = textAligmentTop
-        averageTimeButton.backgroundColor = colorCell
+        averageTimeButton.backgroundColor = .colorCell
         averageTimeButton.layer.cornerRadius = cornerRadius20
         averageTimeButton.addTarget(self, action: #selector(tapOnAverageTimeButton), for: .touchUpInside)
         
         averageTimeLabel.textAlignment = .center
         averageTimeLabel.baselineAdjustment = .alignCenters
         averageTimeLabel.font = fontBoldStandart30
-        averageTimeLabel.textColor = colorWhite
+        averageTimeLabel.textColor = .colorWhite
         averageTimeLabel.numberOfLines = 0
         averageTimeLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: COUNT CUTAWAY:
 
         countCutawayButton.setTitle(NSLocalizedString("CutawayStatistic", comment: "") + ":", for: .normal)
-        countCutawayButton.setTitleColor(colorLightGray, for: .normal)
+        countCutawayButton.setTitleColor(.colorLightGray, for: .normal)
         countCutawayButton.titleLabel?.font = fontMediumStandart12
         countCutawayButton.contentVerticalAlignment = textAligmentTop
-        countCutawayButton.backgroundColor = colorCell
+        countCutawayButton.backgroundColor = .colorCell
         countCutawayButton.layer.cornerRadius = cornerRadius20
         countCutawayButton.addTarget(self, action: #selector(tapOnCountCutawayButton), for: .touchUpInside)
         
         countCutawayLabel.textAlignment = .center
         countCutawayLabel.baselineAdjustment = .alignCenters
         countCutawayLabel.font = fontBoldStandart30
-        countCutawayLabel.textColor = colorWhite
+        countCutawayLabel.textColor = .colorWhite
         countCutawayLabel.numberOfLines = 0
         countCutawayLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: AIRCRAFTS:
 
         aircraftsButton.setTitle(NSLocalizedString("Aircraft", comment: "") + ":", for: .normal)
-        aircraftsButton.setTitleColor(colorLightGray, for: .normal)
+        aircraftsButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftsButton.titleLabel?.font = fontMediumStandart12
         aircraftsButton.contentVerticalAlignment = textAligmentTop
-        aircraftsButton.backgroundColor = colorCell
+        aircraftsButton.backgroundColor = .colorCell
         aircraftsButton.layer.cornerRadius = cornerRadius20
         aircraftsButton.addTarget(self, action: #selector(tapOnAircraftsButton), for: .touchUpInside)
         
         aircraftsLabel.textAlignment = .center
         aircraftsLabel.baselineAdjustment = .alignCenters
         aircraftsLabel.font = fontBoldStandart30
-        aircraftsLabel.textColor = colorWhite
+        aircraftsLabel.textColor = .colorWhite
         aircraftsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: CANOPIES:
 
         canopiesButton.setTitle(NSLocalizedString("Canopies", comment: "") + ":", for: .normal)
-        canopiesButton.setTitleColor(colorLightGray, for: .normal)
+        canopiesButton.setTitleColor(.colorLightGray, for: .normal)
         canopiesButton.titleLabel?.font = fontMediumStandart12
         canopiesButton.contentVerticalAlignment = textAligmentTop
-        canopiesButton.backgroundColor = colorCell
+        canopiesButton.backgroundColor = .colorCell
         canopiesButton.layer.cornerRadius = cornerRadius20
         canopiesButton.addTarget(self, action: #selector(tapOnCanopiesButton), for: .touchUpInside)
         
         canopiesLabel.textAlignment = .center
         canopiesLabel.baselineAdjustment = .alignCenters
         canopiesLabel.font = fontBoldStandart30
-        canopiesLabel.textColor = colorWhite
+        canopiesLabel.textColor = .colorWhite
         canopiesLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: LOCATIONS:
 
         locationsButton.setTitle(NSLocalizedString("Locations", comment: "") + ":", for: .normal)
-        locationsButton.setTitleColor(colorLightGray, for: .normal)
+        locationsButton.setTitleColor(.colorLightGray, for: .normal)
         locationsButton.titleLabel?.font = fontMediumStandart12
         locationsButton.contentVerticalAlignment = textAligmentTop
-        locationsButton.backgroundColor = colorCell
+        locationsButton.backgroundColor = .colorCell
         locationsButton.layer.cornerRadius = cornerRadius20
         locationsButton.addTarget(self, action: #selector(tapOnLocationsButton), for: .touchUpInside)
         
         locationsLabel.textAlignment = .center
         locationsLabel.baselineAdjustment = .alignCenters
         locationsLabel.font = fontBoldStandart30
-        locationsLabel.textColor = colorWhite
+        locationsLabel.textColor = .colorWhite
         locationsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MISSIONS:
 
-        missionsButton.setTitleColor(colorLightGray, for: .normal)
+        missionsButton.setTitleColor(.colorLightGray, for: .normal)
         missionsButton.titleLabel?.font = fontMediumStandart12
         missionsButton.contentVerticalAlignment = textAligmentTop
-        missionsButton.backgroundColor = colorCell
+        missionsButton.backgroundColor = .colorCell
         missionsButton.layer.cornerRadius = cornerRadius20
         
         // MARK: MISSIONS ONE:
 
         missionsOneLabel.textAlignment = .left
         missionsOneLabel.font = fontStatisticMissions
-        missionsOneLabel.textColor = colorWhite
+        missionsOneLabel.textColor = .colorWhite
         missionsOneLabel.numberOfLines = 0
         missionsOneLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: TOP MISSION:
 
         topMissionButton.setTitle(NSLocalizedString("Top 10" + ":", comment: ""), for: .normal)
-        topMissionButton.setTitleColor(colorLightGray, for: .normal)
+        topMissionButton.setTitleColor(.colorLightGray, for: .normal)
         topMissionButton.titleLabel?.font = fontMediumStandart12
         topMissionButton.contentVerticalAlignment = textAligmentTop
         topMissionButton.titleLabel?.textAlignment = .center
-        topMissionButton.backgroundColor = colorCell
+        topMissionButton.backgroundColor = .colorCell
         topMissionButton.layer.cornerRadius = cornerRadius20
         
         topMissionLabel.textAlignment = .center
         topMissionLabel.font = fontStatisticTop10
-        topMissionLabel.textColor = colorWhite
+        topMissionLabel.textColor = .colorWhite
         topMissionLabel.numberOfLines = 0
         topMissionLabel.adjustsFontSizeToFitWidth = true
         
@@ -698,7 +698,7 @@ final class StatisticCell: UITableViewCell {
 
         missionsTwoLabel.textAlignment = .right
         missionsTwoLabel.font = fontStatisticMissions
-        missionsTwoLabel.textColor = colorWhite
+        missionsTwoLabel.textColor = .colorWhite
         missionsTwoLabel.numberOfLines = 0
         missionsTwoLabel.adjustsFontSizeToFitWidth = true
     }

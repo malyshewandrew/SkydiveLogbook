@@ -79,7 +79,7 @@ final class StatisticVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER:
 
@@ -93,12 +93,12 @@ final class StatisticVC: UIViewController {
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
-        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
 
         // MARK: TABLE VIEW:
 
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
     }
 
@@ -280,7 +280,7 @@ extension StatisticVC: StatisticCellDelegate {
         contentView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
         contentView.backgroundColor = .clear
         contentView.layer.shadowRadius = 50
-        contentView.layer.shadowColor = colorWhiteCG
+        contentView.layer.shadowColor = UIColor.colorWhite.cgColor
         contentView.layer.shadowOpacity = 1
 
         imageLottie.translatesAutoresizingMaskIntoConstraints = false

@@ -270,199 +270,196 @@ class NewJumpCell: UITableViewCell {
     private func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = colorBackground
+        contentView.backgroundColor = .colorBackground
         selectionStyle = .none
         
         // MARK: DATE:
         
-        dateButton.backgroundColor = colorCell
+        dateButton.backgroundColor = .colorCell
         dateButton.setTitle("\(NSLocalizedString("Date", comment: ""))*", for: .normal)
-        dateButton.setTitleColor(colorLightGray, for: .normal)
+        dateButton.setTitleColor(.colorLightGray, for: .normal)
         dateButton.contentVerticalAlignment = textAligmentTop
         dateButton.titleLabel?.font = fontMediumStandart12
         dateButton.layer.cornerRadius = cornerRadius10
         dateTextField.placeholder = NSLocalizedString("Date placeholder", comment: "")
-        dateTextField.backgroundColor = colorTabBar
+        dateTextField.backgroundColor = .colorTabBar
         dateTextField.inputView = datePickerView
         dateTextField.font = fontMediumStandart18
-        dateTextField.textColor = colorWhite
+        dateTextField.textColor = .colorWhite
         dateTextField.layer.cornerRadius = cornerRadius10
         dateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         dateTextField.textAlignment = textAligmentCenter
-        dateTextField.tintColor = colorWhite
+        dateTextField.tintColor = .colorWhite
         dateTextField.layer.masksToBounds = true
-        datePickerView.setValue(colorWhite, forKeyPath: "textColor")
         datePickerView.datePickerMode = .date
         datePickerView.preferredDatePickerStyle = .wheels
         datePickerView.maximumDate = Date()
-        datePickerView.backgroundColor = colorTabBar
+        datePickerView.backgroundColor = .colorTabBar
         datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
         
         // MARK: LOCATION:
 
-        locationButton.backgroundColor = colorCell
+        locationButton.backgroundColor = .colorCell
         locationButton.setTitle("\(NSLocalizedString("Location", comment: ""))*", for: .normal)
-        locationButton.setTitleColor(colorLightGray, for: .normal)
+        locationButton.setTitleColor(.colorLightGray, for: .normal)
         locationButton.contentVerticalAlignment = textAligmentTop
         locationButton.titleLabel?.font = fontMediumStandart12
         locationButton.layer.cornerRadius = cornerRadius10
         locationTextField.placeholder = NSLocalizedString("Location placeholder", comment: "")
-        locationTextField.backgroundColor = colorTabBar
+        locationTextField.backgroundColor = .colorTabBar
         locationTextField.inputView = locationPickerView
         locationTextField.font = fontMediumStandart18
-        locationTextField.textColor = colorWhite
+        locationTextField.textColor = .colorWhite
         locationTextField.layer.cornerRadius = cornerRadius10
         locationTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         locationTextField.textAlignment = textAligmentCenter
-        locationTextField.tintColor = colorWhite
+        locationTextField.tintColor = .colorWhite
         locationTextField.layer.masksToBounds = true
-        locationPickerView.backgroundColor = colorTabBar
+        locationPickerView.backgroundColor = .colorTabBar
         
         // MARK: AIRCRAFT:
 
-        aircraftButton.backgroundColor = colorCell
+        aircraftButton.backgroundColor = .colorCell
         aircraftButton.setTitle("\(NSLocalizedString("Aircraft", comment: ""))*", for: .normal)
-        aircraftButton.setTitleColor(colorLightGray, for: .normal)
+        aircraftButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftButton.contentVerticalAlignment = textAligmentTop
         aircraftButton.titleLabel?.font = fontMediumStandart12
         aircraftButton.layer.cornerRadius = cornerRadius10
         aircraftTextField.placeholder = NSLocalizedString("Aircraft placeholder", comment: "")
-        aircraftTextField.backgroundColor = colorTabBar
+        aircraftTextField.backgroundColor = .colorTabBar
         aircraftTextField.inputView = aircraftPickerView
         aircraftTextField.font = fontMediumStandart18
-        aircraftTextField.textColor = colorWhite
+        aircraftTextField.textColor = .colorWhite
         aircraftTextField.layer.cornerRadius = cornerRadius10
         aircraftTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         aircraftTextField.textAlignment = textAligmentCenter
-        aircraftTextField.tintColor = colorWhite
+        aircraftTextField.tintColor = .colorWhite
         aircraftTextField.layer.masksToBounds = true
-        aircraftPickerView.backgroundColor = colorTabBar
+        aircraftPickerView.backgroundColor = .colorTabBar
         
         // MARK: CANOPY:
 
-        canopyButton.backgroundColor = colorCell
+        canopyButton.backgroundColor = .colorCell
         canopyButton.setTitle("\(NSLocalizedString("Canopy", comment: ""))*", for: .normal)
-        canopyButton.setTitleColor(colorLightGray, for: .normal)
+        canopyButton.setTitleColor(.colorLightGray, for: .normal)
         canopyButton.contentVerticalAlignment = textAligmentTop
         canopyButton.titleLabel?.font = fontMediumStandart12
         canopyButton.layer.cornerRadius = cornerRadius10
         canopyTextField.placeholder = NSLocalizedString("Canopy placeholder", comment: "")
-        canopyTextField.backgroundColor = colorTabBar
+        canopyTextField.backgroundColor = .colorTabBar
         canopyTextField.inputView = canopyPickerView
         canopyTextField.font = fontMediumStandart18
-        canopyTextField.textColor = colorWhite
+        canopyTextField.textColor = .colorWhite
         canopyTextField.layer.cornerRadius = cornerRadius10
         canopyTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         canopyTextField.textAlignment = textAligmentCenter
-        canopyTextField.tintColor = colorWhite
+        canopyTextField.tintColor = .colorWhite
         canopyTextField.layer.masksToBounds = true
-        canopyPickerView.backgroundColor = colorTabBar
+        canopyPickerView.backgroundColor = .colorTabBar
         
         // MARK: MISSION:
 
-        missionButton.backgroundColor = colorCell
+        missionButton.backgroundColor = .colorCell
         missionButton.setTitle("\(NSLocalizedString("Mission", comment: ""))*", for: .normal)
-        missionButton.setTitleColor(colorLightGray, for: .normal)
+        missionButton.setTitleColor(.colorLightGray, for: .normal)
         missionButton.contentVerticalAlignment = textAligmentTop
         missionButton.titleLabel?.font = fontMediumStandart12
         missionButton.layer.cornerRadius = cornerRadius10
         missionTextField.placeholder = NSLocalizedString("Mission placeholder", comment: "")
-        missionTextField.backgroundColor = colorTabBar
+        missionTextField.backgroundColor = .colorTabBar
         missionTextField.inputView = missionPickerView
         missionTextField.font = fontMediumStandart18
-        missionTextField.textColor = colorWhite
+        missionTextField.textColor = .colorWhite
         missionTextField.layer.cornerRadius = cornerRadius10
         missionTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         missionTextField.textAlignment = textAligmentCenter
-        missionTextField.tintColor = colorWhite
+        missionTextField.tintColor = .colorWhite
         missionTextField.layer.masksToBounds = true
-        missionPickerView.backgroundColor = colorTabBar
+        missionPickerView.backgroundColor = .colorTabBar
         
         // MARK: HEIGHT:
 
-        heightButton.backgroundColor = colorCell
+        heightButton.backgroundColor = .colorCell
         heightButton.setTitle("\(NSLocalizedString("Height", comment: ""))*", for: .normal)
-        heightButton.setTitleColor(colorLightGray, for: .normal)
+        heightButton.setTitleColor(.colorLightGray, for: .normal)
         heightButton.contentVerticalAlignment = textAligmentTop
         heightButton.titleLabel?.font = fontMediumStandart12
         heightButton.layer.cornerRadius = cornerRadius10
         heightTextField.placeholder = NSLocalizedString("Height placeholder", comment: "")
-        heightTextField.backgroundColor = colorTabBar
+        heightTextField.backgroundColor = .colorTabBar
         heightTextField.font = fontMediumStandart18
-        heightTextField.textColor = colorWhite
+        heightTextField.textColor = .colorWhite
         heightTextField.layer.cornerRadius = cornerRadius10
         heightTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         heightTextField.textAlignment = textAligmentCenter
-        heightTextField.tintColor = colorWhite
+        heightTextField.tintColor = .colorWhite
         heightTextField.layer.masksToBounds = true
-        heightTextField.setValue(UIColor.white, forKeyPath: "textColor")
         heightTextField.keyboardType = .numberPad
         heightTextField.returnKeyType = .done
         
         // MARK: TIME:
 
-        timeButton.backgroundColor = colorCell
+        timeButton.backgroundColor = .colorCell
         timeButton.setTitle("\(NSLocalizedString("Time", comment: ""))*", for: .normal)
-        timeButton.setTitleColor(colorLightGray, for: .normal)
+        timeButton.setTitleColor(.colorLightGray, for: .normal)
         timeButton.contentVerticalAlignment = textAligmentTop
         timeButton.titleLabel?.font = fontMediumStandart12
         timeButton.layer.cornerRadius = cornerRadius10
         timeTextField.placeholder = NSLocalizedString("Time placeholder", comment: "")
-        timeTextField.backgroundColor = colorTabBar
+        timeTextField.backgroundColor = .colorTabBar
         timeTextField.font = fontMediumStandart18
-        timeTextField.textColor = colorWhite
+        timeTextField.textColor = .colorWhite
         timeTextField.layer.cornerRadius = cornerRadius10
         timeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         timeTextField.textAlignment = textAligmentCenter
-        timeTextField.tintColor = colorWhite
+        timeTextField.tintColor = .colorWhite
         timeTextField.layer.masksToBounds = true
-        timeTextField.setValue(UIColor.white, forKeyPath: "textColor")
         timeTextField.keyboardType = .numberPad
         timeTextField.returnKeyType = .done
         
         // MARK: CUTAWAY:
 
-        cutawayButton.backgroundColor = colorCell
+        cutawayButton.backgroundColor = .colorCell
         cutawayButton.setTitle("\(NSLocalizedString("Cutaway", comment: ""))*", for: .normal)
-        cutawayButton.setTitleColor(colorLightGray, for: .normal)
+        cutawayButton.setTitleColor(.colorLightGray, for: .normal)
         cutawayButton.contentVerticalAlignment = textAligmentTop
         cutawayButton.titleLabel?.font = fontMediumStandart12
         cutawayButton.layer.cornerRadius = cornerRadius10
         cutawayTextField.placeholder = NSLocalizedString("Cutaway placeholder", comment: "")
-        cutawayTextField.backgroundColor = colorTabBar
+        cutawayTextField.backgroundColor = .colorTabBar
         cutawayTextField.inputView = cutawayPickerView
         cutawayTextField.font = fontMediumStandart18
-        cutawayTextField.textColor = colorWhite
+        cutawayTextField.textColor = .colorWhite
         cutawayTextField.layer.cornerRadius = cornerRadius10
         cutawayTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         cutawayTextField.textAlignment = textAligmentCenter
-        cutawayTextField.tintColor = colorWhite
+        cutawayTextField.tintColor = .colorWhite
         cutawayTextField.layer.masksToBounds = true
-        cutawayPickerView.backgroundColor = colorTabBar
+        cutawayPickerView.backgroundColor = .colorTabBar
         
         // MARK: COMMENT:
 
-        commentButton.backgroundColor = colorCell
+        commentButton.backgroundColor = .colorCell
         commentButton.setTitle("\(NSLocalizedString("Comment", comment: ""))", for: .normal)
-        commentButton.setTitleColor(colorLightGray, for: .normal)
+        commentButton.setTitleColor(.colorLightGray, for: .normal)
         commentButton.contentVerticalAlignment = textAligmentTop
         commentButton.titleLabel?.font = fontMediumStandart12
         commentButton.layer.cornerRadius = cornerRadius10
         commentTextField.placeholder = NSLocalizedString("Comment placeholder", comment: "")
-        commentTextField.backgroundColor = colorTabBar
+        commentTextField.backgroundColor = .colorTabBar
         commentTextField.font = fontMediumStandart16
-        commentTextField.textColor = colorWhite
+        commentTextField.textColor = .colorWhite
         commentTextField.textAlignment = textAligmentCenter
         commentTextField.layer.cornerRadius = cornerRadius10
         commentTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        commentTextField.tintColor = colorWhite
+        commentTextField.tintColor = .colorWhite
         commentTextField.layer.masksToBounds = true
         commentTextField.keyboardType = .default
         
         // MARK: CLEAN BUTTON:
 
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
-        cleanButton.backgroundColor = colorTabBar
+        cleanButton.backgroundColor = .colorTabBar
         cleanButton.layer.cornerRadius = cornerRadius10
         cleanButton.setTitleColor(.white, for: .normal)
         cleanButton.titleLabel?.font = fontMediumStandart14
@@ -471,7 +468,7 @@ class NewJumpCell: UITableViewCell {
         // MARK: SAVE BUTTON:
 
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
-        saveButton.backgroundColor = colorCell
+        saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
@@ -632,23 +629,23 @@ class NewJumpCell: UITableViewCell {
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
     private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
+        saveButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
+            self.saveButton.backgroundColor = .colorCell
         }
     }
     
     private func actionButtonSaveRedColor() {
-        saveButton.backgroundColor = colorRed
+        saveButton.backgroundColor = .colorRed
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
+            self.saveButton.backgroundColor = .colorCell
         }
     }
     
     private func actionButtonCleanChangeColor() {
-        cleanButton.backgroundColor = colorGreen
+        cleanButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.cleanButton.backgroundColor = colorTabBar
+            self.cleanButton.backgroundColor = .colorTabBar
         }
     }
     

@@ -111,17 +111,17 @@ final class MainCell: UITableViewCell {
     private func configureUserInterface() {
         // MARK: VIEW:
 
-        contentView.backgroundColor = colorBackground
+        contentView.backgroundColor = .colorBackground
         selectionStyle = .none
 
         // MARK: CELL VIEW:
 
-        containerView.backgroundColor = colorCell
+        containerView.backgroundColor = .colorCell
         containerView.layer.cornerRadius = cornerRadius10
 
         // MARK: NUMBER LABEL:
 
-        numberLabel.textColor = colorDarkGray
+        numberLabel.textColor = .colorDarkGray
         numberLabel.font = fontMainNumber
         numberLabel.numberOfLines = numberOfLines1
         numberLabel.textAlignment = .left
@@ -129,7 +129,7 @@ final class MainCell: UITableViewCell {
 
         // MARK: CANOPY LABEL:
 
-        canopyLabel.textColor = colorWhite
+        canopyLabel.textColor = .colorWhite
         canopyLabel.font = fontMainCanopy
         canopyLabel.numberOfLines = numberOfLines1
         canopyLabel.textAlignment = .center
@@ -137,7 +137,7 @@ final class MainCell: UITableViewCell {
 
         // MARK: MISSION LABEL:
 
-        missionLabel.textColor = colorDarkGray
+        missionLabel.textColor = .colorDarkGray
         missionLabel.font = fontMainMission
         missionLabel.numberOfLines = numberOfLines1
         missionLabel.textAlignment = .center
@@ -145,7 +145,7 @@ final class MainCell: UITableViewCell {
 
         // MARK: DATE LABEL:
 
-        dateLabel.textColor = colorWhite
+        dateLabel.textColor = .colorWhite
         dateLabel.font = fontMainDateLocationAircraftHeight
         dateLabel.numberOfLines = numberOfLines1
         dateLabel.textAlignment = .right
@@ -153,7 +153,7 @@ final class MainCell: UITableViewCell {
 
         // MARK: LOCATION LABEL:
 
-        locationLabel.textColor = colorWhite
+        locationLabel.textColor = .colorWhite
         locationLabel.font = fontMainDateLocationAircraftHeight
         locationLabel.numberOfLines = numberOfLines1
         locationLabel.textAlignment = .right
@@ -161,7 +161,7 @@ final class MainCell: UITableViewCell {
 
         // MARK: AIRCRAFT LABEL:
 
-        aircraftLabel.textColor = colorWhite
+        aircraftLabel.textColor = .colorWhite
         aircraftLabel.font = fontMainDateLocationAircraftHeight
         aircraftLabel.numberOfLines = numberOfLines1
         aircraftLabel.textAlignment = .right
@@ -169,7 +169,7 @@ final class MainCell: UITableViewCell {
 
         // MARK: HEIGHT LABEL:
 
-        heightLabel.textColor = colorWhite
+        heightLabel.textColor = .colorWhite
         heightLabel.font = fontMainDateLocationAircraftHeight
         heightLabel.numberOfLines = numberOfLines1
         heightLabel.textAlignment = .right

@@ -53,16 +53,16 @@ class EditCanopiesCell: UITableViewCell {
     private func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = colorBackground
+        contentView.backgroundColor = .colorBackground
 
         // MARK: VIEW:
 
-        view.backgroundColor = colorTabBar
+        view.backgroundColor = .colorTabBar
         view.layer.cornerRadius = cornerRadius10
 
         // MARK: LOCATION LABEL:
 
-        canopyLabel.textColor = colorWhite
+        canopyLabel.textColor = .colorWhite
         canopyLabel.numberOfLines = numberOfLines1
         canopyLabel.font = fontMediumStandart16
         canopyLabel.textAlignment = textAligmentLeft

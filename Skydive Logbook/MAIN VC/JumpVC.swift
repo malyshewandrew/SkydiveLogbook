@@ -51,7 +51,7 @@ final class JumpVC: UIViewController {
         
         // MARK: VIEW:
         
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
         
         // MARK: NAVIGATION CONTROLLER:
         
@@ -62,7 +62,7 @@ final class JumpVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(JumpCell.self, forCellReuseIdentifier: "JumpCell")
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
     }
 }

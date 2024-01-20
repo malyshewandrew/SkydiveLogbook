@@ -87,7 +87,7 @@ final class InfoVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
         
         // MARK: NAVIGATION CONTROLLER
         
@@ -100,10 +100,10 @@ final class InfoVC: UIViewController {
         
         // MARK: INFO TEXT VIEW:
 
-        infoTextView.backgroundColor = colorCell
+        infoTextView.backgroundColor = .colorCell
         infoTextView.layer.cornerRadius = cornerRadius10
         infoTextView.layer.shadowRadius = 50
-        infoTextView.layer.shadowColor = colorBlueCG
+        infoTextView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         infoTextView.layer.shadowOpacity = 0.3
         
         // MARK: INFO TEXT LABEL:
@@ -120,7 +120,7 @@ final class InfoVC: UIViewController {
         privacyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         privacyButton.setTitleColor(.white, for: .normal)
         privacyButton.layer.cornerRadius = cornerRadius10
-        privacyButton.backgroundColor = colorCell
+        privacyButton.backgroundColor = .colorCell
         privacyButton.titleLabel?.font = fontMediumStandart14
         privacyButton.addTarget(self, action: #selector(tapOnPrivacyButton), for: .touchUpInside)
         
@@ -130,7 +130,7 @@ final class InfoVC: UIViewController {
         termsButton.titleLabel?.adjustsFontSizeToFitWidth = true
         termsButton.setTitleColor(.white, for: .normal)
         termsButton.layer.cornerRadius = cornerRadius10
-        termsButton.backgroundColor = colorCell
+        termsButton.backgroundColor = .colorCell
         termsButton.titleLabel?.font = fontMediumStandart14
         termsButton.addTarget(self, action: #selector(tapOnTermsButton), for: .touchUpInside)
         
@@ -139,7 +139,7 @@ final class InfoVC: UIViewController {
         versionButton.setTitle(NSLocalizedString("App version", comment: ""), for: .normal)
         versionButton.setTitleColor(.white, for: .normal)
         versionButton.layer.cornerRadius = cornerRadius10
-        versionButton.backgroundColor = colorCell
+        versionButton.backgroundColor = .colorCell
         versionButton.titleLabel?.font = fontMediumStandart14
         versionButton.addTarget(self, action: #selector(tapOnVersionButton), for: .touchUpInside)
     }
@@ -173,7 +173,7 @@ final class InfoVC: UIViewController {
         imageView.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: alert.view.centerYAnchor, constant: -30).isActive = true
         imageView.layer.shadowRadius = 35
-        imageView.layer.shadowColor = colorWhiteCG
+        imageView.layer.shadowColor = UIColor.colorWhite.cgColor
         imageView.layer.shadowOpacity = 1
 
         present(alert, animated: true)

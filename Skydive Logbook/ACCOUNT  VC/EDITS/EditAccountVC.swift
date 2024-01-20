@@ -157,7 +157,7 @@ final class EditAccountVC: UIViewController {
     func configureUI() {
         // MARK: VIEW:
         
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
         
         // MARK: NAVIGATION CONTROLLER:
         
@@ -166,116 +166,116 @@ final class EditAccountVC: UIViewController {
         // MARK: NICKNAME:
         
         nicknameButton.setTitle(NSLocalizedString("Nickname / edit account vc", comment: "") + ":", for: .normal)
-        nicknameButton.backgroundColor = colorCell
-        nicknameButton.setTitleColor(colorLightGray, for: .normal)
+        nicknameButton.backgroundColor = .colorCell
+        nicknameButton.setTitleColor(.colorLightGray, for: .normal)
         nicknameButton.contentVerticalAlignment = textAligmentTop
         nicknameButton.titleLabel?.font = fontMediumStandart12
         nicknameButton.layer.cornerRadius = cornerRadius10
         nicknameTextField.placeholder = NSLocalizedString("Name user / edit account vc", comment: "")
-        nicknameTextField.backgroundColor = colorTabBar
+        nicknameTextField.backgroundColor = .colorTabBar
         nicknameTextField.font = fontMediumStandart18
-        nicknameTextField.textColor = colorWhite
+        nicknameTextField.textColor = .colorWhite
         nicknameTextField.layer.cornerRadius = cornerRadius10
         nicknameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         nicknameTextField.textAlignment = textAligmentCenter
-        nicknameTextField.tintColor = colorWhite
+        nicknameTextField.tintColor = .colorWhite
         nicknameTextField.layer.masksToBounds = true
         
         // MARK: LICENSE TYPE:
         
         licenseTypeButton.setTitle(NSLocalizedString("License / edit account vc", comment: "") + ":", for: .normal)
-        licenseTypeButton.backgroundColor = colorCell
-        licenseTypeButton.setTitleColor(colorLightGray, for: .normal)
+        licenseTypeButton.backgroundColor = .colorCell
+        licenseTypeButton.setTitleColor(.colorLightGray, for: .normal)
         licenseTypeButton.contentVerticalAlignment = textAligmentTop
         licenseTypeButton.titleLabel?.font = fontMediumStandart12
         licenseTypeButton.layer.cornerRadius = cornerRadius10
         licenseTypeTextField.placeholder = NSLocalizedString("Type / number / edit account vc", comment: "")
-        licenseTypeTextField.backgroundColor = colorTabBar
+        licenseTypeTextField.backgroundColor = .colorTabBar
         licenseTypeTextField.font = fontMediumStandart18
-        licenseTypeTextField.textColor = colorWhite
+        licenseTypeTextField.textColor = .colorWhite
         licenseTypeTextField.layer.cornerRadius = cornerRadius10
         licenseTypeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         licenseTypeTextField.textAlignment = textAligmentCenter
-        licenseTypeTextField.tintColor = colorWhite
+        licenseTypeTextField.tintColor = .colorWhite
         licenseTypeTextField.layer.masksToBounds = true
         
         // MARK: LICENSE DATE:
         
         licenseDateButton.setTitle(NSLocalizedString("Valid until / edit account vc", comment: "") + ":", for: .normal)
-        licenseDateButton.backgroundColor = colorCell
-        licenseDateButton.setTitleColor(colorLightGray, for: .normal)
+        licenseDateButton.backgroundColor = .colorCell
+        licenseDateButton.setTitleColor(.colorLightGray, for: .normal)
         licenseDateButton.contentVerticalAlignment = textAligmentTop
         licenseDateButton.titleLabel?.font = fontMediumStandart12
         licenseDateButton.layer.cornerRadius = cornerRadius10
         licenseDateTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
-        licenseDateTextField.backgroundColor = colorTabBar
+        licenseDateTextField.backgroundColor = .colorTabBar
         licenseDateTextField.font = fontMediumStandart18
-        licenseDateTextField.textColor = colorWhite
+        licenseDateTextField.textColor = .colorWhite
         licenseDateTextField.layer.cornerRadius = cornerRadius10
         licenseDateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         licenseDateTextField.textAlignment = textAligmentCenter
-        licenseDateTextField.tintColor = colorWhite
+        licenseDateTextField.tintColor = .colorWhite
         licenseDateTextField.layer.masksToBounds = true
         
         
         // MARK: MEDICINE:
         
         medicineButton.setTitle(NSLocalizedString("Medicine / edit account vc", comment: "") + ":", for: .normal)
-        medicineButton.backgroundColor = colorCell
-        medicineButton.setTitleColor(colorLightGray, for: .normal)
+        medicineButton.backgroundColor = .colorCell
+        medicineButton.setTitleColor(.colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop
         medicineButton.titleLabel?.font = fontMediumStandart12
         medicineButton.layer.cornerRadius = cornerRadius10
         medicineTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
-        medicineTextField.backgroundColor = colorTabBar
+        medicineTextField.backgroundColor = .colorTabBar
         medicineTextField.font = fontMediumStandart18
-        medicineTextField.textColor = colorWhite
+        medicineTextField.textColor = .colorWhite
         medicineTextField.layer.cornerRadius = cornerRadius10
         medicineTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         medicineTextField.textAlignment = textAligmentCenter
-        medicineTextField.tintColor = colorWhite
+        medicineTextField.tintColor = .colorWhite
         medicineTextField.layer.masksToBounds = true
         
         // MARK: INSURANCE:
         
         insuranceButton.setTitle(NSLocalizedString("Insurance / edit account vc", comment: "") + ":", for: .normal)
-        insuranceButton.backgroundColor = colorCell
-        insuranceButton.setTitleColor(colorLightGray, for: .normal)
+        insuranceButton.backgroundColor = .colorCell
+        insuranceButton.setTitleColor(.colorLightGray, for: .normal)
         insuranceButton.contentVerticalAlignment = textAligmentTop
         insuranceButton.titleLabel?.font = fontMediumStandart12
         insuranceButton.layer.cornerRadius = cornerRadius10
         insuranceTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
-        insuranceTextField.backgroundColor = colorTabBar
+        insuranceTextField.backgroundColor = .colorTabBar
         insuranceTextField.font = fontMediumStandart18
-        insuranceTextField.textColor = colorWhite
+        insuranceTextField.textColor = .colorWhite
         insuranceTextField.layer.cornerRadius = cornerRadius10
         insuranceTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         insuranceTextField.textAlignment = textAligmentCenter
-        insuranceTextField.tintColor = colorWhite
+        insuranceTextField.tintColor = .colorWhite
         insuranceTextField.layer.masksToBounds = true
         
         // MARK: RESERVE CANOPY:
         
         reserveCanopyButton.setTitle(NSLocalizedString("Reserve canopy / edit account vc", comment: "") + ":", for: .normal)
-        reserveCanopyButton.backgroundColor = colorCell
-        reserveCanopyButton.setTitleColor(colorLightGray, for: .normal)
+        reserveCanopyButton.backgroundColor = .colorCell
+        reserveCanopyButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyButton.titleLabel?.font = fontMediumStandart12
         reserveCanopyButton.layer.cornerRadius = cornerRadius10
         reserveCanopyTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
-        reserveCanopyTextField.backgroundColor = colorTabBar
+        reserveCanopyTextField.backgroundColor = .colorTabBar
         reserveCanopyTextField.font = fontMediumStandart18
-        reserveCanopyTextField.textColor = colorWhite
+        reserveCanopyTextField.textColor = .colorWhite
         reserveCanopyTextField.layer.cornerRadius = cornerRadius10
         reserveCanopyTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         reserveCanopyTextField.textAlignment = textAligmentCenter
-        reserveCanopyTextField.tintColor = colorWhite
+        reserveCanopyTextField.tintColor = .colorWhite
         reserveCanopyTextField.layer.masksToBounds = true
         
         // MARK: SAVE BUTTOM:
         
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
-        saveButton.backgroundColor = colorCell
+        saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandart14
@@ -364,9 +364,9 @@ final class EditAccountVC: UIViewController {
     // MARK: CHANGE COLORS BUTTON "SAVE":
 
     private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
+        saveButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
+            self.saveButton.backgroundColor = .colorCell
         }
     }
     

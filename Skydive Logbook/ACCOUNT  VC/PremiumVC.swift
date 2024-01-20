@@ -95,7 +95,7 @@ final class PremiumVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
         
         // MARK: NAVIGATION CONTROLLER:
         
@@ -111,7 +111,7 @@ final class PremiumVC: UIViewController {
         infoTextView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
         infoTextView.layer.cornerRadius = 10
         infoTextView.layer.shadowRadius = 50
-        infoTextView.layer.shadowColor = colorBlueCG
+        infoTextView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         infoTextView.layer.shadowOpacity = 0.3
         
         // MARK: INFO TEXT LABEL:
@@ -126,8 +126,8 @@ final class PremiumVC: UIViewController {
         // MARK: BUY 1 BUTTON:
         
         buy1Button.setTitle("\(NSLocalizedString("1 month", comment: ""))", for: .normal)
-        buy1Button.setTitleColor(colorWhite, for: .normal)
-        buy1Button.backgroundColor = colorBlue
+        buy1Button.setTitleColor(.colorWhite, for: .normal)
+        buy1Button.backgroundColor = .colorBlue
         buy1Button.layer.cornerRadius = cornerRadius10
         buy1Button.titleLabel?.font = fontMediumStandart14
         buy1Button.titleLabel?.numberOfLines = 0
@@ -138,8 +138,8 @@ final class PremiumVC: UIViewController {
         // MARK: BUY 12 BUTTON:
         
         buy12Button.setTitle("\(NSLocalizedString("12 months", comment: ""))", for: .normal)
-        buy12Button.setTitleColor(colorWhite, for: .normal)
-        buy12Button.backgroundColor = colorBlue
+        buy12Button.setTitleColor(.colorWhite, for: .normal)
+        buy12Button.backgroundColor = .colorBlue
         buy12Button.layer.cornerRadius = cornerRadius10
         buy12Button.titleLabel?.font = fontMediumStandart14
         buy12Button.titleLabel?.numberOfLines = 0
@@ -162,7 +162,7 @@ final class PremiumVC: UIViewController {
 
         restoreButton.setTitle(NSLocalizedString("Restore purchases", comment: ""), for: .normal)
         restoreButton.layer.cornerRadius = cornerRadius10
-        restoreButton.backgroundColor = colorTabBar
+        restoreButton.backgroundColor = .colorTabBar
         restoreButton.titleLabel?.font = fontMediumStandart14
         restoreButton.setTitleColor(.white, for: .normal)
         restoreButton.addTarget(self, action: #selector(tapOnRestoreButton), for: .touchUpInside)

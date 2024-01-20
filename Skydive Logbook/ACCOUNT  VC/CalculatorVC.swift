@@ -176,7 +176,7 @@ final class CalculatorVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER:
 
@@ -190,12 +190,11 @@ final class CalculatorVC: UIViewController {
         // MARK: WEIGHT SKYDIVER:
 
         weightTextField.placeholder = "\(NSLocalizedString("Total weight", comment: "")) (\(NSLocalizedString("kg.", comment: "")))*"
-        weightTextField.backgroundColor = colorTabBar
+        weightTextField.backgroundColor = .colorTabBar
         weightTextField.font = fontMediumStandart14
-        weightTextField.textColor = colorWhite
+        weightTextField.textColor = .colorWhite
         weightTextField.layer.cornerRadius = cornerRadius10
         weightTextField.textAlignment = textAligmentCenter
-        weightTextField.setValue(colorWhite, forKeyPath: "textColor")
         weightTextField.layer.masksToBounds = true
         weightTextField.keyboardType = .numberPad
         weightTextField.returnKeyType = .done
@@ -203,12 +202,11 @@ final class CalculatorVC: UIViewController {
         // MARK: SIZE CANOPY:
 
         sizeCanopyTextField.placeholder = "\(NSLocalizedString("Square canopy", comment: "")) (\(NSLocalizedString("ft", comment: "")))*"
-        sizeCanopyTextField.backgroundColor = colorTabBar
+        sizeCanopyTextField.backgroundColor = .colorTabBar
         sizeCanopyTextField.font = fontMediumStandart14
-        sizeCanopyTextField.textColor = colorWhite
+        sizeCanopyTextField.textColor = .colorWhite
         sizeCanopyTextField.layer.cornerRadius = cornerRadius10
         sizeCanopyTextField.textAlignment = textAligmentCenter
-        sizeCanopyTextField.setValue(colorWhite, forKeyPath: "textColor")
         sizeCanopyTextField.layer.masksToBounds = true
         sizeCanopyTextField.keyboardType = .numberPad
         sizeCanopyTextField.returnKeyType = .done
@@ -216,25 +214,25 @@ final class CalculatorVC: UIViewController {
         // MARK: SAVE BUTTON:
 
         resultButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
-        resultButton.backgroundColor = colorCell
+        resultButton.backgroundColor = .colorCell
         resultButton.layer.cornerRadius = cornerRadius10
-        resultButton.setTitleColor(colorWhite, for: .normal)
+        resultButton.setTitleColor(.colorWhite, for: .normal)
         resultButton.titleLabel?.font = fontMediumStandart14
         resultButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
 
         // MARK: CLEAN BUTTON:
 
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
-        cleanButton.backgroundColor = colorTabBar
+        cleanButton.backgroundColor = .colorTabBar
         cleanButton.layer.cornerRadius = cornerRadius10
-        cleanButton.setTitleColor(colorWhite, for: .normal)
+        cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.titleLabel?.font = fontMediumStandart14
         cleanButton.addTarget(self, action: #selector(actionButtonCleanTap), for: .touchUpInside)
 
         // MARK: RESULT:
 
-        resultLabel.backgroundColor = colorTabBar
-        resultLabel.textColor = colorWhite
+        resultLabel.backgroundColor = .colorTabBar
+        resultLabel.textColor = .colorWhite
         resultLabel.layer.masksToBounds = true
         resultLabel.layer.cornerRadius = cornerRadius10
         resultLabel.textAlignment = .center
@@ -243,7 +241,7 @@ final class CalculatorVC: UIViewController {
 
         // MARK: INFO VIEW:
 
-        textView.backgroundColor = colorCell
+        textView.backgroundColor = .colorCell
         textView.layer.cornerRadius = cornerRadius10
         textView.isHidden = true
 
@@ -252,7 +250,7 @@ final class CalculatorVC: UIViewController {
         textLabel.textAlignment = .left
         textLabel.numberOfLines = numberOfLines0
         textLabel.font = fontCalculatorText
-        textLabel.textColor = colorWhite
+        textLabel.textColor = .colorWhite
     }
 
     // MARK: CONFIGURE GESTURES:
@@ -282,43 +280,43 @@ final class CalculatorVC: UIViewController {
         if result < 0.6 {
             viewLoadCategoryA.isHidden = false
             textView.layer.shadowRadius = 100
-            textView.layer.shadowColor = colorBlueCG
+            textView.layer.shadowColor = UIColor.colorLightBlue.cgColor
             textView.layer.shadowOpacity = 0.5
             text = NSLocalizedString("1-50A", comment: "")
         } else if result >= 0.61 && result <= 0.89 {
             viewLoadCategoryA.isHidden = false
             textView.layer.shadowRadius = 100
-            textView.layer.shadowColor = colorBlueCG
+            textView.layer.shadowColor = UIColor.colorLightBlue.cgColor
             textView.layer.shadowOpacity = 0.5
             text = NSLocalizedString("1-50A", comment: "")
         } else if result >= 0.90 && result <= 1.28 {
             viewLoadCategoryB.isHidden = false
             textView.layer.shadowRadius = 100
-            textView.layer.shadowColor = colorGreenCG
+            textView.layer.shadowColor = UIColor.colorGreen.cgColor
             textView.layer.shadowOpacity = 0.5
             text = NSLocalizedString("51-200B", comment: "")
         } else if result >= 1.29 && result <= 1.49 {
             viewLoadCategoryC.isHidden = false
             textView.layer.shadowRadius = 100
-            textView.layer.shadowColor = colorYellowCG
+            textView.layer.shadowColor = UIColor.colorYellow.cgColor
             textView.layer.shadowOpacity = 0.5
             text = NSLocalizedString("201-500C", comment: "")
         } else if result >= 1.50 && result <= 2.0 {
             viewLoadCategoryD.isHidden = false
             textView.layer.shadowRadius = 100
-            textView.layer.shadowColor = colorOrangeCG
+            textView.layer.shadowColor = UIColor.colorOrange.cgColor
             textView.layer.shadowOpacity = 0.5
             text = NSLocalizedString("501-1000D1", comment: "")
         } else if result >= 2.01 && result <= 2.8 {
             viewLoadCategoryD1.isHidden = false
             textView.layer.shadowRadius = 100
-            textView.layer.shadowColor = colorRedCG
+            textView.layer.shadowColor = UIColor.colorDarkRed.cgColor
             textView.layer.shadowOpacity = 0.5
             text = NSLocalizedString("1000D2", comment: "")
         } else if result >= 2.81 {
             viewLoadCategoryD2.isHidden = false
             textView.layer.shadowRadius = 100
-            textView.layer.shadowColor = colorRedCG
+            textView.layer.shadowColor = UIColor.colorDarkRed.cgColor
             textView.layer.shadowOpacity = 0.5
             text = NSLocalizedString("1000D3", comment: "")
         }
@@ -387,23 +385,23 @@ final class CalculatorVC: UIViewController {
     // MARK: FUNCTIONS FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
     private func actionButtonSaveGreenColor() {
-        resultButton.backgroundColor = colorGreen
+        resultButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.resultButton.backgroundColor = colorCell
+            self.resultButton.backgroundColor = .colorCell
         }
     }
 
     private func actionButtonSaveRedColor() {
-        resultButton.backgroundColor = colorRed
+        resultButton.backgroundColor = .colorRed
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.resultButton.backgroundColor = colorCell
+            self.resultButton.backgroundColor = .colorCell
         }
     }
 
     private func actionButtonCleanChangeColor() {
-        cleanButton.backgroundColor = colorGreen
+        cleanButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.cleanButton.backgroundColor = colorTabBar
+            self.cleanButton.backgroundColor = .colorTabBar
         }
     }
 

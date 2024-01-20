@@ -53,16 +53,16 @@ class EditAircraftsCell: UITableViewCell {
     func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = colorBackground
+        contentView.backgroundColor = .colorBackground
 
         // MARK: VIEW:
 
-        view.backgroundColor = colorTabBar
+        view.backgroundColor = .colorTabBar
         view.layer.cornerRadius = cornerRadius10
 
         // MARK: LOCATION LABEL:
 
-        aircraftLabel.textColor = colorWhite
+        aircraftLabel.textColor = .colorWhite
         aircraftLabel.numberOfLines = numberOfLines1
         aircraftLabel.font = fontMediumStandart16
         aircraftLabel.textAlignment = textAligmentLeft

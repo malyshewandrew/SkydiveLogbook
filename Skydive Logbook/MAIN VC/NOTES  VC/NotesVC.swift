@@ -113,7 +113,7 @@ final class NotesVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIGATION CONTROLLER:
 
@@ -127,29 +127,29 @@ final class NotesVC: UIViewController {
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
-        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
 
         // MARK: NOTE BUTTON:
 
-        noteButton.backgroundColor = colorCell
+        noteButton.backgroundColor = .colorCell
         noteButton.setTitle("\(NSLocalizedString("New note", comment: "") + ":")", for: .normal)
-        noteButton.setTitleColor(colorLightGray, for: .normal)
+        noteButton.setTitleColor(.colorLightGray, for: .normal)
         noteButton.contentVerticalAlignment = textAligmentTop
         noteButton.titleLabel?.font = fontBoldStandart14
         noteButton.layer.cornerRadius = cornerRadius10
 
         // MARK: TEXT VIEW:
 
-        noteTextView.backgroundColor = colorTabBar
+        noteTextView.backgroundColor = .colorTabBar
         noteTextView.layer.cornerRadius = cornerRadius10
         noteTextView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         noteTextView.font = fontMediumStandart14
-        noteTextView.textColor = colorWhite
+        noteTextView.textColor = .colorWhite
 
         // MARK: SAVE BUTTON:
 
-        saveButton.backgroundColor = colorCell
+        saveButton.backgroundColor = .colorCell
         saveButton.titleLabel?.font = fontMediumStandart14
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
@@ -158,7 +158,7 @@ final class NotesVC: UIViewController {
 
         // MARK: CLEAN BUTTON:
 
-        cleanButton.backgroundColor = colorTabBar
+        cleanButton.backgroundColor = .colorTabBar
         cleanButton.titleLabel?.font = fontMediumStandart14
         cleanButton.setTitleColor(.white, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
@@ -172,7 +172,7 @@ final class NotesVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NotesCell.self, forCellReuseIdentifier: "NotesCell")
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
     }
 
@@ -249,23 +249,23 @@ final class NotesVC: UIViewController {
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
     private func actionButtonSaveGreenColor() {
-        saveButton.backgroundColor = colorGreen
+        saveButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
+            self.saveButton.backgroundColor = .colorCell
         }
     }
 
     private func actionButtonSaveRedColor() {
-        saveButton.backgroundColor = colorRed
+        saveButton.backgroundColor = .colorRed
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.saveButton.backgroundColor = colorCell
+            self.saveButton.backgroundColor = .colorCell
         }
     }
 
     private func actionButtonCleanChangeColor() {
-        cleanButton.backgroundColor = colorGreen
+        cleanButton.backgroundColor = .colorGreen
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
-            self.cleanButton.backgroundColor = colorTabBar
+            self.cleanButton.backgroundColor = .colorTabBar
         }
     }
 
@@ -359,7 +359,7 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
             )
         }
         fixAction.image = UIImage(systemName: "star")
-        fixAction.backgroundColor = colorGreen
+        fixAction.backgroundColor = .colorGreen
         let configuration = UISwipeActionsConfiguration(actions: [fixAction])
         return configuration
     }

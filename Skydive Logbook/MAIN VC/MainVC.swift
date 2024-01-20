@@ -148,7 +148,7 @@ final class MainVC: UIViewController {
     private func configureUI() {
         // MARK: LOADING VIEW:
 
-        loadingView.backgroundColor = colorBackground
+        loadingView.backgroundColor = .colorBackground
 
         // MARK: LOADING LOTTIE:
 
@@ -156,14 +156,14 @@ final class MainVC: UIViewController {
         loadingLottie.loopMode = .loop
         loadingLottie.contentMode = .center
         loadingLottie.layer.shadowRadius = 100
-        loadingLottie.layer.shadowColor = colorBlueCG
+        loadingLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         loadingLottie.layer.shadowOpacity = 0.5
         perform(#selector(hideAnimation), with: nil, afterDelay: 2)
 
         // MARK: CONFETTI LOTTIE:
 
         confettiLottie.layer.shadowRadius = 15
-        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
 
         // MARK: MAIN LOTTIE:
@@ -173,7 +173,7 @@ final class MainVC: UIViewController {
 
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIAGTION CONTROLLER:
 
@@ -189,7 +189,7 @@ final class MainVC: UIViewController {
 
         let configuration = UIImage.SymbolConfiguration(pointSize: 30)
         accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configuration)
-        accountImage.tintColor = colorDarkGray
+        accountImage.tintColor = .colorDarkGray
 
         // MARK: ACCOUNT BUTTON:
 
@@ -198,7 +198,7 @@ final class MainVC: UIViewController {
         // MARK: NOTES IMAGE:
 
         notesImage.image = UIImage(systemName: "book.circle.fill", withConfiguration: configuration)
-        notesImage.tintColor = colorDarkGray
+        notesImage.tintColor = .colorDarkGray
 
         // MARK: NOTES BUTTON:
 
@@ -212,7 +212,7 @@ final class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
         tableView.isHidden = true
-        tableView.backgroundColor = colorBackground
+        tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
     }
 
@@ -371,7 +371,7 @@ final class MainVC: UIViewController {
         firstMessageView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
         firstMessageView.layer.cornerRadius = 10
         firstMessageView.layer.shadowRadius = 100
-        firstMessageView.layer.shadowColor = colorBlueCG
+        firstMessageView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         firstMessageView.layer.shadowOpacity = 0.5
 
         // MARK: FIRST MESSAGE LABEL:

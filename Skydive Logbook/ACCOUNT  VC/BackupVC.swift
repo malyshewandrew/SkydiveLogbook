@@ -79,7 +79,7 @@ final class BackupVC: UIViewController {
     private func configureUI() {
         // MARK: VIEW:
 
-        view.backgroundColor = colorBackground
+        view.backgroundColor = .colorBackground
 
         // MARK: NAVIAGTION CONTROLLER:
 
@@ -97,7 +97,7 @@ final class BackupVC: UIViewController {
         infoView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
         infoView.layer.cornerRadius = 10
         infoView.layer.shadowRadius = 50
-        infoView.layer.shadowColor = colorBlueCG
+        infoView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         infoView.layer.shadowOpacity = 0.3
             
         // MARK: INFO LABEL:
@@ -112,8 +112,8 @@ final class BackupVC: UIViewController {
         // MARK: BACKUP BUTTON:
         
         backupButton.setTitle(NSLocalizedString("Backup / backup", comment: ""), for: .normal)
-        backupButton.setTitleColor(colorWhite, for: .normal)
-        backupButton.backgroundColor = colorBlue
+        backupButton.setTitleColor(.colorWhite, for: .normal)
+        backupButton.backgroundColor = .colorBlue
         backupButton.layer.cornerRadius = cornerRadius10
         backupButton.titleLabel?.font = fontMediumStandart14
         backupButton.titleLabel?.numberOfLines = 0
@@ -124,8 +124,8 @@ final class BackupVC: UIViewController {
         // MARK: RESTORE BUTTON:
             
         restoreButton.setTitle(NSLocalizedString("Restore / backup", comment: ""), for: .normal)
-        restoreButton.setTitleColor(colorWhite, for: .normal)
-        restoreButton.backgroundColor = colorTabBar
+        restoreButton.setTitleColor(.colorWhite, for: .normal)
+        restoreButton.backgroundColor = .colorTabBar
         restoreButton.layer.cornerRadius = cornerRadius10
         restoreButton.titleLabel?.font = fontMediumStandart14
         restoreButton.titleLabel?.numberOfLines = 0

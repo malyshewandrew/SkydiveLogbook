@@ -194,7 +194,7 @@ class JumpCell: UITableViewCell {
     private func configureUI() {
         // MARK: VIEW:
 
-        contentView.backgroundColor = colorBackground
+        contentView.backgroundColor = .colorBackground
         selectionStyle = .none
         
         // MARK: ANIMATIONS:
@@ -205,7 +205,7 @@ class JumpCell: UITableViewCell {
         // MARK: NUMBER AND DATE:
 
         circleButton.layer.cornerRadius = 75
-        circleButton.backgroundColor = colorCell
+        circleButton.backgroundColor = .colorCell
         circleButton.titleLabel?.font = .systemFont(ofSize: 60, weight: .bold, width: .standard)
         circleButton.titleLabel?.adjustsFontSizeToFitWidth = true
         circleButton.addTarget(self, action: #selector(tapOnCircleAnimationButton), for: .touchUpInside)
@@ -213,9 +213,9 @@ class JumpCell: UITableViewCell {
             titleLabel.adjustsFontSizeToFitWidth = true
         }
 
-        dateLabel.backgroundColor = colorTabBar
+        dateLabel.backgroundColor = .colorTabBar
         dateLabel.font = fontMediumStandart12
-        dateLabel.textColor = colorWhite
+        dateLabel.textColor = .colorWhite
         dateLabel.layer.cornerRadius = 20
         dateLabel.textAlignment = textAligmentCenter
         dateLabel.layer.masksToBounds = true
@@ -223,16 +223,16 @@ class JumpCell: UITableViewCell {
 
         // MARK: LOCATION:
         
-        locationButton.backgroundColor = colorCell
+        locationButton.backgroundColor = .colorCell
         locationButton.layer.cornerRadius = 10
         locationButton.setTitle(NSLocalizedString("Location", comment: "") + ":", for: .normal)
         locationButton.titleLabel?.font = fontBoldStandart14
-        locationButton.setTitleColor(colorLightGray, for: .normal)
+        locationButton.setTitleColor(.colorLightGray, for: .normal)
         locationButton.contentVerticalAlignment = textAligmentTop
         
-        locationLabel.backgroundColor = colorTabBar
+        locationLabel.backgroundColor = .colorTabBar
         locationLabel.font = fontBoldStandart24
-        locationLabel.textColor = colorWhite
+        locationLabel.textColor = .colorWhite
         locationLabel.textAlignment = textAligmentCenter
         locationLabel.layer.masksToBounds = true
         locationLabel.layer.cornerRadius = 10
@@ -241,16 +241,16 @@ class JumpCell: UITableViewCell {
 
         // MARK: AIRCRAFT:
         
-        aircraftButton.backgroundColor = colorCell
+        aircraftButton.backgroundColor = .colorCell
         aircraftButton.layer.cornerRadius = 10
         aircraftButton.setTitle(NSLocalizedString("Aircraft", comment: "") + ":", for: .normal)
         aircraftButton.titleLabel?.font = fontBoldStandart14
-        aircraftButton.setTitleColor(colorLightGray, for: .normal)
+        aircraftButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftButton.contentVerticalAlignment = textAligmentTop
 
-        aircraftLabel.backgroundColor = colorTabBar
+        aircraftLabel.backgroundColor = .colorTabBar
         aircraftLabel.font = fontBoldStandart24
-        aircraftLabel.textColor = colorWhite
+        aircraftLabel.textColor = .colorWhite
         aircraftLabel.textAlignment = textAligmentCenter
         aircraftLabel.layer.masksToBounds = true
         aircraftLabel.layer.cornerRadius = 10
@@ -259,16 +259,16 @@ class JumpCell: UITableViewCell {
         
         // MARK: CANOPY:
 
-        canopyButton.backgroundColor = colorCell
+        canopyButton.backgroundColor = .colorCell
         canopyButton.layer.cornerRadius = 10
         canopyButton.setTitle(NSLocalizedString("Canopy", comment: "") + ":", for: .normal)
         canopyButton.titleLabel?.font = fontBoldStandart14
-        canopyButton.setTitleColor(colorLightGray, for: .normal)
+        canopyButton.setTitleColor(.colorLightGray, for: .normal)
         canopyButton.contentVerticalAlignment = textAligmentTop
 
-        canopyLabel.backgroundColor = colorTabBar
+        canopyLabel.backgroundColor = .colorTabBar
         canopyLabel.font = fontBoldStandart24
-        canopyLabel.textColor = colorWhite
+        canopyLabel.textColor = .colorWhite
         canopyLabel.textAlignment = textAligmentCenter
         canopyLabel.layer.masksToBounds = true
         canopyLabel.layer.cornerRadius = 10
@@ -277,16 +277,16 @@ class JumpCell: UITableViewCell {
         
         // MARK: MISSION:
 
-        missionButton.backgroundColor = colorCell
+        missionButton.backgroundColor = .colorCell
         missionButton.layer.cornerRadius = 10
         missionButton.setTitle(NSLocalizedString("Mission", comment: "") + ":", for: .normal)
         missionButton.titleLabel?.font = fontBoldStandart14
-        missionButton.setTitleColor(colorLightGray, for: .normal)
+        missionButton.setTitleColor(.colorLightGray, for: .normal)
         missionButton.contentVerticalAlignment = textAligmentTop
 
-        missionLabel.backgroundColor = colorTabBar
+        missionLabel.backgroundColor = .colorTabBar
         missionLabel.font = fontBoldStandart24
-        missionLabel.textColor = colorWhite
+        missionLabel.textColor = .colorWhite
         missionLabel.textAlignment = textAligmentCenter
         missionLabel.layer.masksToBounds = true
         missionLabel.layer.cornerRadius = 10
@@ -295,16 +295,16 @@ class JumpCell: UITableViewCell {
         
         // MARK: HEIGHT:
         
-        heightButton.backgroundColor = colorCell
+        heightButton.backgroundColor = .colorCell
         heightButton.layer.cornerRadius = 10
         heightButton.setTitle(NSLocalizedString("Height", comment: "") + ":", for: .normal)
         heightButton.titleLabel?.font = fontBoldStandart14
-        heightButton.setTitleColor(colorLightGray, for: .normal)
+        heightButton.setTitleColor(.colorLightGray, for: .normal)
         heightButton.contentVerticalAlignment = textAligmentTop
 
-        heightLabel.backgroundColor = colorTabBar
+        heightLabel.backgroundColor = .colorTabBar
         heightLabel.font = fontBoldStandart24
-        heightLabel.textColor = colorWhite
+        heightLabel.textColor = .colorWhite
         heightLabel.textAlignment = textAligmentCenter
         heightLabel.layer.masksToBounds = true
         heightLabel.layer.cornerRadius = 10
@@ -313,16 +313,16 @@ class JumpCell: UITableViewCell {
         
         // MARK: TIME:
         
-        timeButton.backgroundColor = colorCell
+        timeButton.backgroundColor = .colorCell
         timeButton.layer.cornerRadius = 10
         timeButton.setTitle(NSLocalizedString("Time", comment: "") + ":", for: .normal)
         timeButton.titleLabel?.font = fontBoldStandart14
-        timeButton.setTitleColor(colorLightGray, for: .normal)
+        timeButton.setTitleColor(.colorLightGray, for: .normal)
         timeButton.contentVerticalAlignment = textAligmentTop
 
-        timeLabel.backgroundColor = colorTabBar
+        timeLabel.backgroundColor = .colorTabBar
         timeLabel.font = fontBoldStandart24
-        timeLabel.textColor = colorWhite
+        timeLabel.textColor = .colorWhite
         timeLabel.textAlignment = textAligmentCenter
         timeLabel.layer.masksToBounds = true
         timeLabel.layer.cornerRadius = 10
@@ -331,16 +331,16 @@ class JumpCell: UITableViewCell {
         
         // MARK: COMMENT:
 
-        commentButton.backgroundColor = colorCell
+        commentButton.backgroundColor = .colorCell
         commentButton.layer.cornerRadius = 10
         commentButton.setTitle(NSLocalizedString("Comment", comment: "") + ":", for: .normal)
         commentButton.titleLabel?.font = fontBoldStandart14
-        commentButton.setTitleColor(colorLightGray, for: .normal)
+        commentButton.setTitleColor(.colorLightGray, for: .normal)
         commentButton.contentVerticalAlignment = textAligmentTop
 
-        commentLabel.backgroundColor = colorTabBar
+        commentLabel.backgroundColor = .colorTabBar
         commentLabel.font = fontBoldStandart20
-        commentLabel.textColor = colorWhite
+        commentLabel.textColor = .colorWhite
         commentLabel.textAlignment = textAligmentCenter
         commentLabel.layer.masksToBounds = true
         commentLabel.layer.cornerRadius = 10
@@ -371,11 +371,11 @@ class JumpCell: UITableViewCell {
         // MARK: COLOR FOR CIRCLE (GREEN / RED):
         if cutaway == NSLocalizedString("Yes", comment: "") {
             circleButton.layer.shadowRadius = 25
-            circleButton.layer.shadowColor = colorRedCG
+            circleButton.layer.shadowColor = UIColor.colorDarkRed.cgColor
             circleButton.layer.shadowOpacity = 0.5
         } else {
             circleButton.layer.shadowRadius = 25
-            circleButton.layer.shadowColor = colorSystemGreenCG
+            circleButton.layer.shadowColor = UIColor.colorGreen.cgColor
             circleButton.layer.shadowOpacity = 0.5
         }
     }
@@ -398,7 +398,7 @@ class JumpCell: UITableViewCell {
     private func playCircleAnimation() {
         confettiLottie.play()
         confettiLottie.layer.shadowRadius = 10
-        confettiLottie.layer.shadowColor = colorBlueCG
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
         circleAirplaneLottie.isHidden = false
         circleAirplaneLottie.play()
