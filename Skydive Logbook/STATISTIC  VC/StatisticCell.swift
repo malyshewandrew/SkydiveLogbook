@@ -931,7 +931,7 @@ final class StatisticCell: UITableViewCell {
     private func setCountCutaway() {
         var countCutaway = 0
         for jump in arrayJumpsRealm {
-            if jump.cutaway == NSLocalizedString("Yes", comment: "") {
+            if jump.cutaway?.localizedValue == NSLocalizedString("Yes", comment: "") {
                 countCutaway += 1
             }
         }
@@ -977,77 +977,77 @@ final class StatisticCell: UITableViewCell {
     private func setMissionsOne() {
         var arrayJumpsAccuracy: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Accuracy", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Accuracy", comment: "") {
                 arrayJumpsAccuracy.append(jump)
             }
         }
         
         var arrayJumpsAcrobatic: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Acrobatics", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Acrobatics", comment: "") {
                 arrayJumpsAcrobatic.append(jump)
             }
         }
         
         var arrayJumpsAff: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("AFF", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("AFF", comment: "") {
                 arrayJumpsAff.append(jump)
             }
         }
       
         var arrayJumpsBase: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Base", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Base", comment: "") {
                 arrayJumpsBase.append(jump)
             }
         }
         
         var arrayJumpsBaseWingsuit: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Base/Wingsuit", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Base/Wingsuit", comment: "") {
                 arrayJumpsBaseWingsuit.append(jump)
             }
         }
         
         var arrayJumpsCanopyFormation: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Canopy formation", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Canopy formation", comment: "") {
                 arrayJumpsCanopyFormation.append(jump)
             }
         }
 
         var arrayJumpsFreeFly: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Freefly", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Freefly", comment: "") {
                 arrayJumpsFreeFly.append(jump)
             }
         }
         
         var arrayJumpsFreeStyle: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Freestyle", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Freestyle", comment: "") {
                 arrayJumpsFreeStyle.append(jump)
             }
         }
         
         var arrayJumpsFun: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Fun", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Fun", comment: "") {
                 arrayJumpsFun.append(jump)
             }
         }
 
         var arrayJumpsGroup: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Group", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Group", comment: "") {
                 arrayJumpsGroup.append(jump)
             }
         }
         
         var arrayJumpsInstructor: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Instructor", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Instructor", comment: "") {
                 arrayJumpsInstructor.append(jump)
             }
         }
@@ -1069,14 +1069,14 @@ final class StatisticCell: UITableViewCell {
     
     // MARK: TOP MISSIONS:
     
-    private func setTopMisson() {
+    private func setTopMission() {
         var missionCounts: [String: Int] = [:]
 
         for jump in arrayJumpsRealm {
-            if let count = missionCounts[jump.mission] {
-                missionCounts[jump.mission] = count + 1
+            if let count = missionCounts[jump.mission?.localizedValue ?? ""] {
+                missionCounts[jump.mission?.localizedValue ?? ""] = count + 1
             } else {
-                missionCounts[jump.mission] = 1
+                missionCounts[jump.mission?.localizedValue ?? ""] = 1
             }
         }
 
@@ -1093,83 +1093,84 @@ final class StatisticCell: UITableViewCell {
             topMissionLabel.text = maxMissionsText
         }
     }
+
     
     // MARK: MISSIONS TWO:
     
     private func setMissionsTwo() {
         var arrayJumpsParachuting: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Military", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Military", comment: "") {
                 arrayJumpsParachuting.append(jump)
             }
         }
         
         var arrayJumpsParaSki: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Para-ski", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Para-ski", comment: "") {
                 arrayJumpsParaSki.append(jump)
             }
         }
         
         var arrayJumpsProximity: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Proximity", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Proximity", comment: "") {
                 arrayJumpsProximity.append(jump)
             }
         }
 
         var arrayJumpsSkySurfing: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Skysurfing", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Skysurfing", comment: "") {
                 arrayJumpsSkySurfing.append(jump)
             }
         }
         
         var arrayJumpsStaticLine: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Static-line", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Static-line", comment: "") {
                 arrayJumpsStaticLine.append(jump)
             }
         }
         
         var arrayJumpsSwoop: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Piloting", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Piloting", comment: "") {
                 arrayJumpsSwoop.append(jump)
             }
         }
         
         var arrayJumpsTandem: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Tandem", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Tandem", comment: "") {
                 arrayJumpsTandem.append(jump)
             }
         }
         
         var arrayJumpsVerticalAcro: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Vertical", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Vertical", comment: "") {
                 arrayJumpsVerticalAcro.append(jump)
             }
         }
         
         var arrayJumpsVideo: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Video", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Video", comment: "") {
                 arrayJumpsVideo.append(jump)
             }
         }
         
         var arrayJumpsWingsuit: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Wingsuit", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Wingsuit", comment: "") {
                 arrayJumpsWingsuit.append(jump)
             }
         }
         
         var arrayJumpsFormation: [JumpClassRealm] = []
         for jump in arrayJumpsRealm {
-            if jump.mission == NSLocalizedString("Formation", comment: "") {
+            if jump.mission?.localizedValue == NSLocalizedString("Formation", comment: "") {
                 arrayJumpsFormation.append(jump)
             }
         }
@@ -1210,7 +1211,7 @@ final class StatisticCell: UITableViewCell {
         setLocations()
         setMissionsOne()
         setMissionsTwo()
-        setTopMisson()
+        setTopMission()
     }
     
     // MARK: - FUNCTIONS DELEGATES:

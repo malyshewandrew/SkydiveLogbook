@@ -632,7 +632,7 @@ extension StatisticVC: StatisticCellDelegate {
         var dataWithCutawayYes: [(date: String, comment: String)] = []
 
         for jump in arrayJumpsRealm {
-            if jump.cutaway == NSLocalizedString("Yes", comment: "") {
+            if jump.cutaway?.localizedValue == NSLocalizedString("Yes", comment: "") {
                 countCutaway += 1
                 let jumpData = (date: jump.date, comment: jump.comment)
                 dataWithCutawayYes.append(jumpData)

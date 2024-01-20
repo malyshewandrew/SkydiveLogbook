@@ -32,28 +32,8 @@ class EditJumpCell: UITableViewCell {
     private let missionButton = UIButton()
     private let missionTextField = UITextField()
     private let missionPickerView = UIPickerView()
-    private let missionPickerViewValues = [NSLocalizedString("Accuracy", comment: ""),
-                                           NSLocalizedString("Acrobatics", comment: ""),
-                                           NSLocalizedString("AFF", comment: ""),
-                                           NSLocalizedString("Base", comment: ""),
-                                           NSLocalizedString("Base/Wingsuit", comment: ""),
-                                           NSLocalizedString("Canopy formation", comment: ""),
-                                           NSLocalizedString("Freefly", comment: ""),
-                                           NSLocalizedString("Freestyle", comment: ""),
-                                           NSLocalizedString("Fun", comment: ""),
-                                           NSLocalizedString("Group", comment: ""),
-                                           NSLocalizedString("Instructor", comment: ""),
-                                           NSLocalizedString("Military", comment: ""),
-                                           NSLocalizedString("Para-ski", comment: ""),
-                                           NSLocalizedString("Proximity", comment: ""),
-                                           NSLocalizedString("Skysurfing", comment: ""),
-                                           NSLocalizedString("Static-line", comment: ""),
-                                           NSLocalizedString("Piloting", comment: ""),
-                                           NSLocalizedString("Tandem", comment: ""),
-                                           NSLocalizedString("Vertical", comment: ""),
-                                           NSLocalizedString("Video", comment: ""),
-                                           NSLocalizedString("Wingsuit", comment: ""),
-                                           NSLocalizedString("Formation", comment: "")]
+    private var missionPickerViewValues: [Mission] = []
+    private var missionStrings: [String] = []
     
     private let heightButton = UIButton()
     private let heightTextField = UITextField()
@@ -64,7 +44,8 @@ class EditJumpCell: UITableViewCell {
     private let cutawayButton = UIButton()
     private let cutawayTextField = UITextField()
     private let cutawayPickerView = UIPickerView()
-    private let cutawayPickerViewValues = [NSLocalizedString("Yes", comment: ""), NSLocalizedString("No", comment: "")]
+    private var cutawayPickerViewValues: [Cutaway] = []
+    private var cutawayStrings: [String] = []
     
     private let commentButton = UIButton()
     private let commentTextField = UITextField()
@@ -80,6 +61,12 @@ class EditJumpCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        missionPickerViewValues = [.Accuracy, .Acrobatics, .AFF, .Base, .BaseWingsuit, .CanopyFormation, .Freefly, .Freestyle, .Fun, .Group, .Instructor, .Military, .ParaSki, .Proximity, .Skysurfing, .StaticLine, .Piloting, .Tandem, .Vertical, .Video, .Wingsuit, .Formation]
+        missionStrings = missionPickerViewValues.map { $0.localizedValue }
+        
+        cutawayPickerViewValues = [.Yes, .No]
+        cutawayStrings = cutawayPickerViewValues.map { $0.localizedValue }
         
         addSubviews()
         configureConstrains()
@@ -423,7 +410,7 @@ class EditJumpCell: UITableViewCell {
         // MARK: CUTAWAY:
 
         cutawayButton.backgroundColor = colorCell
-        cutawayButton.setTitle("\(NSLocalizedString("Cutaway", comment: ""))", for: .normal)
+        cutawayButton.setTitle("\(NSLocalizedString("Cutaway", comment: ""))*", for: .normal)
         cutawayButton.setTitleColor(colorLightGray, for: .normal)
         cutawayButton.contentVerticalAlignment = textAligmentTop
         cutawayButton.titleLabel?.font = fontMediumStandart12
@@ -487,12 +474,13 @@ class EditJumpCell: UITableViewCell {
         locationTextField.text = jump.location
         aircraftTextField.text = jump.aircraft
         canopyTextField.text = jump.canopy
-        missionTextField.text = jump.mission
+        missionTextField.text = jump.mission?.localizedValue ?? ""
         heightTextField.text = jump.height
         timeTextField.text = jump.time
-        cutawayTextField.text = jump.cutaway
+        cutawayTextField.text = jump.cutaway?.localizedValue ?? ""
         commentTextField.text = jump.comment
     }
+
     
     // MARK: ACTION BUTTON SAVE:
 
@@ -503,7 +491,8 @@ class EditJumpCell: UITableViewCell {
               canopyTextField.text != "",
               missionTextField.text != "",
               heightTextField.text != "",
-              timeTextField.text != ""
+              timeTextField.text != "",
+              cutawayTextField.text != ""
         else {
             resignFirstResponders()
             actionButtonSaveRedColor()
@@ -526,10 +515,27 @@ class EditJumpCell: UITableViewCell {
         newJump.location = locationTextField.text ?? ""
         newJump.aircraft = aircraftTextField.text ?? ""
         newJump.canopy = canopyTextField.text ?? ""
-        newJump.mission = missionTextField.text ?? ""
+
+        if let missionString = missionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+           let mission = Mission(rawValue: missionString) ?? Mission.allCases.first(where: { $0.localizedValue == missionString }) {
+            newJump.mission = mission
+        } else {
+            print("Failed to convert missionString to Mission: \(missionTextField.text ?? "")")
+            return
+        }
+
         newJump.height = heightTextField.text ?? ""
         newJump.time = timeTextField.text ?? ""
-        newJump.cutaway = cutawayTextField.text ?? ""
+
+        
+        if let cutawayString = cutawayTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+           let cutaway = Cutaway(rawValue: cutawayString) ?? Cutaway.allCases.first(where: { $0.localizedValue == cutawayString }) {
+            newJump.cutaway = cutaway
+        } else {
+            print("Failed to convert missionString to Mission: \(cutawayTextField.text ?? "")")
+            return
+        }
+        
         newJump.comment = commentTextField.text ?? ""
         delegate?.saveJump(newJump)
         resetSelectPickerView()
@@ -666,13 +672,15 @@ extension EditJumpCell: UIPickerViewDelegate {
         if pickerView == canopyPickerView {
             canopyTextField.text = arrayCanopiesPickerViewValues.sorted()[row]
         } else if pickerView == missionPickerView {
-            missionTextField.text = missionPickerViewValues.sorted()[row]
+            let selectedMission = missionPickerViewValues.sorted()[row]
+            missionTextField.text = selectedMission.localizedValue
         } else if pickerView == locationPickerView {
             locationTextField.text = arrayLocationPickerViewValues.sorted()[row]
         } else if pickerView == aircraftPickerView {
             aircraftTextField.text = arrayAircraftPickerViewValues.sorted()[row]
         } else if pickerView == cutawayPickerView {
-            cutawayTextField.text = cutawayPickerViewValues.sorted()[row]
+            let selectedCutaway = cutawayPickerViewValues.sorted()[row]
+            cutawayTextField.text = selectedCutaway.localizedValue
         }
     }
 }
@@ -709,13 +717,13 @@ extension EditJumpCell: UIPickerViewDataSource {
         if pickerView == canopyPickerView {
             return arrayCanopiesPickerViewValues.sorted()[row]
         } else if pickerView == missionPickerView {
-            return missionPickerViewValues.sorted()[row]
+            return missionPickerViewValues.sorted()[row].localizedValue
         } else if pickerView == locationPickerView {
             return arrayLocationPickerViewValues.sorted()[row]
         } else if pickerView == aircraftPickerView {
             return arrayAircraftPickerViewValues.sorted()[row]
         } else if pickerView == cutawayPickerView {
-            return cutawayPickerViewValues.sorted()[row]
+            return cutawayPickerViewValues.sorted()[row].localizedValue
         }
         return ""
     }

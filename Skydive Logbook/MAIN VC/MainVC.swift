@@ -484,7 +484,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell else { return UITableViewCell() }
 
         let jump = arrayJumpsRealm[indexPath.row]
-        cell.configure(number: String(arrayJumpsRealm.count - indexPath.row), date: jump.date, location: jump.location, aircraft: jump.aircraft, canopy: jump.canopy, mission: jump.mission, height: jump.height, time: jump.time, cutaway: jump.cutaway, comment: jump.comment)
+        cell.configure(number: String(arrayJumpsRealm.count - indexPath.row), date: jump.date, location: jump.location, aircraft: jump.aircraft, canopy: jump.canopy, mission: jump.mission?.localizedValue ?? "", height: jump.height, time: jump.time, cutaway: jump.cutaway?.localizedValue ?? "", comment: jump.comment)
         return cell
     }
 
