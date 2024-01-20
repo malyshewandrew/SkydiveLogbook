@@ -108,7 +108,7 @@ final class PremiumVC: UIViewController {
         
         // MARK: INFO TEXT VIEW:
 
-        infoTextView.backgroundColor = #colorLiteral(red: 0.04016558453, green: 0.1143882051, blue: 0.171395421, alpha: 1)
+        infoTextView.backgroundColor = UIColor.colorCell
         infoTextView.layer.cornerRadius = 10
         infoTextView.layer.shadowRadius = 50
         infoTextView.layer.shadowColor = UIColor.colorLightBlue.cgColor
