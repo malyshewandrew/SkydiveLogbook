@@ -11,6 +11,7 @@ iOS Application for skydivers.
 - Realm
 - Lottie
 - AlertKit
+- SwiftyStoreKit
 
 ## Opportunities
 
@@ -25,6 +26,7 @@ iOS Application for skydivers.
 - Light / Dark theme
 - Bachup / Restore data
 - Localization
+- In-app purchases
 
 
 ## Localization
