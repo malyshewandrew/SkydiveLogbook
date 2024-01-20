@@ -56,3 +56,10 @@ If you have any feedback, please reach out to us at malyshewandrew@protonmail.co
 ![App Screenshot](https://thumb.tildacdn.pub/tild3936-6163-4162-a466-323466656135/-/format/webp/Simulator_Screenshot.png)
 ![App Screenshot](https://thumb.tildacdn.pub/tild3866-6538-4136-b834-353664363438/-/format/webp/Simulator_Screenshot.png)
 ![App Screenshot](https://thumb.tildacdn.pub/tild6562-3031-4437-a464-303237363861/-/format/webp/Simulator_Screenshot.png)
+
+![App Screenshot](https://thumb.tildacdn.pub/tild3666-3238-4465-a237-316130383161/-/format/webp/7.PNG)
+![App Screenshot](https://thumb.tildacdn.pub/tild3637-6566-4263-a330-376166336535/-/format/webp/8.PNG)
+![App Screenshot](https://thumb.tildacdn.pub/tild3536-3838-4532-b536-313162663465/-/format/webp/9.PNG)
+![App Screenshot](https://thumb.tildacdn.pub/tild3536-3263-4165-a463-353136366335/-/format/webp/10.PNG)
+![App Screenshot](https://thumb.tildacdn.pub/tild3032-3665-4536-b731-643535636661/-/format/webp/11.PNG)
+![App Screenshot](https://thumb.tildacdn.pub/tild3063-6362-4865-b762-626661393365/-/format/webp/12.PNG)
