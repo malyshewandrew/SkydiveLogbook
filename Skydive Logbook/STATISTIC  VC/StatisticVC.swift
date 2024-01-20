@@ -170,55 +170,55 @@ extension StatisticVC: StatisticCellDelegate {
         var timeMessage = ""
         switch sumTime {
         case 0...1:
-            timeMessage = ""
+            timeMessage = NSLocalizedString("Case 0-1", comment: "")
         case 1...150:
-            timeMessage = "Наберись еще опыта (0 - 2,5 минут)"
+            timeMessage = NSLocalizedString("1-150", comment: "")
         case 150...300:
-            timeMessage = "Время одной музыкальной композиции (2,5 - 5 минут)"
+            timeMessage = NSLocalizedString("150-300", comment: "")
         case 300...600:
-            timeMessage = "Время короткометражного фильма (5 - 10 минут)"
+            timeMessage = NSLocalizedString("300-600", comment: "")
         case 600...900:
-            timeMessage = "(10 - 15 минут)"
+            timeMessage = NSLocalizedString("600-900", comment: "")
         case 900...1000:
-            timeMessage = "Время дополнительного футбольного тайма (15 - 16 минут)"
+            timeMessage = NSLocalizedString("900-1000", comment: "")
         case 1000...1200:
-            timeMessage = "(16 - 20 минут)"
+            timeMessage = NSLocalizedString("1000-1200", comment: "")
         case 1200...1500:
-            timeMessage = "(20 - 25 минут)"
+            timeMessage = NSLocalizedString("1200-1500", comment: "")
         case 1500...2500:
-            timeMessage = "(25 - 40 минут)"
+            timeMessage = NSLocalizedString("1500-2500", comment: "")
         case 2500...3000:
-            timeMessage = "Время школьного урока (41 - 50 минут)"
+            timeMessage = NSLocalizedString("2500-3000", comment: "")
         case 3000...3500:
-            timeMessage = "За это время на машине вы бы могли доехать в космос, если бы ваша машина могла ехать вверх (50 - 58 минут)"
+            timeMessage = NSLocalizedString("3000-3500", comment: "")
         case 3500...5000:
-            timeMessage = "Время футбольного матча (58 - 83 минут)."
+            timeMessage = NSLocalizedString("3500-5000", comment: "")
         case 5000...6000:
-            timeMessage = "За это время МКС облетает вокруг Земли (83 - 100 минут)."
+            timeMessage = NSLocalizedString("5000-6000", comment: "")
         case 6000...8000:
-            timeMessage = "Время целого кинофильма (100 - 133 минут)"
+            timeMessage = NSLocalizedString("6000-8000", comment: "")
         case 8000...10000:
-            timeMessage = "Время выступления циркового номера (133 - 166 минут)"
+            timeMessage = NSLocalizedString("8000-10000", comment: "")
         case 10000...13000:
-            timeMessage = "(166 - 216 минут)"
+            timeMessage = NSLocalizedString("10000-13000", comment: "")
         case 13000...17000:
-            timeMessage = "(216 - 283 минут)"
+            timeMessage = NSLocalizedString("13000-17000", comment: "")
         case 17000...20000:
-            timeMessage = "(283 - 333 минут)"
+            timeMessage = NSLocalizedString("17000-20000", comment: "")
         case 20000...25000:
-            timeMessage = "(333 - 416 минут)"
+            timeMessage = NSLocalizedString("20000-25000", comment: "")
         case 25000...30000:
-            timeMessage = "(416 - 500 минут)"
+            timeMessage = NSLocalizedString("25000-30000", comment: "")
         case 35000...40000:
-            timeMessage = "(500 - 666 минут)"
+            timeMessage = NSLocalizedString("35000-40000", comment: "")
         case 40000...50000:
-            timeMessage = "(666 - 833 минут)"
+            timeMessage = NSLocalizedString("40000-50000", comment: "")
         case 50000...100000:
-            timeMessage = "(833 - 1666 минут)"
+            timeMessage = NSLocalizedString("50000-100000", comment: "")
         case 100000...:
-            timeMessage = "(1666 - ... минут)"
+            timeMessage = NSLocalizedString("100000-...", comment: "")
         default:
-            timeMessage = "(133 - 166 минут)"
+            timeMessage = NSLocalizedString("Default-Default", comment: "")
         }
 
         var sumHeight = 0
