@@ -24,7 +24,7 @@ iOS Application for skydivers.
 - ## Features
 
 - Light / Dark theme
-- Bachup / Restore data
+- Backup / Restore data
 - Localization
 - In-app purchases
 
