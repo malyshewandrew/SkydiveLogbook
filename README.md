@@ -3,18 +3,6 @@
 
 iOS Application for skydivers. 
 
-
-
-## Features
-
-- Create account
-- Add / delete/ edit jumps
-- Full statistic about all jumps (more 20)
-- Add / delete / edit parachute systems
-- Calculator loading for canopies
-- Create notes
-- Backup / restore data
-
 ## Frameworks
 
 - UIKit
@@ -24,6 +12,19 @@ iOS Application for skydivers.
 - Lottie
 - AlertKit
 
+## Opportunities
+
+- Account
+- Statistic (more 20)
+- Parachute system
+- Calculator loading
+- Notes
+
+- ## Features
+
+- Light / Dark theme
+- Bachup / Restore data
+- Localization
 
 
 ## Localization
