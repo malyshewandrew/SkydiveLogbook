@@ -696,26 +696,9 @@ extension NewJumpCell: UIPickerViewDelegate {
     // MARK: ФУНКЦИЯ КОТОРАЯ ПРИСВАИВАЕТ ЗНАЧЕНИЕ ИЗ ПИКЕР ВЬЮ В ТЕКСТ ФИЛД:
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if arrayCanopiesPickerViewValues.count == 0 {
-            return
-        }
-
-        if missionPickerViewValues.count == 0 {
-            return
-        }
-
-        if arrayLocationPickerViewValues.count == 0 {
-            return
-        }
-
-        if arrayAircraftPickerViewValues.count == 0 {
-            return
-        }
-
-        if cutawayPickerViewValues.count == 0 {
-            return
-        }
-
+        if arrayCanopiesPickerViewValues.isEmpty || missionPickerViewValues.isEmpty || arrayLocationPickerViewValues.isEmpty || arrayAircraftPickerViewValues.isEmpty || cutawayPickerViewValues.isEmpty {
+                return
+            }
         if pickerView == canopyPickerView {
             canopyTextField.text = arrayCanopiesPickerViewValues.sorted()[row]
         } else if pickerView == missionPickerView {
@@ -760,19 +743,21 @@ extension NewJumpCell: UIPickerViewDataSource {
     
     // MARK: - ВАРИАНТЫ ДЛЯ ЗАПОЛНЕНИЯ ПИКЕРА ТЕКСТОМ ИЗ ЗНАЧЕНИЙ В МАССИВЕ:
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var title = ""
         if pickerView == canopyPickerView {
-            return arrayCanopiesPickerViewValues.sorted()[row]
+            title = arrayCanopiesPickerViewValues.sorted()[row]
         } else if pickerView == missionPickerView {
-            return missionPickerViewValues.sorted()[row].localizedValue
+            title = missionPickerViewValues.sorted()[row].localizedValue
         } else if pickerView == locationPickerView {
-            return arrayLocationPickerViewValues.sorted()[row]
+            title = arrayLocationPickerViewValues.sorted()[row]
         } else if pickerView == aircraftPickerView {
-            return arrayAircraftPickerViewValues.sorted()[row]
+            title = arrayAircraftPickerViewValues.sorted()[row]
         } else if pickerView == cutawayPickerView {
-            return cutawayPickerViewValues.sorted()[row].localizedValue
+            title = cutawayPickerViewValues.sorted()[row].localizedValue
         }
-        return ""
+        let attributedString = NSAttributedString(string: title, attributes: [.foregroundColor: UIColor.white])
+        return attributedString
     }
 }
 
