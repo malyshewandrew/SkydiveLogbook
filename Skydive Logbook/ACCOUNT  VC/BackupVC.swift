@@ -174,7 +174,6 @@ extension BackupVC: UIDocumentPickerDelegate {
             return
         }
 
-        // Проверяем существование файла
         guard FileManager.default.fileExists(atPath: sourceURL.path) else {
             print("Ошибка: Файл по выбранному URL не существует.")
             return
@@ -189,10 +188,8 @@ extension BackupVC: UIDocumentPickerDelegate {
                 return
             }
 
-            // Восстанавливаем данные из JSON
             let decodedData = unwrappedJsonArray.compactMap { JumpClassRealm(value: $0) }
 
-            // Очищаем текущий массив и добавляем в него восстановленные данные
             arrayJumpsRealm.removeAll()
             arrayJumpsRealm.append(contentsOf: decodedData)
 
@@ -204,11 +201,9 @@ extension BackupVC: UIDocumentPickerDelegate {
                 style: .iOS17AppleMusic,
                 haptic: .success
             )
-
-            // Сохраняем восстановленные данные обратно в Realm
             try realmManager.localRealm.write {
-                realmManager.localRealm.deleteAll() // Очищаем все существующие данные в Realm
-                realmManager.localRealm.add(arrayJumpsRealm) // Добавляем восстановленные данные в Realm
+                realmManager.localRealm.deleteAll()
+                realmManager.localRealm.add(arrayJumpsRealm)
             }
         } catch {
             print("Ошибка при операции с копией данных: \(error)")
@@ -216,16 +211,11 @@ extension BackupVC: UIDocumentPickerDelegate {
     }
 
     private func createBackupCopy(from sourceURL: URL) throws {
-        // Получаем директорию для сохранения файла
         let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            
-        // Создаем уникальное имя файла на основе времени
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         let currentDateTime = dateFormatter.string(from: Date())
         let fileName = "backup_\(currentDateTime).realm"
-            
-        // Создаем копию данных и сохраняем в Realm
         let backupPath = documentsDirectory.appendingPathComponent(fileName)
             
         try FileManager.default.copyItem(at: sourceURL, to: backupPath)
@@ -233,26 +223,17 @@ extension BackupVC: UIDocumentPickerDelegate {
     }
         
     private func restoreBackupCopy(from sourceURL: URL) throws {
-        // Получаем директорию для временного файла
         let tempDirectory = try FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            
-        // Создаем копию данных в директории приложения
         let destinationURL = tempDirectory.appendingPathComponent(sourceURL.lastPathComponent)
-        
-        // Проверяем существование файла
         guard FileManager.default.fileExists(atPath: sourceURL.path) else {
             throw NSError(domain: "FileNotFoundError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Файл не найден"])
         }
-        
-        // Пытаемся скопировать файл
         do {
             try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
         } catch let copyError {
             print("Ошибка при копировании файла: \(copyError)")
             throw copyError
         }
-
-        // Обновляем Realm с использованием скопированных данных
         do {
             var newConfiguration = realmManager.localRealm.configuration
             newConfiguration.fileURL = destinationURL
@@ -260,7 +241,7 @@ extension BackupVC: UIDocumentPickerDelegate {
             let newRealm = try Realm(configuration: newConfiguration)
             
             try realmManager.localRealm.write {
-                realmManager.localRealm.deleteAll() // Очищаем все существующие данные в Realm
+                realmManager.localRealm.deleteAll()
                 realmManager.localRealm.add(newRealm.objects(JumpClassRealm.self))
             }
             print("Копия данных успешно восстановлена в Realm.")
