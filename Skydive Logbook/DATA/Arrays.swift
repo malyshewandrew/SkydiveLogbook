@@ -1,9 +1,10 @@
 import Foundation
 
-var arrayAccount: [AccountStructure] = []
 var arrayJumpsRealm: [JumpClassRealm] = []
+var arrayNotesRealm: [NoteClassRealm] = []
+var arrayAccountRealm: [AccountClassRealm] = []
+var arrayLocationsRealm: [LocationClassRealm] = []
+var arrayAircraftsRealm: [AircraftClassRealm] = []
+var arrayCanopiesRealm: [CanopyClassRealm] = []
+
 var arraySystemsRealm: [SystemClassRealm] = []
-var arrayLocationPickerViewValues: [String] = []
-var arrayAircraftPickerViewValues: [String] = []
-var arrayCanopiesPickerViewValues: [String] = []
-var arrayNotes: [String] = []

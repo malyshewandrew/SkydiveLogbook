@@ -34,12 +34,9 @@ final class MainVC: UIViewController {
         configureUI()
         configureTableView()
         loadJumps()
-        loadArrayAccount()
-        loadLocationsUserDefaults()
-        loadAircraftsUserDefaults()
-        loadCanopiesUserDefaults()
         configureGestures()
         firstMessage()
+        loadAccount()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,11 +46,8 @@ final class MainVC: UIViewController {
         firstMessage()
         tableView.reloadData()
         sortArray()
-        loadArrayAccount()
-        loadLocationsUserDefaults()
-        loadAircraftsUserDefaults()
-        loadCanopiesUserDefaults()
         arrayJumpsRealm.reverse()
+        loadAccount()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -223,6 +217,13 @@ final class MainVC: UIViewController {
             $0
         }
     }
+    
+    // MARK: - LOAD ACCOUNT FROM REALM:
+    private func loadAccount() {
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
+            $0
+        }
+    }
 
     // MARK: - ACCOUNT ALERT:
 
@@ -230,72 +231,72 @@ final class MainVC: UIViewController {
         // MARK: NICKNAME:
 
         var nickname = ""
-        if arrayAccount.count == 0 {
+        if arrayAccountRealm.count == 0 {
             nickname = ""
         } else {
-            if arrayAccount[0].nickname.isEmpty {
+            if arrayAccountRealm[0].nickname.isEmpty {
             } else {
-                nickname = arrayAccount[0].nickname
+                nickname = arrayAccountRealm[0].nickname
             }
         }
 
         // MARK: LICENSE TYPE:
 
         var licenseType = ""
-        if arrayAccount.count == 0 {
+        if arrayAccountRealm.count == 0 {
             licenseType = ""
         } else {
-            if arrayAccount[0].licenseType.isEmpty {
+            if arrayAccountRealm[0].licenseType.isEmpty {
             } else {
-                licenseType = "\(NSLocalizedString("License", comment: "")) " + "\"" + arrayAccount[0].licenseType + "\""
+                licenseType = "\(NSLocalizedString("License", comment: "")) " + "\"" + arrayAccountRealm[0].licenseType + "\""
             }
         }
 
         // MARK: LICENSE DATE:
 
         var licenseDate = ""
-        if arrayAccount.count == 0 {
+        if arrayAccountRealm.count == 0 {
             licenseDate = ""
         } else {
-            if arrayAccount[0].licenseDate.isEmpty {
+            if arrayAccountRealm[0].licenseDate.isEmpty {
             } else {
-                licenseDate = " \(NSLocalizedString("until", comment: "")): " + arrayAccount[0].licenseDate + "\n"
+                licenseDate = " \(NSLocalizedString("until", comment: "")): " + arrayAccountRealm[0].licenseDate + "\n"
             }
         }
 
         // MARK: MEDICINE:
 
         var medicine = ""
-        if arrayAccount.count == 0 {
+        if arrayAccountRealm.count == 0 {
             medicine = ""
         } else {
-            if arrayAccount[0].medicine == "" {
+            if arrayAccountRealm[0].medicine == "" {
             } else {
-                medicine = NSLocalizedString("Medicine until", comment: "") + ": " + arrayAccount[0].medicine + "\n"
+                medicine = NSLocalizedString("Medicine until", comment: "") + ": " + arrayAccountRealm[0].medicine + "\n"
             }
         }
 
         // MARK: INSURANCE LABEL:
 
         var insurance = ""
-        if arrayAccount.count == 0 {
+        if arrayAccountRealm.count == 0 {
             insurance = ""
         } else {
-            if arrayAccount[0].insurance == "" {
+            if arrayAccountRealm[0].insurance == "" {
             } else {
-                insurance = NSLocalizedString("Insurance until", comment: "") + ": " + arrayAccount[0].insurance + "\n"
+                insurance = NSLocalizedString("Insurance until", comment: "") + ": " + arrayAccountRealm[0].insurance + "\n"
             }
         }
 
         // MARK: RESERVE CANOPY LABEL:
 
         var reserveCanopy = ""
-        if arrayAccount.count == 0 {
+        if arrayAccountRealm.count == 0 {
             reserveCanopy = ""
         } else {
-            if arrayAccount[0].reserveCanopy == "" {
+            if arrayAccountRealm[0].reserveCanopy == "" {
             } else {
-                reserveCanopy = NSLocalizedString("Reserve canopy until", comment: "") + ": " + arrayAccount[0].reserveCanopy
+                reserveCanopy = NSLocalizedString("Reserve canopy until", comment: "") + ": " + arrayAccountRealm[0].reserveCanopy
             }
         }
 
@@ -411,34 +412,6 @@ final class MainVC: UIViewController {
     }
 
     // MARK: - HELPERS:
-
-    // MARK: LOAD ACCOUNT FROM USER DEFAULTS:
-
-    private func loadArrayAccount() {
-        if let savedData = UserDefaults.standard.data(forKey: "arrayAccount"),
-           let loadedArray = try? JSONDecoder().decode([AccountStructure].self, from: savedData)
-        {
-            arrayAccount = loadedArray
-        }
-    }
-
-    // MARK: LOAD LOCATIONS USER DEFAULTS:
-
-    private func loadLocationsUserDefaults() {
-        arrayLocationPickerViewValues = UserDefaults.standard.array(forKey: "arrayLocationPickerViewValues") as? [String] ?? []
-    }
-
-    // MARK: LOAD AIRCRAFTS USER DEFAULTS:
-
-    private func loadAircraftsUserDefaults() {
-        arrayAircraftPickerViewValues = UserDefaults.standard.array(forKey: "arrayAircraftPickerViewValues") as? [String] ?? []
-    }
-
-    // MARK: LOAD CANOPIES USER DEFAULTS:
-
-    private func loadCanopiesUserDefaults() {
-        arrayCanopiesPickerViewValues = UserDefaults.standard.array(forKey: "arrayCanopiesPickerViewValues") as? [String] ?? []
-    }
 
     // MARK: SORT ARRAY:
 

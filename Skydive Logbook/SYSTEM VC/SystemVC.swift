@@ -25,12 +25,14 @@ final class SystemVC: UIViewController {
         configureTableView()
         loadSystem()
         configureGestures()
+        loadCanopies()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         loadSystem()
+        loadCanopies()
         tableView.reloadData()
     }
 
@@ -132,6 +134,14 @@ final class SystemVC: UIViewController {
 
     private func loadSystem() {
         arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map {
+            $0
+        }
+    }
+    
+    // MARK: - LOAD CANOPIES FROM REALM:
+    
+    private func loadCanopies() {
+        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map {
             $0
         }
     }

@@ -14,6 +14,7 @@ final class EditLocationsVC: UIViewController {
     private let cleanButton = UIButton()
     private let tableView = UITableView()
     private var player = AVAudioPlayer()
+    private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -24,13 +25,13 @@ final class EditLocationsVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
-        loadLocationsUserDefaults()
         enterTextTextField.delegate = self
+        loadLocations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadLocationsUserDefaults()
+        loadLocations()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -146,12 +147,6 @@ final class EditLocationsVC: UIViewController {
     }
 
     // MARK: - HELPERS:
-    
-    // MARK: LOAD LOCATIONS USER DEFAULTS:
-    
-    private func loadLocationsUserDefaults() {
-        arrayLocationPickerViewValues = UserDefaults.standard.array(forKey: "arrayLocationPickerViewValues") as? [String] ?? []
-    }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
@@ -161,20 +156,27 @@ final class EditLocationsVC: UIViewController {
             alertKitError()
             return
         }
-        arrayLocationPickerViewValues.append(enterTextTextField.text ?? "")
-        actionButtonSaveGreenColor()
-        playSoundSucces()
-        enterTextTextField.text = ""
-        enterTextTextField.resignFirstResponder()
-        tableView.reloadData()
-        saveLocationsUserDefaults()
-        alertKitSuccess()
+        saveNewLocation()
     }
     
-    // MARK: SAVE LOCATION IN USER DEFAULTS:
-    
-    private func saveLocationsUserDefaults() {
-        UserDefaults.standard.set(arrayLocationPickerViewValues, forKey: "arrayLocationPickerViewValues")
+    // MARK: SAVE AND ADD NEW LOCATION IN ARRAY LOCATIONS:
+
+    private func saveNewLocation() {
+        let newLocation = LocationClassRealm()
+        newLocation.location = enterTextTextField.text ?? ""
+        actionButtonSaveGreenColor()
+        enterTextTextField.resignFirstResponder()
+        enterTextTextField.text = ""
+        tableView.reloadData()
+        playSoundSucces()
+        alertKitSuccess()
+        
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newLocation, update: .all)
+        }
+        
+        loadLocations()
+        tableView.reloadData()
     }
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
@@ -184,6 +186,14 @@ final class EditLocationsVC: UIViewController {
         actionButtonCleanChangeColor()
         tableView.reloadData()
         alertKitSuccess()
+    }
+    
+    // MARK: - LOAD LOCATIONS FROM REALM:
+    
+    private func loadLocations() {
+        arrayLocationsRealm = realmManager.localRealm.objects(LocationClassRealm.self).map {
+            $0
+        }
     }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
@@ -253,7 +263,7 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COUNTS OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayLocationPickerViewValues.count
+        arrayLocationsRealm.count
     }
 
     // MARK: COSTUM CELL:
@@ -261,8 +271,8 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditLocationsCell", for: indexPath) as? EditLocationsCell else { return UITableViewCell() }
 
-        let locationString = arrayLocationPickerViewValues[indexPath.row]
-        cell.configure(text: locationString)
+        let location = arrayLocationsRealm[indexPath.row]
+        cell.configure(text: location.location)
 
         return cell
     }
@@ -271,14 +281,18 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let deleteLocation = arrayLocationsRealm[indexPath.row]
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete location?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                arrayLocationPickerViewValues.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                try? self.realmManager.localRealm.write {
+                    self.realmManager.localRealm.delete(deleteLocation)
+                }
+                
+                self.loadLocations()
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
-                self.saveLocationsUserDefaults()
             }))
             present(alertDelete, animated: true)
         }

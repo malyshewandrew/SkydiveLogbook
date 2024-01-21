@@ -14,6 +14,7 @@ final class EditAircraftsVC: UIViewController {
     private let cleanButton = UIButton()
     private let tableView = UITableView()
     private var player = AVAudioPlayer()
+    private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -24,13 +25,13 @@ final class EditAircraftsVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
-        loadAircraftsUserDefaults()
         enterTextTextField.delegate = self
+        loadAircrafts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadAircraftsUserDefaults()
+        loadAircrafts()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -146,12 +147,6 @@ final class EditAircraftsVC: UIViewController {
     }
 
     // MARK: - HELPERS:
-    
-    // MARK: LOAD AIRCRAFTS USER DEFAULTS:
-    
-    private func loadAircraftsUserDefaults() {
-        arrayAircraftPickerViewValues = UserDefaults.standard.array(forKey: "arrayAircraftPickerViewValues") as? [String] ?? []
-    }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
@@ -161,20 +156,27 @@ final class EditAircraftsVC: UIViewController {
             alertKitError()
             return
         }
-        arrayAircraftPickerViewValues.append(enterTextTextField.text ?? "")
-        actionButtonSaveGreenColor()
-        playSoundSucces()
-        enterTextTextField.text = ""
-        enterTextTextField.resignFirstResponder()
-        tableView.reloadData()
-        saveAircraftsUserDefaults()
-        alertKitSuccess()
+        saveNewAirfrat()
     }
     
-    // MARK: SAVE AIRCRAFT IN USER DEFAULTS:
-    
-    private func saveAircraftsUserDefaults() {
-        UserDefaults.standard.set(arrayAircraftPickerViewValues, forKey: "arrayAircraftPickerViewValues")
+    // MARK: SAVE AND ADD NEW AIRCRAFT IN ARRAY AIRCRAFTS:
+
+    private func saveNewAirfrat() {
+        let newAircraft = AircraftClassRealm()
+        newAircraft.aircraft = enterTextTextField.text ?? ""
+        actionButtonSaveGreenColor()
+        enterTextTextField.resignFirstResponder()
+        enterTextTextField.text = ""
+        tableView.reloadData()
+        playSoundSucces()
+        alertKitSuccess()
+        
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newAircraft, update: .all)
+        }
+        
+        loadAircrafts()
+        tableView.reloadData()
     }
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
@@ -184,6 +186,14 @@ final class EditAircraftsVC: UIViewController {
         actionButtonCleanChangeColor()
         tableView.reloadData()
         alertKitSuccess()
+    }
+    
+    // MARK: - LOAD AIRCRAFTS FROM REALM:
+    
+    private func loadAircrafts() {
+        arrayAircraftsRealm = realmManager.localRealm.objects(AircraftClassRealm.self).map {
+            $0
+        }
     }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
@@ -253,7 +263,7 @@ extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COUNTS OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayAircraftPickerViewValues.count
+        arrayAircraftsRealm.count
     }
 
     // MARK: COSTUM CELL:
@@ -261,8 +271,8 @@ extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditAircraftsCell", for: indexPath) as? EditAircraftsCell else { return UITableViewCell() }
 
-        let aircraftsString = arrayAircraftPickerViewValues[indexPath.row]
-        cell.configure(text: aircraftsString)
+        let aircraft = arrayAircraftsRealm[indexPath.row]
+        cell.configure(text: aircraft.aircraft)
 
         return cell
     }
@@ -271,14 +281,18 @@ extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let deleteAircraft = arrayAircraftsRealm[indexPath.row]
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete aircraft?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                arrayAircraftPickerViewValues.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                try? self.realmManager.localRealm.write {
+                    self.realmManager.localRealm.delete(deleteAircraft)
+                }
+                
+                self.loadAircrafts()
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
-                self.saveAircraftsUserDefaults()
             }))
             present(alertDelete, animated: true)
         }

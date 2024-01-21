@@ -205,6 +205,7 @@ class JumpCell: UITableViewCell {
         // MARK: NUMBER AND DATE:
 
         circleButton.layer.cornerRadius = 75
+        circleButton.setTitleColor(.colorWhite, for: .normal)
         circleButton.backgroundColor = .colorCell
         circleButton.titleLabel?.font = .systemFont(ofSize: 60, weight: .bold, width: .standard)
         circleButton.titleLabel?.adjustsFontSizeToFitWidth = true

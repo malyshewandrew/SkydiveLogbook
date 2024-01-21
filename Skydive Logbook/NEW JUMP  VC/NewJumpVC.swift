@@ -166,8 +166,10 @@ final class NewJumpVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Ок", style: .default))
         present(alert, animated: true)
     }
+    
+    // MARK: - HELPERS:
 
-    // MARK: - FUNC FOR CONFETTI + VIBRATION:
+    // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func tapOnConfetti() {
         vibrationOn.vibrationSucces()

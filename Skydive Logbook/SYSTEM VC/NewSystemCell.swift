@@ -1262,12 +1262,12 @@ extension NewSystemCell: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if arrayCanopiesPickerViewValues.count == 0 {
+        if arrayCanopiesRealm.count == 0 {
             return
         }
         
         if pickerView == mainCanopyPickerView {
-            mainCanopyNameTextField.text = arrayCanopiesPickerViewValues.sorted()[row]
+            mainCanopyNameTextField.text = arrayCanopiesRealm[row].canopy
         }
     }
 }
@@ -1283,7 +1283,7 @@ extension NewSystemCell: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == mainCanopyPickerView {
-            return arrayCanopiesPickerViewValues.count
+            return arrayCanopiesRealm.count
         }
         return 0
     }
@@ -1292,7 +1292,7 @@ extension NewSystemCell: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == mainCanopyPickerView {
-            return arrayCanopiesPickerViewValues.sorted()[row]
+            return arrayCanopiesRealm[row].canopy
         }
         return ""
     }

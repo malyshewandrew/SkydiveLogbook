@@ -1,38 +1,37 @@
+import AlertKit
+import Lottie
 import RealmSwift
 import UIKit
-import Lottie
 import UniformTypeIdentifiers
-import AlertKit
 
 final class BackupVC: UIViewController {
     // MARK: - PROPERTIES:
-        
+
     private let backupLottie = LottieAnimationView(name: "Backup")
     private let infoView = UIView()
     private let infoLabel = UILabel()
     private let backupButton = UIButton()
     private let restoreButton = UIButton()
     private let realmManager = RealmManager()
-        
+
     // MARK: - LIFECYCLE:
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         configureConstraints()
         configureUI()
     }
-        
+
     // MARK: - ADD SUBVIEWS:
-        
+
     private func addSubviews() {
         view.addSubviews(backupLottie, infoView, infoLabel, backupButton, restoreButton)
     }
-        
+
     // MARK: - CONFIGURE CONSTRAINTS:
-        
+
     private func configureConstraints() {
-        
         // MARK: ANIMATION:
 
         backupLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +39,7 @@ final class BackupVC: UIViewController {
         backupLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
         backupLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
         backupLottie.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        
+
         // MARK: INFO LABEL:
 
         infoView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,24 +57,24 @@ final class BackupVC: UIViewController {
         infoLabel.trailingAnchor.constraint(equalTo: infoView.trailingAnchor, constant: -10).isActive = true
 
         // MARK: BACKUP BUTTON:
-            
+
         backupButton.translatesAutoresizingMaskIntoConstraints = false
         backupButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         backupButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 15).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         backupButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
-            
+
         // MARK: RESTORE BUTTON:
-            
+
         restoreButton.translatesAutoresizingMaskIntoConstraints = false
         restoreButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         restoreButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 15).isActive = true
         restoreButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         restoreButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
     }
-        
+
     // MARK: - CONFIGURE UI:
-        
+
     private func configureUI() {
         // MARK: VIEW:
 
@@ -86,20 +85,20 @@ final class BackupVC: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
-        
+
         // MARK: ANIMATION:
 
         backupLottie.play()
         backupLottie.loopMode = .loop
-        
+
         // MARK: INFO VIEW:
-        
+
         infoView.backgroundColor = .colorCell
         infoView.layer.cornerRadius = 10
         infoView.layer.shadowRadius = 50
         infoView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         infoView.layer.shadowOpacity = 0.3
-            
+
         // MARK: INFO LABEL:
 
         infoLabel.textColor = .colorWhite
@@ -108,9 +107,9 @@ final class BackupVC: UIViewController {
         infoLabel.textAlignment = .center
         infoLabel.adjustsFontSizeToFitWidth = true
         infoLabel.text = NSLocalizedString("Info / backup", comment: "")
-        
+
         // MARK: BACKUP BUTTON:
-        
+
         backupButton.setTitle(NSLocalizedString("Backup / backup", comment: ""), for: .normal)
         backupButton.setTitleColor(.colorWhite, for: .normal)
         backupButton.backgroundColor = .colorBlue
@@ -120,9 +119,9 @@ final class BackupVC: UIViewController {
         backupButton.titleLabel?.textAlignment = .center
         backupButton.titleLabel?.adjustsFontSizeToFitWidth = true
         backupButton.addTarget(self, action: #selector(createBackup), for: .touchUpInside)
-        
+
         // MARK: RESTORE BUTTON:
-            
+
         restoreButton.setTitle(NSLocalizedString("Restore / backup", comment: ""), for: .normal)
         restoreButton.setTitleColor(.colorWhite, for: .normal)
         restoreButton.backgroundColor = .colorTabBar
@@ -133,38 +132,42 @@ final class BackupVC: UIViewController {
         restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restoreButton.addTarget(self, action: #selector(restoreBackup), for: .touchUpInside)
     }
-        
+
     // MARK: - BACKUP AND RESTORE METHODS:
-        
+
     @objc private func createBackup() {
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: arrayJumpsRealm.map { $0.toDictionary() }, options: .prettyPrinted)
+            var combinedData: [String: Any] = [:]
+            combinedData["jumps"] = arrayJumpsRealm.map { $0.toDictionary() }
+            combinedData["notes"] = arrayNotesRealm.map { $0.toDictionary() }
+            combinedData["account"] = arrayAccountRealm.map { $0.toDictionary() }
+            combinedData["locations"] = arrayLocationsRealm.map { $0.toDictionary() }
+            combinedData["aircrafts"] = arrayAircraftsRealm.map { $0.toDictionary() }
+            combinedData["canopies"] = arrayCanopiesRealm.map { $0.toDictionary() }
+            combinedData["systems"] = arraySystemsRealm.map { $0.toDictionary() }
+            let combinedDataJSON = try JSONSerialization.data(withJSONObject: combinedData, options: .prettyPrinted)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy, HH.mm.ss"
             let currentDateTime = dateFormatter.string(from: Date())
-            let fileName = "JUMPS (\(currentDateTime)).json"
-
+            let fileName = "DATA (\(currentDateTime)).json"
             let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let backupPath = documentsDirectory.appendingPathComponent(fileName)
-
-            try jsonData.write(to: backupPath, options: .atomic)
-
+            try combinedDataJSON.write(to: backupPath, options: .atomic)
             let activityViewController = UIActivityViewController(activityItems: [backupPath], applicationActivities: nil)
             present(activityViewController, animated: true, completion: nil)
-
             print("КОПИЯ ДАННЫХ УСПЕШНО СОЗДАНА И ПРЕДОСТАВЛЕНА ПОЛЬЗОВАТЕЛЮ ДЛЯ СОХРАНЕНИЯ.")
         } catch {
             print("Ошибка при создании и сохранении копии данных: \(error)")
         }
     }
-        
+
     @objc private func restoreBackup() {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.data], asCopy: true)
         documentPicker.delegate = self
         present(documentPicker, animated: true, completion: nil)
     }
 }
-    
+
 // MARK: - EXTENSION:
 
 extension BackupVC: UIDocumentPickerDelegate {
@@ -181,30 +184,64 @@ extension BackupVC: UIDocumentPickerDelegate {
 
         do {
             let data = try Data(contentsOf: sourceURL)
-            let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
-
-            guard let unwrappedJsonArray = jsonArray else {
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            guard let unwrappedJsonObject = jsonObject else {
                 print("Ошибка: Неверный формат JSON.")
                 return
             }
 
-            let decodedData = unwrappedJsonArray.compactMap { JumpClassRealm(value: $0) }
-
-            arrayJumpsRealm.removeAll()
-            arrayJumpsRealm.append(contentsOf: decodedData)
-
-            print("Восстановленные данные: \(arrayJumpsRealm)")
-            
+            if let jumpsData = unwrappedJsonObject["jumps"] as? [[String: Any]] {
+                let decodedJumps = jumpsData.compactMap { JumpClassRealm(value: $0) }
+                arrayJumpsRealm.removeAll()
+                arrayJumpsRealm.append(contentsOf: decodedJumps)
+            }
+            if let notesData = unwrappedJsonObject["notes"] as? [[String: Any]] {
+                let decodedNotes = notesData.compactMap { NoteClassRealm(value: $0) }
+                arrayNotesRealm.removeAll()
+                arrayNotesRealm.append(contentsOf: decodedNotes)
+            }
+            if let accountData = unwrappedJsonObject["account"] as? [[String: Any]] {
+                let decodedAccount = accountData.compactMap { AccountClassRealm(value: $0) }
+                arrayAccountRealm.removeAll()
+                arrayAccountRealm.append(contentsOf: decodedAccount)
+            }
+            if let locationsData = unwrappedJsonObject["locations"] as? [[String: Any]] {
+                let decodedLocations = locationsData.compactMap { LocationClassRealm(value: $0) }
+                arrayLocationsRealm.removeAll()
+                arrayLocationsRealm.append(contentsOf: decodedLocations)
+            }
+            if let aircraftsData = unwrappedJsonObject["aircrafts"] as? [[String: Any]] {
+                let decodedAircrafts = aircraftsData.compactMap { AircraftClassRealm(value: $0) }
+                arrayAircraftsRealm.removeAll()
+                arrayAircraftsRealm.append(contentsOf: decodedAircrafts)
+            }
+            if let canopiesData = unwrappedJsonObject["canopies"] as? [[String: Any]] {
+                let decodedCanopies = canopiesData.compactMap { CanopyClassRealm(value: $0) }
+                arrayCanopiesRealm.removeAll()
+                arrayCanopiesRealm.append(contentsOf: decodedCanopies)
+            }
+            if let systemsData = unwrappedJsonObject["systems"] as? [[String: Any]] {
+                let decodedSystems = systemsData.compactMap { SystemClassRealm(value: $0) }
+                arraySystemsRealm.removeAll()
+                arraySystemsRealm.append(contentsOf: decodedSystems)
+            }
+            print("Восстановленные данные: \(arrayJumpsRealm) + \(arrayNotesRealm) + \(arrayAccountRealm) + \(arrayLocationsRealm) + \(arrayAircraftsRealm) + \(arrayCanopiesRealm) + \(arraySystemsRealm)")
+            try realmManager.localRealm.write {
+                realmManager.localRealm.deleteAll()
+                realmManager.localRealm.add(arrayJumpsRealm)
+                realmManager.localRealm.add(arrayNotesRealm)
+                realmManager.localRealm.add(arrayAccountRealm)
+                realmManager.localRealm.add(arrayLocationsRealm)
+                realmManager.localRealm.add(arrayAircraftsRealm)
+                realmManager.localRealm.add(arrayCanopiesRealm)
+                realmManager.localRealm.add(arraySystemsRealm)
+            }
             AlertKitAPI.present(
                 title: NSLocalizedString("Success / cell new jump", comment: ""),
                 icon: .done,
                 style: .iOS17AppleMusic,
                 haptic: .success
             )
-            try realmManager.localRealm.write {
-                realmManager.localRealm.deleteAll()
-                realmManager.localRealm.add(arrayJumpsRealm)
-            }
         } catch {
             print("Ошибка при операции с копией данных: \(error)")
         }
@@ -217,37 +254,7 @@ extension BackupVC: UIDocumentPickerDelegate {
         let currentDateTime = dateFormatter.string(from: Date())
         let fileName = "backup_\(currentDateTime).realm"
         let backupPath = documentsDirectory.appendingPathComponent(fileName)
-            
         try FileManager.default.copyItem(at: sourceURL, to: backupPath)
         try realmManager.localRealm.writeCopy(toFile: backupPath)
-    }
-        
-    private func restoreBackupCopy(from sourceURL: URL) throws {
-        let tempDirectory = try FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let destinationURL = tempDirectory.appendingPathComponent(sourceURL.lastPathComponent)
-        guard FileManager.default.fileExists(atPath: sourceURL.path) else {
-            throw NSError(domain: "FileNotFoundError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Файл не найден"])
-        }
-        do {
-            try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
-        } catch let copyError {
-            print("Ошибка при копировании файла: \(copyError)")
-            throw copyError
-        }
-        do {
-            var newConfiguration = realmManager.localRealm.configuration
-            newConfiguration.fileURL = destinationURL
-            
-            let newRealm = try Realm(configuration: newConfiguration)
-            
-            try realmManager.localRealm.write {
-                realmManager.localRealm.deleteAll()
-                realmManager.localRealm.add(newRealm.objects(JumpClassRealm.self))
-            }
-            print("Копия данных успешно восстановлена в Realm.")
-        } catch let realmError {
-            print("Ошибка при записи копии данных в Realm: \(realmError)")
-            throw realmError
-        }
     }
 }

@@ -66,9 +66,6 @@ class NewJumpCell: UITableViewCell {
         addSubviews()
         configureConstrains()
         configureUI()
-        loadLocationsUserDefaults()
-        loadAircraftsUserDefaults()
-        loadCanopiesUserDefaults()
         configureGestures()
         
         canopyPickerView.delegate = self
@@ -89,9 +86,6 @@ class NewJumpCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        loadLocationsUserDefaults()
-        loadAircraftsUserDefaults()
-        loadCanopiesUserDefaults()
     }
     
     @available(*, unavailable)
@@ -475,24 +469,6 @@ class NewJumpCell: UITableViewCell {
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }
     
-    // MARK: LOAD LOCATIONS USER DEFAULTS:
-    
-    private func loadLocationsUserDefaults() {
-        arrayLocationPickerViewValues = UserDefaults.standard.array(forKey: "arrayLocationPickerViewValues") as? [String] ?? []
-    }
-    
-    // MARK: LOAD AIRCRAFTS USER DEFAULTS:
-    
-    private func loadAircraftsUserDefaults() {
-        arrayAircraftPickerViewValues = UserDefaults.standard.array(forKey: "arrayAircraftPickerViewValues") as? [String] ?? []
-    }
-    
-    // MARK: LOAD CANOPIES USER DEFAULTS:
-    
-    private func loadCanopiesUserDefaults() {
-        arrayCanopiesPickerViewValues = UserDefaults.standard.array(forKey: "arrayCanopiesPickerViewValues") as? [String] ?? []
-    }
-    
     // MARK: - CONFIGURE GESTURES:
     
     private func configureGestures() {
@@ -693,18 +669,18 @@ extension NewJumpCell: UIPickerViewDelegate {
     // MARK: ФУНКЦИЯ КОТОРАЯ ПРИСВАИВАЕТ ЗНАЧЕНИЕ ИЗ ПИКЕР ВЬЮ В ТЕКСТ ФИЛД:
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if arrayCanopiesPickerViewValues.isEmpty || missionPickerViewValues.isEmpty || arrayLocationPickerViewValues.isEmpty || arrayAircraftPickerViewValues.isEmpty || cutawayPickerViewValues.isEmpty {
+        if arrayCanopiesRealm.isEmpty || missionPickerViewValues.isEmpty || arrayLocationsRealm.isEmpty || arrayAircraftsRealm.isEmpty || cutawayPickerViewValues.isEmpty {
                 return
             }
         if pickerView == canopyPickerView {
-            canopyTextField.text = arrayCanopiesPickerViewValues.sorted()[row]
+            canopyTextField.text = arrayCanopiesRealm[row].canopy
         } else if pickerView == missionPickerView {
             let selectedMission = missionPickerViewValues.sorted()[row]
             missionTextField.text = selectedMission.localizedValue
         } else if pickerView == locationPickerView {
-            locationTextField.text = arrayLocationPickerViewValues.sorted()[row]
+            locationTextField.text = arrayLocationsRealm[row].location
         } else if pickerView == aircraftPickerView {
-            aircraftTextField.text = arrayAircraftPickerViewValues.sorted()[row]
+            aircraftTextField.text = arrayAircraftsRealm[row].aircraft
         } else if pickerView == cutawayPickerView {
             let selectedCutaway = cutawayPickerViewValues.sorted()[row]
             cutawayTextField.text = selectedCutaway.localizedValue
@@ -725,13 +701,13 @@ extension NewJumpCell: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == canopyPickerView {
-            return arrayCanopiesPickerViewValues.count
+            return arrayCanopiesRealm.count
         } else if pickerView == missionPickerView {
             return missionPickerViewValues.count
         } else if pickerView == locationPickerView {
-            return arrayLocationPickerViewValues.count
+            return arrayLocationsRealm.count
         } else if pickerView == aircraftPickerView {
-            return arrayAircraftPickerViewValues.count
+            return arrayAircraftsRealm.count
         } else if pickerView == cutawayPickerView {
             return cutawayPickerViewValues.count
         }
@@ -743,13 +719,13 @@ extension NewJumpCell: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         var title = ""
         if pickerView == canopyPickerView {
-            title = arrayCanopiesPickerViewValues.sorted()[row]
+            title = arrayCanopiesRealm[row].canopy
         } else if pickerView == missionPickerView {
             title = missionPickerViewValues.sorted()[row].localizedValue
         } else if pickerView == locationPickerView {
-            title = arrayLocationPickerViewValues.sorted()[row]
+            title = arrayLocationsRealm[row].location
         } else if pickerView == aircraftPickerView {
-            title = arrayAircraftPickerViewValues.sorted()[row]
+            title = arrayAircraftsRealm[row].aircraft
         } else if pickerView == cutawayPickerView {
             title = cutawayPickerViewValues.sorted()[row].localizedValue
         }

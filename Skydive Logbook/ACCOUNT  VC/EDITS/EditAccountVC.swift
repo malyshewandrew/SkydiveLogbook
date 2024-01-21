@@ -1,7 +1,8 @@
+import AlertKit
 import AudioToolbox
 import AVFoundation
+import RealmSwift
 import UIKit
-import AlertKit
 
 final class EditAccountVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -23,8 +24,8 @@ final class EditAccountVC: UIViewController {
     private let reserveCanopyTextField = UITextField()
     private let saveButton = UIButton()
     private var player = AVAudioPlayer()
-    
-    private let keyboardHeightOffset: CGFloat = -170
+    private let realmManager = RealmManager()
+    private let account = AccountClassRealm()
     
     // MARK: - LIFECYCLE:
 
@@ -34,14 +35,14 @@ final class EditAccountVC: UIViewController {
         configureConstrains()
         configureUI()
         configureGestures()
+        loadAccount()
         configureAccount()
-        _ = loadAccount()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadAccount()
         configureAccount()
-        _ = loadAccount()
     }
     
     // MARK: - ADD SUBVIEWS:
@@ -217,7 +218,6 @@ final class EditAccountVC: UIViewController {
         licenseDateTextField.tintColor = .colorWhite
         licenseDateTextField.layer.masksToBounds = true
         
-        
         // MARK: MEDICINE:
         
         medicineButton.setTitle(NSLocalizedString("Medicine / edit account vc", comment: "") + ":", for: .normal)
@@ -289,31 +289,75 @@ final class EditAccountVC: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    // MARK: - HELPERS:
+    // MARK: - LOAD ACCOUNT FROM REALM:
     
-    // MARK: LOAD ACCOUNT FROM USER DEFAULTS:
-    
-    func loadAccount() -> AccountStructure? {
-        if let savedData = UserDefaults.standard.data(forKey: "account") {
-            let loadedAccount = try? JSONDecoder().decode(AccountStructure.self, from: savedData)
-            return loadedAccount
+    private func loadAccount() {
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
+            $0
         }
-        return nil
     }
+    
+    // MARK: - HELPERS:
     
     // MARK: CONFIGURE ACCOUNT:
 
     private func configureAccount() {
-        if let loadedAccount = loadAccount() {
-            arrayAccount.removeAll()
-            arrayAccount.append(loadedAccount)
-            
-            nicknameTextField.text = loadedAccount.nickname
-            licenseTypeTextField.text = loadedAccount.licenseType
-            licenseDateTextField.text = loadedAccount.licenseDate
-            medicineTextField.text = loadedAccount.medicine
-            insuranceTextField.text = loadedAccount.insurance
-            reserveCanopyTextField.text = loadedAccount.reserveCanopy
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
+            $0
+        }
+        
+        if arrayAccountRealm.count == 0 {
+            nicknameTextField.text = ""
+        } else {
+            if arrayAccountRealm[0].nickname.isEmpty {
+            } else {
+                nicknameTextField.text = arrayAccountRealm[0].nickname
+            }
+        }
+        
+        if arrayAccountRealm.count == 0 {
+            licenseTypeTextField.text = ""
+        } else {
+            if arrayAccountRealm[0].nickname.isEmpty {
+            } else {
+                licenseTypeTextField.text = arrayAccountRealm[0].licenseType
+            }
+        }
+    
+        if arrayAccountRealm.count == 0 {
+            licenseDateTextField.text = ""
+        } else {
+            if arrayAccountRealm[0].nickname.isEmpty {
+            } else {
+                licenseDateTextField.text = arrayAccountRealm[0].licenseDate
+            }
+        }
+        
+        if arrayAccountRealm.count == 0 {
+            medicineTextField.text = ""
+        } else {
+            if arrayAccountRealm[0].nickname.isEmpty {
+            } else {
+                medicineTextField.text = arrayAccountRealm[0].medicine
+            }
+        }
+        
+        if arrayAccountRealm.count == 0 {
+            insuranceTextField.text = ""
+        } else {
+            if arrayAccountRealm[0].nickname.isEmpty {
+            } else {
+                insuranceTextField.text = arrayAccountRealm[0].insurance
+            }
+        }
+
+        if arrayAccountRealm.count == 0 {
+            reserveCanopyTextField.text = ""
+        } else {
+            if arrayAccountRealm[0].nickname.isEmpty {
+            } else {
+                reserveCanopyTextField.text = arrayAccountRealm[0].reserveCanopy
+            }
         }
     }
     
@@ -330,25 +374,19 @@ final class EditAccountVC: UIViewController {
     // MARK: SAVE FUNC:
 
     private func saveNewAccount() {
-        let account = AccountStructure(nickname: nicknameTextField.text ?? "",
-                                       licenseType: licenseTypeTextField.text ?? "",
-                                       licenseDate: licenseDateTextField.text ?? "",
-                                       medicine: medicineTextField.text ?? "",
-                                       insurance: insuranceTextField.text ?? "",
-                                       reserveCanopy: reserveCanopyTextField.text ?? "")
+        let existingAccounts = realmManager.localRealm.objects(AccountClassRealm.self)
         
-        if let encodedData = try? JSONEncoder().encode(account) {
-            UserDefaults.standard.set(encodedData, forKey: "account")
-        }
-        
-        arrayAccount.removeAll()
-        arrayAccount.append(account)
-        saveArrayAccount()
-    }
-    
-    private func saveArrayAccount() {
-        if let encodedData = try? JSONEncoder().encode(arrayAccount) {
-            UserDefaults.standard.set(encodedData, forKey: "arrayAccount")
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.delete(existingAccounts)
+            
+            let newAccount = AccountClassRealm()
+            newAccount.nickname = nicknameTextField.text ?? ""
+            newAccount.licenseType = licenseTypeTextField.text ?? ""
+            newAccount.licenseDate = licenseDateTextField.text ?? ""
+            newAccount.medicine = medicineTextField.text ?? ""
+            newAccount.insurance = insuranceTextField.text ?? ""
+            newAccount.reserveCanopy = reserveCanopyTextField.text ?? ""
+            realmManager.localRealm.add(newAccount, update: .all)
         }
     }
     
@@ -356,6 +394,8 @@ final class EditAccountVC: UIViewController {
     
     private func resignFirstResponders() {
         nicknameTextField.resignFirstResponder()
+        licenseTypeTextField.resignFirstResponder()
+        licenseDateTextField.resignFirstResponder()
         medicineTextField.resignFirstResponder()
         insuranceTextField.resignFirstResponder()
         reserveCanopyTextField.resignFirstResponder()

@@ -1,7 +1,8 @@
+import AlertKit
 import AVFoundation
 import Lottie
+import RealmSwift
 import UIKit
-import AlertKit
 
 final class NotesVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
@@ -16,6 +17,7 @@ final class NotesVC: UIViewController {
     private let cleanButton = UIButton()
     private let tableView = UITableView()
     private var player = AVAudioPlayer()
+    private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -26,12 +28,12 @@ final class NotesVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
-        loadNotesUserDefaults()
+        loadNotes()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadNotesUserDefaults()
+        loadNotes()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -192,12 +194,6 @@ final class NotesVC: UIViewController {
     }
 
     // MARK: - HELPERS:
-    
-    // MARK: LOAD USER DEFAULTS:
-    
-    private func loadNotesUserDefaults() {
-        arrayNotes = UserDefaults.standard.array(forKey: "arrayNotes") as? [String] ?? []
-    }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
@@ -209,26 +205,29 @@ final class NotesVC: UIViewController {
         }
         saveNewNote()
     }
-    
+
     // MARK: SAVE AND ADD NEW NOTE IN ARRAY NOTES:
 
     private func saveNewNote() {
-        arrayNotes.append(noteTextView.text ?? "")
+        let newNote = NoteClassRealm()
+        
+        newNote.note = noteTextView.text ?? ""
+        
         actionButtonSaveGreenColor()
         noteTextView.resignFirstResponder()
         noteTextView.text = ""
         tableView.reloadData()
         playSoundSucces()
-        saveNotesUserDefaults()
         alertKitSuccess()
+        
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newNote, update: .all)
+        }
+        
+        loadNotes()
+        tableView.reloadData()
     }
-    
-    // MARK: SAVE IN USER DEFAULTS:
-    
-    private func saveNotesUserDefaults() {
-        UserDefaults.standard.set(arrayNotes, forKey: "arrayNotes")
-    }
-    
+
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
 
     @objc private func tapOnCleanButton() {
@@ -237,6 +236,14 @@ final class NotesVC: UIViewController {
         tableView.reloadData()
         noteTextView.resignFirstResponder()
         alertKitSuccess()
+    }
+    
+    // MARK: - LOAD NOTES FROM REALM:
+    
+    private func loadNotes() {
+        arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map {
+            $0
+        }
     }
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
@@ -283,7 +290,7 @@ final class NotesVC: UIViewController {
     @objc func tapGestureDone() {
         view.endEditing(true)
     }
-    
+
     // MARK: ALERT KIT SUCCESS:
 
     private func alertKitSuccess() {
@@ -294,7 +301,7 @@ final class NotesVC: UIViewController {
             haptic: .success
         )
     }
-    
+
     // MARK: ALERT KIT ERROR:
 
     private func alertKitError() {
@@ -313,15 +320,15 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COUNT OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayNotes.count
+        arrayNotesRealm.count
     }
 
     // MARK: CUSTUM CELL:
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell", for: indexPath) as? NotesCell else { return UITableViewCell() }
-        let note = arrayNotes[indexPath.row]
-        cell.configure(text: note)
+        let note = arrayNotesRealm[indexPath.row]
+        cell.configure(text: note.note)
         return cell
     }
 
@@ -329,14 +336,19 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let deleteNote = arrayNotesRealm[indexPath.row]
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete note?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                arrayNotes.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                try? self.realmManager.localRealm.write {
+                    self.realmManager.localRealm.delete(deleteNote)
+                }
+                
+                self.loadNotes()
+
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
-                self.saveNotesUserDefaults()
             }))
             present(alertDelete, animated: true)
         }
@@ -344,23 +356,22 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: CUSTOM SWIPE (RIGHT) FOR FAVORITE PLACE IN TABLE (IN TOP):
 
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let fixAction = UIContextualAction(style: .destructive, title: "Favorite") { _, _, completion in
-            let noteFix = arrayNotes.remove(at: indexPath.row)
-            arrayNotes.insert(noteFix, at: 0)
-            tableView.reloadData()
-            self.saveNotesUserDefaults()
-            completion(true)
-            AlertKitAPI.present(
-                title: NSLocalizedString("Success / cell new jump", comment: ""),
-                icon: .heart,
-                style: .iOS17AppleMusic,
-                haptic: .success
-            )
-        }
-        fixAction.image = UIImage(systemName: "star")
-        fixAction.backgroundColor = .colorGreen
-        let configuration = UISwipeActionsConfiguration(actions: [fixAction])
-        return configuration
-    }
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let fixAction = UIContextualAction(style: .destructive, title: "Favorite") { _, _, completion in
+//            let noteFix = arrayNotesRealm.remove(at: indexPath.row)
+//            arrayNotesRealm.insert(noteFix, at: 0)
+//            tableView.reloadData()
+//            completion(true)
+//            AlertKitAPI.present(
+//                title: NSLocalizedString("Success / cell new jump", comment: ""),
+//                icon: .heart,
+//                style: .iOS17AppleMusic,
+//                haptic: .success
+//            )
+//        }
+//        fixAction.image = UIImage(systemName: "star")
+//        fixAction.backgroundColor = .colorGreen
+//        let configuration = UISwipeActionsConfiguration(actions: [fixAction])
+//        return configuration
+//    }
 }

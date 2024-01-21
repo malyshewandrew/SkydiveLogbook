@@ -14,6 +14,7 @@ final class EditCanopiesVC: UIViewController {
     private let cleanButton = UIButton()
     private let tableView = UITableView()
     private var player = AVAudioPlayer()
+    private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
@@ -24,13 +25,13 @@ final class EditCanopiesVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
-        loadCanopiesUserDefaults()
         enterTextTextField.delegate = self
+        loadCanopies()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadCanopiesUserDefaults()
+        loadCanopies()
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -144,14 +145,16 @@ final class EditCanopiesVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         view.addGestureRecognizer(tapGesture)
     }
+    
+    // MARK: - LOAD CANOPIES FROM REALM:
+    
+    private func loadCanopies() {
+        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map {
+            $0
+        }
+    }
 
     // MARK: - HELPERS:
-    
-    // MARK: LOAD CANOPIES USER DEFAULTS:
-    
-    private func loadCanopiesUserDefaults() {
-        arrayCanopiesPickerViewValues = UserDefaults.standard.array(forKey: "arrayCanopiesPickerViewValues") as? [String] ?? []
-    }
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
@@ -161,20 +164,27 @@ final class EditCanopiesVC: UIViewController {
             alertKitError()
             return
         }
-        arrayCanopiesPickerViewValues.append(enterTextTextField.text ?? "")
-        actionButtonSaveGreenColor()
-        playSoundSucces()
-        enterTextTextField.text = ""
-        enterTextTextField.resignFirstResponder() // скрывает клавиатуру
-        tableView.reloadData()
-        saveCanopiesUserDefaults()
-        alertKitSuccess()
+        saveNewCanopy()
     }
     
-    // MARK: SAVE AIRCRAFT IN USER DEFAULTS:
-    
-    private func saveCanopiesUserDefaults() {
-        UserDefaults.standard.set(arrayCanopiesPickerViewValues, forKey: "arrayCanopiesPickerViewValues")
+    // MARK: SAVE AND ADD NEW CANOPY IN ARRAY CANOPIES:
+
+    private func saveNewCanopy() {
+        let newCanopy = CanopyClassRealm()
+        newCanopy.canopy = enterTextTextField.text ?? ""
+        actionButtonSaveGreenColor()
+        enterTextTextField.resignFirstResponder()
+        enterTextTextField.text = ""
+        tableView.reloadData()
+        playSoundSucces()
+        alertKitSuccess()
+        
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newCanopy, update: .all)
+        }
+        
+        loadCanopies()
+        tableView.reloadData()
     }
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
@@ -185,7 +195,7 @@ final class EditCanopiesVC: UIViewController {
         tableView.reloadData()
         alertKitSuccess()
     }
-
+    
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
 
     private func actionButtonSaveGreenColor() {
@@ -253,7 +263,7 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COUNTS OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayCanopiesPickerViewValues.count
+        arrayCanopiesRealm.count
     }
 
     // MARK: COSTUM CELL:
@@ -261,8 +271,8 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditCanopiesCell", for: indexPath) as? EditCanopiesCell else { return UITableViewCell() }
 
-        let canopyString = arrayCanopiesPickerViewValues[indexPath.row]
-        cell.configure(text: canopyString)
+        let canopy = arrayCanopiesRealm[indexPath.row]
+        cell.configure(text: canopy.canopy)
 
         return cell
     }
@@ -271,14 +281,18 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let deleteCanopy = arrayCanopiesRealm[indexPath.row]
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete canopy?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                arrayCanopiesPickerViewValues.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                try? self.realmManager.localRealm.write {
+                    self.realmManager.localRealm.delete(deleteCanopy)
+                }
+                
+                self.loadCanopies()
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
-                self.saveCanopiesUserDefaults()
             }))
             present(alertDelete, animated: true)
         }
