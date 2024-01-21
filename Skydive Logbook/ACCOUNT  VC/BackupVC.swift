@@ -176,12 +176,10 @@ extension BackupVC: UIDocumentPickerDelegate {
             print("Ошибка: URL выбранного файла nil.")
             return
         }
-
         guard FileManager.default.fileExists(atPath: sourceURL.path) else {
             print("Ошибка: Файл по выбранному URL не существует.")
             return
         }
-
         do {
             let data = try Data(contentsOf: sourceURL)
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -189,7 +187,6 @@ extension BackupVC: UIDocumentPickerDelegate {
                 print("Ошибка: Неверный формат JSON.")
                 return
             }
-
             if let jumpsData = unwrappedJsonObject["jumps"] as? [[String: Any]] {
                 let decodedJumps = jumpsData.compactMap { JumpClassRealm(value: $0) }
                 arrayJumpsRealm.removeAll()

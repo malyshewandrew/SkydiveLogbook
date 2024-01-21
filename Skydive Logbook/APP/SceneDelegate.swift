@@ -4,7 +4,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-
+    var realmManager = RealmManager()
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions)
@@ -72,6 +72,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     // Например, обновите статус подписки в вашем приложении
                 }
             }
+        }
+        // MARK: - LOAD REALM DATA:
+        loadRealmData()
+    }
+
+    // MARK: - LOAD REALM DATA:
+
+    private func loadRealmData() {
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map {
+            $0
+        }
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
+            $0
+        }
+        arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map {
+            $0
+        }
+        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map {
+            $0
+        }
+        arrayLocationsRealm = realmManager.localRealm.objects(LocationClassRealm.self).map {
+            $0
+        }
+        arrayAircraftsRealm = realmManager.localRealm.objects(AircraftClassRealm.self).map {
+            $0
+        }
+        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map {
+            $0
         }
     }
 
