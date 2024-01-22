@@ -36,7 +36,7 @@ final class BackupVC: UIViewController {
 
         backupLottie.translatesAutoresizingMaskIntoConstraints = false
         backupLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backupLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
+        backupLottie.bottomAnchor.constraint(equalTo: infoLabel.topAnchor, constant: 0).isActive = true
         backupLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
         backupLottie.widthAnchor.constraint(equalToConstant: 150).isActive = true
 

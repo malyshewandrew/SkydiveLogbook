@@ -320,7 +320,8 @@
 "Enter canopy" = "Name canopy";
 
 // MARK: - BACKUP:
-"Info / backup" = "\nThe backup only creates a copy of all the jumps made to the main table.\n\nBy creating a backup, you will save only the main jumps and statistics.\n\nLocal data is not saved in a backup, so it is recommended to write out the previously recorded data before changing the device:\n\nNickname, License, Medicine, Insurance, Reserve canopy, Airfields, Aircraft, Canopies, Systems, Notes.\n";
+"Info / backup" = "\nThe backup copy saves all the data recorded in the application.\n
+It is recommended to make a backup copy from time to time so as not to lose the entered data.\n";
 "Backup / backup" = "Create backup";
 "Restore / backup" = "Restore"; 
 
