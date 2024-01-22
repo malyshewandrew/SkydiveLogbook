@@ -3,6 +3,7 @@ import AVFoundation
 import Lottie
 import RealmSwift
 import UIKit
+import AlertKit
 
 final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -440,6 +441,17 @@ final class MainVC: UIViewController {
         loadingView.removeFromSuperview()
         loadingLottie.removeFromSuperview()
     }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
 }
 
 // MARK: - EXTENSION FOR TABLE VIEW:
@@ -482,17 +494,16 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-
                 try? self.realmManager.localRealm.write {
                     self.realmManager.localRealm.delete(deleteJump)
                 }
-
                 self.loadJumps()
                 tableView.reloadData()
                 self.sortArray()
                 arrayJumpsRealm.reverse()
                 self.vibrationOn.vibrationSucces()
                 self.firstMessage()
+                self.alertKitSuccess()
             }))
             self.present(alertDelete, animated: true)
             completion(true)

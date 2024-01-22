@@ -1,6 +1,7 @@
 import Lottie
 import RealmSwift
 import UIKit
+import AlertKit
 
 final class SystemVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -171,6 +172,17 @@ final class SystemVC: UIViewController {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
 }
 
 // MARK: - EXTENSION:
@@ -209,14 +221,13 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete system?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-
                 try? self.realmManager.localRealm.write {
                     self.realmManager.localRealm.delete(deleteSystem)
                 }
-                
                 self.loadSystem()
                 tableView.reloadData()
                 self.vibrationOn.vibrationSucces()
+                self.alertKitSuccess()
             }))
             present(alertDelete, animated: true)
         }

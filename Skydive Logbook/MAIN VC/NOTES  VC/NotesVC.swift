@@ -349,29 +349,9 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
 
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
+                self.alertKitSuccess()
             }))
             present(alertDelete, animated: true)
         }
     }
-
-    // MARK: CUSTOM SWIPE (RIGHT) FOR FAVORITE PLACE IN TABLE (IN TOP):
-
-//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let fixAction = UIContextualAction(style: .destructive, title: "Favorite") { _, _, completion in
-//            let noteFix = arrayNotesRealm.remove(at: indexPath.row)
-//            arrayNotesRealm.insert(noteFix, at: 0)
-//            tableView.reloadData()
-//            completion(true)
-//            AlertKitAPI.present(
-//                title: NSLocalizedString("Success / cell new jump", comment: ""),
-//                icon: .heart,
-//                style: .iOS17AppleMusic,
-//                haptic: .success
-//            )
-//        }
-//        fixAction.image = UIImage(systemName: "star")
-//        fixAction.backgroundColor = .colorGreen
-//        let configuration = UISwipeActionsConfiguration(actions: [fixAction])
-//        return configuration
-//    }
 }

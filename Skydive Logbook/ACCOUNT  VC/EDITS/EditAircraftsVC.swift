@@ -285,14 +285,13 @@ extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete aircraft?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                
                 try? self.realmManager.localRealm.write {
                     self.realmManager.localRealm.delete(deleteAircraft)
                 }
-                
                 self.loadAircrafts()
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
+                self.alertKitSuccess()
             }))
             present(alertDelete, animated: true)
         }

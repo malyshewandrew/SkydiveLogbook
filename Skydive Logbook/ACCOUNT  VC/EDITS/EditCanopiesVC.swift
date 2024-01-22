@@ -285,14 +285,13 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete canopy?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                
                 try? self.realmManager.localRealm.write {
                     self.realmManager.localRealm.delete(deleteCanopy)
                 }
-                
                 self.loadCanopies()
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
+                self.alertKitSuccess()
             }))
             present(alertDelete, animated: true)
         }

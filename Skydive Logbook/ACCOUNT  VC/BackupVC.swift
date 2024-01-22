@@ -132,6 +132,28 @@ final class BackupVC: UIViewController {
         restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restoreButton.addTarget(self, action: #selector(restoreBackup), for: .touchUpInside)
     }
+    
+    // MARK: - ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: - ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
+    }
 
     // MARK: - BACKUP AND RESTORE METHODS:
 
@@ -154,10 +176,18 @@ final class BackupVC: UIViewController {
             let backupPath = documentsDirectory.appendingPathComponent(fileName)
             try combinedDataJSON.write(to: backupPath, options: .atomic)
             let activityViewController = UIActivityViewController(activityItems: [backupPath], applicationActivities: nil)
+            activityViewController.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
+                if completed {
+                    self.alertKitSuccess()
+                } else {
+                    self.alertKitError()
+                }
+            }
             present(activityViewController, animated: true, completion: nil)
             print("КОПИЯ ДАННЫХ УСПЕШНО СОЗДАНА И ПРЕДОСТАВЛЕНА ПОЛЬЗОВАТЕЛЮ ДЛЯ СОХРАНЕНИЯ.")
         } catch {
             print("Ошибка при создании и сохранении копии данных: \(error)")
+            self.alertKitError()
         }
     }
 
@@ -233,25 +263,10 @@ extension BackupVC: UIDocumentPickerDelegate {
                 realmManager.localRealm.add(arrayCanopiesRealm)
                 realmManager.localRealm.add(arraySystemsRealm)
             }
-            AlertKitAPI.present(
-                title: NSLocalizedString("Success / cell new jump", comment: ""),
-                icon: .done,
-                style: .iOS17AppleMusic,
-                haptic: .success
-            )
+            self.alertKitSuccess()
         } catch {
             print("Ошибка при операции с копией данных: \(error)")
+            self.alertKitError()
         }
-    }
-
-    private func createBackupCopy(from sourceURL: URL) throws {
-        let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
-        let currentDateTime = dateFormatter.string(from: Date())
-        let fileName = "backup_\(currentDateTime).realm"
-        let backupPath = documentsDirectory.appendingPathComponent(fileName)
-        try FileManager.default.copyItem(at: sourceURL, to: backupPath)
-        try realmManager.localRealm.writeCopy(toFile: backupPath)
     }
 }
