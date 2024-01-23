@@ -194,7 +194,7 @@
 "Cutaway" = "Отцепка";
 "Comment" = "Комментарий";
 
-"Date placeholder" = "дд.мм.гггг.";
+"Date placeholder" = "дд.мм.гггг";
 "Location placeholder" = "Дропзона";
 "Aircraft placeholder" = "Тип воздушного судна";
 "Canopy placeholder" = "Основной парашют";

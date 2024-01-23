@@ -194,7 +194,7 @@
 "Cutaway" = "Cutaway";
 "Comment" = "Comment";
 
-"Date placeholder" = "dd.mm.yyyy.";
+"Date placeholder" = "dd.mm.yyyy";
 "Location placeholder" = "Dropzone";
 "Aircraft placeholder" = "Type aircraft";
 "Canopy placeholder" = "Main canopy";
