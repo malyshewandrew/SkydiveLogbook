@@ -76,7 +76,7 @@ final class InfoVC: UIViewController {
         // MARK: ALERT VERSION BUTTON:
 
         versionButton.translatesAutoresizingMaskIntoConstraints = false
-        versionButton.topAnchor.constraint(equalTo: termsButton.bottomAnchor, constant: 30).isActive = true
+        versionButton.topAnchor.constraint(equalTo: termsButton.bottomAnchor, constant: 15).isActive = true
         versionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         versionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         versionButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true

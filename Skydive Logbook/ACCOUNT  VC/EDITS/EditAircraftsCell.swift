@@ -63,9 +63,9 @@ class EditAircraftsCell: UITableViewCell {
         // MARK: LOCATION LABEL:
 
         aircraftLabel.textColor = .colorWhite
-        aircraftLabel.numberOfLines = numberOfLines1
+        aircraftLabel.numberOfLines = 1
         aircraftLabel.font = fontBoldStandard16
-        aircraftLabel.textAlignment = textAligmentLeft
+        aircraftLabel.textAlignment = .left
     }
 
     // MARK: - CONFIGURE MODEL:

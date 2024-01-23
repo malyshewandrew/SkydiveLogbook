@@ -385,7 +385,7 @@ final class MainVC: UIViewController {
         firstMessageLabel.trailingAnchor.constraint(equalTo: firstMessageView.trailingAnchor, constant: -10).isActive = true
 
         firstMessageLabel.textColor = .colorWhite
-        firstMessageLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
+        firstMessageLabel.font = fontRegularStandard12
         firstMessageLabel.numberOfLines = 0
         firstMessageLabel.textAlignment = .center
         firstMessageLabel.adjustsFontSizeToFitWidth = true

@@ -63,9 +63,9 @@ class EditCanopiesCell: UITableViewCell {
         // MARK: LOCATION LABEL:
 
         canopyLabel.textColor = .colorWhite
-        canopyLabel.numberOfLines = numberOfLines1
+        canopyLabel.numberOfLines = 1
         canopyLabel.font = fontBoldStandard16
-        canopyLabel.textAlignment = textAligmentLeft
+        canopyLabel.textAlignment = .left
     }
 
     // MARK: CONFIGURE MODEL:

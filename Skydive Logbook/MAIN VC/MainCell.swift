@@ -123,7 +123,7 @@ final class MainCell: UITableViewCell {
 
         numberLabel.textColor = .colorDarkGray
         numberLabel.font = fontBoldStandard20
-        numberLabel.numberOfLines = numberOfLines1
+        numberLabel.numberOfLines = 1
         numberLabel.textAlignment = .left
         numberLabel.adjustsFontSizeToFitWidth = true
 
@@ -131,7 +131,7 @@ final class MainCell: UITableViewCell {
 
         canopyLabel.textColor = .colorWhite
         canopyLabel.font = fontHeavyStandard18
-        canopyLabel.numberOfLines = numberOfLines1
+        canopyLabel.numberOfLines = 1
         canopyLabel.textAlignment = .center
         canopyLabel.adjustsFontSizeToFitWidth = true
 
@@ -139,7 +139,7 @@ final class MainCell: UITableViewCell {
 
         missionLabel.textColor = .colorDarkGray
         missionLabel.font = fontMediumStandard15
-        missionLabel.numberOfLines = numberOfLines1
+        missionLabel.numberOfLines = 1
         missionLabel.textAlignment = .center
         missionLabel.adjustsFontSizeToFitWidth = true
 
@@ -147,7 +147,7 @@ final class MainCell: UITableViewCell {
 
         dateLabel.textColor = .colorWhite
         dateLabel.font = fontThinStandard10
-        dateLabel.numberOfLines = numberOfLines1
+        dateLabel.numberOfLines = 1
         dateLabel.textAlignment = .right
         dateLabel.adjustsFontSizeToFitWidth = true
 
@@ -155,7 +155,7 @@ final class MainCell: UITableViewCell {
 
         locationLabel.textColor = .colorWhite
         locationLabel.font = fontThinStandard10
-        locationLabel.numberOfLines = numberOfLines1
+        locationLabel.numberOfLines = 1
         locationLabel.textAlignment = .right
         locationLabel.adjustsFontSizeToFitWidth = true
 
@@ -163,7 +163,7 @@ final class MainCell: UITableViewCell {
 
         aircraftLabel.textColor = .colorWhite
         aircraftLabel.font = fontThinStandard10
-        aircraftLabel.numberOfLines = numberOfLines1
+        aircraftLabel.numberOfLines = 1
         aircraftLabel.textAlignment = .right
         aircraftLabel.adjustsFontSizeToFitWidth = true
 
@@ -171,7 +171,7 @@ final class MainCell: UITableViewCell {
 
         heightLabel.textColor = .colorWhite
         heightLabel.font = fontThinStandard10
-        heightLabel.numberOfLines = numberOfLines1
+        heightLabel.numberOfLines = 1
         heightLabel.textAlignment = .right
         heightLabel.adjustsFontSizeToFitWidth = true
     }

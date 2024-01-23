@@ -62,9 +62,9 @@ class EditLocationsCell: UITableViewCell {
         // MARK: LOCATION LABEL:
 
         locationLabel.textColor = .colorWhite
-        locationLabel.numberOfLines = numberOfLines1
+        locationLabel.numberOfLines = 1
         locationLabel.font = fontBoldStandard16
-        locationLabel.textAlignment = textAligmentLeft
+        locationLabel.textAlignment = .left
     }
 
     // MARK: CONFIGURE MODEL:

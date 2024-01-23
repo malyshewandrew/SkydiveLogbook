@@ -248,7 +248,7 @@ final class CalculatorVC: UIViewController {
         // MARK: INFO LABEL:
 
         textLabel.textAlignment = .left
-        textLabel.numberOfLines = numberOfLines0
+        textLabel.numberOfLines = 0
         textLabel.font = fontRegularStandard10
         textLabel.textColor = .colorWhite
     }

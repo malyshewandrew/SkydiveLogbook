@@ -23,11 +23,6 @@ let fontBoldStandard22: UIFont = .systemFont(ofSize: 22, weight: .bold, width: .
 let fontBoldStandard24: UIFont = .systemFont(ofSize: 24, weight: .bold, width: .standard)
 let fontBoldStandard30: UIFont = .systemFont(ofSize: 30, weight: .bold, width: .standard)
 
-// MARK: - NUMBER OF LINES:
-
-let numberOfLines1 = 1
-let numberOfLines0 = 0
-
 // MARK: - CORNER RADIUS:
 
 let cornerRadius10: CGFloat = 10
@@ -37,11 +32,6 @@ let cornerRadius20: CGFloat = 20
 
 let textAligmentTop: UIControl.ContentVerticalAlignment = .top
 let textAligmentCenter: NSTextAlignment = .center
-let textAligmentLeft: NSTextAlignment = .left
-
-// MARK: - BORDER WIDTH:
-
-let borderWidth05: CGFloat = 0.5
 
 // MARK: - HEIGHTS:
 
