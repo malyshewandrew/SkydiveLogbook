@@ -80,7 +80,7 @@ final class NewSystemCell: UITableViewCell {
     
     private let reserveCanopyDatePackButton = UIButton()
     private let reserveCanopyDatePackTextField = UITextField()
-    private let reserveCanopyDatePackPickerView = UIDatePicker()
+//    private let reserveCanopyDatePackPickerView = UIDatePicker()
     
     private let commentSystemButton = UIButton()
     private let commentSystemTextField = UITextField()
@@ -483,7 +483,7 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyDatePackTextField.heightAnchor.constraint(equalTo: reserveCanopyDatePackButton.heightAnchor, multiplier: 0.5).isActive = true
         reserveCanopyDatePackTextField.widthAnchor.constraint(equalTo: reserveCanopyDatePackButton.widthAnchor, multiplier: 1).isActive = true
         
-        reserveCanopyDatePackPickerView.translatesAutoresizingMaskIntoConstraints = false
+//        reserveCanopyDatePackPickerView.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: COMMENT SYSTEM:
         commentSystemButton.translatesAutoresizingMaskIntoConstraints = false
@@ -950,12 +950,13 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyDatePackTextField.textAlignment = textAligmentCenter
         reserveCanopyDatePackTextField.tintColor = .colorWhite
         reserveCanopyDatePackTextField.layer.masksToBounds = true
-        reserveCanopyDatePackTextField.inputView = reserveCanopyDatePackPickerView
-        reserveCanopyDatePackPickerView.datePickerMode = .date
-        reserveCanopyDatePackPickerView.preferredDatePickerStyle = .wheels
-        reserveCanopyDatePackPickerView.maximumDate = Date()
-        reserveCanopyDatePackPickerView.backgroundColor = .colorTabBar
-        reserveCanopyDatePackPickerView.addTarget(self, action: #selector(reserveCanopyDatePackPickerValueChanged), for: .valueChanged)
+        reserveCanopyDatePackTextField.keyboardType = .numbersAndPunctuation
+//        reserveCanopyDatePackTextField.inputView = reserveCanopyDatePackPickerView
+//        reserveCanopyDatePackPickerView.datePickerMode = .date
+//        reserveCanopyDatePackPickerView.preferredDatePickerStyle = .wheels
+//        reserveCanopyDatePackPickerView.maximumDate = Date()
+//        reserveCanopyDatePackPickerView.backgroundColor = .colorTabBar
+//        reserveCanopyDatePackPickerView.addTarget(self, action: #selector(reserveCanopyDatePackPickerValueChanged), for: .valueChanged)
         
         // COMMENT SYSTEM:
         commentSystemButton.setTitle(NSLocalizedString("Comment / new system cell", comment: ""), for: .normal)
@@ -1223,9 +1224,9 @@ final class NewSystemCell: UITableViewCell {
         getDateFromPickerToReserveCanopy()
     }
     
-    @objc func reserveCanopyDatePackPickerValueChanged() {
-        getDateFromPickerToReserveCanopyDatePack()
-    }
+//    @objc func reserveCanopyDatePackPickerValueChanged() {
+//        getDateFromPickerToReserveCanopyDatePack()
+//    }
     
     // MARK: DATE FORMATTERS:
 
@@ -1249,10 +1250,10 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyDomTextField.text = dateFormatter.string(from: reserveCanopyDomPickerView.date)
     }
     
-    func getDateFromPickerToReserveCanopyDatePack() {
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        reserveCanopyDatePackTextField.text = dateFormatter.string(from: reserveCanopyDatePackPickerView.date)
-    }
+//    func getDateFromPickerToReserveCanopyDatePack() {
+//        dateFormatter.dateFormat = "dd.MM.yyyy"
+//        reserveCanopyDatePackTextField.text = dateFormatter.string(from: reserveCanopyDatePackPickerView.date)
+//    }
 }
 
 // MARK: - EXTENSIONS FOR PICKER VIEW DELEGATE:
