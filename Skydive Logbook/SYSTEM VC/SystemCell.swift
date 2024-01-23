@@ -11,6 +11,7 @@ final class SystemCell: UITableViewCell {
     private let containerView = UIView()
     private let commentImage = UIImageView()
     private let commentButton = UIButton()
+    private let editImage = UIImageView()
     private let editButton = UIButton()
     
     private let systemNameLabel = UILabel()
@@ -70,7 +71,7 @@ final class SystemCell: UITableViewCell {
 
     private func addSubviews() {
         contentView.addSubviews(containerView)
-        containerView.addSubviews(commentImage, commentButton, editButton, systemNameLabel,
+        containerView.addSubviews(commentImage, commentButton, systemNameLabel, editImage, editButton,
                                   
                                   containerLabel, containerNameLabel, containerSerialNumberLabel, containerDomLabel, containerServiceLifeYearsLabel, containerExpirationDateLabel,
                                   
@@ -105,12 +106,16 @@ final class SystemCell: UITableViewCell {
         commentButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.10).isActive = true
         
         // MARK: EDIT BUTTON:
+        
+        editImage.translatesAutoresizingMaskIntoConstraints = false
+        editImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        editImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
 
         editButton.translatesAutoresizingMaskIntoConstraints = false
-        editButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5).isActive = true
-        editButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5).isActive = true
-        editButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        editButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.2).isActive = true
+        editButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        editButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
+        editButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        editButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.10).isActive = true
         
         // MARK: SYSTEM NAME:
         
@@ -369,16 +374,16 @@ final class SystemCell: UITableViewCell {
         
         // MARK: COMMENT IMAGE AND BUTTON:
 
-        let configuration = UIImage.SymbolConfiguration(pointSize: 20)
-        commentImage.image = UIImage(systemName: "info.circle", withConfiguration: configuration)
+        let configurationComment = UIImage.SymbolConfiguration(pointSize: 20)
+        commentImage.image = UIImage(systemName: "note.text", withConfiguration: configurationComment)
         commentImage.tintColor = .colorBlue
         commentButton.addTarget(self, action: #selector(tapOnCommentButton), for: .touchUpInside)
         
         // MARK: EDIT BUTTON:
 
-        editButton.setTitle(NSLocalizedString("Edit", comment: ""), for: .normal)
-        editButton.titleLabel?.font = fontRegularStandard18
-        editButton.setTitleColor(.colorBlue, for: .normal)
+        let configurationEdit = UIImage.SymbolConfiguration(pointSize: 20)
+        editImage.image = UIImage(systemName: "slider.horizontal.3", withConfiguration: configurationEdit)
+        editImage.tintColor = .colorBlue
         editButton.addTarget(self, action: #selector(tapOnEditButton), for: .touchUpInside)
         
         // MARK: SYSTEM NAME:
