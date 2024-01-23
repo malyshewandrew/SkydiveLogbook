@@ -116,7 +116,7 @@ final class SystemVC: UIViewController {
         newSystemButton.backgroundColor = .colorCell
         newSystemButton.layer.cornerRadius = 10
         newSystemButton.setTitle(NSLocalizedString("Add a new system", comment: ""), for: .normal)
-        newSystemButton.titleLabel?.font = fontMediumStandart14
+        newSystemButton.titleLabel?.font = fontMediumStandard14
         newSystemButton.setTitleColor(.colorWhite, for: .normal)
         newSystemButton.addTarget(self, action: #selector(tapOnNewSystemButton), for: .touchUpInside)
     }

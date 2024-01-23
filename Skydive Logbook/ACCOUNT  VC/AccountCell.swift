@@ -139,7 +139,7 @@ final class AccountCell: UITableViewCell {
         editAccountButton.setTitle(NSLocalizedString("Edit account", comment: ""), for: .normal)
         editAccountButton.layer.cornerRadius = cornerRadius10
         editAccountButton.backgroundColor = .colorCell
-        editAccountButton.titleLabel?.font = fontMediumStandart14
+        editAccountButton.titleLabel?.font = fontMediumStandard14
         editAccountButton.setTitleColor(.colorWhite, for: .normal)
         editAccountButton.addTarget(self, action: #selector(tapOnEditAccountButton), for: .touchUpInside)
         
@@ -148,7 +148,7 @@ final class AccountCell: UITableViewCell {
         editLocationsButton.setTitle(NSLocalizedString("Edit locations", comment: ""), for: .normal)
         editLocationsButton.layer.cornerRadius = cornerRadius10
         editLocationsButton.backgroundColor = .colorCell
-        editLocationsButton.titleLabel?.font = fontMediumStandart14
+        editLocationsButton.titleLabel?.font = fontMediumStandard14
         editLocationsButton.setTitleColor(.colorWhite, for: .normal)
         editLocationsButton.addTarget(self, action: #selector(tapOnEditLocationsButton), for: .touchUpInside)
 
@@ -157,7 +157,7 @@ final class AccountCell: UITableViewCell {
         editAircraftsButton.setTitle(NSLocalizedString("Edit aircrafts", comment: ""), for: .normal)
         editAircraftsButton.layer.cornerRadius = cornerRadius10
         editAircraftsButton.backgroundColor = .colorCell
-        editAircraftsButton.titleLabel?.font = fontMediumStandart14
+        editAircraftsButton.titleLabel?.font = fontMediumStandard14
         editAircraftsButton.setTitleColor(.colorWhite, for: .normal)
         editAircraftsButton.addTarget(self, action: #selector(tapOnEditAircraftsButton), for: .touchUpInside)
 
@@ -166,7 +166,7 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.setTitle(NSLocalizedString("Edit canopies", comment: ""), for: .normal)
         editCanopiesButton.layer.cornerRadius = cornerRadius10
         editCanopiesButton.backgroundColor = .colorCell
-        editCanopiesButton.titleLabel?.font = fontMediumStandart14
+        editCanopiesButton.titleLabel?.font = fontMediumStandard14
         editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
         editCanopiesButton.addTarget(self, action: #selector(tapOnEditCanopiesButton), for: .touchUpInside)
         
@@ -175,7 +175,7 @@ final class AccountCell: UITableViewCell {
         calculatorButton.setTitle(NSLocalizedString("Calculator loading", comment: ""), for: .normal)
         calculatorButton.layer.cornerRadius = cornerRadius10
         calculatorButton.backgroundColor = .colorCell
-        calculatorButton.titleLabel?.font = fontMediumStandart14
+        calculatorButton.titleLabel?.font = fontMediumStandard14
         calculatorButton.setTitleColor(.colorWhite, for: .normal)
         calculatorButton.addTarget(self, action: #selector(tapOnCalculatorButton), for: .touchUpInside)
 
@@ -184,7 +184,7 @@ final class AccountCell: UITableViewCell {
         backupButton.setTitle(NSLocalizedString("Backup copy", comment: ""), for: .normal)
         backupButton.layer.cornerRadius = cornerRadius10
         backupButton.backgroundColor = .colorCell
-        backupButton.titleLabel?.font = fontMediumStandart14
+        backupButton.titleLabel?.font = fontMediumStandard14
         backupButton.setTitleColor(.colorWhite, for: .normal)
         backupButton.addTarget(self, action: #selector(tapOnBackupButton), for: .touchUpInside)
 
@@ -193,7 +193,7 @@ final class AccountCell: UITableViewCell {
         infoButton.setTitle(NSLocalizedString("Information", comment: ""), for: .normal)
         infoButton.layer.cornerRadius = cornerRadius10
         infoButton.backgroundColor = .colorCell
-        infoButton.titleLabel?.font = fontMediumStandart14
+        infoButton.titleLabel?.font = fontMediumStandard14
         infoButton.setTitleColor(.colorWhite, for: .normal)
         infoButton.addTarget(self, action: #selector(tapOnInfoButton), for: .touchUpInside)
 
@@ -202,7 +202,7 @@ final class AccountCell: UITableViewCell {
         premiumButton.setTitle(NSLocalizedString("Premium version", comment: ""), for: .normal)
         premiumButton.layer.cornerRadius = cornerRadius10
         premiumButton.backgroundColor = .colorCell
-        premiumButton.titleLabel?.font = fontMediumStandart14
+        premiumButton.titleLabel?.font = fontMediumStandard14
         premiumButton.setTitleColor(.colorWhite, for: .normal)
         premiumButton.addTarget(self, action: #selector(tapOnPremiumButton), for: .touchUpInside)
 

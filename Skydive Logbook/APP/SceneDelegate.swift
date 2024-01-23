@@ -3,12 +3,14 @@ import SwiftyStoreKit
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
     var window: UIWindow?
+    
     var realmManager = RealmManager()
-    func scene(_ scene: UIScene,
-               willConnectTo session: UISceneSession,
-               options connectionOptions: UIScene.ConnectionOptions)
-    {
+    
+    // MARK: SCENE:
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         // MARK: WINDOW:
@@ -73,7 +75,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 }
             }
         }
-        // MARK: - LOAD REALM DATA:
+        // MARK: LOAD REALM DATA:
         loadRealmData()
     }
 
@@ -102,6 +104,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             $0
         }
     }
+    
+    // MARK: - OTHERS:
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

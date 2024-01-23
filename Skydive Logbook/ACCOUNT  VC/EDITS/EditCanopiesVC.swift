@@ -111,7 +111,7 @@ final class EditCanopiesVC: UIViewController {
         // MARK: SAVE BUTTON:
 
         saveButton.backgroundColor = .colorCell
-        saveButton.titleLabel?.font = fontMediumStandart14
+        saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.layer.cornerRadius = cornerRadius10
@@ -120,7 +120,7 @@ final class EditCanopiesVC: UIViewController {
         // MARK: CLEAN BUTTON:
 
         cleanButton.backgroundColor = .colorTabBar
-        cleanButton.titleLabel?.font = fontMediumStandart14
+        cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius10

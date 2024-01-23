@@ -273,12 +273,12 @@ class NewJumpCell: UITableViewCell {
         dateButton.setTitle("\(NSLocalizedString("Date", comment: ""))*", for: .normal)
         dateButton.setTitleColor(.colorLightGray, for: .normal)
         dateButton.contentVerticalAlignment = textAligmentTop
-        dateButton.titleLabel?.font = fontMediumStandart12
+        dateButton.titleLabel?.font = fontMediumStandard12
         dateButton.layer.cornerRadius = cornerRadius10
         dateTextField.placeholder = NSLocalizedString("Date placeholder", comment: "")
         dateTextField.backgroundColor = .colorTabBar
         dateTextField.inputView = datePickerView
-        dateTextField.font = fontMediumStandart18
+        dateTextField.font = fontMediumStandard18
         dateTextField.textColor = .colorWhite
         dateTextField.layer.cornerRadius = cornerRadius10
         dateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -297,12 +297,12 @@ class NewJumpCell: UITableViewCell {
         locationButton.setTitle("\(NSLocalizedString("Location", comment: ""))*", for: .normal)
         locationButton.setTitleColor(.colorLightGray, for: .normal)
         locationButton.contentVerticalAlignment = textAligmentTop
-        locationButton.titleLabel?.font = fontMediumStandart12
+        locationButton.titleLabel?.font = fontMediumStandard12
         locationButton.layer.cornerRadius = cornerRadius10
         locationTextField.placeholder = NSLocalizedString("Location placeholder", comment: "")
         locationTextField.backgroundColor = .colorTabBar
         locationTextField.inputView = locationPickerView
-        locationTextField.font = fontMediumStandart18
+        locationTextField.font = fontMediumStandard18
         locationTextField.textColor = .colorWhite
         locationTextField.layer.cornerRadius = cornerRadius10
         locationTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -317,12 +317,12 @@ class NewJumpCell: UITableViewCell {
         aircraftButton.setTitle("\(NSLocalizedString("Aircraft", comment: ""))*", for: .normal)
         aircraftButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftButton.contentVerticalAlignment = textAligmentTop
-        aircraftButton.titleLabel?.font = fontMediumStandart12
+        aircraftButton.titleLabel?.font = fontMediumStandard12
         aircraftButton.layer.cornerRadius = cornerRadius10
         aircraftTextField.placeholder = NSLocalizedString("Aircraft placeholder", comment: "")
         aircraftTextField.backgroundColor = .colorTabBar
         aircraftTextField.inputView = aircraftPickerView
-        aircraftTextField.font = fontMediumStandart18
+        aircraftTextField.font = fontMediumStandard18
         aircraftTextField.textColor = .colorWhite
         aircraftTextField.layer.cornerRadius = cornerRadius10
         aircraftTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -337,12 +337,12 @@ class NewJumpCell: UITableViewCell {
         canopyButton.setTitle("\(NSLocalizedString("Canopy", comment: ""))*", for: .normal)
         canopyButton.setTitleColor(.colorLightGray, for: .normal)
         canopyButton.contentVerticalAlignment = textAligmentTop
-        canopyButton.titleLabel?.font = fontMediumStandart12
+        canopyButton.titleLabel?.font = fontMediumStandard12
         canopyButton.layer.cornerRadius = cornerRadius10
         canopyTextField.placeholder = NSLocalizedString("Canopy placeholder", comment: "")
         canopyTextField.backgroundColor = .colorTabBar
         canopyTextField.inputView = canopyPickerView
-        canopyTextField.font = fontMediumStandart18
+        canopyTextField.font = fontMediumStandard18
         canopyTextField.textColor = .colorWhite
         canopyTextField.layer.cornerRadius = cornerRadius10
         canopyTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -357,12 +357,12 @@ class NewJumpCell: UITableViewCell {
         missionButton.setTitle("\(NSLocalizedString("Mission", comment: ""))*", for: .normal)
         missionButton.setTitleColor(.colorLightGray, for: .normal)
         missionButton.contentVerticalAlignment = textAligmentTop
-        missionButton.titleLabel?.font = fontMediumStandart12
+        missionButton.titleLabel?.font = fontMediumStandard12
         missionButton.layer.cornerRadius = cornerRadius10
         missionTextField.placeholder = NSLocalizedString("Mission placeholder", comment: "")
         missionTextField.backgroundColor = .colorTabBar
         missionTextField.inputView = missionPickerView
-        missionTextField.font = fontMediumStandart18
+        missionTextField.font = fontMediumStandard18
         missionTextField.textColor = .colorWhite
         missionTextField.layer.cornerRadius = cornerRadius10
         missionTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -377,11 +377,11 @@ class NewJumpCell: UITableViewCell {
         heightButton.setTitle("\(NSLocalizedString("Height", comment: ""))*", for: .normal)
         heightButton.setTitleColor(.colorLightGray, for: .normal)
         heightButton.contentVerticalAlignment = textAligmentTop
-        heightButton.titleLabel?.font = fontMediumStandart12
+        heightButton.titleLabel?.font = fontMediumStandard12
         heightButton.layer.cornerRadius = cornerRadius10
         heightTextField.placeholder = NSLocalizedString("Height placeholder", comment: "")
         heightTextField.backgroundColor = .colorTabBar
-        heightTextField.font = fontMediumStandart18
+        heightTextField.font = fontMediumStandard18
         heightTextField.textColor = .colorWhite
         heightTextField.layer.cornerRadius = cornerRadius10
         heightTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -397,11 +397,11 @@ class NewJumpCell: UITableViewCell {
         timeButton.setTitle("\(NSLocalizedString("Time", comment: ""))*", for: .normal)
         timeButton.setTitleColor(.colorLightGray, for: .normal)
         timeButton.contentVerticalAlignment = textAligmentTop
-        timeButton.titleLabel?.font = fontMediumStandart12
+        timeButton.titleLabel?.font = fontMediumStandard12
         timeButton.layer.cornerRadius = cornerRadius10
         timeTextField.placeholder = NSLocalizedString("Time placeholder", comment: "")
         timeTextField.backgroundColor = .colorTabBar
-        timeTextField.font = fontMediumStandart18
+        timeTextField.font = fontMediumStandard18
         timeTextField.textColor = .colorWhite
         timeTextField.layer.cornerRadius = cornerRadius10
         timeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -417,12 +417,12 @@ class NewJumpCell: UITableViewCell {
         cutawayButton.setTitle("\(NSLocalizedString("Cutaway", comment: ""))*", for: .normal)
         cutawayButton.setTitleColor(.colorLightGray, for: .normal)
         cutawayButton.contentVerticalAlignment = textAligmentTop
-        cutawayButton.titleLabel?.font = fontMediumStandart12
+        cutawayButton.titleLabel?.font = fontMediumStandard12
         cutawayButton.layer.cornerRadius = cornerRadius10
         cutawayTextField.placeholder = NSLocalizedString("Cutaway placeholder", comment: "")
         cutawayTextField.backgroundColor = .colorTabBar
         cutawayTextField.inputView = cutawayPickerView
-        cutawayTextField.font = fontMediumStandart18
+        cutawayTextField.font = fontMediumStandard18
         cutawayTextField.textColor = .colorWhite
         cutawayTextField.layer.cornerRadius = cornerRadius10
         cutawayTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -437,11 +437,11 @@ class NewJumpCell: UITableViewCell {
         commentButton.setTitle("\(NSLocalizedString("Comment", comment: ""))", for: .normal)
         commentButton.setTitleColor(.colorLightGray, for: .normal)
         commentButton.contentVerticalAlignment = textAligmentTop
-        commentButton.titleLabel?.font = fontMediumStandart12
+        commentButton.titleLabel?.font = fontMediumStandard12
         commentButton.layer.cornerRadius = cornerRadius10
         commentTextField.placeholder = NSLocalizedString("Comment placeholder", comment: "")
         commentTextField.backgroundColor = .colorTabBar
-        commentTextField.font = fontMediumStandart16
+        commentTextField.font = fontBoldStandard16
         commentTextField.textColor = .colorWhite
         commentTextField.textAlignment = textAligmentCenter
         commentTextField.layer.cornerRadius = cornerRadius10
@@ -456,7 +456,7 @@ class NewJumpCell: UITableViewCell {
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.layer.cornerRadius = cornerRadius10
         cleanButton.setTitleColor(.colorWhite, for: .normal)
-        cleanButton.titleLabel?.font = fontMediumStandart14
+        cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.addTarget(self, action: #selector(actionButtonCleanTap), for: .touchUpInside)
         
         // MARK: SAVE BUTTON:
@@ -465,7 +465,7 @@ class NewJumpCell: UITableViewCell {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.colorWhite, for: .normal)
-        saveButton.titleLabel?.font = fontMediumStandart14
+        saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }
     

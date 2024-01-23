@@ -191,7 +191,7 @@ final class CalculatorVC: UIViewController {
 
         weightTextField.placeholder = "\(NSLocalizedString("Total weight", comment: "")) (\(NSLocalizedString("kg.", comment: "")))*"
         weightTextField.backgroundColor = .colorTabBar
-        weightTextField.font = fontMediumStandart14
+        weightTextField.font = fontMediumStandard14
         weightTextField.textColor = .colorWhite
         weightTextField.layer.cornerRadius = cornerRadius10
         weightTextField.textAlignment = textAligmentCenter
@@ -203,7 +203,7 @@ final class CalculatorVC: UIViewController {
 
         sizeCanopyTextField.placeholder = "\(NSLocalizedString("Square canopy", comment: "")) (\(NSLocalizedString("ft", comment: "")))*"
         sizeCanopyTextField.backgroundColor = .colorTabBar
-        sizeCanopyTextField.font = fontMediumStandart14
+        sizeCanopyTextField.font = fontMediumStandard14
         sizeCanopyTextField.textColor = .colorWhite
         sizeCanopyTextField.layer.cornerRadius = cornerRadius10
         sizeCanopyTextField.textAlignment = textAligmentCenter
@@ -217,7 +217,7 @@ final class CalculatorVC: UIViewController {
         resultButton.backgroundColor = .colorCell
         resultButton.layer.cornerRadius = cornerRadius10
         resultButton.setTitleColor(.colorWhite, for: .normal)
-        resultButton.titleLabel?.font = fontMediumStandart14
+        resultButton.titleLabel?.font = fontMediumStandard14
         resultButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
 
         // MARK: CLEAN BUTTON:
@@ -226,7 +226,7 @@ final class CalculatorVC: UIViewController {
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.layer.cornerRadius = cornerRadius10
         cleanButton.setTitleColor(.colorWhite, for: .normal)
-        cleanButton.titleLabel?.font = fontMediumStandart14
+        cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.addTarget(self, action: #selector(actionButtonCleanTap), for: .touchUpInside)
 
         // MARK: RESULT:
@@ -236,7 +236,7 @@ final class CalculatorVC: UIViewController {
         resultLabel.layer.masksToBounds = true
         resultLabel.layer.cornerRadius = cornerRadius10
         resultLabel.textAlignment = .center
-        resultLabel.font = fontMediumStandart16
+        resultLabel.font = fontBoldStandard16
         resultLabel.isHidden = true
 
         // MARK: INFO VIEW:
@@ -249,7 +249,7 @@ final class CalculatorVC: UIViewController {
 
         textLabel.textAlignment = .left
         textLabel.numberOfLines = numberOfLines0
-        textLabel.font = fontCalculatorText
+        textLabel.font = fontRegularStandard10
         textLabel.textColor = .colorWhite
     }
 

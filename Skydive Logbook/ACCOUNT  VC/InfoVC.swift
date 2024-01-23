@@ -109,7 +109,7 @@ final class InfoVC: UIViewController {
         // MARK: INFO TEXT LABEL:
 
         infoTextLabel.textColor = .colorWhite
-        infoTextLabel.font = fontRegularStandart8
+        infoTextLabel.font = fontRegularStandard8
         infoTextLabel.numberOfLines = 0
         infoTextLabel.adjustsFontSizeToFitWidth = true
         infoTextLabel.text = NSLocalizedString("Info text", comment: "")
@@ -121,7 +121,7 @@ final class InfoVC: UIViewController {
         privacyButton.setTitleColor(.colorWhite, for: .normal)
         privacyButton.layer.cornerRadius = cornerRadius10
         privacyButton.backgroundColor = .colorCell
-        privacyButton.titleLabel?.font = fontMediumStandart14
+        privacyButton.titleLabel?.font = fontMediumStandard14
         privacyButton.addTarget(self, action: #selector(tapOnPrivacyButton), for: .touchUpInside)
         
         // MARK: TERMS BUTTON:
@@ -131,7 +131,7 @@ final class InfoVC: UIViewController {
         termsButton.setTitleColor(.colorWhite, for: .normal)
         termsButton.layer.cornerRadius = cornerRadius10
         termsButton.backgroundColor = .colorCell
-        termsButton.titleLabel?.font = fontMediumStandart14
+        termsButton.titleLabel?.font = fontMediumStandard14
         termsButton.addTarget(self, action: #selector(tapOnTermsButton), for: .touchUpInside)
         
         // MARK: ALERT VERSION BUTTON:
@@ -140,7 +140,7 @@ final class InfoVC: UIViewController {
         versionButton.setTitleColor(.colorWhite, for: .normal)
         versionButton.layer.cornerRadius = cornerRadius10
         versionButton.backgroundColor = .colorCell
-        versionButton.titleLabel?.font = fontMediumStandart14
+        versionButton.titleLabel?.font = fontMediumStandard14
         versionButton.addTarget(self, action: #selector(tapOnVersionButton), for: .touchUpInside)
     }
     

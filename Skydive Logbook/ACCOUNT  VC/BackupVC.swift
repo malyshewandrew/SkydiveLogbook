@@ -114,7 +114,7 @@ final class BackupVC: UIViewController {
         backupButton.setTitleColor(.colorWhite, for: .normal)
         backupButton.backgroundColor = .colorBlue
         backupButton.layer.cornerRadius = cornerRadius10
-        backupButton.titleLabel?.font = fontMediumStandart14
+        backupButton.titleLabel?.font = fontMediumStandard14
         backupButton.titleLabel?.numberOfLines = 0
         backupButton.titleLabel?.textAlignment = .center
         backupButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -126,7 +126,7 @@ final class BackupVC: UIViewController {
         restoreButton.setTitleColor(.colorWhite, for: .normal)
         restoreButton.backgroundColor = .colorTabBar
         restoreButton.layer.cornerRadius = cornerRadius10
-        restoreButton.titleLabel?.font = fontMediumStandart14
+        restoreButton.titleLabel?.font = fontMediumStandard14
         restoreButton.titleLabel?.numberOfLines = 0
         restoreButton.titleLabel?.textAlignment = .center
         restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true

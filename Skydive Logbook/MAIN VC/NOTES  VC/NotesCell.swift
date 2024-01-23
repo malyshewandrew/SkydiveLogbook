@@ -63,7 +63,7 @@ final class NotesCell: UITableViewCell {
 
         noteLabel.textColor = .colorWhite
         noteLabel.numberOfLines = numberOfLines0
-        noteLabel.font = fontMediumStandart16
+        noteLabel.font = fontBoldStandard16
         noteLabel.textAlignment = textAligmentLeft
         noteLabel.lineBreakMode = .byWordWrapping
     }

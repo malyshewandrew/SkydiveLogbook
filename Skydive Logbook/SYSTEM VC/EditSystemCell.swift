@@ -527,11 +527,11 @@ final class EditSystemCell: UITableViewCell {
         nameSystemButton.backgroundColor = .colorCell
         nameSystemButton.setTitleColor(.colorLightGray, for: .normal)
         nameSystemButton.contentVerticalAlignment = textAligmentTop
-        nameSystemButton.titleLabel?.font = fontMediumStandart12
+        nameSystemButton.titleLabel?.font = fontMediumStandard12
         nameSystemButton.layer.cornerRadius = cornerRadius10
         nameSystemTextField.placeholder = NSLocalizedString("Name / new system cell", comment: "")
         nameSystemTextField.backgroundColor = .colorTabBar
-        nameSystemTextField.font = fontMediumStandart18
+        nameSystemTextField.font = fontMediumStandard18
         nameSystemTextField.textColor = .colorWhite
         nameSystemTextField.layer.cornerRadius = cornerRadius10
         nameSystemTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -545,11 +545,11 @@ final class EditSystemCell: UITableViewCell {
         containerNameButton.backgroundColor = .colorCell
         containerNameButton.setTitleColor(.colorLightGray, for: .normal)
         containerNameButton.contentVerticalAlignment = textAligmentTop
-        containerNameButton.titleLabel?.font = fontMediumStandart10
+        containerNameButton.titleLabel?.font = fontMediumStandard10
         containerNameButton.layer.cornerRadius = cornerRadius10
         containerNameTextField.placeholder = NSLocalizedString("Name container / new system cell", comment: "")
         containerNameTextField.backgroundColor = .colorTabBar
-        containerNameTextField.font = fontRegularStandart12
+        containerNameTextField.font = fontRegularStandard12
         containerNameTextField.textColor = .colorWhite
         containerNameTextField.layer.cornerRadius = cornerRadius10
         containerNameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -563,11 +563,11 @@ final class EditSystemCell: UITableViewCell {
         containerDomButton.backgroundColor = .colorCell
         containerDomButton.setTitleColor(.colorLightGray, for: .normal)
         containerDomButton.contentVerticalAlignment = textAligmentTop
-        containerDomButton.titleLabel?.font = fontMediumStandart10
+        containerDomButton.titleLabel?.font = fontMediumStandard10
         containerDomButton.layer.cornerRadius = cornerRadius10
         containerDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         containerDomTextField.backgroundColor = .colorTabBar
-        containerDomTextField.font = fontRegularStandart12
+        containerDomTextField.font = fontRegularStandard12
         containerDomTextField.textColor = .colorWhite
         containerDomTextField.layer.cornerRadius = cornerRadius10
         containerDomTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -588,11 +588,11 @@ final class EditSystemCell: UITableViewCell {
         containerSerialNumberButton.backgroundColor = .colorCell
         containerSerialNumberButton.setTitleColor(.colorLightGray, for: .normal)
         containerSerialNumberButton.contentVerticalAlignment = textAligmentTop
-        containerSerialNumberButton.titleLabel?.font = fontMediumStandart10
+        containerSerialNumberButton.titleLabel?.font = fontMediumStandard10
         containerSerialNumberButton.layer.cornerRadius = cornerRadius10
         containerSerialNumberTextField.placeholder = "№"
         containerSerialNumberTextField.backgroundColor = .colorTabBar
-        containerSerialNumberTextField.font = fontRegularStandart12
+        containerSerialNumberTextField.font = fontRegularStandard12
         containerSerialNumberTextField.textColor = .colorWhite
         containerSerialNumberTextField.layer.cornerRadius = cornerRadius10
         containerSerialNumberTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -606,11 +606,11 @@ final class EditSystemCell: UITableViewCell {
         containerServiceLifeYearsButton.backgroundColor = .colorCell
         containerServiceLifeYearsButton.setTitleColor(.colorLightGray, for: .normal)
         containerServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
-        containerServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
+        containerServiceLifeYearsButton.titleLabel?.font = fontMediumStandard10
         containerServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
         containerServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         containerServiceLifeYearsTextField.backgroundColor = .colorTabBar
-        containerServiceLifeYearsTextField.font = fontRegularStandart12
+        containerServiceLifeYearsTextField.font = fontRegularStandard12
         containerServiceLifeYearsTextField.textColor = .colorWhite
         containerServiceLifeYearsTextField.layer.cornerRadius = cornerRadius10
         containerServiceLifeYearsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -629,11 +629,11 @@ final class EditSystemCell: UITableViewCell {
         aadNameButton.backgroundColor = .colorCell
         aadNameButton.setTitleColor(.colorLightGray, for: .normal)
         aadNameButton.contentVerticalAlignment = textAligmentTop
-        aadNameButton.titleLabel?.font = fontMediumStandart10
+        aadNameButton.titleLabel?.font = fontMediumStandard10
         aadNameButton.layer.cornerRadius = cornerRadius10
         aadNameTextField.placeholder = NSLocalizedString("Name AAD / new system cell", comment: "")
         aadNameTextField.backgroundColor = .colorTabBar
-        aadNameTextField.font = fontRegularStandart12
+        aadNameTextField.font = fontRegularStandard12
         aadNameTextField.textColor = .colorWhite
         aadNameTextField.layer.cornerRadius = cornerRadius10
         aadNameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -647,11 +647,11 @@ final class EditSystemCell: UITableViewCell {
         aadDomButton.backgroundColor = .colorCell
         aadDomButton.setTitleColor(.colorLightGray, for: .normal)
         aadDomButton.contentVerticalAlignment = textAligmentTop
-        aadDomButton.titleLabel?.font = fontMediumStandart10
+        aadDomButton.titleLabel?.font = fontMediumStandard10
         aadDomButton.layer.cornerRadius = cornerRadius10
         aadDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         aadDomTextField.backgroundColor = .colorTabBar
-        aadDomTextField.font = fontRegularStandart12
+        aadDomTextField.font = fontRegularStandard12
         aadDomTextField.textColor = .colorWhite
         aadDomTextField.layer.cornerRadius = cornerRadius10
         aadDomTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -671,11 +671,11 @@ final class EditSystemCell: UITableViewCell {
         aadSerialNumberButton.backgroundColor = .colorCell
         aadSerialNumberButton.setTitleColor(.colorLightGray, for: .normal)
         aadSerialNumberButton.contentVerticalAlignment = textAligmentTop
-        aadSerialNumberButton.titleLabel?.font = fontMediumStandart10
+        aadSerialNumberButton.titleLabel?.font = fontMediumStandard10
         aadSerialNumberButton.layer.cornerRadius = cornerRadius10
         aadSerialNumberTextField.placeholder = "№"
         aadSerialNumberTextField.backgroundColor = .colorTabBar
-        aadSerialNumberTextField.font = fontRegularStandart12
+        aadSerialNumberTextField.font = fontRegularStandard12
         aadSerialNumberTextField.textColor = .colorWhite
         aadSerialNumberTextField.layer.cornerRadius = cornerRadius10
         aadSerialNumberTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -689,11 +689,11 @@ final class EditSystemCell: UITableViewCell {
         aadServiceLifeYearsButton.backgroundColor = .colorCell
         aadServiceLifeYearsButton.setTitleColor(.colorLightGray, for: .normal)
         aadServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
-        aadServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
+        aadServiceLifeYearsButton.titleLabel?.font = fontMediumStandard10
         aadServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
         aadServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         aadServiceLifeYearsTextField.backgroundColor = .colorTabBar
-        aadServiceLifeYearsTextField.font = fontRegularStandart12
+        aadServiceLifeYearsTextField.font = fontRegularStandard12
         aadServiceLifeYearsTextField.textColor = .colorWhite
         aadServiceLifeYearsTextField.layer.cornerRadius = cornerRadius10
         aadServiceLifeYearsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -712,11 +712,11 @@ final class EditSystemCell: UITableViewCell {
         mainCanopyNameButton.backgroundColor = .colorCell
         mainCanopyNameButton.setTitleColor(.colorLightGray, for: .normal)
         mainCanopyNameButton.contentVerticalAlignment = textAligmentTop
-        mainCanopyNameButton.titleLabel?.font = fontMediumStandart10
+        mainCanopyNameButton.titleLabel?.font = fontMediumStandard10
         mainCanopyNameButton.layer.cornerRadius = cornerRadius10
         mainCanopyNameTextField.placeholder = NSLocalizedString("Name main canopy / new system cell", comment: "")
         mainCanopyNameTextField.backgroundColor = .colorTabBar
-        mainCanopyNameTextField.font = fontRegularStandart12
+        mainCanopyNameTextField.font = fontRegularStandard12
         mainCanopyNameTextField.textColor = .colorWhite
         mainCanopyNameTextField.layer.cornerRadius = cornerRadius10
         mainCanopyNameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -732,11 +732,11 @@ final class EditSystemCell: UITableViewCell {
         mainCanopyDomButton.backgroundColor = .colorCell
         mainCanopyDomButton.setTitleColor(.colorLightGray, for: .normal)
         mainCanopyDomButton.contentVerticalAlignment = textAligmentTop
-        mainCanopyDomButton.titleLabel?.font = fontMediumStandart10
+        mainCanopyDomButton.titleLabel?.font = fontMediumStandard10
         mainCanopyDomButton.layer.cornerRadius = cornerRadius10
         mainCanopyDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         mainCanopyDomTextField.backgroundColor = .colorTabBar
-        mainCanopyDomTextField.font = fontRegularStandart12
+        mainCanopyDomTextField.font = fontRegularStandard12
         mainCanopyDomTextField.textColor = .colorWhite
         mainCanopyDomTextField.layer.cornerRadius = cornerRadius10
         mainCanopyDomTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -756,11 +756,11 @@ final class EditSystemCell: UITableViewCell {
         mainCanopySerialNumberButton.backgroundColor = .colorCell
         mainCanopySerialNumberButton.setTitleColor(.colorLightGray, for: .normal)
         mainCanopySerialNumberButton.contentVerticalAlignment = textAligmentTop
-        mainCanopySerialNumberButton.titleLabel?.font = fontMediumStandart10
+        mainCanopySerialNumberButton.titleLabel?.font = fontMediumStandard10
         mainCanopySerialNumberButton.layer.cornerRadius = cornerRadius10
         mainCanopySerialNumberTextField.placeholder = "№"
         mainCanopySerialNumberTextField.backgroundColor = .colorTabBar
-        mainCanopySerialNumberTextField.font = fontRegularStandart12
+        mainCanopySerialNumberTextField.font = fontRegularStandard12
         mainCanopySerialNumberTextField.textColor = .colorWhite
         mainCanopySerialNumberTextField.layer.cornerRadius = cornerRadius10
         mainCanopySerialNumberTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -774,11 +774,11 @@ final class EditSystemCell: UITableViewCell {
         mainCanopyServiceLifeYearsButton.backgroundColor = .colorCell
         mainCanopyServiceLifeYearsButton.setTitleColor(.colorLightGray, for: .normal)
         mainCanopyServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
-        mainCanopyServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
+        mainCanopyServiceLifeYearsButton.titleLabel?.font = fontMediumStandard10
         mainCanopyServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
         mainCanopyServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         mainCanopyServiceLifeYearsTextField.backgroundColor = .colorTabBar
-        mainCanopyServiceLifeYearsTextField.font = fontRegularStandart12
+        mainCanopyServiceLifeYearsTextField.font = fontRegularStandard12
         mainCanopyServiceLifeYearsTextField.textColor = .colorWhite
         mainCanopyServiceLifeYearsTextField.layer.cornerRadius = cornerRadius10
         mainCanopyServiceLifeYearsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -793,11 +793,11 @@ final class EditSystemCell: UITableViewCell {
         mainCanopyServiceLifeJumpsButton.backgroundColor = .colorCell
         mainCanopyServiceLifeJumpsButton.setTitleColor(.colorLightGray, for: .normal)
         mainCanopyServiceLifeJumpsButton.contentVerticalAlignment = textAligmentTop
-        mainCanopyServiceLifeJumpsButton.titleLabel?.font = fontMediumStandart10
+        mainCanopyServiceLifeJumpsButton.titleLabel?.font = fontMediumStandard10
         mainCanopyServiceLifeJumpsButton.layer.cornerRadius = cornerRadius10
         mainCanopyServiceLifeJumpsTextField.placeholder = NSLocalizedString("Counts of jumps / new system cell", comment: "")
         mainCanopyServiceLifeJumpsTextField.backgroundColor = .colorTabBar
-        mainCanopyServiceLifeJumpsTextField.font = fontRegularStandart12
+        mainCanopyServiceLifeJumpsTextField.font = fontRegularStandard12
         mainCanopyServiceLifeJumpsTextField.textColor = .colorWhite
         mainCanopyServiceLifeJumpsTextField.layer.cornerRadius = cornerRadius10
         mainCanopyServiceLifeJumpsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -812,11 +812,11 @@ final class EditSystemCell: UITableViewCell {
         mainCanopyCountJumpsButton.backgroundColor = .colorCell
         mainCanopyCountJumpsButton.setTitleColor(.colorLightGray, for: .normal)
         mainCanopyCountJumpsButton.contentVerticalAlignment = textAligmentTop
-        mainCanopyCountJumpsButton.titleLabel?.font = fontMediumStandart10
+        mainCanopyCountJumpsButton.titleLabel?.font = fontMediumStandard10
         mainCanopyCountJumpsButton.layer.cornerRadius = cornerRadius10
         mainCanopyCountJumpsTextField.placeholder = NSLocalizedString("The value of the purchase / new system cell", comment: "")
         mainCanopyCountJumpsTextField.backgroundColor = .colorTabBar
-        mainCanopyCountJumpsTextField.font = fontRegularStandart12
+        mainCanopyCountJumpsTextField.font = fontRegularStandard12
         mainCanopyCountJumpsTextField.textColor = .colorWhite
         mainCanopyCountJumpsTextField.layer.cornerRadius = cornerRadius10
         mainCanopyCountJumpsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -835,11 +835,11 @@ final class EditSystemCell: UITableViewCell {
         reserveCanopyNameButton.backgroundColor = .colorCell
         reserveCanopyNameButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyNameButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopyNameButton.titleLabel?.font = fontMediumStandart10
+        reserveCanopyNameButton.titleLabel?.font = fontMediumStandard10
         reserveCanopyNameButton.layer.cornerRadius = cornerRadius10
         reserveCanopyNameTextField.placeholder = NSLocalizedString("Name reserve canopy / new system cell", comment: "")
         reserveCanopyNameTextField.backgroundColor = .colorTabBar
-        reserveCanopyNameTextField.font = fontRegularStandart12
+        reserveCanopyNameTextField.font = fontRegularStandard12
         reserveCanopyNameTextField.textColor = .colorWhite
         reserveCanopyNameTextField.layer.cornerRadius = cornerRadius10
         reserveCanopyNameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -853,11 +853,11 @@ final class EditSystemCell: UITableViewCell {
         reserveCanopyDomButton.backgroundColor = .colorCell
         reserveCanopyDomButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyDomButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopyDomButton.titleLabel?.font = fontMediumStandart10
+        reserveCanopyDomButton.titleLabel?.font = fontMediumStandard10
         reserveCanopyDomButton.layer.cornerRadius = cornerRadius10
         reserveCanopyDomTextField.placeholder = NSLocalizedString("Date mm.yyyy / new system cell", comment: "")
         reserveCanopyDomTextField.backgroundColor = .colorTabBar
-        reserveCanopyDomTextField.font = fontRegularStandart12
+        reserveCanopyDomTextField.font = fontRegularStandard12
         reserveCanopyDomTextField.textColor = .colorWhite
         reserveCanopyDomTextField.layer.cornerRadius = cornerRadius10
         reserveCanopyDomTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -877,11 +877,11 @@ final class EditSystemCell: UITableViewCell {
         reserveCanopySerialNumberButton.backgroundColor = .colorCell
         reserveCanopySerialNumberButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopySerialNumberButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopySerialNumberButton.titleLabel?.font = fontMediumStandart10
+        reserveCanopySerialNumberButton.titleLabel?.font = fontMediumStandard10
         reserveCanopySerialNumberButton.layer.cornerRadius = cornerRadius10
         reserveCanopySerialNumberTextField.placeholder = "№"
         reserveCanopySerialNumberTextField.backgroundColor = .colorTabBar
-        reserveCanopySerialNumberTextField.font = fontRegularStandart12
+        reserveCanopySerialNumberTextField.font = fontRegularStandard12
         reserveCanopySerialNumberTextField.textColor = .colorWhite
         reserveCanopySerialNumberTextField.layer.cornerRadius = cornerRadius10
         reserveCanopySerialNumberTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -895,11 +895,11 @@ final class EditSystemCell: UITableViewCell {
         reserveCanopyServiceLifeYearsButton.backgroundColor = .colorCell
         reserveCanopyServiceLifeYearsButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyServiceLifeYearsButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopyServiceLifeYearsButton.titleLabel?.font = fontMediumStandart10
+        reserveCanopyServiceLifeYearsButton.titleLabel?.font = fontMediumStandard10
         reserveCanopyServiceLifeYearsButton.layer.cornerRadius = cornerRadius10
         reserveCanopyServiceLifeYearsTextField.placeholder = NSLocalizedString("Counts of years / new system cell", comment: "")
         reserveCanopyServiceLifeYearsTextField.backgroundColor = .colorTabBar
-        reserveCanopyServiceLifeYearsTextField.font = fontRegularStandart12
+        reserveCanopyServiceLifeYearsTextField.font = fontRegularStandard12
         reserveCanopyServiceLifeYearsTextField.textColor = .colorWhite
         reserveCanopyServiceLifeYearsTextField.layer.cornerRadius = cornerRadius10
         reserveCanopyServiceLifeYearsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -914,11 +914,11 @@ final class EditSystemCell: UITableViewCell {
         reserveCanopyCountRepackButton.backgroundColor = .colorCell
         reserveCanopyCountRepackButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyCountRepackButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopyCountRepackButton.titleLabel?.font = fontMediumStandart10
+        reserveCanopyCountRepackButton.titleLabel?.font = fontMediumStandard10
         reserveCanopyCountRepackButton.layer.cornerRadius = cornerRadius10
         reserveCanopyCountRepackTextField.placeholder = "0-20"
         reserveCanopyCountRepackTextField.backgroundColor = .colorTabBar
-        reserveCanopyCountRepackTextField.font = fontRegularStandart12
+        reserveCanopyCountRepackTextField.font = fontRegularStandard12
         reserveCanopyCountRepackTextField.textColor = .colorWhite
         reserveCanopyCountRepackTextField.layer.cornerRadius = cornerRadius10
         reserveCanopyCountRepackTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -933,11 +933,11 @@ final class EditSystemCell: UITableViewCell {
         reserveCanopyDatePackButton.backgroundColor = .colorCell
         reserveCanopyDatePackButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyDatePackButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopyDatePackButton.titleLabel?.font = fontMediumStandart10
+        reserveCanopyDatePackButton.titleLabel?.font = fontMediumStandard10
         reserveCanopyDatePackButton.layer.cornerRadius = cornerRadius10
         reserveCanopyDatePackTextField.placeholder = NSLocalizedString("Date dd.mm.yyyy / new system cell", comment: "")
         reserveCanopyDatePackTextField.backgroundColor = .colorTabBar
-        reserveCanopyDatePackTextField.font = fontRegularStandart12
+        reserveCanopyDatePackTextField.font = fontRegularStandard12
         reserveCanopyDatePackTextField.textColor = .colorWhite
         reserveCanopyDatePackTextField.layer.cornerRadius = cornerRadius10
         reserveCanopyDatePackTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -956,11 +956,11 @@ final class EditSystemCell: UITableViewCell {
         commentSystemButton.backgroundColor = .colorCell
         commentSystemButton.setTitleColor(.colorLightGray, for: .normal)
         commentSystemButton.contentVerticalAlignment = textAligmentTop
-        commentSystemButton.titleLabel?.font = fontMediumStandart12
+        commentSystemButton.titleLabel?.font = fontMediumStandard12
         commentSystemButton.layer.cornerRadius = cornerRadius10
         commentSystemTextField.placeholder = NSLocalizedString("Optional / new system cell", comment: "")
         commentSystemTextField.backgroundColor = .colorTabBar
-        commentSystemTextField.font = fontRegularStandart12
+        commentSystemTextField.font = fontRegularStandard12
         commentSystemTextField.textColor = .colorWhite
         commentSystemTextField.layer.cornerRadius = cornerRadius10
         commentSystemTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -974,7 +974,7 @@ final class EditSystemCell: UITableViewCell {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.colorWhite, for: .normal)
-        saveButton.titleLabel?.font = fontMediumStandart14
+        saveButton.titleLabel?.font = fontMediumStandard14
     }
     
     // MARK: CONFIGURE - GESTURES:

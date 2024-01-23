@@ -404,7 +404,7 @@ final class StatisticCell: UITableViewCell {
 
         generalInfoButton.setTitle(NSLocalizedString("General info", comment: "") + ":", for: .normal)
         generalInfoButton.setTitleColor(.colorLightGray, for: .normal)
-        generalInfoButton.titleLabel?.font = fontMediumStandart12
+        generalInfoButton.titleLabel?.font = fontMediumStandard12
         generalInfoButton.contentVerticalAlignment = textAligmentTop
         generalInfoButton.backgroundColor = .colorCell
         generalInfoButton.layer.cornerRadius = cornerRadius20
@@ -412,7 +412,7 @@ final class StatisticCell: UITableViewCell {
         
         generalInfoLabel.textAlignment = .center
         generalInfoLabel.baselineAdjustment = .alignCenters
-        generalInfoLabel.font = fontMediumStandart12
+        generalInfoLabel.font = fontMediumStandard12
         generalInfoLabel.textColor = .colorWhite
         generalInfoLabel.numberOfLines = 0
         generalInfoLabel.adjustsFontSizeToFitWidth = true
@@ -421,7 +421,7 @@ final class StatisticCell: UITableViewCell {
 
         totalJumpsButton.setTitle(NSLocalizedString("Total jumps", comment: "") + ":", for: .normal)
         totalJumpsButton.setTitleColor(.colorLightGray, for: .normal)
-        totalJumpsButton.titleLabel?.font = fontMediumStandart12
+        totalJumpsButton.titleLabel?.font = fontMediumStandard12
         totalJumpsButton.contentVerticalAlignment = textAligmentTop
         totalJumpsButton.backgroundColor = .colorCell
         totalJumpsButton.layer.cornerRadius = cornerRadius20
@@ -429,7 +429,7 @@ final class StatisticCell: UITableViewCell {
         
         totalJumpsLabel.textAlignment = .center
         totalJumpsLabel.baselineAdjustment = .alignCenters
-        totalJumpsLabel.font = fontBoldStandart30
+        totalJumpsLabel.font = fontBoldStandard30
         totalJumpsLabel.textColor = .colorWhite
         totalJumpsLabel.adjustsFontSizeToFitWidth = true
         
@@ -437,7 +437,7 @@ final class StatisticCell: UITableViewCell {
 
         jumpsYearButton.setTitle(NSLocalizedString("In this year", comment: "") + ":", for: .normal)
         jumpsYearButton.setTitleColor(.colorLightGray, for: .normal)
-        jumpsYearButton.titleLabel?.font = fontMediumStandart12
+        jumpsYearButton.titleLabel?.font = fontMediumStandard12
         jumpsYearButton.contentVerticalAlignment = textAligmentTop
         jumpsYearButton.backgroundColor = .colorCell
         jumpsYearButton.layer.cornerRadius = cornerRadius20
@@ -445,7 +445,7 @@ final class StatisticCell: UITableViewCell {
         
         jumpsYearLabel.textAlignment = .center
         jumpsYearLabel.baselineAdjustment = .alignCenters
-        jumpsYearLabel.font = fontBoldStandart30
+        jumpsYearLabel.font = fontBoldStandard30
         jumpsYearLabel.textColor = .colorWhite
         jumpsYearLabel.adjustsFontSizeToFitWidth = true
         
@@ -453,7 +453,7 @@ final class StatisticCell: UITableViewCell {
 
         categoryButton.setTitle(NSLocalizedString("Category", comment: "") + ":", for: .normal)
         categoryButton.setTitleColor(.colorLightGray, for: .normal)
-        categoryButton.titleLabel?.font = fontMediumStandart12
+        categoryButton.titleLabel?.font = fontMediumStandard12
         categoryButton.contentVerticalAlignment = textAligmentTop
         categoryButton.backgroundColor = .colorCell
         categoryButton.layer.cornerRadius = cornerRadius20
@@ -461,7 +461,7 @@ final class StatisticCell: UITableViewCell {
         
         categoryLabel.textAlignment = .center
         categoryLabel.baselineAdjustment = .alignCenters
-        categoryLabel.font = fontBoldStandart30
+        categoryLabel.font = fontBoldStandard30
         categoryLabel.textColor = .colorWhite
         categoryLabel.adjustsFontSizeToFitWidth = true
         
@@ -469,7 +469,7 @@ final class StatisticCell: UITableViewCell {
 
         maxHeightButton.setTitle(NSLocalizedString("Max. height", comment: "") + ":", for: .normal)
         maxHeightButton.setTitleColor(.colorLightGray, for: .normal)
-        maxHeightButton.titleLabel?.font = fontMediumStandart12
+        maxHeightButton.titleLabel?.font = fontMediumStandard12
         maxHeightButton.contentVerticalAlignment = textAligmentTop
         maxHeightButton.backgroundColor = .colorCell
         maxHeightButton.layer.cornerRadius = cornerRadius20
@@ -477,7 +477,7 @@ final class StatisticCell: UITableViewCell {
         
         maxHeightLabel.textAlignment = .center
         maxHeightLabel.baselineAdjustment = .alignCenters
-        maxHeightLabel.font = fontBoldStandart30
+        maxHeightLabel.font = fontBoldStandard30
         maxHeightLabel.textColor = .colorWhite
         maxHeightLabel.adjustsFontSizeToFitWidth = true
         
@@ -485,7 +485,7 @@ final class StatisticCell: UITableViewCell {
 
         averageHeightButton.setTitle(NSLocalizedString("Av. height", comment: "") + ":", for: .normal)
         averageHeightButton.setTitleColor(.colorLightGray, for: .normal)
-        averageHeightButton.titleLabel?.font = fontMediumStandart12
+        averageHeightButton.titleLabel?.font = fontMediumStandard12
         averageHeightButton.contentVerticalAlignment = textAligmentTop
         averageHeightButton.backgroundColor = .colorCell
         averageHeightButton.layer.cornerRadius = cornerRadius20
@@ -493,7 +493,7 @@ final class StatisticCell: UITableViewCell {
         
         averageHeightLabel.textAlignment = .center
         averageHeightLabel.baselineAdjustment = .alignCenters
-        averageHeightLabel.font = fontBoldStandart30
+        averageHeightLabel.font = fontBoldStandard30
         averageHeightLabel.textColor = .colorWhite
         averageHeightLabel.adjustsFontSizeToFitWidth = true
         
@@ -501,7 +501,7 @@ final class StatisticCell: UITableViewCell {
 
         minHeightButton.setTitle(NSLocalizedString("Min. height", comment: "") + ":", for: .normal)
         minHeightButton.setTitleColor(.colorLightGray, for: .normal)
-        minHeightButton.titleLabel?.font = fontMediumStandart12
+        minHeightButton.titleLabel?.font = fontMediumStandard12
         minHeightButton.contentVerticalAlignment = textAligmentTop
         minHeightButton.backgroundColor = .colorCell
         minHeightButton.layer.cornerRadius = cornerRadius20
@@ -509,7 +509,7 @@ final class StatisticCell: UITableViewCell {
         
         minHeightLabel.textAlignment = .center
         minHeightLabel.baselineAdjustment = .alignCenters
-        minHeightLabel.font = fontBoldStandart30
+        minHeightLabel.font = fontBoldStandard30
         minHeightLabel.textColor = .colorWhite
         minHeightLabel.adjustsFontSizeToFitWidth = true
         
@@ -517,7 +517,7 @@ final class StatisticCell: UITableViewCell {
 
         dateFirstButton.setTitle(NSLocalizedString("First jump", comment: "") + ":", for: .normal)
         dateFirstButton.setTitleColor(.colorLightGray, for: .normal)
-        dateFirstButton.titleLabel?.font = fontMediumStandart12
+        dateFirstButton.titleLabel?.font = fontMediumStandard12
         dateFirstButton.contentVerticalAlignment = textAligmentTop
         dateFirstButton.backgroundColor = .colorCell
         dateFirstButton.layer.cornerRadius = cornerRadius20
@@ -525,7 +525,7 @@ final class StatisticCell: UITableViewCell {
         
         dateFirstLabel.textAlignment = .center
         dateFirstLabel.baselineAdjustment = .alignCenters
-        dateFirstLabel.font = fontBoldStandart20
+        dateFirstLabel.font = fontBoldStandard20
         dateFirstLabel.textColor = .colorWhite
         dateFirstLabel.numberOfLines = 1
         dateFirstLabel.adjustsFontSizeToFitWidth = true
@@ -534,7 +534,7 @@ final class StatisticCell: UITableViewCell {
 
         maxTimeButton.setTitle(NSLocalizedString("Max. time", comment: "") + ":", for: .normal)
         maxTimeButton.setTitleColor(.colorLightGray, for: .normal)
-        maxTimeButton.titleLabel?.font = fontMediumStandart12
+        maxTimeButton.titleLabel?.font = fontMediumStandard12
         maxTimeButton.contentVerticalAlignment = textAligmentTop
         maxTimeButton.backgroundColor = .colorCell
         maxTimeButton.layer.cornerRadius = cornerRadius20
@@ -542,7 +542,7 @@ final class StatisticCell: UITableViewCell {
         
         maxTimeLabel.textAlignment = .center
         maxTimeLabel.baselineAdjustment = .alignCenters
-        maxTimeLabel.font = fontBoldStandart30
+        maxTimeLabel.font = fontBoldStandard30
         maxTimeLabel.textColor = .colorWhite
         maxTimeLabel.adjustsFontSizeToFitWidth = true
         
@@ -550,7 +550,7 @@ final class StatisticCell: UITableViewCell {
 
         dateLastButton.setTitle(NSLocalizedString("Last jump", comment: "") + ":", for: .normal)
         dateLastButton.setTitleColor(.colorLightGray, for: .normal)
-        dateLastButton.titleLabel?.font = fontMediumStandart12
+        dateLastButton.titleLabel?.font = fontMediumStandard12
         dateLastButton.contentVerticalAlignment = textAligmentTop
         dateLastButton.backgroundColor = .colorCell
         dateLastButton.layer.cornerRadius = cornerRadius20
@@ -558,7 +558,7 @@ final class StatisticCell: UITableViewCell {
         
         dateLastLabel.textAlignment = .center
         dateLastLabel.baselineAdjustment = .alignCenters
-        dateLastLabel.font = fontBoldStandart20
+        dateLastLabel.font = fontBoldStandard20
         dateLastLabel.textColor = .colorWhite
         dateLastLabel.numberOfLines = 1
         dateLastLabel.adjustsFontSizeToFitWidth = true
@@ -567,7 +567,7 @@ final class StatisticCell: UITableViewCell {
 
         maxDayButton.setTitle(NSLocalizedString("Max. in day", comment: "") + ":", for: .normal)
         maxDayButton.setTitleColor(.colorLightGray, for: .normal)
-        maxDayButton.titleLabel?.font = fontMediumStandart12
+        maxDayButton.titleLabel?.font = fontMediumStandard12
         maxDayButton.contentVerticalAlignment = textAligmentTop
         maxDayButton.backgroundColor = .colorCell
         maxDayButton.layer.cornerRadius = cornerRadius20
@@ -575,7 +575,7 @@ final class StatisticCell: UITableViewCell {
         
         maxDayLabel.textAlignment = .center
         maxDayLabel.baselineAdjustment = .alignCenters
-        maxDayLabel.font = fontBoldStandart30
+        maxDayLabel.font = fontBoldStandard30
         maxDayLabel.textColor = .colorWhite
         maxDayLabel.numberOfLines = 1
         maxDayLabel.adjustsFontSizeToFitWidth = true
@@ -584,7 +584,7 @@ final class StatisticCell: UITableViewCell {
 
         averageTimeButton.setTitle(NSLocalizedString("Av. time", comment: "") + ":", for: .normal)
         averageTimeButton.setTitleColor(.colorLightGray, for: .normal)
-        averageTimeButton.titleLabel?.font = fontMediumStandart12
+        averageTimeButton.titleLabel?.font = fontMediumStandard12
         averageTimeButton.contentVerticalAlignment = textAligmentTop
         averageTimeButton.backgroundColor = .colorCell
         averageTimeButton.layer.cornerRadius = cornerRadius20
@@ -592,7 +592,7 @@ final class StatisticCell: UITableViewCell {
         
         averageTimeLabel.textAlignment = .center
         averageTimeLabel.baselineAdjustment = .alignCenters
-        averageTimeLabel.font = fontBoldStandart30
+        averageTimeLabel.font = fontBoldStandard30
         averageTimeLabel.textColor = .colorWhite
         averageTimeLabel.numberOfLines = 0
         averageTimeLabel.adjustsFontSizeToFitWidth = true
@@ -601,7 +601,7 @@ final class StatisticCell: UITableViewCell {
 
         countCutawayButton.setTitle(NSLocalizedString("CutawayStatistic", comment: "") + ":", for: .normal)
         countCutawayButton.setTitleColor(.colorLightGray, for: .normal)
-        countCutawayButton.titleLabel?.font = fontMediumStandart12
+        countCutawayButton.titleLabel?.font = fontMediumStandard12
         countCutawayButton.contentVerticalAlignment = textAligmentTop
         countCutawayButton.backgroundColor = .colorCell
         countCutawayButton.layer.cornerRadius = cornerRadius20
@@ -609,7 +609,7 @@ final class StatisticCell: UITableViewCell {
         
         countCutawayLabel.textAlignment = .center
         countCutawayLabel.baselineAdjustment = .alignCenters
-        countCutawayLabel.font = fontBoldStandart30
+        countCutawayLabel.font = fontBoldStandard30
         countCutawayLabel.textColor = .colorWhite
         countCutawayLabel.numberOfLines = 0
         countCutawayLabel.adjustsFontSizeToFitWidth = true
@@ -618,7 +618,7 @@ final class StatisticCell: UITableViewCell {
 
         aircraftsButton.setTitle(NSLocalizedString("Aircraft", comment: "") + ":", for: .normal)
         aircraftsButton.setTitleColor(.colorLightGray, for: .normal)
-        aircraftsButton.titleLabel?.font = fontMediumStandart12
+        aircraftsButton.titleLabel?.font = fontMediumStandard12
         aircraftsButton.contentVerticalAlignment = textAligmentTop
         aircraftsButton.backgroundColor = .colorCell
         aircraftsButton.layer.cornerRadius = cornerRadius20
@@ -626,7 +626,7 @@ final class StatisticCell: UITableViewCell {
         
         aircraftsLabel.textAlignment = .center
         aircraftsLabel.baselineAdjustment = .alignCenters
-        aircraftsLabel.font = fontBoldStandart30
+        aircraftsLabel.font = fontBoldStandard30
         aircraftsLabel.textColor = .colorWhite
         aircraftsLabel.adjustsFontSizeToFitWidth = true
         
@@ -634,7 +634,7 @@ final class StatisticCell: UITableViewCell {
 
         canopiesButton.setTitle(NSLocalizedString("Canopies", comment: "") + ":", for: .normal)
         canopiesButton.setTitleColor(.colorLightGray, for: .normal)
-        canopiesButton.titleLabel?.font = fontMediumStandart12
+        canopiesButton.titleLabel?.font = fontMediumStandard12
         canopiesButton.contentVerticalAlignment = textAligmentTop
         canopiesButton.backgroundColor = .colorCell
         canopiesButton.layer.cornerRadius = cornerRadius20
@@ -642,7 +642,7 @@ final class StatisticCell: UITableViewCell {
         
         canopiesLabel.textAlignment = .center
         canopiesLabel.baselineAdjustment = .alignCenters
-        canopiesLabel.font = fontBoldStandart30
+        canopiesLabel.font = fontBoldStandard30
         canopiesLabel.textColor = .colorWhite
         canopiesLabel.adjustsFontSizeToFitWidth = true
         
@@ -650,7 +650,7 @@ final class StatisticCell: UITableViewCell {
 
         locationsButton.setTitle(NSLocalizedString("Locations", comment: "") + ":", for: .normal)
         locationsButton.setTitleColor(.colorLightGray, for: .normal)
-        locationsButton.titleLabel?.font = fontMediumStandart12
+        locationsButton.titleLabel?.font = fontMediumStandard12
         locationsButton.contentVerticalAlignment = textAligmentTop
         locationsButton.backgroundColor = .colorCell
         locationsButton.layer.cornerRadius = cornerRadius20
@@ -658,14 +658,14 @@ final class StatisticCell: UITableViewCell {
         
         locationsLabel.textAlignment = .center
         locationsLabel.baselineAdjustment = .alignCenters
-        locationsLabel.font = fontBoldStandart30
+        locationsLabel.font = fontBoldStandard30
         locationsLabel.textColor = .colorWhite
         locationsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MISSIONS:
 
         missionsButton.setTitleColor(.colorLightGray, for: .normal)
-        missionsButton.titleLabel?.font = fontMediumStandart12
+        missionsButton.titleLabel?.font = fontMediumStandard12
         missionsButton.contentVerticalAlignment = textAligmentTop
         missionsButton.backgroundColor = .colorCell
         missionsButton.layer.cornerRadius = cornerRadius20
@@ -673,7 +673,7 @@ final class StatisticCell: UITableViewCell {
         // MARK: MISSIONS ONE:
 
         missionsOneLabel.textAlignment = .left
-        missionsOneLabel.font = fontStatisticMissions
+        missionsOneLabel.font = fontMediumStandard9
         missionsOneLabel.textColor = .colorWhite
         missionsOneLabel.numberOfLines = 0
         missionsOneLabel.adjustsFontSizeToFitWidth = true
@@ -682,14 +682,14 @@ final class StatisticCell: UITableViewCell {
 
         topMissionButton.setTitle(NSLocalizedString("Top 10" + ":", comment: ""), for: .normal)
         topMissionButton.setTitleColor(.colorLightGray, for: .normal)
-        topMissionButton.titleLabel?.font = fontMediumStandart12
+        topMissionButton.titleLabel?.font = fontMediumStandard12
         topMissionButton.contentVerticalAlignment = textAligmentTop
         topMissionButton.titleLabel?.textAlignment = .center
         topMissionButton.backgroundColor = .colorCell
         topMissionButton.layer.cornerRadius = cornerRadius20
         
         topMissionLabel.textAlignment = .center
-        topMissionLabel.font = fontStatisticTop10
+        topMissionLabel.font = fontMediumStandard9
         topMissionLabel.textColor = .colorWhite
         topMissionLabel.numberOfLines = 0
         topMissionLabel.adjustsFontSizeToFitWidth = true
@@ -697,7 +697,7 @@ final class StatisticCell: UITableViewCell {
         // MARK: MISSIONS TWO:
 
         missionsTwoLabel.textAlignment = .right
-        missionsTwoLabel.font = fontStatisticMissions
+        missionsTwoLabel.font = fontMediumStandard9
         missionsTwoLabel.textColor = .colorWhite
         missionsTwoLabel.numberOfLines = 0
         missionsTwoLabel.adjustsFontSizeToFitWidth = true

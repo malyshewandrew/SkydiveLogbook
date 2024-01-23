@@ -170,11 +170,11 @@ final class EditAccountVC: UIViewController {
         nicknameButton.backgroundColor = .colorCell
         nicknameButton.setTitleColor(.colorLightGray, for: .normal)
         nicknameButton.contentVerticalAlignment = textAligmentTop
-        nicknameButton.titleLabel?.font = fontMediumStandart12
+        nicknameButton.titleLabel?.font = fontMediumStandard12
         nicknameButton.layer.cornerRadius = cornerRadius10
         nicknameTextField.placeholder = NSLocalizedString("Name user / edit account vc", comment: "")
         nicknameTextField.backgroundColor = .colorTabBar
-        nicknameTextField.font = fontMediumStandart18
+        nicknameTextField.font = fontMediumStandard18
         nicknameTextField.textColor = .colorWhite
         nicknameTextField.layer.cornerRadius = cornerRadius10
         nicknameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -188,11 +188,11 @@ final class EditAccountVC: UIViewController {
         licenseTypeButton.backgroundColor = .colorCell
         licenseTypeButton.setTitleColor(.colorLightGray, for: .normal)
         licenseTypeButton.contentVerticalAlignment = textAligmentTop
-        licenseTypeButton.titleLabel?.font = fontMediumStandart12
+        licenseTypeButton.titleLabel?.font = fontMediumStandard12
         licenseTypeButton.layer.cornerRadius = cornerRadius10
         licenseTypeTextField.placeholder = NSLocalizedString("Type / number / edit account vc", comment: "")
         licenseTypeTextField.backgroundColor = .colorTabBar
-        licenseTypeTextField.font = fontMediumStandart18
+        licenseTypeTextField.font = fontMediumStandard18
         licenseTypeTextField.textColor = .colorWhite
         licenseTypeTextField.layer.cornerRadius = cornerRadius10
         licenseTypeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -206,11 +206,11 @@ final class EditAccountVC: UIViewController {
         licenseDateButton.backgroundColor = .colorCell
         licenseDateButton.setTitleColor(.colorLightGray, for: .normal)
         licenseDateButton.contentVerticalAlignment = textAligmentTop
-        licenseDateButton.titleLabel?.font = fontMediumStandart12
+        licenseDateButton.titleLabel?.font = fontMediumStandard12
         licenseDateButton.layer.cornerRadius = cornerRadius10
         licenseDateTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         licenseDateTextField.backgroundColor = .colorTabBar
-        licenseDateTextField.font = fontMediumStandart18
+        licenseDateTextField.font = fontMediumStandard18
         licenseDateTextField.textColor = .colorWhite
         licenseDateTextField.layer.cornerRadius = cornerRadius10
         licenseDateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -224,11 +224,11 @@ final class EditAccountVC: UIViewController {
         medicineButton.backgroundColor = .colorCell
         medicineButton.setTitleColor(.colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop
-        medicineButton.titleLabel?.font = fontMediumStandart12
+        medicineButton.titleLabel?.font = fontMediumStandard12
         medicineButton.layer.cornerRadius = cornerRadius10
         medicineTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         medicineTextField.backgroundColor = .colorTabBar
-        medicineTextField.font = fontMediumStandart18
+        medicineTextField.font = fontMediumStandard18
         medicineTextField.textColor = .colorWhite
         medicineTextField.layer.cornerRadius = cornerRadius10
         medicineTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -242,11 +242,11 @@ final class EditAccountVC: UIViewController {
         insuranceButton.backgroundColor = .colorCell
         insuranceButton.setTitleColor(.colorLightGray, for: .normal)
         insuranceButton.contentVerticalAlignment = textAligmentTop
-        insuranceButton.titleLabel?.font = fontMediumStandart12
+        insuranceButton.titleLabel?.font = fontMediumStandard12
         insuranceButton.layer.cornerRadius = cornerRadius10
         insuranceTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         insuranceTextField.backgroundColor = .colorTabBar
-        insuranceTextField.font = fontMediumStandart18
+        insuranceTextField.font = fontMediumStandard18
         insuranceTextField.textColor = .colorWhite
         insuranceTextField.layer.cornerRadius = cornerRadius10
         insuranceTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -260,11 +260,11 @@ final class EditAccountVC: UIViewController {
         reserveCanopyButton.backgroundColor = .colorCell
         reserveCanopyButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopyButton.titleLabel?.font = fontMediumStandart12
+        reserveCanopyButton.titleLabel?.font = fontMediumStandard12
         reserveCanopyButton.layer.cornerRadius = cornerRadius10
         reserveCanopyTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         reserveCanopyTextField.backgroundColor = .colorTabBar
-        reserveCanopyTextField.font = fontMediumStandart18
+        reserveCanopyTextField.font = fontMediumStandard18
         reserveCanopyTextField.textColor = .colorWhite
         reserveCanopyTextField.layer.cornerRadius = cornerRadius10
         reserveCanopyTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -278,7 +278,7 @@ final class EditAccountVC: UIViewController {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.colorWhite, for: .normal)
-        saveButton.titleLabel?.font = fontMediumStandart14
+        saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.addTarget(self, action: #selector(tapOnSaveButtom), for: .touchUpInside)
     }
     
