@@ -214,8 +214,8 @@
 "No comment" = "Комментариев нет";
 "Container system" = "Ранец";
 "AAD system" = "Страхующий прибор";
-"Main canopy system" = "Main canopy";
-"Reserve canopy system" = "Reserve canopy";
+"Main canopy system" = "Основной парашют";
+"Reserve canopy system" = "Запасной парашют";
 
 // MARK: - SYSTEM CELL:
 
