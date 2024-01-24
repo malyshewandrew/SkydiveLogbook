@@ -216,7 +216,6 @@ final class NotesVC: UIViewController {
         actionButtonSaveGreenColor()
         noteTextView.resignFirstResponder()
         noteTextView.text = ""
-        tableView.reloadData()
         playSoundSucces()
         alertKitSuccess()
         
