@@ -24,11 +24,9 @@ final class AccountCell: UITableViewCell {
     private let editCanopiesButton = UIButton()
     private let calculatorButton = UIButton()
     private let backupButton = UIButton()
-    private let weatherButton = UIButton()
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
     private let starImage = UIImageView()
-    private let restoreButton = UIButton()
     var delegate: AccountCellDelegate?
 
     // MARK: - LIFECYCLE:
@@ -46,7 +44,7 @@ final class AccountCell: UITableViewCell {
  
     // MARK: - ADD SUBVIEWS:
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, calculatorButton, backupButton, weatherButton, infoButton, premiumButton, restoreButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, calculatorButton, backupButton, infoButton, premiumButton)
         premiumButton.addSubview(starImage)
     }
     

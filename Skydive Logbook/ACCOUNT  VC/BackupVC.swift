@@ -169,9 +169,9 @@ final class BackupVC: UIViewController {
             combinedData["systems"] = arraySystemsRealm.map { $0.toDictionary() }
             let combinedDataJSON = try JSONSerialization.data(withJSONObject: combinedData, options: .prettyPrinted)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy, HH.mm.ss"
+            dateFormatter.dateFormat = "dd.MM.yyyy"
             let currentDateTime = dateFormatter.string(from: Date())
-            let fileName = "DATA (\(currentDateTime)).json"
+            let fileName = "\(arrayJumpsRealm.count) jumps: (\(currentDateTime)).json"
             let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let backupPath = documentsDirectory.appendingPathComponent(fileName)
             try combinedDataJSON.write(to: backupPath, options: .atomic)
