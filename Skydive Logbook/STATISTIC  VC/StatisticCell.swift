@@ -69,6 +69,8 @@ final class StatisticCell: UITableViewCell {
     private let topMissionButton = UIButton()
     private let topMissionLabel = UILabel()
     
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
+    
     let dateFormatter = DateFormatter()
     var delegate: StatisticCellDelegate?
     
@@ -83,9 +85,6 @@ final class StatisticCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        addSubviews()
-        configureConstrains()
-        configureUI()
         reloadData()
     }
 
@@ -103,7 +102,7 @@ final class StatisticCell: UITableViewCell {
                                 dateFirstButton, maxTimeButton, dateLastButton,
                                 maxDayButton, averageTimeButton, countCutawayButton,
                                 aircraftsButton, canopiesButton, locationsButton,
-                                missionsButton, topMissionButton)
+                                missionsButton, topMissionButton, activityIndicator)
         generalInfoButton.addSubview(generalInfoLabel)
         totalJumpsButton.addSubview(totalJumpsLabel)
         jumpsYearButton.addSubview(jumpsYearLabel)
@@ -390,6 +389,11 @@ final class StatisticCell: UITableViewCell {
         missionsTwoLabel.leadingAnchor.constraint(equalTo: topMissionButton.trailingAnchor, constant: 10).isActive = true
         missionsTwoLabel.trailingAnchor.constraint(equalTo: missionsButton.trailingAnchor, constant: -10).isActive = true
         missionsTwoLabel.bottomAnchor.constraint(equalTo: missionsButton.bottomAnchor, constant: -5).isActive = true
+        
+        // MARK: ACTIVITY INDICATOR:
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -701,6 +705,9 @@ final class StatisticCell: UITableViewCell {
         missionsTwoLabel.textColor = .colorWhite
         missionsTwoLabel.numberOfLines = 0
         missionsTwoLabel.adjustsFontSizeToFitWidth = true
+        
+        // MARK: ACTIVITY INDICATOR:
+        activityIndicator.hidesWhenStopped = true
     }
     
     // MARK: - HELPERS:
@@ -1193,25 +1200,29 @@ final class StatisticCell: UITableViewCell {
     // MARK: RELOAD DATA:
     
     private func reloadData() {
-        setGeneralInfo()
-        setTotalJumps()
-        setJumpsYear()
-        setCategories()
-        setMaxHeight()
-        setAverageHeight()
-        setMinHeight()
-        setMaxDay()
-        setAverageTime()
-        setCountCutaway()
-        setDateFirst()
-        setMaxTime()
-        setDateLast()
-        setAircrafts()
-        setCanopies()
-        setLocations()
-        setMissionsOne()
-        setMissionsTwo()
-        setTopMission()
+        activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            self.setGeneralInfo()
+            self.setTotalJumps()
+            self.setJumpsYear()
+            self.setCategories()
+            self.setMaxHeight()
+            self.setAverageHeight()
+            self.setMinHeight()
+            self.setMaxDay()
+            self.setAverageTime()
+            self.setCountCutaway()
+            self.setDateFirst()
+            self.setMaxTime()
+            self.setDateLast()
+            self.setAircrafts()
+            self.setCanopies()
+            self.setLocations()
+            self.setMissionsOne()
+            self.setMissionsTwo()
+            self.setTopMission()
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     // MARK: - FUNCTIONS DELEGATES:

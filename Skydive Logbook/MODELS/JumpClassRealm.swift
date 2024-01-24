@@ -127,7 +127,6 @@ enum Mission: String, PersistableEnum {
     }
 }
 
-
 enum Cutaway: String, PersistableEnum {
     case Yes
     case No

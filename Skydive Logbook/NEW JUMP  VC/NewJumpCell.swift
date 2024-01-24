@@ -78,14 +78,17 @@ class NewJumpCell: UITableViewCell {
         heightTextField.delegate = self
         timeTextField.delegate = self
         
+        locationTextField.delegate = self
+        aircraftTextField.delegate = self
+        canopyTextField.delegate = self
+        missionTextField.delegate = self
+        cutawayTextField.delegate = self
+        
         canopyPickerView.dataSource = self
         missionPickerView.dataSource = self
         locationPickerView.dataSource = self
         aircraftPickerView.dataSource = self
         cutawayPickerView.dataSource = self
-    }
-    
-    override func prepareForReuse() {
     }
     
     @available(*, unavailable)
@@ -671,8 +674,8 @@ extension NewJumpCell: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if arrayCanopiesRealm.isEmpty || missionPickerViewValues.isEmpty || arrayLocationsRealm.isEmpty || arrayAircraftsRealm.isEmpty || cutawayPickerViewValues.isEmpty {
-                return
-            }
+            return
+        }
         if pickerView == canopyPickerView {
             canopyTextField.text = arrayCanopiesRealm[row].canopy
         } else if pickerView == missionPickerView {
@@ -742,5 +745,31 @@ extension NewJumpCell: UITextFieldDelegate {
         let allowedCharacters = CharacterSet(charactersIn: "1234567890")
         let characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if arrayCanopiesRealm.isEmpty || missionPickerViewValues.isEmpty || arrayLocationsRealm.isEmpty || arrayAircraftsRealm.isEmpty || cutawayPickerViewValues.isEmpty {
+            return
+        }
+        
+        if textField == locationTextField {
+            locationTextField.text = arrayLocationsRealm[0].location
+        }
+        
+        if textField == aircraftTextField {
+            aircraftTextField.text = arrayAircraftsRealm[0].aircraft
+        }
+        
+        if textField == canopyTextField {
+            canopyTextField.text = arrayCanopiesRealm[0].canopy
+        }
+        
+        if textField == missionTextField {
+            missionTextField.text = missionPickerViewValues[0].localizedValue
+        }
+        
+        if textField == cutawayTextField {
+            cutawayTextField.text = cutawayPickerViewValues[0].localizedValue
+        }
     }
 }
