@@ -1087,7 +1087,12 @@ final class StatisticCell: UITableViewCell {
             }
         }
 
-        let topMissions = missionCounts.sorted(by: { $0.value > $1.value }).prefix(10)
+        let topMissions = missionCounts.sorted(by: {
+            if $0.value == $1.value {
+                return $0.key.localizedCaseInsensitiveCompare($1.key) == .orderedAscending
+            }
+            return $0.value > $1.value
+        }).prefix(10)
 
         var maxMissionsText = ""
         for (mission, count) in topMissions {
