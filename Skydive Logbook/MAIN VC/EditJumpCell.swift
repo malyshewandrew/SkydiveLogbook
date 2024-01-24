@@ -508,13 +508,15 @@ class EditJumpCell: UITableViewCell {
 
     private func saveNewJump() {
         let newJump = JumpClassRealm()
+        
         newJump.date = dateTextField.text ?? ""
         newJump.location = locationTextField.text ?? ""
         newJump.aircraft = aircraftTextField.text ?? ""
         newJump.canopy = canopyTextField.text ?? ""
 
         if let missionString = missionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-           let mission = Mission(rawValue: missionString) ?? Mission.allCases.first(where: { $0.localizedValue == missionString }) {
+           let mission = Mission(rawValue: missionString) ?? Mission.allCases.first(where: { $0.localizedValue == missionString }) 
+        {
             newJump.mission = mission
         } else {
             print("Failed to convert missionString to Mission: \(missionTextField.text ?? "")")
@@ -523,10 +525,10 @@ class EditJumpCell: UITableViewCell {
 
         newJump.height = heightTextField.text ?? ""
         newJump.time = timeTextField.text ?? ""
-
         
         if let cutawayString = cutawayTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-           let cutaway = Cutaway(rawValue: cutawayString) ?? Cutaway.allCases.first(where: { $0.localizedValue == cutawayString }) {
+           let cutaway = Cutaway(rawValue: cutawayString) ?? Cutaway.allCases.first(where: { $0.localizedValue == cutawayString }) 
+        {
             newJump.cutaway = cutaway
         } else {
             print("Failed to convert missionString to Mission: \(cutawayTextField.text ?? "")")
@@ -534,6 +536,7 @@ class EditJumpCell: UITableViewCell {
         }
         
         newJump.comment = commentTextField.text ?? ""
+        
         delegate?.saveJump(newJump)
         resetSelectPickerView()
     }

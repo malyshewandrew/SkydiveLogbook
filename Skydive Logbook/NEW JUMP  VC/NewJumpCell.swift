@@ -564,6 +564,7 @@ class NewJumpCell: UITableViewCell {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(newJump, update: .all)
         }
+        
         resetSelectPickerView()
     }
 

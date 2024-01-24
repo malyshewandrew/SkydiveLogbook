@@ -1,9 +1,9 @@
+import AlertKit
 import AudioToolbox
 import AVFoundation
 import Lottie
 import RealmSwift
 import UIKit
-import AlertKit
 
 final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -216,8 +216,9 @@ final class MainVC: UIViewController {
             $0
         }
     }
-    
+
     // MARK: - LOAD ACCOUNT FROM REALM:
+
     private func loadAccount() {
         arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
             $0
@@ -395,7 +396,7 @@ final class MainVC: UIViewController {
             mainStartLottie.isHidden = false
             mainStartLottie.play()
             mainStartLottie.loopMode = .autoReverse
-        } else { 
+        } else {
             mainStartLottie.isHidden = true
             firstMessageView.isHidden = true
             firstMessageLabel.isHidden = true
@@ -439,7 +440,7 @@ final class MainVC: UIViewController {
         loadingView.removeFromSuperview()
         loadingLottie.removeFromSuperview()
     }
-    
+
     // MARK: ALERT KIT SUCCESS:
 
     private func alertKitSuccess() {
@@ -465,7 +466,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell else { return UITableViewCell() }
-
         let jump = arrayJumpsRealm[indexPath.row]
         cell.configure(number: String(arrayJumpsRealm.count - indexPath.row), date: jump.date, location: jump.location, aircraft: jump.aircraft, canopy: jump.canopy, mission: jump.mission?.localizedValue ?? "", height: jump.height, time: jump.time, cutaway: jump.cutaway?.localizedValue ?? "", comment: jump.comment)
         return cell
@@ -506,7 +506,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             self.present(alertDelete, animated: true)
             completion(true)
         }
-
         deleteAction.image = UIImage(systemName: "trash")
         deleteAction.backgroundColor = .systemRed
 
@@ -520,7 +519,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         }
         editAction.image = UIImage(systemName: "slider.horizontal.2.square")
         editAction.backgroundColor = .systemBlue
-
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         return configuration
     }
