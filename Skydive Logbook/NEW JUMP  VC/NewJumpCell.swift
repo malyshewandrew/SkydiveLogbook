@@ -57,10 +57,10 @@ class NewJumpCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        missionPickerViewValues = [.Accuracy, .Acrobatics, .AFF, .Base, .BaseWingsuit, .CanopyFormation, .Freefly, .Freestyle, .Fun, .Group, .Instructor, .Military, .ParaSki, .Proximity, .Skysurfing, .StaticLine, .Piloting, .Tandem, .Vertical, .Video, .Wingsuit, .Formation]
+        missionPickerViewValues = [.AFF, .Accuracy, .Acrobatics, .Base, .BaseWingsuit, .CanopyFormation, .Freefly, .Freestyle, .Fun, .Group, .Instructor, .Military, .ParaSki, .Proximity, .Skysurfing, .StaticLine, .Piloting, .Tandem, .Vertical, .Video, .Wingsuit, .Formation]
         missionStrings = missionPickerViewValues.map { $0.localizedValue }
         
-        cutawayPickerViewValues = [.Yes, .No]
+        cutawayPickerViewValues = [.No, .Yes]
         cutawayStrings = cutawayPickerViewValues.map { $0.localizedValue }
         
         addSubviews()
@@ -78,6 +78,7 @@ class NewJumpCell: UITableViewCell {
         heightTextField.delegate = self
         timeTextField.delegate = self
         
+        dateTextField.delegate = self
         locationTextField.delegate = self
         aircraftTextField.delegate = self
         canopyTextField.delegate = self
@@ -750,6 +751,11 @@ extension NewJumpCell: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if arrayCanopiesRealm.isEmpty || missionPickerViewValues.isEmpty || arrayLocationsRealm.isEmpty || arrayAircraftsRealm.isEmpty || cutawayPickerViewValues.isEmpty {
             return
+        }
+        
+        if textField == dateTextField {
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            dateTextField.text = dateFormatter.string(from: Date())
         }
         
         if textField == locationTextField {
