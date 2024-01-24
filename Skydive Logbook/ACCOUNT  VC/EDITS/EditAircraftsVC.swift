@@ -26,7 +26,6 @@ final class EditAircraftsVC: UIViewController {
         configureTableView()
         configureGestures()
         enterTextTextField.delegate = self
-        loadAircrafts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -164,17 +163,15 @@ final class EditAircraftsVC: UIViewController {
     private func saveNewAirfrat() {
         let newAircraft = AircraftClassRealm()
         newAircraft.aircraft = enterTextTextField.text ?? ""
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newAircraft, update: .all)
+        }
         actionButtonSaveGreenColor()
         enterTextTextField.resignFirstResponder()
         enterTextTextField.text = ""
         tableView.reloadData()
         playSoundSucces()
         alertKitSuccess()
-        
-        try? realmManager.localRealm.write {
-            realmManager.localRealm.add(newAircraft, update: .all)
-        }
-        
         loadAircrafts()
         tableView.reloadData()
     }

@@ -35,7 +35,6 @@ final class EditAccountVC: UIViewController {
         configureConstrains()
         configureUI()
         configureGestures()
-        loadAccount()
         configureAccount()
     }
     

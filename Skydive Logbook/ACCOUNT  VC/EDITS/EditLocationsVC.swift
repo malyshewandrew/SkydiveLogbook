@@ -26,7 +26,6 @@ final class EditLocationsVC: UIViewController {
         configureTableView()
         configureGestures()
         enterTextTextField.delegate = self
-        loadLocations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -164,17 +163,15 @@ final class EditLocationsVC: UIViewController {
     private func saveNewLocation() {
         let newLocation = LocationClassRealm()
         newLocation.location = enterTextTextField.text ?? ""
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newLocation, update: .all)
+        }
         actionButtonSaveGreenColor()
         enterTextTextField.resignFirstResponder()
         enterTextTextField.text = ""
         tableView.reloadData()
         playSoundSucces()
         alertKitSuccess()
-        
-        try? realmManager.localRealm.write {
-            realmManager.localRealm.add(newLocation, update: .all)
-        }
-        
         loadLocations()
         tableView.reloadData()
     }

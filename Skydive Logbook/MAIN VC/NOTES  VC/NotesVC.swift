@@ -28,7 +28,6 @@ final class NotesVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
-        loadNotes()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -210,20 +209,16 @@ final class NotesVC: UIViewController {
 
     private func saveNewNote() {
         let newNote = NoteClassRealm()
-        
         newNote.note = noteTextView.text ?? ""
-        
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newNote, update: .all)
+        }
+        loadNotes()
         actionButtonSaveGreenColor()
         noteTextView.resignFirstResponder()
         noteTextView.text = ""
         playSoundSucces()
         alertKitSuccess()
-        
-        try? realmManager.localRealm.write {
-            realmManager.localRealm.add(newNote, update: .all)
-        }
-        
-        loadNotes()
         tableView.reloadData()
     }
 

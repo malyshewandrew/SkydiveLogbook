@@ -26,7 +26,6 @@ final class EditCanopiesVC: UIViewController {
         configureTableView()
         configureGestures()
         enterTextTextField.delegate = self
-        loadCanopies()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -172,17 +171,15 @@ final class EditCanopiesVC: UIViewController {
     private func saveNewCanopy() {
         let newCanopy = CanopyClassRealm()
         newCanopy.canopy = enterTextTextField.text ?? ""
+        try? realmManager.localRealm.write {
+            realmManager.localRealm.add(newCanopy, update: .all)
+        }
         actionButtonSaveGreenColor()
         enterTextTextField.resignFirstResponder()
         enterTextTextField.text = ""
         tableView.reloadData()
         playSoundSucces()
         alertKitSuccess()
-        
-        try? realmManager.localRealm.write {
-            realmManager.localRealm.add(newCanopy, update: .all)
-        }
-        
         loadCanopies()
         tableView.reloadData()
     }

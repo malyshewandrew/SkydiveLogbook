@@ -34,10 +34,8 @@ final class MainVC: UIViewController {
         configureConstrains()
         configureUI()
         configureTableView()
-        loadJumps()
         configureGestures()
         firstMessage()
-        loadAccount()
     }
 
     override func viewWillAppear(_ animated: Bool) {

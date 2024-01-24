@@ -22,7 +22,6 @@ final class StatisticVC: UIViewController {
         configureConstrains()
         configureUI()
         configureTableView()
-        loadJumps()
         configureGestures()
     }
 

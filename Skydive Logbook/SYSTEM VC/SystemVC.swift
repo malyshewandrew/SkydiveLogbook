@@ -24,9 +24,7 @@ final class SystemVC: UIViewController {
         configureConstrains()
         configureUI()
         configureTableView()
-        loadSystem()
         configureGestures()
-        loadCanopies()
     }
 
     override func viewWillAppear(_ animated: Bool) {
