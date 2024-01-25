@@ -520,6 +520,7 @@ class NewJumpCell: UITableViewCell {
         resignFirstResponders()
         clearTextViews()
         alertKitSuccess()
+        resetSelectPickerView()
     }
     
     // MARK: ACTION BUTTON CLEAN:
@@ -535,13 +536,12 @@ class NewJumpCell: UITableViewCell {
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
 
     private func saveNewJump() {
+        
         let newJump = JumpClassRealm()
-
         newJump.date = dateTextField.text ?? ""
         newJump.location = locationTextField.text ?? ""
         newJump.aircraft = aircraftTextField.text ?? ""
         newJump.canopy = canopyTextField.text ?? ""
-
         if let missionString = missionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
            let mission = Mission(rawValue: missionString) ?? Mission.allCases.first(where: { $0.localizedValue == missionString })
         {
@@ -550,10 +550,8 @@ class NewJumpCell: UITableViewCell {
             print("Failed to convert missionString to Mission: \(missionTextField.text ?? "")")
             return
         }
-
         newJump.height = heightTextField.text ?? ""
         newJump.time = timeTextField.text ?? ""
-
         if let cutawayString = cutawayTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
            let cutaway = Cutaway(rawValue: cutawayString) ?? Cutaway.allCases.first(where: { $0.localizedValue == cutawayString })
         {
@@ -562,14 +560,10 @@ class NewJumpCell: UITableViewCell {
             print("Failed to convert cutawayString to Cutaway: \(cutawayTextField.text ?? "")")
             return
         }
-        
         newJump.comment = commentTextField.text ?? ""
-
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(newJump, update: .all)
         }
-        
-        resetSelectPickerView()
     }
 
     // MARK: CLEAR ALL TEXT FIELDS:

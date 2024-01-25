@@ -42,11 +42,11 @@ final class MainVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         loadJumps()
+        loadAccount()
         firstMessage()
         tableView.reloadData()
         sortArray()
         arrayJumpsRealm.reverse()
-        loadAccount()
     }
 
     // MARK: - ADD SUBVIEWS:
