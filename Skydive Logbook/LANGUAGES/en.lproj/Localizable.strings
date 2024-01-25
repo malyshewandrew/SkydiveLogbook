@@ -330,17 +330,12 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 "kg." = "kg";
 "ft" = "ft²";
 "Square canopy" = "Square canopy";
-"1-50A" = "Parachute type: Student.\nCategory: A.\nNumber of jumps: 1-50 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
-
-"51-200B" = "Parachute type: Transition.\nCategory: B.\nNumber of jumps: 51-200 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
-
-"201-500C" = "Parachute type: Medium-speed.\nCategory: C.\nNumber of jumps: 201-500 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
-
-"501-1000D1" = "Parachute type: Speed/elliptical.\nCategory: D.\nNumber of jumps: 501-1000 jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
-
-"1000D2" = "Parachute type: High-speed.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
-
-"1000D3" = "Parachute type: High-speed/crossbraced.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n\nCarefully study the recommendations and restrictions provided by the manufacturer of your parachute. This includes maximum and minimum load, as well as other individual characteristics.\n\nToo high a load can lead to a higher fall rate and reduce the skydiver's control over the direction of movement. Too low a load can lead to instability and slow down the vertical descent.\n\nSafety should be your priority when using a parachute. If you have any questions or doubts, it is always better to get advice from your instructor.";
+"1-50A" = "\nParachute type: Student.\nCategory: A.\nNumber of jumps: 1-50 jumps.\n";
+"51-200B" = "\nParachute type: Transition.\nCategory: B.\nNumber of jumps: 51-200 jumps.\n";
+"201-500C" = "\nParachute type: Medium-speed.\nCategory: C.\nNumber of jumps: 201-500 jumps.\n";
+"501-1000D1" = "\nParachute type: Speed/elliptical.\nCategory: D.\nNumber of jumps: 501-1000 jumps.\n";
+"1000D2" = "\nParachute type: High-speed.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n";
+"1000D3" = "\nParachute type: High-speed/crossbraced.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n";
 
 // MARK: - INFO:
 

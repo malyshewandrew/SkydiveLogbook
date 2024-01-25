@@ -41,7 +41,6 @@ final class MainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        loadJumps()
         loadAccount()
         firstMessage()
         tableView.reloadData()

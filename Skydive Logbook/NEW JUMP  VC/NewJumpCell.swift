@@ -482,6 +482,14 @@ class NewJumpCell: UITableViewCell {
         contentView.addGestureRecognizer(tapGesture)
     }
     
+    // MARK: - LOAD JUMPS FROM REALM:
+
+    private func loadJumps() {
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map {
+            $0
+        }
+    }
+    
     // MARK: - HELPERS:
     
     // MARK: DATE PICKER:
@@ -536,7 +544,6 @@ class NewJumpCell: UITableViewCell {
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
 
     private func saveNewJump() {
-        
         let newJump = JumpClassRealm()
         newJump.date = dateTextField.text ?? ""
         newJump.location = locationTextField.text ?? ""
@@ -564,6 +571,7 @@ class NewJumpCell: UITableViewCell {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(newJump, update: .all)
         }
+        loadJumps()
     }
 
     // MARK: CLEAR ALL TEXT FIELDS:

@@ -99,7 +99,7 @@ final class CalculatorVC: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 30).isActive = true
         textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        textView.heightAnchor.constraint(equalTo: resultLabel.heightAnchor, multiplier: 6.5).isActive = true
+        textView.heightAnchor.constraint(greaterThanOrEqualTo: textLabel.heightAnchor, constant: 10).isActive = true
         textView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: INFO LABEL:
