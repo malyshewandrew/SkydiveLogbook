@@ -1,8 +1,8 @@
 import Lottie
+import RealmSwift
 import SafariServices
 import UIKit
 import WebKit
-import RealmSwift
 
 final class AccountVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -139,7 +139,6 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension AccountVC: AccountCellDelegate {
-
     func tapEditAccountButton() {
         let editAccount = EditAccountVC()
         navigationController?.pushViewController(editAccount, animated: true)
@@ -159,7 +158,7 @@ extension AccountVC: AccountCellDelegate {
         let editCanopies = EditCanopiesVC()
         navigationController?.pushViewController(editCanopies, animated: true)
     }
-    
+
     func tapCalculatorButton() {
         let calculator = CalculatorVC()
         navigationController?.pushViewController(calculator, animated: true)

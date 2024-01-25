@@ -1,5 +1,5 @@
-import UIKit
 import RealmSwift
+import UIKit
 
 // MARK: - PROTOCOL:
 
@@ -15,9 +15,8 @@ protocol AccountCellDelegate {
 }
 
 final class AccountCell: UITableViewCell {
-    
     // MARK: - PROPERTIES:
-    
+
     private let editAccountButton = UIButton()
     private let editLocationsButton = UIButton()
     private let editAircraftsButton = UIButton()
@@ -30,28 +29,29 @@ final class AccountCell: UITableViewCell {
     var delegate: AccountCellDelegate?
 
     // MARK: - LIFECYCLE:
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
         configureConstrains()
         configureUI()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
- 
+
     // MARK: - ADD SUBVIEWS:
+
     private func addSubviews() {
         contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, calculatorButton, backupButton, infoButton, premiumButton)
         premiumButton.addSubview(starImage)
     }
-    
+
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        
         // MARK: EDIT ACCOUNT:
 
         editAccountButton.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +59,7 @@ final class AccountCell: UITableViewCell {
         editAccountButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         editAccountButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         editAccountButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-        
+
         // MARK: EDIT LOCATIONS:
 
         editLocationsButton.translatesAutoresizingMaskIntoConstraints = false
@@ -91,7 +91,7 @@ final class AccountCell: UITableViewCell {
         calculatorButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         calculatorButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         calculatorButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-        
+
         // MARK: BACKUP BUTTON:
 
         backupButton.translatesAutoresizingMaskIntoConstraints = false
@@ -123,15 +123,15 @@ final class AccountCell: UITableViewCell {
         starImage.centerXAnchor.constraint(equalTo: premiumButton.trailingAnchor).isActive = true
         starImage.centerYAnchor.constraint(equalTo: premiumButton.topAnchor, constant: 5).isActive = true
     }
-    
+
     // MARK: - CONFIGURE UI:
-    
+
     private func configureUI() {
-        
         // MARK: CONTENT VIEW:
+
         contentView.backgroundColor = .colorBackground
         selectionStyle = .none
-        
+
         // MARK: EDIT ACCOUNT:
 
         editAccountButton.setTitle(NSLocalizedString("Edit account", comment: ""), for: .normal)
@@ -140,7 +140,7 @@ final class AccountCell: UITableViewCell {
         editAccountButton.titleLabel?.font = fontMediumStandard14
         editAccountButton.setTitleColor(.colorWhite, for: .normal)
         editAccountButton.addTarget(self, action: #selector(tapOnEditAccountButton), for: .touchUpInside)
-        
+
         // MARK: EDIT LOCATIONS:
 
         editLocationsButton.setTitle(NSLocalizedString("Edit locations", comment: ""), for: .normal)
@@ -167,7 +167,7 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.titleLabel?.font = fontMediumStandard14
         editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
         editCanopiesButton.addTarget(self, action: #selector(tapOnEditCanopiesButton), for: .touchUpInside)
-        
+
         // MARK: CALCULATOR:
 
         calculatorButton.setTitle(NSLocalizedString("Calculator loading", comment: ""), for: .normal)
@@ -210,15 +210,15 @@ final class AccountCell: UITableViewCell {
         starImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         starImage.tintColor = .systemYellow
     }
-    
+
     // MARK: - HELPERS:
-    
+
     // MARK: FUNC FOR EDIT ACCOUNT:
 
     @objc private func tapOnEditAccountButton() {
         delegate?.tapEditAccountButton()
     }
-    
+
     // MARK: FUNC FOR EDIT LOCATIONS:
 
     @objc private func tapOnEditLocationsButton() {
