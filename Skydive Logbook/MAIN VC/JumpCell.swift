@@ -209,7 +209,7 @@ class JumpCell: UITableViewCell {
         circleButton.backgroundColor = .colorCell
         circleButton.titleLabel?.font = .systemFont(ofSize: 60, weight: .bold, width: .standard)
         circleButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        circleButton.addTarget(self, action: #selector(tapOnCircleAnimationButton), for: .touchUpInside)
+        circleButton.addTarget(self, action: #selector(circleAnimationButtonTapped), for: .touchUpInside)
         if let titleLabel = circleButton.titleLabel {
             titleLabel.adjustsFontSizeToFitWidth = true
         }
@@ -384,7 +384,7 @@ class JumpCell: UITableViewCell {
         
     // MARK: FUNC FOR TAP ON CIRCLE BUTTON:
     
-    @objc private func tapOnCircleAnimationButton() {
+    @objc private func circleAnimationButtonTapped() {
         if statusAnimation == false {
             playCircleAnimation()
         } else {

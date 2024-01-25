@@ -16,7 +16,7 @@ final class MainCell: UITableViewCell {
     private let cutawayLabel = UILabel()
     private let commentLabel = UILabel()
     private let cellButton = UIButton()
-    var tapOnCell: (() -> ())?
+    var cellTapped: (() -> ())?
 
     // MARK: - LIFECYCLE:
 
@@ -197,6 +197,6 @@ final class MainCell: UITableViewCell {
     // MARK: ACTION FOR CLOSURE:
 
     @objc private func transitionVC() {
-        tapOnCell?()
+        cellTapped?()
     }
 }

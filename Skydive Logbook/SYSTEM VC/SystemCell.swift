@@ -377,14 +377,14 @@ final class SystemCell: UITableViewCell {
         let configurationComment = UIImage.SymbolConfiguration(pointSize: 20)
         commentImage.image = UIImage(systemName: "note.text", withConfiguration: configurationComment)
         commentImage.tintColor = .colorBlue
-        commentButton.addTarget(self, action: #selector(tapOnCommentButton), for: .touchUpInside)
+        commentButton.addTarget(self, action: #selector(commentButtonTapped), for: .touchUpInside)
         
         // MARK: EDIT BUTTON:
 
         let configurationEdit = UIImage.SymbolConfiguration(pointSize: 20)
         editImage.image = UIImage(systemName: "slider.horizontal.3", withConfiguration: configurationEdit)
         editImage.tintColor = .colorBlue
-        editButton.addTarget(self, action: #selector(tapOnEditButton), for: .touchUpInside)
+        editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
         
         // MARK: SYSTEM NAME:
         
@@ -738,12 +738,12 @@ final class SystemCell: UITableViewCell {
     
     
     // MARK: CLOSURE FOR EDIT BUTTON:
-    @objc private func tapOnEditButton() {
+    @objc private func editButtonTapped() {
         tapEditButton?()
     }
     
     // MARK: DELEGATE FOR COMMENT BUTTON:
-    @objc private func tapOnCommentButton() {
+    @objc private func commentButtonTapped() {
         guard let indexPath = indexPath else { return }
         delegate?.tapCommentButton(indexPath)
     }

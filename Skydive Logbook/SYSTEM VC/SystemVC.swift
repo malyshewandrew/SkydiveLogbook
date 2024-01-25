@@ -116,7 +116,7 @@ final class SystemVC: UIViewController {
         newSystemButton.setTitle(NSLocalizedString("Add a new system", comment: ""), for: .normal)
         newSystemButton.titleLabel?.font = fontMediumStandard14
         newSystemButton.setTitleColor(.colorWhite, for: .normal)
-        newSystemButton.addTarget(self, action: #selector(tapOnNewSystemButton), for: .touchUpInside)
+        newSystemButton.addTarget(self, action: #selector(newSystemButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -157,7 +157,7 @@ final class SystemVC: UIViewController {
 
     // MARK: - TRANSITION ON NEW SYSTEM VC:
 
-    @objc private func tapOnNewSystemButton() {
+    @objc private func newSystemButtonTapped() {
         let newSystemVC = NewSystemVC()
         navigationController?.pushViewController(newSystemVC, animated: true)
     }

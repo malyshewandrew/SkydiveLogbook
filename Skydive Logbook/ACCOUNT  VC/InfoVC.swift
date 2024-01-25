@@ -122,7 +122,7 @@ final class InfoVC: UIViewController {
         privacyButton.layer.cornerRadius = cornerRadius10
         privacyButton.backgroundColor = .colorCell
         privacyButton.titleLabel?.font = fontMediumStandard14
-        privacyButton.addTarget(self, action: #selector(tapOnPrivacyButton), for: .touchUpInside)
+        privacyButton.addTarget(self, action: #selector(privacyButtonTapped), for: .touchUpInside)
         
         // MARK: TERMS BUTTON:
         
@@ -132,7 +132,7 @@ final class InfoVC: UIViewController {
         termsButton.layer.cornerRadius = cornerRadius10
         termsButton.backgroundColor = .colorCell
         termsButton.titleLabel?.font = fontMediumStandard14
-        termsButton.addTarget(self, action: #selector(tapOnTermsButton), for: .touchUpInside)
+        termsButton.addTarget(self, action: #selector(termsButtonTapped), for: .touchUpInside)
         
         // MARK: ALERT VERSION BUTTON:
 
@@ -141,14 +141,14 @@ final class InfoVC: UIViewController {
         versionButton.layer.cornerRadius = cornerRadius10
         versionButton.backgroundColor = .colorCell
         versionButton.titleLabel?.font = fontMediumStandard14
-        versionButton.addTarget(self, action: #selector(tapOnVersionButton), for: .touchUpInside)
+        versionButton.addTarget(self, action: #selector(versionButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - HELPERS:
     
     // MARK: FUNC FOR ALERT VERSION BUTTON:
 
-    @objc private func tapOnVersionButton() {
+    @objc private func versionButtonTapped() {
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionAccountLottie = LottieAnimationView(name: "VersionAccountLottie")
         let alert = UIAlertController(title: "Skydive Logbook", message: "\n\n\nVersion 1.0\niOS Developer Malyshew Andrew", preferredStyle: .alert)
@@ -181,7 +181,7 @@ final class InfoVC: UIViewController {
     
     // MARK: OPEN SAFARI PRIVACY:
     
-    @objc private func tapOnPrivacyButton() {
+    @objc private func privacyButtonTapped() {
         guard let url = URL(string: "http://malyshewandrew.tilda.ws/privacysecurity") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
@@ -190,7 +190,7 @@ final class InfoVC: UIViewController {
     
     // MARK: OPEN SAFARI TERMS:
     
-    @objc private func tapOnTermsButton() {
+    @objc private func termsButtonTapped() {
         guard let url = URL(string: "http://malyshewandrew.tilda.ws/termsofuse") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self

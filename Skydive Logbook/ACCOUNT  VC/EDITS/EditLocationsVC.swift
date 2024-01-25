@@ -123,7 +123,7 @@ final class EditLocationsVC: UIViewController {
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius10
-        cleanButton.addTarget(self, action: #selector(tapOnCleanButton), for: .touchUpInside)
+        cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW
@@ -178,7 +178,7 @@ final class EditLocationsVC: UIViewController {
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
 
-    @objc private func tapOnCleanButton() {
+    @objc private func cleanButtonTapped() {
         enterTextTextField.text = ""
         actionButtonCleanChangeColor()
         tableView.reloadData()

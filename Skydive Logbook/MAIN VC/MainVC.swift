@@ -14,7 +14,6 @@ final class MainVC: UIViewController {
     private let mainStartLottie = LottieAnimationView(name: "Main")
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let confettiButton = UIButton()
-    private let vibrationOn = Vibration()
     private let accountImage = UIImageView()
     private let accountButton = UIButton()
     private let notesImage = UIImageView()
@@ -22,8 +21,9 @@ final class MainVC: UIViewController {
     private let tableView = UITableView()
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
-    private var selectedJump: JumpClassRealm?
     private let dateFormatter = DateFormatter()
+    private let vibrationOn = Vibration()
+    private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
@@ -185,7 +185,7 @@ final class MainVC: UIViewController {
 
         // MARK: ACCOUNT BUTTON:
 
-        accountButton.addTarget(self, action: #selector(tapOnAccountButton), for: .touchUpInside)
+        accountButton.addTarget(self, action: #selector(accountButtonTapped), for: .touchUpInside)
 
         // MARK: NOTES IMAGE:
 
@@ -194,7 +194,7 @@ final class MainVC: UIViewController {
 
         // MARK: NOTES BUTTON:
 
-        notesButton.addTarget(self, action: #selector(tapOnNotesButton), for: .touchUpInside)
+        notesButton.addTarget(self, action: #selector(notesButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -226,7 +226,7 @@ final class MainVC: UIViewController {
 
     // MARK: - ACCOUNT ALERT:
 
-    @objc private func tapOnAccountButton() {
+    @objc private func accountButtonTapped() {
         // MARK: NICKNAME:
 
         var nickname = ""
@@ -326,7 +326,7 @@ final class MainVC: UIViewController {
 
     // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
 
-    @objc private func tapOnNotesButton() {
+    @objc private func notesButtonTapped() {
         let notesViewController = NotesVC()
         present(notesViewController, animated: true, completion: nil)
     }
@@ -336,7 +336,7 @@ final class MainVC: UIViewController {
     private func configureGestures() {
         // MARK: THREE TAP FOR PLAY ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confettiButtonTapped))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
@@ -426,7 +426,7 @@ final class MainVC: UIViewController {
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
 
-    @objc private func tapOnConfettiButton() {
+    @objc private func confettiButtonTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }

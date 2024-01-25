@@ -133,7 +133,7 @@ final class PremiumVC: UIViewController {
         buy1Button.titleLabel?.numberOfLines = 0
         buy1Button.titleLabel?.textAlignment = .center
         buy1Button.titleLabel?.adjustsFontSizeToFitWidth = true
-        buy1Button.addTarget(self, action: #selector(tapOnBuy1Button), for: .touchUpInside)
+        buy1Button.addTarget(self, action: #selector(buy1ButtonTapped), for: .touchUpInside)
         
         // MARK: BUY 12 BUTTON:
         
@@ -145,7 +145,7 @@ final class PremiumVC: UIViewController {
         buy12Button.titleLabel?.numberOfLines = 0
         buy12Button.titleLabel?.textAlignment = .center
         buy12Button.titleLabel?.adjustsFontSizeToFitWidth = true
-        buy12Button.addTarget(self, action: #selector(tapOnBuy12Button), for: .touchUpInside)
+        buy12Button.addTarget(self, action: #selector(buy12ButtonTapped), for: .touchUpInside)
         
         // MARK: PERCENT LABEL:
         
@@ -165,21 +165,21 @@ final class PremiumVC: UIViewController {
         restoreButton.backgroundColor = .colorTabBar
         restoreButton.titleLabel?.font = fontMediumStandard14
         restoreButton.setTitleColor(.colorWhite, for: .normal)
-        restoreButton.addTarget(self, action: #selector(tapOnRestoreButton), for: .touchUpInside)
+        restoreButton.addTarget(self, action: #selector(restoreButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - HELPERS:
     
     // MARK: FUNC FOR BUY 1:
     
-    @objc private func tapOnBuy1Button() {
+    @objc private func buy1ButtonTapped() {
         print("TEST 1")
         purchaseProduct()
     }
     
     // MARK: FUNC FOR BUY 12:
     
-    @objc private func tapOnBuy12Button() {
+    @objc private func buy12ButtonTapped() {
         print("TEST 12")
         purchaseProduct()
     }
@@ -207,7 +207,7 @@ final class PremiumVC: UIViewController {
     
     // MARK: FUNC FOR ALERT RESTORE BUTTON:
 
-    @objc private func tapOnRestoreButton() {
+    @objc private func restoreButtonTapped() {
         SwiftyStoreKit.restorePurchases { results in
             if results.restoreFailedPurchases.isEmpty {
                 // Восстановление завершено успешно

@@ -114,7 +114,7 @@ final class EditCanopiesVC: UIViewController {
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.addTarget(self, action: #selector(tapOnSaveButton), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
 
         // MARK: CLEAN BUTTON:
 
@@ -123,7 +123,7 @@ final class EditCanopiesVC: UIViewController {
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius10
-        cleanButton.addTarget(self, action: #selector(tapOnCleanButton), for: .touchUpInside)
+        cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -157,7 +157,7 @@ final class EditCanopiesVC: UIViewController {
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
-    @objc private func tapOnSaveButton() {
+    @objc private func saveButtonTapped() {
         guard enterTextTextField.text != "" else {
             actionButtonSaveRedColor()
             alertKitError()
@@ -186,7 +186,7 @@ final class EditCanopiesVC: UIViewController {
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
 
-    @objc private func tapOnCleanButton() {
+    @objc private func cleanButtonTapped() {
         enterTextTextField.text = ""
         actionButtonCleanChangeColor()
         tableView.reloadData()

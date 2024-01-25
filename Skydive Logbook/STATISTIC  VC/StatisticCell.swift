@@ -412,7 +412,7 @@ final class StatisticCell: UITableViewCell {
         generalInfoButton.contentVerticalAlignment = textAligmentTop
         generalInfoButton.backgroundColor = .colorCell
         generalInfoButton.layer.cornerRadius = cornerRadius20
-        generalInfoButton.addTarget(self, action: #selector(tapOnGeneralInfoButton), for: .touchUpInside)
+        generalInfoButton.addTarget(self, action: #selector(generalInfoButtonTapped), for: .touchUpInside)
         
         generalInfoLabel.textAlignment = .center
         generalInfoLabel.baselineAdjustment = .alignCenters
@@ -429,7 +429,7 @@ final class StatisticCell: UITableViewCell {
         totalJumpsButton.contentVerticalAlignment = textAligmentTop
         totalJumpsButton.backgroundColor = .colorCell
         totalJumpsButton.layer.cornerRadius = cornerRadius20
-        totalJumpsButton.addTarget(self, action: #selector(tapOnTotalButton), for: .touchUpInside)
+        totalJumpsButton.addTarget(self, action: #selector(totalButtonTapped), for: .touchUpInside)
         
         totalJumpsLabel.textAlignment = .center
         totalJumpsLabel.baselineAdjustment = .alignCenters
@@ -445,7 +445,7 @@ final class StatisticCell: UITableViewCell {
         jumpsYearButton.contentVerticalAlignment = textAligmentTop
         jumpsYearButton.backgroundColor = .colorCell
         jumpsYearButton.layer.cornerRadius = cornerRadius20
-        jumpsYearButton.addTarget(self, action: #selector(tapOnYearButton), for: .touchUpInside)
+        jumpsYearButton.addTarget(self, action: #selector(yearButtonTapped), for: .touchUpInside)
         
         jumpsYearLabel.textAlignment = .center
         jumpsYearLabel.baselineAdjustment = .alignCenters
@@ -461,7 +461,7 @@ final class StatisticCell: UITableViewCell {
         categoryButton.contentVerticalAlignment = textAligmentTop
         categoryButton.backgroundColor = .colorCell
         categoryButton.layer.cornerRadius = cornerRadius20
-        categoryButton.addTarget(self, action: #selector(tapOnCategoryButton), for: .touchUpInside)
+        categoryButton.addTarget(self, action: #selector(categoryButtonTapped), for: .touchUpInside)
         
         categoryLabel.textAlignment = .center
         categoryLabel.baselineAdjustment = .alignCenters
@@ -477,7 +477,7 @@ final class StatisticCell: UITableViewCell {
         maxHeightButton.contentVerticalAlignment = textAligmentTop
         maxHeightButton.backgroundColor = .colorCell
         maxHeightButton.layer.cornerRadius = cornerRadius20
-        maxHeightButton.addTarget(self, action: #selector(tapOnMaxHeightButton), for: .touchUpInside)
+        maxHeightButton.addTarget(self, action: #selector(maxHeightButtonTapped), for: .touchUpInside)
         
         maxHeightLabel.textAlignment = .center
         maxHeightLabel.baselineAdjustment = .alignCenters
@@ -493,7 +493,7 @@ final class StatisticCell: UITableViewCell {
         averageHeightButton.contentVerticalAlignment = textAligmentTop
         averageHeightButton.backgroundColor = .colorCell
         averageHeightButton.layer.cornerRadius = cornerRadius20
-        averageHeightButton.addTarget(self, action: #selector(tapOnAverageHeightButton), for: .touchUpInside)
+        averageHeightButton.addTarget(self, action: #selector(averageHeightButtonTapped), for: .touchUpInside)
         
         averageHeightLabel.textAlignment = .center
         averageHeightLabel.baselineAdjustment = .alignCenters
@@ -509,7 +509,7 @@ final class StatisticCell: UITableViewCell {
         minHeightButton.contentVerticalAlignment = textAligmentTop
         minHeightButton.backgroundColor = .colorCell
         minHeightButton.layer.cornerRadius = cornerRadius20
-        minHeightButton.addTarget(self, action: #selector(tapOnMinHeightButton), for: .touchUpInside)
+        minHeightButton.addTarget(self, action: #selector(minHeightButtonTapped), for: .touchUpInside)
         
         minHeightLabel.textAlignment = .center
         minHeightLabel.baselineAdjustment = .alignCenters
@@ -525,7 +525,7 @@ final class StatisticCell: UITableViewCell {
         dateFirstButton.contentVerticalAlignment = textAligmentTop
         dateFirstButton.backgroundColor = .colorCell
         dateFirstButton.layer.cornerRadius = cornerRadius20
-        dateFirstButton.addTarget(self, action: #selector(tapOnDateFirstButton), for: .touchUpInside)
+        dateFirstButton.addTarget(self, action: #selector(dateFirstButtonTapped), for: .touchUpInside)
         
         dateFirstLabel.textAlignment = .center
         dateFirstLabel.baselineAdjustment = .alignCenters
@@ -542,7 +542,7 @@ final class StatisticCell: UITableViewCell {
         maxTimeButton.contentVerticalAlignment = textAligmentTop
         maxTimeButton.backgroundColor = .colorCell
         maxTimeButton.layer.cornerRadius = cornerRadius20
-        maxTimeButton.addTarget(self, action: #selector(tapOnMaxTimeButton), for: .touchUpInside)
+        maxTimeButton.addTarget(self, action: #selector(maxTimeButtonTapped), for: .touchUpInside)
         
         maxTimeLabel.textAlignment = .center
         maxTimeLabel.baselineAdjustment = .alignCenters
@@ -558,7 +558,7 @@ final class StatisticCell: UITableViewCell {
         dateLastButton.contentVerticalAlignment = textAligmentTop
         dateLastButton.backgroundColor = .colorCell
         dateLastButton.layer.cornerRadius = cornerRadius20
-        dateLastButton.addTarget(self, action: #selector(tapOnDateLastButton), for: .touchUpInside)
+        dateLastButton.addTarget(self, action: #selector(dateLastButtonTapped), for: .touchUpInside)
         
         dateLastLabel.textAlignment = .center
         dateLastLabel.baselineAdjustment = .alignCenters
@@ -575,7 +575,7 @@ final class StatisticCell: UITableViewCell {
         maxDayButton.contentVerticalAlignment = textAligmentTop
         maxDayButton.backgroundColor = .colorCell
         maxDayButton.layer.cornerRadius = cornerRadius20
-        maxDayButton.addTarget(self, action: #selector(tapOnMaxDayButton), for: .touchUpInside)
+        maxDayButton.addTarget(self, action: #selector(maxDayButtonTapped), for: .touchUpInside)
         
         maxDayLabel.textAlignment = .center
         maxDayLabel.baselineAdjustment = .alignCenters
@@ -592,7 +592,7 @@ final class StatisticCell: UITableViewCell {
         averageTimeButton.contentVerticalAlignment = textAligmentTop
         averageTimeButton.backgroundColor = .colorCell
         averageTimeButton.layer.cornerRadius = cornerRadius20
-        averageTimeButton.addTarget(self, action: #selector(tapOnAverageTimeButton), for: .touchUpInside)
+        averageTimeButton.addTarget(self, action: #selector(averageTimeButtonTapped), for: .touchUpInside)
         
         averageTimeLabel.textAlignment = .center
         averageTimeLabel.baselineAdjustment = .alignCenters
@@ -609,7 +609,7 @@ final class StatisticCell: UITableViewCell {
         countCutawayButton.contentVerticalAlignment = textAligmentTop
         countCutawayButton.backgroundColor = .colorCell
         countCutawayButton.layer.cornerRadius = cornerRadius20
-        countCutawayButton.addTarget(self, action: #selector(tapOnCountCutawayButton), for: .touchUpInside)
+        countCutawayButton.addTarget(self, action: #selector(countCutawayButtonTapped), for: .touchUpInside)
         
         countCutawayLabel.textAlignment = .center
         countCutawayLabel.baselineAdjustment = .alignCenters
@@ -626,7 +626,7 @@ final class StatisticCell: UITableViewCell {
         aircraftsButton.contentVerticalAlignment = textAligmentTop
         aircraftsButton.backgroundColor = .colorCell
         aircraftsButton.layer.cornerRadius = cornerRadius20
-        aircraftsButton.addTarget(self, action: #selector(tapOnAircraftsButton), for: .touchUpInside)
+        aircraftsButton.addTarget(self, action: #selector(aircraftsButtonTapped), for: .touchUpInside)
         
         aircraftsLabel.textAlignment = .center
         aircraftsLabel.baselineAdjustment = .alignCenters
@@ -642,7 +642,7 @@ final class StatisticCell: UITableViewCell {
         canopiesButton.contentVerticalAlignment = textAligmentTop
         canopiesButton.backgroundColor = .colorCell
         canopiesButton.layer.cornerRadius = cornerRadius20
-        canopiesButton.addTarget(self, action: #selector(tapOnCanopiesButton), for: .touchUpInside)
+        canopiesButton.addTarget(self, action: #selector(canopiesButtonTapped), for: .touchUpInside)
         
         canopiesLabel.textAlignment = .center
         canopiesLabel.baselineAdjustment = .alignCenters
@@ -658,7 +658,7 @@ final class StatisticCell: UITableViewCell {
         locationsButton.contentVerticalAlignment = textAligmentTop
         locationsButton.backgroundColor = .colorCell
         locationsButton.layer.cornerRadius = cornerRadius20
-        locationsButton.addTarget(self, action: #selector(tapOnLocationsButton), for: .touchUpInside)
+        locationsButton.addTarget(self, action: #selector(locationsButtonTapped), for: .touchUpInside)
         
         locationsLabel.textAlignment = .center
         locationsLabel.baselineAdjustment = .alignCenters
@@ -1233,67 +1233,67 @@ final class StatisticCell: UITableViewCell {
     
     // MARK: - FUNCTIONS DELEGATES:
     
-    @objc private func tapOnGeneralInfoButton() {
+    @objc private func generalInfoButtonTapped() {
         delegate?.tapGeneralInfoButton()
     }
     
-    @objc private func tapOnTotalButton() {
+    @objc private func totalButtonTapped() {
         delegate?.tapTotalButton()
     }
     
-    @objc private func tapOnYearButton() {
+    @objc private func yearButtonTapped() {
         delegate?.tapYearButton()
     }
     
-    @objc private func tapOnCategoryButton() {
+    @objc private func categoryButtonTapped() {
         delegate?.tapCategoryButton()
     }
     
-    @objc private func tapOnMaxHeightButton() {
+    @objc private func maxHeightButtonTapped() {
         delegate?.tapMaxHeightButton()
     }
     
-    @objc private func tapOnAverageHeightButton() {
+    @objc private func averageHeightButtonTapped() {
         delegate?.tapAverageHeightButton()
     }
     
-    @objc private func tapOnMinHeightButton() {
+    @objc private func minHeightButtonTapped() {
         delegate?.tapMinHeightButton()
     }
     
-    @objc private func tapOnMaxDayButton() {
+    @objc private func maxDayButtonTapped() {
         delegate?.tapMaxDayButton()
     }
     
-    @objc private func tapOnAverageTimeButton() {
+    @objc private func averageTimeButtonTapped() {
         delegate?.tapAverageTimeButton()
     }
     
-    @objc private func tapOnCountCutawayButton() {
+    @objc private func countCutawayButtonTapped() {
         delegate?.tapCountCutawayButton()
     }
     
-    @objc private func tapOnDateFirstButton() {
+    @objc private func dateFirstButtonTapped() {
         delegate?.tapDateFirstButton()
     }
     
-    @objc private func tapOnMaxTimeButton() {
+    @objc private func maxTimeButtonTapped() {
         delegate?.tapMaxTimeButton()
     }
     
-    @objc private func tapOnDateLastButton() {
+    @objc private func dateLastButtonTapped() {
         delegate?.tapDateLastButton()
     }
     
-    @objc private func tapOnAircraftsButton() {
+    @objc private func aircraftsButtonTapped() {
         delegate?.tapAircraftsButton()
     }
     
-    @objc private func tapOnCanopiesButton() {
+    @objc private func canopiesButtonTapped() {
         delegate?.tapCanopiesButton()
     }
     
-    @objc private func tapOnLocationsButton() {
+    @objc private func locationsButtonTapped() {
         delegate?.tapLocationsButton()
     }
 }

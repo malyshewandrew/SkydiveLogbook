@@ -56,7 +56,7 @@ final class NewSystemVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
         
         navigationController?.navigationBar.isHidden = false
-        let manualButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.square.fill"), style: .plain, target: self, action: #selector(tapOnManualButton))
+        let manualButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.square.fill"), style: .plain, target: self, action: #selector(manualButtonTapped))
         navigationItem.rightBarButtonItem = manualButton
         navigationItem.backButtonTitle = ""
         
@@ -115,7 +115,7 @@ final class NewSystemVC: UIViewController {
     
     // MARK: - MANUAL ALERT:
 
-    @objc private func tapOnManualButton() {
+    @objc private func manualButtonTapped() {
         let alert = UIAlertController(title: NSLocalizedString("Add system alert", comment: "") + ":", message: """
         \n\(NSLocalizedString("Container alert", comment: "")):\n
         1. \(NSLocalizedString("Name and model container alert", comment: ""))

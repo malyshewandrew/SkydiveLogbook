@@ -155,7 +155,7 @@ final class NotesVC: UIViewController {
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.layer.cornerRadius = cornerRadius10
-        saveButton.addTarget(self, action: #selector(tapOnSaveButton), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
 
         // MARK: CLEAN BUTTON:
 
@@ -164,7 +164,7 @@ final class NotesVC: UIViewController {
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius10
-        cleanButton.addTarget(self, action: #selector(tapOnCleanButton), for: .touchUpInside)
+        cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -187,7 +187,7 @@ final class NotesVC: UIViewController {
 
         // MARK: THREE TAP FOR ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confettiButtonTapped))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
@@ -196,7 +196,7 @@ final class NotesVC: UIViewController {
 
     // MARK: ACTION FOR TAP ON SAVE BUTTON:
 
-    @objc private func tapOnSaveButton() {
+    @objc private func saveButtonTapped() {
         guard noteTextView.text != "" else {
             actionButtonSaveRedColor()
             alertKitError()
@@ -224,7 +224,7 @@ final class NotesVC: UIViewController {
 
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
 
-    @objc private func tapOnCleanButton() {
+    @objc private func cleanButtonTapped() {
         noteTextView.text = ""
         actionButtonCleanChangeColor()
         tableView.reloadData()
@@ -242,7 +242,7 @@ final class NotesVC: UIViewController {
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
-    @objc private func tapOnConfettiButton() {
+    @objc private func confettiButtonTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }

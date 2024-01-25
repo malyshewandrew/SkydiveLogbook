@@ -139,7 +139,7 @@ final class AccountCell: UITableViewCell {
         editAccountButton.backgroundColor = .colorCell
         editAccountButton.titleLabel?.font = fontMediumStandard14
         editAccountButton.setTitleColor(.colorWhite, for: .normal)
-        editAccountButton.addTarget(self, action: #selector(tapOnEditAccountButton), for: .touchUpInside)
+        editAccountButton.addTarget(self, action: #selector(editAccountButtonTapped), for: .touchUpInside)
 
         // MARK: EDIT LOCATIONS:
 
@@ -148,7 +148,7 @@ final class AccountCell: UITableViewCell {
         editLocationsButton.backgroundColor = .colorCell
         editLocationsButton.titleLabel?.font = fontMediumStandard14
         editLocationsButton.setTitleColor(.colorWhite, for: .normal)
-        editLocationsButton.addTarget(self, action: #selector(tapOnEditLocationsButton), for: .touchUpInside)
+        editLocationsButton.addTarget(self, action: #selector(editLocationsButtonTapped), for: .touchUpInside)
 
         // MARK: EDIT AIRCRAFTS:
 
@@ -157,7 +157,7 @@ final class AccountCell: UITableViewCell {
         editAircraftsButton.backgroundColor = .colorCell
         editAircraftsButton.titleLabel?.font = fontMediumStandard14
         editAircraftsButton.setTitleColor(.colorWhite, for: .normal)
-        editAircraftsButton.addTarget(self, action: #selector(tapOnEditAircraftsButton), for: .touchUpInside)
+        editAircraftsButton.addTarget(self, action: #selector(editAircraftsButtonTapped), for: .touchUpInside)
 
         // MARK: EDIT CANOPIES:
 
@@ -166,7 +166,7 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.backgroundColor = .colorCell
         editCanopiesButton.titleLabel?.font = fontMediumStandard14
         editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
-        editCanopiesButton.addTarget(self, action: #selector(tapOnEditCanopiesButton), for: .touchUpInside)
+        editCanopiesButton.addTarget(self, action: #selector(editCanopiesButtonTapped), for: .touchUpInside)
 
         // MARK: CALCULATOR:
 
@@ -175,7 +175,7 @@ final class AccountCell: UITableViewCell {
         calculatorButton.backgroundColor = .colorCell
         calculatorButton.titleLabel?.font = fontMediumStandard14
         calculatorButton.setTitleColor(.colorWhite, for: .normal)
-        calculatorButton.addTarget(self, action: #selector(tapOnCalculatorButton), for: .touchUpInside)
+        calculatorButton.addTarget(self, action: #selector(calculatorButtonTapped), for: .touchUpInside)
 
         // MARK: BACKUP BUTTON:
 
@@ -184,7 +184,7 @@ final class AccountCell: UITableViewCell {
         backupButton.backgroundColor = .colorCell
         backupButton.titleLabel?.font = fontMediumStandard14
         backupButton.setTitleColor(.colorWhite, for: .normal)
-        backupButton.addTarget(self, action: #selector(tapOnBackupButton), for: .touchUpInside)
+        backupButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
 
         // MARK: ABOUT BUTTON:
 
@@ -193,7 +193,7 @@ final class AccountCell: UITableViewCell {
         infoButton.backgroundColor = .colorCell
         infoButton.titleLabel?.font = fontMediumStandard14
         infoButton.setTitleColor(.colorWhite, for: .normal)
-        infoButton.addTarget(self, action: #selector(tapOnInfoButton), for: .touchUpInside)
+        infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
 
         // MARK: PREMIUM BUTTON:
 
@@ -202,7 +202,7 @@ final class AccountCell: UITableViewCell {
         premiumButton.backgroundColor = .colorCell
         premiumButton.titleLabel?.font = fontMediumStandard14
         premiumButton.setTitleColor(.colorWhite, for: .normal)
-        premiumButton.addTarget(self, action: #selector(tapOnPremiumButton), for: .touchUpInside)
+        premiumButton.addTarget(self, action: #selector(premiumButtonTapped), for: .touchUpInside)
 
         // MARK: STAR:
 
@@ -215,49 +215,49 @@ final class AccountCell: UITableViewCell {
 
     // MARK: FUNC FOR EDIT ACCOUNT:
 
-    @objc private func tapOnEditAccountButton() {
+    @objc private func editAccountButtonTapped() {
         delegate?.tapEditAccountButton()
     }
 
     // MARK: FUNC FOR EDIT LOCATIONS:
 
-    @objc private func tapOnEditLocationsButton() {
+    @objc private func editLocationsButtonTapped() {
         delegate?.tapEditLocationsButton()
     }
 
     // MARK: FUNC FOR EDIT AIRCRAFTS:
 
-    @objc private func tapOnEditAircraftsButton() {
+    @objc private func editAircraftsButtonTapped() {
         delegate?.tapEditAircraftsButton()
     }
 
     // MARK: FUNC FOR EDIT CANOPIES:
 
-    @objc private func tapOnEditCanopiesButton() {
+    @objc private func editCanopiesButtonTapped() {
         delegate?.tapEditCanopiesButton()
     }
 
     // MARK: FUNC FOR BACKUP:
 
-    @objc private func tapOnBackupButton() {
+    @objc private func backupButtonTapped() {
         delegate?.tapBackupButton()
     }
 
     // MARK: FUNC FOR CALCULATOR:
 
-    @objc private func tapOnCalculatorButton() {
+    @objc private func calculatorButtonTapped() {
         delegate?.tapCalculatorButton()
     }
 
     // MARK: FUNC FOR INFO BUTTON:
 
-    @objc private func tapOnInfoButton() {
+    @objc private func infoButtonTapped() {
         delegate?.tapInfoButton()
     }
 
     // MARK: FUNC FOR PREMIUM BUTTON:
 
-    @objc private func tapOnPremiumButton() {
+    @objc private func premiumButtonTapped() {
         delegate?.tapPremiumButton()
     }
 }

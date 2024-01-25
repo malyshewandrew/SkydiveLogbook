@@ -278,7 +278,7 @@ final class EditAccountVC: UIViewController {
         saveButton.layer.cornerRadius = cornerRadius10
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandard14
-        saveButton.addTarget(self, action: #selector(tapOnSaveButtom), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(saveButtomTapped), for: .touchUpInside)
     }
     
     // MARK: - CONFIGURE GESTURES:
@@ -362,7 +362,7 @@ final class EditAccountVC: UIViewController {
     
     // MARK: ACTION BUTTON SAVE:
     
-    @objc private func tapOnSaveButtom() {
+    @objc private func saveButtomTapped() {
         saveNewAccount()
         resignFirstResponders()
         actionButtonSaveGreenColor()

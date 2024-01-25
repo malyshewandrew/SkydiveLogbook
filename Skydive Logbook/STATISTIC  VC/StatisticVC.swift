@@ -122,7 +122,7 @@ final class StatisticVC: UIViewController {
     private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfettiButton))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confettiButtonTapped))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
@@ -131,7 +131,7 @@ final class StatisticVC: UIViewController {
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
-    @objc private func tapOnConfettiButton() {
+    @objc private func confettiButtonTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }

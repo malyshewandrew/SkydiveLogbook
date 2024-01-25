@@ -99,7 +99,7 @@ final class NewJumpVC: UIViewController {
         // MARK: MANUAL BUTTON:
         
         manualButton.setBackgroundImage(UIImage(systemName: "questionmark.square.fill"), for: .normal)
-        manualButton.addTarget(self, action: #selector(tapOnManualButton), for: .touchUpInside)
+        manualButton.addTarget(self, action: #selector(manualButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - CONFIGURE TABLE VIEW:
@@ -117,7 +117,7 @@ final class NewJumpVC: UIViewController {
     private func configureGestures() {
         // MARK: THREE TAP FOR ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnConfetti))
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confettiTapped))
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
@@ -161,7 +161,7 @@ final class NewJumpVC: UIViewController {
     
     // MARK: - MANUAL ALERT:
 
-    @objc private func tapOnManualButton() {
+    @objc private func manualButtonTapped() {
         let alert = UIAlertController(title: NSLocalizedString("Add new jump / new jump", comment: "") + ":", message: "\n\(NSLocalizedString("Manual / new jump", comment: ""))", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default))
         present(alert, animated: true)
@@ -171,7 +171,7 @@ final class NewJumpVC: UIViewController {
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
-    @objc private func tapOnConfetti() {
+    @objc private func confettiTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }

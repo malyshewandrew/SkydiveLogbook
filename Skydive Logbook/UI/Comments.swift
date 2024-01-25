@@ -31,11 +31,11 @@ import Foundation
  weatherButton.backgroundColor = colorCell
  weatherButton.titleLabel?.font = fontMediumStandart14
  weatherButton.setTitleColor(.white, for: .normal)
- weatherButton.addTarget(self, action: #selector(tapOnWeatherButton), for: .touchUpInside)
+ weatherButton.addTarget(self, action: #selector(weatherButtonTapped), for: .touchUpInside)
 
  // MARK: - FUNC FOR WEATHER:
 
- @objc func tapOnWeatherButton(_ sender: UIButton) {
+ @objc func weatherButtonTapped(_ sender: UIButton) {
      if let weatherURL = URL(string: "weather://") {
          if UIApplication.shared.canOpenURL(weatherURL) {
              UIApplication.shared.open(weatherURL, options: [:], completionHandler: nil)
