@@ -1206,7 +1206,8 @@ final class StatisticCell: UITableViewCell {
     
     private func reloadData() {
         activityIndicator.startAnimating()
-        DispatchQueue.main.async {
+        let mainQueue = DispatchQueue.main
+        mainQueue.async {
             self.setGeneralInfo()
             self.setTotalJumps()
             self.setJumpsYear()
