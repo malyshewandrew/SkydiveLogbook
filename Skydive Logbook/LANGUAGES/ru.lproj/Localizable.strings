@@ -308,10 +308,9 @@
 "Type / number / edit account vc" = "Тип / номер";
 "Valid until / edit account vc" = "Срок действия (до)";
 "Date / dd.mm.yyyy / edit account vc" = "дд.мм.гггг";
-"Medicine / edit account vc" = "Медицина";
-"Valid until + dd.mm.yyyy / edit account vc" = "Срок действия (до) дд.мм.гггг";
-"Insurance / edit account vc" = "Страховка";
-"Reserve canopy / edit account vc" = "Запасной парашют";
+"Medicine / edit account vc" = "Медицина (до)";
+"Insurance / edit account vc" = "Страховка (до)";
+"Reserve canopy / edit account vc" = "Запасной парашют (до)";
 
 // MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
 

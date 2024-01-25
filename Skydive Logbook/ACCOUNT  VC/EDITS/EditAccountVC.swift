@@ -374,10 +374,8 @@ final class EditAccountVC: UIViewController {
 
     private func saveNewAccount() {
         let existingAccounts = realmManager.localRealm.objects(AccountClassRealm.self)
-        
         try? realmManager.localRealm.write {
             realmManager.localRealm.delete(existingAccounts)
-            
             let newAccount = AccountClassRealm()
             newAccount.nickname = nicknameTextField.text ?? ""
             newAccount.licenseType = licenseTypeTextField.text ?? ""

@@ -260,7 +260,7 @@ final class MainVC: UIViewController {
         } else {
             if arrayAccountRealm[0].licenseDate.isEmpty {
             } else {
-                licenseDate = " \(NSLocalizedString("until", comment: "")): " + arrayAccountRealm[0].licenseDate + "\n"
+                licenseDate = " \(NSLocalizedString("until", comment: "")): " + arrayAccountRealm[0].licenseDate
             }
         }
 
@@ -272,7 +272,7 @@ final class MainVC: UIViewController {
         } else {
             if arrayAccountRealm[0].medicine == "" {
             } else {
-                medicine = NSLocalizedString("Medicine until", comment: "") + ": " + arrayAccountRealm[0].medicine + "\n"
+                medicine = "\n" + NSLocalizedString("Medicine until", comment: "") + ": " + arrayAccountRealm[0].medicine + "\n"
             }
         }
 
