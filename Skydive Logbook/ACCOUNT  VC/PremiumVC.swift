@@ -152,7 +152,7 @@ final class PremiumVC: UIViewController {
         percentLabel.backgroundColor = .systemGreen
         percentLabel.layer.masksToBounds = true
         percentLabel.layer.cornerRadius = 15
-        percentLabel.text = "-85%"
+        percentLabel.text = "-58%"
         percentLabel.textAlignment = .center
         percentLabel.font = .systemFont(ofSize: 12, weight: .bold, width: .standard)
         percentLabel.transform = CGAffineTransform(rotationAngle: 0.5)
