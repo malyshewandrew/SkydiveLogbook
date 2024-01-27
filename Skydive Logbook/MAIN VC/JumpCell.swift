@@ -405,6 +405,7 @@ class JumpCell: UITableViewCell {
         circleAirplaneLottie.isHidden = false
         circleAirplaneLottie.play()
         circleAirplaneLottie.loopMode = .loop
+        circleAirplaneLottie.animationSpeed = 0.7
         vibrationOn.vibrationSucces()
         UIView.animate(withDuration: 2.0, animations: {
             self.circleAirplaneLottie.alpha = 1.0

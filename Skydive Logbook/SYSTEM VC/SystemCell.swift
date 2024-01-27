@@ -840,7 +840,7 @@ final class SystemCell: UITableViewCell {
         borderShapeLayer.shadowColor = UIColor.white.cgColor
         borderShapeLayer.shadowRadius = 5
         borderShapeLayer.shadowOpacity = 0.5
-        borderShapeLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        borderShapeLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
 
         let borderShapeLayer1 = CAShapeLayer()
         borderShapeLayer1.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius, rotation: 180).cgPath
@@ -854,7 +854,7 @@ final class SystemCell: UITableViewCell {
         borderShapeLayer1.shadowColor = UIColor.white.cgColor
         borderShapeLayer1.shadowRadius = 5
         borderShapeLayer1.shadowOpacity = 0.5
-        borderShapeLayer1.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        borderShapeLayer1.shadowOffset = CGSize(width: 1.0, height: 1.0)
 
         containerView.layer.addSublayer(borderShapeLayer)
         containerView.layer.addSublayer(borderShapeLayer1)
