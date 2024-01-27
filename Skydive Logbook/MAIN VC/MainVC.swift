@@ -473,6 +473,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: TRANSSITION ON "JUMP VIEW CONTROLLER":
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vibrationOn.vibrationSucces()
         let jump = arrayJumpsRealm[indexPath.row]
         let jumpViewController = JumpVC(selectedJump: jump)
         selectedJump = jump

@@ -61,6 +61,7 @@ final class SystemCell: UITableViewCell {
     private let timeOffset: TimeInterval = 3
     private var isAnimating: Bool = false
     private var snakeLayers: [CAShapeLayer] = []
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -772,8 +773,10 @@ final class SystemCell: UITableViewCell {
     @objc func nViewTapped() {
         if isAnimating {
             stopAnimations()
+            vibrationOn.vibrationSucces()
         } else {
             call()
+            vibrationOn.vibrationSucces()
         }
         isAnimating = !isAnimating
     }
