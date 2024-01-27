@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let systemViewController = SystemVC()
         systemViewController.title = NSLocalizedString("System tab bar", comment: "")
-        systemViewController.tabBarItem.image = UIImage(systemName: "gym.bag.fill")
+        systemViewController.tabBarItem.image = UIImage(systemName: "backpack.fill")
 
         let accountViewController = AccountVC()
         accountViewController.title = NSLocalizedString("Account tab bar", comment: "")
