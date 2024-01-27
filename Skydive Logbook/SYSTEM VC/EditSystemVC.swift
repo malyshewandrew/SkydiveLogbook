@@ -149,7 +149,7 @@ final class EditSystemVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Ок", style: .default))
         present(alert, animated: true)
     }
-    
+
     // MARK: - LOAD SYSTEM FROM REALM:
 
     private func loadSystem() {
@@ -157,7 +157,6 @@ final class EditSystemVC: UIViewController {
             $0
         }
     }
-    
 }
 
 // MARK: - EXTENSION:
