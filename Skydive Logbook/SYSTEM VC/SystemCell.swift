@@ -773,10 +773,10 @@ final class SystemCell: UITableViewCell {
     @objc func nViewTapped() {
         if isAnimating {
             stopAnimations()
-            vibrationOn.vibrationSucces()
+            vibrationOn.vibrationStandart()
         } else {
             call()
-            vibrationOn.vibrationSucces()
+            vibrationOn.vibrationStandart()
         }
         isAnimating = !isAnimating
     }

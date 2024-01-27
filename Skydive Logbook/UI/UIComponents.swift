@@ -43,6 +43,8 @@ let height75: CGFloat = 75
 
 class Vibration {
     let vibrationNotification = UINotificationFeedbackGenerator()
+    let vibrationSelectionFeedbackGenerator = UISelectionFeedbackGenerator()
+    let vibrationImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
 
     func vibrationSucces() {
         vibrationNotification.notificationOccurred(.success)
@@ -50,6 +52,16 @@ class Vibration {
 
     func vibrationError() {
         vibrationNotification.notificationOccurred(.error)
+    }
+    
+    func vibrationSelection() {
+        vibrationSelectionFeedbackGenerator.prepare()
+        vibrationSelectionFeedbackGenerator.selectionChanged()
+    }
+    
+    func vibrationStandart() {
+        vibrationImpactFeedbackGenerator.prepare()
+        vibrationImpactFeedbackGenerator.impactOccurred()
     }
 }
 

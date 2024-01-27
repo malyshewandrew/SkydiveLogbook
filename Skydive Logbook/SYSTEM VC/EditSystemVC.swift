@@ -149,6 +149,15 @@ final class EditSystemVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Ок", style: .default))
         present(alert, animated: true)
     }
+    
+    // MARK: - LOAD SYSTEM FROM REALM:
+
+    private func loadSystem() {
+        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map {
+            $0
+        }
+    }
+    
 }
 
 // MARK: - EXTENSION:
@@ -183,7 +192,7 @@ extension EditSystemVC: EditSystemCellDelegate {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(system, update: .modified)
         }
-
+        loadSystem()
         navigationController?.popViewController(animated: true)
     }
 }

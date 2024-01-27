@@ -146,6 +146,14 @@ final class EditJumpVC: UIViewController {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
+    
+    // MARK: - LOAD JUMPS FROM REALM:
+
+    private func loadJumps() {
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map {
+            $0
+        }
+    }
 }
 
 // MARK: - EXTENSION FOR TABLE VIEW:
@@ -180,6 +188,8 @@ extension EditJumpVC: EditJumpCellDelegate {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(jump, update: .modified)
         }
+        
+        loadJumps()
 
         navigationController?.popViewController(animated: true)
     }
