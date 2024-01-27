@@ -1,5 +1,5 @@
-import UIKit
 import RealmSwift
+import UIKit
 
 protocol SystemCellDelegate: AnyObject {
     func tapCommentButton(_ index: IndexPath)
@@ -53,7 +53,8 @@ final class SystemCell: UITableViewCell {
     weak var delegate: SystemCellDelegate?
     var indexPath: IndexPath?
     
-    
+    // MARK: - PROPERTIES FOR ANIMATIONS CONTENT VIEW:
+
     private let cornerRadius: CGFloat = 10
     private let segmentLength: CGFloat = 0.2
     private let animationDuration: TimeInterval = 3
@@ -68,6 +69,12 @@ final class SystemCell: UITableViewCell {
         addSubviews()
         configureConstraints()
         configureUI()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        isAnimating = false
+        resetAnimations()
     }
     
     @available(*, unavailable)
@@ -747,19 +754,20 @@ final class SystemCell: UITableViewCell {
         return expirationDateReserveCanopy
     }
     
-    
     // MARK: CLOSURE FOR EDIT BUTTON:
+
     @objc private func editButtonTapped() {
         tapEditButton?()
     }
     
     // MARK: DELEGATE FOR COMMENT BUTTON:
+
     @objc private func commentButtonTapped() {
         guard let indexPath = indexPath else { return }
         delegate?.tapCommentButton(indexPath)
     }
     
-    // MARK: - ANIMATIONS:
+    // MARK: - ANIMATION FOR CONTENT VIEW:
     
     @objc func nViewTapped() {
         if isAnimating {
@@ -783,7 +791,7 @@ final class SystemCell: UITableViewCell {
         animationGroup.fillMode = .forwards
         animationGroup.isRemovedOnCompletion = false
 
-        self.snakeLayers.forEach { layer in
+        snakeLayers.forEach { layer in
             layer.add(animationGroup, forKey: "fadeOut")
         }
 
@@ -794,6 +802,31 @@ final class SystemCell: UITableViewCell {
             }
             self.snakeLayers.removeAll()
         }
+    }
+    
+    func resetAnimations() {
+        let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeOutAnimation.fromValue = 0.0
+        fadeOutAnimation.toValue = 0.0
+        fadeOutAnimation.duration = 0.0
+        fadeOutAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+
+        let animationGroup = CAAnimationGroup()
+        animationGroup.animations = [fadeOutAnimation]
+        animationGroup.duration = 0.0
+        animationGroup.fillMode = .forwards
+        animationGroup.isRemovedOnCompletion = false
+
+        snakeLayers.forEach { layer in
+            layer.add(animationGroup, forKey: "fadeOut")
+        }
+
+            self.snakeLayers.forEach { layer in
+                layer.opacity = 0.0
+                layer.removeFromSuperlayer()
+            }
+            self.snakeLayers.removeAll()
+        snakeLayers.removeAll()
     }
 
     func call() {
@@ -808,8 +841,6 @@ final class SystemCell: UITableViewCell {
         borderShapeLayer.shadowRadius = 5
         borderShapeLayer.shadowOpacity = 0.5
         borderShapeLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-
-
 
         let borderShapeLayer1 = CAShapeLayer()
         borderShapeLayer1.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius, rotation: 180).cgPath
@@ -873,16 +904,17 @@ final class SystemCell: UITableViewCell {
     }
 }
 
+// MARK: EXTENSION FOR ANIMATION:
+
 extension UIBezierPath {
     func rotate(degree: CGFloat) {
-        let bounds: CGRect = self.cgPath.boundingBox
+        let bounds: CGRect = cgPath.boundingBox
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let radians = degree / 180.0 * .pi
         var transform: CGAffineTransform = .identity
         transform = transform.translatedBy(x: center.x, y: center.y)
         transform = transform.rotated(by: radians)
         transform = transform.translatedBy(x: -center.x, y: -center.y)
-        self.apply(transform)
+        apply(transform)
     }
 }
-
