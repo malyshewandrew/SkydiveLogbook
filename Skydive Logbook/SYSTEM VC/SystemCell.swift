@@ -53,6 +53,14 @@ final class SystemCell: UITableViewCell {
     weak var delegate: SystemCellDelegate?
     var indexPath: IndexPath?
     
+    
+    private let cornerRadius: CGFloat = 10
+    private let segmentLength: CGFloat = 0.2
+    private let animationDuration: TimeInterval = 3
+    private let timeOffset: TimeInterval = 3
+    private var isAnimating: Bool = false
+    private var snakeLayers: [CAShapeLayer] = []
+    
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -370,7 +378,7 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER VIEW:
 
         containerView.backgroundColor = .colorTabBar
-        containerView.layer.cornerRadius = 10
+        containerView.layer.cornerRadius = cornerRadius
         
         // MARK: COMMENT IMAGE AND BUTTON:
 
@@ -601,6 +609,9 @@ final class SystemCell: UITableViewCell {
         reserveCanopyDatePackLabel.font = fontRegularStandard12
         reserveCanopyDatePackLabel.textAlignment = .right
         reserveCanopyDatePackLabel.adjustsFontSizeToFitWidth = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(nViewTapped))
+        containerView.addGestureRecognizer(tapGesture)
     }
         
     // MARK: - HELPERS:
@@ -747,4 +758,131 @@ final class SystemCell: UITableViewCell {
         guard let indexPath = indexPath else { return }
         delegate?.tapCommentButton(indexPath)
     }
+    
+    // MARK: - ANIMATIONS:
+    
+    @objc func nViewTapped() {
+        if isAnimating {
+            stopAnimations()
+        } else {
+            call()
+        }
+        isAnimating = !isAnimating
+    }
+
+    func stopAnimations() {
+        let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeOutAnimation.fromValue = 1.0
+        fadeOutAnimation.toValue = 0.0
+        fadeOutAnimation.duration = 1.0
+        fadeOutAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+
+        let animationGroup = CAAnimationGroup()
+        animationGroup.animations = [fadeOutAnimation]
+        animationGroup.duration = 1.0
+        animationGroup.fillMode = .forwards
+        animationGroup.isRemovedOnCompletion = false
+
+        self.snakeLayers.forEach { layer in
+            layer.add(animationGroup, forKey: "fadeOut")
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.snakeLayers.forEach { layer in
+                layer.opacity = 0.0
+                layer.removeFromSuperlayer()
+            }
+            self.snakeLayers.removeAll()
+        }
+    }
+
+    func call() {
+        let borderShapeLayer = CAShapeLayer()
+        borderShapeLayer.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius).cgPath
+        borderShapeLayer.fillColor = UIColor.clear.cgColor
+        borderShapeLayer.strokeColor = UIColor.systemCyan.cgColor
+        borderShapeLayer.lineWidth = 1
+        borderShapeLayer.opacity = 0.0
+        
+        borderShapeLayer.shadowColor = UIColor.white.cgColor
+        borderShapeLayer.shadowRadius = 5
+        borderShapeLayer.shadowOpacity = 0.5
+        borderShapeLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+
+
+
+        let borderShapeLayer1 = CAShapeLayer()
+        borderShapeLayer1.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius, rotation: 180).cgPath
+        borderShapeLayer1.fillColor = UIColor.clear.cgColor
+        borderShapeLayer1.strokeColor = UIColor.systemCyan.cgColor
+        borderShapeLayer1.lineWidth = 1
+        borderShapeLayer1.strokeEnd = 0
+        borderShapeLayer1.strokeStart = 0
+        borderShapeLayer1.opacity = 0.0
+        
+        borderShapeLayer1.shadowColor = UIColor.white.cgColor
+        borderShapeLayer1.shadowRadius = 5
+        borderShapeLayer1.shadowOpacity = 0.5
+        borderShapeLayer1.shadowOffset = CGSize(width: 2.0, height: 2.0)
+
+        containerView.layer.addSublayer(borderShapeLayer)
+        containerView.layer.addSublayer(borderShapeLayer1)
+
+        snakeLayers = [borderShapeLayer, borderShapeLayer1]
+
+        let fadeInAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeInAnimation.fromValue = 0.0
+        fadeInAnimation.toValue = 1.0
+        fadeInAnimation.duration = 1.0
+        fadeInAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+
+        snakeLayers.forEach { layer in
+            layer.add(fadeInAnimation, forKey: "fadeIn")
+            layer.opacity = 1.0
+        }
+
+        let endAnimation = CAKeyframeAnimation(keyPath: "strokeEnd")
+        endAnimation.values = [0, 1]
+        endAnimation.keyTimes = [0, 1]
+
+        let startAnimation = CAKeyframeAnimation(keyPath: "strokeStart")
+        startAnimation.values = [0, 1]
+        startAnimation.keyTimes = [0, 1]
+        startAnimation.beginTime = animationDuration * segmentLength
+
+        let anime1 = CAAnimationGroup()
+        anime1.animations = [endAnimation, startAnimation]
+        anime1.duration = animationDuration
+        anime1.repeatCount = .infinity
+        anime1.timeOffset = timeOffset
+        borderShapeLayer.add(anime1, forKey: "anime1")
+
+        let anime2 = CAAnimationGroup()
+        anime2.animations = [endAnimation, startAnimation]
+        anime2.duration = animationDuration
+        anime2.repeatCount = .infinity
+        anime2.beginTime = CACurrentMediaTime() + animationDuration / 2
+        anime2.timeOffset = timeOffset
+        borderShapeLayer1.add(anime2, forKey: "anime2")
+    }
+
+    private func nPathBezier(rectangle: CGRect, cornerRadius: CGFloat, rotation: CGFloat = 0) -> UIBezierPath {
+        let path = UIBezierPath(roundedRect: rectangle, cornerRadius: cornerRadius)
+        path.rotate(degree: rotation)
+        return path
+    }
 }
+
+extension UIBezierPath {
+    func rotate(degree: CGFloat) {
+        let bounds: CGRect = self.cgPath.boundingBox
+        let center = CGPoint(x: bounds.midX, y: bounds.midY)
+        let radians = degree / 180.0 * .pi
+        var transform: CGAffineTransform = .identity
+        transform = transform.translatedBy(x: center.x, y: center.y)
+        transform = transform.rotated(by: radians)
+        transform = transform.translatedBy(x: -center.x, y: -center.y)
+        self.apply(transform)
+    }
+}
+
