@@ -232,10 +232,11 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - EXTENSION:
+
 extension SystemVC: SystemCellDelegate {
     func tapCommentButton(_ indexPath: IndexPath) {
         var comment = ""
-
         if arraySystemsRealm[indexPath.row].comment == "" {
             comment = NSLocalizedString("No comment", comment: "")
         } else {
