@@ -182,7 +182,7 @@ final class InfoVC: UIViewController {
     // MARK: OPEN SAFARI PRIVACY:
     
     @objc private func privacyButtonTapped() {
-        guard let url = URL(string: "http://malyshewandrew.tilda.ws/privacysecurity") else { return }
+        guard let url = URL(string: "https://skydivelogbook.tilda.ws/privacysecurity") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         present(safariViewController, animated: true)
@@ -191,7 +191,7 @@ final class InfoVC: UIViewController {
     // MARK: OPEN SAFARI TERMS:
     
     @objc private func termsButtonTapped() {
-        guard let url = URL(string: "http://malyshewandrew.tilda.ws/termsofuse") else { return }
+        guard let url = URL(string: "https://skydivelogbook.tilda.ws/termsofuse") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         present(safariViewController, animated: true)

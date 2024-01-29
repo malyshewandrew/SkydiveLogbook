@@ -180,15 +180,12 @@ extension EditJumpVC: UITableViewDelegate, UITableViewDataSource {
 extension EditJumpVC: EditJumpCellDelegate {
     func saveJump(_ jump: JumpClassRealm) {
         let deleteJump = arrayJumpsRealm[indexPath]
-
         try? realmManager.localRealm.write {
             self.realmManager.localRealm.delete(deleteJump)
         }
-
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(jump, update: .modified)
         }
-
         loadJumps()
         navigationController?.popViewController(animated: true)
     }
