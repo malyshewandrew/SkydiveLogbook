@@ -213,7 +213,6 @@ class JumpCell: UITableViewCell {
         if let titleLabel = circleButton.titleLabel {
             titleLabel.adjustsFontSizeToFitWidth = true
         }
-        circleButton.alpha = 0.9
 
         dateLabel.backgroundColor = .colorTabBar
         dateLabel.font = fontMediumStandard12
