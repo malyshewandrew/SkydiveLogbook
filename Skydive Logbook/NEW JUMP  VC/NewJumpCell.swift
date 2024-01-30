@@ -529,6 +529,7 @@ class NewJumpCell: UITableViewCell {
         clearTextViews()
         alertKitSuccess()
         resetSelectPickerView()
+        loadJumps()
     }
     
     // MARK: ACTION BUTTON CLEAN:
@@ -571,7 +572,6 @@ class NewJumpCell: UITableViewCell {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(newJump, update: .all)
         }
-        loadJumps()
     }
 
     // MARK: CLEAR ALL TEXT FIELDS:
