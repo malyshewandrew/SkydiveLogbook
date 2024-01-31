@@ -1,6 +1,6 @@
 import Lottie
-import UIKit
 import RealmSwift
+import UIKit
 
 final class JumpVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -15,10 +15,11 @@ final class JumpVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -38,6 +39,8 @@ final class JumpVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        // MARK: TABLE VIEW:
+
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -48,16 +51,17 @@ final class JumpVC: UIViewController {
     // MARK: - CONFIGURE UI:
 
     private func configureUI() {
-        
         // MARK: VIEW:
-        
+
         view.backgroundColor = .colorBackground
-        
+
         // MARK: NAVIGATION CONTROLLER:
-        
+
         navigationController?.navigationBar.isHidden = true
     }
-    
+
+    // MARK: - CONFIGURE TABLE VIEW:
+
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -80,7 +84,12 @@ extension JumpVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JumpCell", for: indexPath) as? JumpCell else { return UITableViewCell() }
+
+        // CONFIGURE:
         cell.configure(number: String(jumpNumber), date: selectedJump.date, location: selectedJump.location, aircraft: selectedJump.aircraft, canopy: selectedJump.canopy, mission: selectedJump.mission?.localizedValue ?? "", height: selectedJump.height, time: selectedJump.time, cutaway: selectedJump.cutaway?.localizedValue ?? "", comment: selectedJump.comment)
+
+        // ANNIVERSARY LOTTIE:
+        cell.anniversaryShow(number: jumpNumber)
         return cell
     }
 }

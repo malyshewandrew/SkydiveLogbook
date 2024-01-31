@@ -15,7 +15,7 @@ final class CalculatorVC: UIViewController {
     private let cleanButton = UIButton()
     private let resultLabel = UILabel()
     private let textView = UIView()
-    private let textLabel = UILabel()
+    private let resultTextLabel = UILabel()
     private var player = AVAudioPlayer()
 
     private let viewLoadCategoryA = UIView()
@@ -39,7 +39,7 @@ final class CalculatorVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(calculatorLottie, weightTextField, sizeCanopyTextField, resultButton, cleanButton, resultLabel, textView)
-        textView.addSubview(textLabel)
+        textView.addSubview(resultTextLabel)
         resultLabel.addSubviews(viewLoadCategoryA, viewLoadCategoryB, viewLoadCategoryC, viewLoadCategoryD, viewLoadCategoryD1, viewLoadCategoryD2)
     }
 
@@ -99,16 +99,16 @@ final class CalculatorVC: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 30).isActive = true
         textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        textView.heightAnchor.constraint(greaterThanOrEqualTo: textLabel.heightAnchor, constant: 10).isActive = true
+        textView.heightAnchor.constraint(greaterThanOrEqualTo: resultTextLabel.heightAnchor, constant: 10).isActive = true
         textView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: INFO LABEL:
 
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.centerXAnchor.constraint(equalTo: textView.centerXAnchor).isActive = true
-        textLabel.centerYAnchor.constraint(equalTo: textView.centerYAnchor).isActive = true
-        textLabel.leadingAnchor.constraint(equalTo: textView.leadingAnchor, constant: 10).isActive = true
-        textLabel.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: -10).isActive = true
+        resultTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        resultTextLabel.centerXAnchor.constraint(equalTo: textView.centerXAnchor).isActive = true
+        resultTextLabel.centerYAnchor.constraint(equalTo: textView.centerYAnchor).isActive = true
+        resultTextLabel.leadingAnchor.constraint(equalTo: textView.leadingAnchor, constant: 10).isActive = true
+        resultTextLabel.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: -10).isActive = true
 
         // MARK: VIE LOAD CATEGORY A:
 
@@ -247,10 +247,10 @@ final class CalculatorVC: UIViewController {
 
         // MARK: INFO LABEL:
 
-        textLabel.textAlignment = .left
-        textLabel.numberOfLines = 0
-        textLabel.font = fontRegularStandard10
-        textLabel.textColor = .colorWhite
+        resultTextLabel.textAlignment = .left
+        resultTextLabel.numberOfLines = 0
+        resultTextLabel.font = fontRegularStandard10
+        resultTextLabel.textColor = .colorWhite
     }
 
     // MARK: CONFIGURE GESTURES:
@@ -348,7 +348,7 @@ final class CalculatorVC: UIViewController {
         resultLabel.isHidden = false
         resultLabel.text = giveCanopyResult(heightSkydiver: weightTextField.text ?? "", sizeCanopy: sizeCanopyTextField.text ?? "")
 
-        textLabel.text = writeTextInfo(resultLabel.text ?? "")
+        resultTextLabel.text = writeTextInfo(resultLabel.text ?? "")
         textView.isHidden = false
 
         actionButtonSaveGreenColor()

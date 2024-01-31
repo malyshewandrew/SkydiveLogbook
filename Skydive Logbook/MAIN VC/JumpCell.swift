@@ -1,14 +1,15 @@
 import AudioToolbox
 import AVFoundation
 import Lottie
-import UIKit
 import RealmSwift
+import UIKit
 
 final class JumpCell: UITableViewCell {
     // MARK: - PROPERTIES:
     
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let circleAirplaneLottie = LottieAnimationView(name: "CircleAirplane")
+    private let anniversaryLottie = LottieAnimationView(name: "Anniversary")
     private let circleButton = UIButton()
     private let dateLabel = UILabel()
     private let locationButton = UIButton()
@@ -45,7 +46,7 @@ final class JumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(confettiLottie, circleAirplaneLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton)
+        contentView.addSubviews(confettiLottie, circleAirplaneLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, anniversaryLottie)
         locationButton.addSubview(locationLabel)
         aircraftButton.addSubview(aircraftLabel)
         canopyButton.addSubview(canopyLabel)
@@ -74,7 +75,7 @@ final class JumpCell: UITableViewCell {
         circleAirplaneLottie.heightAnchor.constraint(equalToConstant: 320).isActive = true
         circleAirplaneLottie.widthAnchor.constraint(equalToConstant: 320).isActive = true
         
-        // MARK: CIRCLE:
+        // MARK: CIRCLE BUTTON:
         
         circleButton.translatesAutoresizingMaskIntoConstraints = false
         circleButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60).isActive = true
@@ -89,6 +90,14 @@ final class JumpCell: UITableViewCell {
         dateLabel.centerYAnchor.constraint(equalTo: circleButton.bottomAnchor, constant: -15).isActive = true
         dateLabel.heightAnchor.constraint(equalToConstant: height40).isActive = true
         dateLabel.widthAnchor.constraint(equalTo: circleButton.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: ANNIEVERSARY LOTTIE:
+
+        anniversaryLottie.translatesAutoresizingMaskIntoConstraints = false
+        anniversaryLottie.bottomAnchor.constraint(equalTo: locationButton.topAnchor, constant: 13).isActive = true
+        anniversaryLottie.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        anniversaryLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        anniversaryLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
         
         // MARK: LOCATION:
         
@@ -347,6 +356,10 @@ final class JumpCell: UITableViewCell {
         commentLabel.layer.cornerRadius = 10
         commentLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         commentLabel.adjustsFontSizeToFitWidth = true
+        
+        // MARK: ANNIEVERSARY LOTTIE:
+
+        anniversaryLottie.isHidden = true
     }
     
     // MARK: - HELPERS:
@@ -369,7 +382,9 @@ final class JumpCell: UITableViewCell {
         } else {
             commentButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         }
+
         // MARK: COLOR FOR CIRCLE (GREEN / RED):
+
         if cutaway == NSLocalizedString("Yes", comment: "") {
             circleButton.layer.shadowRadius = 25
             circleButton.layer.shadowColor = UIColor.colorDarkRed.cgColor
@@ -378,6 +393,16 @@ final class JumpCell: UITableViewCell {
             circleButton.layer.shadowRadius = 25
             circleButton.layer.shadowColor = UIColor.colorGreen.cgColor
             circleButton.layer.shadowOpacity = 0.5
+        }
+    }
+    
+    // MARK: ANNIVERSARY:
+
+    func anniversaryShow(number: Int) {
+        if number == 100 || number == 200 || number == 300 || number == 400 || number == 500 || number == 600 || number == 700 || number == 800 || number == 900 || number == 1000 {
+            anniversaryLottie.isHidden = false
+            anniversaryLottie.play()
+            anniversaryLottie.loopMode = .loop
         }
     }
         

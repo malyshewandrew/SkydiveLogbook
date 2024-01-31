@@ -3,12 +3,12 @@ import UIKit
 
 // MARK: - FONTS:
 
-let fontRegularStandard8: UIFont = .systemFont(ofSize: 8, weight: .regular, width: .standard)
-let fontMediumStandard9: UIFont = .systemFont(ofSize: 9, weight: .medium, width: .standard)
-let fontBoldStandard10: UIFont = .systemFont(ofSize: 10, weight: .bold, width: .standard)
-let fontRegularStandard10: UIFont = .systemFont(ofSize: 10, weight: .regular, width: .standard)
+let fontRegularStandard8: UIFont = .systemFont(ofSize: 8, weight: .regular, width: .standard) // account: info account text.
+let fontMediumStandard9: UIFont = .systemFont(ofSize: 9, weight: .medium, width: .standard) // statistic: top10.
+let fontBoldStandard10: UIFont = .systemFont(ofSize: 10, weight: .bold, width: .standard) // system titles: container, aad, main, reserve.
+let fontRegularStandard10: UIFont = .systemFont(ofSize: 10, weight: .regular, width: .standard) // calculator: result text label.
 let fontMediumStandard10: UIFont = .systemFont(ofSize: 10, weight: .medium, width: .standard)
-let fontThinStandard10: UIFont = .systemFont(ofSize: 10, weight: .thin, width: .standard)
+let fontThinStandard10: UIFont = .systemFont(ofSize: 10, weight: .thin, width: .standard) // main jump cell: right side.
 let fontMediumStandard12: UIFont = .systemFont(ofSize: 12, weight: .medium, width: .standard)
 let fontRegularStandard12: UIFont = .systemFont(ofSize: 12, weight: .regular, width: .standard)
 let fontBoldStandard14: UIFont = .systemFont(ofSize: 14, weight: .bold, width: .standard)
