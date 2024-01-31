@@ -85,11 +85,11 @@ extension JumpVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JumpCell", for: indexPath) as? JumpCell else { return UITableViewCell() }
 
-        // CONFIGURE:
+        // MARK: CONFIGURE:
         cell.configure(number: String(jumpNumber), date: selectedJump.date, location: selectedJump.location, aircraft: selectedJump.aircraft, canopy: selectedJump.canopy, mission: selectedJump.mission?.localizedValue ?? "", height: selectedJump.height, time: selectedJump.time, cutaway: selectedJump.cutaway?.localizedValue ?? "", comment: selectedJump.comment)
 
-        // ANNIVERSARY LOTTIE:
-        cell.anniversaryShow(number: jumpNumber)
+        // MARK: JUBILEE LOTTIE:
+        cell.jubileeShow(number: jumpNumber)
         return cell
     }
 }

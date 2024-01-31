@@ -9,7 +9,7 @@ final class JumpCell: UITableViewCell {
     
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let circleAirplaneLottie = LottieAnimationView(name: "CircleAirplane")
-    private let anniversaryLottie = LottieAnimationView(name: "Anniversary")
+    private let jubileeLottie = LottieAnimationView(name: "Anniversary")
     private let circleButton = UIButton()
     private let dateLabel = UILabel()
     private let locationButton = UIButton()
@@ -28,7 +28,7 @@ final class JumpCell: UITableViewCell {
     private let commentLabel = UILabel()
     private let vibrationOn = Vibration()
     private var statusAnimation: Bool = false
-    private let anniversaryJumps: Set<Int> = Set([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000])
+    private var jubileeJumps = Set((100..<10000).filter { $0 % 100 == 0 })
     
     // MARK: - LIFECYCLE:
 
@@ -47,7 +47,7 @@ final class JumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(confettiLottie, circleAirplaneLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, anniversaryLottie)
+        contentView.addSubviews(confettiLottie, circleAirplaneLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
         locationButton.addSubview(locationLabel)
         aircraftButton.addSubview(aircraftLabel)
         canopyButton.addSubview(canopyLabel)
@@ -94,11 +94,11 @@ final class JumpCell: UITableViewCell {
         
         // MARK: ANNIEVERSARY LOTTIE:
 
-        anniversaryLottie.translatesAutoresizingMaskIntoConstraints = false
-        anniversaryLottie.bottomAnchor.constraint(equalTo: locationButton.topAnchor, constant: 13).isActive = true
-        anniversaryLottie.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        anniversaryLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        anniversaryLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        jubileeLottie.translatesAutoresizingMaskIntoConstraints = false
+        jubileeLottie.bottomAnchor.constraint(equalTo: locationButton.topAnchor, constant: 13).isActive = true
+        jubileeLottie.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        jubileeLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        jubileeLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
         
         // MARK: LOCATION:
         
@@ -360,7 +360,7 @@ final class JumpCell: UITableViewCell {
         
         // MARK: ANNIEVERSARY LOTTIE:
 
-        anniversaryLottie.isHidden = true
+        jubileeLottie.isHidden = true
     }
     
     // MARK: - HELPERS:
@@ -397,13 +397,14 @@ final class JumpCell: UITableViewCell {
         }
     }
     
-    // MARK: ANNIVERSARY JUMPS LOTTIE:
+    // MARK: JUBILEE JUMPS LOTTIE:
 
-    func anniversaryShow(number: Int) {
-        if anniversaryJumps.contains(number) {
-            anniversaryLottie.isHidden = false
-            anniversaryLottie.play()
-            anniversaryLottie.loopMode = .loop
+    func jubileeShow(number: Int) {
+        jubileeJumps.insert(10000)
+        if jubileeJumps.contains(number) {
+            jubileeLottie.isHidden = false
+            jubileeLottie.play()
+            jubileeLottie.loopMode = .loop
             confettiLottie.play()
             confettiLottie.loopMode = .loop
             confettiLottie.layer.shadowRadius = 10
