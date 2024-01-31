@@ -137,13 +137,13 @@ final class NotesVC: UIViewController {
         noteButton.setTitle("\(NSLocalizedString("New note", comment: "") + ":")", for: .normal)
         noteButton.setTitleColor(.colorLightGray, for: .normal)
         noteButton.contentVerticalAlignment = textAligmentTop
-        noteButton.titleLabel?.font = fontBoldStandard14
-        noteButton.layer.cornerRadius = cornerRadius10
+        noteButton.titleLabel?.font = fontMediumStandard14
+        noteButton.layer.cornerRadius = cornerRadius15
 
         // MARK: TEXT VIEW:
 
         noteTextView.backgroundColor = .colorTabBar
-        noteTextView.layer.cornerRadius = cornerRadius10
+        noteTextView.layer.cornerRadius = cornerRadius15
         noteTextView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         noteTextView.font = fontMediumStandard14
         noteTextView.textColor = .colorWhite
@@ -154,7 +154,7 @@ final class NotesVC: UIViewController {
         saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
-        saveButton.layer.cornerRadius = cornerRadius10
+        saveButton.layer.cornerRadius = cornerRadius15
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
 
         // MARK: CLEAN BUTTON:
@@ -163,7 +163,7 @@ final class NotesVC: UIViewController {
         cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
-        cleanButton.layer.cornerRadius = cornerRadius10
+        cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
     }
 

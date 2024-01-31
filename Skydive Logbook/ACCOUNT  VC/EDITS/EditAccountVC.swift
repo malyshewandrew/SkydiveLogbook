@@ -170,12 +170,12 @@ final class EditAccountVC: UIViewController {
         nicknameButton.setTitleColor(.colorLightGray, for: .normal)
         nicknameButton.contentVerticalAlignment = textAligmentTop
         nicknameButton.titleLabel?.font = fontMediumStandard12
-        nicknameButton.layer.cornerRadius = cornerRadius10
+        nicknameButton.layer.cornerRadius = cornerRadius15
         nicknameTextField.placeholder = NSLocalizedString("Name user / edit account vc", comment: "")
         nicknameTextField.backgroundColor = .colorTabBar
         nicknameTextField.font = fontMediumStandard18
         nicknameTextField.textColor = .colorWhite
-        nicknameTextField.layer.cornerRadius = cornerRadius10
+        nicknameTextField.layer.cornerRadius = cornerRadius15
         nicknameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         nicknameTextField.textAlignment = textAligmentCenter
         nicknameTextField.tintColor = .colorWhite
@@ -188,12 +188,12 @@ final class EditAccountVC: UIViewController {
         licenseTypeButton.setTitleColor(.colorLightGray, for: .normal)
         licenseTypeButton.contentVerticalAlignment = textAligmentTop
         licenseTypeButton.titleLabel?.font = fontMediumStandard12
-        licenseTypeButton.layer.cornerRadius = cornerRadius10
+        licenseTypeButton.layer.cornerRadius = cornerRadius15
         licenseTypeTextField.placeholder = NSLocalizedString("Type / number / edit account vc", comment: "")
         licenseTypeTextField.backgroundColor = .colorTabBar
         licenseTypeTextField.font = fontMediumStandard18
         licenseTypeTextField.textColor = .colorWhite
-        licenseTypeTextField.layer.cornerRadius = cornerRadius10
+        licenseTypeTextField.layer.cornerRadius = cornerRadius15
         licenseTypeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         licenseTypeTextField.textAlignment = textAligmentCenter
         licenseTypeTextField.tintColor = .colorWhite
@@ -206,12 +206,12 @@ final class EditAccountVC: UIViewController {
         licenseDateButton.setTitleColor(.colorLightGray, for: .normal)
         licenseDateButton.contentVerticalAlignment = textAligmentTop
         licenseDateButton.titleLabel?.font = fontMediumStandard12
-        licenseDateButton.layer.cornerRadius = cornerRadius10
+        licenseDateButton.layer.cornerRadius = cornerRadius15
         licenseDateTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         licenseDateTextField.backgroundColor = .colorTabBar
         licenseDateTextField.font = fontMediumStandard18
         licenseDateTextField.textColor = .colorWhite
-        licenseDateTextField.layer.cornerRadius = cornerRadius10
+        licenseDateTextField.layer.cornerRadius = cornerRadius15
         licenseDateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         licenseDateTextField.textAlignment = textAligmentCenter
         licenseDateTextField.tintColor = .colorWhite
@@ -224,12 +224,12 @@ final class EditAccountVC: UIViewController {
         medicineButton.setTitleColor(.colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop
         medicineButton.titleLabel?.font = fontMediumStandard12
-        medicineButton.layer.cornerRadius = cornerRadius10
+        medicineButton.layer.cornerRadius = cornerRadius15
         medicineTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         medicineTextField.backgroundColor = .colorTabBar
         medicineTextField.font = fontMediumStandard18
         medicineTextField.textColor = .colorWhite
-        medicineTextField.layer.cornerRadius = cornerRadius10
+        medicineTextField.layer.cornerRadius = cornerRadius15
         medicineTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         medicineTextField.textAlignment = textAligmentCenter
         medicineTextField.tintColor = .colorWhite
@@ -242,12 +242,12 @@ final class EditAccountVC: UIViewController {
         insuranceButton.setTitleColor(.colorLightGray, for: .normal)
         insuranceButton.contentVerticalAlignment = textAligmentTop
         insuranceButton.titleLabel?.font = fontMediumStandard12
-        insuranceButton.layer.cornerRadius = cornerRadius10
+        insuranceButton.layer.cornerRadius = cornerRadius15
         insuranceTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         insuranceTextField.backgroundColor = .colorTabBar
         insuranceTextField.font = fontMediumStandard18
         insuranceTextField.textColor = .colorWhite
-        insuranceTextField.layer.cornerRadius = cornerRadius10
+        insuranceTextField.layer.cornerRadius = cornerRadius15
         insuranceTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         insuranceTextField.textAlignment = textAligmentCenter
         insuranceTextField.tintColor = .colorWhite
@@ -260,12 +260,12 @@ final class EditAccountVC: UIViewController {
         reserveCanopyButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyButton.titleLabel?.font = fontMediumStandard12
-        reserveCanopyButton.layer.cornerRadius = cornerRadius10
+        reserveCanopyButton.layer.cornerRadius = cornerRadius15
         reserveCanopyTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         reserveCanopyTextField.backgroundColor = .colorTabBar
         reserveCanopyTextField.font = fontMediumStandard18
         reserveCanopyTextField.textColor = .colorWhite
-        reserveCanopyTextField.layer.cornerRadius = cornerRadius10
+        reserveCanopyTextField.layer.cornerRadius = cornerRadius15
         reserveCanopyTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         reserveCanopyTextField.textAlignment = textAligmentCenter
         reserveCanopyTextField.tintColor = .colorWhite
@@ -275,7 +275,7 @@ final class EditAccountVC: UIViewController {
         
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.backgroundColor = .colorCell
-        saveButton.layer.cornerRadius = cornerRadius10
+        saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.addTarget(self, action: #selector(saveButtomTapped), for: .touchUpInside)

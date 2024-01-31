@@ -103,7 +103,7 @@ final class EditAircraftsVC: UIViewController {
 
         enterTextTextField.backgroundColor = .colorTabBar
         enterTextTextField.textColor = .colorWhite
-        enterTextTextField.layer.cornerRadius = cornerRadius10
+        enterTextTextField.layer.cornerRadius = cornerRadius15
         enterTextTextField.textAlignment = textAligmentCenter
         enterTextTextField.placeholder = NSLocalizedString("Enter aircraft", comment: "")
 
@@ -113,7 +113,7 @@ final class EditAircraftsVC: UIViewController {
         saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
-        saveButton.layer.cornerRadius = cornerRadius10
+        saveButton.layer.cornerRadius = cornerRadius15
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
 
         // MARK: CLEAN BUTTON:
@@ -122,7 +122,7 @@ final class EditAircraftsVC: UIViewController {
         cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
-        cleanButton.layer.cornerRadius = cornerRadius10
+        cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
     }
 

@@ -101,7 +101,7 @@ final class InfoVC: UIViewController {
         // MARK: INFO TEXT VIEW:
 
         infoTextView.backgroundColor = .colorCell
-        infoTextView.layer.cornerRadius = cornerRadius10
+        infoTextView.layer.cornerRadius = cornerRadius15
         infoTextView.layer.shadowRadius = 50
         infoTextView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         infoTextView.layer.shadowOpacity = 0.3
@@ -119,7 +119,7 @@ final class InfoVC: UIViewController {
         privacyButton.setTitle(NSLocalizedString("Privacy policy", comment: ""), for: .normal)
         privacyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         privacyButton.setTitleColor(.colorWhite, for: .normal)
-        privacyButton.layer.cornerRadius = cornerRadius10
+        privacyButton.layer.cornerRadius = cornerRadius15
         privacyButton.backgroundColor = .colorCell
         privacyButton.titleLabel?.font = fontMediumStandard14
         privacyButton.addTarget(self, action: #selector(privacyButtonTapped), for: .touchUpInside)
@@ -129,7 +129,7 @@ final class InfoVC: UIViewController {
         termsButton.setTitle(NSLocalizedString("Terms of use", comment: ""), for: .normal)
         termsButton.titleLabel?.adjustsFontSizeToFitWidth = true
         termsButton.setTitleColor(.colorWhite, for: .normal)
-        termsButton.layer.cornerRadius = cornerRadius10
+        termsButton.layer.cornerRadius = cornerRadius15
         termsButton.backgroundColor = .colorCell
         termsButton.titleLabel?.font = fontMediumStandard14
         termsButton.addTarget(self, action: #selector(termsButtonTapped), for: .touchUpInside)
@@ -138,7 +138,7 @@ final class InfoVC: UIViewController {
 
         versionButton.setTitle(NSLocalizedString("App version", comment: ""), for: .normal)
         versionButton.setTitleColor(.colorWhite, for: .normal)
-        versionButton.layer.cornerRadius = cornerRadius10
+        versionButton.layer.cornerRadius = cornerRadius15
         versionButton.backgroundColor = .colorCell
         versionButton.titleLabel?.font = fontMediumStandard14
         versionButton.addTarget(self, action: #selector(versionButtonTapped), for: .touchUpInside)

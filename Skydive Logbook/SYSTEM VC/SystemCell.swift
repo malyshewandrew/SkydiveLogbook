@@ -420,7 +420,7 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER NAME:
 
         containerNameLabel.textColor = .colorWhite
-        containerNameLabel.font = fontBoldStandard22
+        containerNameLabel.font = fontBoldStandard20
         containerNameLabel.textAlignment = .left
         containerNameLabel.numberOfLines = 0
         containerNameLabel.adjustsFontSizeToFitWidth = true
@@ -462,7 +462,7 @@ final class SystemCell: UITableViewCell {
         // MARK: AAD NAME:
 
         aadNameLabel.textColor = .colorWhite
-        aadNameLabel.font = fontBoldStandard22
+        aadNameLabel.font = fontBoldStandard20
         aadNameLabel.textAlignment = .right
         aadNameLabel.numberOfLines = 0
         aadNameLabel.adjustsFontSizeToFitWidth = true
@@ -506,7 +506,7 @@ final class SystemCell: UITableViewCell {
         // MARK: MAIN CANOPY NAME:
 
         mainCanopyNameLabel.textColor = .colorWhite
-        mainCanopyNameLabel.font = fontBoldStandard22
+        mainCanopyNameLabel.font = fontBoldStandard20
         mainCanopyNameLabel.textAlignment = .left
         mainCanopyNameLabel.numberOfLines = 0
         mainCanopyNameLabel.adjustsFontSizeToFitWidth = true
@@ -571,7 +571,7 @@ final class SystemCell: UITableViewCell {
         // MARK: RESERVE CANOPY NAME:
 
         reserveCanopyNameLabel.textColor = .colorWhite
-        reserveCanopyNameLabel.font = fontBoldStandard22
+        reserveCanopyNameLabel.font = fontBoldStandard20
         reserveCanopyNameLabel.textAlignment = .right
         reserveCanopyNameLabel.numberOfLines = 0
         reserveCanopyNameLabel.adjustsFontSizeToFitWidth = true

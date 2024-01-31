@@ -117,7 +117,7 @@ final class MainCell: UITableViewCell {
         // MARK: CELL VIEW:
 
         containerView.backgroundColor = .colorCell
-        containerView.layer.cornerRadius = cornerRadius10
+        containerView.layer.cornerRadius = cornerRadius15
 
         // MARK: NUMBER LABEL:
 
@@ -138,7 +138,7 @@ final class MainCell: UITableViewCell {
         // MARK: MISSION LABEL:
 
         missionLabel.textColor = .colorDarkGray
-        missionLabel.font = fontMediumStandard15
+        missionLabel.font = fontMediumStandard14
         missionLabel.numberOfLines = 1
         missionLabel.textAlignment = .center
         missionLabel.adjustsFontSizeToFitWidth = true

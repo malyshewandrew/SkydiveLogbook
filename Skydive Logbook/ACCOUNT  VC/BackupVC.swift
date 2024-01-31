@@ -113,7 +113,7 @@ final class BackupVC: UIViewController {
         backupButton.setTitle(NSLocalizedString("Backup / backup", comment: ""), for: .normal)
         backupButton.setTitleColor(.colorWhite, for: .normal)
         backupButton.backgroundColor = .colorBlue
-        backupButton.layer.cornerRadius = cornerRadius10
+        backupButton.layer.cornerRadius = cornerRadius15
         backupButton.titleLabel?.font = fontMediumStandard14
         backupButton.titleLabel?.numberOfLines = 0
         backupButton.titleLabel?.textAlignment = .center
@@ -125,7 +125,7 @@ final class BackupVC: UIViewController {
         restoreButton.setTitle(NSLocalizedString("Restore / backup", comment: ""), for: .normal)
         restoreButton.setTitleColor(.colorWhite, for: .normal)
         restoreButton.backgroundColor = .colorTabBar
-        restoreButton.layer.cornerRadius = cornerRadius10
+        restoreButton.layer.cornerRadius = cornerRadius15
         restoreButton.titleLabel?.font = fontMediumStandard14
         restoreButton.titleLabel?.numberOfLines = 0
         restoreButton.titleLabel?.textAlignment = .center

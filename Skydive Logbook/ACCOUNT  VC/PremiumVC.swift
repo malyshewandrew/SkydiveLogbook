@@ -128,7 +128,7 @@ final class PremiumVC: UIViewController {
         buy1Button.setTitle("\(NSLocalizedString("1 month", comment: ""))", for: .normal)
         buy1Button.setTitleColor(.colorWhite, for: .normal)
         buy1Button.backgroundColor = .colorBlue
-        buy1Button.layer.cornerRadius = cornerRadius10
+        buy1Button.layer.cornerRadius = cornerRadius15
         buy1Button.titleLabel?.font = fontMediumStandard14
         buy1Button.titleLabel?.numberOfLines = 0
         buy1Button.titleLabel?.textAlignment = .center
@@ -140,7 +140,7 @@ final class PremiumVC: UIViewController {
         buy12Button.setTitle("\(NSLocalizedString("12 months", comment: ""))", for: .normal)
         buy12Button.setTitleColor(.colorWhite, for: .normal)
         buy12Button.backgroundColor = .colorBlue
-        buy12Button.layer.cornerRadius = cornerRadius10
+        buy12Button.layer.cornerRadius = cornerRadius15
         buy12Button.titleLabel?.font = fontMediumStandard14
         buy12Button.titleLabel?.numberOfLines = 0
         buy12Button.titleLabel?.textAlignment = .center
@@ -161,7 +161,7 @@ final class PremiumVC: UIViewController {
         // MARK: RESTORE BUTTON:
 
         restoreButton.setTitle(NSLocalizedString("Restore purchases", comment: ""), for: .normal)
-        restoreButton.layer.cornerRadius = cornerRadius10
+        restoreButton.layer.cornerRadius = cornerRadius15
         restoreButton.backgroundColor = .colorTabBar
         restoreButton.titleLabel?.font = fontMediumStandard14
         restoreButton.setTitleColor(.colorWhite, for: .normal)

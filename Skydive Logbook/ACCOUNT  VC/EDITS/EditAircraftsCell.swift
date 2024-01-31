@@ -58,7 +58,7 @@ final class EditAircraftsCell: UITableViewCell {
         // MARK: VIEW:
 
         view.backgroundColor = .colorTabBar
-        view.layer.cornerRadius = cornerRadius10
+        view.layer.cornerRadius = cornerRadius15
 
         // MARK: LOCATION LABEL:
 

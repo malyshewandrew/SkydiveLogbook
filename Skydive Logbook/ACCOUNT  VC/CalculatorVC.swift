@@ -193,7 +193,7 @@ final class CalculatorVC: UIViewController {
         weightTextField.backgroundColor = .colorTabBar
         weightTextField.font = fontMediumStandard14
         weightTextField.textColor = .colorWhite
-        weightTextField.layer.cornerRadius = cornerRadius10
+        weightTextField.layer.cornerRadius = cornerRadius15
         weightTextField.textAlignment = textAligmentCenter
         weightTextField.layer.masksToBounds = true
         weightTextField.keyboardType = .numberPad
@@ -205,7 +205,7 @@ final class CalculatorVC: UIViewController {
         sizeCanopyTextField.backgroundColor = .colorTabBar
         sizeCanopyTextField.font = fontMediumStandard14
         sizeCanopyTextField.textColor = .colorWhite
-        sizeCanopyTextField.layer.cornerRadius = cornerRadius10
+        sizeCanopyTextField.layer.cornerRadius = cornerRadius15
         sizeCanopyTextField.textAlignment = textAligmentCenter
         sizeCanopyTextField.layer.masksToBounds = true
         sizeCanopyTextField.keyboardType = .numberPad
@@ -215,7 +215,7 @@ final class CalculatorVC: UIViewController {
 
         resultButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
         resultButton.backgroundColor = .colorCell
-        resultButton.layer.cornerRadius = cornerRadius10
+        resultButton.layer.cornerRadius = cornerRadius15
         resultButton.setTitleColor(.colorWhite, for: .normal)
         resultButton.titleLabel?.font = fontMediumStandard14
         resultButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
@@ -224,7 +224,7 @@ final class CalculatorVC: UIViewController {
 
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.backgroundColor = .colorTabBar
-        cleanButton.layer.cornerRadius = cornerRadius10
+        cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.addTarget(self, action: #selector(actionButtonCleanTap), for: .touchUpInside)
@@ -234,7 +234,7 @@ final class CalculatorVC: UIViewController {
         resultLabel.backgroundColor = .colorTabBar
         resultLabel.textColor = .colorWhite
         resultLabel.layer.masksToBounds = true
-        resultLabel.layer.cornerRadius = cornerRadius10
+        resultLabel.layer.cornerRadius = cornerRadius15
         resultLabel.textAlignment = .center
         resultLabel.font = fontBoldStandard16
         resultLabel.isHidden = true
@@ -242,7 +242,7 @@ final class CalculatorVC: UIViewController {
         // MARK: INFO VIEW:
 
         textView.backgroundColor = .colorCell
-        textView.layer.cornerRadius = cornerRadius10
+        textView.layer.cornerRadius = cornerRadius15
         textView.isHidden = true
 
         // MARK: INFO LABEL:

@@ -411,7 +411,7 @@ final class StatisticCell: UITableViewCell {
         generalInfoButton.titleLabel?.font = fontMediumStandard12
         generalInfoButton.contentVerticalAlignment = textAligmentTop
         generalInfoButton.backgroundColor = .colorCell
-        generalInfoButton.layer.cornerRadius = cornerRadius20
+        generalInfoButton.layer.cornerRadius = cornerRadius15
         generalInfoButton.addTarget(self, action: #selector(generalInfoButtonTapped), for: .touchUpInside)
         
         generalInfoLabel.textAlignment = .center
@@ -428,7 +428,7 @@ final class StatisticCell: UITableViewCell {
         totalJumpsButton.titleLabel?.font = fontMediumStandard12
         totalJumpsButton.contentVerticalAlignment = textAligmentTop
         totalJumpsButton.backgroundColor = .colorCell
-        totalJumpsButton.layer.cornerRadius = cornerRadius20
+        totalJumpsButton.layer.cornerRadius = cornerRadius15
         totalJumpsButton.addTarget(self, action: #selector(totalButtonTapped), for: .touchUpInside)
         
         totalJumpsLabel.textAlignment = .center
@@ -444,7 +444,7 @@ final class StatisticCell: UITableViewCell {
         jumpsYearButton.titleLabel?.font = fontMediumStandard12
         jumpsYearButton.contentVerticalAlignment = textAligmentTop
         jumpsYearButton.backgroundColor = .colorCell
-        jumpsYearButton.layer.cornerRadius = cornerRadius20
+        jumpsYearButton.layer.cornerRadius = cornerRadius15
         jumpsYearButton.addTarget(self, action: #selector(yearButtonTapped), for: .touchUpInside)
         
         jumpsYearLabel.textAlignment = .center
@@ -460,7 +460,7 @@ final class StatisticCell: UITableViewCell {
         categoryButton.titleLabel?.font = fontMediumStandard12
         categoryButton.contentVerticalAlignment = textAligmentTop
         categoryButton.backgroundColor = .colorCell
-        categoryButton.layer.cornerRadius = cornerRadius20
+        categoryButton.layer.cornerRadius = cornerRadius15
         categoryButton.addTarget(self, action: #selector(categoryButtonTapped), for: .touchUpInside)
         
         categoryLabel.textAlignment = .center
@@ -476,7 +476,7 @@ final class StatisticCell: UITableViewCell {
         maxHeightButton.titleLabel?.font = fontMediumStandard12
         maxHeightButton.contentVerticalAlignment = textAligmentTop
         maxHeightButton.backgroundColor = .colorCell
-        maxHeightButton.layer.cornerRadius = cornerRadius20
+        maxHeightButton.layer.cornerRadius = cornerRadius15
         maxHeightButton.addTarget(self, action: #selector(maxHeightButtonTapped), for: .touchUpInside)
         
         maxHeightLabel.textAlignment = .center
@@ -492,7 +492,7 @@ final class StatisticCell: UITableViewCell {
         averageHeightButton.titleLabel?.font = fontMediumStandard12
         averageHeightButton.contentVerticalAlignment = textAligmentTop
         averageHeightButton.backgroundColor = .colorCell
-        averageHeightButton.layer.cornerRadius = cornerRadius20
+        averageHeightButton.layer.cornerRadius = cornerRadius15
         averageHeightButton.addTarget(self, action: #selector(averageHeightButtonTapped), for: .touchUpInside)
         
         averageHeightLabel.textAlignment = .center
@@ -508,7 +508,7 @@ final class StatisticCell: UITableViewCell {
         minHeightButton.titleLabel?.font = fontMediumStandard12
         minHeightButton.contentVerticalAlignment = textAligmentTop
         minHeightButton.backgroundColor = .colorCell
-        minHeightButton.layer.cornerRadius = cornerRadius20
+        minHeightButton.layer.cornerRadius = cornerRadius15
         minHeightButton.addTarget(self, action: #selector(minHeightButtonTapped), for: .touchUpInside)
         
         minHeightLabel.textAlignment = .center
@@ -524,7 +524,7 @@ final class StatisticCell: UITableViewCell {
         dateFirstButton.titleLabel?.font = fontMediumStandard12
         dateFirstButton.contentVerticalAlignment = textAligmentTop
         dateFirstButton.backgroundColor = .colorCell
-        dateFirstButton.layer.cornerRadius = cornerRadius20
+        dateFirstButton.layer.cornerRadius = cornerRadius15
         dateFirstButton.addTarget(self, action: #selector(dateFirstButtonTapped), for: .touchUpInside)
         
         dateFirstLabel.textAlignment = .center
@@ -541,7 +541,7 @@ final class StatisticCell: UITableViewCell {
         maxTimeButton.titleLabel?.font = fontMediumStandard12
         maxTimeButton.contentVerticalAlignment = textAligmentTop
         maxTimeButton.backgroundColor = .colorCell
-        maxTimeButton.layer.cornerRadius = cornerRadius20
+        maxTimeButton.layer.cornerRadius = cornerRadius15
         maxTimeButton.addTarget(self, action: #selector(maxTimeButtonTapped), for: .touchUpInside)
         
         maxTimeLabel.textAlignment = .center
@@ -557,7 +557,7 @@ final class StatisticCell: UITableViewCell {
         dateLastButton.titleLabel?.font = fontMediumStandard12
         dateLastButton.contentVerticalAlignment = textAligmentTop
         dateLastButton.backgroundColor = .colorCell
-        dateLastButton.layer.cornerRadius = cornerRadius20
+        dateLastButton.layer.cornerRadius = cornerRadius15
         dateLastButton.addTarget(self, action: #selector(dateLastButtonTapped), for: .touchUpInside)
         
         dateLastLabel.textAlignment = .center
@@ -574,7 +574,7 @@ final class StatisticCell: UITableViewCell {
         maxDayButton.titleLabel?.font = fontMediumStandard12
         maxDayButton.contentVerticalAlignment = textAligmentTop
         maxDayButton.backgroundColor = .colorCell
-        maxDayButton.layer.cornerRadius = cornerRadius20
+        maxDayButton.layer.cornerRadius = cornerRadius15
         maxDayButton.addTarget(self, action: #selector(maxDayButtonTapped), for: .touchUpInside)
         
         maxDayLabel.textAlignment = .center
@@ -591,7 +591,7 @@ final class StatisticCell: UITableViewCell {
         averageTimeButton.titleLabel?.font = fontMediumStandard12
         averageTimeButton.contentVerticalAlignment = textAligmentTop
         averageTimeButton.backgroundColor = .colorCell
-        averageTimeButton.layer.cornerRadius = cornerRadius20
+        averageTimeButton.layer.cornerRadius = cornerRadius15
         averageTimeButton.addTarget(self, action: #selector(averageTimeButtonTapped), for: .touchUpInside)
         
         averageTimeLabel.textAlignment = .center
@@ -608,7 +608,7 @@ final class StatisticCell: UITableViewCell {
         countCutawayButton.titleLabel?.font = fontMediumStandard12
         countCutawayButton.contentVerticalAlignment = textAligmentTop
         countCutawayButton.backgroundColor = .colorCell
-        countCutawayButton.layer.cornerRadius = cornerRadius20
+        countCutawayButton.layer.cornerRadius = cornerRadius15
         countCutawayButton.addTarget(self, action: #selector(countCutawayButtonTapped), for: .touchUpInside)
         
         countCutawayLabel.textAlignment = .center
@@ -625,7 +625,7 @@ final class StatisticCell: UITableViewCell {
         aircraftsButton.titleLabel?.font = fontMediumStandard12
         aircraftsButton.contentVerticalAlignment = textAligmentTop
         aircraftsButton.backgroundColor = .colorCell
-        aircraftsButton.layer.cornerRadius = cornerRadius20
+        aircraftsButton.layer.cornerRadius = cornerRadius15
         aircraftsButton.addTarget(self, action: #selector(aircraftsButtonTapped), for: .touchUpInside)
         
         aircraftsLabel.textAlignment = .center
@@ -641,7 +641,7 @@ final class StatisticCell: UITableViewCell {
         canopiesButton.titleLabel?.font = fontMediumStandard12
         canopiesButton.contentVerticalAlignment = textAligmentTop
         canopiesButton.backgroundColor = .colorCell
-        canopiesButton.layer.cornerRadius = cornerRadius20
+        canopiesButton.layer.cornerRadius = cornerRadius15
         canopiesButton.addTarget(self, action: #selector(canopiesButtonTapped), for: .touchUpInside)
         
         canopiesLabel.textAlignment = .center
@@ -657,7 +657,7 @@ final class StatisticCell: UITableViewCell {
         locationsButton.titleLabel?.font = fontMediumStandard12
         locationsButton.contentVerticalAlignment = textAligmentTop
         locationsButton.backgroundColor = .colorCell
-        locationsButton.layer.cornerRadius = cornerRadius20
+        locationsButton.layer.cornerRadius = cornerRadius15
         locationsButton.addTarget(self, action: #selector(locationsButtonTapped), for: .touchUpInside)
         
         locationsLabel.textAlignment = .center
@@ -672,7 +672,7 @@ final class StatisticCell: UITableViewCell {
         missionsButton.titleLabel?.font = fontMediumStandard12
         missionsButton.contentVerticalAlignment = textAligmentTop
         missionsButton.backgroundColor = .colorCell
-        missionsButton.layer.cornerRadius = cornerRadius20
+        missionsButton.layer.cornerRadius = cornerRadius15
         
         // MARK: MISSIONS ONE:
 
@@ -690,7 +690,7 @@ final class StatisticCell: UITableViewCell {
         topMissionButton.contentVerticalAlignment = textAligmentTop
         topMissionButton.titleLabel?.textAlignment = .center
         topMissionButton.backgroundColor = .colorCell
-        topMissionButton.layer.cornerRadius = cornerRadius20
+        topMissionButton.layer.cornerRadius = cornerRadius15
         
         topMissionLabel.textAlignment = .center
         topMissionLabel.font = fontMediumStandard9
