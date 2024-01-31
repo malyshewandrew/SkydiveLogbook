@@ -4,7 +4,7 @@ import Lottie
 import UIKit
 import RealmSwift
 
-class JumpCell: UITableViewCell {
+final class JumpCell: UITableViewCell {
     // MARK: - PROPERTIES:
     
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")

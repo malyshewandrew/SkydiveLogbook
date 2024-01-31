@@ -1,5 +1,6 @@
 import Foundation
 import RealmSwift
+import UIKit
 
 class SystemClassRealm: Object {
     @Persisted var id: String = UUID().uuidString

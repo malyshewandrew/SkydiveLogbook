@@ -5,7 +5,7 @@ import Lottie
 import RealmSwift
 import UIKit
 
-class NewJumpCell: UITableViewCell {
+final class NewJumpCell: UITableViewCell {
     // MARK: - PRIVATE PROPERTIES:
     
     private let dateButton = UIButton()

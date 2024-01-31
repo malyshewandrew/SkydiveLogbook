@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-class EditCanopiesCell: UITableViewCell {
+final class EditCanopiesCell: UITableViewCell {
     // MARK: - PRIVATE PROPERTIES:
 
     private let view = UIView()

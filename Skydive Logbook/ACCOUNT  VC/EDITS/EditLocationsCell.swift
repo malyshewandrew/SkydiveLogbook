@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-class EditLocationsCell: UITableViewCell {
+final class EditLocationsCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
     private let view = UIView()

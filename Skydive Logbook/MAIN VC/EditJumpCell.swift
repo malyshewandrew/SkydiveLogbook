@@ -10,7 +10,7 @@ protocol EditJumpCellDelegate {
     func saveJump(_ jump: JumpClassRealm)
 }
 
-class EditJumpCell: UITableViewCell {
+final class EditJumpCell: UITableViewCell {
     // MARK: - PROPERTIES:
     
     private let dateButton = UIButton()

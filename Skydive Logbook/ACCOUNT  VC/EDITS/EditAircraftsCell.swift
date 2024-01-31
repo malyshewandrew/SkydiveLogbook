@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-class EditAircraftsCell: UITableViewCell {
+final class EditAircraftsCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
     private let view = UIView()

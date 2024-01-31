@@ -9,8 +9,8 @@ final class EditJumpVC: UIViewController {
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
+    private let realmManager = RealmManager()
     var indexPath: Int = 0
-    let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 
