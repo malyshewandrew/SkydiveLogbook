@@ -529,7 +529,7 @@ final class StatisticCell: UITableViewCell {
         
         dateFirstLabel.textAlignment = .center
         dateFirstLabel.baselineAdjustment = .alignCenters
-        dateFirstLabel.font = fontBoldStandard20
+        dateFirstLabel.font = fontMediumStandard18
         dateFirstLabel.textColor = .colorWhite
         dateFirstLabel.numberOfLines = 1
         dateFirstLabel.adjustsFontSizeToFitWidth = true
@@ -562,7 +562,7 @@ final class StatisticCell: UITableViewCell {
         
         dateLastLabel.textAlignment = .center
         dateLastLabel.baselineAdjustment = .alignCenters
-        dateLastLabel.font = fontBoldStandard20
+        dateLastLabel.font = fontMediumStandard18
         dateLastLabel.textColor = .colorWhite
         dateLastLabel.numberOfLines = 1
         dateLastLabel.adjustsFontSizeToFitWidth = true

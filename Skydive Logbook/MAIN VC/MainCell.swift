@@ -122,7 +122,7 @@ final class MainCell: UITableViewCell {
         // MARK: NUMBER LABEL:
 
         numberLabel.textColor = .colorDarkGray
-        numberLabel.font = fontBoldStandard20
+        numberLabel.font = fontMediumStandard18
         numberLabel.numberOfLines = 1
         numberLabel.textAlignment = .left
         numberLabel.adjustsFontSizeToFitWidth = true
@@ -130,7 +130,7 @@ final class MainCell: UITableViewCell {
         // MARK: CANOPY LABEL:
 
         canopyLabel.textColor = .colorWhite
-        canopyLabel.font = fontHeavyStandard18
+        canopyLabel.font = fontMediumStandard18
         canopyLabel.numberOfLines = 1
         canopyLabel.textAlignment = .center
         canopyLabel.adjustsFontSizeToFitWidth = true

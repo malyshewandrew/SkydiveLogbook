@@ -14,15 +14,11 @@ let fontThinStandard10: UIFont = .systemFont(ofSize: 10, weight: .thin, width: .
 let fontMediumStandard12: UIFont = .systemFont(ofSize: 12, weight: .medium, width: .standard)
 let fontRegularStandard12: UIFont = .systemFont(ofSize: 12, weight: .regular, width: .standard)
 
-let fontBoldStandard14: UIFont = .systemFont(ofSize: 14, weight: .bold, width: .standard)
 let fontMediumStandard14: UIFont = .systemFont(ofSize: 14, weight: .medium, width: .standard)
 
 let fontBoldStandard16: UIFont = .systemFont(ofSize: 16, weight: .bold, width: .standard)
 
-let fontHeavyStandard18: UIFont = .systemFont(ofSize: 18, weight: .heavy, width: .standard)
 let fontMediumStandard18: UIFont = .systemFont(ofSize: 18, weight: .bold, width: .standard)
-
-let fontBoldStandard20: UIFont = .systemFont(ofSize: 20, weight: .bold, width: .standard)
 
 let fontBoldStandard30: UIFont = .systemFont(ofSize: 30, weight: .bold, width: .standard)
 
