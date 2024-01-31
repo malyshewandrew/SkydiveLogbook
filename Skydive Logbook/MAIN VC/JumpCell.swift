@@ -28,6 +28,7 @@ final class JumpCell: UITableViewCell {
     private let commentLabel = UILabel()
     private let vibrationOn = Vibration()
     private var statusAnimation: Bool = false
+    private let anniversaryJumps: Set<Int> = Set([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000])
     
     // MARK: - LIFECYCLE:
 
@@ -396,16 +397,21 @@ final class JumpCell: UITableViewCell {
         }
     }
     
-    // MARK: ANNIVERSARY:
+    // MARK: ANNIVERSARY JUMPS LOTTIE:
 
     func anniversaryShow(number: Int) {
-        if number == 100 || number == 200 || number == 300 || number == 400 || number == 500 || number == 600 || number == 700 || number == 800 || number == 900 || number == 1000 {
+        if anniversaryJumps.contains(number) {
             anniversaryLottie.isHidden = false
             anniversaryLottie.play()
             anniversaryLottie.loopMode = .loop
+            confettiLottie.play()
+            confettiLottie.loopMode = .loop
+            confettiLottie.layer.shadowRadius = 10
+            confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+            confettiLottie.layer.shadowOpacity = 1
         }
     }
-        
+    
     // MARK: FUNC FOR TAP ON CIRCLE BUTTON:
     
     @objc private func circleAnimationButtonTapped() {
