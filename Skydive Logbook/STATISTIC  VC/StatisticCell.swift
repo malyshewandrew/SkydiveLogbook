@@ -63,12 +63,17 @@ final class StatisticCell: UITableViewCell {
     private let locationsButton = UIButton()
     private let locationsLabel = UILabel()
     
+    private let missionsContainerView = UIView()
+    private let missionsOneView = UIView()
+    private let missionsTwoView = UIView()
     private let missionsButton = UIButton()
     private let missionsOneLabel = UILabel()
     private let missionsTwoLabel = UILabel()
-    private let topMissionButton = UIButton()
-    private let topMissionLabel = UILabel()
+    private let topMissionsButton = UIButton()
+    private let topMissionsLabel = UILabel()
+    private let missionsViewButton = UIButton()
     
+    private var isFlippedMissionsView = false
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
     
     let dateFormatter = DateFormatter()
@@ -102,7 +107,7 @@ final class StatisticCell: UITableViewCell {
                                 dateFirstButton, maxTimeButton, dateLastButton,
                                 maxDayButton, averageTimeButton, countCutawayButton,
                                 aircraftsButton, canopiesButton, locationsButton,
-                                missionsButton, topMissionButton, activityIndicator)
+                                missionsContainerView, activityIndicator)
         generalInfoButton.addSubview(generalInfoLabel)
         totalJumpsButton.addSubview(totalJumpsLabel)
         jumpsYearButton.addSubview(jumpsYearLabel)
@@ -119,8 +124,10 @@ final class StatisticCell: UITableViewCell {
         aircraftsButton.addSubview(aircraftsLabel)
         canopiesButton.addSubview(canopiesLabel)
         locationsButton.addSubview(locationsLabel)
+        missionsContainerView.addSubviews(missionsTwoView, missionsOneView, missionsViewButton)
+        missionsOneView.addSubviews(missionsButton, topMissionsButton)
         missionsButton.addSubviews(missionsOneLabel, missionsTwoLabel)
-        topMissionButton.addSubview(topMissionLabel)
+        topMissionsButton.addSubview(topMissionsLabel)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -350,45 +357,79 @@ final class StatisticCell: UITableViewCell {
         locationsLabel.trailingAnchor.constraint(equalTo: locationsButton.trailingAnchor, constant: 0).isActive = true
         locationsLabel.bottomAnchor.constraint(equalTo: locationsButton.bottomAnchor, constant: 0).isActive = true
         
+        // MARK: MISSION CONTAINER VIEW:
+        
+        missionsContainerView.translatesAutoresizingMaskIntoConstraints = false
+        missionsContainerView.topAnchor.constraint(equalTo: aircraftsButton.bottomAnchor, constant: 15).isActive = true
+        missionsContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        missionsContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        missionsContainerView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
+        missionsContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        
+        // MARK: MISSION ONE VIEW:
+        
+        missionsOneView.translatesAutoresizingMaskIntoConstraints = false
+        missionsOneView.topAnchor.constraint(equalTo: aircraftsButton.bottomAnchor, constant: 15).isActive = true
+        missionsOneView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        missionsOneView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        missionsOneView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
+        missionsOneView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        
+        // MARK: MISSION TWO VIEW:
+        
+        missionsTwoView.translatesAutoresizingMaskIntoConstraints = false
+        missionsTwoView.topAnchor.constraint(equalTo: aircraftsButton.bottomAnchor, constant: 15).isActive = true
+        missionsTwoView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        missionsTwoView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        missionsTwoView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
+        missionsTwoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        
         // MARK: MISSIONS:
 
         missionsButton.translatesAutoresizingMaskIntoConstraints = false
-        missionsButton.topAnchor.constraint(equalTo: aircraftsButton.bottomAnchor, constant: 15).isActive = true
-        missionsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        missionsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
-        missionsButton.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
-        missionsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        missionsButton.topAnchor.constraint(equalTo: missionsOneView.topAnchor).isActive = true
+        missionsButton.leadingAnchor.constraint(equalTo: missionsOneView.leadingAnchor).isActive = true
+        missionsButton.trailingAnchor.constraint(equalTo: missionsOneView.trailingAnchor).isActive = true
+        missionsButton.bottomAnchor.constraint(equalTo: missionsOneView.bottomAnchor).isActive = true
         
         // MARK: MISSIONS ONE:
         
         missionsOneLabel.translatesAutoresizingMaskIntoConstraints = false
         missionsOneLabel.topAnchor.constraint(equalTo: missionsButton.topAnchor, constant: 21).isActive = true
         missionsOneLabel.leadingAnchor.constraint(equalTo: missionsButton.leadingAnchor, constant: 10).isActive = true
-        missionsOneLabel.trailingAnchor.constraint(equalTo: topMissionButton.leadingAnchor, constant: -10).isActive = true
+        missionsOneLabel.trailingAnchor.constraint(equalTo: topMissionsButton.leadingAnchor, constant: -10).isActive = true
         missionsOneLabel.bottomAnchor.constraint(equalTo: missionsButton.bottomAnchor, constant: -5).isActive = true
         
         // MARK: TOP MISSIONS:
 
-        topMissionButton.translatesAutoresizingMaskIntoConstraints = false
-        topMissionButton.topAnchor.constraint(equalTo: missionsButton.topAnchor).isActive = true
-        topMissionButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        topMissionButton.heightAnchor.constraint(equalTo: missionsButton.heightAnchor, multiplier: 1).isActive = true
-        topMissionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3).isActive = true
+        topMissionsButton.translatesAutoresizingMaskIntoConstraints = false
+        topMissionsButton.topAnchor.constraint(equalTo: missionsButton.topAnchor).isActive = true
+        topMissionsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        topMissionsButton.heightAnchor.constraint(equalTo: missionsButton.heightAnchor, multiplier: 1).isActive = true
+        topMissionsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3).isActive = true
         
-        topMissionLabel.translatesAutoresizingMaskIntoConstraints = false
-        topMissionLabel.topAnchor.constraint(equalTo: topMissionButton.topAnchor, constant: 21).isActive = true
-        topMissionLabel.leadingAnchor.constraint(equalTo: topMissionButton.leadingAnchor).isActive = true
-        topMissionLabel.trailingAnchor.constraint(equalTo: topMissionButton.trailingAnchor).isActive = true
-        topMissionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        topMissionLabel.bottomAnchor.constraint(equalTo: topMissionButton.bottomAnchor, constant: -5).isActive = true
+        topMissionsLabel.translatesAutoresizingMaskIntoConstraints = false
+        topMissionsLabel.topAnchor.constraint(equalTo: topMissionsButton.topAnchor, constant: 21).isActive = true
+        topMissionsLabel.leadingAnchor.constraint(equalTo: topMissionsButton.leadingAnchor).isActive = true
+        topMissionsLabel.trailingAnchor.constraint(equalTo: topMissionsButton.trailingAnchor).isActive = true
+        topMissionsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        topMissionsLabel.bottomAnchor.constraint(equalTo: topMissionsButton.bottomAnchor, constant: -5).isActive = true
         
         // MARK: MISSIONS TWO:
         
         missionsTwoLabel.translatesAutoresizingMaskIntoConstraints = false
         missionsTwoLabel.topAnchor.constraint(equalTo: missionsButton.topAnchor, constant: 21).isActive = true
-        missionsTwoLabel.leadingAnchor.constraint(equalTo: topMissionButton.trailingAnchor, constant: 10).isActive = true
+        missionsTwoLabel.leadingAnchor.constraint(equalTo: topMissionsButton.trailingAnchor, constant: 10).isActive = true
         missionsTwoLabel.trailingAnchor.constraint(equalTo: missionsButton.trailingAnchor, constant: -10).isActive = true
         missionsTwoLabel.bottomAnchor.constraint(equalTo: missionsButton.bottomAnchor, constant: -5).isActive = true
+        
+        // MARK: MISSION VIEW BUTTON:
+
+        missionsViewButton.translatesAutoresizingMaskIntoConstraints = false
+        missionsViewButton.topAnchor.constraint(equalTo: missionsOneView.topAnchor).isActive = true
+        missionsViewButton.leadingAnchor.constraint(equalTo: missionsOneView.leadingAnchor).isActive = true
+        missionsViewButton.trailingAnchor.constraint(equalTo: missionsOneView.trailingAnchor).isActive = true
+        missionsViewButton.bottomAnchor.constraint(equalTo: missionsOneView.bottomAnchor).isActive = true
         
         // MARK: ACTIVITY INDICATOR:
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -666,6 +707,16 @@ final class StatisticCell: UITableViewCell {
         locationsLabel.textColor = .colorWhite
         locationsLabel.adjustsFontSizeToFitWidth = true
         
+        // MARK: MISSION ONE VIEW:
+        
+        missionsOneView.backgroundColor = .colorCell
+        missionsOneView.layer.cornerRadius = cornerRadius15
+        
+        // MARK: MISSION TWO VIEW:
+        
+        missionsTwoView.backgroundColor = .colorCell
+        missionsTwoView.layer.cornerRadius = cornerRadius15
+        
         // MARK: MISSIONS:
 
         missionsButton.setTitleColor(.colorLightGray, for: .normal)
@@ -684,19 +735,19 @@ final class StatisticCell: UITableViewCell {
         
         // MARK: TOP MISSION:
 
-        topMissionButton.setTitle(NSLocalizedString("Top 10" + ":", comment: ""), for: .normal)
-        topMissionButton.setTitleColor(.colorLightGray, for: .normal)
-        topMissionButton.titleLabel?.font = fontMediumStandard12
-        topMissionButton.contentVerticalAlignment = textAligmentTop
-        topMissionButton.titleLabel?.textAlignment = .center
-        topMissionButton.backgroundColor = .colorCell
-        topMissionButton.layer.cornerRadius = cornerRadius15
+        topMissionsButton.setTitle(NSLocalizedString("Top 10" + ":", comment: ""), for: .normal)
+        topMissionsButton.setTitleColor(.colorLightGray, for: .normal)
+        topMissionsButton.titleLabel?.font = fontMediumStandard12
+        topMissionsButton.contentVerticalAlignment = textAligmentTop
+        topMissionsButton.titleLabel?.textAlignment = .center
+        topMissionsButton.backgroundColor = .colorCell
+        topMissionsButton.layer.cornerRadius = cornerRadius15
         
-        topMissionLabel.textAlignment = .center
-        topMissionLabel.font = fontMediumStandard9
-        topMissionLabel.textColor = .colorWhite
-        topMissionLabel.numberOfLines = 0
-        topMissionLabel.adjustsFontSizeToFitWidth = true
+        topMissionsLabel.textAlignment = .center
+        topMissionsLabel.font = fontMediumStandard9
+        topMissionsLabel.textColor = .colorWhite
+        topMissionsLabel.numberOfLines = 0
+        topMissionsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MISSIONS TWO:
 
@@ -706,11 +757,24 @@ final class StatisticCell: UITableViewCell {
         missionsTwoLabel.numberOfLines = 0
         missionsTwoLabel.adjustsFontSizeToFitWidth = true
         
+        // MARK: MISSION VIEW BUTTON:
+
+        missionsViewButton.addTarget(self, action: #selector(missionViewButtonTapped), for: .touchUpInside)
+        
         // MARK: ACTIVITY INDICATOR:
         activityIndicator.hidesWhenStopped = true
     }
     
     // MARK: - HELPERS:
+    
+    // MARK: MISSION VIEW BUTTON TAPPED:
+    
+    @objc private func missionViewButtonTapped() {
+        isFlippedMissionsView = !isFlippedMissionsView
+        let fromView = isFlippedMissionsView ? missionsOneView : missionsTwoView
+        let toView = isFlippedMissionsView ? missionsTwoView : missionsOneView
+        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.curveEaseOut, .transitionFlipFromLeft, .showHideTransitionViews])
+    }
     
     // MARK: GENERAL INFO:
     
@@ -1100,9 +1164,9 @@ final class StatisticCell: UITableViewCell {
         }
         
         if missionCounts.count == 0 {
-            topMissionLabel.text = ""
+            topMissionsLabel.text = ""
         } else {
-            topMissionLabel.text = maxMissionsText
+            topMissionsLabel.text = maxMissionsText
         }
     }
 
