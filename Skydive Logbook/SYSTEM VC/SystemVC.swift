@@ -81,7 +81,7 @@ final class SystemVC: UIViewController {
         newSystemButton.translatesAutoresizingMaskIntoConstraints = false
         newSystemButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         newSystemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        newSystemButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        newSystemButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         newSystemButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
     }
 

@@ -457,9 +457,20 @@ final class MainVC: UIViewController {
         )
     }
     
+    // MARK: ALERT KIT REFRESH:
+
+    private func alertKitRefresh() {
+        AlertKitAPI.present(
+            title: "Ready! Set! Go!",
+            icon: .none,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
     // MARK: REFRESH CONTROL:
     @objc private func refreshControlTapped(sender: UIRefreshControl) {
-        alertKitSuccess()
+        alertKitRefresh()
         sender.endRefreshing()
     }
 }

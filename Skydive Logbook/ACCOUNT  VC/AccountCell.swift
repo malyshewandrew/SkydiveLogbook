@@ -57,7 +57,7 @@ final class AccountCell: UITableViewCell {
         editAccountButton.translatesAutoresizingMaskIntoConstraints = false
         editAccountButton.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         editAccountButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        editAccountButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        editAccountButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         editAccountButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: EDIT LOCATIONS:
@@ -65,7 +65,7 @@ final class AccountCell: UITableViewCell {
         editLocationsButton.translatesAutoresizingMaskIntoConstraints = false
         editLocationsButton.topAnchor.constraint(equalTo: editAccountButton.bottomAnchor, constant: 15).isActive = true
         editLocationsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        editLocationsButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        editLocationsButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         editLocationsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: EDIT AIRCRAFTS:
@@ -73,7 +73,7 @@ final class AccountCell: UITableViewCell {
         editAircraftsButton.translatesAutoresizingMaskIntoConstraints = false
         editAircraftsButton.topAnchor.constraint(equalTo: editLocationsButton.bottomAnchor, constant: 15).isActive = true
         editAircraftsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        editAircraftsButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        editAircraftsButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         editAircraftsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: EDIT CANOPIES:
@@ -81,7 +81,7 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.translatesAutoresizingMaskIntoConstraints = false
         editCanopiesButton.topAnchor.constraint(equalTo: editAircraftsButton.bottomAnchor, constant: 15).isActive = true
         editCanopiesButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        editCanopiesButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        editCanopiesButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         editCanopiesButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: CALCULATOR:
@@ -89,7 +89,7 @@ final class AccountCell: UITableViewCell {
         calculatorButton.translatesAutoresizingMaskIntoConstraints = false
         calculatorButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 45).isActive = true
         calculatorButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        calculatorButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        calculatorButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         calculatorButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: BACKUP BUTTON:
@@ -97,7 +97,7 @@ final class AccountCell: UITableViewCell {
         backupButton.translatesAutoresizingMaskIntoConstraints = false
         backupButton.topAnchor.constraint(equalTo: calculatorButton.bottomAnchor, constant: 15).isActive = true
         backupButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        backupButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        backupButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         backupButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: ABOUT:
@@ -105,7 +105,7 @@ final class AccountCell: UITableViewCell {
         infoButton.translatesAutoresizingMaskIntoConstraints = false
         infoButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 45).isActive = true
         infoButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        infoButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        infoButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         infoButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: PREMIUM BUTTON:
@@ -113,7 +113,7 @@ final class AccountCell: UITableViewCell {
         premiumButton.translatesAutoresizingMaskIntoConstraints = false
         premiumButton.topAnchor.constraint(equalTo: infoButton.bottomAnchor, constant: 15).isActive = true
         premiumButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        premiumButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        premiumButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         premiumButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
         premiumButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
 

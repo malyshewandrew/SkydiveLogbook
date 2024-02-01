@@ -29,6 +29,7 @@ let cornerRadius15: CGFloat = 15
 // MARK: - HEIGHTS:
 
 let height40: CGFloat = 40
+let height45: CGFloat = 45
 let height65: CGFloat = 65
 let height75: CGFloat = 75
 
