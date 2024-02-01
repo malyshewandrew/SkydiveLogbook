@@ -25,6 +25,12 @@ final class MainVC: UIViewController {
     private let vibrationOn = Vibration()
     private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
+    
+    private var tableRefreshControl: UIRefreshControl {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlTapped), for: .valueChanged)
+        return refreshControl
+    }
 
     // MARK: - LIFECYCLE:
 
@@ -206,6 +212,7 @@ final class MainVC: UIViewController {
         tableView.isHidden = true
         tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
+        tableView.refreshControl = tableRefreshControl
     }
 
     // MARK: - LOAD JUMPS FROM REALM:
@@ -447,6 +454,11 @@ final class MainVC: UIViewController {
             style: .iOS17AppleMusic,
             haptic: .success
         )
+    }
+    
+    @objc private func refreshControlTapped(sender: UIRefreshControl) {
+        alertKitSuccess()
+        sender.endRefreshing()
     }
 }
 
