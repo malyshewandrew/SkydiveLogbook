@@ -69,7 +69,7 @@ final class PremiumVC: UIViewController {
 
         buy12Button.translatesAutoresizingMaskIntoConstraints = false
         buy12Button.centerXAnchor.constraint(equalTo: infoTextView.centerXAnchor).isActive = true
-        buy12Button.topAnchor.constraint(equalTo: buy1Button.bottomAnchor, constant: 30).isActive = true
+        buy12Button.topAnchor.constraint(equalTo: buy1Button.bottomAnchor, constant: 15).isActive = true
         buy12Button.heightAnchor.constraint(equalToConstant: height40).isActive = true
         buy12Button.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         

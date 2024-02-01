@@ -430,7 +430,11 @@ final class MainVC: UIViewController {
     @objc private func hideAnimation() {
         tableView.isHidden = false
         tabBarController?.tabBar.isHidden = false
-        loadingView.removeFromSuperview()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.loadingView.alpha = 0.0
+        }, completion: { (completed) in
+            self.loadingView.removeFromSuperview()
+        })
         loadingLottie.removeFromSuperview()
     }
 
