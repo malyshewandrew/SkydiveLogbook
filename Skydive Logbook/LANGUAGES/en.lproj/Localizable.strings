@@ -180,7 +180,7 @@
 
 // MARK: - NewJump:
 "Add new jump / new jump" = "New jump";
-"Manual / new jump" = "In order to be able to add:\n\nLocations\nAircrafts\nCanopies\n\ngo to the \"Account\" section and enter the appropriate data";
+"Manual / new jump" = "To get started, go to the \"Account\" section and enter the following data:\n\nLocations\nAircrafts\nCanopies";
 
 // MARK: - CellNewJump:
 

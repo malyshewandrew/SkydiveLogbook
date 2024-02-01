@@ -155,9 +155,6 @@ final class InfoVC: UIViewController {
 
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.addSubviews(versionAccountLottie, imageView)
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         
         versionAccountLottie.translatesAutoresizingMaskIntoConstraints = false
         versionAccountLottie.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor).isActive = true

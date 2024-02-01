@@ -252,9 +252,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -266,10 +263,6 @@ extension StatisticVC: StatisticCellDelegate {
 
         let alert = UIAlertController(title: NSLocalizedString("saving data", comment: "") + ":", message: "\n\n\n\n\n\n \(NSLocalizedString("saving data text", comment: ""))", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
-
         alert.view.addSubviews(contentView, imageLottie)
 
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -332,9 +325,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       """,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -345,9 +335,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: NSLocalizedString("Categories USPA List", comment: ""),
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -375,9 +362,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -407,9 +391,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -437,9 +418,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -451,9 +429,6 @@ extension StatisticVC: StatisticCellDelegate {
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-            alert.view.backgroundColor = .black
-            alert.view.layer.masksToBounds = true
-            alert.view.layer.cornerRadius = 20
             present(alert, animated: true)
         } else {
             let currentDate = Date()
@@ -479,9 +454,6 @@ extension StatisticVC: StatisticCellDelegate {
                                               message: message,
                                               preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-                alert.view.backgroundColor = .black
-                alert.view.layer.masksToBounds = true
-                alert.view.layer.cornerRadius = 20
                 present(alert, animated: true)
             }
         }
@@ -511,9 +483,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -525,9 +494,6 @@ extension StatisticVC: StatisticCellDelegate {
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-            alert.view.backgroundColor = .black
-            alert.view.layer.masksToBounds = true
-            alert.view.layer.cornerRadius = 20
             present(alert, animated: true)
         } else {
             let currentDate = Date()
@@ -547,9 +513,6 @@ extension StatisticVC: StatisticCellDelegate {
                                               """,
                                               preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-                alert.view.backgroundColor = .black
-                alert.view.layer.masksToBounds = true
-                alert.view.layer.cornerRadius = 20
                 present(alert, animated: true)
             }
         }
@@ -586,9 +549,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -618,9 +578,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -651,9 +608,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -688,9 +642,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -725,9 +676,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 
@@ -762,9 +710,6 @@ extension StatisticVC: StatisticCellDelegate {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 }

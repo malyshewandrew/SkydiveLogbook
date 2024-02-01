@@ -1,5 +1,5 @@
-import UIKit
 import RealmSwift
+import UIKit
 
 // MARK: - ADD SUBVIEWS:
 
@@ -12,6 +12,7 @@ extension UIView {
 }
 
 // MARK: - STACKVIEW ADD SUBVIEWS:
+
 extension UIStackView {
     func addArrangedSubviews(_ views: UIView...) {
         for view in views {

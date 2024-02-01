@@ -9,7 +9,6 @@ final class NewJumpVC: UIViewController {
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
-    private let manualButton = UIButton()
     private let tableView = UITableView()
 
     // MARK: - LIFECYCLE:
@@ -37,7 +36,7 @@ final class NewJumpVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, tableView, newJumpLottie, confettiButton, manualButton)
+        view.addSubviews(confettiLottie, tableView, newJumpLottie, confettiButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -66,14 +65,6 @@ final class NewJumpVC: UIViewController {
         confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
-        
-        // MARK: MANUAL BUTTON:
-        
-        manualButton.translatesAutoresizingMaskIntoConstraints = false
-        manualButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
-        manualButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        manualButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        manualButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -105,11 +96,6 @@ final class NewJumpVC: UIViewController {
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
-        
-        // MARK: MANUAL BUTTON:
-        
-        manualButton.setBackgroundImage(UIImage(systemName: "questionmark.square.fill"), for: .normal)
-        manualButton.addTarget(self, action: #selector(manualButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - CONFIGURE TABLE VIEW:
@@ -164,14 +150,6 @@ final class NewJumpVC: UIViewController {
         }
     }
     
-    // MARK: - MANUAL ALERT:
-
-    @objc private func manualButtonTapped() {
-        let alert = UIAlertController(title: NSLocalizedString("Add new jump / new jump", comment: "") + ":", message: "\n\(NSLocalizedString("Manual / new jump", comment: ""))", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default))
-        present(alert, animated: true)
-    }
-    
     // MARK: - HELPERS:
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
@@ -195,6 +173,11 @@ extension NewJumpVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewJumpCell", for: indexPath) as? NewJumpCell else { return UITableViewCell() }
+        cell.showAlert = { [weak self] in
+            let alert = UIAlertController(title: NSLocalizedString("Add new jump / new jump", comment: "") + ":", message: "\n\(NSLocalizedString("Manual / new jump", comment: ""))", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ок", style: .default))
+            self?.present(alert, animated: true)
+        }
         return cell
     }
 }

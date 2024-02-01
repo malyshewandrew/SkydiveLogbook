@@ -249,9 +249,6 @@ extension SystemVC: SystemCellDelegate {
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
 
         }))
-        alert.view.backgroundColor = .black
-        alert.view.layer.masksToBounds = true
-        alert.view.layer.cornerRadius = 20
         present(alert, animated: true)
     }
 }

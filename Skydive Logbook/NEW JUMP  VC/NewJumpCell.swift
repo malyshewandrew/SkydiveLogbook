@@ -52,6 +52,8 @@ final class NewJumpCell: UITableViewCell {
     private let dateFormatter = DateFormatter()
     private let realmManager = RealmManager()
     
+    var showAlert: (() -> ())?
+    
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -677,6 +679,7 @@ extension NewJumpCell: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if arrayCanopiesRealm.isEmpty || missionPickerViewValues.isEmpty || arrayLocationsRealm.isEmpty || arrayAircraftsRealm.isEmpty || cutawayPickerViewValues.isEmpty {
+            showAlert?()
             return
         }
         if pickerView == canopyPickerView {
@@ -752,6 +755,7 @@ extension NewJumpCell: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if arrayCanopiesRealm.isEmpty || missionPickerViewValues.isEmpty || arrayLocationsRealm.isEmpty || arrayAircraftsRealm.isEmpty || cutawayPickerViewValues.isEmpty {
+            showAlert?()
             return
         }
         
