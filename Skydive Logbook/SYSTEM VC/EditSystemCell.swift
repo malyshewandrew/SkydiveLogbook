@@ -913,7 +913,7 @@ final class EditSystemCell: UITableViewCell {
         reserveCanopyCountRepackButton.contentVerticalAlignment = textAligmentTop
         reserveCanopyCountRepackButton.titleLabel?.font = fontMediumStandard10
         reserveCanopyCountRepackButton.layer.cornerRadius = cornerRadius15
-        reserveCanopyCountRepackTextField.placeholder = "0-20"
+        reserveCanopyCountRepackTextField.placeholder = NSLocalizedString("Count / new system cell", comment: "")
         reserveCanopyCountRepackTextField.backgroundColor = .colorTabBar
         reserveCanopyCountRepackTextField.font = fontRegularStandard12
         reserveCanopyCountRepackTextField.textColor = .colorWhite

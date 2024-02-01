@@ -282,6 +282,7 @@
 "Counts of repack reserve canopy / new system cell" = "Количество переукладок";
 "Date of packing reserve canopy / new system cell" = "Дата укладки";
 "Date dd.mm.yyyy / new system cell" = "дд.мм.гггг";
+"Count / new system cell" = "Number";
 
 "Comment / new system cell" = "Комментарий";
 "Optional / new system cell" = "Опционально";
