@@ -594,7 +594,7 @@ final class NewJumpCell: UITableViewCell {
         }
     }
     
-    // MARK: SHOR ERROR FOR EMPTY FIELD:
+    // MARK: SHOR ERROR FOR EMPTY FIELDS:
     
     private func showError(textField: UITextField) {
         textField.backgroundColor = .colorRed

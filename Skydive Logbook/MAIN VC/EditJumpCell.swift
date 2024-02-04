@@ -559,7 +559,7 @@ final class EditJumpCell: UITableViewCell {
         resetSelectPickerView()
     }
     
-    // MARK: SHOR ERROR FOR EMPTY FIELD:
+    // MARK: SHOR ERROR FOR EMPTY FIELDS:
     
     private func showError(textField: UITextField) {
         textField.backgroundColor = .colorRed

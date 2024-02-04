@@ -997,30 +997,84 @@ final class NewSystemCell: UITableViewCell {
     // MARK: ACTION BUTTON SAVE:
 
     @objc private func actionButtonSaveTap() {
-        guard nameSystemTextField.text != "",
-        containerNameTextField.text != "",
-        containerDomTextField.text != "",
-        containerSerialNumberTextField.text != "",
-        containerServiceLifeYearsTextField.text != "",
-        aadNameTextField.text != "",
-        aadDomTextField.text != "",
-        aadSerialNumberTextField.text != "",
-        aadServiceLifeYearsTextField.text != "",
-        mainCanopyNameTextField.text != "",
-        mainCanopyDomTextField.text != "",
-        mainCanopyCountJumpsTextField.text != "",
-        mainCanopyServiceLifeYearsTextField.text != "",
-        mainCanopyServiceLifeJumpsTextField.text != "",
-        mainCanopyCountJumpsTextField.text != "",
-        reserveCanopyNameTextField.text != "",
-        reserveCanopyDomTextField.text != "",
-        reserveCanopySerialNumberTextField.text != "",
-        reserveCanopyServiceLifeYearsTextField.text != "",
-        reserveCanopyCountRepackTextField.text != ""
-        else {
-            resignFirstResponders()
-            actionButtonSaveRedColor()
-            alertKitError()
+        guard nameSystemTextField.text != "" else {
+            showError(textField: nameSystemTextField)
+            return
+        }
+        guard containerNameTextField.text != "" else {
+            showError(textField: containerNameTextField)
+            return
+        }
+        guard containerDomTextField.text != "" else {
+            showError(textField: containerDomTextField)
+            return
+        }
+        guard containerSerialNumberTextField.text != "" else {
+            showError(textField: containerSerialNumberTextField)
+            return
+        }
+        guard containerServiceLifeYearsTextField.text != "" else {
+            showError(textField: containerServiceLifeYearsTextField)
+            return
+        }
+        guard aadNameTextField.text != "" else {
+            showError(textField: aadNameTextField)
+            return
+        }
+        guard aadDomTextField.text != "" else {
+            showError(textField: aadDomTextField)
+            return
+        }
+        guard aadSerialNumberTextField.text != "" else {
+            showError(textField: aadSerialNumberTextField)
+            return
+        }
+        guard aadServiceLifeYearsTextField.text != "" else {
+            showError(textField: aadServiceLifeYearsTextField)
+            return
+        }
+        guard mainCanopyNameTextField.text != "" else {
+            showError(textField: mainCanopyNameTextField)
+            return
+        }
+        guard mainCanopyDomTextField.text != "" else {
+            showError(textField: mainCanopyDomTextField)
+            return
+        }
+        guard mainCanopySerialNumberTextField.text != "" else {
+            showError(textField: mainCanopySerialNumberTextField)
+            return
+        }
+        guard mainCanopyServiceLifeYearsTextField.text != "" else {
+            showError(textField: mainCanopyServiceLifeYearsTextField)
+            return
+        }
+        guard mainCanopyServiceLifeJumpsTextField.text != "" else {
+            showError(textField: mainCanopyServiceLifeJumpsTextField)
+            return
+        }
+        guard mainCanopyCountJumpsTextField.text != "" else {
+            showError(textField: mainCanopyCountJumpsTextField)
+            return
+        }
+        guard reserveCanopyNameTextField.text != "" else {
+            showError(textField: reserveCanopyNameTextField)
+            return
+        }
+        guard reserveCanopyDomTextField.text != "" else {
+            showError(textField: reserveCanopyDomTextField)
+            return
+        }
+        guard reserveCanopySerialNumberTextField.text != "" else {
+            showError(textField: reserveCanopySerialNumberTextField)
+            return
+        }
+        guard reserveCanopyServiceLifeYearsTextField.text != "" else {
+            showError(textField: reserveCanopyServiceLifeYearsTextField)
+            return
+        }
+        guard reserveCanopyCountRepackTextField.text != "" else {
+            showError(textField: reserveCanopyCountRepackTextField)
             return
         }
         saveNewSystem()
@@ -1029,6 +1083,18 @@ final class NewSystemCell: UITableViewCell {
         resignFirstResponders()
         clearTextViews()
         alertKitSuccess()
+    }
+    
+    // MARK: SHOR ERROR FOR EMPTY FIELDS:
+    
+    private func showError(textField: UITextField) {
+        textField.backgroundColor = .colorRed
+        UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve) {
+            textField.backgroundColor = .colorTabBar
+        }
+        resignFirstResponders()
+        actionButtonSaveRedColor()
+        alertKitError()
     }
     
     // MARK: ACTION BUTTON CLEAN:
