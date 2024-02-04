@@ -510,18 +510,36 @@ final class NewJumpCell: UITableViewCell {
     // MARK: ACTION BUTTON SAVE:
 
     @objc private func actionButtonSaveTap() {
-        guard dateTextField.text != "",
-              locationTextField.text != "",
-              aircraftTextField.text != "",
-              canopyTextField.text != "",
-              missionTextField.text != "",
-              heightTextField.text != "",
-              timeTextField.text != "",
-              cutawayTextField.text != ""
-        else {
-            resignFirstResponders()
-            actionButtonSaveRedColor()
-            alertKitError()
+        guard dateTextField.text != "" else {
+            showError(textField: dateTextField)
+            return
+        }
+        guard locationTextField.text != "" else {
+            showError(textField: locationTextField)
+            return
+        }
+        guard aircraftTextField.text != "" else {
+            showError(textField: aircraftTextField)
+            return
+        }
+        guard canopyTextField.text != "" else {
+            showError(textField: canopyTextField)
+            return
+        }
+        guard missionTextField.text != "" else {
+            showError(textField: missionTextField)
+            return
+        }
+        guard heightTextField.text != "" else {
+            showError(textField: heightTextField)
+            return
+        }
+        guard timeTextField.text != "" else {
+            showError(textField: timeTextField)
+            return
+        }
+        guard cutawayTextField.text != "" else {
+            showError(textField: cutawayTextField)
             return
         }
         saveNewJump()
@@ -574,6 +592,18 @@ final class NewJumpCell: UITableViewCell {
         try? realmManager.localRealm.write {
             realmManager.localRealm.add(newJump, update: .all)
         }
+    }
+    
+    // MARK: SHOR ERROR FOR EMPTY FIELD:
+    
+    private func showError(textField: UITextField) {
+        textField.backgroundColor = .colorRed
+        UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve) {
+            textField.backgroundColor = .colorTabBar
+        }
+        resignFirstResponders()
+        actionButtonSaveRedColor()
+        alertKitError()
     }
 
     // MARK: CLEAR ALL TEXT FIELDS:
