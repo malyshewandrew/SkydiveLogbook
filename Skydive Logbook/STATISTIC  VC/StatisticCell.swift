@@ -65,13 +65,15 @@ final class StatisticCell: UITableViewCell {
     
     private let missionsContainerView = UIView()
     private let missionsOneView = UIView()
-    private let missionsTwoView = UIView()
     private let missionsButton = UIButton()
     private let missionsOneLabel = UILabel()
     private let missionsTwoLabel = UILabel()
     private let topMissionsButton = UIButton()
     private let topMissionsLabel = UILabel()
     private let missionsViewButton = UIButton()
+    
+    private let missionsTwoView = UIView()
+    
     
     private var isFlippedMissionsView = false
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -128,6 +130,7 @@ final class StatisticCell: UITableViewCell {
         missionsOneView.addSubviews(missionsButton, topMissionsButton)
         missionsButton.addSubviews(missionsOneLabel, missionsTwoLabel)
         topMissionsButton.addSubview(topMissionsLabel)
+        missionsTwoView.addSubviews()
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -773,7 +776,7 @@ final class StatisticCell: UITableViewCell {
         isFlippedMissionsView = !isFlippedMissionsView
         let fromView = isFlippedMissionsView ? missionsOneView : missionsTwoView
         let toView = isFlippedMissionsView ? missionsTwoView : missionsOneView
-        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.curveEaseOut, .transitionFlipFromLeft, .showHideTransitionViews])
+        UIView.transition(from: fromView, to: toView, duration: 1, options: [.curveEaseOut, .transitionFlipFromLeft, .showHideTransitionViews])
     }
     
     // MARK: GENERAL INFO:
