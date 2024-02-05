@@ -348,8 +348,8 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 // MARK: - PREMIUM:
 
 "Premium info text" = "\nIn the free version of the app, you can save 50 jumps.\n\n⭐️ ⭐️ ⭐️\n\nThe premium version of the app allows you to save an unlimited number of jumps.\n";
-"1 month" = "Every month\n(9.99$/month)";
-"12 months" = "Every year 49.99$\n(2.99$/month)";
+"1 month" = "$9.99 / Month";
+"12 months" = "$49.99 / Year\n($4.16/month)";
 "Restore purchases" = "Restore purchases";
 "Buy status" = "Buy find / buy no find";
 
