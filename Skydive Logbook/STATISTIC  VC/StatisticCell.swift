@@ -1,5 +1,5 @@
-import UIKit
 import RealmSwift
+import UIKit
 
 // MARK: - PROTOCOL:
 
@@ -73,7 +73,6 @@ final class StatisticCell: UITableViewCell {
     private let missionsViewButton = UIButton()
     
     private let missionsTwoView = UIView()
-    
     
     private var isFlippedMissionsView = false
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -378,15 +377,6 @@ final class StatisticCell: UITableViewCell {
         missionsOneView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
         missionsOneView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         
-        // MARK: MISSION TWO VIEW:
-        
-        missionsTwoView.translatesAutoresizingMaskIntoConstraints = false
-        missionsTwoView.topAnchor.constraint(equalTo: aircraftsButton.bottomAnchor, constant: 15).isActive = true
-        missionsTwoView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        missionsTwoView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
-        missionsTwoView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
-        missionsTwoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        
         // MARK: MISSIONS:
 
         missionsButton.translatesAutoresizingMaskIntoConstraints = false
@@ -434,7 +424,17 @@ final class StatisticCell: UITableViewCell {
         missionsViewButton.trailingAnchor.constraint(equalTo: missionsOneView.trailingAnchor).isActive = true
         missionsViewButton.bottomAnchor.constraint(equalTo: missionsOneView.bottomAnchor).isActive = true
         
+        // MARK: MISSION TWO VIEW:
+        
+        missionsTwoView.translatesAutoresizingMaskIntoConstraints = false
+        missionsTwoView.topAnchor.constraint(equalTo: aircraftsButton.bottomAnchor, constant: 15).isActive = true
+        missionsTwoView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        missionsTwoView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        missionsTwoView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
+        missionsTwoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        
         // MARK: ACTIVITY INDICATOR:
+
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
@@ -715,11 +715,6 @@ final class StatisticCell: UITableViewCell {
         missionsOneView.backgroundColor = .colorCell
         missionsOneView.layer.cornerRadius = cornerRadius15
         
-        // MARK: MISSION TWO VIEW:
-        
-        missionsTwoView.backgroundColor = .colorCell
-        missionsTwoView.layer.cornerRadius = cornerRadius15
-        
         // MARK: MISSIONS:
 
         missionsButton.setTitleColor(.colorLightGray, for: .normal)
@@ -764,7 +759,13 @@ final class StatisticCell: UITableViewCell {
 
         missionsViewButton.addTarget(self, action: #selector(missionViewButtonTapped), for: .touchUpInside)
         
+        // MARK: MISSION TWO VIEW:
+        
+        missionsTwoView.backgroundColor = .colorCell
+        missionsTwoView.layer.cornerRadius = cornerRadius15
+        
         // MARK: ACTIVITY INDICATOR:
+
         activityIndicator.hidesWhenStopped = true
     }
     
@@ -1173,7 +1174,6 @@ final class StatisticCell: UITableViewCell {
         }
     }
 
-    
     // MARK: MISSIONS TWO:
     
     private func setMissionsTwo() {
