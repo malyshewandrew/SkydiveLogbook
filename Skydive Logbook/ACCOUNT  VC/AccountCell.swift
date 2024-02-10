@@ -12,6 +12,7 @@ protocol AccountCellDelegate {
     func tapBackupButton()
     func tapInfoButton()
     func tapPremiumButton()
+    func tapWeatherButton()
 }
 
 final class AccountCell: UITableViewCell {
@@ -25,6 +26,7 @@ final class AccountCell: UITableViewCell {
     private let backupButton = UIButton()
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
+    private let weatherButton = UIButton()
     private let starImage = UIImageView()
     var delegate: AccountCellDelegate?
 
@@ -45,7 +47,7 @@ final class AccountCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, calculatorButton, backupButton, infoButton, premiumButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, calculatorButton, backupButton, infoButton, premiumButton, weatherButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -115,7 +117,15 @@ final class AccountCell: UITableViewCell {
         premiumButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         premiumButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         premiumButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-        premiumButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        
+        // MARK: WEATHER:
+        weatherButton.translatesAutoresizingMaskIntoConstraints = false
+        weatherButton.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 15).isActive = true
+        weatherButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        weatherButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        weatherButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        weatherButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        
 
         // MARK: STAR:
 
@@ -203,6 +213,15 @@ final class AccountCell: UITableViewCell {
         premiumButton.titleLabel?.font = fontMediumStandard14
         premiumButton.setTitleColor(.colorWhite, for: .normal)
         premiumButton.addTarget(self, action: #selector(premiumButtonTapped), for: .touchUpInside)
+        
+        // MARK: WEATHER BUTTON:
+
+        weatherButton.setTitle("Weather", for: .normal)
+        weatherButton.layer.cornerRadius = cornerRadius15
+        weatherButton.backgroundColor = .colorCell
+        weatherButton.titleLabel?.font = fontMediumStandard14
+        weatherButton.setTitleColor(.colorWhite, for: .normal)
+        weatherButton.addTarget(self, action: #selector(weatherButtonTapped), for: .touchUpInside)
 
         // MARK: STAR:
 
@@ -259,5 +278,11 @@ final class AccountCell: UITableViewCell {
 
     @objc private func premiumButtonTapped() {
         delegate?.tapPremiumButton()
+    }
+    
+    // MARK: FUNC FOR WEATHER BUTTON:
+
+    @objc private func weatherButtonTapped() {
+        delegate?.tapWeatherButton()
     }
 }

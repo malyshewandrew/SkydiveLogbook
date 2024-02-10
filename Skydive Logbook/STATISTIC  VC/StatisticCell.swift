@@ -1,5 +1,6 @@
 import RealmSwift
 import UIKit
+import WeatherKit
 
 // MARK: - PROTOCOL:
 
@@ -424,6 +425,12 @@ final class StatisticCell: UITableViewCell {
         missionsViewButton.trailingAnchor.constraint(equalTo: missionsOneView.trailingAnchor).isActive = true
         missionsViewButton.bottomAnchor.constraint(equalTo: missionsOneView.bottomAnchor).isActive = true
         
+        // MARK: ACTIVITY INDICATOR:
+
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        
         // MARK: MISSION TWO VIEW:
         
         missionsTwoView.translatesAutoresizingMaskIntoConstraints = false
@@ -433,11 +440,6 @@ final class StatisticCell: UITableViewCell {
         missionsTwoView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
         missionsTwoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         
-        // MARK: ACTIVITY INDICATOR:
-
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -1273,8 +1275,7 @@ final class StatisticCell: UITableViewCell {
     
     private func reloadData() {
         activityIndicator.startAnimating()
-        let mainQueue = DispatchQueue.main
-        mainQueue.async {
+        DispatchQueue.main.async {
             self.setGeneralInfo()
             self.setTotalJumps()
             self.setJumpsYear()

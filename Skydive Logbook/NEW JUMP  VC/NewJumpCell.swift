@@ -543,13 +543,15 @@ final class NewJumpCell: UITableViewCell {
             return
         }
         saveNewJump()
-        actionButtonSaveGreenColor()
-        playSoundSucces()
-        resignFirstResponders()
-        clearTextViews()
-        alertKitSuccess()
-        resetSelectPickerView()
-        loadJumps()
+        DispatchQueue.main.async {
+            self.actionButtonSaveGreenColor()
+            self.playSoundSucces()
+            self.resignFirstResponders()
+            self.clearTextViews()
+            self.alertKitSuccess()
+            self.resetSelectPickerView()
+            self.loadJumps()
+        }
     }
     
     // MARK: ACTION BUTTON CLEAN:

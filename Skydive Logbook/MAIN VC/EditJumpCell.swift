@@ -515,11 +515,13 @@ final class EditJumpCell: UITableViewCell {
             return
         }
         saveNewJump()
-        actionButtonSaveGreenColor()
-        playSoundSucces()
-        resignFirstResponders()
-        clearTextViews()
-        alertKitSuccess()
+        DispatchQueue.main.async {
+            self.actionButtonSaveGreenColor()
+            self.playSoundSucces()
+            self.resignFirstResponders()
+            self.clearTextViews()
+            self.alertKitSuccess()
+        }
     }
     
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:

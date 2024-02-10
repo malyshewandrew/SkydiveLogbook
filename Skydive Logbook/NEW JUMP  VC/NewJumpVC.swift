@@ -163,7 +163,7 @@ final class NewJumpVC: UIViewController {
 // MARK: - EXTENSION FOR TABLE VIEW:
 
 extension NewJumpVC: UITableViewDelegate, UITableViewDataSource {
-    // MARK: - COUNT OF CELLS:
+    // MARK: COUNT OF CELLS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1

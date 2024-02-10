@@ -139,6 +139,7 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension AccountVC: AccountCellDelegate {
+    
     func tapEditAccountButton() {
         let editAccount = EditAccountVC()
         navigationController?.pushViewController(editAccount, animated: true)
@@ -177,5 +178,10 @@ extension AccountVC: AccountCellDelegate {
     func tapPremiumButton() {
         let premium = PremiumVC()
         navigationController?.pushViewController(premium, animated: true)
+    }
+    
+    func tapWeatherButton() {
+        let weather = WeatherVC()
+        navigationController?.pushViewController(weather, animated: true)
     }
 }
