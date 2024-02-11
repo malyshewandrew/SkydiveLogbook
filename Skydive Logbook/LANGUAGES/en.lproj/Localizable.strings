@@ -75,8 +75,6 @@
 "no jumps" = "To display statistics, you need to make at least one jump.";
 "saving data" = "Saving data";
 "saving data text" = "To save your complete jump history, it is recommended that you periodically create backups in the \"Account\" section. \nThis is especially important when switching to a new device.";
-"Total height" = "Total height";
-"Free fall time" = "Free fall time";
 "jumps by year" = "Jumps by year";
 "year" = "year";
 "Categories USPA" = "Categories USPA";

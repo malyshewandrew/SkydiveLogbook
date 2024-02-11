@@ -243,7 +243,7 @@ extension StatisticVC: StatisticCellDelegate {
             message = """
             \n\(NSLocalizedString("Total height", comment: "")): \(sumHeight) \(NSLocalizedString("m.", comment: ""))
             \(heightMessage)\n
-            \n\(NSLocalizedString("Free fall time", comment: "")): \(sumTime) \(NSLocalizedString("s.", comment: ""))
+            \n\(NSLocalizedString("Total time", comment: "")): \(sumTime) \(NSLocalizedString("s.", comment: ""))
             \(timeMessage)\n
             """
         }

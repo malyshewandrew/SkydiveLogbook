@@ -179,9 +179,4 @@ extension AccountVC: AccountCellDelegate {
         let premium = PremiumVC()
         navigationController?.pushViewController(premium, animated: true)
     }
-    
-    func tapWeatherButton() {
-        let weather = WeatherVC()
-        navigationController?.pushViewController(weather, animated: true)
-    }
 }

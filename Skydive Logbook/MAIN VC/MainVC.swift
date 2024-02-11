@@ -16,6 +16,10 @@ final class MainVC: UIViewController {
     private let confettiButton = UIButton()
     private let accountImage = UIImageView()
     private let accountButton = UIButton()
+    private let weatherImage = UIImageView()
+    private let weatherButton = UIButton()
+    private let calculatorImage = UIImageView()
+    private let calculatorButton = UIButton()
     private let notesImage = UIImageView()
     private let notesButton = UIButton()
     private let tableView = UITableView()
@@ -58,7 +62,7 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, notesImage, notesButton, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
+        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, weatherImage, weatherButton, calculatorImage, calculatorButton, notesImage, notesButton, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
         loadingView.addSubview(loadingLottie)
     }
 
@@ -118,6 +122,34 @@ final class MainVC: UIViewController {
         accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         accountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         accountButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        // MARK: WEATHER IMAGE:
+
+        weatherImage.translatesAutoresizingMaskIntoConstraints = false
+        weatherImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
+        weatherImage.leadingAnchor.constraint(equalTo: accountImage.trailingAnchor, constant: 20).isActive = true
+
+        // MARK: WEATHER BUTTON:
+
+        weatherButton.translatesAutoresizingMaskIntoConstraints = false
+        weatherButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        weatherButton.leadingAnchor.constraint(equalTo: accountImage.trailingAnchor, constant: 20).isActive = true
+        weatherButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        weatherButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        // MARK: CALCULATOR IMAGE:
+
+        calculatorImage.translatesAutoresizingMaskIntoConstraints = false
+        calculatorImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
+        calculatorImage.trailingAnchor.constraint(equalTo: notesImage.leadingAnchor, constant: -20).isActive = true
+
+        // MARK: CALCULATOR BUTTON:
+
+        calculatorButton.translatesAutoresizingMaskIntoConstraints = false
+        calculatorButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        calculatorButton.trailingAnchor.constraint(equalTo: notesImage.leadingAnchor, constant: -20).isActive = true
+        calculatorButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        calculatorButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
 
         // MARK: NOTES IMAGE:
 
@@ -193,6 +225,24 @@ final class MainVC: UIViewController {
         // MARK: ACCOUNT BUTTON:
 
         accountButton.addTarget(self, action: #selector(accountButtonTapped), for: .touchUpInside)
+        
+        // MARK: WEATHER IMAGE:
+
+        weatherImage.image = UIImage(systemName: "sun.max.circle.fill", withConfiguration: configuration)
+        weatherImage.tintColor = .colorDarkGray
+
+        // MARK: WEATHER BUTTON:
+
+        weatherButton.addTarget(self, action: #selector(weatherButtonTapped), for: .touchUpInside)
+        
+        // MARK: CALCULATOR IMAGE:
+
+        calculatorImage.image = UIImage(systemName: "divide.circle.fill", withConfiguration: configuration)
+        calculatorImage.tintColor = .colorDarkGray
+
+        // MARK: CALCULATOR BUTTON:
+
+        calculatorButton.addTarget(self, action: #selector(calculatorButtonTapped), for: .touchUpInside)
 
         // MARK: NOTES IMAGE:
 
@@ -324,6 +374,20 @@ final class MainVC: UIViewController {
             }))
             present(alert, animated: true)
         }
+    }
+    
+    // MARK: - TRANSITION ON WEATHER VIEW CONTROLLER:
+
+    @objc private func weatherButtonTapped() {
+        let weatherViewController = WeatherVC()
+        present(weatherViewController, animated: true, completion: nil)
+    }
+    
+    // MARK: - TRANSITION ON CALCULATOR VIEW CONTROLLER:
+
+    @objc private func calculatorButtonTapped() {
+        let calculatorBViewController = CalculatorVC()
+        present(calculatorBViewController, animated: true, completion: nil)
     }
 
     // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
