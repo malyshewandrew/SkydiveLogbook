@@ -49,8 +49,8 @@ class WeatherCell: UITableViewCell {
         contentView.addSubviews(windButton, temperatureButton, cloudCoverButton, humidityButton, dewPointButton, precipitationIntensityButton, visibilityButton, pressureButton, iconImageView)
         windButton.addSubviews(windSpeedLabel, windDirectionLabel)
         temperatureButton.addSubviews(currentTemperatureLabel, descriptionLabel, feelTemperatureLabel)
-        humidityButton.addSubviews(humidityLabel)
         cloudCoverButton.addSubviews(cloudCoverLabel)
+        humidityButton.addSubviews(humidityLabel)
         dewPointButton.addSubviews(dewPointLabel)
         precipitationIntensityButton.addSubviews(precipitationIntensityLabel)
         visibilityButton.addSubviews(visibilityLabel)
@@ -65,20 +65,22 @@ class WeatherCell: UITableViewCell {
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 75).isActive = true
         iconImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        iconImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.1).isActive = true
+        iconImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.1).isActive = true
 
         // MARK: - WIND BUTTON:
 
         windButton.translatesAutoresizingMaskIntoConstraints = false
         windButton.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 10).isActive = true
         windButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        windButton.heightAnchor.constraint(equalToConstant: 125).isActive = true
+        windButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3).isActive = true
         windButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.55).isActive = true
 
         // WIND SPEED:
 
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedLabel.centerXAnchor.constraint(equalTo: windButton.centerXAnchor).isActive = true
-        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 20).isActive = true
+        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 25).isActive = true
         windSpeedLabel.heightAnchor.constraint(equalTo: windButton.heightAnchor, multiplier: 0.6).isActive = true
         windSpeedLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
 
@@ -95,7 +97,7 @@ class WeatherCell: UITableViewCell {
         temperatureButton.translatesAutoresizingMaskIntoConstraints = false
         temperatureButton.topAnchor.constraint(equalTo: windButton.bottomAnchor, constant: 15).isActive = true
         temperatureButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        temperatureButton.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        temperatureButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3).isActive = true
         temperatureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.85).isActive = true
 
         // CURRENT TEMPERATURE:
@@ -118,6 +120,20 @@ class WeatherCell: UITableViewCell {
         feelTemperatureLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         feelTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
         feelTemperatureLabel.bottomAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: -10).isActive = true
+        
+        // MARK: - HUMIDITY BUTTON:
+
+        humidityButton.translatesAutoresizingMaskIntoConstraints = false
+        humidityButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 15).isActive = true
+        humidityButton.trailingAnchor.constraint(equalTo: cloudCoverButton.leadingAnchor, constant: -10).isActive = true
+        humidityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        humidityButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+
+        // HUMIDITY:
+
+        humidityLabel.translatesAutoresizingMaskIntoConstraints = false
+        humidityLabel.centerXAnchor.constraint(equalTo: humidityButton.centerXAnchor).isActive = true
+        humidityLabel.centerYAnchor.constraint(equalTo: humidityButton.centerYAnchor).isActive = true
 
         // MARK: - CLOUD COVER BUTTON:
 
@@ -132,20 +148,6 @@ class WeatherCell: UITableViewCell {
         cloudCoverLabel.translatesAutoresizingMaskIntoConstraints = false
         cloudCoverLabel.centerXAnchor.constraint(equalTo: cloudCoverButton.centerXAnchor).isActive = true
         cloudCoverLabel.centerYAnchor.constraint(equalTo: cloudCoverButton.centerYAnchor).isActive = true
-
-        // MARK: - HUMIDITY BUTTON:
-
-        humidityButton.translatesAutoresizingMaskIntoConstraints = false
-        humidityButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 15).isActive = true
-        humidityButton.trailingAnchor.constraint(equalTo: cloudCoverButton.leadingAnchor, constant: -10).isActive = true
-        humidityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
-        humidityButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
-
-        // HUMIDITY:
-
-        humidityLabel.translatesAutoresizingMaskIntoConstraints = false
-        humidityLabel.centerXAnchor.constraint(equalTo: humidityButton.centerXAnchor).isActive = true
-        humidityLabel.centerYAnchor.constraint(equalTo: humidityButton.centerYAnchor).isActive = true
 
         // MARK: - DEW POINT BUTTON:
 
@@ -175,25 +177,10 @@ class WeatherCell: UITableViewCell {
         visibilityLabel.centerXAnchor.constraint(equalTo: visibilityButton.centerXAnchor).isActive = true
         visibilityLabel.centerYAnchor.constraint(equalTo: visibilityButton.centerYAnchor).isActive = true
         
-        
-        // MARK: - PRECIPITATION INTENSITY BUTTON:
-
-        precipitationIntensityButton.translatesAutoresizingMaskIntoConstraints = false
-        precipitationIntensityButton.topAnchor.constraint(equalTo: visibilityButton.bottomAnchor, constant: 15).isActive = true
-        precipitationIntensityButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
-        precipitationIntensityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
-        precipitationIntensityButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
-
-        // PRECIPITATION INTENSITY:
-
-        precipitationIntensityLabel.translatesAutoresizingMaskIntoConstraints = false
-        precipitationIntensityLabel.centerXAnchor.constraint(equalTo: precipitationIntensityButton.centerXAnchor).isActive = true
-        precipitationIntensityLabel.centerYAnchor.constraint(equalTo: precipitationIntensityButton.centerYAnchor).isActive = true
-        
         // MARK: - PRESSURE BUTTON:
         
         pressureButton.translatesAutoresizingMaskIntoConstraints = false
-        pressureButton.topAnchor.constraint(equalTo: visibilityButton.bottomAnchor, constant: 15).isActive = true
+        pressureButton.topAnchor.constraint(equalTo: humidityButton.bottomAnchor, constant: 15).isActive = true
         pressureButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
         pressureButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
         pressureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
@@ -202,6 +189,21 @@ class WeatherCell: UITableViewCell {
         pressureLabel.translatesAutoresizingMaskIntoConstraints = false
         pressureLabel.centerXAnchor.constraint(equalTo: pressureButton.centerXAnchor).isActive = true
         pressureLabel.centerYAnchor.constraint(equalTo: pressureButton.centerYAnchor).isActive = true
+        
+        // MARK: - PRECIPITATION INTENSITY BUTTON:
+
+        precipitationIntensityButton.translatesAutoresizingMaskIntoConstraints = false
+        precipitationIntensityButton.topAnchor.constraint(equalTo: humidityButton.bottomAnchor, constant: 15).isActive = true
+        precipitationIntensityButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
+        precipitationIntensityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        precipitationIntensityButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
+        precipitationIntensityButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
+        // PRECIPITATION INTENSITY:
+
+        precipitationIntensityLabel.translatesAutoresizingMaskIntoConstraints = false
+        precipitationIntensityLabel.centerXAnchor.constraint(equalTo: precipitationIntensityButton.centerXAnchor).isActive = true
+        precipitationIntensityLabel.centerYAnchor.constraint(equalTo: precipitationIntensityButton.centerYAnchor).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
