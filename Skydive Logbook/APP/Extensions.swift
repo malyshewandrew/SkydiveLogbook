@@ -20,3 +20,15 @@ extension UIStackView {
         }
     }
 }
+
+
+//// MARK: - BLUR:
+//extension UIView {
+//    func applyBlurEffect(_ style: UIBlurEffect.Style = .dark) {
+//        let blurEffect = UIBlurEffect(style: style)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        addSubview(blurEffectView)
+//    }
+//}

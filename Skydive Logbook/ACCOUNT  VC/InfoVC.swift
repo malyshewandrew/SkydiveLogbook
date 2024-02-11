@@ -151,7 +151,7 @@ final class InfoVC: UIViewController {
     @objc private func versionButtonTapped() {
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionAccountLottie = LottieAnimationView(name: "VersionAccountLottie")
-        let alert = UIAlertController(title: "Skydive Logbook", message: "\n\n\nVersion 1.0\niOS Developer Malyshew Andrew", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Skydive Logbook", message: "\n\n\n\niOS Developer Malyshew Andrew\n2023-2024 Minsk, Belarus\nmalyshewdeveloper@protonmail.com", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.addSubviews(versionAccountLottie, imageView)
