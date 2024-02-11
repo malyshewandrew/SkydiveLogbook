@@ -4,7 +4,7 @@
 "Statistic tab bar" = "STATISTIC";
 "Add jump tab bar" = "NEW JUMP";
 "System tab bar" = "SYSTEM";
-"Account tab bar" = "ACCOUNT";
+"Settings tab bar" = "SETTINGS";
 
 // MARK: - MAIN:
 
@@ -41,7 +41,7 @@
 
 // MARK: - Main:
 
-"First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Account\" section.\n\nEnjoy your use and safe jumps!\n";
+"First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Settings\" section.\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
 "This action cannot be undone." = "This action cannot be undone.";
 
@@ -52,7 +52,7 @@
 "Reserve canopy until" = "Reserve canopy until";
 
 "Account main alert" = "Account";
-"Edit/add account" = "To fill it out, go to the \"Account\" section";
+"Edit/add account" = "To fill it out, go to the \"Settings\" section";
 
 // MARK: - CellJump:
 
@@ -74,7 +74,7 @@
 
 "no jumps" = "To display statistics, you need to make at least one jump.";
 "saving data" = "Saving data";
-"saving data text" = "To save your complete jump history, it is recommended that you periodically create backups in the \"Account\" section. \nThis is especially important when switching to a new device.";
+"saving data text" = "To save your complete jump history, it is recommended that you periodically create backups in the \"Settings\" section. \nThis is especially important when switching to a new device.";
 "jumps by year" = "Jumps by year";
 "year" = "year";
 "Categories USPA" = "Categories USPA";
@@ -204,7 +204,7 @@
 
 // MARK: - NewJump:
 "Add new jump / new jump" = "New jump";
-"Manual / new jump" = "To get started, go to the \"Account\" section and enter the following data:\n\nLocations\nAircrafts\nCanopies";
+"Manual / new jump" = "To get started, go to the \"Settings\" section and enter the following data:\n\nLocations\nAircrafts\nCanopies";
 
 // MARK: - CellNewJump:
 
@@ -265,7 +265,7 @@
 
 "Name and model container alert" = "Name and model container";
 "Name and model AAD alert" = "Name and model AAD";
-"Name and model main canopy alert" = "Name and model main canopy. You must first add in the \"Account\" -> \"Edit canopies\" section";
+"Name and model main canopy alert" = "Name and model main canopy. You must first add in the \"Settings\" -> \"Edit canopies\" section";
 "Name and model reserve canopy alert" = "Name and model reserve canopy";
 
 "DOM alert" = "Date of manufacture";
@@ -311,7 +311,7 @@
 "Comment / new system cell" = "Comment";
 "Optional / new system cell" = "Optional";
 
-// MARK: - ACCOUNT:
+// MARK: - SETTINGS:
 
 "Edit account" = "Edit account";
 "Edit locations" = "Edit locations";

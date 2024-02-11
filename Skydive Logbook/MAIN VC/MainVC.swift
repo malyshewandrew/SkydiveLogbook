@@ -415,6 +415,10 @@ final class MainVC: UIViewController {
         confettiButton.isHidden = true
         accountImage.isHidden = true
         accountButton.isHidden = true
+        weatherImage.isHidden = true
+        weatherButton.isHidden = true
+        calculatorImage.isHidden = true
+        calculatorButton.isHidden = true
         notesImage.isHidden = true
         notesButton.isHidden = true
 
@@ -471,6 +475,10 @@ final class MainVC: UIViewController {
             confettiButton.isHidden = false
             accountImage.isHidden = false
             accountButton.isHidden = false
+            weatherImage.isHidden = false
+            weatherButton.isHidden = false
+            calculatorImage.isHidden = false
+            calculatorButton.isHidden = false
             notesImage.isHidden = false
             notesButton.isHidden = false
         }

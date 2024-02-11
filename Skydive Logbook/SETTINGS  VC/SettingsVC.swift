@@ -4,11 +4,11 @@ import SafariServices
 import UIKit
 import WebKit
 
-final class AccountVC: UIViewController {
+final class SettingsVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let accountLottie = LottieAnimationView(name: "Account")
-    private let confettiLottie = LottieAnimationView(name: "AccountConfetti")
+    private let settingsLottie = LottieAnimationView(name: "Settings")
+    private let confettiLottie = LottieAnimationView(name: "SettingsConfetti")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
@@ -32,25 +32,25 @@ final class AccountVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, accountLottie, confettiButton, tableView)
+        view.addSubviews(confettiLottie, settingsLottie, confettiButton, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        // MARK: ANIMATION ACCOUNT LOTTIE:
+        // MARK: ANIMATION SETTINGS LOTTIE:
 
-        accountLottie.translatesAutoresizingMaskIntoConstraints = false
-        accountLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        accountLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        accountLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        accountLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        settingsLottie.translatesAutoresizingMaskIntoConstraints = false
+        settingsLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        settingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        settingsLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        settingsLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
         // MARK: ANIMATION LOTTIE CONFETTI:
 
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
-        confettiLottie.centerXAnchor.constraint(equalTo: accountLottie.centerXAnchor).isActive = true
-        confettiLottie.centerYAnchor.constraint(equalTo: accountLottie.centerYAnchor).isActive = true
+        confettiLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
+        confettiLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor).isActive = true
         confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
         confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
@@ -65,7 +65,7 @@ final class AccountVC: UIViewController {
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: accountLottie.bottomAnchor, constant: 5).isActive = true
+        tableView.topAnchor.constraint(equalTo: settingsLottie.bottomAnchor, constant: 5).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
@@ -84,8 +84,8 @@ final class AccountVC: UIViewController {
 
         // MARK: ANIMATIONS:
 
-        accountLottie.play()
-        accountLottie.loopMode = .autoReverse
+        settingsLottie.play()
+        settingsLottie.loopMode = .autoReverse
 
         // MARK: CONFETTI LOTTIE:
 
@@ -99,7 +99,7 @@ final class AccountVC: UIViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(AccountCell.self, forCellReuseIdentifier: "AccountCell")
+        tableView.register(SettingsCell.self, forCellReuseIdentifier: "SettingsCell")
         tableView.separatorStyle = .none
         tableView.backgroundColor = .colorBackground
     }
@@ -126,19 +126,19 @@ final class AccountVC: UIViewController {
 
 // MARK: - EXTENSION:
 
-extension AccountVC: UITableViewDelegate, UITableViewDataSource {
+extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath) as? AccountCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as? SettingsCell else { return UITableViewCell() }
         cell.delegate = self
         return cell
     }
 }
 
-extension AccountVC: AccountCellDelegate {
+extension SettingsVC: SettingsCellDelegate {
     
     func tapEditAccountButton() {
         let editAccount = EditAccountVC()
@@ -158,11 +158,6 @@ extension AccountVC: AccountCellDelegate {
     func tapEditCanopiesButton() {
         let editCanopies = EditCanopiesVC()
         navigationController?.pushViewController(editCanopies, animated: true)
-    }
-
-    func tapCalculatorButton() {
-        let calculator = CalculatorVC()
-        navigationController?.pushViewController(calculator, animated: true)
     }
 
     func tapBackupButton() {

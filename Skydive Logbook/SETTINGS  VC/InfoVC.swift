@@ -7,7 +7,7 @@ import RealmSwift
 final class InfoVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
-    private let infoAccountLottie = LottieAnimationView(name: "InfoAccount")
+    private let infoSettingsLottie = LottieAnimationView(name: "InfoSettings")
     private let infoTextView = UIView()
     private let infoTextLabel = UILabel()
     private let privacyButton = UIButton()
@@ -26,7 +26,7 @@ final class InfoVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(infoTextView, infoAccountLottie, privacyButton, termsButton, versionButton)
+        view.addSubviews(infoTextView, infoSettingsLottie, privacyButton, termsButton, versionButton)
         infoTextView.addSubview(infoTextLabel)
     }
     
@@ -35,17 +35,17 @@ final class InfoVC: UIViewController {
     private func configureConstrains() {
         // MARK: ANIMATION:
 
-        infoAccountLottie.translatesAutoresizingMaskIntoConstraints = false
-        infoAccountLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoAccountLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        infoAccountLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        infoAccountLottie.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        infoSettingsLottie.translatesAutoresizingMaskIntoConstraints = false
+        infoSettingsLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        infoSettingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        infoSettingsLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        infoSettingsLottie.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
         // MARK: INFO TEXT VIEW:
         
         infoTextView.translatesAutoresizingMaskIntoConstraints = false
         infoTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoTextView.topAnchor.constraint(equalTo: infoAccountLottie.bottomAnchor, constant: 20).isActive = true
+        infoTextView.topAnchor.constraint(equalTo: infoSettingsLottie.bottomAnchor, constant: 20).isActive = true
         infoTextView.heightAnchor.constraint(greaterThanOrEqualTo: infoTextLabel.heightAnchor, constant: 10).isActive = true
         infoTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
@@ -95,8 +95,8 @@ final class InfoVC: UIViewController {
         
         // MARK: ANIMATION:
 
-        infoAccountLottie.play()
-        infoAccountLottie.loopMode = .loop
+        infoSettingsLottie.play()
+        infoSettingsLottie.loopMode = .loop
         
         // MARK: INFO TEXT VIEW:
 
@@ -150,19 +150,19 @@ final class InfoVC: UIViewController {
 
     @objc private func versionButtonTapped() {
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
-        let versionAccountLottie = LottieAnimationView(name: "VersionAccountLottie")
+        let versionSettingsLottie = LottieAnimationView(name: "VersionSettingsLottie")
         let alert = UIAlertController(title: "Skydive Logbook", message: "\n\n\n\niOS Developer Malyshew Andrew\n2023-2024 Minsk, Belarus\nmalyshewdeveloper@protonmail.com", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-        alert.view.addSubviews(versionAccountLottie, imageView)
+        alert.view.addSubviews(versionSettingsLottie, imageView)
         
-        versionAccountLottie.translatesAutoresizingMaskIntoConstraints = false
-        versionAccountLottie.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor).isActive = true
-        versionAccountLottie.topAnchor.constraint(equalTo: alert.view.topAnchor).isActive = true
-        versionAccountLottie.heightAnchor.constraint(equalToConstant: 140).isActive = true
-        versionAccountLottie.widthAnchor.constraint(equalToConstant: 275).isActive = true
-        versionAccountLottie.play()
-        versionAccountLottie.loopMode = .loop
+        versionSettingsLottie.translatesAutoresizingMaskIntoConstraints = false
+        versionSettingsLottie.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor).isActive = true
+        versionSettingsLottie.topAnchor.constraint(equalTo: alert.view.topAnchor).isActive = true
+        versionSettingsLottie.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        versionSettingsLottie.widthAnchor.constraint(equalToConstant: 275).isActive = true
+        versionSettingsLottie.play()
+        versionSettingsLottie.loopMode = .loop
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 35).isActive = true

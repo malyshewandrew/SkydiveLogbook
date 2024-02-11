@@ -6,7 +6,7 @@ import UIKit
 final class PremiumVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let premiumAccountLottie = LottieAnimationView(name: "PremiumAccount")
+    private let premiumSettingsLottie = LottieAnimationView(name: "PremiumSettings")
     private let infoTextView = UIView()
     private let infoTextLabel = UILabel()
     private let buy1Button = UIButton()
@@ -26,7 +26,7 @@ final class PremiumVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(infoTextView, premiumAccountLottie, buy1Button, buy12Button, percentLabel, restoreButton)
+        view.addSubviews(infoTextView, premiumSettingsLottie, buy1Button, buy12Button, percentLabel, restoreButton)
         infoTextView.addSubviews(infoTextLabel)
     }
     
@@ -35,17 +35,17 @@ final class PremiumVC: UIViewController {
     private func configureConstrains() {
         // MARK: ANIMATION:
 
-        premiumAccountLottie.translatesAutoresizingMaskIntoConstraints = false
-        premiumAccountLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        premiumAccountLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
-        premiumAccountLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        premiumAccountLottie.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        premiumSettingsLottie.translatesAutoresizingMaskIntoConstraints = false
+        premiumSettingsLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        premiumSettingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
+        premiumSettingsLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        premiumSettingsLottie.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
         // MARK: INFO TEXT VIEW:
         
         infoTextView.translatesAutoresizingMaskIntoConstraints = false
         infoTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoTextView.topAnchor.constraint(equalTo: premiumAccountLottie.bottomAnchor, constant: 10).isActive = true
+        infoTextView.topAnchor.constraint(equalTo: premiumSettingsLottie.bottomAnchor, constant: 10).isActive = true
         infoTextView.heightAnchor.constraint(greaterThanOrEqualTo: infoTextLabel.heightAnchor, constant: 10).isActive = true
         infoTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
@@ -103,8 +103,8 @@ final class PremiumVC: UIViewController {
         
         // MARK: ANIMATION:
 
-        premiumAccountLottie.play()
-        premiumAccountLottie.loopMode = .loop
+        premiumSettingsLottie.play()
+        premiumSettingsLottie.loopMode = .loop
         
         // MARK: INFO TEXT VIEW:
 

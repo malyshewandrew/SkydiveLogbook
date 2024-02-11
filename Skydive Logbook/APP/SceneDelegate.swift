@@ -35,9 +35,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         systemViewController.title = NSLocalizedString("System tab bar", comment: "")
         systemViewController.tabBarItem.image = UIImage(systemName: "backpack.fill")
 
-        let accountViewController = AccountVC()
-        accountViewController.title = NSLocalizedString("Account tab bar", comment: "")
-        accountViewController.tabBarItem.image = UIImage(systemName: "person.fill")
+        let settingsViewController = SettingsVC()
+        settingsViewController.title = NSLocalizedString("Settings tab bar", comment: "")
+        settingsViewController.tabBarItem.image = UIImage(systemName: "gearshape.fill")
 
         // MARK: NAVIGATION BAR ITEMS:
 
@@ -45,12 +45,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let statisticNavigationController = UINavigationController(rootViewController: statisticViewController)
         let addNewJumpNavigationController = UINavigationController(rootViewController: addNewJumpViewController)
         let systemNavigationController = UINavigationController(rootViewController: systemViewController)
-        let accountNavigationController = UINavigationController(rootViewController: accountViewController)
+        let settingsNavigationController = UINavigationController(rootViewController: settingsViewController)
 
         // MARK: ROOT:
 
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([mainNavigationController, statisticNavigationController, addNewJumpNavigationController, systemNavigationController, accountNavigationController], animated: true)
+        tabBarController.setViewControllers([mainNavigationController, statisticNavigationController, addNewJumpNavigationController, systemNavigationController, settingsNavigationController], animated: true)
 
         // MARK: TAB BAR UI CONFIGURATE:
 

@@ -3,30 +3,28 @@ import UIKit
 
 // MARK: - PROTOCOL:
 
-protocol AccountCellDelegate {
+protocol SettingsCellDelegate {
     func tapEditLocationsButton()
     func tapEditAircraftsButton()
     func tapEditCanopiesButton()
     func tapEditAccountButton()
-    func tapCalculatorButton()
     func tapBackupButton()
     func tapInfoButton()
     func tapPremiumButton()
 }
 
-final class AccountCell: UITableViewCell {
+final class SettingsCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
     private let editAccountButton = UIButton()
     private let editLocationsButton = UIButton()
     private let editAircraftsButton = UIButton()
     private let editCanopiesButton = UIButton()
-    private let calculatorButton = UIButton()
     private let backupButton = UIButton()
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
     private let starImage = UIImageView()
-    var delegate: AccountCellDelegate?
+    var delegate: SettingsCellDelegate?
 
     // MARK: - LIFECYCLE:
 
@@ -45,7 +43,7 @@ final class AccountCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, calculatorButton, backupButton, infoButton, premiumButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -84,18 +82,10 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         editCanopiesButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
-        // MARK: CALCULATOR:
-
-        calculatorButton.translatesAutoresizingMaskIntoConstraints = false
-        calculatorButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 45).isActive = true
-        calculatorButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        calculatorButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
-        calculatorButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-
         // MARK: BACKUP BUTTON:
 
         backupButton.translatesAutoresizingMaskIntoConstraints = false
-        backupButton.topAnchor.constraint(equalTo: calculatorButton.bottomAnchor, constant: 15).isActive = true
+        backupButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 45).isActive = true
         backupButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         backupButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -103,7 +93,7 @@ final class AccountCell: UITableViewCell {
         // MARK: ABOUT:
 
         infoButton.translatesAutoresizingMaskIntoConstraints = false
-        infoButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 45).isActive = true
+        infoButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 15).isActive = true
         infoButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         infoButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         infoButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -167,15 +157,6 @@ final class AccountCell: UITableViewCell {
         editCanopiesButton.titleLabel?.font = fontMediumStandard14
         editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
         editCanopiesButton.addTarget(self, action: #selector(editCanopiesButtonTapped), for: .touchUpInside)
-
-        // MARK: CALCULATOR:
-
-        calculatorButton.setTitle(NSLocalizedString("Calculator loading", comment: ""), for: .normal)
-        calculatorButton.layer.cornerRadius = cornerRadius15
-        calculatorButton.backgroundColor = .colorCell
-        calculatorButton.titleLabel?.font = fontMediumStandard14
-        calculatorButton.setTitleColor(.colorWhite, for: .normal)
-        calculatorButton.addTarget(self, action: #selector(calculatorButtonTapped), for: .touchUpInside)
 
         // MARK: BACKUP BUTTON:
 
@@ -241,12 +222,6 @@ final class AccountCell: UITableViewCell {
 
     @objc private func backupButtonTapped() {
         delegate?.tapBackupButton()
-    }
-
-    // MARK: FUNC FOR CALCULATOR:
-
-    @objc private func calculatorButtonTapped() {
-        delegate?.tapCalculatorButton()
     }
 
     // MARK: FUNC FOR INFO BUTTON:
