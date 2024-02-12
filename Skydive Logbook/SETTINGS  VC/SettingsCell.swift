@@ -27,6 +27,7 @@ final class SettingsCell: UITableViewCell {
     private let starImage = UIImageView()
     private let instagramImageView = UIImageView()
     private let instagramButton = UIButton()
+    private let infoLabel = UILabel()
     var delegate: SettingsCellDelegate?
 
     // MARK: - LIFECYCLE:
@@ -46,7 +47,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, instagramImageView, instagramButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, instagramImageView, instagramButton, infoLabel)
         premiumButton.addSubview(starImage)
     }
 
@@ -108,7 +109,6 @@ final class SettingsCell: UITableViewCell {
         premiumButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         premiumButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         premiumButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-//        premiumButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
 
         // MARK: STAR:
 
@@ -131,7 +131,14 @@ final class SettingsCell: UITableViewCell {
         instagramButton.leadingAnchor.constraint(equalTo: instagramImageView.leadingAnchor).isActive = true
         instagramButton.trailingAnchor.constraint(equalTo: instagramImageView.trailingAnchor).isActive = true
         instagramButton.bottomAnchor.constraint(equalTo: instagramImageView.bottomAnchor).isActive = true
-        instagramButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+
+        // MARK: INFO LABEL:
+
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+        infoLabel.topAnchor.constraint(equalTo: instagramButton.bottomAnchor, constant: 5).isActive = true
+        infoLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        infoLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        infoLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -213,11 +220,21 @@ final class SettingsCell: UITableViewCell {
 
         // MARK: INSTAGRAM IMAGE VIEW:
 
-        instagramImageView.image = UIImage(named: "InstagramLogo")
-        
+        let originalImage = UIImage(named: "InstagramLogo")
+        let coloredImage = colorizeImage(image: originalImage ?? UIImage(), color: UIColor.colorDarkGray)
+        instagramImageView.image = coloredImage
+        instagramImageView.contentMode = .scaleAspectFit
+
         // MARK: INSTAGRAM BUTTON:
 
         instagramButton.addTarget(self, action: #selector(instagramButtonTapped), for: .touchUpInside)
+        
+        // MARK: INFO LABEL:
+
+        infoLabel.text = "2023-20224, Skydive Logbook iOS Application"
+        infoLabel.textColor = .colorDarkGray
+        infoLabel.font = fontRegularStandard8
+        infoLabel.textAlignment = .center
     }
 
     // MARK: - HELPERS:
@@ -263,10 +280,28 @@ final class SettingsCell: UITableViewCell {
     @objc private func premiumButtonTapped() {
         delegate?.tapPremiumButton()
     }
-    
+
     // MARK: FUNC FOR INSTAGRAM BUTTON:
-    
+
     @objc private func instagramButtonTapped() {
         delegate?.tapInstagramButton()
+    }
+    
+    // MARK: COLORIZE IMAGE:
+    
+    func colorizeImage(image: UIImage, color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+        let context = UIGraphicsGetCurrentContext()
+        color.setFill()
+        
+        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        context!.translateBy(x: 0, y: image.size.height)
+        context!.scaleBy(x: 1.0, y: -1.0)
+        context!.clip(to: rect, mask: image.cgImage!)
+        context!.fill(rect)
+        let coloredImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return coloredImage
     }
 }

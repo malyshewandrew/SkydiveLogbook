@@ -134,7 +134,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) м/с"
                 self.windDirection = "\(result.currentWeather.wind.compassDirection) (\(result.currentWeather.wind.direction))"
                 self.visibility = "\(Int(result.currentWeather.visibility.value / 1000)) км"
-                
                 self.tableView.reloadData()
             } catch {
                 print(String(describing: error))
