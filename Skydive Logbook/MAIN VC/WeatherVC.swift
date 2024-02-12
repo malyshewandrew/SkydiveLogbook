@@ -18,7 +18,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var cloudCover: String = ""
     private var humidity: String = ""
     private var dewPoint: String = ""
-    private var precipitationIntensity: String = ""
+    private var precipitation: String = ""
     private var pressure: String = ""
     private var windSpeed: String = ""
     private var windDirection: String = ""
@@ -129,7 +129,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.cloudCover = "\(Int(result.currentWeather.cloudCover * 100)) %"
                 self.humidity = "\(Int(result.currentWeather.humidity * 100)) %"
                 self.dewPoint = "\(Int(result.currentWeather.dewPoint.value))\(result.currentWeather.temperature.unit.symbol)"
-                self.precipitationIntensity = "\(result.currentWeather.precipitationIntensity.value) мм/ч"
+                self.precipitation = "\(result.currentWeather.precipitationIntensity.value) мм/ч"
                 self.pressure = "\(Int(result.currentWeather.pressure.value)) гПа"
                 self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) м/с"
                 self.windDirection = "\(result.currentWeather.wind.compassDirection) (\(result.currentWeather.wind.direction))"
@@ -156,7 +156,7 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.backgroundColor = .clear
         cell.backgroundView = UIView()
         
-        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitationIntensity: precipitationIntensity, pressure: pressure, windSpeed: windSpeed, windDirection: windDirection, visibility: visibility)
+        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, windSpeed: windSpeed, windDirection: windDirection, visibility: visibility)
         
         return cell
     }
