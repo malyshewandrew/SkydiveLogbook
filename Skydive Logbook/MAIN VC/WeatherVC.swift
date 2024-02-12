@@ -7,12 +7,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - PROPERTIES:
     
     private let weatherBackgroundLottie = LottieAnimationView(name: "WeatherBackground")
-    
     private let locationManager = CLLocationManager()
     private let service = WeatherService()
     private let tableView = UITableView()
-    
     private var iconImage: String = ""
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 60)
     private var weatherDescription: String = ""
     private var currentTemperature: String = ""
     private var feelTemperature: String = ""
@@ -76,7 +75,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         
         view.backgroundColor = .colorWeather
         
-        // MARK: ANIMATION:
+        // MARK: WEATHER BACKGROUND:
         
         weatherBackgroundLottie.play()
         weatherBackgroundLottie.loopMode = .loop
@@ -158,7 +157,7 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.backgroundColor = .clear
         cell.backgroundView = UIView()
         
-        cell.configure(iconImage: UIImage(systemName: iconImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitationIntensity: precipitationIntensity, pressure: pressure, windSpeed: windSpeed, windDirection: windDirection, visibility: visibility)
+        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitationIntensity: precipitationIntensity, pressure: pressure, windSpeed: windSpeed, windDirection: windDirection, visibility: visibility)
         
         return cell
     }

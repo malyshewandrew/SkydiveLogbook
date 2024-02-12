@@ -11,6 +11,7 @@ protocol SettingsCellDelegate {
     func tapBackupButton()
     func tapInfoButton()
     func tapPremiumButton()
+    func tapInstagramButton()
 }
 
 final class SettingsCell: UITableViewCell {
@@ -24,6 +25,8 @@ final class SettingsCell: UITableViewCell {
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
     private let starImage = UIImageView()
+    private let instagramImageView = UIImageView()
+    private let instagramButton = UIButton()
     var delegate: SettingsCellDelegate?
 
     // MARK: - LIFECYCLE:
@@ -43,7 +46,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, instagramImageView, instagramButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -105,13 +108,30 @@ final class SettingsCell: UITableViewCell {
         premiumButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         premiumButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         premiumButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-        premiumButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        
+//        premiumButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+
         // MARK: STAR:
 
         starImage.translatesAutoresizingMaskIntoConstraints = false
         starImage.centerXAnchor.constraint(equalTo: premiumButton.trailingAnchor).isActive = true
         starImage.centerYAnchor.constraint(equalTo: premiumButton.topAnchor, constant: 5).isActive = true
+
+        // MARK: INSTAGRAM IMAGE VIEW:
+
+        instagramImageView.translatesAutoresizingMaskIntoConstraints = false
+        instagramImageView.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 15).isActive = true
+        instagramImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        instagramImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        instagramImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+
+        // MARK: INSTAGRAM BUTTON:
+
+        instagramButton.translatesAutoresizingMaskIntoConstraints = false
+        instagramButton.topAnchor.constraint(equalTo: instagramImageView.topAnchor).isActive = true
+        instagramButton.leadingAnchor.constraint(equalTo: instagramImageView.leadingAnchor).isActive = true
+        instagramButton.trailingAnchor.constraint(equalTo: instagramImageView.trailingAnchor).isActive = true
+        instagramButton.bottomAnchor.constraint(equalTo: instagramImageView.bottomAnchor).isActive = true
+        instagramButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -190,6 +210,14 @@ final class SettingsCell: UITableViewCell {
         starImage.image = UIImage(systemName: "star.fill")
         starImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         starImage.tintColor = .systemYellow
+
+        // MARK: INSTAGRAM IMAGE VIEW:
+
+        instagramImageView.image = UIImage(named: "InstagramLogo")
+        
+        // MARK: INSTAGRAM BUTTON:
+
+        instagramButton.addTarget(self, action: #selector(instagramButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - HELPERS:
@@ -234,5 +262,11 @@ final class SettingsCell: UITableViewCell {
 
     @objc private func premiumButtonTapped() {
         delegate?.tapPremiumButton()
+    }
+    
+    // MARK: FUNC FOR INSTAGRAM BUTTON:
+    
+    @objc private func instagramButtonTapped() {
+        delegate?.tapInstagramButton()
     }
 }

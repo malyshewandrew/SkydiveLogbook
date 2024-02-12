@@ -8,6 +8,7 @@ final class NewSystemVC: UIViewController {
     private let manualButton = UIBarButtonItem()
     private let newSystemLottie = LottieAnimationView(name: "NewParachute")
     private let tableView = UITableView()
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
     
     // MARK: - LIFECYCLE:
 
@@ -66,7 +67,7 @@ final class NewSystemVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
         
         navigationController?.navigationBar.isHidden = false
-        let manualButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.square.fill"), style: .plain, target: self, action: #selector(manualButtonTapped))
+        let manualButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.square.fill", withConfiguration: configurationImage), style: .plain, target: self, action: #selector(manualButtonTapped))
         navigationItem.rightBarButtonItem = manualButton
         navigationItem.backButtonTitle = ""
         

@@ -63,15 +63,13 @@ class WeatherCell: UITableViewCell {
         // MARK: ICON IMAGE VIEW:
 
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 75).isActive = true
+        iconImageView.bottomAnchor.constraint(equalTo: windButton.topAnchor, constant: -15).isActive = true
         iconImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        iconImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.1).isActive = true
-        iconImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.1).isActive = true
 
         // MARK: - WIND BUTTON:
 
         windButton.translatesAutoresizingMaskIntoConstraints = false
-        windButton.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 10).isActive = true
+        windButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 150).isActive = true
         windButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         windButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3).isActive = true
         windButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.55).isActive = true
@@ -80,7 +78,7 @@ class WeatherCell: UITableViewCell {
 
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedLabel.centerXAnchor.constraint(equalTo: windButton.centerXAnchor).isActive = true
-        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 25).isActive = true
+        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 20).isActive = true
         windSpeedLabel.heightAnchor.constraint(equalTo: windButton.heightAnchor, multiplier: 0.6).isActive = true
         windSpeedLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
 
@@ -104,23 +102,26 @@ class WeatherCell: UITableViewCell {
 
         currentTemperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         currentTemperatureLabel.centerXAnchor.constraint(equalTo: temperatureButton.centerXAnchor).isActive = true
+        currentTemperatureLabel.heightAnchor.constraint(equalTo: temperatureButton.heightAnchor, multiplier: 0.4).isActive = true
         currentTemperatureLabel.topAnchor.constraint(equalTo: temperatureButton.topAnchor, constant: 20).isActive = true
         currentTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
 
         // DESCRIPTION:
 
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.topAnchor.constraint(equalTo: currentTemperatureLabel.bottomAnchor, constant: 5).isActive = true
         descriptionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        descriptionLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: currentTemperatureLabel.bottomAnchor, constant: 5).isActive = true
         descriptionLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
 
         // FEEL TEMPERATURE:
 
         feelTemperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         feelTemperatureLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        feelTemperatureLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
         feelTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
         feelTemperatureLabel.bottomAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: -10).isActive = true
-        
+
         // MARK: - HUMIDITY BUTTON:
 
         humidityButton.translatesAutoresizingMaskIntoConstraints = false
@@ -176,20 +177,20 @@ class WeatherCell: UITableViewCell {
         visibilityLabel.translatesAutoresizingMaskIntoConstraints = false
         visibilityLabel.centerXAnchor.constraint(equalTo: visibilityButton.centerXAnchor).isActive = true
         visibilityLabel.centerYAnchor.constraint(equalTo: visibilityButton.centerYAnchor).isActive = true
-        
+
         // MARK: - PRESSURE BUTTON:
-        
+
         pressureButton.translatesAutoresizingMaskIntoConstraints = false
         pressureButton.topAnchor.constraint(equalTo: humidityButton.bottomAnchor, constant: 15).isActive = true
         pressureButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
         pressureButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
         pressureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
         pressureButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        
+
         pressureLabel.translatesAutoresizingMaskIntoConstraints = false
         pressureLabel.centerXAnchor.constraint(equalTo: pressureButton.centerXAnchor).isActive = true
         pressureLabel.centerYAnchor.constraint(equalTo: pressureButton.centerYAnchor).isActive = true
-        
+
         // MARK: - PRECIPITATION INTENSITY BUTTON:
 
         precipitationIntensityButton.translatesAutoresizingMaskIntoConstraints = false
@@ -279,6 +280,7 @@ class WeatherCell: UITableViewCell {
         descriptionLabel.font = fontMediumStandard14
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
+        descriptionLabel.adjustsFontSizeToFitWidth = true
 
         // FEEL TEMPERATURE:
 
@@ -356,10 +358,9 @@ class WeatherCell: UITableViewCell {
         dewPointLabel.numberOfLines = 0
         dewPointLabel.textAlignment = .center
         dewPointLabel.adjustsFontSizeToFitWidth = true
-        
-        
+
         // MARK: - VISIBILITY BUTTON:
-        
+
         let blurVisibilityIntensity = UIBlurEffect(style: .systemUltraThinMaterialDark)
         let blurVisibilityEffectView = UIVisualEffectView(effect: blurVisibilityIntensity)
         blurVisibilityEffectView.frame = precipitationIntensityButton.bounds
@@ -372,7 +373,7 @@ class WeatherCell: UITableViewCell {
         visibilityButton.layer.masksToBounds = true
         visibilityButton.layer.cornerRadius = 15
         visibilityButton.addSubviews(visibilityLabel)
-        
+
         // VISIBILITY:
 
         visibilityLabel.textColor = .white
@@ -380,7 +381,6 @@ class WeatherCell: UITableViewCell {
         visibilityLabel.numberOfLines = 0
         visibilityLabel.textAlignment = .center
         visibilityLabel.adjustsFontSizeToFitWidth = true
-        
 
         // MARK: - PRECIPITATION INTENSITY BUTTON:
 
@@ -406,7 +406,7 @@ class WeatherCell: UITableViewCell {
         precipitationIntensityLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: PRESSURE BUTTON:
-        
+
         let blurPressure = UIBlurEffect(style: .systemUltraThinMaterialDark)
         let blurPressureEffectView = UIVisualEffectView(effect: blurPressure)
         blurPressureEffectView.frame = precipitationIntensityButton.bounds
@@ -421,13 +421,12 @@ class WeatherCell: UITableViewCell {
         pressureButton.addSubviews(pressureLabel)
 
         // PRESSURE:
-        
+
         pressureLabel.textColor = .white
         pressureLabel.font = .systemFont(ofSize: 30, weight: .regular, width: .standard)
         pressureLabel.numberOfLines = 0
         pressureLabel.textAlignment = .center
-
-
+        pressureLabel.adjustsFontSizeToFitWidth = true
     }
 
     // MARK: - HELPERS:

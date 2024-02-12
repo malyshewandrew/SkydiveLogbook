@@ -77,7 +77,7 @@
 "saving data text" = "To save your complete jump history, it is recommended that you periodically create backups in the \"Settings\" section. \nThis is especially important when switching to a new device.";
 "jumps by year" = "Jumps by year";
 "year" = "year";
-"Categories USPA" = "Categories USPA";
+"Categories USPA" = "Categories";
 "Categories USPA List" = "\nA: 25 jumps\nFree fall time: 10 min. (600s.)\n\nB: 50 jumps\nFree fall time: 30 min. (1800s.)\n\nC: 200 jumps\nFree fall time: 60 min. (3600s.)\n\nD: 500 jumps\nFree fall time: 180 min. (10800s.)\n";
 "Maximum time" = "Maximum time";
 "Maximum time alert" = "The jump with the maximum free fall time was completed";

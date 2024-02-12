@@ -10,6 +10,7 @@ final class EditSystemVC: UIViewController {
     private let tableView = UITableView()
     let realmManager = RealmManager()
     var indexPath: Int = 0
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
 
     // MARK: - LIFECYCLE:
 
@@ -68,7 +69,7 @@ final class EditSystemVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = false
-        let manualButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.square.fill"), style: .plain, target: self, action: #selector(manualButtonTapped))
+        let manualButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.square.fill", withConfiguration: configurationImage), style: .plain, target: self, action: #selector(manualButtonTapped))
         navigationItem.rightBarButtonItem = manualButton
         navigationItem.backButtonTitle = ""
 

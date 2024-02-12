@@ -174,4 +174,19 @@ extension SettingsVC: SettingsCellDelegate {
         let premium = PremiumVC()
         navigationController?.pushViewController(premium, animated: true)
     }
+    
+    func tapInstagramButton() {
+        guard let url = URL(string: "https://instagram.com/skydivelogbook") else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.delegate = self
+        self.present(safariViewController, animated: true)
+    }
+}
+
+// MARK: - EXTENSION. SAFARI VIEW CONTROLLER DELEGATE:
+
+extension SettingsVC: SFSafariViewControllerDelegate {
+    func safariViewControllerWillOpenInBrowser(_ controller: SFSafariViewController) {
+        print("Open in Safari app")
+    }
 }

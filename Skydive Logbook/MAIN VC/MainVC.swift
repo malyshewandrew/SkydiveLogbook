@@ -29,6 +29,7 @@ final class MainVC: UIViewController {
     private let vibrationOn = Vibration()
     private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
     
     // MARK: REFRESH CONTROL:
     private var tableRefreshControl: UIRefreshControl {
@@ -218,8 +219,7 @@ final class MainVC: UIViewController {
 
         // MARK: ACCOUNT IMAGE:
 
-        let configuration = UIImage.SymbolConfiguration(pointSize: 30)
-        accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configuration)
+        accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configurationImage)
         accountImage.tintColor = .colorDarkGray
 
         // MARK: ACCOUNT BUTTON:
@@ -228,7 +228,7 @@ final class MainVC: UIViewController {
         
         // MARK: WEATHER IMAGE:
 
-        weatherImage.image = UIImage(systemName: "sun.max.circle.fill", withConfiguration: configuration)
+        weatherImage.image = UIImage(systemName: "sun.max.circle.fill", withConfiguration: configurationImage)
         weatherImage.tintColor = .colorDarkGray
 
         // MARK: WEATHER BUTTON:
@@ -237,7 +237,7 @@ final class MainVC: UIViewController {
         
         // MARK: CALCULATOR IMAGE:
 
-        calculatorImage.image = UIImage(systemName: "divide.circle.fill", withConfiguration: configuration)
+        calculatorImage.image = UIImage(systemName: "divide.circle.fill", withConfiguration: configurationImage)
         calculatorImage.tintColor = .colorDarkGray
 
         // MARK: CALCULATOR BUTTON:
@@ -246,7 +246,7 @@ final class MainVC: UIViewController {
 
         // MARK: NOTES IMAGE:
 
-        notesImage.image = UIImage(systemName: "book.circle.fill", withConfiguration: configuration)
+        notesImage.image = UIImage(systemName: "book.circle.fill", withConfiguration: configurationImage)
         notesImage.tintColor = .colorDarkGray
 
         // MARK: NOTES BUTTON:
