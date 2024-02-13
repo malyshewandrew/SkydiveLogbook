@@ -192,7 +192,7 @@ final class CalculatorVC: UIViewController {
 
         navigationController?.navigationBar.isHidden = false
         
-        // MARK: WEATHER BACKGROUND:
+        // MARK: CALCULATOR BACKGROUND:
         
         calculatorBackgroundLottie.play()
         calculatorBackgroundLottie.loopMode = .loop
