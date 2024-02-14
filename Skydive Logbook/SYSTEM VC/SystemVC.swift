@@ -158,6 +158,7 @@ final class SystemVC: UIViewController {
     // MARK: - TRANSITION ON NEW SYSTEM VC:
 
     @objc private func newSystemButtonTapped() {
+        vibrationOn.vibrationStandart()
         let newSystemVC = NewSystemVC()
         navigationController?.pushViewController(newSystemVC, animated: true)
     }

@@ -8,6 +8,7 @@ class DropZonesVC: UIViewController {
     
     private let mapView = MKMapView()
     private let infoButton = UIButton()
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -81,6 +82,7 @@ class DropZonesVC: UIViewController {
     // MARK: INFO BUTTON:
     
     @objc private func infoButtonTapped() {
+        vibrationOn.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Drop Zones / drop zones", comment: ""), message: NSLocalizedString("Message / drop zones", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Write / drop zone", comment: ""), style: .default, handler: { _ in
             guard let url = URL(string: "https://instagram.com/skydivelogbook") else { return }
@@ -88,7 +90,8 @@ class DropZonesVC: UIViewController {
             safariViewController.delegate = self
             self.present(safariViewController, animated: true)
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: { _ in
+        }))
         present(alert, animated: true)
     }
 }
