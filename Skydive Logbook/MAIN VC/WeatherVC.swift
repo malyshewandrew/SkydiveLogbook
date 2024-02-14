@@ -21,6 +21,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var precipitation: String = ""
     private var pressure: String = ""
     private var windSpeed: String = ""
+    private var windGust: String = ""
     private var windDirection: String = ""
     private var visibility: String = ""
     
@@ -132,6 +133,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.precipitation = "\(result.currentWeather.precipitationIntensity.value) мм/ч"
                 self.pressure = "\(Int(result.currentWeather.pressure.value)) гПа"
                 self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) м/с"
+                self.windGust = "Порывы до \(result.currentWeather.wind.gust?.value.description ?? "") м/с"
                 self.windDirection = "\(result.currentWeather.wind.compassDirection) (\(result.currentWeather.wind.direction))"
                 self.visibility = "\(Int(result.currentWeather.visibility.value / 1000)) км"
                 self.tableView.reloadData()
@@ -156,7 +158,7 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.backgroundColor = .clear
         cell.backgroundView = UIView()
         
-        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, windSpeed: windSpeed, windDirection: windDirection, visibility: visibility)
+        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility)
         
         return cell
     }

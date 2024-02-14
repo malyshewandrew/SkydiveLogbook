@@ -16,6 +16,7 @@ class WeatherCell: UITableViewCell {
     private let pressureLabel = UILabel()
 
     private let windSpeedLabel = UILabel()
+    private let windGustLabel = UILabel()
     private let windDirectionLabel = UILabel()
 
     private let visibilityLabel = UILabel()
@@ -47,7 +48,7 @@ class WeatherCell: UITableViewCell {
 
     private func addSubvies() {
         contentView.addSubviews(windButton, temperatureButton, cloudCoverButton, humidityButton, dewPointButton, precipitationButton, visibilityButton, pressureButton, iconImageView)
-        windButton.addSubviews(windSpeedLabel, windDirectionLabel)
+        windButton.addSubviews(windSpeedLabel, windGustLabel, windDirectionLabel)
         temperatureButton.addSubviews(currentTemperatureLabel, descriptionLabel, feelTemperatureLabel)
         cloudCoverButton.addSubviews(cloudCoverLabel)
         humidityButton.addSubviews(humidityLabel)
@@ -78,9 +79,17 @@ class WeatherCell: UITableViewCell {
 
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedLabel.centerXAnchor.constraint(equalTo: windButton.centerXAnchor).isActive = true
-        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 20).isActive = true
+        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 10).isActive = true
         windSpeedLabel.heightAnchor.constraint(equalTo: windButton.heightAnchor, multiplier: 0.6).isActive = true
         windSpeedLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
+
+        // WIND GUST:
+        
+        windGustLabel.translatesAutoresizingMaskIntoConstraints = false
+        windGustLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        windGustLabel.bottomAnchor.constraint(equalTo: windDirectionLabel.topAnchor, constant: -5).isActive = true
+        windGustLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        windGustLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
 
         // WIND DIRECTION:
 
@@ -230,7 +239,7 @@ class WeatherCell: UITableViewCell {
         windButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         windButton.layer.masksToBounds = true
         windButton.layer.cornerRadius = 15
-        windButton.addSubviews(windSpeedLabel, windDirectionLabel)
+        windButton.addSubviews(windSpeedLabel, windGustLabel, windDirectionLabel)
 
         // WIND SPEED:
 
@@ -239,6 +248,14 @@ class WeatherCell: UITableViewCell {
         windSpeedLabel.numberOfLines = 0
         windSpeedLabel.textAlignment = .center
         windSpeedLabel.adjustsFontSizeToFitWidth = true
+        
+        // WIND GUST:
+        
+        windGustLabel.textColor = .white
+        windGustLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
+        windGustLabel.numberOfLines = 0
+        windGustLabel.textAlignment = .center
+        windGustLabel.adjustsFontSizeToFitWidth = true
 
         // WIND DIRECTION:
 
@@ -428,10 +445,11 @@ class WeatherCell: UITableViewCell {
 
     // MARK: - HELPERS:
 
-    func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, windSpeed: String, windDirection: String, visibility: String) {
+    func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, windSpeed: String, windGust: String, windDirection: String, visibility: String) {
         iconImageView.image = iconImage
 
         windSpeedLabel.text = windSpeed
+        windGustLabel.text = windGust
         windDirectionLabel.text = windDirection
 
         currentTemperatureLabel.text = currentTemperature
