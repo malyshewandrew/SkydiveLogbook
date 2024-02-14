@@ -1,4 +1,5 @@
 
+import MapKit
 import UIKit
 
 class WeatherCell: UITableViewCell {
@@ -30,6 +31,10 @@ class WeatherCell: UITableViewCell {
     private let precipitationButton = UIButton()
     private let pressureButton = UIButton()
 
+    private let mapView = MKMapView()
+    let locationManager = CLLocationManager()
+    private let currentLocationButton = UIButton()
+
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -37,6 +42,7 @@ class WeatherCell: UITableViewCell {
         addSubvies()
         configureConstraints()
         configureUI()
+        configureLocationManager()
     }
 
     @available(*, unavailable)
@@ -47,7 +53,7 @@ class WeatherCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubvies() {
-        contentView.addSubviews(windButton, temperatureButton, cloudCoverButton, humidityButton, dewPointButton, precipitationButton, visibilityButton, pressureButton, iconImageView)
+        contentView.addSubviews(windButton, temperatureButton, cloudCoverButton, humidityButton, dewPointButton, precipitationButton, visibilityButton, pressureButton, iconImageView, mapView)
         windButton.addSubviews(windSpeedLabel, windGustLabel, windDirectionLabel)
         temperatureButton.addSubviews(currentTemperatureLabel, descriptionLabel, feelTemperatureLabel)
         cloudCoverButton.addSubviews(cloudCoverLabel)
@@ -56,6 +62,7 @@ class WeatherCell: UITableViewCell {
         precipitationButton.addSubviews(precipitationLabel)
         visibilityButton.addSubviews(visibilityLabel)
         pressureButton.addSubviews(pressureLabel)
+        mapView.addSubview(currentLocationButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -84,7 +91,7 @@ class WeatherCell: UITableViewCell {
         windSpeedLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
 
         // WIND GUST:
-        
+
         windGustLabel.translatesAutoresizingMaskIntoConstraints = false
         windGustLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         windGustLabel.bottomAnchor.constraint(equalTo: windDirectionLabel.topAnchor, constant: -5).isActive = true
@@ -133,84 +140,101 @@ class WeatherCell: UITableViewCell {
         humidityButton.translatesAutoresizingMaskIntoConstraints = false
         humidityButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 15).isActive = true
         humidityButton.trailingAnchor.constraint(equalTo: cloudCoverButton.leadingAnchor, constant: -10).isActive = true
-        humidityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        humidityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         humidityButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
 
         // HUMIDITY:
 
         humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         humidityLabel.centerXAnchor.constraint(equalTo: humidityButton.centerXAnchor).isActive = true
-        humidityLabel.centerYAnchor.constraint(equalTo: humidityButton.centerYAnchor).isActive = true
+        humidityLabel.topAnchor.constraint(equalTo: humidityButton.topAnchor, constant: 20).isActive = true
 
         // MARK: - CLOUD COVER BUTTON:
 
         cloudCoverButton.translatesAutoresizingMaskIntoConstraints = false
         cloudCoverButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 15).isActive = true
         cloudCoverButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
-        cloudCoverButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        cloudCoverButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         cloudCoverButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
 
         // CLOUD COVER:
 
         cloudCoverLabel.translatesAutoresizingMaskIntoConstraints = false
         cloudCoverLabel.centerXAnchor.constraint(equalTo: cloudCoverButton.centerXAnchor).isActive = true
-        cloudCoverLabel.centerYAnchor.constraint(equalTo: cloudCoverButton.centerYAnchor).isActive = true
+        cloudCoverLabel.topAnchor.constraint(equalTo: cloudCoverButton.topAnchor, constant: 20).isActive = true
 
         // MARK: - DEW POINT BUTTON:
 
         dewPointButton.translatesAutoresizingMaskIntoConstraints = false
         dewPointButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 15).isActive = true
         dewPointButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
-        dewPointButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        dewPointButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         dewPointButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
 
         // DEW POINT:
 
         dewPointLabel.translatesAutoresizingMaskIntoConstraints = false
         dewPointLabel.centerXAnchor.constraint(equalTo: dewPointButton.centerXAnchor).isActive = true
-        dewPointLabel.centerYAnchor.constraint(equalTo: dewPointButton.centerYAnchor).isActive = true
+        dewPointLabel.topAnchor.constraint(equalTo: dewPointButton.topAnchor, constant: 20).isActive = true
 
         // MARK: - VISIBILITY BUTTON:
 
         visibilityButton.translatesAutoresizingMaskIntoConstraints = false
         visibilityButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 15).isActive = true
         visibilityButton.leadingAnchor.constraint(equalTo: dewPointButton.trailingAnchor, constant: 10).isActive = true
-        visibilityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        visibilityButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         visibilityButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
 
         // VISIBILITY:
 
         visibilityLabel.translatesAutoresizingMaskIntoConstraints = false
         visibilityLabel.centerXAnchor.constraint(equalTo: visibilityButton.centerXAnchor).isActive = true
-        visibilityLabel.centerYAnchor.constraint(equalTo: visibilityButton.centerYAnchor).isActive = true
+        visibilityLabel.topAnchor.constraint(equalTo: visibilityButton.topAnchor, constant: 20).isActive = true
 
         // MARK: - PRESSURE BUTTON:
 
         pressureButton.translatesAutoresizingMaskIntoConstraints = false
         pressureButton.topAnchor.constraint(equalTo: humidityButton.bottomAnchor, constant: 15).isActive = true
         pressureButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
-        pressureButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        pressureButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         pressureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
-        pressureButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+//        pressureButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
         pressureLabel.translatesAutoresizingMaskIntoConstraints = false
         pressureLabel.centerXAnchor.constraint(equalTo: pressureButton.centerXAnchor).isActive = true
-        pressureLabel.centerYAnchor.constraint(equalTo: pressureButton.centerYAnchor).isActive = true
+        pressureLabel.topAnchor.constraint(equalTo: pressureButton.topAnchor, constant: 20).isActive = true
 
         // MARK: - PRECIPITATION BUTTON:
 
         precipitationButton.translatesAutoresizingMaskIntoConstraints = false
         precipitationButton.topAnchor.constraint(equalTo: humidityButton.bottomAnchor, constant: 15).isActive = true
         precipitationButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
-        precipitationButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.20).isActive = true
+        precipitationButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         precipitationButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
-        precipitationButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+//        precipitationButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
         // PRECIPITATION:
 
         precipitationLabel.translatesAutoresizingMaskIntoConstraints = false
         precipitationLabel.centerXAnchor.constraint(equalTo: precipitationButton.centerXAnchor).isActive = true
-        precipitationLabel.centerYAnchor.constraint(equalTo: precipitationButton.centerYAnchor).isActive = true
+        precipitationLabel.topAnchor.constraint(equalTo: precipitationButton.topAnchor, constant: 20).isActive = true
+
+        // MARK: - MAP VIEW:
+
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.topAnchor.constraint(equalTo: pressureButton.bottomAnchor, constant: 15).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
+        mapView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.6).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
+        // CURRENT BUTTON:
+
+        currentLocationButton.translatesAutoresizingMaskIntoConstraints = false
+        currentLocationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -15).isActive = true
+        currentLocationButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -15).isActive = true
+        currentLocationButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        currentLocationButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -248,9 +272,9 @@ class WeatherCell: UITableViewCell {
         windSpeedLabel.numberOfLines = 0
         windSpeedLabel.textAlignment = .center
         windSpeedLabel.adjustsFontSizeToFitWidth = true
-        
+
         // WIND GUST:
-        
+
         windGustLabel.textColor = .white
         windGustLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
         windGustLabel.numberOfLines = 0
@@ -441,9 +465,37 @@ class WeatherCell: UITableViewCell {
         pressureLabel.numberOfLines = 0
         pressureLabel.textAlignment = .center
         pressureLabel.adjustsFontSizeToFitWidth = true
+
+        // MARK: - MAP VIEW:
+
+        mapView.layer.cornerRadius = cornerRadius15
+
+        // CURRENT BUTTON:
+
+        let configurator = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
+        let image = UIImage(systemName: "location.circle.fill", withConfiguration: configurator)
+        currentLocationButton.setImage(image, for: .normal)
+        currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - HELPERS:
+
+    // MARK: SETUP COORDINATE:
+
+    @objc func currentLocationButtonTapped(region: MKCoordinateRegion) {
+        guard let coordinate = locationManager.location?.coordinate else { return }
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+
+    // MARK: CONFIGURE LOCATION MANAGER:
+
+    private func configureLocationManager() {
+        mapView.showsUserLocation = true
+    }
+
+    // MARK: CONFIGURE MODEL:
 
     func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, windSpeed: String, windGust: String, windDirection: String, visibility: String) {
         iconImageView.image = iconImage
