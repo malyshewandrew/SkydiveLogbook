@@ -338,6 +338,7 @@
 "Delete aircraft?" = "Удалить авиатехнику?";
 "Edit canopies" = "Редактировать парашюты";
 "Delete canopy?" = "Удалить парашют?";
+"Drop zones" = "Дроп зоны";
 "Backup copy" = "Резервная копия";
 "Calculator loading" = "Калькулятор загрузки";
 "Information" = "Справочная информация";
@@ -406,3 +407,9 @@
 
 "System" = "СИСТЕМА";
 "Delete system?" = "Удалить систему?";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "Дроп зоны";
+"Message / drop zones" = "Новые локации будут появляться постепенно.\nЕсли вы хотите добавить вашу дропзону - напишите в Direct в Instagram";
+"Write / drop zone" = "Написать";

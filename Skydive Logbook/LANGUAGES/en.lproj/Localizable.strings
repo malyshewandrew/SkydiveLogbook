@@ -337,6 +337,7 @@
 "Edit aircrafts" = "Edit aircrafts";
 "Delete aircraft?" = "Delete aircraft?";
 "Edit canopies" = "Edit canopies";
+"Drop zones" = "Drop zones";
 "Delete canopy?" = "Delete canopy?";
 "Backup copy" = "Backup copy";
 "Calculator loading" = "Calculator loading";
@@ -406,3 +407,9 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 
 "System" = "SYSTEM";
 "Delete system?" = "Delete system?";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "Drop Zones";
+"Message / drop zones" = "New locations will appear gradually.\nIf you want to add your drop zone, write to in Direct on Instagram";
+"Write / drop zone" = "Write";

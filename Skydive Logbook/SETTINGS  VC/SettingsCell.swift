@@ -8,6 +8,7 @@ protocol SettingsCellDelegate {
     func tapEditAircraftsButton()
     func tapEditCanopiesButton()
     func tapEditAccountButton()
+    func tapDropZonesButton()
     func tapBackupButton()
     func tapInfoButton()
     func tapPremiumButton()
@@ -21,6 +22,7 @@ final class SettingsCell: UITableViewCell {
     private let editLocationsButton = UIButton()
     private let editAircraftsButton = UIButton()
     private let editCanopiesButton = UIButton()
+    private let dropZonesButton = UIButton()
     private let backupButton = UIButton()
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
@@ -47,7 +49,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, instagramImageView, instagramButton, infoLabel)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, dropZonesButton, backupButton, infoButton, premiumButton, instagramImageView, infoLabel, instagramButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -86,10 +88,18 @@ final class SettingsCell: UITableViewCell {
         editCanopiesButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         editCanopiesButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
+        // MARK: DROP ZONES BUTTON:
+
+        dropZonesButton.translatesAutoresizingMaskIntoConstraints = false
+        dropZonesButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 45).isActive = true
+        dropZonesButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        dropZonesButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        dropZonesButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+
         // MARK: BACKUP BUTTON:
 
         backupButton.translatesAutoresizingMaskIntoConstraints = false
-        backupButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 45).isActive = true
+        backupButton.topAnchor.constraint(equalTo: dropZonesButton.bottomAnchor, constant: 15).isActive = true
         backupButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         backupButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -124,21 +134,21 @@ final class SettingsCell: UITableViewCell {
         instagramImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
         instagramImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
 
-        // MARK: INSTAGRAM BUTTON:
-
-        instagramButton.translatesAutoresizingMaskIntoConstraints = false
-        instagramButton.topAnchor.constraint(equalTo: instagramImageView.topAnchor).isActive = true
-        instagramButton.leadingAnchor.constraint(equalTo: instagramImageView.leadingAnchor).isActive = true
-        instagramButton.trailingAnchor.constraint(equalTo: instagramImageView.trailingAnchor).isActive = true
-        instagramButton.bottomAnchor.constraint(equalTo: instagramImageView.bottomAnchor).isActive = true
-
         // MARK: INFO LABEL:
 
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
-        infoLabel.topAnchor.constraint(equalTo: instagramButton.bottomAnchor, constant: 5).isActive = true
+        infoLabel.topAnchor.constraint(equalTo: instagramImageView.bottomAnchor).isActive = true
         infoLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         infoLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
         infoLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+
+        // MARK: INSTAGRAM BUTTON:
+
+        instagramButton.translatesAutoresizingMaskIntoConstraints = false
+        instagramButton.topAnchor.constraint(equalTo: instagramImageView.topAnchor, constant: -2).isActive = true
+        instagramButton.leadingAnchor.constraint(equalTo: infoLabel.leadingAnchor, constant: -2).isActive = true
+        instagramButton.trailingAnchor.constraint(equalTo: infoLabel.trailingAnchor, constant: 2).isActive = true
+        instagramButton.bottomAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 2).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -185,6 +195,15 @@ final class SettingsCell: UITableViewCell {
         editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
         editCanopiesButton.addTarget(self, action: #selector(editCanopiesButtonTapped), for: .touchUpInside)
 
+        // MARK: DROP ZONES BUTTON:
+
+        dropZonesButton.setTitle(NSLocalizedString("Drop zones", comment: ""), for: .normal)
+        dropZonesButton.layer.cornerRadius = cornerRadius15
+        dropZonesButton.backgroundColor = .colorCell
+        dropZonesButton.titleLabel?.font = fontMediumStandard14
+        dropZonesButton.setTitleColor(.colorWhite, for: .normal)
+        dropZonesButton.addTarget(self, action: #selector(dropZonesButtonTapped), for: .touchUpInside)
+
         // MARK: BACKUP BUTTON:
 
         backupButton.setTitle(NSLocalizedString("Backup copy", comment: ""), for: .normal)
@@ -228,7 +247,7 @@ final class SettingsCell: UITableViewCell {
         // MARK: INSTAGRAM BUTTON:
 
         instagramButton.addTarget(self, action: #selector(instagramButtonTapped), for: .touchUpInside)
-        
+
         // MARK: INFO LABEL:
 
         infoLabel.text = "2023-2024, Skydive Logbook iOS Application"
@@ -262,6 +281,12 @@ final class SettingsCell: UITableViewCell {
     @objc private func editCanopiesButtonTapped() {
         delegate?.tapEditCanopiesButton()
     }
+    
+    // MARK: FUNC FOR DROP ZONES:
+
+    @objc private func dropZonesButtonTapped() {
+        delegate?.tapDropZonesButton()
+    }
 
     // MARK: FUNC FOR BACKUP:
 
@@ -286,14 +311,14 @@ final class SettingsCell: UITableViewCell {
     @objc private func instagramButtonTapped() {
         delegate?.tapInstagramButton()
     }
-    
+
     // MARK: COLORIZE IMAGE:
-    
+
     func colorizeImage(image: UIImage, color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
         let context = UIGraphicsGetCurrentContext()
         color.setFill()
-        
+
         let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         context!.translateBy(x: 0, y: image.size.height)
         context!.scaleBy(x: 1.0, y: -1.0)
@@ -301,7 +326,7 @@ final class SettingsCell: UITableViewCell {
         context!.fill(rect)
         let coloredImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        
+
         return coloredImage
     }
 }

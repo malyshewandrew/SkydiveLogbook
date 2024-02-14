@@ -139,7 +139,6 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SettingsVC: SettingsCellDelegate {
-    
     func tapEditAccountButton() {
         let editAccount = EditAccountVC()
         navigationController?.pushViewController(editAccount, animated: true)
@@ -159,6 +158,11 @@ extension SettingsVC: SettingsCellDelegate {
         let editCanopies = EditCanopiesVC()
         navigationController?.pushViewController(editCanopies, animated: true)
     }
+    
+    func tapDropZonesButton() {
+        let dropZones = DropZonesVC()
+        navigationController?.pushViewController(dropZones, animated: true)
+    }
 
     func tapBackupButton() {
         let backup = BackupVC()
@@ -171,6 +175,7 @@ extension SettingsVC: SettingsCellDelegate {
     }
 
     func tapPremiumButton() {
+
         let premium = PremiumVC()
         navigationController?.pushViewController(premium, animated: true)
     }
