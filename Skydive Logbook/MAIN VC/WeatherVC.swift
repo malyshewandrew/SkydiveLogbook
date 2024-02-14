@@ -130,12 +130,12 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.cloudCover = "\(Int(result.currentWeather.cloudCover * 100)) %"
                 self.humidity = "\(Int(result.currentWeather.humidity * 100)) %"
                 self.dewPoint = "\(Int(result.currentWeather.dewPoint.value))\(result.currentWeather.temperature.unit.symbol)"
-                self.precipitation = "\(result.currentWeather.precipitationIntensity.value) мм/ч"
-                self.pressure = "\(Int(result.currentWeather.pressure.value)) гПа"
-                self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) м/с"
-                self.windGust = "Порывы до \(result.currentWeather.wind.gust?.value.description ?? "") м/с"
+                self.precipitation = "\(result.currentWeather.precipitationIntensity.value) \(NSLocalizedString("mm/h", comment: ""))"
+                self.pressure = "\(Int(result.currentWeather.pressure.value)) \(NSLocalizedString("hPa", comment: ""))"
+                self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) \(NSLocalizedString("m/s", comment: ""))"
+                self.windGust = "\(NSLocalizedString("Gusts up to", comment: "")) \(result.currentWeather.wind.gust?.value.description ?? "") \(NSLocalizedString("m/s", comment: ""))"
                 self.windDirection = "\(result.currentWeather.wind.compassDirection) (\(result.currentWeather.wind.direction))"
-                self.visibility = "\(Int(result.currentWeather.visibility.value / 1000)) км"
+                self.visibility = "\(Int(result.currentWeather.visibility.value / 1000)) \(NSLocalizedString("km", comment: ""))"
                 self.tableView.reloadData()
             } catch {
                 print(String(describing: error))

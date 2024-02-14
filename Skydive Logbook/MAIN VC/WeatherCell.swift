@@ -233,7 +233,7 @@ class WeatherCell: UITableViewCell {
         blurWindEffectView.frame = windButton.bounds
         blurWindEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         windButton.addSubview(blurWindEffectView)
-        windButton.setTitle("Скорость ветра", for: .normal)
+        windButton.setTitle(NSLocalizedString("Wind speed / weather", comment: ""), for: .normal)
         windButton.setTitleColor(.white, for: .normal)
         windButton.contentVerticalAlignment = textAligmentTop
         windButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -272,7 +272,7 @@ class WeatherCell: UITableViewCell {
         blurTemperatureEffectView.frame = temperatureButton.bounds
         blurTemperatureEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         temperatureButton.addSubview(blurTemperatureEffectView)
-        temperatureButton.setTitle("Температура", for: .normal)
+        temperatureButton.setTitle(NSLocalizedString("Temperature / weather", comment: ""), for: .normal)
         temperatureButton.setTitleColor(.white, for: .normal)
         temperatureButton.contentVerticalAlignment = textAligmentTop
         temperatureButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -311,7 +311,7 @@ class WeatherCell: UITableViewCell {
         blurCloudCoverEffectView.frame = cloudCoverButton.bounds
         blurCloudCoverEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         cloudCoverButton.addSubview(blurCloudCoverEffectView)
-        cloudCoverButton.setTitle("Облачность", for: .normal)
+        cloudCoverButton.setTitle(NSLocalizedString("Cloud cover / weather", comment: ""), for: .normal)
         cloudCoverButton.setTitleColor(.white, for: .normal)
         cloudCoverButton.contentVerticalAlignment = textAligmentTop
         cloudCoverButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -334,7 +334,7 @@ class WeatherCell: UITableViewCell {
         blurHumidityEffectView.frame = humidityButton.bounds
         blurHumidityEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         humidityButton.addSubview(blurHumidityEffectView)
-        humidityButton.setTitle("Влажность", for: .normal)
+        humidityButton.setTitle(NSLocalizedString("Humidity / weather", comment: ""), for: .normal)
         humidityButton.setTitleColor(.white, for: .normal)
         humidityButton.contentVerticalAlignment = textAligmentTop
         humidityButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -357,7 +357,7 @@ class WeatherCell: UITableViewCell {
         blurDewPointEffectView.frame = dewPointButton.bounds
         blurDewPointEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dewPointButton.addSubview(blurDewPointEffectView)
-        dewPointButton.setTitle("Точка росы", for: .normal)
+        dewPointButton.setTitle(NSLocalizedString("Dew point / weather", comment: ""), for: .normal)
         dewPointButton.setTitleColor(.white, for: .normal)
         dewPointButton.contentVerticalAlignment = textAligmentTop
         dewPointButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -380,7 +380,7 @@ class WeatherCell: UITableViewCell {
         blurVisibilityEffectView.frame = precipitationButton.bounds
         blurVisibilityEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         visibilityButton.addSubview(blurVisibilityEffectView)
-        visibilityButton.setTitle("Видимость", for: .normal)
+        visibilityButton.setTitle(NSLocalizedString("Visibility / weather", comment: ""), for: .normal)
         visibilityButton.setTitleColor(.white, for: .normal)
         visibilityButton.contentVerticalAlignment = textAligmentTop
         visibilityButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -403,7 +403,7 @@ class WeatherCell: UITableViewCell {
         blurPrecipitationEffectView.frame = precipitationButton.bounds
         blurPrecipitationEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         precipitationButton.addSubview(blurPrecipitationEffectView)
-        precipitationButton.setTitle("Осадки", for: .normal)
+        precipitationButton.setTitle(NSLocalizedString("Precipitation / weather", comment: ""), for: .normal)
         precipitationButton.setTitleColor(.white, for: .normal)
         precipitationButton.contentVerticalAlignment = textAligmentTop
         precipitationButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -426,7 +426,7 @@ class WeatherCell: UITableViewCell {
         blurPressureEffectView.frame = precipitationButton.bounds
         blurPressureEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         pressureButton.addSubview(blurPressureEffectView)
-        pressureButton.setTitle("Давление", for: .normal)
+        pressureButton.setTitle(NSLocalizedString("Pressure / weather", comment: ""), for: .normal)
         pressureButton.setTitleColor(.white, for: .normal)
         pressureButton.contentVerticalAlignment = textAligmentTop
         pressureButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -454,7 +454,7 @@ class WeatherCell: UITableViewCell {
 
         currentTemperatureLabel.text = currentTemperature
         descriptionLabel.text = description
-        feelTemperatureLabel.text = "Ощущается как " + feelTemperature
+        feelTemperatureLabel.text = NSLocalizedString("It feels like / weather", comment: "") + " " + feelTemperature
 
         cloudCoverLabel.text = cloudCover
         humidityLabel.text = humidity

@@ -70,6 +70,24 @@
 "New note" = "Новая заметка";
 "Delete note?" = "Удалить заметку?";
 
+// MARK: - WEATHER:
+
+"mm/h" = "мм/ч";
+"hPa" = "гПа";
+"m/s" = "м/с";
+"km" = "км";
+"Gusts up to" = "Порывы до";
+
+"Wind speed / weather" = "Скорость ветра";
+"Temperature / weather" = "Температура";
+"Cloud cover / weather" = "Облачность";
+"Humidity / weather" = "Влажность";
+"Dew point / weather" = "Точка росы";
+"Visibility / weather" = "Видимость";
+"Precipitation / weather" = "Осадки";
+"Pressure / weather" = "Давление";
+"It feels like / weather" = "По ощущениям";
+
 // MARK: - Statistic:
 
 "no jumps" = "Для отображения статистики необходимо внести минимум один прыжок.";

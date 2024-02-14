@@ -70,6 +70,24 @@
 "New note" = "New note";
 "Delete note?" = "Delete note?";
 
+// MARK: - WEATHER:
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Gusts up to";
+
+"Wind speed / weather" = "Wind speed";
+"Temperature / weather" = "Temperature";
+"Cloud cover / weather" = "Cloud cover";
+"Humidity / weather" = "Humidity";
+"Dew point / weather" = "Dew point";
+"Visibility / weather" = "Visibility";
+"Precipitation / weather" = "Precipitation";
+"Pressure / weather" = "Pressure";
+"It feels like / weather" = "It feels like";
+
 // MARK: - Statistic:
 
 "no jumps" = "To display statistics, you need to make at least one jump.";
