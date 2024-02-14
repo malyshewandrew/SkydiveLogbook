@@ -68,6 +68,12 @@ class DropZonesVC: UIViewController {
         lipki.title = "Lipki"
         lipki.subtitle = "Skydive Minsk"
         mapView.addAnnotation(lipki)
+
+        let skydiveDubai = MKPointAnnotation()
+        skydiveDubai.coordinate = CLLocationCoordinate2D(latitude: 25.091480, longitude: 55.135047)
+        skydiveDubai.title = "Skydive Dubai"
+        skydiveDubai.subtitle = "Palm"
+        mapView.addAnnotation(skydiveDubai)
     }
     
     // MARK: - HELPERS:

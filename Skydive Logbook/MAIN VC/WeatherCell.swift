@@ -34,6 +34,8 @@ class WeatherCell: UITableViewCell {
     private let mapView = MKMapView()
     let locationManager = CLLocationManager()
     private let currentLocationButton = UIButton()
+    
+    private let vibrationOn = Vibration()
 
     // MARK: - LIFECYCLE:
 
@@ -274,7 +276,7 @@ class WeatherCell: UITableViewCell {
         // WIND GUST:
 
         windGustLabel.textColor = .white
-        windGustLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
+        windGustLabel.font = fontMediumStandard14
         windGustLabel.numberOfLines = 0
         windGustLabel.textAlignment = .center
         windGustLabel.adjustsFontSizeToFitWidth = true
@@ -481,6 +483,7 @@ class WeatherCell: UITableViewCell {
     // MARK: SETUP COORDINATE:
 
     @objc func currentLocationButtonTapped(region: MKCoordinateRegion) {
+        vibrationOn.vibrationStandart()
         guard let coordinate = locationManager.location?.coordinate else { return }
         let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
 

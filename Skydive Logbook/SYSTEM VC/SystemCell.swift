@@ -52,6 +52,7 @@ final class SystemCell: UITableViewCell {
     var tapEditButton: (() -> ())?
     weak var delegate: SystemCellDelegate?
     var indexPath: IndexPath?
+    private let vibrationOn = Vibration()
     
     // MARK: - PROPERTIES FOR ANIMATIONS CONTENT VIEW:
 
@@ -61,7 +62,6 @@ final class SystemCell: UITableViewCell {
     private let timeOffset: TimeInterval = 3
     private var isAnimating: Bool = false
     private var snakeLayers: [CAShapeLayer] = []
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -758,12 +758,14 @@ final class SystemCell: UITableViewCell {
     // MARK: CLOSURE FOR EDIT BUTTON:
 
     @objc private func editButtonTapped() {
+        self.vibrationOn.vibrationStandart()
         tapEditButton?()
     }
     
     // MARK: DELEGATE FOR COMMENT BUTTON:
 
     @objc private func commentButtonTapped() {
+        self.vibrationOn.vibrationStandart()
         guard let indexPath = indexPath else { return }
         delegate?.tapCommentButton(indexPath)
     }

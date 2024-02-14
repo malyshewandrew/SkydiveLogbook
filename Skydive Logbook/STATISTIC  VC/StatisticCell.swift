@@ -78,6 +78,7 @@ final class StatisticCell: UITableViewCell {
     private var isFlippedMissionsView = false
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
     
+    private let vibrationOn = Vibration()
     let dateFormatter = DateFormatter()
     var delegate: StatisticCellDelegate?
     
@@ -776,6 +777,7 @@ final class StatisticCell: UITableViewCell {
     // MARK: MISSION VIEW BUTTON TAPPED:
     
     @objc private func missionViewButtonTapped() {
+        vibrationOn.vibrationStandart()
         isFlippedMissionsView = !isFlippedMissionsView
         let fromView = isFlippedMissionsView ? missionsOneView : missionsTwoView
         let toView = isFlippedMissionsView ? missionsTwoView : missionsOneView
@@ -1302,66 +1304,82 @@ final class StatisticCell: UITableViewCell {
     // MARK: - FUNCTIONS DELEGATES:
     
     @objc private func generalInfoButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapGeneralInfoButton()
     }
     
     @objc private func totalButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapTotalButton()
     }
     
     @objc private func yearButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapYearButton()
     }
     
     @objc private func categoryButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapCategoryButton()
     }
     
     @objc private func maxHeightButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapMaxHeightButton()
     }
     
     @objc private func averageHeightButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapAverageHeightButton()
     }
     
     @objc private func minHeightButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapMinHeightButton()
     }
     
     @objc private func maxDayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapMaxDayButton()
     }
     
     @objc private func averageTimeButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapAverageTimeButton()
     }
     
     @objc private func countCutawayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapCountCutawayButton()
     }
     
     @objc private func dateFirstButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapDateFirstButton()
     }
     
     @objc private func maxTimeButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapMaxTimeButton()
     }
     
     @objc private func dateLastButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapDateLastButton()
     }
     
     @objc private func aircraftsButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapAircraftsButton()
     }
     
     @objc private func canopiesButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapCanopiesButton()
     }
     
     @objc private func locationsButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapLocationsButton()
     }
 }

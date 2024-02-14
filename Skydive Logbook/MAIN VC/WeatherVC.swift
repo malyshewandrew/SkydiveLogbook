@@ -133,7 +133,12 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.precipitation = "\(result.currentWeather.precipitationIntensity.value) \(NSLocalizedString("mm/h", comment: ""))"
                 self.pressure = "\(Int(result.currentWeather.pressure.value)) \(NSLocalizedString("hPa", comment: ""))"
                 self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) \(NSLocalizedString("m/s", comment: ""))"
-                self.windGust = "\(NSLocalizedString("Gusts up to", comment: "")) \(result.currentWeather.wind.gust?.value.description ?? "") \(NSLocalizedString("m/s", comment: ""))"
+                if let gustValue = result.currentWeather.wind.gust?.value {
+                    let gustSpeed = gustValue / 3.6
+                    self.windGust = "\(NSLocalizedString("Gusts up to", comment: "")) \(String(format: "%.2f", gustSpeed)) \(NSLocalizedString("m/s", comment: ""))"
+                } else {
+                    self.windGust = "\(NSLocalizedString("Gusts up to", comment: "")) \(NSLocalizedString("N/A", comment: ""))"
+                }
                 self.windDirection = "\(result.currentWeather.wind.compassDirection) (\(result.currentWeather.wind.direction))"
                 self.visibility = "\(Int(result.currentWeather.visibility.value / 1000)) \(NSLocalizedString("km", comment: ""))"
                 self.tableView.reloadData()

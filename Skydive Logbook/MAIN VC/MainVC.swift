@@ -30,8 +30,9 @@ final class MainVC: UIViewController {
     private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
-    
+
     // MARK: REFRESH CONTROL:
+
     private var tableRefreshControl: UIRefreshControl {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlTapped), for: .valueChanged)
@@ -123,7 +124,7 @@ final class MainVC: UIViewController {
         accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         accountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         accountButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
+
         // MARK: WEATHER IMAGE:
 
         weatherImage.translatesAutoresizingMaskIntoConstraints = false
@@ -137,7 +138,7 @@ final class MainVC: UIViewController {
         weatherButton.leadingAnchor.constraint(equalTo: accountImage.trailingAnchor, constant: 20).isActive = true
         weatherButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         weatherButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
+
         // MARK: CALCULATOR IMAGE:
 
         calculatorImage.translatesAutoresizingMaskIntoConstraints = false
@@ -225,7 +226,7 @@ final class MainVC: UIViewController {
         // MARK: ACCOUNT BUTTON:
 
         accountButton.addTarget(self, action: #selector(accountButtonTapped), for: .touchUpInside)
-        
+
         // MARK: WEATHER IMAGE:
 
         weatherImage.image = UIImage(systemName: "sun.max.circle.fill", withConfiguration: configurationImage)
@@ -234,7 +235,7 @@ final class MainVC: UIViewController {
         // MARK: WEATHER BUTTON:
 
         weatherButton.addTarget(self, action: #selector(weatherButtonTapped), for: .touchUpInside)
-        
+
         // MARK: CALCULATOR IMAGE:
 
         calculatorImage.image = UIImage(systemName: "divide.circle.fill", withConfiguration: configurationImage)
@@ -285,6 +286,8 @@ final class MainVC: UIViewController {
     // MARK: - ACCOUNT ALERT:
 
     @objc private func accountButtonTapped() {
+        vibrationOn.vibrationStandart()
+
         // MARK: NICKNAME:
 
         var nickname = ""
@@ -375,17 +378,19 @@ final class MainVC: UIViewController {
             present(alert, animated: true)
         }
     }
-    
+
     // MARK: - TRANSITION ON WEATHER VIEW CONTROLLER:
 
     @objc private func weatherButtonTapped() {
+        vibrationOn.vibrationStandart()
         let weatherViewController = WeatherVC()
         present(weatherViewController, animated: true, completion: nil)
     }
-    
+
     // MARK: - TRANSITION ON CALCULATOR VIEW CONTROLLER:
 
     @objc private func calculatorButtonTapped() {
+        vibrationOn.vibrationStandart()
         let calculatorBViewController = CalculatorVC()
         present(calculatorBViewController, animated: true, completion: nil)
     }
@@ -393,6 +398,7 @@ final class MainVC: UIViewController {
     // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
 
     @objc private func notesButtonTapped() {
+        vibrationOn.vibrationStandart()
         let notesViewController = NotesVC()
         present(notesViewController, animated: true, completion: nil)
     }
@@ -512,7 +518,7 @@ final class MainVC: UIViewController {
         tabBarController?.tabBar.isHidden = false
         UIView.animate(withDuration: 0.3, animations: {
             self.loadingView.alpha = 0.0
-        }, completion: { (completed) in
+        }, completion: { _ in
             self.loadingView.removeFromSuperview()
         })
         loadingLottie.removeFromSuperview()
@@ -528,7 +534,7 @@ final class MainVC: UIViewController {
             haptic: .success
         )
     }
-    
+
     // MARK: ALERT KIT REFRESH:
 
     private func alertKitRefresh() {
@@ -539,8 +545,9 @@ final class MainVC: UIViewController {
             haptic: .success
         )
     }
-    
+
     // MARK: REFRESH CONTROL:
+
     @objc private func refreshControlTapped(sender: UIRefreshControl) {
         alertKitRefresh()
         sender.endRefreshing()
