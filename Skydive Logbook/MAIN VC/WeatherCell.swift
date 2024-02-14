@@ -198,7 +198,6 @@ class WeatherCell: UITableViewCell {
         pressureButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
         pressureButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         pressureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
-//        pressureButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
         pressureLabel.translatesAutoresizingMaskIntoConstraints = false
         pressureLabel.centerXAnchor.constraint(equalTo: pressureButton.centerXAnchor).isActive = true
@@ -211,7 +210,6 @@ class WeatherCell: UITableViewCell {
         precipitationButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
         precipitationButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         precipitationButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.43).isActive = true
-//        precipitationButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
         // PRECIPITATION:
 
@@ -485,7 +483,7 @@ class WeatherCell: UITableViewCell {
     @objc func currentLocationButtonTapped(region: MKCoordinateRegion) {
         guard let coordinate = locationManager.location?.coordinate else { return }
         let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-        
+
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
