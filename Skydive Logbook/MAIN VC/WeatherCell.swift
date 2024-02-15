@@ -36,6 +36,7 @@ class WeatherCell: UITableViewCell {
     private let currentLocationButton = UIButton()
     
     private let vibrationOn = Vibration()
+    
 
     // MARK: - LIFECYCLE:
 
@@ -81,60 +82,58 @@ class WeatherCell: UITableViewCell {
         windButton.translatesAutoresizingMaskIntoConstraints = false
         windButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 100).isActive = true
         windButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        windButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3).isActive = true
+        windButton.bottomAnchor.constraint(equalTo: windDirectionLabel.bottomAnchor, constant: 10).isActive = true
         windButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.55).isActive = true
 
         // WIND SPEED:
 
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedLabel.centerXAnchor.constraint(equalTo: windButton.centerXAnchor).isActive = true
-        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 10).isActive = true
-        windSpeedLabel.heightAnchor.constraint(equalTo: windButton.heightAnchor, multiplier: 0.6).isActive = true
+        windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 15).isActive = true
         windSpeedLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
 
         // WIND GUST:
 
         windGustLabel.translatesAutoresizingMaskIntoConstraints = false
         windGustLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        windGustLabel.bottomAnchor.constraint(equalTo: windDirectionLabel.topAnchor, constant: -5).isActive = true
-        windGustLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        windGustLabel.topAnchor.constraint(equalTo: windSpeedLabel.bottomAnchor, constant: 5).isActive = true
         windGustLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
 
         // WIND DIRECTION:
 
         windDirectionLabel.translatesAutoresizingMaskIntoConstraints = false
         windDirectionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        windDirectionLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        windDirectionLabel.topAnchor.constraint(equalTo: windGustLabel.bottomAnchor, constant: 1).isActive = true
         windDirectionLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
-        windDirectionLabel.bottomAnchor.constraint(equalTo: windButton.bottomAnchor, constant: -10).isActive = true
+
 
         // MARK: - TEMPERATURE BUTTON:
 
         temperatureButton.translatesAutoresizingMaskIntoConstraints = false
         temperatureButton.topAnchor.constraint(equalTo: windButton.bottomAnchor, constant: 15).isActive = true
         temperatureButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        temperatureButton.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3).isActive = true
+        temperatureButton.bottomAnchor.constraint(equalTo: feelTemperatureLabel.bottomAnchor, constant: 10).isActive = true
         temperatureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.65).isActive = true
 
         // CURRENT TEMPERATURE:
 
         currentTemperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         currentTemperatureLabel.centerXAnchor.constraint(equalTo: temperatureButton.centerXAnchor).isActive = true
-        currentTemperatureLabel.topAnchor.constraint(equalTo: temperatureButton.topAnchor, constant: 30).isActive = true
+        currentTemperatureLabel.topAnchor.constraint(equalTo: temperatureButton.topAnchor, constant: 20).isActive = true
         currentTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
 
         // DESCRIPTION:
 
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: currentTemperatureLabel.bottomAnchor, constant: 5).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: currentTemperatureLabel.bottomAnchor, constant: 0).isActive = true
         descriptionLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
 
         // FEEL TEMPERATURE:
 
         feelTemperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         feelTemperatureLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        feelTemperatureLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 5).isActive = true
+        feelTemperatureLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 1).isActive = true
         feelTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: - HUMIDITY BUTTON:
@@ -486,7 +485,6 @@ class WeatherCell: UITableViewCell {
         vibrationOn.vibrationStandart()
         guard let coordinate = locationManager.location?.coordinate else { return }
         let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-
         mapView.setRegion(coordinateRegion, animated: true)
     }
 

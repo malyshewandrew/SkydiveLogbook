@@ -50,7 +50,6 @@ class DropZonesVC: UIViewController {
     // MARK: - CONFIGURE UI:
     
     private func configureUI() {
-        
         navigationController?.navigationBar.isHidden = false
         
         // MARK: INFO VIEW:
@@ -64,17 +63,40 @@ class DropZonesVC: UIViewController {
     // MARK: - CONFIGURE DROP ZONES:
     
     private func configurePoints() {
+        
+        // BELARUS:
         let lipki = MKPointAnnotation()
         lipki.coordinate = CLLocationCoordinate2D(latitude: 53.909962, longitude: 27.703807)
         lipki.title = "Lipki"
         lipki.subtitle = "Skydive Minsk"
         mapView.addAnnotation(lipki)
 
-        let skydiveDubai = MKPointAnnotation()
-        skydiveDubai.coordinate = CLLocationCoordinate2D(latitude: 25.091480, longitude: 55.135047)
-        skydiveDubai.title = "Skydive Dubai"
-        skydiveDubai.subtitle = "Palm"
-        mapView.addAnnotation(skydiveDubai)
+        // UNITED ARAB EMIRATES:
+        let skydiveDubaiPalm = MKPointAnnotation()
+        skydiveDubaiPalm.coordinate = CLLocationCoordinate2D(latitude: 25.091480, longitude: 55.135047)
+        skydiveDubaiPalm.title = "Skydive Dubai"
+        skydiveDubaiPalm.subtitle = "The Palm At Skydive Dubai"
+        mapView.addAnnotation(skydiveDubaiPalm)
+        
+        let skydiveDubaiDesert = MKPointAnnotation()
+        skydiveDubaiDesert.coordinate = CLLocationCoordinate2D(latitude: 24.885379, longitude: 55.548078)
+        skydiveDubaiDesert.title = "Skydive Dubai"
+        skydiveDubaiDesert.subtitle = "The Desert Campus at Skydive Dubai"
+        mapView.addAnnotation(skydiveDubaiDesert)
+        
+        // USA: HAWAII:
+        let skydiveHawaii = MKPointAnnotation()
+        skydiveHawaii.coordinate = CLLocationCoordinate2D(latitude: 24.885379, longitude: 55.548078)
+        skydiveHawaii.title = "Hawaii"
+        skydiveHawaii.subtitle = "Skydive Hawaii"
+        mapView.addAnnotation(skydiveHawaii)
+        
+        // USA: CALIFORNIA:
+        let bayAreaSkydiving = MKPointAnnotation()
+        bayAreaSkydiving.coordinate = CLLocationCoordinate2D(latitude: 37.835015, longitude: -121.632784)
+        bayAreaSkydiving.title = "Bay Area Skydiving"
+        bayAreaSkydiving.subtitle = "California"
+        mapView.addAnnotation(bayAreaSkydiving)
     }
     
     // MARK: - HELPERS:

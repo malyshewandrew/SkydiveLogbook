@@ -31,6 +31,7 @@ final class SettingsCell: UITableViewCell {
     private let instagramButton = UIButton()
     private let infoLabel = UILabel()
     var delegate: SettingsCellDelegate?
+    private let vibrationOn = Vibration()
 
     // MARK: - LIFECYCLE:
 
@@ -309,6 +310,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: FUNC FOR INSTAGRAM BUTTON:
 
     @objc private func instagramButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapInstagramButton()
     }
 
