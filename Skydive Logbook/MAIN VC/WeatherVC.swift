@@ -25,6 +25,8 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var windDirection: String = ""
     private var visibility: String = ""
     
+    private var rotationAngle: Int = 0
+    
     // MARK: - LIFECYCLE:
     
     override func viewDidLoad() {
@@ -142,6 +144,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.windDirection = "\(result.currentWeather.wind.compassDirection) (\(result.currentWeather.wind.direction))"
                 self.visibility = "\(Int(result.currentWeather.visibility.value / 1000)) \(NSLocalizedString("km", comment: ""))"
                 self.tableView.reloadData()
+                self.rotationAngle = Int(result.currentWeather.wind.direction.value)
             } catch {
                 print(String(describing: error))
             }
@@ -163,7 +166,7 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.backgroundColor = .clear
         cell.backgroundView = UIView()
         
-        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility)
+        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility, rotationAngle: rotationAngle)
         
         return cell
     }

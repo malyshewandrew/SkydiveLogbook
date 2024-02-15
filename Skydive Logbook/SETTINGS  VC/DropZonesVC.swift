@@ -9,6 +9,9 @@ class DropZonesVC: UIViewController {
     private let mapView = MKMapView()
     private let infoButton = UIButton()
     private let vibrationOn = Vibration()
+    private let locationManager = CLLocationManager()
+    private let currentLocationButton = UIButton()
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 35)
     
     // MARK: - LIFYCYCLE:
     
@@ -17,14 +20,16 @@ class DropZonesVC: UIViewController {
         addSubviews()
         configureConstraints()
         configureUI()
+        getUserLocation()
         configurePoints()
+        configureLocationManager()
     }
     
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
         view.addSubviews(mapView)
-        mapView.addSubviews(infoButton)
+        mapView.addSubviews(infoButton, currentLocationButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -38,26 +43,50 @@ class DropZonesVC: UIViewController {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
+        // MARK: CURRENT LOCATION BUTTON:
+
+        currentLocationButton.translatesAutoresizingMaskIntoConstraints = false
+        currentLocationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -150).isActive = true
+        currentLocationButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10).isActive = true
+        
         // MARK: INFO VIEW:
 
         infoButton.translatesAutoresizingMaskIntoConstraints = false
-        infoButton.centerYAnchor.constraint(equalTo: mapView.centerYAnchor).isActive = true
-        infoButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -15).isActive = true
-        infoButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        infoButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        infoButton.bottomAnchor.constraint(equalTo: currentLocationButton.topAnchor, constant: -20).isActive = true
+        infoButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
     
     private func configureUI() {
+        
+        // MARK: NAVIGATION CONTROLLER:
         navigationController?.navigationBar.isHidden = false
+        
+        // MARK: MAP VIEW:
+        mapView.showsScale = true
+        mapView.showsCompass = true
+        let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
+        mapView.preferredConfiguration = mapConfigurator
         
         // MARK: INFO VIEW:
 
-        let configurator = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
-        let image = UIImage(systemName: "info.circle.fill", withConfiguration: configurator)
-        infoButton.setImage(image, for: .normal)
+        infoButton.setImage(UIImage(systemName: "info.circle.fill", withConfiguration: configurationImage), for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+        
+        // MARK: CURRENT LOCATION BUTTON:
+
+        currentLocationButton.setImage(UIImage(systemName: "location.circle.fill", withConfiguration: configurationImage), for: .normal)
+        currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
+
+    }
+    
+    // MARK: GET USER LOCATION:
+    
+    func getUserLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
     
     // MARK: - CONFIGURE DROP ZONES:
@@ -86,7 +115,7 @@ class DropZonesVC: UIViewController {
         
         // USA: HAWAII:
         let skydiveHawaii = MKPointAnnotation()
-        skydiveHawaii.coordinate = CLLocationCoordinate2D(latitude: 24.885379, longitude: 55.548078)
+        skydiveHawaii.coordinate = CLLocationCoordinate2D(latitude: 21.5788317518325, longitude: -158.180809021)
         skydiveHawaii.title = "Hawaii"
         skydiveHawaii.subtitle = "Skydive Hawaii"
         mapView.addAnnotation(skydiveHawaii)
@@ -99,7 +128,23 @@ class DropZonesVC: UIViewController {
         mapView.addAnnotation(bayAreaSkydiving)
     }
     
+    // MARK: CONFIGURE LOCATION MANAGER:
+
+    private func configureLocationManager() {
+        mapView.showsUserLocation = true
+    }
+    
     // MARK: - HELPERS:
+    
+    // MARK: FUNC FOR CURRENT LOCATION:
+
+    @objc private func currentLocationButtonTapped() {
+        guard let cordinate = locationManager.location?.coordinate else { return }
+        let coordinateRegion = MKCoordinateRegion(center: cordinate,
+                                                  latitudinalMeters: 250,
+                                                  longitudinalMeters: 250)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     
     // MARK: INFO BUTTON:
     
@@ -124,4 +169,8 @@ extension DropZonesVC: SFSafariViewControllerDelegate {
     func safariViewControllerWillOpenInBrowser(_ controller: SFSafariViewController) {
         print("Open in Safari app")
     }
+}
+
+extension DropZonesVC: CLLocationManagerDelegate {
+    
 }

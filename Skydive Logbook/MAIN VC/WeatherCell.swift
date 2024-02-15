@@ -31,12 +31,12 @@ class WeatherCell: UITableViewCell {
     private let precipitationButton = UIButton()
     private let pressureButton = UIButton()
 
-    private let mapView = MKMapView()
-    let locationManager = CLLocationManager()
-    private let currentLocationButton = UIButton()
-    
     private let vibrationOn = Vibration()
-    
+    private let mapView = MKMapView()
+    private let locationManager = CLLocationManager()
+    private let arrowImage = UIImageView()
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
+    private let currentLocationButton = UIButton()
 
     // MARK: - LIFECYCLE:
 
@@ -65,7 +65,7 @@ class WeatherCell: UITableViewCell {
         precipitationButton.addSubviews(precipitationLabel)
         visibilityButton.addSubviews(visibilityLabel)
         pressureButton.addSubviews(pressureLabel)
-        mapView.addSubview(currentLocationButton)
+        mapView.addSubviews(arrowImage, currentLocationButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -105,7 +105,6 @@ class WeatherCell: UITableViewCell {
         windDirectionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         windDirectionLabel.topAnchor.constraint(equalTo: windGustLabel.bottomAnchor, constant: 1).isActive = true
         windDirectionLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
-
 
         // MARK: - TEMPERATURE BUTTON:
 
@@ -227,13 +226,17 @@ class WeatherCell: UITableViewCell {
         mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
         mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
-        // CURRENT BUTTON:
+        // MARK: - CURRENT LOCATION BUTTON:
 
         currentLocationButton.translatesAutoresizingMaskIntoConstraints = false
-        currentLocationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -15).isActive = true
-        currentLocationButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -15).isActive = true
-        currentLocationButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        currentLocationButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        currentLocationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -5).isActive = true
+        currentLocationButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -5).isActive = true
+
+        // MARK: - ARROW IMAGE:
+
+        arrowImage.translatesAutoresizingMaskIntoConstraints = false
+        arrowImage.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
+        arrowImage.centerYAnchor.constraint(equalTo: mapView.centerYAnchor).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -468,25 +471,23 @@ class WeatherCell: UITableViewCell {
         // MARK: - MAP VIEW:
 
         mapView.layer.cornerRadius = cornerRadius15
+        mapView.showsScale = true
+        mapView.showsCompass = true
+        let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
+        mapView.preferredConfiguration = mapConfigurator
 
-        // CURRENT BUTTON:
+        // MARK: - CURRENT LOCATION BUTTON:
 
-        let configurator = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
-        let image = UIImage(systemName: "location.circle.fill", withConfiguration: configurator)
-        currentLocationButton.setImage(image, for: .normal)
+        currentLocationButton.setImage(UIImage(systemName: "location.circle.fill", withConfiguration: configurationImage), for: .normal)
         currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
+
+        // MARK: - ARROW IMAGE:
+
+        arrowImage.image = UIImage(systemName: "arrow.down", withConfiguration: configurationImage)
+        arrowImage.tintColor = .white
     }
 
     // MARK: - HELPERS:
-
-    // MARK: SETUP COORDINATE:
-
-    @objc func currentLocationButtonTapped(region: MKCoordinateRegion) {
-        vibrationOn.vibrationStandart()
-        guard let coordinate = locationManager.location?.coordinate else { return }
-        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
 
     // MARK: CONFIGURE LOCATION MANAGER:
 
@@ -494,9 +495,19 @@ class WeatherCell: UITableViewCell {
         mapView.showsUserLocation = true
     }
 
+    // MARK: FUNC FOR CURRENT LOCATION:
+
+    @objc private func currentLocationButtonTapped() {
+        guard let cordinate = locationManager.location?.coordinate else { return }
+        let coordinateRegion = MKCoordinateRegion(center: cordinate,
+                                                  latitudinalMeters: 250,
+                                                  longitudinalMeters: 250)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+
     // MARK: CONFIGURE MODEL:
 
-    func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, windSpeed: String, windGust: String, windDirection: String, visibility: String) {
+    func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, windSpeed: String, windGust: String, windDirection: String, visibility: String, rotationAngle: Int) {
         iconImageView.image = iconImage
 
         windSpeedLabel.text = windSpeed
@@ -514,5 +525,7 @@ class WeatherCell: UITableViewCell {
         pressureLabel.text = pressure
 
         visibilityLabel.text = visibility
+
+        arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle) * .pi / 180.0)
     }
 }
