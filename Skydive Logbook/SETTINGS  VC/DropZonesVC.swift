@@ -11,7 +11,7 @@ class DropZonesVC: UIViewController {
     private let vibrationOn = Vibration()
     private let locationManager = CLLocationManager()
     private let currentLocationButton = UIButton()
-    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 35)
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 40)
     
     // MARK: - LIFYCYCLE:
     
@@ -70,13 +70,14 @@ class DropZonesVC: UIViewController {
         mapView.preferredConfiguration = mapConfigurator
         
         // MARK: INFO BUTTON:
-
-        infoButton.setImage(UIImage(systemName: "info.circle.fill", withConfiguration: configurationImage), for: .normal)
+        let infoImage = UIImage(systemName: "info.square.fill", withConfiguration: configurationImage)?.withTintColor(.colorTabBar, renderingMode: .alwaysOriginal)
+        infoButton.setImage(infoImage, for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
         
         // MARK: CURRENT LOCATION BUTTON:
 
-        currentLocationButton.setImage(UIImage(systemName: "location.circle.fill", withConfiguration: configurationImage), for: .normal)
+        let locationImage = UIImage(systemName: "location.square.fill", withConfiguration: configurationImage)?.withTintColor(.colorTabBar, renderingMode: .alwaysOriginal)
+        currentLocationButton.setImage(locationImage, for: .normal)
         currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
 
     }

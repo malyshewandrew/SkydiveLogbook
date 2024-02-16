@@ -39,7 +39,7 @@ class WeatherCell: UITableViewCell {
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
     private let arrowImage = UIImageView()
-    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 40)
     private let currentLocationButton = UIButton()
     private let infoButton = UIButton()
     var delegate: WeatherCellDelegate?
@@ -214,7 +214,6 @@ class WeatherCell: UITableViewCell {
         pressureLabel.topAnchor.constraint(equalTo: pressureButton.topAnchor, constant: 20).isActive = true
         pressureLabel.bottomAnchor.constraint(equalTo: pressureButton.bottomAnchor, constant: -5).isActive = true
 
-
         // MARK: - PRECIPITATION BUTTON:
 
         precipitationButton.translatesAutoresizingMaskIntoConstraints = false
@@ -244,7 +243,7 @@ class WeatherCell: UITableViewCell {
         currentLocationButton.translatesAutoresizingMaskIntoConstraints = false
         currentLocationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -10).isActive = true
         currentLocationButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10).isActive = true
-        
+
         // MARK: INFO BUTTON:
 
         infoButton.translatesAutoresizingMaskIntoConstraints = false
@@ -371,7 +370,7 @@ class WeatherCell: UITableViewCell {
         humidityLabel.numberOfLines = 0
         humidityLabel.textAlignment = .center
         humidityLabel.adjustsFontSizeToFitWidth = true
-        
+
         // MARK: - CLOUD COVER BUTTON:
 
         let blurCloudCover = UIBlurEffect(style: .systemThinMaterialDark)
@@ -498,12 +497,14 @@ class WeatherCell: UITableViewCell {
 
         // MARK: - CURRENT LOCATION BUTTON:
 
-        currentLocationButton.setImage(UIImage(systemName: "location.circle.fill", withConfiguration: configurationImage), for: .normal)
+        let locationImage = UIImage(systemName: "location.square.fill", withConfiguration: configurationImage)?.withTintColor(.colorTabBar, renderingMode: .alwaysOriginal)
+        currentLocationButton.setImage(locationImage, for: .normal)
         currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
-        
+
         // MARK: - INFO BUTTON:
 
-        infoButton.setImage(UIImage(systemName: "info.circle.fill", withConfiguration: configurationImage), for: .normal)
+        let infoImage = UIImage(systemName: "info.square.fill", withConfiguration: configurationImage)?.withTintColor(.colorTabBar, renderingMode: .alwaysOriginal)
+        infoButton.setImage(infoImage, for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
 
         // MARK: - ARROW IMAGE:
@@ -523,9 +524,9 @@ class WeatherCell: UITableViewCell {
                                                   longitudinalMeters: 250)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    
+
     // MARK: INFO BUTTON:
-    
+
     @objc private func infoButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapInfoButton()
