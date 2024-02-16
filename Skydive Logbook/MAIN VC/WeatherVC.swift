@@ -47,7 +47,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        
         // MARK: WEATHER BACKGROUND:
 
         weatherBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -161,13 +160,20 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as? WeatherCell else { return UITableViewCell() }
-        
         cell.backgroundColor = .clear
         cell.contentView.backgroundColor = .clear
         cell.backgroundView = UIView()
-        
+        cell.delegate = self
         cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility, rotationAngle: rotationAngle)
-        
         return cell
+    }
+}
+
+extension WeatherVC: WeatherCellDelegate {
+    func tapInfoButton() {
+        let alert = UIAlertController(title: NSLocalizedString("Wind direction", comment: ""), message: NSLocalizedString("Arrow wind direction", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
 }

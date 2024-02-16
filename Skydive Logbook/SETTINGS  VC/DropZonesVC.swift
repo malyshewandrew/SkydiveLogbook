@@ -48,7 +48,7 @@ class DropZonesVC: UIViewController {
         currentLocationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -150).isActive = true
         currentLocationButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10).isActive = true
         
-        // MARK: INFO VIEW:
+        // MARK: INFO BUTTON:
 
         infoButton.translatesAutoresizingMaskIntoConstraints = false
         infoButton.bottomAnchor.constraint(equalTo: currentLocationButton.topAnchor, constant: -20).isActive = true
@@ -69,7 +69,7 @@ class DropZonesVC: UIViewController {
         let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
         mapView.preferredConfiguration = mapConfigurator
         
-        // MARK: INFO VIEW:
+        // MARK: INFO BUTTON:
 
         infoButton.setImage(UIImage(systemName: "info.circle.fill", withConfiguration: configurationImage), for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)

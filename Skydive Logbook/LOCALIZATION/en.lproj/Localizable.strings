@@ -88,6 +88,9 @@
 "Pressure / weather" = "Pressure";
 "It feels like / weather" = "It feels like";
 
+"Wind direction" = "Wind direction";
+"Arrow wind direction" = "The arrow shows the direction of the wind near the ground in the place where you are";
+
 // MARK: - Statistic:
 
 "no jumps" = "To display statistics, you need to make at least one jump.";
