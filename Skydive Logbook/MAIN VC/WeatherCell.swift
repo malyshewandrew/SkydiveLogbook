@@ -45,7 +45,7 @@ class WeatherCell: UITableViewCell {
         addSubvies()
         configureConstraints()
         configureUI()
-        configureLocationManager()
+        currentLocationButtonTapped()
     }
 
     @available(*, unavailable)
@@ -470,6 +470,7 @@ class WeatherCell: UITableViewCell {
 
         // MARK: - MAP VIEW:
 
+        mapView.showsUserLocation = true
         mapView.layer.cornerRadius = cornerRadius15
         mapView.showsScale = true
         mapView.showsCompass = true
@@ -489,12 +490,6 @@ class WeatherCell: UITableViewCell {
 
     // MARK: - HELPERS:
 
-    // MARK: CONFIGURE LOCATION MANAGER:
-
-    private func configureLocationManager() {
-        mapView.showsUserLocation = true
-    }
-
     // MARK: FUNC FOR CURRENT LOCATION:
 
     @objc private func currentLocationButtonTapped() {
@@ -509,23 +504,18 @@ class WeatherCell: UITableViewCell {
 
     func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, windSpeed: String, windGust: String, windDirection: String, visibility: String, rotationAngle: Int) {
         iconImageView.image = iconImage
-
         windSpeedLabel.text = windSpeed
         windGustLabel.text = windGust
         windDirectionLabel.text = windDirection
-
         currentTemperatureLabel.text = currentTemperature
         descriptionLabel.text = description
         feelTemperatureLabel.text = NSLocalizedString("It feels like / weather", comment: "") + " " + feelTemperature
-
         cloudCoverLabel.text = cloudCover
         humidityLabel.text = humidity
         dewPointLabel.text = dewPoint
         precipitationLabel.text = precipitation
         pressureLabel.text = pressure
-
         visibilityLabel.text = visibility
-
         arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle) * .pi / 180.0)
     }
 }

@@ -22,7 +22,6 @@ class DropZonesVC: UIViewController {
         configureUI()
         getUserLocation()
         configurePoints()
-        configureLocationManager()
     }
     
     // MARK: - ADD SUBVIEWS:
@@ -64,6 +63,7 @@ class DropZonesVC: UIViewController {
         navigationController?.navigationBar.isHidden = false
         
         // MARK: MAP VIEW:
+        mapView.showsUserLocation = true
         mapView.showsScale = true
         mapView.showsCompass = true
         let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
@@ -128,12 +128,6 @@ class DropZonesVC: UIViewController {
         mapView.addAnnotation(bayAreaSkydiving)
     }
     
-    // MARK: CONFIGURE LOCATION MANAGER:
-
-    private func configureLocationManager() {
-        mapView.showsUserLocation = true
-    }
-    
     // MARK: - HELPERS:
     
     // MARK: FUNC FOR CURRENT LOCATION:
@@ -151,13 +145,7 @@ class DropZonesVC: UIViewController {
     @objc private func infoButtonTapped() {
         vibrationOn.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Drop Zones / drop zones", comment: ""), message: NSLocalizedString("Message / drop zones", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Write / drop zone", comment: ""), style: .default, handler: { _ in
-            guard let url = URL(string: "https://instagram.com/skydivelogbook") else { return }
-            let safariViewController = SFSafariViewController(url: url)
-            safariViewController.delegate = self
-            self.present(safariViewController, animated: true)
-        }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { _ in
         }))
         present(alert, animated: true)
     }
