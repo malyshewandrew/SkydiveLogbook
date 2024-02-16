@@ -492,6 +492,7 @@ class WeatherCell: UITableViewCell {
         mapView.layer.cornerRadius = cornerRadius15
         mapView.showsScale = true
         mapView.showsCompass = true
+        mapView.isRotateEnabled = false
         let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
         mapView.preferredConfiguration = mapConfigurator
 

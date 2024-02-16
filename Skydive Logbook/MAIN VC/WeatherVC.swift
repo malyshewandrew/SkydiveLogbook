@@ -77,6 +77,8 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         
         view.backgroundColor = .colorWeather
         
+        // MARK: LOTTIE ANIMATION:
+        
         // MARK: WEATHER BACKGROUND:
         
         weatherBackgroundLottie.play()
