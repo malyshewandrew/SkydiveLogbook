@@ -330,7 +330,7 @@
 "Count / new system cell" = "Number";
 
 "Comment / new system cell" = "Comment";
-"Optional / new system cell" = "Optional";
+"Optional / new system cell" = "Optional (condition of the lines etc.)";
 
 // MARK: - SETTINGS:
 

@@ -254,7 +254,7 @@ class WeatherCell: UITableViewCell {
 
         arrowImage.translatesAutoresizingMaskIntoConstraints = false
         arrowImage.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
-        arrowImage.centerYAnchor.constraint(equalTo: mapView.centerYAnchor).isActive = true
+        arrowImage.centerYAnchor.constraint(equalTo: mapView.centerYAnchor, constant: 10).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -498,8 +498,8 @@ class WeatherCell: UITableViewCell {
         
         // MARK: - ARROW IMAGE:
 
-        arrowImage.image = UIImage(systemName: "arrowshape.down.fill", withConfiguration: configurationImage)
-        arrowImage.tintColor = .colorLightBlue
+        arrowImage.image = UIImage(systemName: "arrow.down", withConfiguration: configurationImage)
+        arrowImage.tintColor = .colorTabBar
 
         // MARK: - INFO BUTTON:
 

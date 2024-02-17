@@ -330,7 +330,7 @@
 "Count / new system cell" = "Число";
 
 "Comment / new system cell" = "Комментарий";
-"Optional / new system cell" = "Опционально";
+"Optional / new system cell" = "Опционально (состояние строп и т.д.)";
 
 // MARK: - SETTINGS:
 
