@@ -1133,12 +1133,12 @@ final class StatisticCell: UITableViewCell {
 
         missionsOneLabel.text = """
         \(arrayJumpsAccuracy.count): \(NSLocalizedString("Accuracy", comment: ""))
-        \(arrayJumpsAcrobatic.count): \(NSLocalizedString("Acrobatics", comment: "")):
+        \(arrayJumpsAcrobatic.count): \(NSLocalizedString("Acrobatics", comment: ""))
         \(arrayJumpsAff.count): \(NSLocalizedString("AFF", comment: ""))
         \(arrayJumpsBase.count): \(NSLocalizedString("Base", comment: ""))
         \(arrayJumpsBaseWingsuit.count): \(NSLocalizedString("Base/Wingsuit", comment: ""))
         \(arrayJumpsCanopyFormation.count): \(NSLocalizedString("Canopy formation", comment: ""))
-        \(arrayJumpsFreeFly.count): \(NSLocalizedString("Freefly", comment: "")):
+        \(arrayJumpsFreeFly.count): \(NSLocalizedString("Freefly", comment: ""))
         \(arrayJumpsFreeStyle.count): \(NSLocalizedString("Freestyle", comment: ""))
         \(arrayJumpsFun.count): \(NSLocalizedString("Fun", comment: ""))
         \(arrayJumpsGroup.count): \(NSLocalizedString("Group", comment: ""))

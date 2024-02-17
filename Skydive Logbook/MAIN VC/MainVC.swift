@@ -31,14 +31,6 @@ final class MainVC: UIViewController {
     private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
 
-    // MARK: REFRESH CONTROL:
-
-    private var tableRefreshControl: UIRefreshControl {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refreshControlTapped), for: .valueChanged)
-        return refreshControl
-    }
-
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
@@ -264,7 +256,6 @@ final class MainVC: UIViewController {
         tableView.isHidden = true
         tableView.backgroundColor = .colorBackground
         tableView.separatorStyle = .none
-        tableView.refreshControl = tableRefreshControl
     }
 
     // MARK: - LOAD JUMPS FROM REALM:
@@ -533,24 +524,6 @@ final class MainVC: UIViewController {
             style: .iOS17AppleMusic,
             haptic: .success
         )
-    }
-
-    // MARK: ALERT KIT REFRESH:
-
-    private func alertKitRefresh() {
-        AlertKitAPI.present(
-            title: "Ready! Set! Go!",
-            icon: .none,
-            style: .iOS17AppleMusic,
-            haptic: .success
-        )
-    }
-
-    // MARK: REFRESH CONTROL:
-
-    @objc private func refreshControlTapped(sender: UIRefreshControl) {
-        alertKitRefresh()
-        sender.endRefreshing()
     }
 }
 

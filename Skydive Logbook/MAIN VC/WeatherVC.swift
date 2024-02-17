@@ -138,7 +138,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) \(NSLocalizedString("m/s", comment: ""))"
                 if let gustValue = result.currentWeather.wind.gust?.value {
                     let gustSpeed = gustValue / 3.6
-                    self.windGust = "\(NSLocalizedString("Gusts up to", comment: "")) \(String(format: "%.2f", gustSpeed)) \(NSLocalizedString("m/s", comment: ""))"
+                    self.windGust = "\(NSLocalizedString("Gusts up to", comment: "")) \(String(Int(gustSpeed))) \(NSLocalizedString("m/s", comment: ""))"
                 } else {
                     self.windGust = "\(NSLocalizedString("Gusts up to", comment: "")) \(NSLocalizedString("N/A", comment: ""))"
                 }
