@@ -1,4 +1,5 @@
 import RealmSwift
+import SwiftUI
 import UIKit
 import WeatherKit
 
@@ -83,6 +84,12 @@ final class StatisticCell: UITableViewCell {
     private let missionsTwoView = UIView()
     private let contentViewTwoView = UIView()
     
+    private let hostingController: UIHostingController<ChartView> = {
+        let viewController = UIHostingController(rootView: ChartView(arrayJumpsRealm: arrayJumpsRealm))
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        return viewController
+    }()
+    
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -91,6 +98,7 @@ final class StatisticCell: UITableViewCell {
         configureConstrains()
         configureUI()
         reloadData()
+        setupChart()
     }
     
     override func prepareForReuse() {
@@ -777,11 +785,22 @@ final class StatisticCell: UITableViewCell {
         
         // MARK: CONTENT VIEW TWO VIEW:
 
-        contentViewTwoView.backgroundColor = .yellow
+        contentViewTwoView.backgroundColor = .clear
         
         // MARK: ACTIVITY INDICATOR:
 
         activityIndicator.hidesWhenStopped = true
+    }
+    
+    // MARK: - SETUP CHART:
+
+    private func setupChart() {
+        contentViewTwoView.addSubview(hostingController.view)
+        hostingController.view.topAnchor.constraint(equalTo: contentViewTwoView.topAnchor, constant: 5).isActive = true
+        hostingController.view.leadingAnchor.constraint(equalTo: contentViewTwoView.leadingAnchor, constant: 5).isActive = true
+        hostingController.view.trailingAnchor.constraint(equalTo: contentViewTwoView.trailingAnchor, constant: -5).isActive = true
+        hostingController.view.bottomAnchor.constraint(equalTo: contentViewTwoView.bottomAnchor, constant: -5).isActive = true
+        hostingController.view.backgroundColor = .colorCell
     }
     
     // MARK: - HELPERS:
