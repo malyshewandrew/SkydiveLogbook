@@ -26,6 +26,11 @@ protocol StatisticCellDelegate {
 final class StatisticCell: UITableViewCell {
     // MARK: - PROPERTIES:
     
+    var delegate: StatisticCellDelegate?
+    private let vibrationOn = Vibration()
+    private let dateFormatter = DateFormatter()
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
+    
     private let generalInfoButton = UIButton()
     private let generalInfoLabel = UILabel()
 
@@ -73,14 +78,10 @@ final class StatisticCell: UITableViewCell {
     private let topMissionsLabel = UILabel()
     private let missionsViewButton = UIButton()
     
-    private let missionsTwoView = UIView()
-    
     private var isFlippedMissionsView = false
-    private let activityIndicator = UIActivityIndicatorView(style: .medium)
-    
-    private let vibrationOn = Vibration()
-    let dateFormatter = DateFormatter()
-    var delegate: StatisticCellDelegate?
+
+    private let missionsTwoView = UIView()
+    private let contentViewTwoView = UIView()
     
     // MARK: - LIFECYCLE:
 
@@ -131,7 +132,7 @@ final class StatisticCell: UITableViewCell {
         missionsOneView.addSubviews(missionsButton, topMissionsButton)
         missionsButton.addSubviews(missionsOneLabel, missionsTwoLabel)
         topMissionsButton.addSubview(topMissionsLabel)
-        missionsTwoView.addSubviews()
+        missionsTwoView.addSubviews(contentViewTwoView)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -441,6 +442,13 @@ final class StatisticCell: UITableViewCell {
         missionsTwoView.heightAnchor.constraint(equalTo: totalJumpsButton.heightAnchor, multiplier: 2).isActive = true
         missionsTwoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         
+        // MARK: CONTENT VIEW TWO VIEW:
+
+        contentViewTwoView.translatesAutoresizingMaskIntoConstraints = false
+        contentViewTwoView.topAnchor.constraint(equalTo: missionsTwoView.topAnchor, constant: 5).isActive = true
+        contentViewTwoView.leadingAnchor.constraint(equalTo: missionsTwoView.leadingAnchor, constant: 5).isActive = true
+        contentViewTwoView.trailingAnchor.constraint(equalTo: missionsTwoView.trailingAnchor, constant: -5).isActive = true
+        contentViewTwoView.bottomAnchor.constraint(equalTo: missionsTwoView.bottomAnchor, constant: -5).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -766,6 +774,10 @@ final class StatisticCell: UITableViewCell {
         
         missionsTwoView.backgroundColor = .colorCell
         missionsTwoView.layer.cornerRadius = cornerRadius15
+        
+        // MARK: CONTENT VIEW TWO VIEW:
+
+        contentViewTwoView.backgroundColor = .yellow
         
         // MARK: ACTIVITY INDICATOR:
 

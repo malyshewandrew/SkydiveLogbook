@@ -126,6 +126,13 @@ class DropZonesVC: UIViewController {
         bayAreaSkydiving.title = "Bay Area Skydiving"
         bayAreaSkydiving.subtitle = "California"
         mapView.addAnnotation(bayAreaSkydiving)
+        
+        // LATVIA:
+        let skydiveLatvia = MKPointAnnotation()
+        skydiveLatvia.coordinate = CLLocationCoordinate2D(latitude: 57.48525478983592, longitude: 24.670893796301062)
+        skydiveLatvia.title = "Skydive Latvia"
+        skydiveLatvia.subtitle = "Langaci-Limbazi Airport Limbazu pagasts"
+        mapView.addAnnotation(skydiveLatvia)
     }
     
     // MARK: - HELPERS:

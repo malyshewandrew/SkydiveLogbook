@@ -24,7 +24,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var windGust: String = ""
     private var windDirection: String = ""
     private var visibility: String = ""
-    
     private var rotationAngle: Int = 0
     
     // MARK: - LIFECYCLE:

@@ -427,8 +427,12 @@ final class CalculatorVC: UIViewController {
     private func playSoundSucces() {
         let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
         guard let url = url else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        player.play()
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.play()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:

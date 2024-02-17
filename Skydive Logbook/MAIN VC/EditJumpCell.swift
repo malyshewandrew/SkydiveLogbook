@@ -629,8 +629,12 @@ final class EditJumpCell: UITableViewCell {
     private func playSoundSucces() {
         let url = Bundle.main.url(forResource: "Succes", withExtension: "mp3")
         guard let url = url else { return }
-        player = try! AVAudioPlayer(contentsOf: url)
-        player.play()
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.play()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     // MARK: DATE PICKER:
