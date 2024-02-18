@@ -1,5 +1,4 @@
 import RealmSwift
-import SwiftyStoreKit
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -65,16 +64,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
 
-        // MARK: - SWIFTY STORE KIT:
-
-        SwiftyStoreKit.completeTransactions { purchases in
-            for purchase in purchases {
-                if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {
-                    // Обработайте успешные покупки или восстановленные покупки здесь
-                    // Например, обновите статус подписки в вашем приложении
-                }
-            }
-        }
         // MARK: LOAD REALM DATA:
         loadRealmData()
     }

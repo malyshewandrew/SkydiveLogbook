@@ -1,6 +1,5 @@
 import Lottie
 import RealmSwift
-import SwiftyStoreKit
 import UIKit
 
 final class PremiumVC: UIViewController {
@@ -173,70 +172,20 @@ final class PremiumVC: UIViewController {
     // MARK: FUNC FOR BUY 1:
     
     @objc private func buy1ButtonTapped() {
-        print("TEST 1")
-        purchaseProduct()
+        print("TEST 1 month")
+
     }
     
     // MARK: FUNC FOR BUY 12:
     
     @objc private func buy12ButtonTapped() {
-        print("TEST 12")
-        purchaseProduct()
+        print("TEST 1 year")
     }
     
-    // MARK: PURCHASE PRODUCT:
 
-    func purchaseProduct() {
-        let productId = "your_product_id" // Замените на свой идентификатор товара
-
-        SwiftyStoreKit.purchaseProduct(productId) { result in
-            switch result {
-            case .success(let purchase):
-                // Покупка успешно завершена
-                print("Purchase Success: \(purchase.productId)")
-            // Добавьте код для предоставления пользователю доступа к функциональности после покупки
-            case .error(let error):
-                // Произошла ошибка при покупке
-                print("Purchase Failed: \(error)")
-            // Добавьте код для обработки ошибки
-            case .deferred(purchase: let purchase):
-                print("Purchase \(purchase)")
-            }
-        }
-    }
-    
     // MARK: FUNC FOR ALERT RESTORE BUTTON:
 
     @objc private func restoreButtonTapped() {
-        SwiftyStoreKit.restorePurchases { results in
-            if results.restoreFailedPurchases.isEmpty {
-                // Восстановление завершено успешно
-                self.showRestoreSuccessAlert()
-            } else if results.restoreFailedPurchases.count > 0 {
-                // Произошла ошибка при восстановлении каких-то покупок
-                self.showRestoreErrorAlert()
-            } else {
-                // Нет предыдущих покупок для восстановления
-                self.showNoPurchasesToRestoreAlert()
-            }
-        }
-    }
-
-    private func showRestoreSuccessAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("Restore Successful", comment: ""), message: NSLocalizedString("All purchases have been successfully restored.", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: nil))
-        present(alert, animated: true)
-    }
-
-    private func showRestoreErrorAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("Restore Failed", comment: ""), message: NSLocalizedString("Some purchases could not be restored. Please try again later.", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: nil))
-        present(alert, animated: true)
-    }
-
-    private func showNoPurchasesToRestoreAlert() {
-        let alert = UIAlertController(title: NSLocalizedString("No Purchases to Restore", comment: ""), message: NSLocalizedString("There are no previous purchases to restore.", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: nil))
-        present(alert, animated: true)
+        print("Restore check")
     }
 }

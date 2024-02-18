@@ -397,8 +397,8 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 "1 month" = "$9.99 / Month";
 "12 months" = "$49.99 / Year\n($4.16/month)";
 "Restore purchases" = "Restore purchases";
-"Buy status" = "Buy find / buy no find";
 
+"Buy status" = "Buy find / buy no find";
 "Restore Successful" = "Restore Successful";
 "All purchases have been successfully restored." = "All purchases have been successfully restored.";
 "Restore Failed" = "Restore Failed";

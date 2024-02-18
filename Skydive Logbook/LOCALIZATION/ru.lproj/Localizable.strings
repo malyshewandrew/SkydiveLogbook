@@ -397,8 +397,8 @@
 "1 month" = "$9.99 / Месяц";
 "12 months" = "$49.99 / Год\n($4.16/месяц)";
 "Restore purchases" = "Восстановить покупки";
-"Buy status" = "Покупка найдена / не найдена.";
 
+"Buy status" = "Покупка найдена / не найдена.";
 "Restore Successful" = "Восстановление прошло успешно";
 "All purchases have been successfully restored." = "Все покупки были успешно восстановлены.";
 "Restore Failed" = "Не удалось восстановить";
