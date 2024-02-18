@@ -40,7 +40,6 @@ struct ChartView: View {
                     )
                 }
             }
-
         }
         .frame(maxHeight: .infinity)
         .foregroundStyle(.green)
@@ -53,7 +52,6 @@ struct Test2View_Previews: PreviewProvider {
         return ChartView(arrayJumpsRealm: jumps)
     }
 }
-
 
 #Preview {
     let jumps: [JumpClassRealm] = []
