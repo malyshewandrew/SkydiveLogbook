@@ -84,12 +84,6 @@ final class StatisticCell: UITableViewCell {
     private let missionsTwoView = UIView()
     private let contentViewTwoView = UIView()
     
-    private let hostingController: UIHostingController<ChartView> = {
-        let viewController = UIHostingController(rootView: ChartView(arrayJumpsRealm: arrayJumpsRealm))
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        return viewController
-    }()
-    
     // MARK: - LIFECYCLE:
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -103,6 +97,7 @@ final class StatisticCell: UITableViewCell {
     
     override func prepareForReuse() {
         reloadData()
+        setupChart()
     }
 
     @available(*, unavailable)
@@ -795,6 +790,11 @@ final class StatisticCell: UITableViewCell {
     // MARK: - SETUP CHART:
 
     private func setupChart() {
+        let hostingController: UIHostingController<ChartView> = {
+            let viewController = UIHostingController(rootView: ChartView(arrayJumpsRealm: arrayJumpsRealm))
+            viewController.view.translatesAutoresizingMaskIntoConstraints = false
+            return viewController
+        }()
         contentViewTwoView.addSubview(hostingController.view)
         hostingController.view.topAnchor.constraint(equalTo: contentViewTwoView.topAnchor, constant: 5).isActive = true
         hostingController.view.leadingAnchor.constraint(equalTo: contentViewTwoView.leadingAnchor, constant: 5).isActive = true
