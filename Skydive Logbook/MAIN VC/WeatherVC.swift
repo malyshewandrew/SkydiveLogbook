@@ -20,6 +20,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var dewPoint: String = ""
     private var precipitation: String = ""
     private var pressure: String = ""
+    private var uvIndex: String = ""
     private var windSpeed: String = ""
     private var windGust: String = ""
     private var windDirection: String = ""
@@ -75,8 +76,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         // MARK: VIEW:
         
         view.backgroundColor = .colorWeather
-        
-        // MARK: LOTTIE ANIMATION:
         
         // MARK: WEATHER BACKGROUND:
         
@@ -134,6 +133,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.dewPoint = "\(Int(result.currentWeather.dewPoint.value))\(result.currentWeather.temperature.unit.symbol)"
                 self.precipitation = "\(result.currentWeather.precipitationIntensity.value) \(NSLocalizedString("mm/h", comment: ""))"
                 self.pressure = "\(Int(result.currentWeather.pressure.value)) \(NSLocalizedString("hPa", comment: ""))"
+                self.uvIndex = "\(result.currentWeather.uvIndex.category): \(result.currentWeather.uvIndex.value)"
                 self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) \(NSLocalizedString("m/s", comment: ""))"
                 if let gustValue = result.currentWeather.wind.gust?.value {
                     let gustSpeed = gustValue / 3.6
@@ -165,13 +165,50 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.backgroundColor = .clear
         cell.backgroundView = UIView()
         cell.delegate = self
-        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility, rotationAngle: rotationAngle)
+        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, uvIndex: uvIndex, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility, rotationAngle: rotationAngle)
         return cell
     }
 }
 
 extension WeatherVC: WeatherCellDelegate {
-    func tapInfoButton() {
+    
+    func tapWindOverlayButton() {
+        print("wind")
+    }
+    
+    func taptemperatureOverlayButton() {
+        print("temp")
+    }
+    
+    func tapCloudCoverOverlayButton() {
+        print("cloud cover")
+    }
+    
+    func tapHumidityOverlayButton() {
+        print("humid")
+    }
+    
+    func tapDewPointOverlayButton() {
+        print("dew point")
+    }
+    
+    func tapPrecipitationOverlayButton() {
+        print("precip")
+    }
+    
+    func tapPressureOverlayButton() {
+        print("press")
+    }
+    
+    func tapUvIndexOverlayButton() {
+        print("uv")
+    }
+    
+    func tapVisibilityOverlayButton() {
+        print("visib")
+    }
+    
+    func tapWindInfoButton() {
         let alert = UIAlertController(title: NSLocalizedString("Wind direction", comment: ""), message: NSLocalizedString("Arrow wind direction", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { _ in
         }))

@@ -86,6 +86,7 @@
 "Visibility / weather" = "Visibility";
 "Precipitation / weather" = "Precipitation";
 "Pressure / weather" = "Pressure";
+"UvIndex / weather" = "UV index";
 "It feels like / weather" = "It feels like";
 
 "Wind direction" = "Wind direction";

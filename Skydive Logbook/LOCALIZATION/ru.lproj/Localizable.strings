@@ -86,6 +86,7 @@
 "Visibility / weather" = "Видимость";
 "Precipitation / weather" = "Осадки";
 "Pressure / weather" = "Давление";
+"UvIndex / weather" = "УФ индекс";
 "It feels like / weather" = "По ощущениям";
 
 "Wind direction" = "Направление ветра";
