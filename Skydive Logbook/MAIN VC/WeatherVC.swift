@@ -6,7 +6,8 @@ import WeatherKit
 class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - PROPERTIES:
     
-    private let weatherBackgroundLottie = LottieAnimationView(name: "WeatherBackground")
+    private let weatherNightBackgroundLottie = LottieAnimationView(name: "WeatherNightBackground")
+    private let weatherDayBackgroundLottie = LottieAnimationView(name: "WeatherDayBackground")
     private let locationManager = CLLocationManager()
     private let service = WeatherService()
     private let tableView = UITableView()
@@ -27,6 +28,8 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var visibility: String = ""
     private var rotationAngle: Int = 0
     
+    private var condition: WeatherCondition?
+    
     // MARK: - LIFECYCLE:
     
     override func viewDidLoad() {
@@ -41,19 +44,27 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(weatherBackgroundLottie, tableView)
+        view.addSubviews(weatherNightBackgroundLottie, weatherDayBackgroundLottie, tableView)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WEATHER BACKGROUND:
+        // MARK: WEATHER NIGHT BACKGROUND:
 
-        weatherBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        weatherBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
-        weatherBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        weatherBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        weatherBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        weatherNightBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+        weatherNightBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherNightBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherNightBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherNightBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        // MARK: WEATHER DAY BACKGROUND:
+
+        weatherDayBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+        weatherDayBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherDayBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherDayBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherDayBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         // MARK: TABLE VIEW:
         
@@ -75,14 +86,12 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         
         // MARK: VIEW:
         
-        view.backgroundColor = .colorWeather
+        view.backgroundColor = .colorBackground
         
-        // MARK: WEATHER BACKGROUND:
+        // MARK: LOTTIE BACKGROUNDS:
         
-        weatherBackgroundLottie.play()
-        weatherBackgroundLottie.loopMode = .loop
-        weatherBackgroundLottie.animationSpeed = 0.5
-        weatherBackgroundLottie.contentMode = .scaleAspectFill
+        weatherDayBackgroundLottie.isHidden = true
+        weatherNightBackgroundLottie.isHidden = true
         
         // MARK: TABLE VIEW:
         
@@ -98,6 +107,91 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         tableView.separatorStyle = .none
     }
     
+    // MARK: - CONFIGURE BACKGROUND:
+    
+    private func configureBackground() {
+        if let condition = condition {
+            switch condition {
+            case .blizzard:
+                print("Condition is blizzard")
+            case .blowingDust:
+                print("Condition is blowing dust")
+            case .blowingSnow:
+                print("Condition is blowing snow")
+            case .breezy:
+                print("Condition is breezy")
+            case .clear:
+                print("Condition is clear")
+            case .cloudy:
+                print("Condition is cloudy")
+//                weatherNightBackgroundLottie.isHidden = false
+//                weatherNightBackgroundLottie.play()
+//                weatherNightBackgroundLottie.loopMode = .loop
+            case .drizzle:
+                print("Condition is drizzle")
+            case .flurries:
+                print("Condition is flurries")
+            case .foggy:
+                print("Condition is foggy")
+            case .freezingDrizzle:
+                print("Condition is freezing drizzle")
+            case .freezingRain:
+                print("Condition is freezing rain")
+            case .frigid:
+                print("Condition is frigid")
+            case .hail:
+                print("Condition is hail")
+            case .haze:
+                print("Condition is haze")
+            case .heavyRain:
+                print("Condition is heavy rain")
+            case .heavySnow:
+                print("Condition is heavy snow")
+            case .hot:
+                print("Condition is hot")
+            case .hurricane:
+                print("Condition is hurricane")
+            case .isolatedThunderstorms:
+                print("Condition is isolated thunderstorms")
+            case .mostlyClear:
+                print("Condition is mostly clear")
+            case .mostlyCloudy:
+                print("Condition is mostly cloudy")
+            case .partlyCloudy:
+                print("Condition is partly cloudy")
+            case .rain:
+                print("Condition is rain")
+            case .scatteredThunderstorms:
+                print("Condition is scattered thunderstorms")
+            case .sleet:
+                print("Condition is sleet")
+            case .smoky:
+                print("Condition is smoky")
+            case .snow:
+                print("Condition is snow")
+            case .strongStorms:
+                print("Condition is strong storms")
+            case .sunFlurries:
+                print("Condition is sun flurries")
+            case .sunShowers:
+                print("Condition is sun showers")
+            case .thunderstorms:
+                print("Condition is thunderstorms")
+            case .tropicalStorm:
+                print("Condition is tropical storm")
+            case .windy:
+                print("Condition is windy")
+            case .wintryMix:
+                print("Condition is wintry mix")
+            @unknown default:
+                print("Unknown condition")
+                view.backgroundColor = .colorBackground
+            }
+        } else {
+            view.backgroundColor = .colorBackground
+        }
+    }
+
     // MARK: - HELPERS:
     
     // MARK: GET USER LOCATION:
@@ -145,6 +239,8 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.visibility = "\(Int(result.currentWeather.visibility.value / 1000)) \(NSLocalizedString("km", comment: ""))"
                 self.tableView.reloadData()
                 self.rotationAngle = Int(result.currentWeather.wind.direction.value)
+                self.condition = result.currentWeather.condition
+                configureBackground()
             } catch {
                 print(String(describing: error))
             }

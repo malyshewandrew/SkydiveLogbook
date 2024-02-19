@@ -90,7 +90,7 @@
 "It feels like / weather" = "It feels like";
 
 "Wind direction" = "Wind direction";
-"Arrow wind direction" = "The arrow shows the direction of the wind near the ground in the place where you are";
+"Arrow wind direction" = "The arrow shows the direction of the wind near the ground in the place where you are. It works only with an active Internet connection.";
 
 // MARK: - WEATHER ALERTS:
 

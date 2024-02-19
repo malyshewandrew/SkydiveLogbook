@@ -9,7 +9,7 @@ final class CalculatorVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
     private let calculatorLottie = LottieAnimationView(name: "Calculator")
-    private let calculatorBackgroundLottie = LottieAnimationView(name: "CalculatorBackground")
+//    private let calculatorBackgroundLottie = LottieAnimationView(name: "CalculatorBackground")
     private let weightTextField = UITextField()
     private let sizeCanopyTextField = UITextField()
     private let resultButton = UIButton()
@@ -39,7 +39,7 @@ final class CalculatorVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(calculatorBackgroundLottie, calculatorLottie, weightTextField, sizeCanopyTextField, resultButton, cleanButton, resultLabel, textView)
+        view.addSubviews(calculatorLottie, weightTextField, sizeCanopyTextField, resultButton, cleanButton, resultLabel, textView)
         textView.addSubview(resultTextLabel)
         resultLabel.addSubviews(viewLoadCategoryA, viewLoadCategoryB, viewLoadCategoryC, viewLoadCategoryD, viewLoadCategoryD1, viewLoadCategoryD2)
     }
@@ -50,11 +50,11 @@ final class CalculatorVC: UIViewController {
         
         // MARK: CALCULATOR BACKGROUND:
 
-        calculatorBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        calculatorBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
-        calculatorBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        calculatorBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        calculatorBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+//        calculatorBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+//        calculatorBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+//        calculatorBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        calculatorBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        calculatorBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         // MARK: ANIMATION:
 
@@ -194,10 +194,10 @@ final class CalculatorVC: UIViewController {
         
         // MARK: CALCULATOR BACKGROUND:
         
-        calculatorBackgroundLottie.play()
-        calculatorBackgroundLottie.loopMode = .loop
-        calculatorBackgroundLottie.animationSpeed = 0.5
-        calculatorBackgroundLottie.contentMode = .scaleAspectFill
+//        calculatorBackgroundLottie.play()
+//        calculatorBackgroundLottie.loopMode = .loop
+//        calculatorBackgroundLottie.animationSpeed = 0.5
+//        calculatorBackgroundLottie.contentMode = .scaleAspectFill
 
         // MARK: ANIMATION:
 
