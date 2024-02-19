@@ -280,9 +280,6 @@ Visibility at a distance of 10 km or higher is considered clear.";
 "Cutaway placeholder" = "No / Yes";
 "Comment placeholder" = "Optional";
 
-"Success / cell new jump" = "Success";
-"Error / cell new jump" = "Error";
-
 // MARK: - SYSTEM:
 
 "Add a new system" = "Add a new system";
@@ -449,10 +446,28 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 
 // MARK: - ALERT KIT:
 
+"Success / alert kit" = "Success";
+"Error / alert kit" = "Error";
+
+"Jump added / alert kit" = "Jump added";
 "Jump deleted / alert kit" = "Jump deleted";
 "Jump updated / alert kit" = "Jump updated";
 
 "Note added / alert kit" = "Note added";
+"Note deleted / alert kit" = "Note deleted";
 
-"Success / alert kit" = "Success";
-"Error / alert kit" = "Error";
+"System added / alert kit" = "System added";
+"System deleted / alert kit" = "System deleted";
+"System updated / alert kit" = "System updated";
+
+"Backup saved / alert kit" = "Копия saved";
+"Backup upload / alert kit" = "Backup upload";
+
+"Location added / alert kit" = "Локация добавлена";
+"Location deleted / alert kit" = "Локация удалена";
+
+"Aircraft added / alert kit" = "Aircraft added";
+"Aircraft deleted / alert kit" = "Aircraft deleted";
+
+"Canopy added / alert kit" = "Canopy added";
+"Canopy deleted / alert kit" = "Canopy deleted";

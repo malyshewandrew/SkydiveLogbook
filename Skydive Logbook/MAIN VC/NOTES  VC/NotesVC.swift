@@ -321,6 +321,17 @@ final class NotesVC: UIViewController {
             haptic: .success
         )
     }
+    
+    // MARK: ALERT KIT DELETED:
+
+    private func alertKitDeleted() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Note deleted / alert kit", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
 }
 
 // MARK: - EXTENSION FOR TABLE VIEW:
@@ -349,16 +360,13 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete note?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-                
                 try? self.realmManager.localRealm.write {
                     self.realmManager.localRealm.delete(deleteNote)
                 }
-                
                 self.loadNotes()
-
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
-                self.alertKitSuccess()
+                self.alertKitDeleted()
             }))
             present(alertDelete, animated: true)
         }

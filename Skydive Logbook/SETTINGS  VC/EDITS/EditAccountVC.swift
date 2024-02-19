@@ -430,21 +430,10 @@ final class EditAccountVC: UIViewController {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            title: NSLocalizedString("Success / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success
-        )
-    }
-    
-    // MARK: ALERT KIT ERROR:
-
-    private func alertKitError() {
-        AlertKitAPI.present(
-            title: NSLocalizedString("Error / cell new jump", comment: ""),
-            icon: .error,
-            style: .iOS17AppleMusic,
-            haptic: .error
         )
     }
 }

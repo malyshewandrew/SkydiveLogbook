@@ -182,7 +182,7 @@ final class EditLocationsVC: UIViewController {
         enterTextTextField.text = ""
         actionButtonCleanChangeColor()
         tableView.reloadData()
-        alertKitSuccess()
+        alertKitClear()
     }
     
     // MARK: - LOAD LOCATIONS FROM REALM:
@@ -239,7 +239,7 @@ final class EditLocationsVC: UIViewController {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            title: NSLocalizedString("Location added / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success
@@ -250,10 +250,33 @@ final class EditLocationsVC: UIViewController {
 
     private func alertKitError() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            title: NSLocalizedString("Error / alert kit", comment: ""),
             icon: .error,
             style: .iOS17AppleMusic,
             haptic: .error
+        )
+    }
+    
+    
+    // MARK: ALERT KIT CLEAR:
+    
+    private func alertKitClear() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / alert kit", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT DELETED:
+    
+    private func alertKitDeleted() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Location deleted / alert kit", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
         )
     }
 }
@@ -292,7 +315,7 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
                 self.loadLocations()
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
-                self.alertKitSuccess()
+                self.alertKitDeleted()
             }))
             present(alertDelete, animated: true)
         }

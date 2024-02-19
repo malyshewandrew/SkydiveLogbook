@@ -176,7 +176,7 @@ final class SystemVC: UIViewController {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            title: NSLocalizedString("System deleted / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success

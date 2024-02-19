@@ -519,7 +519,7 @@ final class MainVC: UIViewController {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Jump delete / alert kit", comment: ""),
+            title: NSLocalizedString("Jump deleted / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success

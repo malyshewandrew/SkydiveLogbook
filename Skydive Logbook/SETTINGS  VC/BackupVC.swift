@@ -137,7 +137,7 @@ final class BackupVC: UIViewController {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            title: NSLocalizedString("Backup saved / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success
@@ -148,10 +148,21 @@ final class BackupVC: UIViewController {
 
     private func alertKitError() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            title: NSLocalizedString("Error / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .error
+        )
+    }
+    
+    // MARK: - ALERT KIT UPLOAD:
+
+    private func alertKitUpload() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Backup upload / alert kit", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
         )
     }
 
@@ -263,7 +274,7 @@ extension BackupVC: UIDocumentPickerDelegate {
                 realmManager.localRealm.add(arrayCanopiesRealm)
                 realmManager.localRealm.add(arraySystemsRealm)
             }
-            self.alertKitSuccess()
+            self.alertKitUpload()
         } catch {
             print("Ошибка при операции с копией данных: \(error)")
             self.alertKitError()

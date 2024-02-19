@@ -190,7 +190,7 @@ final class EditCanopiesVC: UIViewController {
         enterTextTextField.text = ""
         actionButtonCleanChangeColor()
         tableView.reloadData()
-        alertKitSuccess()
+        alertKitClear()
     }
     
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
@@ -239,7 +239,7 @@ final class EditCanopiesVC: UIViewController {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            title: NSLocalizedString("Canopy added / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success
@@ -250,8 +250,30 @@ final class EditCanopiesVC: UIViewController {
 
     private func alertKitError() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            title: NSLocalizedString("Error / alert kit", comment: ""),
             icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
+    }
+    
+    // MARK: ALERT KIT CLEAR:
+    
+    private func alertKitClear() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / alert kit", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
+    }
+    
+    // MARK: ALERT KIT DELETED:
+    
+    private func alertKitDeleted() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Canopy deleted / alert kit", comment: ""),
+            icon: .done,
             style: .iOS17AppleMusic,
             haptic: .error
         )
@@ -292,7 +314,7 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
                 self.loadCanopies()
                 self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
-                self.alertKitSuccess()
+                self.alertKitDeleted()
             }))
             present(alertDelete, animated: true)
         }

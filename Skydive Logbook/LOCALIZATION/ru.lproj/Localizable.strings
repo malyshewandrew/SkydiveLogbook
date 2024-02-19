@@ -280,9 +280,6 @@
 "Cutaway placeholder" = "Нет / Да";
 "Comment placeholder" = "Опционально";
 
-"Success / cell new jump" = "Выполнено";
-"Error / cell new jump" = "Ошибка";
-
 // MARK: - SYSTEM:
 
 "Add a new system" = "Добавить новую систему";
@@ -449,10 +446,28 @@
 
 // MARK: - ALERT KIT:
 
+"Success / alert kit" = "Выполнено";
+"Error / alert kit" = "Ошибка";
+
+"Jump added / alert kit" = "Прыжок добавлен";
 "Jump deleted / alert kit" = "Прыжок удален";
 "Jump updated / alert kit" = "Прыжок обновлен";
 
 "Note added / alert kit" = "Заметка добавлена";
+"Note deleted / alert kit" = "Заметка удалена";
 
-"Success / alert kit" = "Выполнено";
-"Error / alert kit" = "Ошибка";
+"System added / alert kit" = "Система добавлена";
+"System deleted / alert kit" = "Система удалена";
+"System updated / alert kit" = "Система обновлена";
+
+"Backup saved / alert kit" = "Копия сохранена";
+"Backup upload / alert kit" = "Копия загружена";
+
+"Location added / alert kit" = "Локация добавлена";
+"Location deleted / alert kit" = "Локация удалена";
+
+"Aircraft added / alert kit" = "Авиатехника добавлена";
+"Aircraft deleted / alert kit" = "Авиатехника удалена";
+
+"Canopy added / alert kit" = "Парашют добавлен";
+"Canopy deleted / alert kit" = "Парашют удален";
