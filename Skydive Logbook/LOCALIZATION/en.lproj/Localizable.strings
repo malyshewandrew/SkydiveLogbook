@@ -92,6 +92,36 @@
 "Wind direction" = "Wind direction";
 "Arrow wind direction" = "The arrow shows the direction of the wind near the ground in the place where you are";
 
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Wind classification";
+"Wind weather message / alert" = "Calm: < 0.3 m/s\nQuiet: 0.3—1.5 m/s\nLight: 1.6—3.3 m/s\nModerate: 3.4—5.4 m/s\nFresh: 5.5—7.9 m/s\nStrong: 8.0—10.7 m/s\nNear Gale: 10.8—13.8 m/s\nGale: 13.9—17.1 m/s\nStrong Gale: 17.2—20.7 m/s\nStorm: 20.8—24.4 m/s\nViolent Storm: 24.5—28.4 m/s\nHurricane: >32.7 m/s";
+
+"Temperature weather title / alert" = "Feels like";
+"Temperature weather message / alert" = "The indicator may differ from the actual temperature, reflecting how the temperature is perceived by a person.\nThe «Feels like» indicator is influenced by wind characteristics and humidity levels.";
+
+"Cloud cover weather title / alert" = "Cloud cover";
+"Cloud cover weather message / alert" = "Cloud cover is measured as a percentage. It is usually expressed in the parts of the sky occupied by clouds.\nFor example, if the cloud cover is:\n0% - clear sky.\n50% - half of the sky is covered.\n100% - completely cloudy sky.";
+
+"Humidity weather title / alert" = "Humidity";
+"Humidity weather message / alert" = "Relative humidity, or simply humidity, is the ratio of the amount of moisture in the air to the maximum amount that can be contained in the air. At high temperatures, the air may contain more moisture. If the relative humidity is about 100%, this may indicate the presence of dew or fog.";
+
+"Dew point weather title / alert" = "Dew point";
+"Dew point weather message / alert" = "The dew point is the value to which the temperature must drop in order for dew to form. This is a convenient way to determine the humidity of the air: the higher the dew point, the more humid the air feels. The dew point coinciding with the current temperature means that the relative humidity of the air is 100% and dew or fog may form.";
+
+"Visibility weather title / alert" = "Visibility";
+"Visibility weather message / alert" = "Visibility shows at what distance from yourself you can clearly see objects such as buildings and hills. Visibility is a measure of air transparency and does not take into account the amount of sunlight or the presence of obstacles.
+Visibility at a distance of 10 km or higher is considered clear.";
+
+"Precipitation weather title / alert" = "Precipitation";
+"Precipitation weather message / alert" = "The amount of precipitation is the height of the water layer in millimeters that would form on the earth's surface if it were completely flat. The amount of precipitation in millimeters is numerically equal to the mass of water that fell on a horizontal surface of 1 square meter.\nLight rain: 1-5mm\nModerate rain: 5-15mm\nHeavy rain: 15-25 m\nDownpour: 25+mm";
+
+"Pressure weather title / alert" = "Pressure";
+"Pressure weather message / alert" = "Significant, abrupt pressure changes are used to predict weather changes. For example, a drop in pressure may mean that it will rain or snow soon, and an increase in pressure may portend an improvement in the weather.";
+
+"UvIndex weather title / alert" = "UvIndex";
+"UvIndex weather message / alert" = "The UV index (UFI), developed by the World Health Organization, indicates the power of ultraviolet radiation. The higher the UV index, the more dangerous it is to be in the sun and the faster it can harm your health. By tracking the UV index, you can decide when to protect yourself from the sun and when it is better not to go outside. With a UV index value of 3 (moderate) and above, WHO recommends staying in the shade, using sunscreen and wearing hats and closed clothing.";
+
 // MARK: - Statistic:
 
 "no jumps" = "To display statistics, you need to make at least one jump.";
@@ -416,3 +446,13 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 
 "Drop Zones / drop zones" = "Drop Zones";
 "Message / drop zones" = "New locations will appear gradually.\nIf you want to add your drop zone, write to malyshewdeveloper@protonmail.com";
+
+// MARK: - ALERT KIT:
+
+"Jump deleted / alert kit" = "Jump deleted";
+"Jump updated / alert kit" = "Jump updated";
+
+"Note added / alert kit" = "Note added";
+
+"Success / alert kit" = "Success";
+"Error / alert kit" = "Error";

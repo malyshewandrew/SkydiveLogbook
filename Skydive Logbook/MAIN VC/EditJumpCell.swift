@@ -660,7 +660,7 @@ final class EditJumpCell: UITableViewCell {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Success / cell new jump", comment: ""),
+            title: NSLocalizedString("Jump updated / alert kit", comment: ""),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success
@@ -671,7 +671,7 @@ final class EditJumpCell: UITableViewCell {
 
     private func alertKitError() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Error / cell new jump", comment: ""),
+            title: NSLocalizedString("Error jump updated / alert kit", comment: ""),
             icon: .error,
             style: .iOS17AppleMusic,
             haptic: .error

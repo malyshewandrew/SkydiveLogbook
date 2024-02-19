@@ -658,6 +658,7 @@ class WeatherCell: UITableViewCell {
     // MARK: FUNC FOR CURRENT LOCATION:
 
     @objc private func currentLocationButtonTapped() {
+        vibrationOn.vibrationStandart()
         guard let cordinate = locationManager.location?.coordinate else { return }
         let coordinateRegion = MKCoordinateRegion(center: cordinate,
                                                   latitudinalMeters: 250,
@@ -675,54 +676,63 @@ class WeatherCell: UITableViewCell {
     // MARK: WIND BUTTON TAPPED:
 
     @objc private func windOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapWindOverlayButton()
     }
 
     // MARK: TEMPERATURE BUTTON TAPPED:
 
     @objc private func temperatureOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.taptemperatureOverlayButton()
     }
 
     // MARK: HUMIDITY BUTTON TAPPED:
 
     @objc private func humidityOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapHumidityOverlayButton()
     }
 
     // MARK: CLOUD COVER BUTTON TAPPED:
 
     @objc private func cloudCoverOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapCloudCoverOverlayButton()
     }
 
     // MARK: DEW POINT BUTTON TAPPED:
 
     @objc private func dewPointOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapDewPointOverlayButton()
     }
 
     // MARK: VISIBILITY BUTTON TAPPED:
 
     @objc private func visibilityOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapVisibilityOverlayButton()
     }
 
     // MARK: PRESSURE BUTTON TAPPED:
 
     @objc private func pressureOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapPressureOverlayButton()
     }
 
     // MARK: UV INDEX BUTTON TAPPED:
 
     @objc private func uvIndexOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapUvIndexOverlayButton()
     }
     
     // MARK: PRECIPITATION BUTTON TAPPED:
 
     @objc private func precipitationOverlayButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapPrecipitationOverlayButton()
     }
 

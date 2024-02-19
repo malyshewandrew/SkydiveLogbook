@@ -170,42 +170,79 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - EXTENSION:
+
 extension WeatherVC: WeatherCellDelegate {
-    
     func tapWindOverlayButton() {
-        print("wind")
+        let alert = UIAlertController(title: NSLocalizedString("Wind weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Wind weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func taptemperatureOverlayButton() {
-        print("temp")
+        let alert = UIAlertController(title: NSLocalizedString("Temperature weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Temperature weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapCloudCoverOverlayButton() {
-        print("cloud cover")
+        let alert = UIAlertController(title: NSLocalizedString("Cloud cover weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Cloud cover weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapHumidityOverlayButton() {
-        print("humid")
+        let alert = UIAlertController(title: NSLocalizedString("Humidity weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Humidity weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapDewPointOverlayButton() {
-        print("dew point")
+        let alert = UIAlertController(title: NSLocalizedString("Dew point weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Dew point weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapPrecipitationOverlayButton() {
-        print("precip")
+        let alert = UIAlertController(title: NSLocalizedString("Precipitation weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Precipitation weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapPressureOverlayButton() {
-        print("press")
+        let alert = UIAlertController(title: NSLocalizedString("Pressure weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Pressure weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapUvIndexOverlayButton() {
-        print("uv")
+        let alert = UIAlertController(title: NSLocalizedString("UvIndex weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("UvIndex weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapVisibilityOverlayButton() {
-        print("visib")
+        let alert = UIAlertController(title: NSLocalizedString("Visibility weather title / alert", comment: "") + ":",
+                                      message: NSLocalizedString("Visibility weather message / alert", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+        }))
+        present(alert, animated: true)
     }
     
     func tapWindInfoButton() {
