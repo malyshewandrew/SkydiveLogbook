@@ -4,7 +4,7 @@ import UIKit
 final class HumidityVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windIndicatorLottie = LottieAnimationView(name: "WindIndicator")
+    private let humidityLottie = LottieAnimationView(name: "WeatherHumidity")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +18,18 @@ final class HumidityVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(windIndicatorLottie)
+        view.addSubviews(humidityLottie)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WIND INDICATOR:
+        // MARK: HUMIDITY:
 
-        windIndicatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        windIndicatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        windIndicatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        windIndicatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        humidityLottie.translatesAutoresizingMaskIntoConstraints = false
+        humidityLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        humidityLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        humidityLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +39,11 @@ final class HumidityVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
-        // MARK: WIND INDICATOR LOTTIE:
+        // MARK: HUMIDITY:
         
-        windIndicatorLottie.play()
-        windIndicatorLottie.loopMode = .loop
-        windIndicatorLottie.animationSpeed = 0.7
+        humidityLottie.play()
+        humidityLottie.loopMode = .loop
+        humidityLottie.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

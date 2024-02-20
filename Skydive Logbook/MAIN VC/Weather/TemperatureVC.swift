@@ -4,7 +4,7 @@ import UIKit
 final class TemperatureVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windIndicatorLottie = LottieAnimationView(name: "WindIndicator")
+    private let temperatureLottie = LottieAnimationView(name: "WeatherTemperature")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +18,18 @@ final class TemperatureVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(windIndicatorLottie)
+        view.addSubviews(temperatureLottie)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WIND INDICATOR:
+        // MARK: TEMPERATURE:
 
-        windIndicatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        windIndicatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        windIndicatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        windIndicatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        temperatureLottie.translatesAutoresizingMaskIntoConstraints = false
+        temperatureLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        temperatureLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        temperatureLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +39,11 @@ final class TemperatureVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
-        // MARK: WIND INDICATOR LOTTIE:
+        // MARK: TEMPERATURE:
         
-        windIndicatorLottie.play()
-        windIndicatorLottie.loopMode = .loop
-        windIndicatorLottie.animationSpeed = 0.7
+        temperatureLottie.play()
+        temperatureLottie.loopMode = .loop
+        temperatureLottie.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

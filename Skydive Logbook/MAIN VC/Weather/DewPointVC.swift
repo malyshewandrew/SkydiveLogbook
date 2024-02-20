@@ -4,7 +4,7 @@ import UIKit
 final class DewPointVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windIndicatorLottie = LottieAnimationView(name: "WindIndicator")
+    private let dewPointLottie = LottieAnimationView(name: "WeatherDewPoint")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +18,18 @@ final class DewPointVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(windIndicatorLottie)
+        view.addSubviews(dewPointLottie)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WIND INDICATOR:
+        // MARK: DEW POINT:
 
-        windIndicatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        windIndicatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        windIndicatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        windIndicatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        dewPointLottie.translatesAutoresizingMaskIntoConstraints = false
+        dewPointLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        dewPointLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        dewPointLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +39,11 @@ final class DewPointVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
-        // MARK: WIND INDICATOR LOTTIE:
+        // MARK: DEW POINT:
         
-        windIndicatorLottie.play()
-        windIndicatorLottie.loopMode = .loop
-        windIndicatorLottie.animationSpeed = 0.7
+        dewPointLottie.play()
+        dewPointLottie.loopMode = .loop
+        dewPointLottie.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

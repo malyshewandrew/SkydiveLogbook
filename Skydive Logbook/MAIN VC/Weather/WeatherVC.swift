@@ -416,7 +416,7 @@ extension WeatherVC: WeatherCellDelegate {
 //        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
 //        }))
 //        present(alert, animated: true)
-        let temperatureVC = WindVC()
+        let temperatureVC = TemperatureVC()
         if let sheetController = temperatureVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
             sheetController.preferredCornerRadius = 100
@@ -476,6 +476,23 @@ extension WeatherVC: WeatherCellDelegate {
         present(dewPointVC, animated: true)
     }
     
+    // MARK: - VISIBILITY:
+
+    func tapVisibilityOverlayButton() {
+//        let alert = UIAlertController(title: NSLocalizedString("Visibility weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Visibility weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let visibilityVC = VisibilityVC()
+        if let sheetController = visibilityVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(visibilityVC, animated: true)
+    }
+    
     // MARK: - PRECIPITATION:
 
     func tapPrecipitationOverlayButton() {
@@ -525,23 +542,6 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.detents = [.medium()]
         }
         present(uvIndexVC, animated: true)
-    }
-    
-    // MARK: - VISIBILITY:
-
-    func tapVisibilityOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Visibility weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Visibility weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
-        let visibilityVC = VisibilityVC()
-        if let sheetController = visibilityVC.sheetPresentationController {
-            sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
-            sheetController.detents = [.medium()]
-        }
-        present(visibilityVC, animated: true)
     }
     
     // MARK: - WIND INFO BUTTON:

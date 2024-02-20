@@ -4,7 +4,7 @@ import UIKit
 final class VisibilityVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windIndicatorLottie = LottieAnimationView(name: "WindIndicator")
+    private let weatherVisibility = LottieAnimationView(name: "WeatherVisibility")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +18,18 @@ final class VisibilityVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(windIndicatorLottie)
+        view.addSubviews(weatherVisibility)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WIND INDICATOR:
+        // MARK: VISIBILITY:
 
-        windIndicatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        windIndicatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        windIndicatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        windIndicatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        weatherVisibility.translatesAutoresizingMaskIntoConstraints = false
+        weatherVisibility.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        weatherVisibility.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        weatherVisibility.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +39,11 @@ final class VisibilityVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
-        // MARK: WIND INDICATOR LOTTIE:
+        // MARK: VISIBILITY:
         
-        windIndicatorLottie.play()
-        windIndicatorLottie.loopMode = .loop
-        windIndicatorLottie.animationSpeed = 0.7
+        weatherVisibility.play()
+        weatherVisibility.loopMode = .loop
+        weatherVisibility.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

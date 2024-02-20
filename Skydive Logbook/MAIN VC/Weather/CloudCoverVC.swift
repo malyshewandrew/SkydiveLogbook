@@ -4,7 +4,7 @@ import UIKit
 final class CloudCoverVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windIndicatorLottie = LottieAnimationView(name: "WindIndicator")
+    private let cloudCoverLottie = LottieAnimationView(name: "WeatherCloudCover")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +18,18 @@ final class CloudCoverVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(windIndicatorLottie)
+        view.addSubviews(cloudCoverLottie)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WIND INDICATOR:
+        // MARK: CLOUD COVER:
 
-        windIndicatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        windIndicatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        windIndicatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        windIndicatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        cloudCoverLottie.translatesAutoresizingMaskIntoConstraints = false
+        cloudCoverLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        cloudCoverLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        cloudCoverLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +39,11 @@ final class CloudCoverVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
-        // MARK: WIND INDICATOR LOTTIE:
+        // MARK: CLOUD COVER:
         
-        windIndicatorLottie.play()
-        windIndicatorLottie.loopMode = .loop
-        windIndicatorLottie.animationSpeed = 0.7
+        cloudCoverLottie.play()
+        cloudCoverLottie.loopMode = .loop
+        cloudCoverLottie.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

@@ -4,7 +4,7 @@ import UIKit
 final class PrecipitationVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windIndicatorLottie = LottieAnimationView(name: "WindIndicator")
+    private let weatherPrecipitation = LottieAnimationView(name: "WeatherPrecipitation")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +18,18 @@ final class PrecipitationVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(windIndicatorLottie)
+        view.addSubviews(weatherPrecipitation)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WIND INDICATOR:
+        // MARK: PRECIPITATION:
 
-        windIndicatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        windIndicatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        windIndicatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        windIndicatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        weatherPrecipitation.translatesAutoresizingMaskIntoConstraints = false
+        weatherPrecipitation.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        weatherPrecipitation.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        weatherPrecipitation.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +39,11 @@ final class PrecipitationVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
-        // MARK: WIND INDICATOR LOTTIE:
+        // MARK: PRECIPITATION:
         
-        windIndicatorLottie.play()
-        windIndicatorLottie.loopMode = .loop
-        windIndicatorLottie.animationSpeed = 0.7
+        weatherPrecipitation.play()
+        weatherPrecipitation.loopMode = .loop
+        weatherPrecipitation.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

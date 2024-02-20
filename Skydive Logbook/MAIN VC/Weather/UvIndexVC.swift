@@ -4,7 +4,7 @@ import UIKit
 final class UvIndexVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windIndicatorLottie = LottieAnimationView(name: "WindIndicator")
+    private let weatherUvIndex = LottieAnimationView(name: "WeatherUvIndex")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +18,18 @@ final class UvIndexVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(windIndicatorLottie)
+        view.addSubviews(weatherUvIndex)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WIND INDICATOR:
+        // MARK: UVINDEX:
 
-        windIndicatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        windIndicatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        windIndicatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        windIndicatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        weatherUvIndex.translatesAutoresizingMaskIntoConstraints = false
+        weatherUvIndex.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        weatherUvIndex.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        weatherUvIndex.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +39,11 @@ final class UvIndexVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
-        // MARK: WIND INDICATOR LOTTIE:
+        // MARK: UVINDEX:
         
-        windIndicatorLottie.play()
-        windIndicatorLottie.loopMode = .loop
-        windIndicatorLottie.animationSpeed = 0.7
+        weatherUvIndex.play()
+        weatherUvIndex.loopMode = .loop
+        weatherUvIndex.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:
