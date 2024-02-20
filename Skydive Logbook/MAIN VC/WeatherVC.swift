@@ -6,8 +6,7 @@ import WeatherKit
 class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - PROPERTIES:
     
-    private let weatherNightBackgroundLottie = LottieAnimationView(name: "WeatherNightBackground")
-    private let weatherDayBackgroundLottie = LottieAnimationView(name: "WeatherDayBackground")
+    private let weatherBackgroundLottie = LottieAnimationView(name: "WeatherBackground")
     private let locationManager = CLLocationManager()
     private let service = WeatherService()
     private let tableView = UITableView()
@@ -44,7 +43,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(weatherNightBackgroundLottie, weatherDayBackgroundLottie, tableView)
+        view.addSubviews(weatherBackgroundLottie, tableView)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -52,19 +51,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private func configureConstraints() {
         // MARK: WEATHER NIGHT BACKGROUND:
 
-        weatherNightBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        weatherNightBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
-        weatherNightBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        weatherNightBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        weatherNightBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
-        // MARK: WEATHER DAY BACKGROUND:
-
-        weatherDayBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        weatherDayBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
-        weatherDayBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        weatherDayBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        weatherDayBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        weatherBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+        weatherBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         // MARK: TABLE VIEW:
         
@@ -89,9 +80,8 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         view.backgroundColor = .colorBackground
         
         // MARK: LOTTIE BACKGROUNDS:
-        
-        weatherDayBackgroundLottie.isHidden = true
-        weatherNightBackgroundLottie.isHidden = true
+
+        weatherBackgroundLottie.isHidden = true
         
         // MARK: TABLE VIEW:
         
@@ -114,75 +104,174 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
             switch condition {
             case .blizzard:
                 print("Condition is blizzard")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .blowingDust:
                 print("Condition is blowing dust")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .blowingSnow:
                 print("Condition is blowing snow")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .breezy:
                 print("Condition is breezy")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .clear:
                 print("Condition is clear")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .cloudy:
                 print("Condition is cloudy")
-//                weatherNightBackgroundLottie.isHidden = false
-//                weatherNightBackgroundLottie.play()
-//                weatherNightBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .drizzle:
                 print("Condition is drizzle")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .flurries:
                 print("Condition is flurries")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .foggy:
                 print("Condition is foggy")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .freezingDrizzle:
                 print("Condition is freezing drizzle")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .freezingRain:
                 print("Condition is freezing rain")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .frigid:
                 print("Condition is frigid")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .hail:
                 print("Condition is hail")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .haze:
                 print("Condition is haze")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .heavyRain:
                 print("Condition is heavy rain")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .heavySnow:
                 print("Condition is heavy snow")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .hot:
                 print("Condition is hot")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .hurricane:
                 print("Condition is hurricane")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .isolatedThunderstorms:
                 print("Condition is isolated thunderstorms")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .mostlyClear:
                 print("Condition is mostly clear")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .mostlyCloudy:
                 print("Condition is mostly cloudy")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .partlyCloudy:
                 print("Condition is partly cloudy")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .rain:
                 print("Condition is rain")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .scatteredThunderstorms:
                 print("Condition is scattered thunderstorms")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .sleet:
                 print("Condition is sleet")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .smoky:
                 print("Condition is smoky")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .snow:
                 print("Condition is snow")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .strongStorms:
                 print("Condition is strong storms")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .sunFlurries:
                 print("Condition is sun flurries")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .sunShowers:
                 print("Condition is sun showers")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .thunderstorms:
                 print("Condition is thunderstorms")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .tropicalStorm:
                 print("Condition is tropical storm")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .windy:
                 print("Condition is windy")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             case .wintryMix:
                 print("Condition is wintry mix")
+                weatherBackgroundLottie.isHidden = false
+                weatherBackgroundLottie.play()
+                weatherBackgroundLottie.loopMode = .loop
             @unknown default:
                 print("Unknown condition")
                 view.backgroundColor = .colorBackground
