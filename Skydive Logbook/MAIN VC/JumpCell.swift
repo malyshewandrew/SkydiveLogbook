@@ -418,7 +418,7 @@ final class JumpCell: UITableViewCell {
             missionButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
             heightButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
             timeButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-
+            commentButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
         }
     }
     
