@@ -26,7 +26,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var windDirection: String = ""
     private var visibility: String = ""
     private var rotationAngle: Int = 0
-    
     private var condition: WeatherCondition?
     
     // MARK: - LIFECYCLE:
@@ -107,171 +106,205 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .blowingDust:
                 print("Condition is blowing dust")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .blowingSnow:
                 print("Condition is blowing snow")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .breezy:
                 print("Condition is breezy")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .clear:
                 print("Condition is clear")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .cloudy:
                 print("Condition is cloudy")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .drizzle:
                 print("Condition is drizzle")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .flurries:
                 print("Condition is flurries")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .foggy:
                 print("Condition is foggy")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .freezingDrizzle:
                 print("Condition is freezing drizzle")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .freezingRain:
                 print("Condition is freezing rain")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .frigid:
                 print("Condition is frigid")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .hail:
                 print("Condition is hail")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .haze:
                 print("Condition is haze")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .heavyRain:
                 print("Condition is heavy rain")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .heavySnow:
                 print("Condition is heavy snow")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .hot:
                 print("Condition is hot")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .hurricane:
                 print("Condition is hurricane")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .isolatedThunderstorms:
                 print("Condition is isolated thunderstorms")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .mostlyClear:
                 print("Condition is mostly clear")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .mostlyCloudy:
                 print("Condition is mostly cloudy")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .partlyCloudy:
                 print("Condition is partly cloudy")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .rain:
                 print("Condition is rain")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .scatteredThunderstorms:
                 print("Condition is scattered thunderstorms")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .sleet:
                 print("Condition is sleet")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .smoky:
                 print("Condition is smoky")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .snow:
                 print("Condition is snow")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .strongStorms:
                 print("Condition is strong storms")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .sunFlurries:
                 print("Condition is sun flurries")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .sunShowers:
                 print("Condition is sun showers")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .thunderstorms:
                 print("Condition is thunderstorms")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .tropicalStorm:
                 print("Condition is tropical storm")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .windy:
                 print("Condition is windy")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             case .wintryMix:
                 print("Condition is wintry mix")
                 weatherBackgroundLottie.isHidden = false
                 weatherBackgroundLottie.play()
                 weatherBackgroundLottie.loopMode = .loop
+                weatherBackgroundLottie.contentMode = .scaleAspectFill
             @unknown default:
                 print("Unknown condition")
                 view.backgroundColor = .colorBackground
@@ -358,78 +391,161 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - EXTENSION:
 
 extension WeatherVC: WeatherCellDelegate {
+    // MARK: - WIND:
+
     func tapWindOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Wind weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Wind weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("Wind weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Wind weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let windVC = WindVC()
+        if let sheetController = windVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(windVC, animated: true)
     }
     
+    // MARK: - TEMPERATURE:
+
     func taptemperatureOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Temperature weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Temperature weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("Temperature weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Temperature weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let temperatureVC = WindVC()
+        if let sheetController = temperatureVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(temperatureVC, animated: true)
     }
     
-    func tapCloudCoverOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Cloud cover weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Cloud cover weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
-    }
-    
+    // MARK: - HUMIDITY:
+
     func tapHumidityOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Humidity weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Humidity weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("Humidity weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Humidity weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let humidityVC = HumidityVC()
+        if let sheetController = humidityVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(humidityVC, animated: true)
     }
     
+    // MARK: - CLOUD COVER:
+
+    func tapCloudCoverOverlayButton() {
+//        let alert = UIAlertController(title: NSLocalizedString("Cloud cover weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Cloud cover weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let cloudCoverVC = CloudCoverVC()
+        if let sheetController = cloudCoverVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(cloudCoverVC, animated: true)
+    }
+    
+    // MARK: - DEW POINT:
+
     func tapDewPointOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Dew point weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Dew point weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("Dew point weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Dew point weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let dewPointVC = DewPointVC()
+        if let sheetController = dewPointVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(dewPointVC, animated: true)
     }
     
+    // MARK: - PRECIPITATION:
+
     func tapPrecipitationOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Precipitation weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Precipitation weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("Precipitation weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Precipitation weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let precipitationVC = PrecipitationVC()
+        if let sheetController = precipitationVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(precipitationVC, animated: true)
     }
     
+    // MARK: - PRESSURE:
+
     func tapPressureOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Pressure weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Pressure weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("Pressure weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Pressure weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let pressureVC = PressureVC()
+        if let sheetController = pressureVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(pressureVC, animated: true)
     }
+    
+    // MARK: - UV INDEX:
     
     func tapUvIndexOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("UvIndex weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("UvIndex weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("UvIndex weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("UvIndex weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let uvIndexVC = UvIndexVC()
+        if let sheetController = uvIndexVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(uvIndexVC, animated: true)
     }
     
+    // MARK: - VISIBILITY:
+
     func tapVisibilityOverlayButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Visibility weather title / alert", comment: "") + ":",
-                                      message: NSLocalizedString("Visibility weather message / alert", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-        }))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: NSLocalizedString("Visibility weather title / alert", comment: "") + ":",
+//                                      message: NSLocalizedString("Visibility weather message / alert", comment: ""), preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+//        }))
+//        present(alert, animated: true)
+        let visibilityVC = VisibilityVC()
+        if let sheetController = visibilityVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(visibilityVC, animated: true)
     }
     
+    // MARK: - WIND INFO BUTTON:
+
     func tapWindInfoButton() {
         let alert = UIAlertController(title: NSLocalizedString("Wind direction", comment: ""), message: NSLocalizedString("Arrow wind direction", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { _ in
