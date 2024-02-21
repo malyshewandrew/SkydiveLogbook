@@ -1,11 +1,13 @@
 import RealmSwift
 import UIKit
+import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
     var realmManager = RealmManager()
+    private let locationManager = CLLocationManager()
     
     // MARK: SCENE:
     
@@ -66,6 +68,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // MARK: LOAD REALM DATA:
         loadRealmData()
+        
+        // MARK: GET USER LOCATION:
+        getUserLocation()
     }
 
     // MARK: - LOAD REALM DATA:
@@ -92,6 +97,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map {
             $0
         }
+    }
+    
+    // MARK: GET USER LOCATION:
+    
+    func getUserLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     // MARK: - OTHERS:

@@ -122,6 +122,21 @@ Visibility at a distance of 10 km or higher is considered clear.";
 "UvIndex weather title / alert" = "UvIndex";
 "UvIndex weather message / alert" = "The UV index (UFI), developed by the World Health Organization, indicates the power of ultraviolet radiation. The higher the UV index, the more dangerous it is to be in the sun and the faster it can harm your health. By tracking the UV index, you can decide when to protect yourself from the sun and when it is better not to go outside. With a UV index value of 3 (moderate) and above, WHO recommends staying in the shade, using sunscreen and wearing hats and closed clothing.";
 
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Calm";
+"Weak wind / wind speed" = "Weak wind";
+"Light wind / wind speed" = "Light wind";
+"Quiet wind / wind speed" = "Quiet wind";
+"Moderate wind / wind speed" = "Moderate wind";
+"Fresh wind / wind speed" = "Fresh wind";
+"Strong wind / wind speed" = "Strong wind";
+"Hard wind / wind speed" = "Hard wind";
+"Powerful wind / wind speed" = "Powerful wind";
+"Storm wind / wind speed" = "Storm";
+"Hard storm wind / wind speed" = "Hard storm";
+"Hurricane wind / wind speed" = "Hurricane";
+
 // MARK: - Statistic:
 
 "no jumps" = "To display statistics, you need to make at least one jump.";

@@ -11,7 +11,6 @@ final class StatisticVC: UIViewController {
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
     private let dateFormatter = DateFormatter()
-    
     let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
@@ -155,7 +154,7 @@ extension StatisticVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - EXTENSION FOR DLEGATES:
+// MARK: - EXTENSION FOR DELEGATES:
 
 extension StatisticVC: StatisticCellDelegate {
     // MARK: GENERAL INFO:

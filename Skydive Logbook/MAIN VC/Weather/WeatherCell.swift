@@ -15,7 +15,7 @@ protocol WeatherCellDelegate {
     func tapVisibilityOverlayButton()
 }
 
-class WeatherCell: UITableViewCell {
+final class WeatherCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
     private let iconImageView = UIImageView()

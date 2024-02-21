@@ -3,7 +3,7 @@ import Lottie
 import UIKit
 import WeatherKit
 
-class WeatherVC: UIViewController, CLLocationManagerDelegate {
+final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - PROPERTIES:
     
     private let weatherBackgroundLottie = LottieAnimationView(name: "WeatherBackground")
