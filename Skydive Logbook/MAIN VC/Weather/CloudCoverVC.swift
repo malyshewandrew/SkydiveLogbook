@@ -4,7 +4,8 @@ import UIKit
 final class CloudCoverVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let cloudCoverLottie = LottieAnimationView(name: "WeatherCloudCover")
+    private let weatherCloudCover = LottieAnimationView(name: "WeatherCloudCover")
+    private let weatherCloudCoverBackground = LottieAnimationView(name: "WeatherCloudCoverBackground")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +19,27 @@ final class CloudCoverVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(cloudCoverLottie)
+        view.addSubviews(weatherCloudCoverBackground, weatherCloudCover)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
+        
+        // MARK: CLOUD COVER BACKGROUND:
+
+        weatherCloudCoverBackground.translatesAutoresizingMaskIntoConstraints = false
+        weatherCloudCoverBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        weatherCloudCoverBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherCloudCoverBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherCloudCoverBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: CLOUD COVER:
 
-        cloudCoverLottie.translatesAutoresizingMaskIntoConstraints = false
-        cloudCoverLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        cloudCoverLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        cloudCoverLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        weatherCloudCover.translatesAutoresizingMaskIntoConstraints = false
+        weatherCloudCover.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        weatherCloudCover.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        weatherCloudCover.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +49,17 @@ final class CloudCoverVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
+        // MARK: CLOUD COVER BACKGROUND:
+        
+        weatherCloudCoverBackground.play()
+        weatherCloudCoverBackground.loopMode = .loop
+        weatherCloudCoverBackground.contentMode = .scaleToFill
+        
         // MARK: CLOUD COVER:
         
-        cloudCoverLottie.play()
-        cloudCoverLottie.loopMode = .loop
-        cloudCoverLottie.animationSpeed = 0.7
+        weatherCloudCover.play()
+        weatherCloudCover.loopMode = .loop
+        weatherCloudCover.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

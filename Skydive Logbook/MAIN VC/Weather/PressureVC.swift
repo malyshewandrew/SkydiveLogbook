@@ -5,6 +5,7 @@ final class PressureVC: UIViewController {
     // MARK: - PROPERTIES:
     
     private let weatherPressure = LottieAnimationView(name: "WeatherPressure")
+    private let weatherPressureBackground = LottieAnimationView(name: "WeatherPressureBackground")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,12 +19,21 @@ final class PressureVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(weatherPressure)
+        view.addSubviews(weatherPressureBackground, weatherPressure)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
+        
+        // MARK: PRESSURE BACKGROUND:
+
+        weatherPressureBackground.translatesAutoresizingMaskIntoConstraints = false
+        weatherPressureBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        weatherPressureBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherPressureBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherPressureBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: PRESSURE:
 
         weatherPressure.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +48,12 @@ final class PressureVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = .colorBackground
+        
+        // MARK: PRESSURE BACKGROUND:
+        
+        weatherPressureBackground.play()
+        weatherPressureBackground.loopMode = .loop
+        weatherPressureBackground.contentMode = .scaleToFill
         
         // MARK: PRESSURE:
         

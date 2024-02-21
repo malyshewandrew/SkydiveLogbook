@@ -5,6 +5,7 @@ final class PrecipitationVC: UIViewController {
     // MARK: - PROPERTIES:
     
     private let weatherPrecipitation = LottieAnimationView(name: "WeatherPrecipitation")
+    private let weatherPrecipitationBackground = LottieAnimationView(name: "WeatherPrecipitationBackground")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,12 +19,21 @@ final class PrecipitationVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(weatherPrecipitation)
+        view.addSubviews(weatherPrecipitationBackground, weatherPrecipitation)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
+        
+        // MARK: PRECIPITATION BACKGROUND:
+
+        weatherPrecipitationBackground.translatesAutoresizingMaskIntoConstraints = false
+        weatherPrecipitationBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        weatherPrecipitationBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherPrecipitationBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherPrecipitationBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: PRECIPITATION:
 
         weatherPrecipitation.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +48,12 @@ final class PrecipitationVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = .colorBackground
+        
+        // MARK: PRECIPITATION BACKGROUND:
+        
+        weatherPrecipitationBackground.play()
+        weatherPrecipitationBackground.loopMode = .loop
+        weatherPrecipitationBackground.contentMode = .scaleToFill
         
         // MARK: PRECIPITATION:
         

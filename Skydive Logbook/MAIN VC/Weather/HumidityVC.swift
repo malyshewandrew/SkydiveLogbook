@@ -4,7 +4,8 @@ import UIKit
 final class HumidityVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let humidityLottie = LottieAnimationView(name: "WeatherHumidity")
+    private let weatherHumidity = LottieAnimationView(name: "WeatherHumidity")
+    private let weatherHumidityBackground = LottieAnimationView(name: "WeatherHumidityBackground")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,18 +19,27 @@ final class HumidityVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(humidityLottie)
+        view.addSubviews(weatherHumidityBackground, weatherHumidity)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
+        
+        // MARK: HUMIDITY BACKGROUND:
+
+        weatherHumidityBackground.translatesAutoresizingMaskIntoConstraints = false
+        weatherHumidityBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        weatherHumidityBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherHumidityBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherHumidityBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: HUMIDITY:
 
-        humidityLottie.translatesAutoresizingMaskIntoConstraints = false
-        humidityLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        humidityLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        humidityLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        weatherHumidity.translatesAutoresizingMaskIntoConstraints = false
+        weatherHumidity.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        weatherHumidity.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        weatherHumidity.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -39,11 +49,17 @@ final class HumidityVC: UIViewController {
 
         view.backgroundColor = .colorBackground
         
+        // MARK: HUMIDITY BACKGROUND:
+        
+        weatherHumidityBackground.play()
+        weatherHumidityBackground.loopMode = .loop
+        weatherHumidityBackground.contentMode = .scaleToFill
+        
         // MARK: HUMIDITY:
         
-        humidityLottie.play()
-        humidityLottie.loopMode = .loop
-        humidityLottie.animationSpeed = 0.7
+        weatherHumidity.play()
+        weatherHumidity.loopMode = .loop
+        weatherHumidity.animationSpeed = 0.7
     }
     
     // MARK: - HELPERS:

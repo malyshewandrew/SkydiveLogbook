@@ -5,6 +5,7 @@ final class VisibilityVC: UIViewController {
     // MARK: - PROPERTIES:
     
     private let weatherVisibility = LottieAnimationView(name: "WeatherVisibility")
+    private let weatherVisibilityBackground = LottieAnimationView(name: "WeatherVisibilityBackground")
     
     // MARK: - LIFYCYCLE:
     
@@ -18,12 +19,21 @@ final class VisibilityVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(weatherVisibility)
+        view.addSubviews(weatherVisibilityBackground, weatherVisibility)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
+        
+        // MARK: VISIBILITY BACKGROUND:
+
+        weatherVisibilityBackground.translatesAutoresizingMaskIntoConstraints = false
+        weatherVisibilityBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        weatherVisibilityBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherVisibilityBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherVisibilityBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: VISIBILITY:
 
         weatherVisibility.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +48,12 @@ final class VisibilityVC: UIViewController {
         // MARK: VIEW:
 
         view.backgroundColor = .colorBackground
+        
+        // MARK: VISIBILITY BACKGROUND:
+        
+        weatherVisibilityBackground.play()
+        weatherVisibilityBackground.loopMode = .loop
+        weatherVisibilityBackground.contentMode = .scaleToFill
         
         // MARK: VISIBILITY:
         
