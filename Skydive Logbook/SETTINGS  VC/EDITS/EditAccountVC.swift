@@ -363,11 +363,17 @@ final class EditAccountVC: UIViewController {
     // MARK: ACTION BUTTON SAVE:
     
     @objc private func saveButtomTapped() {
+        guard nicknameTextField.text != "" else {
+            showError(textField: nicknameTextField)
+            return
+        }
         saveNewAccount()
-        resignFirstResponders()
-        actionButtonSaveGreenColor()
-        playSoundSucces()
-        alertKitSuccess()
+        DispatchQueue.main.async {
+            self.resignFirstResponders()
+            self.actionButtonSaveGreenColor()
+            self.playSoundSucces()
+            self.alertKitSuccess()
+        }
     }
     
     // MARK: SAVE FUNC:
@@ -387,6 +393,18 @@ final class EditAccountVC: UIViewController {
         }
     }
     
+    // MARK: SHOR ERROR FOR EMPTY FIELDS:
+    
+    private func showError(textField: UITextField) {
+        textField.backgroundColor = .colorRed
+        UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve) {
+            textField.backgroundColor = .colorTabBar
+        }
+        resignFirstResponders()
+        actionButtonSaveRedColor()
+        alertKitError()
+    }
+    
     // MARK: CLOSE ALL TEXT FIELDS:
     
     private func resignFirstResponders() {
@@ -402,6 +420,13 @@ final class EditAccountVC: UIViewController {
 
     private func actionButtonSaveGreenColor() {
         saveButton.backgroundColor = .colorGreen
+        UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
+            self.saveButton.backgroundColor = .colorCell
+        }
+    }
+    
+    private func actionButtonSaveRedColor() {
+        saveButton.backgroundColor = .colorRed
         UIView.animate(withDuration: 1.5, delay: 0, options: .transitionCrossDissolve) {
             self.saveButton.backgroundColor = .colorCell
         }
@@ -434,6 +459,17 @@ final class EditAccountVC: UIViewController {
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / alert kit", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
         )
     }
 }

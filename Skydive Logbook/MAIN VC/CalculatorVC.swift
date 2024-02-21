@@ -59,7 +59,7 @@ final class CalculatorVC: UIViewController {
         // MARK: ANIMATION:
 
         calculatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        calculatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        calculatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
         calculatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         calculatorLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         calculatorLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
@@ -67,7 +67,7 @@ final class CalculatorVC: UIViewController {
         // MARK: WEIGHT SKYDIVER:
 
         weightTextField.translatesAutoresizingMaskIntoConstraints = false
-        weightTextField.topAnchor.constraint(equalTo: calculatorLottie.bottomAnchor, constant: 30).isActive = true
+        weightTextField.topAnchor.constraint(equalTo: calculatorLottie.bottomAnchor, constant: 20).isActive = true
         weightTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         weightTextField.heightAnchor.constraint(equalToConstant: height40).isActive = true
         weightTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -83,23 +83,23 @@ final class CalculatorVC: UIViewController {
         // MARK: CLEAN BUTTON:
 
         cleanButton.translatesAutoresizingMaskIntoConstraints = false
+        cleanButton.topAnchor.constraint(equalTo: sizeCanopyTextField.bottomAnchor, constant: 20).isActive = true
         cleanButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -8).isActive = true
-        cleanButton.topAnchor.constraint(equalTo: sizeCanopyTextField.bottomAnchor, constant: 30).isActive = true
         cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         cleanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
 
         // MARK: RESULT BUTTON:
 
         resultButton.translatesAutoresizingMaskIntoConstraints = false
+        resultButton.topAnchor.constraint(equalTo: sizeCanopyTextField.bottomAnchor, constant: 20).isActive = true
         resultButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 8).isActive = true
-        resultButton.topAnchor.constraint(equalTo: sizeCanopyTextField.bottomAnchor, constant: 30).isActive = true
         resultButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         resultButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
 
         // MARK: RESULT:
 
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
-        resultLabel.topAnchor.constraint(equalTo: cleanButton.bottomAnchor, constant: 30).isActive = true
+        resultLabel.topAnchor.constraint(equalTo: cleanButton.bottomAnchor, constant: 20).isActive = true
         resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         resultLabel.heightAnchor.constraint(equalToConstant: height40).isActive = true
         resultLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -107,7 +107,7 @@ final class CalculatorVC: UIViewController {
         // MARK: INFO VIEW:
 
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 30).isActive = true
+        textView.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 20).isActive = true
         textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         textView.heightAnchor.constraint(greaterThanOrEqualTo: resultTextLabel.heightAnchor, constant: 10).isActive = true
         textView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
