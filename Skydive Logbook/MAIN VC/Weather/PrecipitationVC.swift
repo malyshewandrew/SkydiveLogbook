@@ -53,7 +53,7 @@ final class PrecipitationVC: UIViewController {
         
         weatherPrecipitationBackground.play()
         weatherPrecipitationBackground.loopMode = .loop
-        weatherPrecipitationBackground.contentMode = .scaleToFill
+        weatherPrecipitationBackground.contentMode = .scaleAspectFill
         
         // MARK: PRECIPITATION:
         

@@ -53,7 +53,7 @@ final class DewPointVC: UIViewController {
         
         weatherDewPointBackground.play()
         weatherDewPointBackground.loopMode = .loop
-        weatherDewPointBackground.contentMode = .scaleToFill
+        weatherDewPointBackground.contentMode = .scaleAspectFill
         
         // MARK: DEW POINT:
         

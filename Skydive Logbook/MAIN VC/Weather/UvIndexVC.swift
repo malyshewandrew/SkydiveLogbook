@@ -53,7 +53,7 @@ final class UvIndexVC: UIViewController {
         
         weatherUvIndexBackground.play()
         weatherUvIndexBackground.loopMode = .loop
-        weatherUvIndexBackground.contentMode = .scaleToFill
+        weatherUvIndexBackground.contentMode = .scaleAspectFill
         
         // MARK: UVINDEX:
         

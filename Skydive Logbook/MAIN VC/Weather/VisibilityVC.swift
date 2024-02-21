@@ -53,7 +53,7 @@ final class VisibilityVC: UIViewController {
         
         weatherVisibilityBackground.play()
         weatherVisibilityBackground.loopMode = .loop
-        weatherVisibilityBackground.contentMode = .scaleToFill
+        weatherVisibilityBackground.contentMode = .scaleAspectFill
         
         // MARK: VISIBILITY:
         

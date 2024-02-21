@@ -53,7 +53,8 @@ final class PressureVC: UIViewController {
         
         weatherPressureBackground.play()
         weatherPressureBackground.loopMode = .loop
-        weatherPressureBackground.contentMode = .scaleToFill
+        weatherPressureBackground.animationSpeed = 0.7
+        weatherPressureBackground.contentMode = .scaleAspectFill
         
         // MARK: PRESSURE:
         

@@ -53,7 +53,7 @@ final class WindVC: UIViewController {
         
         weatherWindBackground.play()
         weatherWindBackground.loopMode = .loop
-        weatherWindBackground.contentMode = .scaleToFill
+        weatherWindBackground.contentMode = .scaleAspectFill
         
         // MARK: WIND:
         
