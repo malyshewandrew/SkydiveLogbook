@@ -1,11 +1,15 @@
 import Lottie
 import UIKit
 
+// MARK: STRUCT WIND SPEEDS:
+
 struct WindSpeed {
     let image: UIImage?
     let name: String
     let value: String
 }
+
+// MARK: ARRAY WIND SPEEDS:
 
 var arrayWindSpeed = [
     WindSpeed(image: UIImage(systemName: "wind"), name: NSLocalizedString("Calm wind / wind speed", comment: ""), value: "<0.5"),
@@ -27,9 +31,9 @@ final class WindVC: UIViewController {
     
     private let weatherWind = LottieAnimationView(name: "WeatherWind")
     private let weatherWindBackground = LottieAnimationView(name: "WeatherWindBackground")
-    
     private let windView = UIView()
     private let tableView = UITableView()
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -75,6 +79,8 @@ final class WindVC: UIViewController {
         windView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         windView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         
+        // MARK: TABLE VIEW:
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: windView.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
@@ -112,25 +118,34 @@ final class WindVC: UIViewController {
         windView.addSubviews(blurEffectView, tableView)
         
         // MARK: TABLE VIEW:
+
         tableView.backgroundColor = .clear
     }
-    
-    // MARK: - HELPERS:
-
 }
 
 // MARK: - EXTENSION:
+
 extension WindVC: UITableViewDelegate, UITableViewDataSource {
+    // MARK: CELL COUNTS:
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         arrayWindSpeed.count
     }
     
+    // MARK: CUSTOM CELL:
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WindCell", for: indexPath) as? WindCell else { return UITableViewCell() }
         let wind = arrayWindSpeed[indexPath.row]
         cell.backgroundColor = .clear
         cell.configure(image: wind.image ?? UIImage(), name: wind.name, value: wind.value)
+        print("123")
         return cell
     }
     
+    // MARK: SELECTED CELL:
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vibrationOn.vibrationStandart()
+    }
 }
