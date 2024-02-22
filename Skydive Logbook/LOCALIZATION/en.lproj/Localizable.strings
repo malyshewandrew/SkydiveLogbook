@@ -98,7 +98,7 @@
 "Wind weather message / alert" = "Calm: < 0.3 m/s\nQuiet: 0.3—1.5 m/s\nLight: 1.6—3.3 m/s\nModerate: 3.4—5.4 m/s\nFresh: 5.5—7.9 m/s\nStrong: 8.0—10.7 m/s\nNear Gale: 10.8—13.8 m/s\nGale: 13.9—17.1 m/s\nStrong Gale: 17.2—20.7 m/s\nStorm: 20.8—24.4 m/s\nViolent Storm: 24.5—28.4 m/s\nHurricane: >32.7 m/s";
 
 "Temperature weather title / alert" = "Feels like";
-"Temperature weather message / alert" = "The indicator may differ from the actual temperature, reflecting how the temperature is perceived by a person.\nThe «Feels like» indicator is influenced by wind characteristics and humidity levels.";
+"Temperature weather message / alert" = "The indicator «Feels like» may differ from the actual temperature, reflecting how the temperature is perceived by a person.\nThe «Feels like» indicator is influenced by wind characteristics and humidity levels.";
 
 "Cloud cover weather title / alert" = "Cloud cover";
 "Cloud cover weather message / alert" = "Cloud cover is measured as a percentage. It is usually expressed in the parts of the sky occupied by clouds.\nFor example, if the cloud cover is:\n0% - clear sky.\n50% - half of the sky is covered.\n100% - completely cloudy sky.";
