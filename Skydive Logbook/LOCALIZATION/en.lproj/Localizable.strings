@@ -54,17 +54,6 @@
 "Account main alert" = "Account";
 "Edit/add account" = "To fill it out, go to the \"Settings\" section";
 
-// MARK: - CellJump:
-
-"Location" = "Location";
-"Aircraft" = "Aircraft";
-"Canopy" = "Canopy";
-"Mission" = "Mission";
-"Height" = "Высота";
-"Time" = "Время";
-"Comment" = "Comment";
-"Update" = "Update";
-
 // MARK: - NOTES:
 
 "New note" = "New note";
@@ -86,7 +75,7 @@
 "Visibility / weather" = "Visibility";
 "Precipitation / weather" = "Precipitation";
 "Pressure / weather" = "Pressure";
-"UvIndex / weather" = "UV index";
+"UvIndex / weather" = "UV Index";
 "It feels like / weather" = "It feels like";
 
 "Wind direction" = "Wind direction";
@@ -475,11 +464,11 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 "System deleted / alert kit" = "System deleted";
 "System updated / alert kit" = "System updated";
 
-"Backup saved / alert kit" = "Копия saved";
+"Backup saved / alert kit" = "Backup saved";
 "Backup upload / alert kit" = "Backup upload";
 
-"Location added / alert kit" = "Локация добавлена";
-"Location deleted / alert kit" = "Локация удалена";
+"Location added / alert kit" = "Location added";
+"Location deleted / alert kit" = "Location deleted";
 
 "Aircraft added / alert kit" = "Aircraft added";
 "Aircraft deleted / alert kit" = "Aircraft deleted";

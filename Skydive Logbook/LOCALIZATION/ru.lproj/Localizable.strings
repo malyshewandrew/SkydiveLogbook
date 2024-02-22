@@ -54,17 +54,6 @@
 "Account main alert" = "Аккаунт";
 "Edit/add account" = "Для заполнения перейдите в раздел \"Настройки\"";
 
-// MARK: - CellJump:
-
-"Location" = "Локация";
-"Aircraft" = "Авиатехника";
-"Canopy" = "Парашют";
-"Mission" = "Тип прыжка";
-"Height" = "Высота";
-"Time" = "Время";
-"Comment" = "Комментарий";
-"Update" = "Обновить";
-
 // MARK: - NOTES:
 
 "New note" = "Новая заметка";
@@ -134,7 +123,7 @@
 "Hard wind / wind speed" = "Крепкий ветер";
 "Powerful wind / wind speed" = "Сильный ветер";
 "Storm wind / wind speed" = "Шторм";
-"Hard storm wind / wind speed" = "Сильный штор";
+"Hard storm wind / wind speed" = "Сильный шторм";
 "Hurricane wind / wind speed" = "Ураган";
 
 // MARK: - Statistic:

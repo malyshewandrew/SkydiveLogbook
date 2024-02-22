@@ -671,7 +671,7 @@ final class EditJumpCell: UITableViewCell {
 
     private func alertKitError() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Error jump updated / alert kit", comment: ""),
+            title: NSLocalizedString("Error / alert kit", comment: ""),
             icon: .error,
             style: .iOS17AppleMusic,
             haptic: .error

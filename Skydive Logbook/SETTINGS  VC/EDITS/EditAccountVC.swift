@@ -3,10 +3,12 @@ import AudioToolbox
 import AVFoundation
 import RealmSwift
 import UIKit
+import Lottie
 
 final class EditAccountVC: UIViewController {
     // MARK: - PROPERTIES:
     
+    private let editAccountLottie = LottieAnimationView(name: "EditAccount")
     private let nicknameButton = UIButton()
     private let nicknameTextField = UITextField()
     
@@ -47,7 +49,7 @@ final class EditAccountVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     func addSubviews() {
-        view.addSubviews(nicknameButton, licenseTypeButton, licenseDateButton, medicineButton, insuranceButton, reserveCanopyButton, saveButton)
+        view.addSubviews(editAccountLottie, nicknameButton, licenseTypeButton, licenseDateButton, medicineButton, insuranceButton, reserveCanopyButton, saveButton)
         licenseTypeButton.addSubview(licenseTypeTextField)
         licenseDateButton.addSubview(licenseDateTextField)
         nicknameButton.addSubview(nicknameTextField)
@@ -59,10 +61,19 @@ final class EditAccountVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     func configureConstrains() {
+        
+        // MARK: ANIMATION:
+
+        editAccountLottie.translatesAutoresizingMaskIntoConstraints = false
+        editAccountLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
+        editAccountLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        editAccountLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        editAccountLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        
         // MARK: NICKNAME:
         
         nicknameButton.translatesAutoresizingMaskIntoConstraints = false
-        nicknameButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        nicknameButton.topAnchor.constraint(equalTo: editAccountLottie.bottomAnchor, constant: 5).isActive = true
         nicknameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nicknameButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
         nicknameButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -162,6 +173,11 @@ final class EditAccountVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
         
         navigationController?.navigationBar.isHidden = false
+        
+        // MARK: ANIMATION:
+
+        editAccountLottie.play()
+        editAccountLottie.loopMode = .loop
         
         // MARK: NICKNAME:
         

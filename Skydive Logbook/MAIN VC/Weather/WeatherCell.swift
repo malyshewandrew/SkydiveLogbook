@@ -123,21 +123,21 @@ final class WeatherCell: UITableViewCell {
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedLabel.centerXAnchor.constraint(equalTo: windButton.centerXAnchor).isActive = true
         windSpeedLabel.topAnchor.constraint(equalTo: windButton.topAnchor, constant: 15).isActive = true
-        windSpeedLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
+        windSpeedLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 0.9).isActive = true
 
         // WIND GUST:
 
         windGustLabel.translatesAutoresizingMaskIntoConstraints = false
         windGustLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         windGustLabel.topAnchor.constraint(equalTo: windSpeedLabel.bottomAnchor, constant: 5).isActive = true
-        windGustLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
+        windGustLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 0.9).isActive = true
 
         // WIND DIRECTION:
 
         windDirectionLabel.translatesAutoresizingMaskIntoConstraints = false
         windDirectionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         windDirectionLabel.topAnchor.constraint(equalTo: windGustLabel.bottomAnchor, constant: 1).isActive = true
-        windDirectionLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 1).isActive = true
+        windDirectionLabel.widthAnchor.constraint(equalTo: windButton.widthAnchor, multiplier: 0.9).isActive = true
 
         // WIND OVERLAY BUTTON:
 
@@ -160,21 +160,21 @@ final class WeatherCell: UITableViewCell {
         currentTemperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         currentTemperatureLabel.centerXAnchor.constraint(equalTo: temperatureButton.centerXAnchor).isActive = true
         currentTemperatureLabel.topAnchor.constraint(equalTo: temperatureButton.topAnchor, constant: 20).isActive = true
-        currentTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
+        currentTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 0.9).isActive = true
 
         // DESCRIPTION:
 
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: currentTemperatureLabel.bottomAnchor, constant: 0).isActive = true
-        descriptionLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
+        descriptionLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 0.9).isActive = true
 
         // FEEL TEMPERATURE:
 
         feelTemperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         feelTemperatureLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         feelTemperatureLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 1).isActive = true
-        feelTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 1).isActive = true
+        feelTemperatureLabel.widthAnchor.constraint(equalTo: temperatureButton.widthAnchor, multiplier: 0.9).isActive = true
 
         // TEMPEPATURE OVERLAY BUTTON:
 
@@ -197,6 +197,7 @@ final class WeatherCell: UITableViewCell {
         humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         humidityLabel.centerXAnchor.constraint(equalTo: humidityButton.centerXAnchor).isActive = true
         humidityLabel.topAnchor.constraint(equalTo: humidityButton.topAnchor, constant: 20).isActive = true
+        humidityLabel.widthAnchor.constraint(equalTo: humidityButton.widthAnchor, multiplier: 0.9).isActive = true
         humidityLabel.bottomAnchor.constraint(equalTo: humidityButton.bottomAnchor, constant: -5).isActive = true
 
         // HUMIDITY OVERLAY BUTTON:
@@ -220,6 +221,7 @@ final class WeatherCell: UITableViewCell {
         cloudCoverLabel.translatesAutoresizingMaskIntoConstraints = false
         cloudCoverLabel.centerXAnchor.constraint(equalTo: cloudCoverButton.centerXAnchor).isActive = true
         cloudCoverLabel.topAnchor.constraint(equalTo: cloudCoverButton.topAnchor, constant: 20).isActive = true
+        cloudCoverLabel.widthAnchor.constraint(equalTo: cloudCoverButton.widthAnchor, multiplier: 0.9).isActive = true
         cloudCoverLabel.bottomAnchor.constraint(equalTo: cloudCoverButton.bottomAnchor, constant: -5).isActive = true
 
         // CLOUD COVER OVERLAY BUTTON:
@@ -243,6 +245,7 @@ final class WeatherCell: UITableViewCell {
         dewPointLabel.translatesAutoresizingMaskIntoConstraints = false
         dewPointLabel.centerXAnchor.constraint(equalTo: dewPointButton.centerXAnchor).isActive = true
         dewPointLabel.topAnchor.constraint(equalTo: dewPointButton.topAnchor, constant: 20).isActive = true
+        dewPointLabel.widthAnchor.constraint(equalTo: dewPointButton.widthAnchor, multiplier: 0.9).isActive = true
         dewPointLabel.bottomAnchor.constraint(equalTo: dewPointButton.bottomAnchor, constant: -5).isActive = true
 
         // DEW POINT OVERLAY BUTTON:
@@ -266,6 +269,7 @@ final class WeatherCell: UITableViewCell {
         visibilityLabel.translatesAutoresizingMaskIntoConstraints = false
         visibilityLabel.centerXAnchor.constraint(equalTo: visibilityButton.centerXAnchor).isActive = true
         visibilityLabel.topAnchor.constraint(equalTo: visibilityButton.topAnchor, constant: 20).isActive = true
+        visibilityLabel.widthAnchor.constraint(equalTo: visibilityButton.widthAnchor, multiplier: 0.9).isActive = true
         visibilityLabel.bottomAnchor.constraint(equalTo: visibilityButton.bottomAnchor, constant: -5).isActive = true
 
         // VISIBILITY OVERLAY BUTTON:
@@ -289,6 +293,7 @@ final class WeatherCell: UITableViewCell {
         precipitationLabel.translatesAutoresizingMaskIntoConstraints = false
         precipitationLabel.centerXAnchor.constraint(equalTo: precipitationButton.centerXAnchor).isActive = true
         precipitationLabel.topAnchor.constraint(equalTo: precipitationButton.topAnchor, constant: 20).isActive = true
+        precipitationLabel.widthAnchor.constraint(equalTo: precipitationButton.widthAnchor, multiplier: 0.9).isActive = true
         precipitationLabel.bottomAnchor.constraint(equalTo: precipitationButton.bottomAnchor, constant: -5).isActive = true
 
         // PRECIPITATION OVERLAY BUTTON:
@@ -312,6 +317,7 @@ final class WeatherCell: UITableViewCell {
         pressureLabel.translatesAutoresizingMaskIntoConstraints = false
         pressureLabel.centerXAnchor.constraint(equalTo: pressureButton.centerXAnchor).isActive = true
         pressureLabel.topAnchor.constraint(equalTo: pressureButton.topAnchor, constant: 20).isActive = true
+        pressureLabel.widthAnchor.constraint(equalTo: pressureButton.widthAnchor, multiplier: 0.9).isActive = true
         pressureLabel.bottomAnchor.constraint(equalTo: pressureButton.bottomAnchor, constant: -5).isActive = true
 
         // PRECIPITATION OVERLAY BUTTON:
@@ -335,6 +341,7 @@ final class WeatherCell: UITableViewCell {
         uvIndexLabel.translatesAutoresizingMaskIntoConstraints = false
         uvIndexLabel.centerXAnchor.constraint(equalTo: uvIndexButton.centerXAnchor).isActive = true
         uvIndexLabel.topAnchor.constraint(equalTo: uvIndexButton.topAnchor, constant: 20).isActive = true
+        uvIndexLabel.widthAnchor.constraint(equalTo: uvIndexButton.widthAnchor, multiplier: 0.9).isActive = true
         uvIndexLabel.bottomAnchor.constraint(equalTo: uvIndexButton.bottomAnchor, constant: -5).isActive = true
 
         // UVINDEX OVERLAY BUTTON:
@@ -594,7 +601,7 @@ final class WeatherCell: UITableViewCell {
         uvIndexButton.layer.cornerRadius = 15
         uvIndexOverlayButton.addTarget(self, action: #selector(uvIndexOverlayButtonTapped), for: .touchUpInside)
 
-        // PRESSURE:
+        // UVINDEX:
 
         uvIndexLabel.textColor = .white
         uvIndexLabel.font = .systemFont(ofSize: 30, weight: .regular, width: .standard)

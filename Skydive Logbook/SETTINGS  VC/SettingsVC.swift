@@ -65,7 +65,7 @@ final class SettingsVC: UIViewController {
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: settingsLottie.bottomAnchor, constant: 5).isActive = true
+        tableView.topAnchor.constraint(equalTo: settingsLottie.bottomAnchor, constant: 15).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
@@ -85,7 +85,7 @@ final class SettingsVC: UIViewController {
         // MARK: ANIMATIONS:
 
         settingsLottie.play()
-        settingsLottie.loopMode = .autoReverse
+        settingsLottie.loopMode = .loop
 
         // MARK: CONFETTI LOTTIE:
 
