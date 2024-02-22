@@ -80,7 +80,7 @@ final class PrecipitationVC: UIViewController {
         // MARK: PRECIPITATION:
         
         weatherPrecipitation.play()
-        weatherPrecipitation.loopMode = .loop
+        weatherPrecipitation.loopMode = .autoReverse
         weatherPrecipitation.animationSpeed = 0.7
         
         // MARK: PRECIPITATION VIEW:

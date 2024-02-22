@@ -139,7 +139,6 @@ extension WindVC: UITableViewDelegate, UITableViewDataSource {
         let wind = arrayWindSpeed[indexPath.row]
         cell.backgroundColor = .clear
         cell.configure(image: wind.image ?? UIImage(), name: wind.name, value: wind.value)
-        print("123")
         return cell
     }
     

@@ -5,6 +5,7 @@ class AccountVC: UIViewController {
     // MARK: - PROPERTIES:
     
     private let accountLottie = LottieAnimationView(name: "Account")
+    private let accountBackground = LottieAnimationView(name: "AccountBackground")
     private let nicknameView = UIView()
     private let nicknameLabel = UILabel()
     private let licenseView = UIView()
@@ -45,7 +46,7 @@ class AccountVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(accountLottie, emptyAccountLabel, stackView)
+        view.addSubviews(accountBackground, accountLottie, emptyAccountLabel, stackView)
         stackView.addArrangedSubviews(nicknameView, licenseView, medicineView, insuranceView, reserveCanopyView)
         nicknameView.addSubviews(nicknameLabel)
         licenseView.addSubviews(licenseLabel)
@@ -57,6 +58,15 @@ class AccountVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
+        
+        // MARK: ACCOUNT BACKGROUND:
+
+        accountBackground.translatesAutoresizingMaskIntoConstraints = false
+        accountBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        accountBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        accountBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        accountBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: ACCOUNT LOTTIE:
         
         accountLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -141,6 +151,12 @@ class AccountVC: UIViewController {
         // MARK: VIEW:
         
         view.backgroundColor = .colorBackground
+        
+        // MARK: ACCOUNT BACKGROUND:
+        
+        accountBackground.play()
+        accountBackground.loopMode = .loop
+        accountBackground.contentMode = .scaleAspectFill
         
         // MARK: ACCOUNT LOTTIE:
         

@@ -6,7 +6,13 @@ import WeatherKit
 final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - PROPERTIES:
     
-    private let weatherBackgroundLottie = LottieAnimationView(name: "WeatherBackground")
+    private let weatherBackgroundDefault = LottieAnimationView(name: "WeatherBackgroundDefault")
+    private let weatherBackgroundCloudyLight = LottieAnimationView(name: "WeatherBackgroundCloudyLight")
+    private let weatherBackgroundCloudyHard = LottieAnimationView(name: "WeatherBackgroundCloudyHard")
+    private let weatherBackgroundRain = LottieAnimationView(name: "WeatherBackgroundRain")
+    private let weatherBackgroundSnow = LottieAnimationView(name: "WeatherBackgroundSnow")
+    private let weatherBackgroundWind = LottieAnimationView(name: "WeatherBackgroundWind")
+    
     private let locationManager = CLLocationManager()
     private let service = WeatherService()
     private let tableView = UITableView()
@@ -42,19 +48,59 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(weatherBackgroundLottie, tableView)
+        view.addSubviews(weatherBackgroundDefault, weatherBackgroundCloudyLight, weatherBackgroundCloudyHard, weatherBackgroundRain, weatherBackgroundSnow, weatherBackgroundWind, tableView)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: WEATHER NIGHT BACKGROUND:
+        // MARK: WEATHER BACKGROUND DEFAULT:
 
-        weatherBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        weatherBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
-        weatherBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        weatherBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        weatherBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        weatherBackgroundDefault.translatesAutoresizingMaskIntoConstraints = false
+        weatherBackgroundDefault.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherBackgroundDefault.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherBackgroundDefault.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherBackgroundDefault.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        // MARK: WEATHER BACKGROUND CLOUDY LIGHT:
+
+        weatherBackgroundCloudyLight.translatesAutoresizingMaskIntoConstraints = false
+        weatherBackgroundCloudyLight.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherBackgroundCloudyLight.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherBackgroundCloudyLight.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherBackgroundCloudyLight.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        // MARK: WEATHER BACKGROUND CLOUDY HARD:
+
+        weatherBackgroundCloudyHard.translatesAutoresizingMaskIntoConstraints = false
+        weatherBackgroundCloudyHard.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherBackgroundCloudyHard.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherBackgroundCloudyHard.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherBackgroundCloudyHard.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        // MARK: WEATHER BACKGROUND RAIN:
+
+        weatherBackgroundRain.translatesAutoresizingMaskIntoConstraints = false
+        weatherBackgroundRain.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherBackgroundRain.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherBackgroundRain.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherBackgroundRain.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        // MARK: WEATHER BACKGROUND SNOW:
+
+        weatherBackgroundSnow.translatesAutoresizingMaskIntoConstraints = false
+        weatherBackgroundSnow.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherBackgroundSnow.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherBackgroundSnow.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherBackgroundSnow.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        // MARK: WEATHER BACKGROUND WIND:
+
+        weatherBackgroundWind.translatesAutoresizingMaskIntoConstraints = false
+        weatherBackgroundWind.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        weatherBackgroundWind.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        weatherBackgroundWind.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        weatherBackgroundWind.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         // MARK: TABLE VIEW:
         
@@ -78,9 +124,14 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
         
         view.backgroundColor = .colorBackground
         
-        // MARK: LOTTIE BACKGROUNDS:
+        // MARK: WEATHER BACKGROUNDS:
 
-        weatherBackgroundLottie.isHidden = true
+        weatherBackgroundDefault.isHidden = true
+        weatherBackgroundCloudyLight.isHidden = true
+        weatherBackgroundCloudyHard.isHidden = true
+        weatherBackgroundRain.isHidden = true
+        weatherBackgroundSnow.isHidden = true
+        weatherBackgroundWind.isHidden = true
         
         // MARK: TABLE VIEW:
         
@@ -102,209 +153,175 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
         if let condition = condition {
             switch condition {
             case .blizzard:
-                print("Condition is blizzard")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .blowingDust:
-                print("Condition is blowing dust")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundWind.isHidden = false
+                weatherBackgroundWind.play()
+                weatherBackgroundWind.loopMode = .loop
+                weatherBackgroundWind.contentMode = .scaleAspectFill
             case .blowingSnow:
-                print("Condition is blowing snow")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .breezy:
-                print("Condition is breezy")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundWind.isHidden = false
+                weatherBackgroundWind.play()
+                weatherBackgroundWind.loopMode = .loop
+                weatherBackgroundWind.contentMode = .scaleAspectFill
             case .clear:
-                print("Condition is clear")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundDefault.isHidden = false
+                weatherBackgroundDefault.play()
+                weatherBackgroundDefault.loopMode = .loop
+                weatherBackgroundDefault.contentMode = .scaleAspectFill
             case .cloudy:
-                print("Condition is cloudy")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundCloudyLight.isHidden = false
+                weatherBackgroundCloudyLight.play()
+                weatherBackgroundCloudyLight.loopMode = .loop
+                weatherBackgroundCloudyLight.contentMode = .scaleAspectFill
             case .drizzle:
-                print("Condition is drizzle")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .flurries:
-                print("Condition is flurries")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .foggy:
-                print("Condition is foggy")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundDefault.isHidden = false
+                weatherBackgroundDefault.play()
+                weatherBackgroundDefault.loopMode = .loop
+                weatherBackgroundDefault.contentMode = .scaleAspectFill
             case .freezingDrizzle:
-                print("Condition is freezing drizzle")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .freezingRain:
-                print("Condition is freezing rain")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .frigid:
-                print("Condition is frigid")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .hail:
-                print("Condition is hail")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .haze:
-                print("Condition is haze")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundDefault.isHidden = false
+                weatherBackgroundDefault.play()
+                weatherBackgroundDefault.loopMode = .loop
+                weatherBackgroundDefault.contentMode = .scaleAspectFill
             case .heavyRain:
-                print("Condition is heavy rain")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .heavySnow:
-                print("Condition is heavy snow")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .hot:
-                print("Condition is hot")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundDefault.isHidden = false
+                weatherBackgroundDefault.play()
+                weatherBackgroundDefault.loopMode = .loop
+                weatherBackgroundDefault.contentMode = .scaleAspectFill
             case .hurricane:
-                print("Condition is hurricane")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundWind.isHidden = false
+                weatherBackgroundWind.play()
+                weatherBackgroundWind.loopMode = .loop
+                weatherBackgroundWind.contentMode = .scaleAspectFill
             case .isolatedThunderstorms:
-                print("Condition is isolated thunderstorms")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .mostlyClear:
-                print("Condition is mostly clear")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundDefault.isHidden = false
+                weatherBackgroundDefault.play()
+                weatherBackgroundDefault.loopMode = .loop
+                weatherBackgroundDefault.contentMode = .scaleAspectFill
             case .mostlyCloudy:
-                print("Condition is mostly cloudy")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundCloudyHard.isHidden = false
+                weatherBackgroundCloudyHard.play()
+                weatherBackgroundCloudyHard.loopMode = .loop
+                weatherBackgroundCloudyHard.contentMode = .scaleAspectFill
             case .partlyCloudy:
-                print("Condition is partly cloudy")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundCloudyLight.isHidden = false
+                weatherBackgroundCloudyLight.play()
+                weatherBackgroundCloudyLight.loopMode = .loop
+                weatherBackgroundCloudyLight.contentMode = .scaleAspectFill
             case .rain:
-                print("Condition is rain")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .scatteredThunderstorms:
-                print("Condition is scattered thunderstorms")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .sleet:
-                print("Condition is sleet")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .smoky:
-                print("Condition is smoky")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundDefault.isHidden = false
+                weatherBackgroundDefault.play()
+                weatherBackgroundDefault.loopMode = .loop
+                weatherBackgroundDefault.contentMode = .scaleAspectFill
             case .snow:
-                print("Condition is snow")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .strongStorms:
-                print("Condition is strong storms")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .sunFlurries:
-                print("Condition is sun flurries")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             case .sunShowers:
-                print("Condition is sun showers")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .thunderstorms:
-                print("Condition is thunderstorms")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .tropicalStorm:
-                print("Condition is tropical storm")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundRain.isHidden = false
+                weatherBackgroundRain.play()
+                weatherBackgroundRain.loopMode = .loop
+                weatherBackgroundRain.contentMode = .scaleAspectFill
             case .windy:
-                print("Condition is windy")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundWind.isHidden = false
+                weatherBackgroundWind.play()
+                weatherBackgroundWind.loopMode = .loop
+                weatherBackgroundWind.contentMode = .scaleAspectFill
             case .wintryMix:
-                print("Condition is wintry mix")
-                weatherBackgroundLottie.isHidden = false
-                weatherBackgroundLottie.play()
-                weatherBackgroundLottie.loopMode = .loop
-                weatherBackgroundLottie.contentMode = .scaleAspectFill
+                weatherBackgroundSnow.isHidden = false
+                weatherBackgroundSnow.play()
+                weatherBackgroundSnow.loopMode = .loop
+                weatherBackgroundSnow.contentMode = .scaleAspectFill
             @unknown default:
                 print("Unknown condition")
                 view.backgroundColor = .colorBackground
@@ -370,13 +387,17 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     }
 }
 
-// MARK: EXTENSION:
+// MARK: - EXTENSION:
 
 extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
+    // MARK: COUNT OF CELL:
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
     
+    // MARK: CUSTOM CELL:
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as? WeatherCell else { return UITableViewCell() }
         cell.backgroundColor = .clear
