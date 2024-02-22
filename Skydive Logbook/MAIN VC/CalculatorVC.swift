@@ -8,8 +8,10 @@ import AlertKit
 final class CalculatorVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
-    private let calculatorLottie = LottieAnimationView(name: "Calculator")
+    private let calculatorGradient = LottieAnimationView(name: "CalculatorGradient")
+    private let calculatorView = UIView()
     private let calculatorBackground = LottieAnimationView(name: "CalculatorBackground")
+    private let calculatorLottie = LottieAnimationView(name: "Calculator")
     private let weightTextField = UITextField()
     private let sizeCanopyTextField = UITextField()
     private let resultButton = UIButton()
@@ -39,7 +41,7 @@ final class CalculatorVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(calculatorBackground, calculatorLottie, weightTextField, sizeCanopyTextField, resultButton, cleanButton, resultLabel, textView)
+        view.addSubviews(calculatorGradient, calculatorView, calculatorBackground, calculatorLottie, weightTextField, sizeCanopyTextField, resultButton, cleanButton, resultLabel, textView)
         textView.addSubview(resultTextLabel)
         resultLabel.addSubviews(viewLoadCategoryA, viewLoadCategoryB, viewLoadCategoryC, viewLoadCategoryD, viewLoadCategoryD1, viewLoadCategoryD2)
     }
@@ -47,6 +49,22 @@ final class CalculatorVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: CALCULATOR GRADIENT:
+
+        calculatorGradient.translatesAutoresizingMaskIntoConstraints = false
+        calculatorGradient.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        calculatorGradient.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        calculatorGradient.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        calculatorGradient.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        // MARK: CALCULATOR VIEW:
+
+        calculatorView.translatesAutoresizingMaskIntoConstraints = false
+        calculatorView.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
+        calculatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        calculatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        calculatorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         // MARK: CALCULATOR BACKGROUND:
 
@@ -191,6 +209,18 @@ final class CalculatorVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = false
+        
+        // MARK: CALCULATOR GRADIENT:
+        
+        calculatorGradient.play()
+        calculatorGradient.loopMode = .loop
+        calculatorGradient.animationSpeed = 1
+        calculatorGradient.contentMode = .scaleAspectFill
+        
+        // MARK: CALCULATOR VIEW:
+
+        calculatorView.backgroundColor = .colorBackground
+        calculatorView.layer.opacity = 0.6
         
         // MARK: CALCULATOR BACKGROUND:
         
