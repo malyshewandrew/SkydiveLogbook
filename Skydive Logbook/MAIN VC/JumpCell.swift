@@ -65,16 +65,15 @@ final class JumpCell: UITableViewCell {
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
         confettiLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
         confettiLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
-        confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        confettiLottie.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1).isActive = true
         
         // MARK: CIRCLE AIRPLANE:
         
         circleAirplaneLottie.translatesAutoresizingMaskIntoConstraints = false
         circleAirplaneLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
         circleAirplaneLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
-        circleAirplaneLottie.heightAnchor.constraint(equalToConstant: 320).isActive = true
-        circleAirplaneLottie.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        circleAirplaneLottie.heightAnchor.constraint(equalToConstant: 420).isActive = true
+        circleAirplaneLottie.widthAnchor.constraint(equalToConstant: 420).isActive = true
         
         // MARK: CIRCLE BUTTON:
         
@@ -428,6 +427,7 @@ final class JumpCell: UITableViewCell {
         if statusAnimation == false {
             playCircleAnimation()
         } else {
+            vibrationOn.vibrationSucces()
             UIView.animate(withDuration: 1.0, animations: {
                 self.circleAirplaneLottie.alpha = 0.0
             })

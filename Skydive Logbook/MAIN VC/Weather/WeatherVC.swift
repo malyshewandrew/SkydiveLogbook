@@ -12,7 +12,6 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private let weatherBackgroundRain = LottieAnimationView(name: "WeatherBackgroundRain")
     private let weatherBackgroundSnow = LottieAnimationView(name: "WeatherBackgroundSnow")
     private let weatherBackgroundWind = LottieAnimationView(name: "WeatherBackgroundWind")
-    
     private let locationManager = CLLocationManager()
     private let service = WeatherService()
     private let tableView = UITableView()
@@ -33,6 +32,10 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var visibility: String = ""
     private var rotationAngle: Int = 0
     private var condition: WeatherCondition?
+    
+    private var maxTemperature: String = ""
+    private var minTemperature: String = ""
+    private var averageTemperature: String = ""
     
     // MARK: - LIFECYCLE:
     
@@ -380,8 +383,23 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.rotationAngle = Int(result.currentWeather.wind.direction.value)
                 self.condition = result.currentWeather.condition
                 configureBackground()
+                
+                // MARK: TEMPERATURE:
+                
+                let hourlyForecasts = result.hourlyForecast
+                var maxTemperature = Double.leastNormalMagnitude
+                var minTemperature = Double.greatestFiniteMagnitude
+                for hourlyForecast in hourlyForecasts {
+                let temperature = hourlyForecast.temperature.value
+                maxTemperature = max(maxTemperature, temperature)
+                minTemperature = min(minTemperature, temperature)
+                self.maxTemperature = "\(String(Int(maxTemperature))) \(result.currentWeather.temperature.unit.symbol)"
+                self.minTemperature = "\(String(Int(minTemperature))) \(result.currentWeather.temperature.unit.symbol)"
+                let averageTemperature = (maxTemperature + minTemperature) / 2.0
+                self.averageTemperature = "\(String(Int(averageTemperature))) \(result.currentWeather.temperature.unit.symbol)"
+                }
             } catch {
-                print(String(describing: error))
+//                print(String(describing: error))
             }
         }
     }
@@ -415,11 +433,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - WIND:
 
     func tapWindOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Wind weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Wind weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let windVC = WindVC()
         if let sheetController = windVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -432,13 +445,12 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - TEMPERATURE:
 
     func taptemperatureOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Temperature weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Temperature weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let temperatureVC = TemperatureVC()
         if let sheetController = temperatureVC.sheetPresentationController {
+            temperatureVC.maxTemperature = maxTemperature
+            temperatureVC.minTemperature = minTemperature
+            temperatureVC.averageTemperature = averageTemperature
+            temperatureVC.feelTemperature = feelTemperature
             sheetController.prefersGrabberVisible = true
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
@@ -449,11 +461,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - HUMIDITY:
 
     func tapHumidityOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Humidity weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Humidity weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let humidityVC = HumidityVC()
         if let sheetController = humidityVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -466,11 +473,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - CLOUD COVER:
 
     func tapCloudCoverOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Cloud cover weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Cloud cover weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let cloudCoverVC = CloudCoverVC()
         if let sheetController = cloudCoverVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -483,11 +485,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - DEW POINT:
 
     func tapDewPointOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Dew point weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Dew point weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let dewPointVC = DewPointVC()
         if let sheetController = dewPointVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -500,11 +497,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - VISIBILITY:
 
     func tapVisibilityOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Visibility weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Visibility weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let visibilityVC = VisibilityVC()
         if let sheetController = visibilityVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -517,11 +509,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - PRECIPITATION:
 
     func tapPrecipitationOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Precipitation weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Precipitation weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let precipitationVC = PrecipitationVC()
         if let sheetController = precipitationVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -534,11 +521,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - PRESSURE:
 
     func tapPressureOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("Pressure weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("Pressure weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let pressureVC = PressureVC()
         if let sheetController = pressureVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -551,11 +533,6 @@ extension WeatherVC: WeatherCellDelegate {
     // MARK: - UV INDEX:
     
     func tapUvIndexOverlayButton() {
-//        let alert = UIAlertController(title: NSLocalizedString("UvIndex weather title / alert", comment: "") + ":",
-//                                      message: NSLocalizedString("UvIndex weather message / alert", comment: ""), preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-//        }))
-//        present(alert, animated: true)
         let uvIndexVC = UvIndexVC()
         if let sheetController = uvIndexVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
