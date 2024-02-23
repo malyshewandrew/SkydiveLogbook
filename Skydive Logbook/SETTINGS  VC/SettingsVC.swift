@@ -42,7 +42,7 @@ final class SettingsVC: UIViewController {
 
         settingsLottie.translatesAutoresizingMaskIntoConstraints = false
         settingsLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        settingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        settingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
         settingsLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         settingsLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
@@ -51,8 +51,7 @@ final class SettingsVC: UIViewController {
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
         confettiLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
         confettiLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor).isActive = true
-        confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 

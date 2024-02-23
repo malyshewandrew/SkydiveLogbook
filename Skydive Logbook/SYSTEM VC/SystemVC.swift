@@ -57,8 +57,7 @@ final class SystemVC: UIViewController {
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
         confettiLottie.centerXAnchor.constraint(equalTo: systemLottie.centerXAnchor).isActive = true
         confettiLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor, constant: -10).isActive = true
-        confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
