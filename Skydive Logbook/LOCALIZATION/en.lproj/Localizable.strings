@@ -109,7 +109,7 @@ Visibility at a distance of 10 km or higher is considered clear.";
 "Pressure weather message / alert" = "Significant, abrupt pressure changes are used to predict weather changes. For example, a drop in pressure may mean that it will rain or snow soon, and an increase in pressure may portend an improvement in the weather.";
 
 "UvIndex weather title / alert" = "UvIndex";
-"UvIndex weather message / alert" = "The UV index (UFI), developed by the World Health Organization, indicates the power of ultraviolet radiation. The higher the UV index, the more dangerous it is to be in the sun and the faster it can harm your health. By tracking the UV index, you can decide when to protect yourself from the sun and when it is better not to go outside. With a UV index value of 3 (moderate) and above, WHO recommends staying in the shade, using sunscreen and wearing hats and closed clothing.";
+"UvIndex weather message / alert" = "The UV index (UFI), developed by the World Health Organization, indicates the power of ultraviolet radiation. The higher the UV index, the more dangerous it is to be in the sun and the faster it can harm your health. By tracking the UV index, you can decide when to protect yourself from the sun and when it is better not to go outside.";
 
 // MARK: WIND SPEED:
 
@@ -132,6 +132,14 @@ Visibility at a distance of 10 km or higher is considered clear.";
 "Min temperature / temperature" = "Min temperature";
 "Average temperature / temperature" = "Average temperature";
 "Feels like temperature / temperature" = "Feels like temp";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Low";
+"Moderate / uv index" = "Moderate";
+"Hight / uv index" = "Hight";
+"Very high / uv index" = "Very high";
+"Excessive / uv index" = "Excessive";
 
 // MARK: - Statistic:
 

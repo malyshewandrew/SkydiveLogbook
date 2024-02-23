@@ -11,7 +11,7 @@ struct WindSpeed {
 
 // MARK: ARRAY WIND SPEEDS:
 
-var arrayWindSpeed = [
+private let arrayWindSpeed = [
     WindSpeed(image: UIImage(systemName: "wind"), name: NSLocalizedString("Calm wind / wind speed", comment: ""), value: "<0.5"),
     WindSpeed(image: UIImage(systemName: "wind"), name: NSLocalizedString("Weak wind / wind speed", comment: ""), value: "0.5-1.5"),
     WindSpeed(image: UIImage(systemName: "wind"), name: NSLocalizedString("Light wind / wind speed", comment: ""), value: "1.6-3.2"),
@@ -26,12 +26,14 @@ var arrayWindSpeed = [
     WindSpeed(image: UIImage(systemName: "wind"), name: NSLocalizedString("Hurricane wind / wind speed", comment: ""), value: ">32.7")
 ]
 
+// MARK: - CLASS:
+
 final class WindVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let weatherWind = LottieAnimationView(name: "WeatherWind")
-    private let weatherWindBackground = LottieAnimationView(name: "WeatherWindBackground")
-    private let windView = UIView()
+    private let windBackgroundLottie = LottieAnimationView(name: "WeatherWindBackground")
+    private let windLogoLottie = LottieAnimationView(name: "WeatherWind")
+    private let windListView = UIView()
     private let tableView = UITableView()
     private let vibrationOn = Vibration()
     
@@ -50,7 +52,7 @@ final class WindVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(weatherWindBackground, weatherWind, windView, tableView)
+        view.addSubviews(windBackgroundLottie, windLogoLottie, windListView, tableView)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -58,31 +60,31 @@ final class WindVC: UIViewController {
     private func configureConstraints() {
         // MARK: WIND BACKGROUND:
 
-        weatherWindBackground.translatesAutoresizingMaskIntoConstraints = false
-        weatherWindBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        weatherWindBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        weatherWindBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        weatherWindBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        windBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+        windBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        windBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        windBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        windBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        // MARK: WIND:
+        // MARK: WIND LOGO:
 
-        weatherWind.translatesAutoresizingMaskIntoConstraints = false
-        weatherWind.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        weatherWind.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        weatherWind.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        windLogoLottie.translatesAutoresizingMaskIntoConstraints = false
+        windLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        windLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        windLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         // MARK: WIND VIEW:
 
-        windView.translatesAutoresizingMaskIntoConstraints = false
-        windView.topAnchor.constraint(equalTo: weatherWind.bottomAnchor, constant: 5).isActive = true
-        windView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        windView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        windView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+        windListView.translatesAutoresizingMaskIntoConstraints = false
+        windListView.topAnchor.constraint(equalTo: windLogoLottie.bottomAnchor, constant: 5).isActive = true
+        windListView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        windListView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        windListView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         
         // MARK: TABLE VIEW:
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: windView.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: windListView.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25).isActive = true
@@ -97,25 +99,25 @@ final class WindVC: UIViewController {
         
         // MARK: WIND BACKGROUND:
         
-        weatherWindBackground.play()
-        weatherWindBackground.loopMode = .loop
-        weatherWindBackground.contentMode = .scaleAspectFill
+        windBackgroundLottie.play()
+        windBackgroundLottie.loopMode = .loop
+        windBackgroundLottie.contentMode = .scaleAspectFill
         
         // MARK: WIND:
         
-        weatherWind.play()
-        weatherWind.loopMode = .loop
-        weatherWind.animationSpeed = 0.7
+        windLogoLottie.play()
+        windLogoLottie.loopMode = .loop
+        windLogoLottie.animationSpeed = 0.7
         
         // MARK: WIND VIEW:
 
-        windView.layer.masksToBounds = true
-        windView.layer.cornerRadius = cornerRadius15
+        windListView.layer.masksToBounds = true
+        windListView.layer.cornerRadius = cornerRadius15
         let blurEffect = UIBlurEffect(style: .systemMaterialDark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.frame = windView.bounds
-        windView.addSubviews(blurEffectView, tableView)
+        blurEffectView.frame = windListView.bounds
+        windListView.addSubviews(blurEffectView, tableView)
         
         // MARK: TABLE VIEW:
 

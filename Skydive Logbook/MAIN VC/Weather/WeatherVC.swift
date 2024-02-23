@@ -32,7 +32,6 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var visibility: String = ""
     private var rotationAngle: Int = 0
     private var condition: WeatherCondition?
-    
     private var maxTemperature: String = ""
     private var minTemperature: String = ""
     private var averageTemperature: String = ""
@@ -386,20 +385,21 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 
                 // MARK: TEMPERATURE:
                 
-                let hourlyForecasts = result.hourlyForecast
-                var maxTemperature = Double.leastNormalMagnitude
-                var minTemperature = Double.greatestFiniteMagnitude
-                for hourlyForecast in hourlyForecasts {
-                let temperature = hourlyForecast.temperature.value
-                maxTemperature = max(maxTemperature, temperature)
-                minTemperature = min(minTemperature, temperature)
+                let dailyForecasts = result.dailyForecast
+                var maxTemperature = 0
+                var minTemperature = 0
+                for dailyForecast in dailyForecasts {
+                    let lowTemperature = dailyForecast.highTemperature.value
+                    let hightTemperature = dailyForecast.highTemperature.value
+                maxTemperature = Int(lowTemperature)
+                minTemperature = Int(hightTemperature)
                 self.maxTemperature = "\(String(Int(maxTemperature))) \(result.currentWeather.temperature.unit.symbol)"
                 self.minTemperature = "\(String(Int(minTemperature))) \(result.currentWeather.temperature.unit.symbol)"
-                let averageTemperature = (maxTemperature + minTemperature) / 2.0
+                let averageTemperature = (maxTemperature + minTemperature) / 2
                 self.averageTemperature = "\(String(Int(averageTemperature))) \(result.currentWeather.temperature.unit.symbol)"
                 }
             } catch {
-//                print(String(describing: error))
+                print(String(describing: error))
             }
         }
     }
