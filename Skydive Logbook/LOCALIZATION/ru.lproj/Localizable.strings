@@ -126,6 +126,13 @@
 "Hard storm wind / wind speed" = "Сильный шторм";
 "Hurricane wind / wind speed" = "Ураган";
 
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Максимальная температура";
+"Min temperature / temperature" = "Минимальная температура";
+"Average temperature / temperature" = "Средняя температура";
+"Feels like temperature / temperature" = "Ощущаемая температура";
+
 // MARK: - Statistic:
 
 "no jumps" = "Для отображения статистики необходимо внести минимум один прыжок.";

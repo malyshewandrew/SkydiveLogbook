@@ -126,6 +126,13 @@ Visibility at a distance of 10 km or higher is considered clear.";
 "Hard storm wind / wind speed" = "Hard storm";
 "Hurricane wind / wind speed" = "Hurricane";
 
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Max temperature";
+"Min temperature / temperature" = "Min temperature";
+"Average temperature / temperature" = "Average temperature";
+"Feels like temperature / temperature" = "Feels like temp";
+
 // MARK: - Statistic:
 
 "no jumps" = "To display statistics, you need to make at least one jump.";

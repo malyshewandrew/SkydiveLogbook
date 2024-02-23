@@ -45,7 +45,6 @@ final class TemperatureVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        
         // MARK: TEMPERATURE BACKGROUND:
 
         weatherTemperatureBackground.translatesAutoresizingMaskIntoConstraints = false
@@ -152,29 +151,33 @@ final class TemperatureVC: UIViewController {
     
     // MARK: - HELPERS:
     
-    func createArray() -> [TemperatureValue] {
+    // MARK: CREATE ARRAY WITH TEMPERATURES:
+
+    func createTemperatureArray() -> [TemperatureValue] {
         let arrayTemperature: [TemperatureValue] = [
-        TemperatureValue(image: UIImage(systemName: "thermometer.sun"), nameTemperature: "Максимальная температура", valueTemperature: maxTemperature),
-        TemperatureValue(image: UIImage(systemName: "thermometer.snowflake"), nameTemperature: "Минимальная температура", valueTemperature: minTemperature),
-        TemperatureValue(image: UIImage(systemName: "thermometer.medium"), nameTemperature: "Средняя температура", valueTemperature: averageTemperature),
-        TemperatureValue(image: UIImage(systemName: "thermometer.high"), nameTemperature: "Ощущаемая температура", valueTemperature: feelTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.sun"), nameTemperature: NSLocalizedString("Max temperature / temperature", comment: ""), valueTemperature: maxTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.snowflake"), nameTemperature: NSLocalizedString("Min temperature / temperature", comment: ""), valueTemperature: minTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.medium"), nameTemperature: NSLocalizedString("Average temperature / temperature", comment: ""), valueTemperature: averageTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.high"), nameTemperature: NSLocalizedString("Feels like temperature / temperature", comment: ""), valueTemperature: feelTemperature),
         ]
         return arrayTemperature
     }
 }
 
+// MARK: EXTENSION:
+
 extension TemperatureVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: CELL COUNTS:
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        createArray().count
+        createTemperatureArray().count
     }
     
     // MARK: CUSTOM CELL:
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TemperatureCell", for: indexPath) as? TemperatureCell else { return UITableViewCell() }
-        let temperature = createArray()[indexPath.row]
+        let temperature = createTemperatureArray()[indexPath.row]
         cell.backgroundColor = .clear
         cell.configure(image: temperature.image ?? UIImage(), name: temperature.nameTemperature, value: temperature.valueTemperature)
         return cell
