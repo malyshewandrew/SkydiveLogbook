@@ -138,6 +138,9 @@ final class NotesVC: UIViewController {
         noteButton.contentVerticalAlignment = textAligmentTop
         noteButton.titleLabel?.font = fontMediumStandard14
         noteButton.layer.cornerRadius = cornerRadius15
+        noteButton.layer.shadowRadius = 50
+        noteButton.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        noteButton.layer.shadowOpacity = 0.2
 
         // MARK: TEXT VIEW:
 

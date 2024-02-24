@@ -383,21 +383,11 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.condition = result.currentWeather.condition
                 configureBackground()
                 
-                // MARK: TEMPERATURE:
+                // MARK: TEMPERATURE MAX MIN AVERAGE:
                 
-                let dailyForecasts = result.dailyForecast
-                var maxTemperature = 0
-                var minTemperature = 0
-                for dailyForecast in dailyForecasts {
-                    let lowTemperature = dailyForecast.highTemperature.value
-                    let hightTemperature = dailyForecast.highTemperature.value
-                maxTemperature = Int(lowTemperature)
-                minTemperature = Int(hightTemperature)
-                self.maxTemperature = "\(String(Int(maxTemperature))) \(result.currentWeather.temperature.unit.symbol)"
-                self.minTemperature = "\(String(Int(minTemperature))) \(result.currentWeather.temperature.unit.symbol)"
-                let averageTemperature = (maxTemperature + minTemperature) / 2
-                self.averageTemperature = "\(String(Int(averageTemperature))) \(result.currentWeather.temperature.unit.symbol)"
-                }
+                self.maxTemperature = "\(Int(result.dailyForecast.forecast[0].highTemperature.value)) \(result.currentWeather.temperature.unit.symbol)"
+                self.minTemperature = "\(Int(result.dailyForecast.forecast[0].lowTemperature.value)) \(result.currentWeather.temperature.unit.symbol)"
+                self.averageTemperature = "\(Int((result.dailyForecast.forecast[0].highTemperature.value + result.dailyForecast.forecast[0].lowTemperature.value) / 2)) \(result.currentWeather.temperature.unit.symbol)"
             } catch {
                 print(String(describing: error))
             }

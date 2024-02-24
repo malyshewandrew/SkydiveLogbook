@@ -86,10 +86,11 @@ final class WindCell: UITableViewCell {
     
     // MARK: CONFIGURE:
     
-    func configure(image: UIImage, name: String, value: String) {
+    func configure(image: UIImage, name: String, value: String, color: UIColor) {
         imageImageView.image = image.withConfiguration(configurationImage)
         nameLabel.text = name
         valueLabel.text = value
+        imageImageView.tintColor = color
     }
 }
     
