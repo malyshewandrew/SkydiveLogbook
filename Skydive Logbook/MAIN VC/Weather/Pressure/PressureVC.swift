@@ -12,11 +12,11 @@ struct PressureModel {
 // MARK: ARRAY PRESSURE VALUES:
 
 private let arrayPressure = [
-    PressureModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 1", value: "Значение 1"),
-    PressureModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 2", value: "Значение 2"),
-    PressureModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 3", value: "Значение 3"),
-    PressureModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 4", value: "Значение 4"),
-    PressureModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 5", value: "Значение 5")
+    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Very low / pressure", comment: ""), value: "<20"),
+    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Low / pressure", comment: ""), value: "<10-20"),
+    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Normal / pressure", comment: ""), value: "±10"),
+    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Hight / pressure", comment: ""), value: ">10-20"),
+    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Very hight / pressure", comment: ""), value: ">20")
 ]
 
 // MARK: - CLASS:

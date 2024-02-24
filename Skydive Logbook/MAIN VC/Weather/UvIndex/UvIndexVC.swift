@@ -5,6 +5,7 @@ import UIKit
 
 struct UvIndex {
     let image: UIImage?
+    let imageColor: UIColor
     let name: String
     let value: String
 }
@@ -12,11 +13,11 @@ struct UvIndex {
 // MARK: ARRAY UVINDEX VALUES:
 
 private let arrayUvIndex = [
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), name: NSLocalizedString("Low / uv index", comment: ""), value: "0-2"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), name: NSLocalizedString("Moderate / uv index", comment: ""), value: "3-5"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), name: NSLocalizedString("Hight / uv index", comment: ""), value: "6-7"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), name: NSLocalizedString("Very high / uv index", comment: ""), value: "8-10"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), name: NSLocalizedString("Excessive / uv index", comment: ""), value: "11+")
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemGreen, name: NSLocalizedString("Low / uv index", comment: ""), value: "0-2"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemYellow, name: NSLocalizedString("Moderate / uv index", comment: ""), value: "3-5"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemOrange, name: NSLocalizedString("Hight / uv index", comment: ""), value: "6-7"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemRed, name: NSLocalizedString("Very high / uv index", comment: ""), value: "8-10"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemIndigo, name: NSLocalizedString("Excessive / uv index", comment: ""), value: "11+")
 ]
 
 // MARK: - CLASS:
@@ -175,7 +176,7 @@ extension UvIndexVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UvIndexCell", for: indexPath) as? UvIndexCell else { return UITableViewCell() }
         let uvIndex = arrayUvIndex[indexPath.row]
         cell.backgroundColor = .clear
-        cell.configure(image: uvIndex.image ?? UIImage(), name: uvIndex.name, value: uvIndex.value)
+        cell.configure(image: uvIndex.image ?? UIImage(), imageColor: uvIndex.imageColor, name: uvIndex.name, value: uvIndex.value)
         return cell
     }
     

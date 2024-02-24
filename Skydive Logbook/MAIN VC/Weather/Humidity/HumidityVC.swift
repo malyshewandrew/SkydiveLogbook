@@ -12,11 +12,11 @@ struct HumidityModel {
 // MARK: ARRAY UVINDEX VALUES:
 
 private let arrayHumidity = [
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 1", value: "Значение 1"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 2", value: "Значение 2"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 3", value: "Значение 3"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 4", value: "Значение 4"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 5", value: "Значение 5")
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Very dry air / humidity", comment: ""), value: "<30%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Dry air / humidity", comment: ""), value: "30-55%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Moderately dry air / humidity", comment: ""), value: "55-70%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Moderately humid air / humidity", comment: ""), value: "70-85%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Very humid air / humidity", comment: ""), value: ">85%")
 ]
 
 // MARK: - CLASS:

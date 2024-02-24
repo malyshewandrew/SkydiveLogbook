@@ -63,6 +63,7 @@
 
 "mm/h" = "mm/h";
 "hPa" = "hPa";
+"mm / pressure" = "mm";
 "m/s" = "m/s";
 "km" = "km";
 "Gusts up to" = "Gusts up to";
@@ -93,20 +94,19 @@
 "Cloud cover weather message / alert" = "Cloud cover is measured as a percentage. It is usually expressed in the parts of the sky occupied by clouds.\nFor example, if the cloud cover is:\n0% - clear sky.\n50% - half of the sky is covered.\n100% - completely cloudy sky.";
 
 "Humidity weather title / alert" = "Humidity";
-"Humidity weather message / alert" = "Relative humidity, or simply humidity, is the ratio of the amount of moisture in the air to the maximum amount that can be contained in the air. At high temperatures, the air may contain more moisture. If the relative humidity is about 100%, this may indicate the presence of dew or fog.";
+"Humidity weather message / alert" = "Relative humidity, or simply humidity, is the ratio of the amount of moisture in the air to the maximum amount that can be contained in the air.";
 
 "Dew point weather title / alert" = "Dew point";
 "Dew point weather message / alert" = "The dew point is the value to which the temperature must drop in order for dew to form. This is a convenient way to determine the humidity of the air: the higher the dew point, the more humid the air feels. The dew point coinciding with the current temperature means that the relative humidity of the air is 100% and dew or fog may form.";
 
 "Visibility weather title / alert" = "Visibility";
-"Visibility weather message / alert" = "Visibility shows at what distance from yourself you can clearly see objects such as buildings and hills. Visibility is a measure of air transparency and does not take into account the amount of sunlight or the presence of obstacles.
-Visibility at a distance of 10 km or higher is considered clear.";
+"Visibility weather message / alert" = "Visibility shows at what distance from yourself you can clearly see objects such as buildings and hills. Visibility is a measure of air transparency and does not take into account the amount of sunlight or the presence of obstacles.";
 
 "Precipitation weather title / alert" = "Precipitation";
-"Precipitation weather message / alert" = "The amount of precipitation is the height of the water layer in millimeters that would form on the earth's surface if it were completely flat. The amount of precipitation in millimeters is numerically equal to the mass of water that fell on a horizontal surface of 1 square meter.\nLight rain: 1-5mm\nModerate rain: 5-15mm\nHeavy rain: 15-25 m\nDownpour: 25+mm";
+"Precipitation weather message / alert" = "The amount of precipitation is the height of the water layer in millimeters that would form on the earth's surface if it were completely flat. The amount of precipitation in millimeters is numerically equal to the mass of water that fell on a horizontal surface of 1 square meter.";
 
 "Pressure weather title / alert" = "Pressure";
-"Pressure weather message / alert" = "Significant, abrupt pressure changes are used to predict weather changes. For example, a drop in pressure may mean that it will rain or snow soon, and an increase in pressure may portend an improvement in the weather.";
+"Pressure weather message / alert" = "The table shows deviations from the pressure norm relative to your location. The usual pressure for people is 760 millimeters of mercury. But the normal atmospheric pressure for each person depends on the region in which he is located, and the pressure of the region depends on the altitude of the area.";
 
 "UvIndex weather title / alert" = "UvIndex";
 "UvIndex weather message / alert" = "The UV index (UFI), developed by the World Health Organization, indicates the power of ultraviolet radiation. The higher the UV index, the more dangerous it is to be in the sun and the faster it can harm your health. By tracking the UV index, you can decide when to protect yourself from the sun and when it is better not to go outside.";
@@ -132,6 +132,53 @@ Visibility at a distance of 10 km or higher is considered clear.";
 "Min temperature / temperature" = "Min temperature";
 "Average temperature / temperature" = "Average temperature";
 "Feels like temperature / temperature" = "Feels like temp";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Very dry air";
+"Dry air / humidity" = "Dry air";
+"Moderately dry air / humidity" = "Moderately dry air";
+"Moderately humid air / humidity" = "Moderately humid air";
+"Very humid air / humidity" = "Very humid air";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Clear";
+"Partly Cloudy / cloud cover" = "Partly Cloudy";
+"Variable Cloudiness / cloud cover" = "Variable Cloudiness";
+"Cloudy / cloud cover" = "Cloudy";
+"Overcast / cloud cover" = "Overcast";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Relatively dry air";
+"Moderately humid air / dew point" = "Moderately humid air";
+"Humid air / dew point" = "Humid air";
+"Very humid air / dew point" = "Very humid air";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Excellent";
+"Good / visibility" = "Good";
+"Moderate / visibility" = "Moderate";
+"Poor / visibility" = "Poor";
+"Very Poor / visibility" = "Very Poor";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Very Light";
+"Light / precipitation" = "Light";
+"Moderate / precipitation" = "Moderate";
+"Heavy / precipitation" = "Heavy";
+"Very Heavy / precipitation" = "Very Heavy";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Very low";
+"Low / pressure" = "Low";
+"Normal / pressure" = "Normal";
+"Hight / pressure" = "Hight";
+"Very hight / pressure" = "Very hight";
 
 // MARK: UV INDEX:
 

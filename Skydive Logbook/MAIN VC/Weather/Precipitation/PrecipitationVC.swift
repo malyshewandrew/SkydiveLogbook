@@ -12,11 +12,11 @@ struct PrecipitationModel {
 // MARK: ARRAY PRECIPITATION VALUES:
 
 private let arrayPrecipitation = [
-    PrecipitationModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 1", value: "Значение 1"),
-    PrecipitationModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 2", value: "Значение 2"),
-    PrecipitationModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 3", value: "Значение 3"),
-    PrecipitationModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 4", value: "Значение 4"),
-    PrecipitationModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 5", value: "Значение 5")
+    PrecipitationModel(image: UIImage(systemName: "drop.degreesign"), name: NSLocalizedString("Very Light / precipitation", comment: ""), value: "<1"),
+    PrecipitationModel(image: UIImage(systemName: "drop.degreesign"), name: NSLocalizedString("Light / precipitation", comment: ""), value: "1-3"),
+    PrecipitationModel(image: UIImage(systemName: "drop.degreesign"), name: NSLocalizedString("Moderate / precipitation", comment: ""), value: "3-6"),
+    PrecipitationModel(image: UIImage(systemName: "drop.degreesign"), name: NSLocalizedString("Heavy / precipitation", comment: ""), value: "6-10"),
+    PrecipitationModel(image: UIImage(systemName: "drop.degreesign"), name: NSLocalizedString("Very Heavy / precipitation", comment: ""), value: ">10")
 ]
 
 // MARK: - CLASS:

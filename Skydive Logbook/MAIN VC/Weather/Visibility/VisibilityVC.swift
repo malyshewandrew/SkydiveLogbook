@@ -12,11 +12,11 @@ struct VisibilityModel {
 // MARK: ARRAY VISIBILITY VALUES:
 
 private let arrayVisibility = [
-    VisibilityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 1", value: "Значение 1"),
-    VisibilityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 2", value: "Значение 2"),
-    VisibilityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 3", value: "Значение 3"),
-    VisibilityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 4", value: "Значение 4"),
-    VisibilityModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 5", value: "Значение 5")
+    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Excellent / visibility", comment: ""), value: ">10"),
+    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Good / visibility", comment: ""), value: "5-10"),
+    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Moderate / visibility", comment: ""), value: "2-5"),
+    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Poor / visibility", comment: ""), value: "1-2"),
+    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Very Poor / visibility", comment: ""), value: "<1")
 ]
 
 // MARK: - CLASS:

@@ -12,11 +12,11 @@ struct CloudCoverModel {
 // MARK: ARRAY CLOUD COVER VALUES:
 
 private let arrayCloudCover = [
-    CloudCoverModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 1", value: "Значение 1"),
-    CloudCoverModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 2", value: "Значение 2"),
-    CloudCoverModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 3", value: "Значение 3"),
-    CloudCoverModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 4", value: "Значение 4"),
-    CloudCoverModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 5", value: "Значение 5")
+    CloudCoverModel(image: UIImage(systemName: "sun.max"), name: NSLocalizedString("Clear / cloud cover", comment: ""), value: "<10%"),
+    CloudCoverModel(image: UIImage(systemName: "cloud"), name: NSLocalizedString("Partly Cloudy / cloud cover", comment: ""), value: "10-30%"),
+    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), name: NSLocalizedString("Variable Cloudiness / cloud cover", comment: ""), value: "30-70%"),
+    CloudCoverModel(image: UIImage(systemName: "cloud.fog"), name: NSLocalizedString("Cloudy / cloud cover", comment: ""), value: "70-99%"),
+    CloudCoverModel(image: UIImage(systemName: "smoke"), name: NSLocalizedString("Overcast / cloud cover", comment: ""), value: "100%")
 ]
 
 // MARK: - CLASS:

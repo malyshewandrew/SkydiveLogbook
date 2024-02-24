@@ -75,11 +75,13 @@ final class HumidityCell: UITableViewCell {
         
         nameLabel.textColor = .white
         nameLabel.font = fontMediumStandard14
+        nameLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: VALUE
         
         valueLabel.textColor = .white
         valueLabel.font = fontMediumStandard14
+        valueLabel.adjustsFontSizeToFitWidth = true
     }
     
     // MARK: - HELPERS:

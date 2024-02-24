@@ -367,7 +367,7 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.humidity = "\(Int(result.currentWeather.humidity * 100)) %"
                 self.dewPoint = "\(Int(result.currentWeather.dewPoint.value))\(result.currentWeather.temperature.unit.symbol)"
                 self.precipitation = "\(result.currentWeather.precipitationIntensity.value) \(NSLocalizedString("mm/h", comment: ""))"
-                self.pressure = "\(Int(result.currentWeather.pressure.value)) \(NSLocalizedString("hPa", comment: ""))"
+                self.pressure = "\(Int(result.currentWeather.pressure.value * 0.750063755419211)) \(NSLocalizedString("mm / pressure", comment: ""))"
                 self.uvIndex = "\(result.currentWeather.uvIndex.category): \(result.currentWeather.uvIndex.value)"
                 self.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) \(NSLocalizedString("m/s", comment: ""))"
                 if let gustValue = result.currentWeather.wind.gust?.value {

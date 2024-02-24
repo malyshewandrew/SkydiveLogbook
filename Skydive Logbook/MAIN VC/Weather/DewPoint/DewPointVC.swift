@@ -12,11 +12,10 @@ struct DewPointModel {
 // MARK: ARRAY CLOUD COVER VALUES:
 
 private let arrayDewPoint = [
-    DewPointModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 1", value: "Значение 1"),
-    DewPointModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 2", value: "Значение 2"),
-    DewPointModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 3", value: "Значение 3"),
-    DewPointModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 4", value: "Значение 4"),
-    DewPointModel(image: UIImage(systemName: "humidity.fill"), name: "Имя 5", value: "Значение 5")
+    DewPointModel(image: UIImage(systemName: "thermometer.low"), name: NSLocalizedString("Relatively dry air / dew point", comment: ""), value: "<10°C"),
+    DewPointModel(image: UIImage(systemName: "thermometer.medium"), name: NSLocalizedString("Moderately humid air / dew point", comment: ""), value: "10-15°C"),
+    DewPointModel(image: UIImage(systemName: "thermometer.high"), name: NSLocalizedString("Humid air / dew point", comment: ""), value: "15-20°C"),
+    DewPointModel(image: UIImage(systemName: "thermometer.sun.fill"), name: NSLocalizedString("Very humid air / dew point", comment: ""), value: ">20°C")
 ]
 
 // MARK: - CLASS:
@@ -82,7 +81,7 @@ final class DewPointVC: UIViewController {
         // MARK: TABLE VIEW:
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: dewPointListView.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: dewPointListView.topAnchor, constant: 15).isActive = true
         tableView.centerXAnchor.constraint(equalTo: dewPointListView.centerXAnchor).isActive = true
         tableView.centerYAnchor.constraint(equalTo: dewPointListView.centerYAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: dewPointListView.widthAnchor, multiplier: 1).isActive = true
