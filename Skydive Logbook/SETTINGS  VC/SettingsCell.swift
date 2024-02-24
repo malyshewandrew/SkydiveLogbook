@@ -262,48 +262,56 @@ final class SettingsCell: UITableViewCell {
     // MARK: FUNC FOR EDIT ACCOUNT:
 
     @objc private func editAccountButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapEditAccountButton()
     }
 
     // MARK: FUNC FOR EDIT LOCATIONS:
 
     @objc private func editLocationsButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapEditLocationsButton()
     }
 
     // MARK: FUNC FOR EDIT AIRCRAFTS:
 
     @objc private func editAircraftsButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapEditAircraftsButton()
     }
 
     // MARK: FUNC FOR EDIT CANOPIES:
 
     @objc private func editCanopiesButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapEditCanopiesButton()
     }
     
     // MARK: FUNC FOR DROP ZONES:
 
     @objc private func dropZonesButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapDropZonesButton()
     }
 
     // MARK: FUNC FOR BACKUP:
 
     @objc private func backupButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapBackupButton()
     }
 
     // MARK: FUNC FOR INFO BUTTON:
 
     @objc private func infoButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapInfoButton()
     }
 
     // MARK: FUNC FOR PREMIUM BUTTON:
 
     @objc private func premiumButtonTapped() {
+        vibrationOn.vibrationStandart()
         delegate?.tapPremiumButton()
     }
 

@@ -482,9 +482,11 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // MARK: DELETE JUMP:
-
+        
+        vibrationOn.vibrationStandart()
         let deleteJump = arrayJumpsRealm[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
+            self.vibrationOn.vibrationStandart()
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
@@ -508,6 +510,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         // MARK: EDIT JUMP:
 
         let editAction = UIContextualAction(style: .destructive, title: nil) { _, _, completion in
+            self.vibrationOn.vibrationStandart()
             let editJumpViewController = EditJumpVC()
             editJumpViewController.indexPath = indexPath.row
             self.navigationController?.pushViewController(editJumpViewController, animated: true)

@@ -12,6 +12,7 @@ final class PremiumVC: UIViewController {
     private let buy12Button = UIButton()
     private let percentLabel = UILabel()
     private let restoreButton = UIButton()
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -172,6 +173,7 @@ final class PremiumVC: UIViewController {
     // MARK: FUNC FOR BUY 1:
     
     @objc private func buy1ButtonTapped() {
+        vibrationOn.vibrationStandart()
         print("TEST 1 month")
 
     }
@@ -179,6 +181,7 @@ final class PremiumVC: UIViewController {
     // MARK: FUNC FOR BUY 12:
     
     @objc private func buy12ButtonTapped() {
+        vibrationOn.vibrationStandart()
         print("TEST 1 year")
     }
     
@@ -186,6 +189,7 @@ final class PremiumVC: UIViewController {
     // MARK: FUNC FOR ALERT RESTORE BUTTON:
 
     @objc private func restoreButtonTapped() {
+        vibrationOn.vibrationStandart()
         print("Restore check")
     }
 }

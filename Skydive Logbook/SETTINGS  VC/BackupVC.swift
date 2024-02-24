@@ -13,6 +13,7 @@ final class BackupVC: UIViewController {
     private let backupButton = UIButton()
     private let restoreButton = UIButton()
     private let realmManager = RealmManager()
+    private let vibrationOn = Vibration()
 
     // MARK: - LIFECYCLE:
 
@@ -169,6 +170,7 @@ final class BackupVC: UIViewController {
     // MARK: - BACKUP AND RESTORE METHODS:
 
     @objc private func createBackup() {
+        vibrationOn.vibrationStandart()
         do {
             var combinedData: [String: Any] = [:]
             combinedData["jumps"] = arrayJumpsRealm.map { $0.toDictionary() }
@@ -203,6 +205,7 @@ final class BackupVC: UIViewController {
     }
 
     @objc private func restoreBackup() {
+        vibrationOn.vibrationStandart()
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.data], asCopy: true)
         documentPicker.delegate = self
         present(documentPicker, animated: true, completion: nil)

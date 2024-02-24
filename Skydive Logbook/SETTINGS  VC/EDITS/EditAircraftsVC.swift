@@ -304,6 +304,7 @@ extension EditAircraftsVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            vibrationOn.vibrationStandart()
             let deleteAircraft = arrayAircraftsRealm[indexPath.row]
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete aircraft?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))

@@ -140,6 +140,7 @@ class DropZonesVC: UIViewController {
     // MARK: FUNC FOR CURRENT LOCATION:
 
     @objc private func currentLocationButtonTapped() {
+        vibrationOn.vibrationStandart()
         guard let cordinate = locationManager.location?.coordinate else { return }
         let coordinateRegion = MKCoordinateRegion(center: cordinate,
                                                   latitudinalMeters: 250,

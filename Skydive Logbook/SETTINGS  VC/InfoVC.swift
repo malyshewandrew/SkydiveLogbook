@@ -13,6 +13,7 @@ final class InfoVC: UIViewController {
     private let privacyButton = UIButton()
     private let termsButton = UIButton()
     private let versionButton = UIButton()
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -149,6 +150,7 @@ final class InfoVC: UIViewController {
     // MARK: FUNC FOR ALERT VERSION BUTTON:
 
     @objc private func versionButtonTapped() {
+        vibrationOn.vibrationStandart()
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionSettingsLottie = LottieAnimationView(name: "VersionSettingsLottie")
         let alert = UIAlertController(title: "Skydive Logbook", message: "\n\n\n\niOS Developer Malyshew Andrew\n2023-2024 Minsk, Belarus\nmalyshewdeveloper@protonmail.com", preferredStyle: .alert)
@@ -179,6 +181,7 @@ final class InfoVC: UIViewController {
     // MARK: OPEN SAFARI PRIVACY:
     
     @objc private func privacyButtonTapped() {
+        vibrationOn.vibrationStandart()
         guard let url = URL(string: "https://skydivelogbook.tilda.ws/privacysecurity") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
@@ -188,6 +191,7 @@ final class InfoVC: UIViewController {
     // MARK: OPEN SAFARI TERMS:
     
     @objc private func termsButtonTapped() {
+        vibrationOn.vibrationStandart()
         guard let url = URL(string: "https://skydivelogbook.tilda.ws/termsofuse") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
