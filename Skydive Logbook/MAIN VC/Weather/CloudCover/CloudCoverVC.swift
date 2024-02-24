@@ -91,7 +91,7 @@ final class CloudCoverVC: UIViewController {
         cloudCoverInfoView.translatesAutoresizingMaskIntoConstraints = false
         let bottomConstraint = cloudCoverInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         bottomConstraint.isActive = true
-        let heightConstraint = cloudCoverInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+        let heightConstraint = cloudCoverInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
         cloudCoverInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

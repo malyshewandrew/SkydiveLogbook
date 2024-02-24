@@ -92,7 +92,7 @@ final class PrecipitationVC: UIViewController {
         precipitationInfoView.translatesAutoresizingMaskIntoConstraints = false
         let bottomConstraint = precipitationInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         bottomConstraint.isActive = true
-        let heightConstraint = precipitationInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+        let heightConstraint = precipitationInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
         precipitationInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

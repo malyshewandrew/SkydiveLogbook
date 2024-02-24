@@ -91,7 +91,7 @@ final class PressureVC: UIViewController {
         pressureInfoView.translatesAutoresizingMaskIntoConstraints = false
         let bottomConstraint = pressureInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         bottomConstraint.isActive = true
-        let heightConstraint = pressureInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+        let heightConstraint = pressureInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
         pressureInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

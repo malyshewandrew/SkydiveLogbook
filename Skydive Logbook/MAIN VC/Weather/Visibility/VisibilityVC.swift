@@ -92,7 +92,7 @@ final class VisibilityVC: UIViewController {
         visibilityInfoView.translatesAutoresizingMaskIntoConstraints = false
         let bottomConstraint = visibilityInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         bottomConstraint.isActive = true
-        let heightConstraint = visibilityInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+        let heightConstraint = visibilityInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
         visibilityInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

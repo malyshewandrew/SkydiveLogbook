@@ -92,7 +92,7 @@ final class UvIndexVC: UIViewController {
         uvIndexInfoView.translatesAutoresizingMaskIntoConstraints = false
         let bottomConstraint = uvIndexInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         bottomConstraint.isActive = true
-        let heightConstraint = uvIndexInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+        let heightConstraint = uvIndexInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
         uvIndexInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

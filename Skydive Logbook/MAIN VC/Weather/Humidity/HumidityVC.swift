@@ -91,7 +91,7 @@ final class HumidityVC: UIViewController {
         humidityInfoView.translatesAutoresizingMaskIntoConstraints = false
         let bottomConstraint = humidityInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         bottomConstraint.isActive = true
-        let heightConstraint = humidityInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+        let heightConstraint = humidityInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
         humidityInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

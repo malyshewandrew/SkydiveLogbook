@@ -85,7 +85,7 @@ final class TemperatureVC: UIViewController {
         temperatureInfoView.translatesAutoresizingMaskIntoConstraints = false
         let bottomConstraint = temperatureInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         bottomConstraint.isActive = true
-        let heightConstraint = temperatureInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+        let heightConstraint = temperatureInfoView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
         temperatureInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

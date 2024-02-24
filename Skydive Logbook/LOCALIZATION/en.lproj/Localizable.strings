@@ -91,7 +91,7 @@
 "Temperature weather message / alert" = "The indicator «Feels like» may differ from the actual temperature, reflecting how the temperature is perceived by a person.\nThe «Feels like» indicator is influenced by wind characteristics and humidity levels.";
 
 "Cloud cover weather title / alert" = "Cloud cover";
-"Cloud cover weather message / alert" = "Cloud cover is measured as a percentage. It is usually expressed in the parts of the sky occupied by clouds.\nFor example, if the cloud cover is:\n0% - clear sky.\n50% - half of the sky is covered.\n100% - completely cloudy sky.";
+"Cloud cover weather message / alert" = "Cloud cover is measured as a percentage. It is usually expressed in the parts of the sky occupied by clouds.";
 
 "Humidity weather title / alert" = "Humidity";
 "Humidity weather message / alert" = "Relative humidity, or simply humidity, is the ratio of the amount of moisture in the air to the maximum amount that can be contained in the air.";
