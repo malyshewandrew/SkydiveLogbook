@@ -48,12 +48,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let systemNavigationController = UINavigationController(rootViewController: systemViewController)
         let settingsNavigationController = UINavigationController(rootViewController: settingsViewController)
 
-        // MARK: ROOT:
-
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([mainNavigationController, statisticNavigationController, addNewJumpNavigationController, systemNavigationController, settingsNavigationController], animated: true)
-
         // MARK: TAB BAR UI CONFIGURATE:
+
+        let tabBarController = TabBarController()
+        tabBarController.setViewControllers([mainNavigationController, statisticNavigationController, addNewJumpNavigationController, systemNavigationController, settingsNavigationController], animated: true)
 
         tabBarController.tabBar.backgroundColor = .colorTabBar
         tabBarController.tabBar.unselectedItemTintColor = .colorTabBarUnselected
