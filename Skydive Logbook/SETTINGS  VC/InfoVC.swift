@@ -103,9 +103,9 @@ final class InfoVC: UIViewController {
 
         infoTextView.backgroundColor = .colorCell
         infoTextView.layer.cornerRadius = cornerRadius15
-        infoTextView.layer.shadowRadius = 50
+        infoTextView.layer.shadowRadius = 25
         infoTextView.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        infoTextView.layer.shadowOpacity = 0.3
+        infoTextView.layer.shadowOpacity = 0.2
         
         // MARK: INFO TEXT LABEL:
 

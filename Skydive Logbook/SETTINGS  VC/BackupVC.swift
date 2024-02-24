@@ -95,7 +95,7 @@ final class BackupVC: UIViewController {
         // MARK: INFO VIEW:
 
         infoView.backgroundColor = .colorCell
-        infoView.layer.cornerRadius = 10
+        infoView.layer.cornerRadius = cornerRadius15
         infoView.layer.shadowRadius = 50
         infoView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         infoView.layer.shadowOpacity = 0.3

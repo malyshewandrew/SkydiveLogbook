@@ -405,7 +405,7 @@ final class WeatherCell: UITableViewCell {
         windButton.contentVerticalAlignment = textAligmentTop
         windButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         windButton.layer.masksToBounds = true
-        windButton.layer.cornerRadius = 15
+        windButton.layer.cornerRadius = cornerRadius15
         windOverlayButton.addTarget(self, action: #selector(windOverlayButtonTapped), for: .touchUpInside)
 
         // WIND SPEED:
@@ -444,7 +444,7 @@ final class WeatherCell: UITableViewCell {
         temperatureButton.contentVerticalAlignment = textAligmentTop
         temperatureButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         temperatureButton.layer.masksToBounds = true
-        temperatureButton.layer.cornerRadius = 15
+        temperatureButton.layer.cornerRadius = cornerRadius15
         temperatureOverlayButton.addTarget(self, action: #selector(temperatureOverlayButtonTapped), for: .touchUpInside)
 
         // CURRENT TEMPERATURE:
@@ -483,7 +483,7 @@ final class WeatherCell: UITableViewCell {
         humidityButton.contentVerticalAlignment = textAligmentTop
         humidityButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         humidityButton.layer.masksToBounds = true
-        humidityButton.layer.cornerRadius = 15
+        humidityButton.layer.cornerRadius = cornerRadius15
         humidityOverlayButton.addTarget(self, action: #selector(humidityOverlayButtonTapped), for: .touchUpInside)
 
         // HUMIDITY:
@@ -529,7 +529,7 @@ final class WeatherCell: UITableViewCell {
         dewPointButton.contentVerticalAlignment = textAligmentTop
         dewPointButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         dewPointButton.layer.masksToBounds = true
-        dewPointButton.layer.cornerRadius = 15
+        dewPointButton.layer.cornerRadius = cornerRadius15
         dewPointOverlayButton.addTarget(self, action: #selector(dewPointOverlayButtonTapped), for: .touchUpInside)
 
         // DEW POINT
@@ -552,7 +552,7 @@ final class WeatherCell: UITableViewCell {
         visibilityButton.contentVerticalAlignment = textAligmentTop
         visibilityButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         visibilityButton.layer.masksToBounds = true
-        visibilityButton.layer.cornerRadius = 15
+        visibilityButton.layer.cornerRadius = cornerRadius15
         visibilityOverlayButton.addTarget(self, action: #selector(visibilityOverlayButtonTapped), for: .touchUpInside)
 
         // VISIBILITY:
@@ -575,7 +575,7 @@ final class WeatherCell: UITableViewCell {
         pressureButton.contentVerticalAlignment = textAligmentTop
         pressureButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         pressureButton.layer.masksToBounds = true
-        pressureButton.layer.cornerRadius = 15
+        pressureButton.layer.cornerRadius = cornerRadius15
         pressureOverlayButton.addTarget(self, action: #selector(pressureOverlayButtonTapped), for: .touchUpInside)
 
         // PRESSURE:
@@ -598,7 +598,7 @@ final class WeatherCell: UITableViewCell {
         uvIndexButton.contentVerticalAlignment = textAligmentTop
         uvIndexButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         uvIndexButton.layer.masksToBounds = true
-        uvIndexButton.layer.cornerRadius = 15
+        uvIndexButton.layer.cornerRadius = cornerRadius15
         uvIndexOverlayButton.addTarget(self, action: #selector(uvIndexOverlayButtonTapped), for: .touchUpInside)
 
         // UVINDEX:
@@ -621,7 +621,7 @@ final class WeatherCell: UITableViewCell {
         precipitationButton.contentVerticalAlignment = textAligmentTop
         precipitationButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         precipitationButton.layer.masksToBounds = true
-        precipitationButton.layer.cornerRadius = 15
+        precipitationButton.layer.cornerRadius = cornerRadius15
         precipitationOverlayButton.addTarget(self, action: #selector(precipitationOverlayButtonTapped), for: .touchUpInside)
 
         // PRECIPITATION:

@@ -93,14 +93,69 @@ class DropZonesVC: UIViewController {
     
     private func configurePoints() {
         
-        // BELARUS:
+        // MARK: - BELARUS:
         let lipki = MKPointAnnotation()
         lipki.coordinate = CLLocationCoordinate2D(latitude: 53.909962, longitude: 27.703807)
         lipki.title = "Lipki"
         lipki.subtitle = "Skydive Minsk"
         mapView.addAnnotation(lipki)
-
-        // UNITED ARAB EMIRATES:
+        
+        let hozhevo = MKPointAnnotation()
+        hozhevo.coordinate = CLLocationCoordinate2D(latitude: 54.252339, longitude: 26.867862)
+        hozhevo.title = "Hozhevo"
+        hozhevo.subtitle = "Skydive Minsk"
+        mapView.addAnnotation(hozhevo)
+        
+        let sincha = MKPointAnnotation()
+        sincha.coordinate = CLLocationCoordinate2D(latitude: 53.455188, longitude: 28.093508)
+        sincha.title = "Sincha"
+        sincha.subtitle = "Skydive Minsk"
+        mapView.addAnnotation(sincha)
+        
+        let kukovyachino = MKPointAnnotation()
+        kukovyachino.coordinate = CLLocationCoordinate2D(latitude: 55.159721, longitude: 29.974239)
+        kukovyachino.title = "Kukovyachino"
+        kukovyachino.subtitle = "Skydive Vitebsk"
+        mapView.addAnnotation(kukovyachino)
+        
+        let mihalin = MKPointAnnotation()
+        mihalin.coordinate = CLLocationCoordinate2D(latitude: 51.988815, longitude: 23.907536)
+        mihalin.title = "Mihalin"
+        mihalin.subtitle = "Skydive Brest"
+        mapView.addAnnotation(mihalin)
+        
+        let pashkovo = MKPointAnnotation()
+        pashkovo.coordinate = CLLocationCoordinate2D(latitude: 53.945857, longitude: 30.240983)
+        pashkovo.title = "Pashkovo"
+        pashkovo.subtitle = "Skydive Mogilev"
+        mapView.addAnnotation(pashkovo)
+        
+        let zyabrovka = MKPointAnnotation()
+        zyabrovka.coordinate = CLLocationCoordinate2D(latitude: 52.300540, longitude: 31.160671)
+        zyabrovka.title = "Zyabrovka"
+        zyabrovka.subtitle = "Skydive Gomel"
+        mapView.addAnnotation(zyabrovka)
+        
+        let karolino = MKPointAnnotation()
+        karolino.coordinate = CLLocationCoordinate2D(latitude: 53.635119, longitude: 23.736646)
+        karolino.title = "Zyabrovka"
+        karolino.subtitle = "Skydive Grodno"
+        mapView.addAnnotation(karolino)
+        
+        // MARK: - UKRAINE:
+        let fiveOkean = MKPointAnnotation()
+        fiveOkean.coordinate = CLLocationCoordinate2D(latitude: 50.004567, longitude: 30.197923)
+        fiveOkean.title = "5 okean"
+        fiveOkean.subtitle = "Kiev South"
+        mapView.addAnnotation(fiveOkean)
+        
+        let odessa = MKPointAnnotation()
+        odessa.coordinate = CLLocationCoordinate2D(latitude: 46.42994, longitude: 30.677449)
+        odessa.title = "Odessa"
+        odessa.subtitle = "Odessa Liman"
+        mapView.addAnnotation(odessa)
+        
+        // MARK: - UNITED ARAB EMIRATES:
         let skydiveDubaiPalm = MKPointAnnotation()
         skydiveDubaiPalm.coordinate = CLLocationCoordinate2D(latitude: 25.091480, longitude: 55.135047)
         skydiveDubaiPalm.title = "Skydive Dubai"
@@ -113,26 +168,14 @@ class DropZonesVC: UIViewController {
         skydiveDubaiDesert.subtitle = "The Desert Campus at Skydive Dubai"
         mapView.addAnnotation(skydiveDubaiDesert)
         
-        // USA: HAWAII:
+        // MARK: - USA:
+        
+        // MARK: HAWAII:
         let skydiveHawaii = MKPointAnnotation()
         skydiveHawaii.coordinate = CLLocationCoordinate2D(latitude: 21.5788317518325, longitude: -158.180809021)
         skydiveHawaii.title = "Hawaii"
         skydiveHawaii.subtitle = "Skydive Hawaii"
         mapView.addAnnotation(skydiveHawaii)
-        
-        // USA: CALIFORNIA:
-        let bayAreaSkydiving = MKPointAnnotation()
-        bayAreaSkydiving.coordinate = CLLocationCoordinate2D(latitude: 37.835015, longitude: -121.632784)
-        bayAreaSkydiving.title = "Bay Area Skydiving"
-        bayAreaSkydiving.subtitle = "California"
-        mapView.addAnnotation(bayAreaSkydiving)
-        
-        // LATVIA:
-        let skydiveLatvia = MKPointAnnotation()
-        skydiveLatvia.coordinate = CLLocationCoordinate2D(latitude: 57.48525478983592, longitude: 24.670893796301062)
-        skydiveLatvia.title = "Skydive Latvia"
-        skydiveLatvia.subtitle = "Langaci-Limbazi Airport Limbazu pagasts"
-        mapView.addAnnotation(skydiveLatvia)
     }
     
     // MARK: - HELPERS:

@@ -109,10 +109,10 @@ final class PremiumVC: UIViewController {
         // MARK: INFO TEXT VIEW:
 
         infoTextView.backgroundColor = UIColor.colorCell
-        infoTextView.layer.cornerRadius = 10
-        infoTextView.layer.shadowRadius = 50
+        infoTextView.layer.cornerRadius = cornerRadius15
+        infoTextView.layer.shadowRadius = 25
         infoTextView.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        infoTextView.layer.shadowOpacity = 0.3
+        infoTextView.layer.shadowOpacity = 0.2
         
         // MARK: INFO TEXT LABEL:
 
@@ -151,7 +151,7 @@ final class PremiumVC: UIViewController {
         
         percentLabel.backgroundColor = .systemGreen
         percentLabel.layer.masksToBounds = true
-        percentLabel.layer.cornerRadius = 15
+        percentLabel.layer.cornerRadius = cornerRadius15
         percentLabel.text = "-58%"
         percentLabel.textAlignment = .center
         percentLabel.font = .systemFont(ofSize: 12, weight: .bold, width: .standard)

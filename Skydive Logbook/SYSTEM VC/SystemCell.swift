@@ -56,7 +56,6 @@ final class SystemCell: UITableViewCell {
     
     // MARK: - PROPERTIES FOR ANIMATIONS CONTENT VIEW:
 
-    private let cornerRadius: CGFloat = 10
     private let segmentLength: CGFloat = 0.2
     private let animationDuration: TimeInterval = 3
     private let timeOffset: TimeInterval = 3
@@ -386,7 +385,7 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER VIEW:
 
         containerView.backgroundColor = .colorTabBar
-        containerView.layer.cornerRadius = cornerRadius
+        containerView.layer.cornerRadius = cornerRadius15
         
         // MARK: COMMENT IMAGE AND BUTTON:
 
@@ -836,7 +835,7 @@ final class SystemCell: UITableViewCell {
 
     func call() {
         let borderShapeLayer = CAShapeLayer()
-        borderShapeLayer.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius).cgPath
+        borderShapeLayer.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius15).cgPath
         borderShapeLayer.fillColor = UIColor.clear.cgColor
         borderShapeLayer.strokeColor = UIColor.systemCyan.cgColor
         borderShapeLayer.lineWidth = 1
@@ -848,7 +847,7 @@ final class SystemCell: UITableViewCell {
         borderShapeLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
 
         let borderShapeLayer1 = CAShapeLayer()
-        borderShapeLayer1.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius, rotation: 180).cgPath
+        borderShapeLayer1.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius15, rotation: 180).cgPath
         borderShapeLayer1.fillColor = UIColor.clear.cgColor
         borderShapeLayer1.strokeColor = UIColor.systemCyan.cgColor
         borderShapeLayer1.lineWidth = 1

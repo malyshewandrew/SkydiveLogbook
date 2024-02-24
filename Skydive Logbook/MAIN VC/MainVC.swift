@@ -357,7 +357,7 @@ final class MainVC: UIViewController {
         firstMessageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
 
         firstMessageView.backgroundColor = .colorCell
-        firstMessageView.layer.cornerRadius = 10
+        firstMessageView.layer.cornerRadius = cornerRadius15
         firstMessageView.layer.shadowRadius = 100
         firstMessageView.layer.shadowColor = UIColor.colorLightBlue.cgColor
         firstMessageView.layer.shadowOpacity = 0.5

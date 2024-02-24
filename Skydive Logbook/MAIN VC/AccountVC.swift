@@ -184,6 +184,7 @@ class AccountVC: UIViewController {
         nicknameLabel.textColor = .colorWhite
         nicknameLabel.textAlignment = .center
         nicknameLabel.font = fontBoldStandard16
+        nicknameLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: LICENCE TYPE:
         
@@ -193,6 +194,7 @@ class AccountVC: UIViewController {
         licenseLabel.textColor = .colorWhite
         licenseLabel.textAlignment = .center
         licenseLabel.font = fontMediumStandard14
+        licenseLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MEDICINE:
         
@@ -202,6 +204,7 @@ class AccountVC: UIViewController {
         medicineLabel.textColor = .colorWhite
         medicineLabel.textAlignment = .center
         medicineLabel.font = fontMediumStandard14
+        medicineLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: INSURANCE:
         
@@ -211,6 +214,7 @@ class AccountVC: UIViewController {
         insuranceLabel.textColor = .colorWhite
         insuranceLabel.textAlignment = .center
         insuranceLabel.font = fontMediumStandard14
+        insuranceLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY:
         
@@ -220,6 +224,7 @@ class AccountVC: UIViewController {
         reserveCanopyLabel.textColor = .colorWhite
         reserveCanopyLabel.textAlignment = .center
         reserveCanopyLabel.font = fontMediumStandard14
+        reserveCanopyLabel.adjustsFontSizeToFitWidth = true
     }
     
     // MARK: - LOAD ACCOUNT FROM REALM:
@@ -320,7 +325,7 @@ class AccountVC: UIViewController {
         if nickname == "" && licenseType == "" && licenseDate == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
             emptyAccountLabel.text = "\(NSLocalizedString("Account main alert", comment: ""))\n\n\(NSLocalizedString("Edit/add account", comment: ""))"
         }
-        nicknameLabel.text = nickname
+        nicknameLabel.text = nickname.uppercased()
         licenseLabel.text = licenseType + licenseDate
         medicineLabel.text = medicine
         insuranceLabel.text = insurance

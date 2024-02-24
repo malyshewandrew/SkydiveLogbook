@@ -238,7 +238,7 @@ final class JumpCell: UITableViewCell {
         // MARK: LOCATION:
         
         locationButton.backgroundColor = .colorCell
-        locationButton.layer.cornerRadius = 10
+        locationButton.layer.cornerRadius = cornerRadius15
         locationButton.setTitle(NSLocalizedString("Location", comment: "") + ":", for: .normal)
         locationButton.titleLabel?.font = fontMediumStandard12
         locationButton.setTitleColor(.colorLightGray, for: .normal)
@@ -249,14 +249,14 @@ final class JumpCell: UITableViewCell {
         locationLabel.textColor = .colorWhite
         locationLabel.textAlignment = textAligmentCenter
         locationLabel.layer.masksToBounds = true
-        locationLabel.layer.cornerRadius = 9
+        locationLabel.layer.cornerRadius = cornerRadius15 - 1
         locationLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         locationLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: AIRCRAFT:
         
         aircraftButton.backgroundColor = .colorCell
-        aircraftButton.layer.cornerRadius = 10
+        aircraftButton.layer.cornerRadius = cornerRadius15
         aircraftButton.setTitle(NSLocalizedString("Aircraft", comment: "") + ":", for: .normal)
         aircraftButton.titleLabel?.font = fontMediumStandard12
         aircraftButton.setTitleColor(.colorLightGray, for: .normal)
@@ -267,14 +267,14 @@ final class JumpCell: UITableViewCell {
         aircraftLabel.textColor = .colorWhite
         aircraftLabel.textAlignment = textAligmentCenter
         aircraftLabel.layer.masksToBounds = true
-        aircraftLabel.layer.cornerRadius = 9
+        aircraftLabel.layer.cornerRadius = cornerRadius15 - 1
         aircraftLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         aircraftLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: CANOPY:
 
         canopyButton.backgroundColor = .colorCell
-        canopyButton.layer.cornerRadius = 10
+        canopyButton.layer.cornerRadius = cornerRadius15
         canopyButton.setTitle(NSLocalizedString("Canopy", comment: "") + ":", for: .normal)
         canopyButton.titleLabel?.font = fontMediumStandard12
         canopyButton.setTitleColor(.colorLightGray, for: .normal)
@@ -285,14 +285,14 @@ final class JumpCell: UITableViewCell {
         canopyLabel.textColor = .colorWhite
         canopyLabel.textAlignment = textAligmentCenter
         canopyLabel.layer.masksToBounds = true
-        canopyLabel.layer.cornerRadius = 9
+        canopyLabel.layer.cornerRadius = cornerRadius15 - 1
         canopyLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         canopyLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MISSION:
 
         missionButton.backgroundColor = .colorCell
-        missionButton.layer.cornerRadius = 10
+        missionButton.layer.cornerRadius = cornerRadius15
         missionButton.setTitle(NSLocalizedString("Mission", comment: "") + ":", for: .normal)
         missionButton.titleLabel?.font = fontMediumStandard12
         missionButton.setTitleColor(.colorLightGray, for: .normal)
@@ -303,14 +303,14 @@ final class JumpCell: UITableViewCell {
         missionLabel.textColor = .colorWhite
         missionLabel.textAlignment = textAligmentCenter
         missionLabel.layer.masksToBounds = true
-        missionLabel.layer.cornerRadius = 9
+        missionLabel.layer.cornerRadius = cornerRadius15 - 1
         missionLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         missionLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: HEIGHT:
         
         heightButton.backgroundColor = .colorCell
-        heightButton.layer.cornerRadius = 10
+        heightButton.layer.cornerRadius = cornerRadius15
         heightButton.setTitle(NSLocalizedString("Height", comment: "") + ":", for: .normal)
         heightButton.titleLabel?.font = fontMediumStandard12
         heightButton.setTitleColor(.colorLightGray, for: .normal)
@@ -321,14 +321,14 @@ final class JumpCell: UITableViewCell {
         heightLabel.textColor = .colorWhite
         heightLabel.textAlignment = textAligmentCenter
         heightLabel.layer.masksToBounds = true
-        heightLabel.layer.cornerRadius = 9
+        heightLabel.layer.cornerRadius = cornerRadius15 - 1
         heightLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         heightLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: TIME:
         
         timeButton.backgroundColor = .colorCell
-        timeButton.layer.cornerRadius = 10
+        timeButton.layer.cornerRadius = cornerRadius15
         timeButton.setTitle(NSLocalizedString("Time", comment: "") + ":", for: .normal)
         timeButton.titleLabel?.font = fontMediumStandard12
         timeButton.setTitleColor(.colorLightGray, for: .normal)
@@ -339,14 +339,14 @@ final class JumpCell: UITableViewCell {
         timeLabel.textColor = .colorWhite
         timeLabel.textAlignment = textAligmentCenter
         timeLabel.layer.masksToBounds = true
-        timeLabel.layer.cornerRadius = 9
+        timeLabel.layer.cornerRadius = cornerRadius15 - 1
         timeLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         timeLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: COMMENT:
 
         commentButton.backgroundColor = .colorCell
-        commentButton.layer.cornerRadius = 10
+        commentButton.layer.cornerRadius = cornerRadius15
         commentButton.setTitle(NSLocalizedString("Comment", comment: "") + ":", for: .normal)
         commentButton.titleLabel?.font = fontMediumStandard12
         commentButton.setTitleColor(.colorLightGray, for: .normal)
@@ -357,7 +357,7 @@ final class JumpCell: UITableViewCell {
         commentLabel.textColor = .colorWhite
         commentLabel.textAlignment = textAligmentCenter
         commentLabel.layer.masksToBounds = true
-        commentLabel.layer.cornerRadius = 9
+        commentLabel.layer.cornerRadius = cornerRadius15 - 1
         commentLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         commentLabel.adjustsFontSizeToFitWidth = true
     }

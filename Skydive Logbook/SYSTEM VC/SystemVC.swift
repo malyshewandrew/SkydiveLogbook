@@ -111,7 +111,7 @@ final class SystemVC: UIViewController {
         // MARK: NEW SYSTEM:
 
         newSystemButton.backgroundColor = .colorCell
-        newSystemButton.layer.cornerRadius = 10
+        newSystemButton.layer.cornerRadius = cornerRadius15
         newSystemButton.setTitle(NSLocalizedString("Add a new system", comment: ""), for: .normal)
         newSystemButton.titleLabel?.font = fontMediumStandard14
         newSystemButton.setTitleColor(.colorWhite, for: .normal)
