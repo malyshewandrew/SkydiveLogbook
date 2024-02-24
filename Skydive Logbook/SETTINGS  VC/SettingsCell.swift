@@ -130,7 +130,7 @@ final class SettingsCell: UITableViewCell {
         // MARK: INSTAGRAM IMAGE VIEW:
 
         instagramImageView.translatesAutoresizingMaskIntoConstraints = false
-        instagramImageView.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 15).isActive = true
+        instagramImageView.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 20).isActive = true
         instagramImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         instagramImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
         instagramImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true

@@ -1,4 +1,3 @@
-
 import MapKit
 import UIKit
 
@@ -77,7 +76,7 @@ final class WeatherCell: UITableViewCell {
         addSubvies()
         configureConstraints()
         configureUI()
-        currentLocationButtonTapped()
+        setStartLocation()
     }
 
     @available(*, unavailable)
@@ -662,7 +661,17 @@ final class WeatherCell: UITableViewCell {
 
     // MARK: - HELPERS:
 
-    // MARK: FUNC FOR CURRENT LOCATION:
+    // MARK: SET START LOCATION:
+
+    private func setStartLocation() {
+        guard let cordinate = locationManager.location?.coordinate else { return }
+        let coordinateRegion = MKCoordinateRegion(center: cordinate,
+                                                  latitudinalMeters: 250,
+                                                  longitudinalMeters: 250)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+
+    // MARK: BUTTON CURRENT LOCATION:
 
     @objc private func currentLocationButtonTapped() {
         vibrationOn.vibrationStandart()
@@ -735,7 +744,7 @@ final class WeatherCell: UITableViewCell {
         vibrationOn.vibrationStandart()
         delegate?.tapUvIndexOverlayButton()
     }
-    
+
     // MARK: PRECIPITATION BUTTON TAPPED:
 
     @objc private func precipitationOverlayButtonTapped() {
