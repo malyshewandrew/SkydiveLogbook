@@ -64,7 +64,7 @@ final class WeatherCell: UITableViewCell {
     private let locationManager = CLLocationManager()
     private let arrowImage = UIImageView()
     private let arrowLabel = UILabel()
-    private let configurationArrow = UIImage.SymbolConfiguration(pointSize: 30)
+    private let configurationArrow = UIImage.SymbolConfiguration(pointSize: 40)
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 40)
     private let currentLocationButton = UIButton()
     private let windInfoButton = UIButton()
@@ -787,9 +787,9 @@ final class WeatherCell: UITableViewCell {
         arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle) * .pi / 180.0)
         arrowLabel.text = windLabel
         if rotationAngle > 180 {
-            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle - 90) * .pi / 180.0)
+            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle - 100) * .pi / 180.0)
         } else {
-            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle + 90) * .pi / 180.0)
+            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle + 100) * .pi / 180.0)
         }
 
     }

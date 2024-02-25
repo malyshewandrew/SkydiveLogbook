@@ -8,7 +8,8 @@ final class JumpCell: UITableViewCell {
     // MARK: - PROPERTIES:
     
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
-    private let circleAirplaneLottie = LottieAnimationView(name: "CircleAirplane")
+    private let circleGreenLottie = LottieAnimationView(name: "CircleGreen")
+    private let circleRedLottie = LottieAnimationView(name: "CircleRed")
     private let jubileeLottie = LottieAnimationView(name: "Anniversary")
     private let circleButton = UIButton()
     private let dateLabel = UILabel()
@@ -29,6 +30,7 @@ final class JumpCell: UITableViewCell {
     private let vibrationOn = Vibration()
     private var statusAnimation: Bool = false
     private var jubileeJumps = Set((100..<10000).filter { $0 % 100 == 0 })
+    private var isCutaway: Bool?
     
     // MARK: - LIFECYCLE:
 
@@ -47,7 +49,7 @@ final class JumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(confettiLottie, circleAirplaneLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
+        contentView.addSubviews(confettiLottie, circleGreenLottie, circleRedLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
         locationButton.addSubview(locationLabel)
         aircraftButton.addSubview(aircraftLabel)
         canopyButton.addSubview(canopyLabel)
@@ -69,11 +71,19 @@ final class JumpCell: UITableViewCell {
         
         // MARK: CIRCLE AIRPLANE:
         
-        circleAirplaneLottie.translatesAutoresizingMaskIntoConstraints = false
-        circleAirplaneLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
-        circleAirplaneLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
-        circleAirplaneLottie.heightAnchor.constraint(equalToConstant: 420).isActive = true
-        circleAirplaneLottie.widthAnchor.constraint(equalToConstant: 420).isActive = true
+        circleGreenLottie.translatesAutoresizingMaskIntoConstraints = false
+        circleGreenLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
+        circleGreenLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
+        circleGreenLottie.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        circleGreenLottie.widthAnchor.constraint(equalToConstant: 400).isActive = true
+        
+        // MARK: CIRCLE RED:
+        
+        circleRedLottie.translatesAutoresizingMaskIntoConstraints = false
+        circleRedLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
+        circleRedLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
+        circleRedLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        circleRedLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
         // MARK: CIRCLE BUTTON:
         
@@ -208,8 +218,11 @@ final class JumpCell: UITableViewCell {
         
         // MARK: ANIMATIONS:
         
-        circleAirplaneLottie.isHidden = true
-        circleAirplaneLottie.alpha = 0.0
+        circleGreenLottie.isHidden = true
+        circleGreenLottie.alpha = 0.0
+        
+        circleRedLottie.isHidden = true
+        circleRedLottie.alpha = 0.0
         
         // MARK: NUMBER AND DATE:
 
@@ -389,10 +402,12 @@ final class JumpCell: UITableViewCell {
             circleButton.layer.shadowRadius = 25
             circleButton.layer.shadowColor = UIColor.colorDarkRed.cgColor
             circleButton.layer.shadowOpacity = 0.5
+            isCutaway = true
         } else {
             circleButton.layer.shadowRadius = 25
             circleButton.layer.shadowColor = UIColor.colorGreen.cgColor
             circleButton.layer.shadowOpacity = 0.5
+            isCutaway = false
         }
     }
     
@@ -404,20 +419,20 @@ final class JumpCell: UITableViewCell {
             jubileeLottie.isHidden = false
             jubileeLottie.play()
             jubileeLottie.loopMode = .loop
-            confettiLottie.play()
-            confettiLottie.loopMode = .loop
+//            confettiLottie.play()
+//            confettiLottie.loopMode = .loop
             confettiLottie.layer.shadowRadius = 10
             confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
             confettiLottie.layer.shadowOpacity = 1
             circleButton.setTitleColor(.colorCell, for: .normal)
-            circleButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-            locationButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-            aircraftButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-            canopyButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-            missionButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-            heightButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-            timeButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
-            commentButton.backgroundColor = UIColor(red: 255/255, green: 185/255, blue: 0/255, alpha: 1.0)
+            circleButton.backgroundColor = .colorJubilee
+            locationButton.backgroundColor = .colorJubilee
+            aircraftButton.backgroundColor = .colorJubilee
+            canopyButton.backgroundColor = .colorJubilee
+            missionButton.backgroundColor = .colorJubilee
+            heightButton.backgroundColor = .colorJubilee
+            timeButton.backgroundColor = .colorJubilee
+            commentButton.backgroundColor = .colorJubilee
         }
     }
     
@@ -429,7 +444,8 @@ final class JumpCell: UITableViewCell {
         } else {
             vibrationOn.vibrationSucces()
             UIView.animate(withDuration: 1.0, animations: {
-                self.circleAirplaneLottie.alpha = 0.0
+                self.circleGreenLottie.alpha = 0.0
+                self.circleRedLottie.alpha = 0.0
             })
         }
         statusAnimation.toggle()
@@ -438,17 +454,32 @@ final class JumpCell: UITableViewCell {
     // MARK: PLAY CIRCLE ANIMATION:
     
     private func playCircleAnimation() {
-        confettiLottie.play()
-        confettiLottie.layer.shadowRadius = 10
-        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        confettiLottie.layer.shadowOpacity = 1
-        circleAirplaneLottie.isHidden = false
-        circleAirplaneLottie.play()
-        circleAirplaneLottie.loopMode = .loop
-        circleAirplaneLottie.animationSpeed = 0.7
-        vibrationOn.vibrationSucces()
-        UIView.animate(withDuration: 2.0, animations: {
-            self.circleAirplaneLottie.alpha = 1.0
-        })
+        if isCutaway == true {
+            confettiLottie.play()
+            confettiLottie.layer.shadowRadius = 10
+            confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+            confettiLottie.layer.shadowOpacity = 1
+            circleRedLottie.isHidden = false
+            circleRedLottie.play()
+            circleRedLottie.loopMode = .loop
+            circleRedLottie.animationSpeed = 0.7
+            vibrationOn.vibrationSucces()
+            UIView.animate(withDuration: 2.0, animations: {
+                self.circleRedLottie.alpha = 1.0
+            })
+        } else {
+            confettiLottie.play()
+            confettiLottie.layer.shadowRadius = 10
+            confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+            confettiLottie.layer.shadowOpacity = 1
+            circleGreenLottie.isHidden = false
+            circleGreenLottie.play()
+            circleGreenLottie.loopMode = .loop
+            circleGreenLottie.animationSpeed = 0.5
+            vibrationOn.vibrationSucces()
+            UIView.animate(withDuration: 2.0, animations: {
+                self.circleGreenLottie.alpha = 1.0
+            })
+        }
     }
 }

@@ -42,7 +42,7 @@ final class SettingsVC: UIViewController {
 
         settingsLottie.translatesAutoresizingMaskIntoConstraints = false
         settingsLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        settingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
+        settingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         settingsLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         settingsLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
@@ -64,7 +64,7 @@ final class SettingsVC: UIViewController {
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: settingsLottie.bottomAnchor, constant: 15).isActive = true
+        tableView.topAnchor.constraint(equalTo: settingsLottie.bottomAnchor, constant: 0).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true

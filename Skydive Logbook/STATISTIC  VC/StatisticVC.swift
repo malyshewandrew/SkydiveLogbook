@@ -43,7 +43,7 @@ final class StatisticVC: UIViewController {
 
         statisticLottie.translatesAutoresizingMaskIntoConstraints = false
         statisticLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        statisticLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        statisticLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 55).isActive = true
         statisticLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         statisticLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
