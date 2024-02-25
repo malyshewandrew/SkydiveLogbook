@@ -80,10 +80,10 @@ final class JumpCell: UITableViewCell {
         // MARK: CIRCLE RED:
         
         circleRedLottie.translatesAutoresizingMaskIntoConstraints = false
-        circleRedLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
-        circleRedLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
-        circleRedLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        circleRedLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        circleRedLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor, constant: 8).isActive = true
+        circleRedLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor, constant: 4).isActive = true
+        circleRedLottie.heightAnchor.constraint(equalToConstant: 550).isActive = true
+        circleRedLottie.widthAnchor.constraint(equalToConstant: 550).isActive = true
         
         // MARK: CIRCLE BUTTON:
         
