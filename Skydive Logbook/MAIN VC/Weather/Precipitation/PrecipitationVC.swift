@@ -13,11 +13,11 @@ struct PrecipitationModel {
 // MARK: ARRAY PRECIPITATION VALUES:
 
 private let arrayPrecipitation = [
-    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Very Light / precipitation", comment: ""), value: "<1"),
-    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Light / precipitation", comment: ""), value: "1-3"),
-    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Moderate / precipitation", comment: ""), value: "3-6"),
-    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Heavy / precipitation", comment: ""), value: "6-10"),
-    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Very Heavy / precipitation", comment: ""), value: ">10")
+    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Very Light / precipitation", comment: ""), value: "<1 " + NSLocalizedString("mm/h", comment: "")),
+    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Light / precipitation", comment: ""), value: "1-3 " + NSLocalizedString("mm/h", comment: "")),
+    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Moderate / precipitation", comment: ""), value: "3-6 " + NSLocalizedString("mm/h", comment: "")),
+    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Heavy / precipitation", comment: ""), value: "6-10 " + NSLocalizedString("mm/h", comment: "")),
+    PrecipitationModel(image: UIImage(systemName: "drop.circle.fill"), color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Very Heavy / precipitation", comment: ""), value: "10+ " + NSLocalizedString("mm/h", comment: ""))
 ]
 
 // MARK: - CLASS:
@@ -68,7 +68,7 @@ final class PrecipitationVC: UIViewController {
         // MARK: PRECIPITATION LOGO:
 
         precipitationLogoLottie.translatesAutoresizingMaskIntoConstraints = false
-        precipitationLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        precipitationLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
         precipitationLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         precipitationLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
@@ -124,7 +124,7 @@ final class PrecipitationVC: UIViewController {
         // MARK: PRECIPITATION LOGO:
         
         precipitationLogoLottie.play()
-        precipitationLogoLottie.loopMode = .autoReverse
+        precipitationLogoLottie.loopMode = .loop
         precipitationLogoLottie.animationSpeed = 0.7
         
         // MARK: PRECIPITATION FOR TABLE VIEW:

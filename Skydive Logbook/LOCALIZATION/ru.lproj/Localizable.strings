@@ -106,7 +106,7 @@
 "Precipitation weather message / alert" = "Количество осадков - это высота слоя воды в миллиметрах, который образовался бы на поверхности земли, если бы она была абсолютно ровная. Количество осадков в миллиметрах численно равно массе воды, выпавшей на горизонтальную поверхность в 1 квадратный метр.";
 
 "Pressure weather title / alert" = "Давление";
-"Pressure weather message / alert" = "В таблице приведены отклонения от нормы давления, относительно Вашего местоположения. Привычное для людей давление — 760 миллиметров ртутного столба. Но нормальное атмосферное давление для каждого человека зависит от региона, в котором он находится, а давление региона — от высоты местности.";
+"Pressure weather message / alert" = "В таблице приведены отклонения от нормы давления относительно Вашего местоположения. Привычное для людей давление — 760 миллиметров ртутного столба. Но нормальное атмосферное давление для каждого человека зависит от региона, в котором он находится, а давление региона — от высоты местности.";
 
 "UvIndex weather title / alert" = "УФ индекс";
 "UvIndex weather message / alert" = "УФ-индекс (УФИ), разработанный Всемирной организацией здравоохранения, обозначает мощность ультрафиолетового излучения. Чем выше Уф-индекс, тем опаснее находиться под солнцем и тем быстрее это может навредить здоровью. Отслеживая УФ-индекс, Вы можете решить, когда следует защищаться от солнца, а когда лучше не выходить на улицу.";
@@ -135,26 +135,26 @@
 
 // MARK: HUMIDITY:
 
-"Very dry air / humidity" = "Очень сухой воздух";
-"Dry air / humidity" = "Сухой воздух";
-"Moderately dry air / humidity" = "Умеренно сухой воздух";
-"Moderately humid air / humidity" = "Умеренно влажный воздух";
-"Very humid air / humidity" = "Очень влажный воздух";
+"Very dry air / humidity" = "Очень сухой";
+"Dry air / humidity" = "Сухой";
+"Moderately dry air / humidity" = "Умеренно сухой";
+"Moderately humid air / humidity" = "Умеренно влажный";
+"Very humid air / humidity" = "Очень влажный";
 
 // MARK: CLOUD COVER:
 
 "Clear / cloud cover" = "Ясно";
 "Partly Cloudy / cloud cover" = "Малооблачно";
-"Variable Cloudiness / cloud cover" = "Переменная облачность";
+"Variable Cloudiness / cloud cover" = "Переменно";
 "Cloudy / cloud cover" = "Облачно";
 "Overcast / cloud cover" = "Пасмурно";
 
 // MARK: DEW POINT:
 
-"Relatively dry air / dew point" = "Относительно сухой воздух";
-"Moderately humid air / dew point" = "Умеренно влажный воздух";
-"Humid air / dew point" = "Влажный воздух";
-"Very humid air / dew point" = "Очень влажный воздух";
+"Relatively dry air / dew point" = "Относительно сухой";
+"Moderately humid air / dew point" = "Умеренно влажный";
+"Humid air / dew point" = "Влажный";
+"Very humid air / dew point" = "Очень влажный";
 
 // MARK: VISIBILITY:
 

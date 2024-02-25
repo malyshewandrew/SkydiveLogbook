@@ -135,26 +135,26 @@
 
 // MARK: HUMIDITY:
 
-"Very dry air / humidity" = "Very dry air";
-"Dry air / humidity" = "Dry air";
-"Moderately dry air / humidity" = "Moderately dry air";
-"Moderately humid air / humidity" = "Moderately humid air";
-"Very humid air / humidity" = "Very humid air";
+"Very dry air / humidity" = "Very dry";
+"Dry air / humidity" = "Dry";
+"Moderately dry air / humidity" = "Moderately dry";
+"Moderately humid air / humidity" = "Moderately humid";
+"Very humid air / humidity" = "Very humid";
 
 // MARK: CLOUD COVER:
 
 "Clear / cloud cover" = "Clear";
 "Partly Cloudy / cloud cover" = "Partly Cloudy";
-"Variable Cloudiness / cloud cover" = "Variable Cloudiness";
+"Variable Cloudiness / cloud cover" = "Variable";
 "Cloudy / cloud cover" = "Cloudy";
 "Overcast / cloud cover" = "Overcast";
 
 // MARK: DEW POINT:
 
-"Relatively dry air / dew point" = "Relatively dry air";
-"Moderately humid air / dew point" = "Moderately humid air";
-"Humid air / dew point" = "Humid air";
-"Very humid air / dew point" = "Very humid air";
+"Relatively dry air / dew point" = "Relatively dry";
+"Moderately humid air / dew point" = "Moderately humid";
+"Humid air / dew point" = "Humid";
+"Very humid air / dew point" = "Very humid";
 
 // MARK: VISIBILITY:
 

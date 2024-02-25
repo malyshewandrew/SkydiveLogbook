@@ -67,7 +67,7 @@ final class CloudCoverVC: UIViewController {
         // MARK: CLOUD COVER LOGO:
 
         cloudCoverLogo.translatesAutoresizingMaskIntoConstraints = false
-        cloudCoverLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        cloudCoverLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
         cloudCoverLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         cloudCoverLogo.heightAnchor.constraint(equalToConstant: 100).isActive = true
         

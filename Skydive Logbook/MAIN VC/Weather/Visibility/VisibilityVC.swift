@@ -13,11 +13,11 @@ struct VisibilityModel {
 // MARK: ARRAY VISIBILITY VALUES:
 
 private let arrayVisibility = [
-    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.1420840621, green: 0.7043048739, blue: 0.1435457766, alpha: 1), name: NSLocalizedString("Excellent / visibility", comment: ""), value: ">10"),
-    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.009829076938, green: 0.7325571179, blue: 0.5401486754, alpha: 1), name: NSLocalizedString("Good / visibility", comment: ""), value: "5-10"),
-    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Moderate / visibility", comment: ""), value: "2-5"),
-    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.8858549595, green: 0.5153784156, blue: 0.0006241258816, alpha: 1), name: NSLocalizedString("Poor / visibility", comment: ""), value: "1-2"),
-    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.9038113952, green: 0.1745244861, blue: 0.1827548146, alpha: 1), name: NSLocalizedString("Very Poor / visibility", comment: ""), value: "<1")
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.1420840621, green: 0.7043048739, blue: 0.1435457766, alpha: 1), name: NSLocalizedString("Excellent / visibility", comment: ""), value: "10+ " + NSLocalizedString("km.", comment: "")),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.009829076938, green: 0.7325571179, blue: 0.5401486754, alpha: 1), name: NSLocalizedString("Good / visibility", comment: ""), value: "5-10 " + NSLocalizedString("km.", comment: "")),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Moderate / visibility", comment: ""), value: "2-5 " + NSLocalizedString("km.", comment: "")),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.8858549595, green: 0.5153784156, blue: 0.0006241258816, alpha: 1), name: NSLocalizedString("Poor / visibility", comment: ""), value: "1-2 " + NSLocalizedString("km.", comment: "")),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.9038113952, green: 0.1745244861, blue: 0.1827548146, alpha: 1), name: NSLocalizedString("Very Poor / visibility", comment: ""), value: "<1 " + NSLocalizedString("km.", comment: ""))
 ]
 
 // MARK: - CLASS:
@@ -68,14 +68,14 @@ final class VisibilityVC: UIViewController {
         // MARK: VISIBILITY LOGO:
 
         visibilityLogoLottie.translatesAutoresizingMaskIntoConstraints = false
-        visibilityLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        visibilityLogoLottie.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         visibilityLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        visibilityLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        visibilityLogoLottie.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
         // MARK: VISIBILITY VIEW FOR TABLE VIEW:
 
         visibilityListView.translatesAutoresizingMaskIntoConstraints = false
-        visibilityListView.topAnchor.constraint(equalTo: visibilityLogoLottie.bottomAnchor, constant: 5).isActive = true
+        visibilityListView.topAnchor.constraint(equalTo: visibilityLogoLottie.bottomAnchor).isActive = true
         visibilityListView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         visibilityListView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         visibilityListView.bottomAnchor.constraint(equalTo: visibilityInfoView.topAnchor, constant: -15).isActive = true

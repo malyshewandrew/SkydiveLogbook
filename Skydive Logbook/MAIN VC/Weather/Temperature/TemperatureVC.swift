@@ -16,7 +16,7 @@ final class TemperatureVC: UIViewController {
     // MARK: - PROPERTIES:
     
     private let temperatureBackgroundLottie = LottieAnimationView(name: "WeatherTemperatureBackground")
-    private let temperatureLottie = LottieAnimationView(name: "WeatherTemperature")
+    private let temperatureLogoLottie = LottieAnimationView(name: "WeatherTemperature")
     private let temperatureListView = UIView()
     private let tableView = UITableView()
     private let temperatureInfoView = UIView()
@@ -42,7 +42,7 @@ final class TemperatureVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(temperatureBackgroundLottie, temperatureLottie, temperatureListView, temperatureInfoView)
+        view.addSubviews(temperatureBackgroundLottie, temperatureLogoLottie, temperatureListView, temperatureInfoView)
         temperatureListView.addSubviews(tableView)
         temperatureInfoView.addSubviews(temperatureInfoLabel)
     }
@@ -60,15 +60,15 @@ final class TemperatureVC: UIViewController {
         
         // MARK: TEMPERATURE LOGO:
 
-        temperatureLottie.translatesAutoresizingMaskIntoConstraints = false
-        temperatureLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        temperatureLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        temperatureLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        temperatureLogoLottie.translatesAutoresizingMaskIntoConstraints = false
+        temperatureLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
+        temperatureLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        temperatureLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         // MARK: TEMP VIEW:
 
         temperatureListView.translatesAutoresizingMaskIntoConstraints = false
-        temperatureListView.topAnchor.constraint(equalTo: temperatureLottie.bottomAnchor, constant: 5).isActive = true
+        temperatureListView.topAnchor.constraint(equalTo: temperatureLogoLottie.bottomAnchor, constant: 5).isActive = true
         temperatureListView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         temperatureListView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         temperatureListView.bottomAnchor.constraint(equalTo: temperatureInfoView.topAnchor, constant: -15).isActive = true
@@ -116,9 +116,9 @@ final class TemperatureVC: UIViewController {
         
         // MARK: TEMPERATURE:
         
-        temperatureLottie.play()
-        temperatureLottie.loopMode = .loop
-        temperatureLottie.animationSpeed = 0.7
+        temperatureLogoLottie.play()
+        temperatureLogoLottie.loopMode = .loop
+        temperatureLogoLottie.animationSpeed = 0.7
         
         // MARK: TEMP VIEW:
 

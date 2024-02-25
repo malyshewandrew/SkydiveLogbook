@@ -67,7 +67,7 @@ final class UvIndexVC: UIViewController {
         // MARK: UVINDEX LOGO:
 
         uvIndexLogoLottie.translatesAutoresizingMaskIntoConstraints = false
-        uvIndexLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        uvIndexLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
         uvIndexLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         uvIndexLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
         

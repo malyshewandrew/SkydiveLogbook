@@ -13,11 +13,11 @@ struct PressureModel {
 // MARK: ARRAY PRESSURE VALUES:
 
 private let arrayPressure = [
-    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Very low / pressure", comment: ""), value: "<20"),
-    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Low / pressure", comment: ""), value: "<10-20"),
-    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Normal / pressure", comment: ""), value: "±10"),
-    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Hight / pressure", comment: ""), value: ">10-20"),
-    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Very hight / pressure", comment: ""), value: ">20")
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Very low / pressure", comment: ""), value: "<20 " + NSLocalizedString("mm / pressure", comment: "")),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Low / pressure", comment: ""), value: "<10-20 " + NSLocalizedString("mm / pressure", comment: "")),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Normal / pressure", comment: ""), value: "±10 " + NSLocalizedString("mm / pressure", comment: "")),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Hight / pressure", comment: ""), value: ">10-20 " + NSLocalizedString("mm / pressure", comment: "")),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Very hight / pressure", comment: ""), value: ">20 " + NSLocalizedString("mm / pressure", comment: ""))
 ]
 
 // MARK: - CLASS:
@@ -67,14 +67,14 @@ final class PressureVC: UIViewController {
         // MARK: PRESSURE LOGO:
 
         pressureLogoLottie.translatesAutoresizingMaskIntoConstraints = false
-        pressureLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 35).isActive = true
+        pressureLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
         pressureLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        pressureLogoLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        pressureLogoLottie.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         // MARK: PRESSURE VIEW FOR TABLE VIEW:
 
         pressureListView.translatesAutoresizingMaskIntoConstraints = false
-        pressureListView.topAnchor.constraint(equalTo: pressureLogoLottie.bottomAnchor, constant: 5).isActive = true
+        pressureListView.topAnchor.constraint(equalTo: pressureLogoLottie.bottomAnchor, constant: 20).isActive = true
         pressureListView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         pressureListView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         pressureListView.bottomAnchor.constraint(equalTo: pressureInfoView.topAnchor, constant: -15).isActive = true
