@@ -41,7 +41,7 @@
 
 // MARK: - Main:
 
-"First Message" = "\nWelcome to the Skydive Logbook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Settings\" section.\n\nEnjoy your use and safe jumps!\n";
+"First Message" = "\nWelcome to the SkydiveBook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Settings\" section.\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
 "This action cannot be undone." = "This action cannot be undone.";
 
@@ -482,7 +482,7 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 "App version" = "App version";
 "Privacy policy" = "Privacy policy";
 "Terms of use" = "Terms of use";
-"Info text" = "\nSkydive Logbook\n\nIt is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the Skydive Logbook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.\n\nThe data on the loading of the main dome are reference information and are not of a recommendatory nature for choosing parachute equipment.\n\nAll permits for the operation of parachutes must be issued by a valid instructor.\n";
+"Info text" = "\nSkydiveBook\n\nIt is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the SkydiveBook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.\n\nThe data on the loading of the main dome are reference information and are not of a recommendatory nature for choosing parachute equipment.\n\nAll permits for the operation of parachutes must be issued by a valid instructor.\n";
 
 // MARK: - PREMIUM:
 
