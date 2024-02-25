@@ -181,6 +181,7 @@ class AccountVC: UIViewController {
 
         nicknameView.backgroundColor = .colorCell
         nicknameView.layer.cornerRadius = cornerRadius15
+        nicknameView.isHidden = true
         nicknameLabel.textColor = .colorWhite
         nicknameLabel.textAlignment = .center
         nicknameLabel.font = fontBoldStandard16
@@ -245,6 +246,7 @@ class AccountVC: UIViewController {
         } else {
             if arrayAccountRealm[0].nickname.isEmpty {
             } else {
+                nicknameView.isHidden = false
                 nickname = arrayAccountRealm[0].nickname
             }
         }
@@ -323,7 +325,7 @@ class AccountVC: UIViewController {
 
     private func configureAccount() {
         if nickname == "" && licenseType == "" && licenseDate == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
-            emptyAccountLabel.text = "\(NSLocalizedString("Account main alert", comment: ""))\n\n\(NSLocalizedString("Edit/add account", comment: ""))"
+            emptyAccountLabel.text = "\n\(NSLocalizedString("Edit/add account", comment: ""))"
         }
         nicknameLabel.text = nickname.uppercased()
         licenseLabel.text = licenseType + licenseDate
