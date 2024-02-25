@@ -63,7 +63,8 @@ final class WeatherCell: UITableViewCell {
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
     private let arrowImage = UIImageView()
-    private let configurationArrow = UIImage.SymbolConfiguration(pointSize: 25)
+    private let arrowLabel = UILabel()
+    private let configurationArrow = UIImage.SymbolConfiguration(pointSize: 30)
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 40)
     private let currentLocationButton = UIButton()
     private let windInfoButton = UIButton()
@@ -98,6 +99,7 @@ final class WeatherCell: UITableViewCell {
         pressureButton.addSubviews(pressureLabel, pressureOverlayButton)
         uvIndexButton.addSubviews(uvIndexLabel, uvIndexOverlayButton)
         mapView.addSubviews(arrowImage, currentLocationButton, windInfoButton)
+        arrowImage.addSubviews(arrowLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -377,6 +379,14 @@ final class WeatherCell: UITableViewCell {
         arrowImage.translatesAutoresizingMaskIntoConstraints = false
         arrowImage.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
         arrowImage.centerYAnchor.constraint(equalTo: mapView.centerYAnchor, constant: 10).isActive = true
+        
+        // MARK: - ARROW LABEL:
+
+        arrowLabel.translatesAutoresizingMaskIntoConstraints = false
+        arrowLabel.centerXAnchor.constraint(equalTo: arrowImage.centerXAnchor).isActive = true
+        arrowLabel.centerYAnchor.constraint(equalTo: arrowImage.centerYAnchor).isActive = true
+        arrowLabel.heightAnchor.constraint(equalTo: arrowImage.heightAnchor, multiplier: 0.6).isActive = true
+        arrowLabel.widthAnchor.constraint(equalTo: arrowImage.widthAnchor, multiplier: 0.6).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -645,6 +655,11 @@ final class WeatherCell: UITableViewCell {
 
         arrowImage.image = UIImage(systemName: "arrowshape.down.fill", withConfiguration: configurationArrow)
         arrowImage.tintColor = .colorBlue
+        
+        // MARK: - ARROW LABEL:
+
+        arrowLabel.textColor = .colorWhite
+        arrowLabel.font = fontMediumStandard9
 
         // MARK: - INFO BUTTON:
 
@@ -754,7 +769,7 @@ final class WeatherCell: UITableViewCell {
 
     // MARK: - CONFIGURE MODEL:
 
-    func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, uvIndex: String, windSpeed: String, windGust: String, windDirection: String, visibility: String, rotationAngle: Int) {
+    func configure(iconImage: UIImage, description: String, currentTemperature: String, feelTemperature: String, cloudCover: String, humidity: String, dewPoint: String, precipitation: String, pressure: String, uvIndex: String, windSpeed: String, windGust: String, windDirection: String, visibility: String, rotationAngle: Int, windLabel: String) {
         iconImageView.image = iconImage
         windSpeedLabel.text = windSpeed
         windGustLabel.text = windGust
@@ -770,5 +785,12 @@ final class WeatherCell: UITableViewCell {
         uvIndexLabel.text = uvIndex
         visibilityLabel.text = visibility
         arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle) * .pi / 180.0)
+        arrowLabel.text = windLabel
+        if rotationAngle > 180 {
+            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle - 90) * .pi / 180.0)
+        } else {
+            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle + 90) * .pi / 180.0)
+        }
+
     }
 }

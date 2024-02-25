@@ -412,7 +412,7 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.backgroundColor = .clear
         cell.backgroundView = UIView()
         cell.delegate = self
-        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, uvIndex: uvIndex, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility, rotationAngle: rotationAngle)
+        cell.configure(iconImage: UIImage(systemName: iconImage, withConfiguration: configurationImage) ?? UIImage(), description: weatherDescription, currentTemperature: currentTemperature, feelTemperature: feelTemperature, cloudCover: cloudCover, humidity: humidity, dewPoint: dewPoint, precipitation: precipitation, pressure: pressure, uvIndex: uvIndex, windSpeed: windSpeed, windGust: windGust, windDirection: windDirection, visibility: visibility, rotationAngle: rotationAngle, windLabel: windSpeed)
         return cell
     }
 }

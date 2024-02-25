@@ -132,6 +132,7 @@ final class StatisticVC: UIViewController {
     @objc private func confettiButtonTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
+        confettiLottie.animationSpeed = 0.7
     }
 }
 
