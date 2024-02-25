@@ -5,6 +5,7 @@ import UIKit
 
 struct VisibilityModel {
     let image: UIImage?
+    let color: UIColor
     let name: String
     let value: String
 }
@@ -12,11 +13,11 @@ struct VisibilityModel {
 // MARK: ARRAY VISIBILITY VALUES:
 
 private let arrayVisibility = [
-    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Excellent / visibility", comment: ""), value: ">10"),
-    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Good / visibility", comment: ""), value: "5-10"),
-    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Moderate / visibility", comment: ""), value: "2-5"),
-    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Poor / visibility", comment: ""), value: "1-2"),
-    VisibilityModel(image: UIImage(systemName: "eye"), name: NSLocalizedString("Very Poor / visibility", comment: ""), value: "<1")
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.1420840621, green: 0.7043048739, blue: 0.1435457766, alpha: 1), name: NSLocalizedString("Excellent / visibility", comment: ""), value: ">10"),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.009829076938, green: 0.7325571179, blue: 0.5401486754, alpha: 1), name: NSLocalizedString("Good / visibility", comment: ""), value: "5-10"),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Moderate / visibility", comment: ""), value: "2-5"),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.8858549595, green: 0.5153784156, blue: 0.0006241258816, alpha: 1), name: NSLocalizedString("Poor / visibility", comment: ""), value: "1-2"),
+    VisibilityModel(image: UIImage(systemName: "eye"), color: #colorLiteral(red: 0.9038113952, green: 0.1745244861, blue: 0.1827548146, alpha: 1), name: NSLocalizedString("Very Poor / visibility", comment: ""), value: "<1")
 ]
 
 // MARK: - CLASS:
@@ -176,7 +177,7 @@ extension VisibilityVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "VisibilityCell", for: indexPath) as? VisibilityCell else { return UITableViewCell() }
         let visibility = arrayVisibility[indexPath.row]
         cell.backgroundColor = .clear
-        cell.configure(image: visibility.image ?? UIImage(), name: visibility.name, value: visibility.value)
+        cell.configure(image: visibility.image ?? UIImage(), imageColor: visibility.color, name: visibility.name, value: visibility.value)
         return cell
     }
     

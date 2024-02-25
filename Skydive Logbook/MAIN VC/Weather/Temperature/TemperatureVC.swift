@@ -5,6 +5,7 @@ import UIKit
 
 struct TemperatureValue {
     let image: UIImage?
+    let color: UIColor
     let nameTemperature: String
     let valueTemperature: String
 }
@@ -159,16 +160,16 @@ final class TemperatureVC: UIViewController {
 
     func createTemperatureArray() -> [TemperatureValue] {
         let arrayTemperature: [TemperatureValue] = [
-            TemperatureValue(image: UIImage(systemName: "thermometer.sun"), nameTemperature: NSLocalizedString("Max temperature / temperature", comment: ""), valueTemperature: maxTemperature),
-            TemperatureValue(image: UIImage(systemName: "thermometer.snowflake"), nameTemperature: NSLocalizedString("Min temperature / temperature", comment: ""), valueTemperature: minTemperature),
-            TemperatureValue(image: UIImage(systemName: "thermometer.medium"), nameTemperature: NSLocalizedString("Average temperature / temperature", comment: ""), valueTemperature: averageTemperature),
-            TemperatureValue(image: UIImage(systemName: "thermometer.high"), nameTemperature: NSLocalizedString("Feels like temperature / temperature", comment: ""), valueTemperature: feelTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.sun"), color: #colorLiteral(red: 0.9038113952, green: 0.1745244861, blue: 0.1827548146, alpha: 1), nameTemperature: NSLocalizedString("Max temperature / temperature", comment: ""), valueTemperature: maxTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.snowflake"), color: #colorLiteral(red: 0.1246755049, green: 0.7242954373, blue: 0.8247141242, alpha: 1), nameTemperature: NSLocalizedString("Min temperature / temperature", comment: ""), valueTemperature: minTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.medium"), color: #colorLiteral(red: 0.1420840621, green: 0.7043048739, blue: 0.1435457766, alpha: 1), nameTemperature: NSLocalizedString("Average temperature / temperature", comment: ""), valueTemperature: averageTemperature),
+            TemperatureValue(image: UIImage(systemName: "thermometer.high"), color: #colorLiteral(red: 0.009829076938, green: 0.7325571179, blue: 0.5401486754, alpha: 1), nameTemperature: NSLocalizedString("Feels like temperature / temperature", comment: ""), valueTemperature: feelTemperature),
         ]
         return arrayTemperature
     }
 }
 
-// MARK: EXTENSION:
+// MARK: - EXTENSION:
 
 extension TemperatureVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: CELL COUNTS:
@@ -183,7 +184,7 @@ extension TemperatureVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TemperatureCell", for: indexPath) as? TemperatureCell else { return UITableViewCell() }
         let temperature = createTemperatureArray()[indexPath.row]
         cell.backgroundColor = .clear
-        cell.configure(image: temperature.image ?? UIImage(), name: temperature.nameTemperature, value: temperature.valueTemperature)
+        cell.configure(image: temperature.image ?? UIImage(), imageColor: temperature.color, name: temperature.nameTemperature, value: temperature.valueTemperature)
         return cell
     }
     

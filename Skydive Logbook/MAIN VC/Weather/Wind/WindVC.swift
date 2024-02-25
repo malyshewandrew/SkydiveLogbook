@@ -22,9 +22,9 @@ private let arrayWindSpeed = [
     WindSpeed(image: UIImage(systemName: "wind.circle.fill"), name: NSLocalizedString("Strong wind / wind speed", comment: ""), value: "10.8-13.8", color: #colorLiteral(red: 0.8339261413, green: 0.6968302727, blue: 0.004520809744, alpha: 1)),
     WindSpeed(image: UIImage(systemName: "wind.circle.fill"), name: NSLocalizedString("Hard wind / wind speed", comment: ""), value: "13.9-17.1", color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1)),
     WindSpeed(image: UIImage(systemName: "wind.circle.fill"), name: NSLocalizedString("Powerful wind / wind speed", comment: ""), value: "17.2-20.7", color: #colorLiteral(red: 0.8858549595, green: 0.5153784156, blue: 0.0006241258816, alpha: 1)),
-    WindSpeed(image: UIImage(systemName: "wind.circle.fill"), name: NSLocalizedString("Storm wind / wind speed", comment: ""), value: "20.8-24.4", color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1)),
-    WindSpeed(image: UIImage(systemName: "wind.circle.fill"), name: NSLocalizedString("Hard storm wind / wind speed", comment: ""), value: "24.5 - 32.6", color: #colorLiteral(red: 0.9038113952, green: 0.1745244861, blue: 0.1827548146, alpha: 1)),
-    WindSpeed(image: UIImage(systemName: "wind.circle.fill"), name: NSLocalizedString("Hurricane wind / wind speed", comment: ""), value: ">32.7", color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1))
+    WindSpeed(image: UIImage(systemName: "tornado.circle.fill"), name: NSLocalizedString("Storm wind / wind speed", comment: ""), value: "20.8-24.4", color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1)),
+    WindSpeed(image: UIImage(systemName: "tornado.circle.fill"), name: NSLocalizedString("Hard storm wind / wind speed", comment: ""), value: "24.5 - 32.6", color: #colorLiteral(red: 0.9038113952, green: 0.1745244861, blue: 0.1827548146, alpha: 1)),
+    WindSpeed(image: UIImage(systemName: "tornado.circle.fill"), name: NSLocalizedString("Hurricane wind / wind speed", comment: ""), value: ">32.7", color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1))
 ]
 
 // MARK: - CLASS:

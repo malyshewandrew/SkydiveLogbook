@@ -5,6 +5,7 @@ import UIKit
 
 struct HumidityModel {
     let image: UIImage?
+    let color: UIColor
     let name: String
     let value: String
 }
@@ -12,11 +13,11 @@ struct HumidityModel {
 // MARK: ARRAY UVINDEX VALUES:
 
 private let arrayHumidity = [
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Very dry air / humidity", comment: ""), value: "<30%"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Dry air / humidity", comment: ""), value: "30-55%"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Moderately dry air / humidity", comment: ""), value: "55-70%"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Moderately humid air / humidity", comment: ""), value: "70-85%"),
-    HumidityModel(image: UIImage(systemName: "humidity.fill"), name: NSLocalizedString("Very humid air / humidity", comment: ""), value: ">85%")
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), color: #colorLiteral(red: 0.8339261413, green: 0.6968302727, blue: 0.004520809744, alpha: 1), name: NSLocalizedString("Very dry air / humidity", comment: ""), value: "<30%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), color: #colorLiteral(red: 0.5635834336, green: 0.7061006427, blue: 0.005785941612, alpha: 1), name: NSLocalizedString("Dry air / humidity", comment: ""), value: "30-55%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Moderately dry air / humidity", comment: ""), value: "55-70%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), color: #colorLiteral(red: 0.009829076938, green: 0.7325571179, blue: 0.5401486754, alpha: 1), name: NSLocalizedString("Moderately humid air / humidity", comment: ""), value: "70-85%"),
+    HumidityModel(image: UIImage(systemName: "humidity.fill"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Very humid air / humidity", comment: ""), value: ">85%")
 ]
 
 // MARK: - CLASS:
@@ -175,7 +176,7 @@ extension HumidityVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HumidityCell", for: indexPath) as? HumidityCell else { return UITableViewCell() }
         let humidity = arrayHumidity[indexPath.row]
         cell.backgroundColor = .clear
-        cell.configure(image: humidity.image ?? UIImage(), name: humidity.name, value: humidity.value)
+        cell.configure(image: humidity.image ?? UIImage(), imageColor: humidity.color, name: humidity.name, value: humidity.value)
         return cell
     }
     

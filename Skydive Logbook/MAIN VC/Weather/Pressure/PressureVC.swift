@@ -5,6 +5,7 @@ import UIKit
 
 struct PressureModel {
     let image: UIImage?
+    let color: UIColor
     let name: String
     let value: String
 }
@@ -12,11 +13,11 @@ struct PressureModel {
 // MARK: ARRAY PRESSURE VALUES:
 
 private let arrayPressure = [
-    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Very low / pressure", comment: ""), value: "<20"),
-    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Low / pressure", comment: ""), value: "<10-20"),
-    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Normal / pressure", comment: ""), value: "±10"),
-    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Hight / pressure", comment: ""), value: ">10-20"),
-    PressureModel(image: UIImage(systemName: "sparkles"), name: NSLocalizedString("Very hight / pressure", comment: ""), value: ">20")
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Very low / pressure", comment: ""), value: "<20"),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Low / pressure", comment: ""), value: "<10-20"),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Normal / pressure", comment: ""), value: "±10"),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Hight / pressure", comment: ""), value: ">10-20"),
+    PressureModel(image: UIImage(systemName: "globe.europe.africa.fill"), color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Very hight / pressure", comment: ""), value: ">20")
 ]
 
 // MARK: - CLASS:
@@ -176,7 +177,7 @@ extension PressureVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PressureCell", for: indexPath) as? PressureCell else { return UITableViewCell() }
         let pressure = arrayPressure[indexPath.row]
         cell.backgroundColor = .clear
-        cell.configure(image: pressure.image ?? UIImage(), name: pressure.name, value: pressure.value)
+        cell.configure(image: pressure.image ?? UIImage(), imageColor: pressure.color, name: pressure.name, value: pressure.value)
         return cell
     }
     

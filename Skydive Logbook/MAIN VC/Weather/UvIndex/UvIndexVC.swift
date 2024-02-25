@@ -13,11 +13,11 @@ struct UvIndex {
 // MARK: ARRAY UVINDEX VALUES:
 
 private let arrayUvIndex = [
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemGreen, name: NSLocalizedString("Low / uv index", comment: ""), value: "0-2"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemYellow, name: NSLocalizedString("Moderate / uv index", comment: ""), value: "3-5"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemOrange, name: NSLocalizedString("Hight / uv index", comment: ""), value: "6-7"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemRed, name: NSLocalizedString("Very high / uv index", comment: ""), value: "8-10"),
-    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: .systemIndigo, name: NSLocalizedString("Excessive / uv index", comment: ""), value: "11+")
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: #colorLiteral(red: 0.009829076938, green: 0.7325571179, blue: 0.5401486754, alpha: 1), name: NSLocalizedString("Low / uv index", comment: ""), value: "0-2"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: #colorLiteral(red: 0.1420840621, green: 0.7043048739, blue: 0.1435457766, alpha: 1), name: NSLocalizedString("Moderate / uv index", comment: ""), value: "3-5"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Hight / uv index", comment: ""), value: "6-7"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Very high / uv index", comment: ""), value: "8-10"),
+    UvIndex(image: UIImage(systemName: "thermometer.variable.and.figure"), imageColor: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Excessive / uv index", comment: ""), value: "11+")
 ]
 
 // MARK: - CLASS:

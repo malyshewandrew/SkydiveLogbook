@@ -88,8 +88,9 @@ final class HumidityCell: UITableViewCell {
     
     // MARK: CONFIGURE:
     
-    func configure(image: UIImage, name: String, value: String) {
+    func configure(image: UIImage, imageColor: UIColor, name: String, value: String) {
         imageImageView.image = image.withConfiguration(configurationImage)
+        imageImageView.tintColor = imageColor
         nameLabel.text = name
         valueLabel.text = value
     }
