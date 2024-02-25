@@ -59,7 +59,7 @@ final class PressureVC: UIViewController {
         // MARK: PRESSURE BACKGROUND:
 
         pressureBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        pressureBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        pressureBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         pressureBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         pressureBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         pressureBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

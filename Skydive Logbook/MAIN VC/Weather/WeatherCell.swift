@@ -787,9 +787,11 @@ final class WeatherCell: UITableViewCell {
         arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle) * .pi / 180.0)
         arrowLabel.text = windLabel
         if rotationAngle > 180 {
-            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle - 100) * .pi / 180.0)
+            let rotationAngle: CGFloat = .pi / 2
+            arrowLabel.transform = CGAffineTransform(rotationAngle: rotationAngle)
         } else {
-            arrowLabel.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle + 100) * .pi / 180.0)
+            let rotationAngle: CGFloat = .pi / -2
+            arrowLabel.transform = CGAffineTransform(rotationAngle: rotationAngle)
         }
 
     }
