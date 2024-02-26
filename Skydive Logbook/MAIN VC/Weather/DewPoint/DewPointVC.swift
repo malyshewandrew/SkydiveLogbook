@@ -13,10 +13,10 @@ struct DewPointModel {
 // MARK: ARRAY DEW POINT VALUES:
 
 private let arrayDewPoint = [
-    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.8339261413, green: 0.6968302727, blue: 0.004520809744, alpha: 1), name: NSLocalizedString("Relatively dry air / dew point", comment: ""), value: "<10°C"),
-    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.5446751714, green: 0.8149898648, blue: 0.1837660074, alpha: 1), name: NSLocalizedString("Moderately humid air / dew point", comment: ""), value: "10-15°C"),
-    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.2926934361, green: 0.7589037418, blue: 0.604084909, alpha: 1), name: NSLocalizedString("Humid air / dew point", comment: ""), value: "15-20°C"),
-    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.1246755049, green: 0.7242954373, blue: 0.8247141242, alpha: 1), name: NSLocalizedString("Very humid air / dew point", comment: ""), value: "20+°C")
+    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.8339261413, green: 0.6968302727, blue: 0.004520809744, alpha: 1), name: NSLocalizedString("Relatively dry air / dew point", comment: ""), value: "<10 °C"),
+    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.5446751714, green: 0.8149898648, blue: 0.1837660074, alpha: 1), name: NSLocalizedString("Moderately humid air / dew point", comment: ""), value: "10-15 °C"),
+    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.2926934361, green: 0.7589037418, blue: 0.604084909, alpha: 1), name: NSLocalizedString("Humid air / dew point", comment: ""), value: "15-20 °C"),
+    DewPointModel(image: UIImage(systemName: "thermometer.and.liquid.waves"), color: #colorLiteral(red: 0.1246755049, green: 0.7242954373, blue: 0.8247141242, alpha: 1), name: NSLocalizedString("Very humid air / dew point", comment: ""), value: "+20 °C")
 ]
 
 // MARK: - CLASS:

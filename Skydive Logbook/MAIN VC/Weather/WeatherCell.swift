@@ -384,7 +384,7 @@ final class WeatherCell: UITableViewCell {
 
         arrowLabel.translatesAutoresizingMaskIntoConstraints = false
         arrowLabel.centerXAnchor.constraint(equalTo: arrowImage.centerXAnchor).isActive = true
-        arrowLabel.centerYAnchor.constraint(equalTo: arrowImage.centerYAnchor).isActive = true
+        arrowLabel.centerYAnchor.constraint(equalTo: arrowImage.centerYAnchor, constant: -5).isActive = true
         arrowLabel.heightAnchor.constraint(equalTo: arrowImage.heightAnchor, multiplier: 0.6).isActive = true
         arrowLabel.widthAnchor.constraint(equalTo: arrowImage.widthAnchor, multiplier: 0.6).isActive = true
     }
