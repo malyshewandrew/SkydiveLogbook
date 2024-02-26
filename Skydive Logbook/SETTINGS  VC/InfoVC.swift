@@ -153,8 +153,7 @@ final class InfoVC: UIViewController {
         vibrationOn.vibrationStandart()
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionSettingsLottie = LottieAnimationView(name: "VersionSettingsLottie")
-        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\n\niOS Developer Malyshew Andrew\n2023-2024 Minsk, Belarus\nmalyshewdeveloper@protonmail.com", preferredStyle: .alert)
-
+        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\niOS Developer Malyshew Andrew\n2023-2024 Minsk, Belarus", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         alert.view.addSubviews(versionSettingsLottie, imageView)
         
@@ -165,12 +164,12 @@ final class InfoVC: UIViewController {
         versionSettingsLottie.widthAnchor.constraint(equalToConstant: 275).isActive = true
         versionSettingsLottie.play()
         versionSettingsLottie.loopMode = .loop
-        
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
         imageView.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: alert.view.centerYAnchor, constant: -30).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: alert.view.centerYAnchor, constant: -28).isActive = true
         imageView.layer.shadowRadius = 35
         imageView.layer.shadowColor = UIColor.colorWhite.cgColor
         imageView.layer.shadowOpacity = 1

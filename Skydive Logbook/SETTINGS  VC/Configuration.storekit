@@ -1,0 +1,129 @@
+{
+  "identifier" : "ADEA36A0",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6478469415",
+    "_developerTeamID" : "5KKD4ZM687",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 730647435.53592002,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21451066",
+      "localizations" : [
+
+      ],
+      "name" : "Premium Access",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "7.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6478469699",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "1 month",
+              "displayName" : "OneMonth",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "127573",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "OneMonth",
+          "subscriptionGroupID" : "21451066",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6478469521",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "12 month",
+              "displayName" : "One Year",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "17573",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "OneYear",
+          "subscriptionGroupID" : "21451066",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

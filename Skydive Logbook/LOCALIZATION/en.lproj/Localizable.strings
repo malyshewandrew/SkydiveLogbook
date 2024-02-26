@@ -482,7 +482,7 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 
 // MARK: - INFO:
 
-"App version" = "App version";
+"App version" = "About application";
 "Privacy policy" = "Privacy policy";
 "Terms of use" = "Terms of use";
 "Info text" = "\nSkydiveBook\n\nIt is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the SkydiveBook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.\n\nThe data on the loading of the main dome are reference information and are not of a recommendatory nature for choosing parachute equipment.\n\nAll permits for the operation of parachutes must be issued by a valid instructor.\n";

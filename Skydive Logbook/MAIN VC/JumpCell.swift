@@ -69,19 +69,19 @@ final class JumpCell: UITableViewCell {
         confettiLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
         confettiLottie.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1).isActive = true
         
-        // MARK: CIRCLE AIRPLANE:
+        // MARK: CIRCLE GREEN:
         
         circleGreenLottie.translatesAutoresizingMaskIntoConstraints = false
-        circleGreenLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
-        circleGreenLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
+        circleGreenLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor, constant: -1).isActive = true
+        circleGreenLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor, constant: 3).isActive = true
         circleGreenLottie.heightAnchor.constraint(equalToConstant: 400).isActive = true
         circleGreenLottie.widthAnchor.constraint(equalToConstant: 400).isActive = true
         
         // MARK: CIRCLE RED:
         
         circleRedLottie.translatesAutoresizingMaskIntoConstraints = false
-        circleRedLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor, constant: 8).isActive = true
-        circleRedLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor, constant: 4).isActive = true
+        circleRedLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor, constant: 9).isActive = true
+        circleRedLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor, constant: 5).isActive = true
         circleRedLottie.heightAnchor.constraint(equalToConstant: 550).isActive = true
         circleRedLottie.widthAnchor.constraint(equalToConstant: 550).isActive = true
         

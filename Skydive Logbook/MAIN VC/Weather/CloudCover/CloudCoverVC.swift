@@ -13,11 +13,11 @@ struct CloudCoverModel {
 // MARK: ARRAY CLOUD COVER VALUES:
 
 private let arrayCloudCover = [
-    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Clear / cloud cover", comment: ""), value: "<10%"),
-    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Partly Cloudy / cloud cover", comment: ""), value: "10-30%"),
-    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Variable Cloudiness / cloud cover", comment: ""), value: "30-70%"),
-    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Cloudy / cloud cover", comment: ""), value: "70-99%"),
-    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Overcast / cloud cover", comment: ""), value: "100%")
+    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.02996753901, green: 0.7603672147, blue: 0.7500696778, alpha: 1), name: NSLocalizedString("Clear / cloud cover", comment: ""), value: "<10 %"),
+    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.008190996945, green: 0.7086946964, blue: 0.3351221085, alpha: 1), name: NSLocalizedString("Partly Cloudy / cloud cover", comment: ""), value: "10-30 %"),
+    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.8648145795, green: 0.6460573077, blue: 0.001722229063, alpha: 1), name: NSLocalizedString("Variable Cloudiness / cloud cover", comment: ""), value: "30-70 %"),
+    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.9018223286, green: 0.3199688196, blue: 0.01046972442, alpha: 1), name: NSLocalizedString("Cloudy / cloud cover", comment: ""), value: "70-99 %"),
+    CloudCoverModel(image: UIImage(systemName: "cloud.sun"), color: #colorLiteral(red: 0.9055797458, green: 0.09583576769, blue: 0.3299447, alpha: 1), name: NSLocalizedString("Overcast / cloud cover", comment: ""), value: "100 %")
 ]
 
 // MARK: - CLASS:

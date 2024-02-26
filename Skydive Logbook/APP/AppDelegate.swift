@@ -1,10 +1,12 @@
 import RealmSwift
 import UIKit
+import Adapty
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Adapty.activate("public_live_stgLOJHr.8tssVbeAirtHJYt1qgTE")
         return true
     }
     

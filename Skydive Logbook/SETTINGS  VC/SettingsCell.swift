@@ -328,7 +328,6 @@ final class SettingsCell: UITableViewCell {
         UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
         let context = UIGraphicsGetCurrentContext()
         color.setFill()
-
         let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         context!.translateBy(x: 0, y: image.size.height)
         context!.scaleBy(x: 1.0, y: -1.0)
@@ -336,7 +335,6 @@ final class SettingsCell: UITableViewCell {
         context!.fill(rect)
         let coloredImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-
         return coloredImage
     }
 }
