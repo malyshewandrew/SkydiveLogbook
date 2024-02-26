@@ -251,7 +251,7 @@ final class SettingsCell: UITableViewCell {
 
         // MARK: INFO LABEL:
 
-        infoLabel.text = "2023-2024, SkydiveBbook iOS Application"
+        infoLabel.text = "2023-2024, SkydiveBook iOS Application"
         infoLabel.textColor = .colorDarkGray
         infoLabel.font = fontRegularStandard8
         infoLabel.textAlignment = .center

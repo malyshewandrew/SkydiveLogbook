@@ -174,7 +174,7 @@ extension NewJumpVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewJumpCell", for: indexPath) as? NewJumpCell else { return UITableViewCell() }
         cell.showAlert = { [weak self] in
             let alert = UIAlertController(title: NSLocalizedString("Add new jump / new jump", comment: "") + ":", message: "\n\(NSLocalizedString("Manual / new jump", comment: ""))", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ок", style: .default))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             self?.present(alert, animated: true)
         }
         return cell

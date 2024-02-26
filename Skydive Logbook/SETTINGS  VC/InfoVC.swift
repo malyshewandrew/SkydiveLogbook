@@ -182,7 +182,7 @@ final class InfoVC: UIViewController {
     
     @objc private func privacyButtonTapped() {
         vibrationOn.vibrationStandart()
-        guard let url = URL(string: "https://skydivelogbook.tilda.ws/privacysecurity") else { return }
+        guard let url = URL(string: "https://skydivebook.tilda.ws/privacysecurity") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         present(safariViewController, animated: true)
@@ -192,7 +192,7 @@ final class InfoVC: UIViewController {
     
     @objc private func termsButtonTapped() {
         vibrationOn.vibrationStandart()
-        guard let url = URL(string: "https://skydivelogbook.tilda.ws/termsofuse") else { return }
+        guard let url = URL(string: "https://skydivebook.tilda.ws/termsofuse") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         present(safariViewController, animated: true)

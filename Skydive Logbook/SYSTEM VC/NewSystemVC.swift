@@ -150,7 +150,7 @@ final class NewSystemVC: UIViewController {
         5. \(NSLocalizedString("Counts of repack reserve canopy alert", comment: ""))
         6. \(NSLocalizedString("Date of pack reserve canopy alert", comment: ""))
         """, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 }

@@ -218,10 +218,12 @@ extension BackupVC: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let sourceURL = urls.first else {
             print("Ошибка: URL выбранного файла nil.")
+            self.alertKitError()
             return
         }
         guard FileManager.default.fileExists(atPath: sourceURL.path) else {
             print("Ошибка: Файл по выбранному URL не существует.")
+            self.alertKitError()
             return
         }
         do {
@@ -229,6 +231,7 @@ extension BackupVC: UIDocumentPickerDelegate {
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
             guard let unwrappedJsonObject = jsonObject else {
                 print("Ошибка: Неверный формат JSON.")
+                self.alertKitError()
                 return
             }
             if let jumpsData = unwrappedJsonObject["jumps"] as? [[String: Any]] {

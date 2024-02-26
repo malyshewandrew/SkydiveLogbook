@@ -196,7 +196,7 @@ class DropZonesVC: UIViewController {
     @objc private func infoButtonTapped() {
         vibrationOn.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Drop Zones / drop zones", comment: ""), message: NSLocalizedString("Message / drop zones", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
         }))
         present(alert, animated: true)
     }

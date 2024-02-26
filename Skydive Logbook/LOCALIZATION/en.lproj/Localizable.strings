@@ -60,6 +60,9 @@
 
 // MARK: - WEATHER:
 
+"No connection" = "No connection";
+"" = "An active internet connection is required to receive weather forecast data";
+
 "mm/h" = "mm/h";
 "hPa" = "hPa";
 "mm / pressure" = "mm";

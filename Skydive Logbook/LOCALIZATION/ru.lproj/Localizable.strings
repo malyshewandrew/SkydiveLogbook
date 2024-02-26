@@ -60,6 +60,9 @@
 
 // MARK: - WEATHER:
 
+"No connection / weather" = "Нет соединения";
+"No connection message / weather" = "Для получения данных о прогнозе погоды требуется активное интернет соединение";
+
 "mm/h" = "мм/ч";
 "hPa" = "гПа";
 "mm / pressure" = "мм";

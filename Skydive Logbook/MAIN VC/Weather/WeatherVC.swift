@@ -383,13 +383,15 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.condition = result.currentWeather.condition
                 configureBackground()
                 
-                // MARK: TEMPERATURE MAX MIN AVERAGE:
+                // MARK: TEMPERATURE MAX, MIN, AVERAGE:
                 
                 self.maxTemperature = "\(Int(result.dailyForecast.forecast[0].highTemperature.value)) \(result.currentWeather.temperature.unit.symbol)"
                 self.minTemperature = "\(Int(result.dailyForecast.forecast[0].lowTemperature.value)) \(result.currentWeather.temperature.unit.symbol)"
                 self.averageTemperature = "\(Int((result.dailyForecast.forecast[0].highTemperature.value + result.dailyForecast.forecast[0].lowTemperature.value) / 2)) \(result.currentWeather.temperature.unit.symbol)"
             } catch {
-                print(String(describing: error))
+                let alert = UIAlertController(title: NSLocalizedString("No connection / weather", comment: ""), message: NSLocalizedString("No connection message / weather", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("", comment: "Close"), style: .default, handler: nil))
+                present(alert, animated: true)
             }
         }
     }
@@ -536,7 +538,7 @@ extension WeatherVC: WeatherCellDelegate {
 
     func tapWindInfoButton() {
         let alert = UIAlertController(title: NSLocalizedString("Wind direction", comment: ""), message: NSLocalizedString("Arrow wind direction", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
         }))
         present(alert, animated: true)
     }
