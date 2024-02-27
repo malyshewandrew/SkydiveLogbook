@@ -317,72 +317,26 @@ final class EditAccountVC: UIViewController {
     // MARK: CONFIGURE ACCOUNT:
 
     private func configureAccount() {
-        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
-            $0
-        }
-        
-        if arrayAccountRealm.count == 0 {
+        if let account = arrayAccountRealm.first {
+            nicknameTextField.text = account.nickname.isEmpty ? "" : account.nickname
+            licenseTypeTextField.text = account.licenseType.isEmpty ? "" : account.licenseType
+            licenseDateTextField.text = account.licenseDate.isEmpty ? "" : account.licenseDate
+            medicineTextField.text = account.medicine.isEmpty ? "" : account.medicine
+            insuranceTextField.text = account.insurance.isEmpty ? "" : account.insurance
+            reserveCanopyTextField.text = account.reserveCanopy.isEmpty ? "" : account.reserveCanopy
+        } else {
             nicknameTextField.text = ""
-        } else {
-            if arrayAccountRealm[0].nickname.isEmpty {
-            } else {
-                nicknameTextField.text = arrayAccountRealm[0].nickname
-            }
-        }
-        
-        if arrayAccountRealm.count == 0 {
             licenseTypeTextField.text = ""
-        } else {
-            if arrayAccountRealm[0].nickname.isEmpty {
-            } else {
-                licenseTypeTextField.text = arrayAccountRealm[0].licenseType
-            }
-        }
-    
-        if arrayAccountRealm.count == 0 {
             licenseDateTextField.text = ""
-        } else {
-            if arrayAccountRealm[0].nickname.isEmpty {
-            } else {
-                licenseDateTextField.text = arrayAccountRealm[0].licenseDate
-            }
-        }
-        
-        if arrayAccountRealm.count == 0 {
             medicineTextField.text = ""
-        } else {
-            if arrayAccountRealm[0].nickname.isEmpty {
-            } else {
-                medicineTextField.text = arrayAccountRealm[0].medicine
-            }
-        }
-        
-        if arrayAccountRealm.count == 0 {
             insuranceTextField.text = ""
-        } else {
-            if arrayAccountRealm[0].nickname.isEmpty {
-            } else {
-                insuranceTextField.text = arrayAccountRealm[0].insurance
-            }
-        }
-
-        if arrayAccountRealm.count == 0 {
             reserveCanopyTextField.text = ""
-        } else {
-            if arrayAccountRealm[0].nickname.isEmpty {
-            } else {
-                reserveCanopyTextField.text = arrayAccountRealm[0].reserveCanopy
-            }
         }
     }
-    
+
     // MARK: ACTION BUTTON SAVE:
     
     @objc private func saveButtomTapped() {
-        guard nicknameTextField.text != "" else {
-            showError(textField: nicknameTextField)
-            return
-        }
         saveNewAccount()
         DispatchQueue.main.async {
             self.resignFirstResponders()
@@ -407,18 +361,6 @@ final class EditAccountVC: UIViewController {
             newAccount.reserveCanopy = reserveCanopyTextField.text ?? ""
             realmManager.localRealm.add(newAccount, update: .all)
         }
-    }
-    
-    // MARK: SHOR ERROR FOR EMPTY FIELDS:
-    
-    private func showError(textField: UITextField) {
-        textField.backgroundColor = .colorRed
-        UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve) {
-            textField.backgroundColor = .colorTabBar
-        }
-        resignFirstResponders()
-        actionButtonSaveRedColor()
-        alertKitError()
     }
     
     // MARK: CLOSE ALL TEXT FIELDS:

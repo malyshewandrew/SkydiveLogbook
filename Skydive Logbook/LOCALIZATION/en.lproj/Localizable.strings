@@ -41,7 +41,7 @@
 
 // MARK: - Main:
 
-"First Message" = "\nWelcome to the SkydiveBook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo create a new jump, go to the \"Add\" section.\n\nTo add your own locations, aircraft and parachutes, go to the \"Settings\" section.\n\nEnjoy your use and safe jumps!\n";
+"First Message" = "\nWelcome to the SkydiveBook!\n\nAll your skydiving activities will be displayed on this screen.\n\nTo get started, you need to add at least 1: location, type of aircraft and parachute in the section \"Settings\".\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
 "This action cannot be undone." = "This action cannot be undone.";
 
