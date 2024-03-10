@@ -325,8 +325,11 @@ final class SkydiversCell: UITableViewCell {
         if index.row == 0 {
             containerView.backgroundColor = #colorLiteral(red: 0.7621314526, green: 0.5825900435, blue: 0.2354111075, alpha: 1)
             firstPlaceLottie.isHidden = false
+            nicknameLabel.textColor = .black
             nicknameValueLabel.textColor = .white
+            countryLabel.textColor = .black
             countryValueLabel.textColor = .white
+            ratingLabel.textColor = .black
             ratingValueLabel.textColor = .white
             professionLabel.textColor = .white
             countJumpsValueLabel.textColor = .white
@@ -335,8 +338,11 @@ final class SkydiversCell: UITableViewCell {
         } else if index.row == 1 {
             containerView.backgroundColor = #colorLiteral(red: 0.5784137249, green: 0.6185954809, blue: 0.6074234843, alpha: 1)
             secondPlaceLottie.isHidden = false
+            nicknameLabel.textColor = .black
             nicknameValueLabel.textColor = .white
+            countryLabel.textColor = .black
             countryValueLabel.textColor = .white
+            ratingLabel.textColor = .black
             ratingValueLabel.textColor = .white
             professionLabel.textColor = .white
             countJumpsValueLabel.textColor = .white
@@ -345,8 +351,11 @@ final class SkydiversCell: UITableViewCell {
         } else if index.row == 2 {
             containerView.backgroundColor = #colorLiteral(red: 0.7442381978, green: 0.3936595917, blue: 0.2051987648, alpha: 1)
             thirdPlaceLottie.isHidden = false
+            nicknameLabel.textColor = .black
             nicknameValueLabel.textColor = .white
+            countryLabel.textColor = .black
             countryValueLabel.textColor = .white
+            ratingLabel.textColor = .black
             ratingValueLabel.textColor = .white
             professionLabel.textColor = .white
             countJumpsValueLabel.textColor = .white
