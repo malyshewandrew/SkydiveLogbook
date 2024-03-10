@@ -14,6 +14,7 @@ let fontThinStandard10: UIFont = .systemFont(ofSize: 10, weight: .thin, width: .
 let fontMediumStandard12: UIFont = .systemFont(ofSize: 12, weight: .medium, width: .standard)
 let fontRegularStandard12: UIFont = .systemFont(ofSize: 12, weight: .regular, width: .standard)
 
+let fontThinStandard14: UIFont = .systemFont(ofSize: 14, weight: .thin, width: .standard)
 let fontMediumStandard14: UIFont = .systemFont(ofSize: 14, weight: .medium, width: .standard)
 
 let fontBoldStandard16: UIFont = .systemFont(ofSize: 16, weight: .bold, width: .standard)
@@ -44,38 +45,40 @@ class Vibration {
     let vibrationNotification = UINotificationFeedbackGenerator()
     let vibrationSelectionFeedbackGenerator = UISelectionFeedbackGenerator()
     let vibrationImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+    let vibrationImpactFeedbackGeneratorSpeed = UIImpactFeedbackGenerator(style: .rigid)
 
     func vibrationSucces() {
-        vibrationNotification.notificationOccurred(.success)
+        self.vibrationNotification.notificationOccurred(.success)
     }
 
     func vibrationError() {
-        vibrationNotification.notificationOccurred(.error)
+        self.vibrationNotification.notificationOccurred(.error)
     }
     
     func vibrationSelection() {
-        vibrationSelectionFeedbackGenerator.prepare()
-        vibrationSelectionFeedbackGenerator.selectionChanged()
+        self.vibrationSelectionFeedbackGenerator.prepare()
+        self.vibrationSelectionFeedbackGenerator.selectionChanged()
     }
     
     func vibrationStandart() {
-        vibrationImpactFeedbackGenerator.prepare()
-        vibrationImpactFeedbackGenerator.impactOccurred()
+        self.vibrationImpactFeedbackGenerator.prepare()
+        self.vibrationImpactFeedbackGenerator.impactOccurred()
     }
-}
+    
+    var timer: Timer?
 
-// MARK: - GRADIENT:
-
-// Добавляется к объекту который нужно залить через метод .addGradient
-extension UIView {
-    func addGradient(colors: [UIColor], startPoint: CGPoint = .init(x: 0.0, y: 0.5),
-                     endPoint: CGPoint = .init(x: 1.0, y: 0.5))
-    {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = colors.map(\.cgColor)
-        gradientLayer.startPoint = startPoint
-        gradientLayer.endPoint = endPoint
-        gradientLayer.frame = bounds
-        layer.insertSublayer(gradientLayer, at: 0)
+    func handleVibration() {
+        if timer == nil {
+            vibrationImpactFeedbackGeneratorSpeed.prepare()
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(vibrationSpeed), userInfo: nil, repeats: true)
+        } else {
+            timer?.invalidate()
+            timer = nil
+        }
     }
+    
+    @objc func vibrationSpeed() {
+        self.vibrationImpactFeedbackGeneratorSpeed.impactOccurred()
+    }
+    
 }

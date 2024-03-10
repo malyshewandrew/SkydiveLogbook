@@ -14,6 +14,7 @@ final class BackupVC: UIViewController {
     private let restoreButton = UIButton()
     private let realmManager = RealmManager()
     private let vibrationOn = Vibration()
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
 
     // MARK: - LIFECYCLE:
 
@@ -172,6 +173,9 @@ final class BackupVC: UIViewController {
     @objc private func createBackup() {
         vibrationOn.vibrationStandart()
         do {
+            self.activityIndicator.center = view.center
+            self.activityIndicator.startAnimating()
+            self.view.addSubview(activityIndicator)
             var combinedData: [String: Any] = [:]
             combinedData["jumps"] = arrayJumpsRealm.map { $0.toDictionary() }
             combinedData["notes"] = arrayNotesRealm.map { $0.toDictionary() }
@@ -192,20 +196,29 @@ final class BackupVC: UIViewController {
             activityViewController.completionWithItemsHandler = { (activityType, completed, returnedItems, error) in
                 if completed {
                     self.alertKitSuccess()
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.removeFromSuperview()
                 } else {
                     self.alertKitError()
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.removeFromSuperview()
                 }
             }
             present(activityViewController, animated: true, completion: nil)
             print("КОПИЯ ДАННЫХ УСПЕШНО СОЗДАНА И ПРЕДОСТАВЛЕНА ПОЛЬЗОВАТЕЛЮ ДЛЯ СОХРАНЕНИЯ.")
         } catch {
-            print("Ошибка при создании и сохранении копии данных: \(error)")
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.removeFromSuperview()
             self.alertKitError()
+            print("Ошибка при создании и сохранении копии данных: \(error)")
         }
     }
 
     @objc private func restoreBackup() {
         vibrationOn.vibrationStandart()
+        self.activityIndicator.center = view.center
+        self.activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.data], asCopy: true)
         documentPicker.delegate = self
         present(documentPicker, animated: true, completion: nil)
@@ -215,6 +228,13 @@ final class BackupVC: UIViewController {
 // MARK: - EXTENSION:
 
 extension BackupVC: UIDocumentPickerDelegate {
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        self.alertKitError()
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.removeFromSuperview()
+    }
+    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let sourceURL = urls.first else {
             print("Ошибка: URL выбранного файла nil.")
@@ -281,9 +301,13 @@ extension BackupVC: UIDocumentPickerDelegate {
                 realmManager.localRealm.add(arraySystemsRealm)
             }
             self.alertKitUpload()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.removeFromSuperview()
         } catch {
             print("Ошибка при операции с копией данных: \(error)")
             self.alertKitError()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.removeFromSuperview()
         }
     }
 }

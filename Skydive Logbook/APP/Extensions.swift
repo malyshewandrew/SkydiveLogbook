@@ -1,4 +1,3 @@
-import RealmSwift
 import UIKit
 
 // MARK: - ADD SUBVIEWS:
@@ -21,14 +20,29 @@ extension UIStackView {
     }
 }
 
+// MARK: - BLUR:
 
-//// MARK: - BLUR:
-//extension UIView {
-//    func applyBlurEffect(_ style: UIBlurEffect.Style = .dark) {
-//        let blurEffect = UIBlurEffect(style: style)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = bounds
-//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        addSubview(blurEffectView)
-//    }
-//}
+extension UIView {
+    func addBlurEffect(_ style: UIBlurEffect.Style = .dark) {
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
+    }
+}
+
+// MARK: - GRADIENT:
+
+extension UIView {
+    func addGradient(colors: [UIColor], startPoint: CGPoint = .init(x: 0.0, y: 0.5),
+                     endPoint: CGPoint = .init(x: 1.0, y: 0.5))
+    {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors.map(\.cgColor)
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        gradientLayer.frame = bounds
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+}

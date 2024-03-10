@@ -7,7 +7,8 @@ import RealmSwift
 final class InfoVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
-    private let infoSettingsLottie = LottieAnimationView(name: "InfoSettings")
+    private let titleLabel = UILabel()
+    private let scrollView = UIScrollView()
     private let infoTextView = UIView()
     private let infoTextLabel = UILabel()
     private let privacyButton = UIButton()
@@ -27,28 +28,35 @@ final class InfoVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(infoTextView, infoSettingsLottie, privacyButton, termsButton, versionButton)
-        infoTextView.addSubview(infoTextLabel)
+        view.addSubviews(titleLabel, scrollView)
+        scrollView.addSubviews(infoTextView, privacyButton, termsButton, versionButton)
+        infoTextView.addSubviews(infoTextLabel)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        // MARK: ANIMATION:
-
-        infoSettingsLottie.translatesAutoresizingMaskIntoConstraints = false
-        infoSettingsLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoSettingsLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        infoSettingsLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        infoSettingsLottie.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        // MARK: TITLE LABEL:
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        // MARK: SCROLL VIEW:
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         // MARK: INFO TEXT VIEW:
         
         infoTextView.translatesAutoresizingMaskIntoConstraints = false
-        infoTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoTextView.topAnchor.constraint(equalTo: infoSettingsLottie.bottomAnchor, constant: 20).isActive = true
+        infoTextView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        infoTextView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 75).isActive = true
         infoTextView.heightAnchor.constraint(greaterThanOrEqualTo: infoTextLabel.heightAnchor, constant: 10).isActive = true
-        infoTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        infoTextView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.7).isActive = true
         
         // MARK: INFO TEXT LABEL:
 
@@ -94,18 +102,23 @@ final class InfoVC: UIViewController {
         
         navigationController?.navigationBar.isHidden = false
         
-        // MARK: ANIMATION:
-
-        infoSettingsLottie.play()
-        infoSettingsLottie.loopMode = .loop
+        // MARK: TITLE LABEL:
+        
+        titleLabel.text = "SKYDIVE BOOK"
+        titleLabel.textColor = .colorWhite
+        titleLabel.textAlignment = .center
+        titleLabel.font = fontMediumStandard18
+        
+        
+        // MARK: SCROLL VIEW:
+        
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
+        scrollView.isScrollEnabled = true
         
         // MARK: INFO TEXT VIEW:
 
         infoTextView.backgroundColor = .colorCell
         infoTextView.layer.cornerRadius = cornerRadius15
-        infoTextView.layer.shadowRadius = 25
-        infoTextView.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        infoTextView.layer.shadowOpacity = 0.2
         
         // MARK: INFO TEXT LABEL:
 
@@ -153,8 +166,8 @@ final class InfoVC: UIViewController {
         vibrationOn.vibrationStandart()
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionSettingsLottie = LottieAnimationView(name: "VersionSettingsLottie")
-        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\niOS Developer Malyshew Andrew\n2023-2024 Minsk, Belarus", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\niOS Developer Malyshew Andrew\n2023-2024", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.view.addSubviews(versionSettingsLottie, imageView)
         
         versionSettingsLottie.translatesAutoresizingMaskIntoConstraints = false

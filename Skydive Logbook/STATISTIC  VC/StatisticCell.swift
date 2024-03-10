@@ -27,7 +27,6 @@ protocol StatisticCellDelegate {
 final class StatisticCell: UITableViewCell {
     // MARK: - PROPERTIES:
     
-    var delegate: StatisticCellDelegate?
     private let vibrationOn = Vibration()
     private let dateFormatter = DateFormatter()
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -83,6 +82,8 @@ final class StatisticCell: UITableViewCell {
 
     private let missionsTwoView = UIView()
     private let contentViewTwoView = UIView()
+    
+    var delegate: StatisticCellDelegate?
     
     // MARK: - LIFECYCLE:
 

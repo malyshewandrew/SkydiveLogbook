@@ -1,6 +1,5 @@
 import Foundation
 
-
 // MARK: - ДОБАВЛЕНИЕ VIEWS ЧЕРЕЗ FOR EACH:
 /*
 
@@ -41,7 +40,7 @@ import Foundation
              UIApplication.shared.open(weatherURL, options: [:], completionHandler: nil)
          } else {
              let alert = UIAlertController(title: "Приложение не найдено", message: "Убедитесь что приложение 'Погода' установлено.", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: nil))
+             alert.addAction(UIAlertAction(title: "Хорошо", style: .default))
              present(alert, animated: true)
          }
      }

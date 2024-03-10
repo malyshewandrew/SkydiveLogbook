@@ -1,3 +1,4 @@
+import Adapty
 import AlertKit
 import AVFoundation
 import Lottie
@@ -38,7 +39,7 @@ final class NotesVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, notesLottie, confettiButton, noteButton, noteTextView, tableView, saveButton, cleanButton)
+        view.addSubviews(confettiLottie, notesLottie, confettiButton, noteButton, noteTextView, tableView, cleanButton, saveButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -70,7 +71,7 @@ final class NotesVC: UIViewController {
         // MARK: NOTE BUTTON:
 
         noteButton.translatesAutoresizingMaskIntoConstraints = false
-        noteButton.topAnchor.constraint(equalTo: notesLottie.bottomAnchor, constant: 10).isActive = true
+        noteButton.topAnchor.constraint(equalTo: notesLottie.bottomAnchor, constant: 0).isActive = true
         noteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noteButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         noteButton.heightAnchor.constraint(equalTo: noteButton.widthAnchor, multiplier: 0.3).isActive = true
@@ -102,7 +103,7 @@ final class NotesVC: UIViewController {
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 30).isActive = true
+        tableView.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 10).isActive = true
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
@@ -138,9 +139,6 @@ final class NotesVC: UIViewController {
         noteButton.contentVerticalAlignment = textAligmentTop
         noteButton.titleLabel?.font = fontMediumStandard14
         noteButton.layer.cornerRadius = cornerRadius15
-        noteButton.layer.shadowRadius = 50
-        noteButton.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        noteButton.layer.shadowOpacity = 0.2
 
         // MARK: TEXT VIEW:
 
@@ -150,15 +148,6 @@ final class NotesVC: UIViewController {
         noteTextView.font = fontMediumStandard14
         noteTextView.textColor = .colorWhite
 
-        // MARK: SAVE BUTTON:
-
-        saveButton.backgroundColor = .colorCell
-        saveButton.titleLabel?.font = fontMediumStandard14
-        saveButton.setTitleColor(.colorWhite, for: .normal)
-        saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
-        saveButton.layer.cornerRadius = cornerRadius15
-        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-
         // MARK: CLEAN BUTTON:
 
         cleanButton.backgroundColor = .colorTabBar
@@ -167,6 +156,15 @@ final class NotesVC: UIViewController {
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
+
+        // MARK: SAVE BUTTON:
+
+        saveButton.backgroundColor = .colorCell
+        saveButton.titleLabel?.font = fontMediumStandard14
+        saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        saveButton.layer.cornerRadius = cornerRadius15
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -204,7 +202,45 @@ final class NotesVC: UIViewController {
             alertKitError()
             return
         }
-        saveNewNote()
+        if arrayNotesRealm.count < 10 {
+            saveNewNote()
+            DispatchQueue.main.async {
+                self.actionButtonSaveGreenColor()
+                self.noteTextView.resignFirstResponder()
+                self.noteTextView.text = ""
+                self.playSoundSucces()
+                self.alertKitSuccess()
+            }
+        } else {
+            checkPaymentStatus()
+        }
+    }
+
+    // MARK: CHECK PAYMENT STATUS:
+
+    private func checkPaymentStatus() {
+        Adapty.getProfile { result in
+            if let profile = try? result.get(),
+               profile.accessLevels["premium"]?.isActive ?? false
+            {
+                self.saveNewNote()
+                DispatchQueue.main.async {
+                    self.actionButtonSaveGreenColor()
+                    self.noteTextView.resignFirstResponder()
+                    self.noteTextView.text = ""
+                    self.playSoundSucces()
+                    self.alertKitSuccess()
+                }
+                print("SAVE OK: I'm Premium!")
+            } else {
+                self.noteTextView.text = ""
+                self.noteTextView.resignFirstResponder()
+                self.alertKitError()
+                self.actionButtonSaveRedColor()
+                self.showPaymentAlert()
+                print("NOT SAVE: I'm NOT Premium!")
+            }
+        }
     }
 
     // MARK: SAVE AND ADD NEW NOTE IN ARRAY NOTES:
@@ -216,11 +252,6 @@ final class NotesVC: UIViewController {
             realmManager.localRealm.add(newNote, update: .all)
         }
         loadNotes()
-        actionButtonSaveGreenColor()
-        noteTextView.resignFirstResponder()
-        noteTextView.text = ""
-        playSoundSucces()
-        alertKitSuccess()
         tableView.reloadData()
     }
 
@@ -233,9 +264,9 @@ final class NotesVC: UIViewController {
         noteTextView.resignFirstResponder()
         alertKitClear()
     }
-    
+
     // MARK: - LOAD NOTES FROM REALM:
-    
+
     private func loadNotes() {
         arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map {
             $0
@@ -291,6 +322,14 @@ final class NotesVC: UIViewController {
         view.endEditing(true)
     }
 
+    // MARK: SHOW PAYMENT ALERT:
+
+    private func showPaymentAlert() {
+        let alert = UIAlertController(title: NSLocalizedString("Alert / adapty status", comment: ""), message: "\n\(NSLocalizedString("Message / adapty status", comment: ""))", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
     // MARK: ALERT KIT SUCCESS:
 
     private func alertKitSuccess() {
@@ -312,7 +351,7 @@ final class NotesVC: UIViewController {
             haptic: .error
         )
     }
-    
+
     // MARK: ALERT KIT CLEAR:
 
     private func alertKitClear() {
@@ -323,7 +362,7 @@ final class NotesVC: UIViewController {
             haptic: .success
         )
     }
-    
+
     // MARK: ALERT KIT DELETED:
 
     private func alertKitDeleted() {
@@ -361,13 +400,12 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
             vibrationOn.vibrationStandart()
             let deleteNote = arrayNotesRealm[indexPath.row]
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete note?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
-            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
                 try? self.realmManager.localRealm.write {
                     self.realmManager.localRealm.delete(deleteNote)
                 }
                 self.loadNotes()
-                self.vibrationOn.vibrationSucces()
                 tableView.reloadData()
                 self.alertKitDeleted()
             }))

@@ -251,7 +251,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("General info", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -262,7 +262,7 @@ extension StatisticVC: StatisticCellDelegate {
         let imageLottie = LottieAnimationView(name: "Total")
 
         let alert = UIAlertController(title: NSLocalizedString("saving data", comment: "") + ":", message: "\n\n\n\n\n\n \(NSLocalizedString("saving data text", comment: ""))", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.view.addSubviews(contentView, imageLottie)
 
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -324,7 +324,7 @@ extension StatisticVC: StatisticCellDelegate {
                                       \n\(message)
                                       """,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -334,7 +334,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Categories USPA", comment: "") + ":",
                                       message: NSLocalizedString("Categories USPA List", comment: ""),
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -361,7 +361,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Maximum height", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -390,7 +390,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Average height", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -417,7 +417,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Minimum height", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -428,7 +428,7 @@ extension StatisticVC: StatisticCellDelegate {
             let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             present(alert, animated: true)
         } else {
             let currentDate = Date()
@@ -453,7 +453,7 @@ extension StatisticVC: StatisticCellDelegate {
                 let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
                                               message: message,
                                               preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
                 present(alert, animated: true)
             }
         }
@@ -482,7 +482,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Maximum time", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -493,7 +493,7 @@ extension StatisticVC: StatisticCellDelegate {
             let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
                                           preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             present(alert, animated: true)
         } else {
             let currentDate = Date()
@@ -512,7 +512,7 @@ extension StatisticVC: StatisticCellDelegate {
                                               \n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))
                                               """,
                                               preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
                 present(alert, animated: true)
             }
         }
@@ -548,7 +548,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Max in one day", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -577,7 +577,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("Average time", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -607,7 +607,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("CutawayStatistic", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -641,7 +641,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("List aircrafts", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -675,7 +675,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("List canopies", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 
@@ -709,7 +709,7 @@ extension StatisticVC: StatisticCellDelegate {
         let alert = UIAlertController(title: NSLocalizedString("List locations", comment: "") + ":",
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
 }
