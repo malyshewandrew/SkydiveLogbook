@@ -95,13 +95,13 @@ final class SkydiversVC: UIViewController {
         
         // MARK: BACK BUTTON:
 
-        let backImage = UIImage(systemName: "xmark.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+        let backImage = UIImage(systemName: "xmark.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorDarkGray, renderingMode: .alwaysOriginal)
         backButton.setImage(backImage, for: .normal)
         backButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
         
         // MARK: INFO BUTTON:
         
-        let infoImage = UIImage(systemName: "info.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+        let infoImage = UIImage(systemName: "info.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorDarkGray, renderingMode: .alwaysOriginal)
         infoButton.setImage(infoImage, for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
         
