@@ -71,6 +71,8 @@ final class WeatherCell: UITableViewCell {
     private let compasButton = UIButton()
     private let compasImageView = UIImageView()
     private var isCompasHidden = true
+    private let blurEffect = UIBlurEffect(style: .systemThinMaterialDark)
+    private let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
     
     weak var delegate: WeatherCellDelegate?
 
@@ -422,8 +424,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - WIND BUTTON:
 
-        let blurWind = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurWindEffectView = UIVisualEffectView(effect: blurWind)
+        let blurWindEffectView = UIVisualEffectView(effect: blurEffect)
         blurWindEffectView.frame = windButton.bounds
         blurWindEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         windButton.addSubviews(blurWindEffectView, windSpeedLabel, windGustLabel, windDirectionLabel, windOverlayButton)
@@ -461,8 +462,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - TEMPERATURE BUTTON:
 
-        let blurTemperature = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurTemperatureEffectView = UIVisualEffectView(effect: blurTemperature)
+        let blurTemperatureEffectView = UIVisualEffectView(effect: blurEffect)
         blurTemperatureEffectView.frame = temperatureButton.bounds
         blurTemperatureEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         temperatureButton.addSubviews(blurTemperatureEffectView, currentTemperatureLabel, descriptionLabel, feelTemperatureLabel, temperatureOverlayButton)
@@ -500,8 +500,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - HUMIDITY BUTTON:
 
-        let blurHumidity = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurHumidityEffectView = UIVisualEffectView(effect: blurHumidity)
+        let blurHumidityEffectView = UIVisualEffectView(effect: blurEffect)
         blurHumidityEffectView.frame = humidityButton.bounds
         blurHumidityEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         humidityButton.addSubviews(blurHumidityEffectView, humidityLabel, humidityOverlayButton)
@@ -523,8 +522,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - CLOUD COVER BUTTON:
 
-        let blurCloudCover = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurCloudCoverEffectView = UIVisualEffectView(effect: blurCloudCover)
+        let blurCloudCoverEffectView = UIVisualEffectView(effect: blurEffect)
         blurCloudCoverEffectView.frame = cloudCoverButton.bounds
         blurCloudCoverEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         cloudCoverButton.addSubviews(blurCloudCoverEffectView, cloudCoverLabel, cloudCoverOverlayButton)
@@ -546,8 +544,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - DEW POINT BUTTON:
 
-        let blurDewPoint = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurDewPointEffectView = UIVisualEffectView(effect: blurDewPoint)
+        let blurDewPointEffectView = UIVisualEffectView(effect: blurEffect)
         blurDewPointEffectView.frame = dewPointButton.bounds
         blurDewPointEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dewPointButton.addSubviews(blurDewPointEffectView, dewPointLabel, dewPointOverlayButton)
@@ -569,8 +566,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - VISIBILITY BUTTON:
 
-        let blurVisibilityIntensity = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurVisibilityEffectView = UIVisualEffectView(effect: blurVisibilityIntensity)
+        let blurVisibilityEffectView = UIVisualEffectView(effect: blurEffect)
         blurVisibilityEffectView.frame = precipitationButton.bounds
         blurVisibilityEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         visibilityButton.addSubviews(blurVisibilityEffectView, visibilityLabel, visibilityOverlayButton)
@@ -592,8 +588,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: PRESSURE BUTTON:
 
-        let blurPressure = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurPressureEffectView = UIVisualEffectView(effect: blurPressure)
+        let blurPressureEffectView = UIVisualEffectView(effect: blurEffect)
         blurPressureEffectView.frame = precipitationButton.bounds
         blurPressureEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         pressureButton.addSubviews(blurPressureEffectView, pressureLabel, pressureOverlayButton)
@@ -615,8 +610,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - UVINDEX BUTTON:
 
-        let blurUvIndex = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurUvIndexEffectView = UIVisualEffectView(effect: blurUvIndex)
+        let blurUvIndexEffectView = UIVisualEffectView(effect: blurEffect)
         blurUvIndexEffectView.frame = uvIndexButton.bounds
         blurUvIndexEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         uvIndexButton.addSubviews(blurUvIndexEffectView, uvIndexLabel, uvIndexOverlayButton)
@@ -638,8 +632,7 @@ final class WeatherCell: UITableViewCell {
 
         // MARK: - PRECIPITATION BUTTON:
 
-        let blurPrecipitation = UIBlurEffect(style: .systemThinMaterialDark)
-        let blurPrecipitationEffectView = UIVisualEffectView(effect: blurPrecipitation)
+        let blurPrecipitationEffectView = UIVisualEffectView(effect: blurEffect)
         blurPrecipitationEffectView.frame = precipitationButton.bounds
         blurPrecipitationEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         precipitationButton.addSubviews(blurPrecipitationEffectView, precipitationLabel, precipitationOverlayButton)
@@ -666,7 +659,6 @@ final class WeatherCell: UITableViewCell {
         mapView.showsScale = true
         mapView.showsCompass = true
         mapView.isRotateEnabled = false
-        let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
         mapView.preferredConfiguration = mapConfigurator
 
         // MARK: - ARROW IMAGE:
@@ -836,6 +828,5 @@ final class WeatherCell: UITableViewCell {
             let rotationAngle: CGFloat = .pi / -2
             arrowLabel.transform = CGAffineTransform(rotationAngle: rotationAngle)
         }
-
     }
 }

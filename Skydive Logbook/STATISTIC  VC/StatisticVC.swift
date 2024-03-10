@@ -11,7 +11,7 @@ final class StatisticVC: UIViewController {
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
     private let dateFormatter = DateFormatter()
-    let realmManager = RealmManager()
+    private let realmManager = RealmManager()
 
     // MARK: - LIFECYCLE:
 

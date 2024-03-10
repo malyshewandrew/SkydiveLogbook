@@ -1110,7 +1110,7 @@ final class EditSystemCell: UITableViewCell {
     
     // MARK: SAVE AND ADD NEW SYSTEM IN ARRAY SYSTEM:
 
-    func saveNewSystem() {
+    private func saveNewSystem() {
         let newSystem = SystemClassRealm()
         
         newSystem.container = Container()

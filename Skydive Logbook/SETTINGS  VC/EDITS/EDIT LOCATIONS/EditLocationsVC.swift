@@ -35,13 +35,13 @@ final class EditLocationsVC: UIViewController {
 
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {
+    private func addSubviews() {
         view.addSubviews(locationLottie, enterTextTextField, saveButton, cleanButton, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
-    func configureConstrains() {
+    private func configureConstrains() {
         // MARK: ANIMATION:
 
         locationLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +85,7 @@ final class EditLocationsVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    func configureUI() {
+    private func configureUI() {
         // MARK: VIEW:
 
         view.backgroundColor = .colorBackground

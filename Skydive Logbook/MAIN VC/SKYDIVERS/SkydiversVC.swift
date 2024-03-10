@@ -175,10 +175,10 @@ final class SkydiversVC: UIViewController {
         else {
             return nil
         }
-        let ref = Storage.storage().reference(forURL: "gs://skydivebook.appspot.com/\(id)")
+        let reference = Storage.storage().reference(forURL: "gs://skydivebook.appspot.com/\(id)")
         let skydiver = Skydiver(nickname: nickname, rating: rating, countryFlag: countryFlag, countryName: countryName, countJumps: countJumps, firstJump: firstJump, profession: profession, link: link, photos: [], id: id)
         
-        ref.listAll { result, error in
+        reference.listAll { result, error in
             guard let result = result else { return }
             var photos = [UIImage]()
             for item in result.items {
@@ -235,7 +235,7 @@ final class SkydiversVC: UIViewController {
     
     // MARK: INFO BUTTON:
     
-    @objc func infoButtonTapped() {
+    @objc private func infoButtonTapped() {
         vibrationOn.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("About rating / skydivers", comment: ""), message: NSLocalizedString("About rating message / skydivers", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))

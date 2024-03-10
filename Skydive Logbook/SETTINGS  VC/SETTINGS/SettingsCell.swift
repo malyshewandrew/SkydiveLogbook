@@ -3,7 +3,7 @@ import UIKit
 
 // MARK: - PROTOCOL:
 
-protocol SettingsCellDelegate {
+protocol SettingsCellDelegate: AnyObject {
     func tapEditLocationsButton()
     func tapEditAircraftsButton()
     func tapEditCanopiesButton()
@@ -31,7 +31,7 @@ final class SettingsCell: UITableViewCell {
     private let instagramButton = UIButton()
     private let infoLabel = UILabel()
     private let vibrationOn = Vibration()
-    var delegate: SettingsCellDelegate?
+    weak var delegate: SettingsCellDelegate?
 
     // MARK: - LIFECYCLE:
 
@@ -326,7 +326,7 @@ final class SettingsCell: UITableViewCell {
 
     // MARK: COLORIZE IMAGE:
 
-    func colorizeImage(image: UIImage, color: UIColor) -> UIImage {
+    private func colorizeImage(image: UIImage, color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
         let context = UIGraphicsGetCurrentContext()
         color.setFill()

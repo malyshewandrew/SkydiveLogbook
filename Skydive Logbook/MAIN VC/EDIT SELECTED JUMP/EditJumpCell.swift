@@ -480,7 +480,7 @@ final class EditJumpCell: UITableViewCell {
 
     // MARK: ACTION BUTTON SAVE:
 
-    @objc func actionButtonSaveTap() {
+    @objc private func actionButtonSaveTap() {
         guard dateTextField.text != "" else {
             showError(textField: dateTextField)
             return
@@ -646,7 +646,7 @@ final class EditJumpCell: UITableViewCell {
     
     // MARK: DATE FORMATTER:
 
-    func getDateFromPicker() {
+    private func getDateFromPicker() {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         dateTextField.text = dateFormatter.string(from: datePickerView.date)
     }

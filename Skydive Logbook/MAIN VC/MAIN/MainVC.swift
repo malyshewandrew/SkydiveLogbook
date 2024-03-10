@@ -322,70 +322,6 @@ final class MainVC: UIViewController {
         }
     }
 
-    // MARK: - ACCOUNT ALERT:
-
-    @objc private func accountButtonTapped() {
-        vibrationOn.vibrationStandart()
-        let accountVC = AccountVC()
-        if let sheetController = accountVC.sheetPresentationController {
-            sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
-            sheetController.detents = [.medium()]
-        }
-        present(accountVC, animated: true)
-    }
-
-    // MARK: - TRANSITION ON WEATHER VIEW CONTROLLER:
-
-    @objc private func weatherButtonTapped() {
-        vibrationOn.vibrationStandart()
-        let weatherViewController = WeatherVC()
-        present(weatherViewController, animated: true)
-    }
-
-    // MARK: - TRANSITION ON DROPZONES VIEW CONTROLLER:
-
-    @objc private func dropzonesButtonTapped() {
-        vibrationOn.vibrationStandart()
-        let dropzones = DropZonesVC()
-        present(dropzones, animated: true)
-    }
-
-    // MARK: - TRANSITION ON SKYDIVERS VIEW CONTROLLER:
-
-    @objc private func skydiversButtonTapped() {
-        vibrationOn.vibrationStandart()
-        let skydivers = SkydiversVC()
-        skydivers.isModalInPresentation = true
-        present(skydivers, animated: true)
-    }
-
-    // MARK: - TRANSITION ON CALCULATOR VIEW CONTROLLER:
-
-    @objc private func calculatorButtonTapped() {
-        vibrationOn.vibrationStandart()
-        let calculatorViewController = CalculatorVC()
-        if let sheetController = calculatorViewController.sheetPresentationController {
-            sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
-            sheetController.detents = [.medium()]
-        }
-        present(calculatorViewController, animated: true)
-    }
-
-    // MARK: - TRANSITION ON NOTES VIEW CONTROLLER:
-
-    @objc private func notesButtonTapped() {
-        vibrationOn.vibrationStandart()
-        let notesViewController = NotesVC()
-        if let sheetController = notesViewController.sheetPresentationController {
-            sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
-            sheetController.detents = [.medium()]
-        }
-        present(notesViewController, animated: true, completion: nil)
-    }
-
     // MARK: - CONFIGURE GESTURES:
 
     private func configureGestures() {
@@ -481,6 +417,18 @@ final class MainVC: UIViewController {
         }
     }
 
+    // MARK: - SORT ARRAY:
+
+    private func sortArray() {
+        arrayJumpsRealm.sort { jump1, jump2 -> Bool in
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
+                return date1 < date2
+            }
+            return false
+        }
+    }
+
     // MARK: - HELPERS:
 
     // MARK: CHECK AGREE USE STATUS FROM USER:
@@ -533,7 +481,7 @@ final class MainVC: UIViewController {
         messageLabel.numberOfLines = 0
         messageLabel.font = fontRegularStandard10
         messageLabel.textAlignment = .center
-        
+
         sliderButton.translatesAutoresizingMaskIntoConstraints = false
         sliderButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 10).isActive = true
         sliderButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
@@ -554,7 +502,7 @@ final class MainVC: UIViewController {
         }
 
         sliderButton.addAction(UIAction(handler: { _ in
-            if sliderButton.value >= 99.5 && sliderButton.value <= 100.5 {
+            if sliderButton.value >= 99.5, sliderButton.value <= 100.5 {
                 agreeAction.isEnabled = true
                 sliderButton.backgroundColor = .systemGreen
                 if let sliderFinishImage = UIImage(systemName: "checkmark.circle.fill", withConfiguration: self.configurationImage) {
@@ -572,18 +520,6 @@ final class MainVC: UIViewController {
             }
         }), for: .valueChanged)
         present(alert, animated: true)
-    }
-
-    // MARK: SORT ARRAY:
-
-    private func sortArray() {
-        arrayJumpsRealm.sort { jump1, jump2 -> Bool in
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            if let date1 = dateFormatter.date(from: jump1.date), let date2 = dateFormatter.date(from: jump2.date) {
-                return date1 < date2
-            }
-            return false
-        }
     }
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
@@ -617,6 +553,70 @@ final class MainVC: UIViewController {
             haptic: .success
         )
     }
+    
+    // MARK: TRANSITION ON ACCOUNT VIEW CONTROLLER:
+
+    @objc private func accountButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let accountVC = AccountVC()
+        if let sheetController = accountVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(accountVC, animated: true)
+    }
+
+    // MARK: TRANSITION ON WEATHER VIEW CONTROLLER:
+
+    @objc private func weatherButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let weatherViewController = WeatherVC()
+        present(weatherViewController, animated: true)
+    }
+
+    // MARK: TRANSITION ON DROPZONES VIEW CONTROLLER:
+
+    @objc private func dropzonesButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let dropzones = DropZonesVC()
+        present(dropzones, animated: true)
+    }
+
+    // MARK: - TRANSITION ON SKYDIVERS VIEW CONTROLLER:
+
+    @objc private func skydiversButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let skydivers = SkydiversVC()
+        skydivers.isModalInPresentation = true
+        present(skydivers, animated: true)
+    }
+
+    // MARK: TRANSITION ON CALCULATOR VIEW CONTROLLER:
+
+    @objc private func calculatorButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let calculatorViewController = CalculatorVC()
+        if let sheetController = calculatorViewController.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(calculatorViewController, animated: true)
+    }
+
+    // MARK: TRANSITION ON NOTES VIEW CONTROLLER:
+
+    @objc private func notesButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let notesViewController = NotesVC()
+        if let sheetController = notesViewController.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(notesViewController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - EXTENSION FOR TABLE VIEW:
@@ -637,7 +637,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    // MARK: TRANSSITION ON "JUMP VIEW CONTROLLER":
+    // MARK: TRANSSITION ON SELECTED JUMP:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         vibrationOn.vibrationStandart()

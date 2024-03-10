@@ -121,7 +121,7 @@ final class SettingsVC: UIViewController {
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
-    @objc func confettiButtonTapped() {
+    @objc private func confettiButtonTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
@@ -274,16 +274,20 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
     func paywallController(_ controller: AdaptyPaywallController, didPerform action: AdaptyUI.Action) {
         switch action {
         case .close:
-            dismiss(animated: true) {
+            dismiss(animated: true) { [weak self] in
+                guard let self = self else { return }
                 self.vibrationOn.vibrationStandart()
             }
         case let .custom(id):
             print(id)
         case let .openURL(url: url):
-            dismiss(animated: true)
-            let safariViewController = SFSafariViewController(url: url)
-            safariViewController.delegate = self
-            present(safariViewController, animated: true)
+            dismiss(animated: true) { [weak self] in
+                guard let self = self else { return }
+                self.vibrationOn.vibrationStandart()
+                let safariViewController = SFSafariViewController(url: url)
+                safariViewController.delegate = self
+                self.present(safariViewController, animated: true)
+            }
         }
     }
 

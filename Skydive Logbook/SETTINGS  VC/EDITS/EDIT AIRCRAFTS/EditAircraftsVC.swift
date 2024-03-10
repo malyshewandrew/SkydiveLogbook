@@ -35,13 +35,13 @@ final class EditAircraftsVC: UIViewController {
 
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {
+    private func addSubviews() {
         view.addSubviews(aircraftsLottie, enterTextTextField, saveButton, cleanButton, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
-    func configureConstrains() {
+    private func configureConstrains() {
         // MARK: ANIMATION:
 
         aircraftsLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +85,7 @@ final class EditAircraftsVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    func configureUI() {
+    private func configureUI() {
         // MARK: VIEW:
 
         view.backgroundColor = .colorBackground

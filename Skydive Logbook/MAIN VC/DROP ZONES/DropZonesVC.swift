@@ -3,7 +3,7 @@ import SafariServices
 import UIKit
 import WebKit
 
-class DropZonesVC: UIViewController {
+final class DropZonesVC: UIViewController {
     // MARK: - PROPERTIES:
     
     private let mapView = MKMapView()
@@ -13,6 +13,7 @@ class DropZonesVC: UIViewController {
     private let currentLocationButton = UIButton()
     private let backButton = UIButton()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 40)
+    private let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
     
     // MARK: - LIFYCYCLE:
     
@@ -74,7 +75,6 @@ class DropZonesVC: UIViewController {
         mapView.showsUserLocation = true
         mapView.showsScale = true
         mapView.showsCompass = true
-        let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
         mapView.preferredConfiguration = mapConfigurator
         
         // MARK: BACK BUTTON:
@@ -98,7 +98,7 @@ class DropZonesVC: UIViewController {
     
     // MARK: GET USER LOCATION:
     
-    func getUserLocation() {
+    private func getUserLocation() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()

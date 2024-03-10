@@ -52,7 +52,6 @@ extension JumpClassRealm {
     }
 }
 
-
 enum Mission: String, PersistableEnum {
     case Accuracy
     case Acrobatics

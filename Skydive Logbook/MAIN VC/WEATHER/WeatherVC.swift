@@ -339,7 +339,7 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     
     // MARK: GET USER LOCATION:
     
-    func getUserLocation() {
+    private func getUserLocation() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
@@ -355,7 +355,7 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     
     // MARK: GET WEATHER:
     
-    func getWeather(location: CLLocation) {
+    private func getWeather(location: CLLocation) {
         self.activityIndicator.center = view.center
         self.activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)

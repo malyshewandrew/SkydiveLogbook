@@ -33,7 +33,7 @@ final class NewSystemVC: UIViewController {
     
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {
+    private func addSubviews() {
         view.addSubviews(newSystemLottie, tableView)
     }
     

@@ -10,16 +10,12 @@ final class EditAccountVC: UIViewController {
     
     private let editAccountLottie = LottieAnimationView(name: "EditAccount")
     private let scrollView = UIScrollView()
-    
     private let nicknameButton = UIButton()
     private let nicknameTextField = UITextField()
-    
     private let licenseTypeButton = UIButton()
     private let licenseTypeTextField = UITextField()
-    
     private let licenseDateButton = UIButton()
     private let licenseDateTextField = UITextField()
-    
     private let medicineButton = UIButton()
     private let medicineTextField = UITextField()
     private let insuranceButton = UIButton()
@@ -50,7 +46,7 @@ final class EditAccountVC: UIViewController {
     
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {
+    private func addSubviews() {
         view.addSubviews(editAccountLottie, scrollView)
         scrollView.addSubviews(nicknameButton, licenseTypeButton, licenseDateButton, medicineButton, insuranceButton, reserveCanopyButton, cleanButton, saveButton)
         licenseTypeButton.addSubview(licenseTypeTextField)
@@ -63,7 +59,7 @@ final class EditAccountVC: UIViewController {
     
     // MARK: - CONFIGURE CONSTRAINS:
 
-    func configureConstrains() {
+    private func configureConstrains() {
         
         // MARK: ANIMATION:
 
@@ -184,7 +180,7 @@ final class EditAccountVC: UIViewController {
     
     // MARK: - CONFIGURE UI:
 
-    func configureUI() {
+    private func configureUI() {
         // MARK: VIEW:
         
         view.backgroundColor = .colorBackground

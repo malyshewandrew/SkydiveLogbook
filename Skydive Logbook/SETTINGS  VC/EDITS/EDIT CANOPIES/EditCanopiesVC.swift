@@ -35,13 +35,13 @@ final class EditCanopiesVC: UIViewController {
 
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {
+    private func addSubviews() {
         view.addSubviews(canopiesLottie, enterTextTextField, saveButton, cleanButton, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
-    func configureConstrains() {
+    private func configureConstrains() {
         // MARK: ANIMATION:
 
         canopiesLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +85,7 @@ final class EditCanopiesVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    func configureUI() {
+    private func configureUI() {
         // MARK: VIEW:
 
         view.backgroundColor = .colorBackground

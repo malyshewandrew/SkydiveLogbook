@@ -30,10 +30,9 @@ final class JumpCell: UITableViewCell {
     private let vibrationOn = Vibration()
     private var jubileeJumps = Set((100 ..< 10000).filter { $0 % 100 == 0 })
     private var isCutaway: Bool?
-
-    var isVibrating = false
-    var vibrationTimer: Timer?
-    var isAnimating = false
+    private var isVibrating = false
+    private var vibrationTimer: Timer?
+    private var isAnimating = false
 
     // MARK: - LIFECYCLE:
 
@@ -444,7 +443,7 @@ final class JumpCell: UITableViewCell {
 
     // MARK: FUNC FOR TAP ON CIRCLE BUTTON:
 
-    @objc func circleButtonLongPressed(_ gesture: UILongPressGestureRecognizer) {
+    @objc private func circleButtonLongPressed(_ gesture: UILongPressGestureRecognizer) {
         if gesture.state == .began {
             startVibrationAndAnimation()
         } else if gesture.state == .ended {
@@ -452,7 +451,7 @@ final class JumpCell: UITableViewCell {
         }
     }
 
-    func startVibrationAndAnimation() {
+    private func startVibrationAndAnimation() {
         startVibration()
         startAnimation()
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
@@ -465,7 +464,7 @@ final class JumpCell: UITableViewCell {
         }
     }
 
-    func stopVibrationAndAnimation() {
+    private func stopVibrationAndAnimation() {
         stopVibration()
         stopAnimation()
     }
@@ -508,7 +507,7 @@ final class JumpCell: UITableViewCell {
         }
     }
 
-    func startVibration() {
+    private func startVibration() {
         isVibrating = true
         vibrationTimer = Timer.scheduledTimer(timeInterval: 0.04, target: self, selector: #selector(vibrationSpeed), userInfo: nil, repeats: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -516,13 +515,13 @@ final class JumpCell: UITableViewCell {
         }
     }
 
-    @objc func stopVibration() {
+    @objc private func stopVibration() {
         isVibrating = false
         vibrationTimer?.invalidate()
         vibrationTimer = nil
     }
 
-    func startAnimation() {
+    private func startAnimation() {
         isAnimating = true
         UIView.animate(withDuration: 0.04, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.circleButton.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
@@ -533,14 +532,14 @@ final class JumpCell: UITableViewCell {
         }
     }
 
-    func stopAnimation() {
+    private func stopAnimation() {
         isAnimating = false
         circleButton.layer.removeAllAnimations()
         circleButton.alpha = 1.0
         circleButton.transform = CGAffineTransform(scaleX: 1, y: 1)
     }
 
-    @objc func vibrationSpeed() {
+    @objc private func vibrationSpeed() {
         vibrationOn.vibrationImpactFeedbackGenerator.impactOccurred()
     }
 

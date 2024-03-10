@@ -6,7 +6,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    var realmManager = RealmManager()
+    private let realmManager = RealmManager()
     private let locationManager = CLLocationManager()
     
     // MARK: SCENE:

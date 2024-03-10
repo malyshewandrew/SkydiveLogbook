@@ -55,8 +55,7 @@ final class EditJumpVC: UIViewController {
         confettiLottie.translatesAutoresizingMaskIntoConstraints = false
         confettiLottie.centerXAnchor.constraint(equalTo: newJumpLottie.centerXAnchor).isActive = true
         confettiLottie.centerYAnchor.constraint(equalTo: newJumpLottie.centerYAnchor).isActive = true
-        confettiLottie.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        confettiLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
@@ -90,6 +89,12 @@ final class EditJumpVC: UIViewController {
 
         newJumpLottie.play()
         newJumpLottie.loopMode = .autoReverse
+        
+        // MARK: CONFETTI LOTTIE:
+
+        confettiLottie.layer.shadowRadius = 15
+        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        confettiLottie.layer.shadowOpacity = 1
     }
 
     // MARK: CONFIGURE TABLE VIEW:
@@ -146,7 +151,7 @@ final class EditJumpVC: UIViewController {
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
-    @objc func confettiButtonTapped() {
+    @objc private func confettiButtonTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }

@@ -29,7 +29,7 @@ final class SkydiversCell: UITableViewCell {
     private let dateFirstJumpLabel = UILabel()
     private let linkButton = UIButton()
     private var photos = [UIImage]()
-    var link: String = ""
+    private var link: String = ""
     weak var delegate: SkydiversCellDelegate?
 
     // MARK: - LIFECYCLE:

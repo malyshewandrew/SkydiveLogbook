@@ -5,7 +5,7 @@ import WeatherKit
 
 // MARK: - PROTOCOL:
 
-protocol StatisticCellDelegate {
+protocol StatisticCellDelegate: AnyObject {
     func tapGeneralInfoButton()
     func tapTotalButton()
     func tapYearButton()
@@ -83,7 +83,7 @@ final class StatisticCell: UITableViewCell {
     private let missionsTwoView = UIView()
     private let contentViewTwoView = UIView()
     
-    var delegate: StatisticCellDelegate?
+    weak var delegate: StatisticCellDelegate?
     
     // MARK: - LIFECYCLE:
 

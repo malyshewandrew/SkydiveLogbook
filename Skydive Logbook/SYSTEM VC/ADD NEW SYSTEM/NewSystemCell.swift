@@ -1288,7 +1288,7 @@ final class NewSystemCell: UITableViewCell {
     
     // MARK: TAP ON FREE SPACE FOR CLOSE ALL VIEWS ACTION:
 
-    @objc func tapGestureDone() {
+    @objc private func tapGestureDone() {
         contentView.endEditing(true)
     }
     
@@ -1327,40 +1327,40 @@ final class NewSystemCell: UITableViewCell {
 
     // MARK: DATE PICKERS:
 
-    @objc func containerDomPickerValueChanged() {
+    @objc private func containerDomPickerValueChanged() {
         getDateFromPickerToContainer()
     }
     
-    @objc func aadDomPickerValueChanged() {
+    @objc private func aadDomPickerValueChanged() {
         getDateFromPickerToAad()
     }
     
-    @objc func mainCanopyDomPickerValueChanged() {
+    @objc private func mainCanopyDomPickerValueChanged() {
         getDateFromPickerToMainCanopy()
     }
     
-    @objc func reserveCanopyDomPickerValueChanged() {
+    @objc private func reserveCanopyDomPickerValueChanged() {
         getDateFromPickerToReserveCanopy()
     }
     
     // MARK: DATE FORMATTERS:
 
-    func getDateFromPickerToContainer() {
+    private func getDateFromPickerToContainer() {
         dateFormatter.dateFormat = "MM.yyyy"
         containerDomTextField.text = dateFormatter.string(from: containerDomPickerView.date)
     }
     
-    func getDateFromPickerToAad() {
+    private func getDateFromPickerToAad() {
         dateFormatter.dateFormat = "MM.yyyy"
         aadDomTextField.text = dateFormatter.string(from: aadDomPickerView.date)
     }
     
-    func getDateFromPickerToMainCanopy() {
+    private func getDateFromPickerToMainCanopy() {
         dateFormatter.dateFormat = "MM.yyyy"
         mainCanopyDomTextField.text = dateFormatter.string(from: mainCanopyDomPickerView.date)
     }
     
-    func getDateFromPickerToReserveCanopy() {
+    private func getDateFromPickerToReserveCanopy() {
         dateFormatter.dateFormat = "MM.yyyy"
         reserveCanopyDomTextField.text = dateFormatter.string(from: reserveCanopyDomPickerView.date)
     }

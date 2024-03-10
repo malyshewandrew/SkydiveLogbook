@@ -771,7 +771,7 @@ final class SystemCell: UITableViewCell {
     
     // MARK: - ANIMATION FOR CONTENT VIEW:
     
-    @objc func nViewTapped() {
+    @objc private func nViewTapped() {
         if isAnimating {
             stopAnimations()
             vibrationOn.vibrationStandart()
@@ -782,7 +782,7 @@ final class SystemCell: UITableViewCell {
         isAnimating = !isAnimating
     }
 
-    func stopAnimations() {
+    private func stopAnimations() {
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
         fadeOutAnimation.fromValue = 1.0
         fadeOutAnimation.toValue = 0.0
@@ -808,7 +808,7 @@ final class SystemCell: UITableViewCell {
         }
     }
     
-    func resetAnimations() {
+    private func resetAnimations() {
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
         fadeOutAnimation.fromValue = 0.0
         fadeOutAnimation.toValue = 0.0
@@ -833,7 +833,7 @@ final class SystemCell: UITableViewCell {
         snakeLayers.removeAll()
     }
 
-    func call() {
+    private func call() {
         let borderShapeLayer = CAShapeLayer()
         borderShapeLayer.path = nPathBezier(rectangle: containerView.bounds, cornerRadius: cornerRadius15).cgPath
         borderShapeLayer.fillColor = UIColor.clear.cgColor
@@ -908,7 +908,7 @@ final class SystemCell: UITableViewCell {
     }
 }
 
-// MARK: EXTENSION FOR ANIMATION:
+// MARK: - EXTENSION FOR ANIMATION:
 
 extension UIBezierPath {
     func rotate(degree: CGFloat) {

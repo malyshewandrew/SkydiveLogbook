@@ -23,14 +23,14 @@ final class EditAircraftsCell: UITableViewCell {
 
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {
+    private func addSubviews() {
         contentView.addSubviews(view)
         view.addSubview(aircraftLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
-    func configureConstrains() {
+    private func configureConstrains() {
         // MARK: VIEW:
 
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +50,7 @@ final class EditAircraftsCell: UITableViewCell {
 
     // MARK: - CONFIGURE UI:
 
-    func configureUI() {
+    private func configureUI() {
         // MARK: CONTENT VIEW:
 
         contentView.backgroundColor = .colorBackground

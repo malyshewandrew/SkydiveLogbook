@@ -8,10 +8,10 @@ final class EditSystemVC: UIViewController {
     private let manualButton = UIBarButtonItem()
     private let newSystemLottie = LottieAnimationView(name: "NewParachute")
     private let tableView = UITableView()
-    let realmManager = RealmManager()
-    var indexPath: Int = 0
+    private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
     private let vibrationOn = Vibration()
+    var indexPath: Int = 0
 
     // MARK: - LIFECYCLE:
 
@@ -35,13 +35,13 @@ final class EditSystemVC: UIViewController {
 
     // MARK: - ADD SUBVIEWS:
 
-    func addSubviews() {
+    private func addSubviews() {
         view.addSubviews(newSystemLottie, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
-    func configureConstrains() {
+    private func configureConstrains() {
         // MARK: ANIMATION:
 
         newSystemLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +61,7 @@ final class EditSystemVC: UIViewController {
 
     // MARK: - CONFIGURE UI:
 
-    func configureUI() {
+    private func configureUI() {
         // MARK: VIEW:
 
         view.backgroundColor = .colorBackground
