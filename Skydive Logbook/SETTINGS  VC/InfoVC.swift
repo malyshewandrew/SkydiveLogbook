@@ -166,7 +166,7 @@ final class InfoVC: UIViewController {
         vibrationOn.vibrationStandart()
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionSettingsLottie = LottieAnimationView(name: "VersionSettingsLottie")
-        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\niOS Developer Malyshew Andrew\n2023-2024", preferredStyle: .alert)
+        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\nMalyshew Andrew\n2023-2024", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.view.addSubviews(versionSettingsLottie, imageView)
         

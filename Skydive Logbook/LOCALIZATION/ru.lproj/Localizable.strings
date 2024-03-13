@@ -529,7 +529,7 @@
 
 "System" = "СИСТЕМА";
 "Delete system?" = "Удалить систему?";
-"System empty message" = "У вас пока что нет добавленных парашютных систем.";
+"System empty message / system" = "У вас нет добавленных парашютных систем.";
 
 // MARK: - DROP ZONES:
 

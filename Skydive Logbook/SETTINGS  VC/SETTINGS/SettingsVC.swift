@@ -235,20 +235,12 @@ extension SettingsVC: SettingsCellDelegate {
     }
 
     func tapShareButton() {
-        let textToShare = "SkydiveBook"
-        guard let appURL = URL(string: "https://apps.apple.com/") else {
+        guard let appURL = URL(string: "https://apps.apple.com/app/skydivebook/id6478469415") else {
             return
         }
-        
-        guard let appIcon = UIImage(named: "AppIconVersion") else {
-            return
-        }
-        
-        let activityViewController = UIActivityViewController(activityItems: [textToShare, appURL, appIcon], applicationActivities: nil)
-        activityViewController.title = "iOS Application"
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        present(activityViewController, animated: true, completion: nil)
+        UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
     }
+
 
     func tapInstagramButton() {
         guard let url = URL(string: "https://instagram.com/skydivebook") else { return }

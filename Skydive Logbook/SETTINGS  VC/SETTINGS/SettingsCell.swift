@@ -130,7 +130,7 @@ final class SettingsCell: UITableViewCell {
         // MARK: INSTAGRAM IMAGE VIEW:
 
         instagramImageView.translatesAutoresizingMaskIntoConstraints = false
-        instagramImageView.topAnchor.constraint(equalTo: infoButton.bottomAnchor, constant: 20).isActive = true
+        instagramImageView.topAnchor.constraint(equalTo: shareButton.bottomAnchor, constant: 20).isActive = true
         instagramImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         instagramImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
         instagramImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -245,7 +245,6 @@ final class SettingsCell: UITableViewCell {
         shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
         shareButton.setTitleColor(.colorWhite, for: .normal)
         shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
-        shareButton.isHidden = true
 
         // MARK: INSTAGRAM BUTTON:
 

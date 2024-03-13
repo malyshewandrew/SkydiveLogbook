@@ -7,10 +7,15 @@ final class SystemVC: UIViewController {
     // MARK: - PROPERTIES:
 
     private let systemLottie = LottieAnimationView(name: "Parachute")
+    private let startSystemLottie = LottieAnimationView(name: "Parachute")
     private let confettiLottie = LottieAnimationView(name: "SystemConfetti")
+    private let startConfettiLottie = LottieAnimationView(name: "SystemConfetti")
     private let confettiButton = UIButton()
+    private let startConfettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
+    private var emptySystemView = UIView()
+    private var emptySystemLabel = UILabel()
     private let newSystemButton = UIButton()
     private var selectedSystem: SystemClassRealm?
     private var indexSysytem: Int = 0
@@ -32,13 +37,16 @@ final class SystemVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         loadSystem()
         loadCanopies()
+        startSystems()
+        startConfigureGestures()
         tableView.reloadData()
     }
 
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, systemLottie, confettiButton, tableView, newSystemButton)
+        view.addSubviews(confettiLottie, startConfettiLottie, systemLottie, startSystemLottie, confettiButton, startConfettiButton, tableView, emptySystemView, newSystemButton)
+        emptySystemView.addSubviews(emptySystemLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -52,6 +60,14 @@ final class SystemVC: UIViewController {
         systemLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         systemLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         systemLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        
+        // MARK: START ANIMATION SYSTEM LOTTIE:
+
+        startSystemLottie.translatesAutoresizingMaskIntoConstraints = false
+        startSystemLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        startSystemLottie.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
+        startSystemLottie.heightAnchor.constraint(equalToConstant: 125).isActive = true
+        startSystemLottie.widthAnchor.constraint(equalToConstant: 125).isActive = true
 
         // MARK: ANIMATION LOTTIE CONFETTI:
 
@@ -59,6 +75,13 @@ final class SystemVC: UIViewController {
         confettiLottie.centerXAnchor.constraint(equalTo: systemLottie.centerXAnchor).isActive = true
         confettiLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor, constant: -10).isActive = true
         confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: START ANIMATION LOTTIE CONFETTI:
+
+        startConfettiLottie.translatesAutoresizingMaskIntoConstraints = false
+        startConfettiLottie.centerXAnchor.constraint(equalTo: startSystemLottie.centerXAnchor).isActive = true
+        startConfettiLottie.centerYAnchor.constraint(equalTo: startSystemLottie.centerYAnchor, constant: -10).isActive = true
+        startConfettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
@@ -67,6 +90,14 @@ final class SystemVC: UIViewController {
         confettiButton.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor).isActive = true
         confettiButton.heightAnchor.constraint(equalTo: systemLottie.heightAnchor, multiplier: 1).isActive = true
         confettiButton.widthAnchor.constraint(equalTo: systemLottie.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: START BUTTON FOR ANIMATION LOTTIE CONFETTI:
+
+        startConfettiButton.translatesAutoresizingMaskIntoConstraints = false
+        startConfettiButton.centerXAnchor.constraint(equalTo: startSystemLottie.centerXAnchor).isActive = true
+        startConfettiButton.centerYAnchor.constraint(equalTo: startSystemLottie.centerYAnchor).isActive = true
+        startConfettiButton.heightAnchor.constraint(equalTo: startSystemLottie.heightAnchor, multiplier: 1).isActive = true
+        startConfettiButton.widthAnchor.constraint(equalTo: startSystemLottie.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -83,6 +114,19 @@ final class SystemVC: UIViewController {
         newSystemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         newSystemButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         newSystemButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: EMPTY SYSTEM:
+        
+        emptySystemView.translatesAutoresizingMaskIntoConstraints = false
+        emptySystemView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptySystemView.topAnchor.constraint(equalTo: startSystemLottie.bottomAnchor, constant: 20).isActive = true
+        emptySystemView.heightAnchor.constraint(greaterThanOrEqualTo: emptySystemLabel.heightAnchor, constant: 20).isActive = true
+        emptySystemView.widthAnchor.constraint(greaterThanOrEqualTo: emptySystemLabel.widthAnchor, constant: 20).isActive = true
+        
+        emptySystemLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptySystemLabel.centerXAnchor.constraint(equalTo: emptySystemView.centerXAnchor).isActive = true
+        emptySystemLabel.centerYAnchor.constraint(equalTo: emptySystemView.centerYAnchor).isActive = true
+        emptySystemLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -108,6 +152,10 @@ final class SystemVC: UIViewController {
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
+        
+        startConfettiLottie.layer.shadowRadius = 15
+        startConfettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        startConfettiLottie.layer.shadowOpacity = 1
 
         // MARK: NEW SYSTEM:
 
@@ -117,6 +165,12 @@ final class SystemVC: UIViewController {
         newSystemButton.titleLabel?.font = fontMediumStandard14
         newSystemButton.setTitleColor(.colorWhite, for: .normal)
         newSystemButton.addTarget(self, action: #selector(newSystemButtonTapped), for: .touchUpInside)
+        
+        startConfettiLottie.isHidden = true
+        startSystemLottie.isHidden = true
+        startConfettiButton.isHidden = true
+        emptySystemView.isHidden = true
+        emptySystemLabel.isHidden = true
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -150,14 +204,58 @@ final class SystemVC: UIViewController {
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
+    
+    private func startConfigureGestures() {
+        // MARK: THREE TAP FOR ANIMATIONS:
 
-    // MARK: - TRANSITION ON NEW SYSTEM VC:
-
-    @objc private func newSystemButtonTapped() {
-        vibrationOn.vibrationStandart()
-        guard let navigationController = self.navigationController else { return }
-        let newSystemVC = NewSystemVC()
-        navigationController.pushViewController(newSystemVC, animated: true)
+        let startConfettiGesture = UITapGestureRecognizer(target: self, action: #selector(startPlayConfetti))
+        startConfettiGesture.numberOfTapsRequired = 3
+        startConfettiButton.addGestureRecognizer(startConfettiGesture)
+    }
+    
+    // MARK: CONFIGURE SYSTEMS:
+    
+    private func startSystems() {
+        
+        if arraySystemsRealm.count == 0 {
+            startConfettiLottie.isHidden = false
+            startSystemLottie.isHidden = false
+            startConfettiButton.isHidden = false
+            emptySystemView.isHidden = false
+            emptySystemLabel.isHidden = false
+            
+            startSystemLottie.play()
+            startSystemLottie.loopMode = .autoReverse
+            
+            emptySystemView.addBlurEffect(.systemThinMaterialDark)
+            emptySystemView.layer.masksToBounds = true
+            emptySystemView.layer.cornerRadius = cornerRadius15
+            emptySystemView.addSubview(emptySystemLabel)
+            emptySystemLabel.textColor = .white
+            emptySystemLabel.numberOfLines = 0
+            emptySystemLabel.textAlignment = .center
+            emptySystemLabel.font = fontMediumStandard12
+            emptySystemLabel.adjustsFontSizeToFitWidth = true
+            emptySystemLabel.text = NSLocalizedString("System empty message / system", comment: "")
+            
+            confettiLottie.isHidden = true
+            systemLottie.isHidden = true
+            confettiButton.isHidden = true
+            tableView.isHidden = true
+            newSystemButton.isHidden = true
+        } else {
+            startConfettiLottie.isHidden = true
+            startSystemLottie.isHidden = true
+            startConfettiButton.isHidden = true
+            emptySystemView.isHidden = true
+            emptySystemLabel.isHidden = true
+            
+            confettiLottie.isHidden = false
+            systemLottie.isHidden = false
+            confettiButton.isHidden = false
+            tableView.isHidden = false
+            newSystemButton.isHidden = false
+        }
     }
 
     // MARK: - HELPERS:
@@ -169,6 +267,11 @@ final class SystemVC: UIViewController {
         confettiLottie.play()
     }
     
+    @objc private func startPlayConfetti() {
+        vibrationOn.vibrationSucces()
+        startConfettiLottie.play()
+    }
+    
     // MARK: ALERT KIT SUCCESS:
 
     private func alertKitSuccess() {
@@ -178,6 +281,15 @@ final class SystemVC: UIViewController {
             style: .iOS17AppleMusic,
             haptic: .success
         )
+    }
+    
+    // MARK: TRANSITION ON NEW SYSTEM VC:
+
+    @objc private func newSystemButtonTapped() {
+        vibrationOn.vibrationStandart()
+        guard let navigationController = self.navigationController else { return }
+        let newSystemVC = NewSystemVC()
+        navigationController.pushViewController(newSystemVC, animated: true)
     }
 }
 
@@ -222,6 +334,7 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
                     self.realmManager.localRealm.delete(deleteSystem)
                 }
                 self.loadSystem()
+                self.startSystems()
                 tableView.reloadData()
                 self.vibrationOn.vibrationSucces()
                 self.alertKitSuccess()
