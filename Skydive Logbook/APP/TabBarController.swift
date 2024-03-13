@@ -4,7 +4,7 @@ import UIKit
 // MARK: - CLASS:
 
 final class TabBarController: UITabBarController, UITabBarControllerDelegate {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: PRIVATE PROPERTIES:
 
     private let vibrationOn = Vibration()
 
@@ -14,7 +14,7 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
     }
 
-    // MARK: - FUNC FOR ACTION WHERE TAP ON ITEM:
+    // MARK: FUNC FOR ACTION WHERE TAP ON ITEM:
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController) {

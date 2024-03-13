@@ -188,9 +188,7 @@ final class EditAircraftsVC: UIViewController {
     // MARK: - LOAD AIRCRAFTS FROM REALM:
     
     private func loadAircrafts() {
-        arrayAircraftsRealm = realmManager.localRealm.objects(AircraftClassRealm.self).map {
-            $0
-        }
+        arrayAircraftsRealm = realmManager.localRealm.objects(AircraftClassRealm.self).map { $0 }
     }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":

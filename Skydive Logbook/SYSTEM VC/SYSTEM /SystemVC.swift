@@ -44,6 +44,7 @@ final class SystemVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
         // MARK: ANIMATION SYSTEM LOTTIE:
 
         systemLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -62,10 +63,10 @@ final class SystemVC: UIViewController {
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
         confettiButton.translatesAutoresizingMaskIntoConstraints = false
-        confettiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        confettiButton.centerXAnchor.constraint(equalTo: systemLottie.centerXAnchor).isActive = true
+        confettiButton.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor).isActive = true
+        confettiButton.heightAnchor.constraint(equalTo: systemLottie.heightAnchor, multiplier: 1).isActive = true
+        confettiButton.widthAnchor.constraint(equalTo: systemLottie.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -131,17 +132,13 @@ final class SystemVC: UIViewController {
     // MARK: - LOAD SYSTEM FROM REALM:
 
     private func loadSystem() {
-        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map {
-            $0
-        }
+        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map { $0 }
     }
     
     // MARK: - LOAD CANOPIES FROM REALM:
     
     private func loadCanopies() {
-        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map {
-            $0
-        }
+        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map { $0 }
     }
 
     // MARK: - CONFIGURE GESTURES:

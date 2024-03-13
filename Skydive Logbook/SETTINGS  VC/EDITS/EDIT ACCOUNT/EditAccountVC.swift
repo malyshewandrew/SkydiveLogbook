@@ -336,9 +336,7 @@ final class EditAccountVC: UIViewController {
     // MARK: - LOAD ACCOUNT FROM REALM:
     
     private func loadAccount() {
-        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
-            $0
-        }
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map { $0 }
     }
     
     // MARK: - HELPERS:

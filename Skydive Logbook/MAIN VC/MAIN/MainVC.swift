@@ -309,17 +309,13 @@ final class MainVC: UIViewController {
     // MARK: - LOAD JUMPS FROM REALM:
 
     private func loadJumps() {
-        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map {
-            $0
-        }
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map { $0 }
     }
 
     // MARK: - LOAD ACCOUNT FROM REALM:
 
     private func loadAccount() {
-        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
-            $0
-        }
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map { $0 }
     }
 
     // MARK: - CONFIGURE GESTURES:

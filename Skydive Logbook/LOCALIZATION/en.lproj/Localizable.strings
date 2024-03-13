@@ -529,11 +529,16 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 
 "System" = "SYSTEM";
 "Delete system?" = "Delete system?";
+"System empty message / system" = "You don't have any parachute systems added yet.";
 
 // MARK: - DROP ZONES:
 
 "Drop Zones / drop zones" = "Drop Zones";
 "Message / drop zones" = "There will be only verified drop zones here. You can add your location by writing to Instagram.";
+"Map type" = "Map type";
+"Standard / map type" = "Standard";
+"Satellite / map type" = "Satellite";
+"Hybrid / map type" = "Hybrid";
 
 // MARK: - ALERT KIT:
 

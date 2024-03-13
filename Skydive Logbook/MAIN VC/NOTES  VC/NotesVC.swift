@@ -268,9 +268,7 @@ final class NotesVC: UIViewController {
     // MARK: - LOAD NOTES FROM REALM:
 
     private func loadNotes() {
-        arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map {
-            $0
-        }
+        arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map { $0 }
     }
 
     // MARK: FUNC FOR CONFETTI + VIBRATION:

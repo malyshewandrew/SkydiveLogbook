@@ -160,9 +160,7 @@ final class EditSystemVC: UIViewController {
     // MARK: - LOAD SYSTEM FROM REALM:
 
     private func loadSystem() {
-        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map {
-            $0
-        }
+        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map { $0 }
     }
 }
 

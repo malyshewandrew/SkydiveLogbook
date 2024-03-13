@@ -74,27 +74,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // MARK: - LOAD REALM DATA:
 
     private func loadRealmData() {
-        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map {
-            $0
-        }
-        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
-            $0
-        }
-        arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map {
-            $0
-        }
-        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map {
-            $0
-        }
-        arrayLocationsRealm = realmManager.localRealm.objects(LocationClassRealm.self).map {
-            $0
-        }
-        arrayAircraftsRealm = realmManager.localRealm.objects(AircraftClassRealm.self).map {
-            $0
-        }
-        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map {
-            $0
-        }
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map { $0 }
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map { $0 }
+        arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map { $0 }
+        arraySystemsRealm = realmManager.localRealm.objects(SystemClassRealm.self).map { $0 }
+        arrayLocationsRealm = realmManager.localRealm.objects(LocationClassRealm.self).map { $0 }
+        arrayAircraftsRealm = realmManager.localRealm.objects(AircraftClassRealm.self).map { $0 }
+        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map { $0 }
     }
     
     // MARK: GET USER LOCATION:

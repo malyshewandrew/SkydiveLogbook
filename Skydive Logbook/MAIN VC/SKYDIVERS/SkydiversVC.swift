@@ -182,11 +182,11 @@ final class SkydiversVC: UIViewController {
             guard let result = result else { return }
             var photos = [UIImage]()
             for item in result.items {
-                item.getData(maxSize: Int64(1 * 1024 * 1024)) { data, error in
-                    guard error == nil else { self.showError(); return }
+                item.getData(maxSize: Int64(1 * 1024 * 1024)) { [weak self] data, error in
+                    guard error == nil else { self?.showError(); return }
                     guard let imageData = data, let image = UIImage(data: imageData) else { return }
                     photos.append(image)
-                    self.updateSkydiverPhotos(skydiver: skydiver, photos: photos)
+                    self?.updateSkydiverPhotos(skydiver: skydiver, photos: photos)
                 }
             }
         }

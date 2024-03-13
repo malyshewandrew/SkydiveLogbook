@@ -16,6 +16,7 @@ class AccountVC: UIViewController {
     private var insuranceLabel = UILabel()
     private var reserveCanopyView = UIView()
     private var reserveCanopyLabel = UILabel()
+    private var emptyAccountView = UIView()
     private var emptyAccountLabel = UILabel()
     private var stackView = UIStackView()
     private let realmManager = RealmManager()
@@ -40,19 +41,24 @@ class AccountVC: UIViewController {
         configureMedicine()
         configureInsurance()
         configureReserveCanopy()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureAccount()
     }
     
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(accountBackground, accountLottie, emptyAccountLabel, stackView)
+        view.addSubviews(accountBackground, accountLottie, stackView, emptyAccountView)
         stackView.addArrangedSubviews(nicknameView, licenseView, medicineView, insuranceView, reserveCanopyView)
         nicknameView.addSubviews(nicknameLabel)
         licenseView.addSubviews(licenseLabel)
         medicineView.addSubviews(medicineLabel)
         insuranceView.addSubviews(insuranceLabel)
         reserveCanopyView.addSubviews(reserveCanopyLabel)
+        emptyAccountView.addSubviews(emptyAccountLabel)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -76,10 +82,15 @@ class AccountVC: UIViewController {
         
         // MARK: EMPTY ACCOUNT:
         
+        emptyAccountView.translatesAutoresizingMaskIntoConstraints = false
+        emptyAccountView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptyAccountView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        emptyAccountView.heightAnchor.constraint(greaterThanOrEqualTo: emptyAccountLabel.heightAnchor, constant: 10).isActive = true
+        emptyAccountView.widthAnchor.constraint(greaterThanOrEqualTo: emptyAccountLabel.widthAnchor, constant: 10).isActive = true
+        
         emptyAccountLabel.translatesAutoresizingMaskIntoConstraints = false
-        emptyAccountLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emptyAccountLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        emptyAccountLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        emptyAccountLabel.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        emptyAccountLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
         
         // MARK: STACK VIEW:
 
@@ -165,10 +176,16 @@ class AccountVC: UIViewController {
         
         // MARK: EMPTY ACCOUNT:
         
-        emptyAccountLabel.textColor = .colorWhite
+        emptyAccountView.addBlurEffect(.systemThinMaterialDark)
+        emptyAccountView.layer.masksToBounds = true
+        emptyAccountView.layer.cornerRadius = cornerRadius15
+        emptyAccountView.isHidden = true
+        emptyAccountView.addSubview(emptyAccountLabel)
+        emptyAccountLabel.textColor = .white
         emptyAccountLabel.numberOfLines = 0
-        emptyAccountLabel.font = fontMediumStandard12
         emptyAccountLabel.textAlignment = .center
+        emptyAccountLabel.font = fontMediumStandard12
+        emptyAccountLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: STACK VIEW:
 
@@ -179,50 +196,60 @@ class AccountVC: UIViewController {
         
         // MARK: NICKNAME:
 
-        nicknameView.backgroundColor = .colorCell
+        nicknameView.addBlurEffect(.systemThinMaterialDark)
+        nicknameView.layer.masksToBounds = true
         nicknameView.layer.cornerRadius = cornerRadius15
         nicknameView.isHidden = true
-        nicknameLabel.textColor = .colorWhite
+        nicknameView.addSubview(nicknameLabel)
+        nicknameLabel.textColor = .white
         nicknameLabel.textAlignment = .center
         nicknameLabel.font = fontBoldStandard16
         nicknameLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: LICENCE TYPE:
         
-        licenseView.backgroundColor = .colorCell
+        licenseView.addBlurEffect(.systemThinMaterialDark)
+        licenseView.layer.masksToBounds = true
         licenseView.layer.cornerRadius = cornerRadius15
         licenseView.isHidden = true
-        licenseLabel.textColor = .colorWhite
+        licenseView.addSubview(licenseLabel)
+        licenseLabel.textColor = .white
         licenseLabel.textAlignment = .center
         licenseLabel.font = fontMediumStandard14
         licenseLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MEDICINE:
         
-        medicineView.backgroundColor = .colorCell
+        medicineView.addBlurEffect(.systemThinMaterialDark)
+        medicineView.layer.masksToBounds = true
         medicineView.layer.cornerRadius = cornerRadius15
         medicineView.isHidden = true
-        medicineLabel.textColor = .colorWhite
+        medicineView.addSubview(medicineLabel)
+        medicineLabel.textColor = .white
         medicineLabel.textAlignment = .center
         medicineLabel.font = fontMediumStandard14
         medicineLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: INSURANCE:
         
-        insuranceView.backgroundColor = .colorCell
+        insuranceView.addBlurEffect(.systemThinMaterialDark)
+        insuranceView.layer.masksToBounds = true
         insuranceView.layer.cornerRadius = cornerRadius15
         insuranceView.isHidden = true
-        insuranceLabel.textColor = .colorWhite
+        insuranceView.addSubview(insuranceLabel)
+        insuranceLabel.textColor = .white
         insuranceLabel.textAlignment = .center
         insuranceLabel.font = fontMediumStandard14
         insuranceLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY:
         
-        reserveCanopyView.backgroundColor = .colorCell
+        reserveCanopyView.addBlurEffect(.systemThinMaterialDark)
+        reserveCanopyView.layer.masksToBounds = true
         reserveCanopyView.layer.cornerRadius = cornerRadius15
         reserveCanopyView.isHidden = true
-        reserveCanopyLabel.textColor = .colorWhite
+        reserveCanopyView.addSubview(reserveCanopyLabel)
+        reserveCanopyLabel.textColor = .white
         reserveCanopyLabel.textAlignment = .center
         reserveCanopyLabel.font = fontMediumStandard14
         reserveCanopyLabel.adjustsFontSizeToFitWidth = true
@@ -231,9 +258,7 @@ class AccountVC: UIViewController {
     // MARK: - LOAD ACCOUNT FROM REALM:
 
     private func loadAccount() {
-        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map {
-            $0
-        }
+        arrayAccountRealm = realmManager.localRealm.objects(AccountClassRealm.self).map { $0 }
     }
     
     // MARK: - HELPERS:
@@ -325,12 +350,15 @@ class AccountVC: UIViewController {
 
     private func configureAccount() {
         if nickname == "" && licenseType == "" && licenseDate == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
+            emptyAccountView.isHidden = false
             emptyAccountLabel.text = "\n\(NSLocalizedString("Edit/add account", comment: ""))"
+        } else {
+            emptyAccountView.isHidden = true
+            nicknameLabel.text = nickname.uppercased()
+            licenseLabel.text = licenseType + licenseDate
+            medicineLabel.text = medicine
+            insuranceLabel.text = insurance
+            reserveCanopyLabel.text = reserveCanopy
         }
-        nicknameLabel.text = nickname.uppercased()
-        licenseLabel.text = licenseType + licenseDate
-        medicineLabel.text = medicine
-        insuranceLabel.text = insurance
-        reserveCanopyLabel.text = reserveCanopy
     }
 }

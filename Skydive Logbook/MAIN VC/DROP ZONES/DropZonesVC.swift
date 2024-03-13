@@ -11,8 +11,9 @@ final class DropZonesVC: UIViewController {
     private let vibrationOn = Vibration()
     private let locationManager = CLLocationManager()
     private let currentLocationButton = UIButton()
+    private let mapTypeButton = UIButton()
     private let backButton = UIButton()
-    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 40)
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 36)
     private let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
     
     // MARK: - LIFYCYCLE:
@@ -30,7 +31,7 @@ final class DropZonesVC: UIViewController {
     
     private func addSubviews() {
         view.addSubviews(mapView)
-        mapView.addSubviews(infoButton, currentLocationButton, backButton)
+        mapView.addSubviews(infoButton, currentLocationButton, backButton, mapTypeButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -61,6 +62,12 @@ final class DropZonesVC: UIViewController {
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 15).isActive = true
         backButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 15).isActive = true
+        
+        // MARK: MAP TYPE BUTTON:
+        
+        mapTypeButton.translatesAutoresizingMaskIntoConstraints = false
+        mapTypeButton.bottomAnchor.constraint(equalTo: infoButton.topAnchor, constant: -15).isActive = true
+        mapTypeButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -94,6 +101,12 @@ final class DropZonesVC: UIViewController {
         let locationImage = UIImage(systemName: "location.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorTabBar, renderingMode: .alwaysOriginal)
         currentLocationButton.setImage(locationImage, for: .normal)
         currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
+        
+        // MARK: MAP TYPE BUTTON:
+        
+        let mapImage = UIImage(systemName: "map.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorTabBar, renderingMode: .alwaysOriginal)
+        mapTypeButton.setImage(mapImage, for: .normal)
+        mapTypeButton.addTarget(self, action: #selector(mapTypeButtonTapped), for: .touchUpInside)
     }
     
     // MARK: GET USER LOCATION:
@@ -197,6 +210,22 @@ final class DropZonesVC: UIViewController {
     }
     
     // MARK: - HELPERS:
+    
+    // MARK: MAP TYPE BUTTON ACTION:
+    @objc private func mapTypeButtonTapped() {
+        let alertController = UIAlertController(title: NSLocalizedString("Map type", comment: ""), message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Standard / map type", comment: ""), style: .default) { _ in
+            self.mapView.mapType = .standard
+        })
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Satellite / map type", comment: ""), style: .default) { _ in
+            self.mapView.mapType = .satellite
+        })
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Hybrid / map type", comment: ""), style: .default) { _ in
+            self.mapView.mapType = .hybrid
+        })
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel))
+        present(alertController, animated: true)
+    }
     
     // MARK: BACK BUTTON:
     

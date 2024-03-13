@@ -188,9 +188,7 @@ final class EditLocationsVC: UIViewController {
     // MARK: - LOAD LOCATIONS FROM REALM:
     
     private func loadLocations() {
-        arrayLocationsRealm = realmManager.localRealm.objects(LocationClassRealm.self).map {
-            $0
-        }
+        arrayLocationsRealm = realmManager.localRealm.objects(LocationClassRealm.self).map { $0 }
     }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":

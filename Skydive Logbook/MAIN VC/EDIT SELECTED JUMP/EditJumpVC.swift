@@ -159,9 +159,7 @@ final class EditJumpVC: UIViewController {
     // MARK: - LOAD JUMPS FROM REALM:
 
     private func loadJumps() {
-        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map {
-            $0
-        }
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map { $0 }
     }
 }
 

@@ -148,9 +148,7 @@ final class EditCanopiesVC: UIViewController {
     // MARK: - LOAD CANOPIES FROM REALM:
     
     private func loadCanopies() {
-        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map {
-            $0
-        }
+        arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map { $0 }
     }
 
     // MARK: - HELPERS:
