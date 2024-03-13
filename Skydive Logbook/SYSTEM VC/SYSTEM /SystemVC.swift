@@ -242,7 +242,7 @@ final class SystemVC: UIViewController {
             systemLottie.isHidden = true
             confettiButton.isHidden = true
             tableView.isHidden = true
-            newSystemButton.isHidden = true
+            newSystemButton.isHidden = false
         } else {
             startConfettiLottie.isHidden = true
             startSystemLottie.isHidden = true
