@@ -4,7 +4,7 @@ import UIKit
 final class EditJumpVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let newJumpLottie = LottieAnimationView(name: "NewJump")
+    private let newJumpLottie = LottieAnimationView(name: "EditJump")
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
@@ -46,9 +46,9 @@ final class EditJumpVC: UIViewController {
 
         newJumpLottie.translatesAutoresizingMaskIntoConstraints = false
         newJumpLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        newJumpLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
-        newJumpLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        newJumpLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        newJumpLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        newJumpLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        newJumpLottie.widthAnchor.constraint(equalToConstant: 100).isActive = true
 
         // MARK: ANIMATION LOTTIE CONFETTI:
 

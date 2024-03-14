@@ -9,6 +9,7 @@ final class JumpCell: UITableViewCell {
 
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let circleGreenLottie = LottieAnimationView(name: "CircleGreen")
+    private let effectLottie = LottieAnimationView(name: "Effect")
     private let circleRedLottie = LottieAnimationView(name: "CircleRed")
     private let jubileeLottie = LottieAnimationView(name: "Anniversary")
     private let circleButton = UIButton()
@@ -51,7 +52,7 @@ final class JumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(confettiLottie, circleGreenLottie, circleRedLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
+        contentView.addSubviews(confettiLottie, circleGreenLottie, circleRedLottie, effectLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
         locationButton.addSubview(locationLabel)
         aircraftButton.addSubview(aircraftLabel)
         canopyButton.addSubview(canopyLabel)
@@ -86,6 +87,14 @@ final class JumpCell: UITableViewCell {
         circleRedLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor, constant: 5).isActive = true
         circleRedLottie.heightAnchor.constraint(equalToConstant: 550).isActive = true
         circleRedLottie.widthAnchor.constraint(equalToConstant: 550).isActive = true
+        
+        // MARK: EFFECT LOTTIE:
+        
+        effectLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectLottie.centerXAnchor.constraint(equalTo: circleGreenLottie.centerXAnchor).isActive = true
+        effectLottie.centerYAnchor.constraint(equalTo: circleGreenLottie.centerYAnchor).isActive = true
+        effectLottie.heightAnchor.constraint(equalTo: circleGreenLottie.heightAnchor, multiplier: 1).isActive = true
+        effectLottie.widthAnchor.constraint(equalTo: circleGreenLottie.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: CIRCLE BUTTON:
 
@@ -225,6 +234,12 @@ final class JumpCell: UITableViewCell {
 
         circleRedLottie.isHidden = true
         circleRedLottie.alpha = 0.0
+        
+        // MARK: EFFECT LOTTIE:
+        
+        effectLottie.play()
+        effectLottie.loopMode = .loop
+        effectLottie.animationSpeed = 0.3
 
         // MARK: NUMBER AND DATE:
 

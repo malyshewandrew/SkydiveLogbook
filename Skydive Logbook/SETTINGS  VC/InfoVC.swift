@@ -15,6 +15,8 @@ final class InfoVC: UIViewController {
     private let termsButton = UIButton()
     private let versionButton = UIButton()
     private let vibrationOn = Vibration()
+    private var buildVersion = ""
+    private var appVersion = ""
     
     // MARK: - LIFECYCLE:
 
@@ -164,9 +166,19 @@ final class InfoVC: UIViewController {
 
     @objc private func versionButtonTapped() {
         vibrationOn.vibrationStandart()
+        if let infoDictionary = Bundle.main.infoDictionary {
+            if let buildVersion = infoDictionary["CFBundleVersion"] as? String {
+                self.buildVersion = buildVersion
+            }
+            if let appVersion = infoDictionary["CFBundleShortVersionString"] as? String {
+                self.appVersion = appVersion
+            }
+        }
+        let versionMessage = NSLocalizedString("Version / info", comment: "") + ": " + appVersion
+        let buildMessage = NSLocalizedString("Build / info", comment: "") + ": " + buildVersion
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionSettingsLottie = LottieAnimationView(name: "VersionSettingsLottie")
-        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\nMalyshew Andrew\n2023-2024", preferredStyle: .alert)
+        let alert = UIAlertController(title: "SkydiveBook", message: "\n\n\n\(versionMessage)\n\(buildMessage)\nMalyshew Andrew\n2023-2024", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.view.addSubviews(versionSettingsLottie, imageView)
         
@@ -182,7 +194,7 @@ final class InfoVC: UIViewController {
         imageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
         imageView.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: alert.view.centerYAnchor, constant: -28).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: alert.view.centerYAnchor, constant: -45).isActive = true
         imageView.layer.shadowRadius = 35
         imageView.layer.shadowColor = UIColor.colorWhite.cgColor
         imageView.layer.shadowOpacity = 1
