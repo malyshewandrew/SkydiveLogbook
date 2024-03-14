@@ -344,8 +344,26 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
     func paywallController(_ controller: AdaptyPaywallController, didFinishRestoreWith profile: AdaptyProfile) {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
-        alertKitSuccess()
         print("Finished restoring purchases with profile: \(profile)")
+        Adapty.getProfile { result in
+            if let profile = try? result.get(),
+               profile.accessLevels["premium"]?.isActive ?? false
+            {
+                self.dismiss(animated: true)
+                let alert = UIAlertController(title: NSLocalizedString("Success / alert kit", comment: ""), message: NSLocalizedString("Restore Successful", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+                self.present(alert, animated: true)
+                self.alertKitSuccess()
+                print("SAVE OK: I'm Premium!")
+            } else {
+                self.dismiss(animated: true)
+                let alert = UIAlertController(title: NSLocalizedString("Error / alert kit", comment: ""), message: NSLocalizedString("No Purchases to Restore", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+                self.present(alert, animated: true)
+                self.alertKitError()
+                print("NOT SAVE: I'm NOT Premium!")
+            }
+        }
     }
 
     // MARK: - Вызывается при ошибке восстановления ранее совершенных покупок.
