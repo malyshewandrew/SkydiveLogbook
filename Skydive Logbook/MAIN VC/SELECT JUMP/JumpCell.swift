@@ -556,7 +556,7 @@ final class JumpCell: UITableViewCell {
         isAnimating = true
         UIView.animate(withDuration: 0.04, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.circleButton.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-            self.circleButton.alpha = 0.5
+            self.circleButton.alpha = 1
         }, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.stopAnimation()
