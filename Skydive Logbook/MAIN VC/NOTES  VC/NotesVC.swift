@@ -9,7 +9,7 @@ final class NotesVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
     private let notesLottie = LottieAnimationView(name: "Notes")
-    private let confettiLottie = LottieAnimationView(name: "NotesConfetti")
+    private let notesBackground = LottieAnimationView(name: "NotesBackground")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let noteButton = UIButton()
@@ -39,39 +39,25 @@ final class NotesVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, notesLottie, confettiButton, noteButton, noteTextView, tableView, cleanButton, saveButton)
+        view.addSubviews(notesBackground, noteButton, noteTextView, tableView, cleanButton, saveButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        // MARK: ANIMATION NOTES LOTTIE:
+        
+        // MARK: NOTES BACKGROUND:
 
-        notesLottie.translatesAutoresizingMaskIntoConstraints = false
-        notesLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        notesLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        notesLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        notesLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
-
-        // MARK: ANIMATION LOTTIE CONFETTI:
-
-        confettiLottie.translatesAutoresizingMaskIntoConstraints = false
-        confettiLottie.centerXAnchor.constraint(equalTo: notesLottie.centerXAnchor).isActive = true
-        confettiLottie.centerYAnchor.constraint(equalTo: notesLottie.centerYAnchor).isActive = true
-        confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-
-        // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
-
-        confettiButton.translatesAutoresizingMaskIntoConstraints = false
-        confettiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        confettiButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        notesBackground.translatesAutoresizingMaskIntoConstraints = false
+        notesBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        notesBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        notesBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        notesBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
 
         // MARK: NOTE BUTTON:
 
         noteButton.translatesAutoresizingMaskIntoConstraints = false
-        noteButton.topAnchor.constraint(equalTo: notesLottie.bottomAnchor, constant: 0).isActive = true
+        noteButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
         noteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noteButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         noteButton.heightAnchor.constraint(equalTo: noteButton.widthAnchor, multiplier: 0.3).isActive = true
@@ -119,17 +105,18 @@ final class NotesVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = true
+        
+        // MARK: NOTES BACKGROUND:
+        
+        notesBackground.play()
+        notesBackground.loopMode = .loop
+        notesBackground.animationSpeed = 1
+        notesBackground.contentMode = .scaleAspectFill
 
         // MARK: ANIMATIONS:
 
         notesLottie.play()
         notesLottie.loopMode = .autoReverse
-
-        // MARK: CONFETTI LOTTIE:
-
-        confettiLottie.layer.shadowRadius = 15
-        confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        confettiLottie.layer.shadowOpacity = 1
 
         // MARK: NOTE BUTTON:
 
@@ -173,7 +160,7 @@ final class NotesVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NotesCell.self, forCellReuseIdentifier: "NotesCell")
-        tableView.backgroundColor = .colorBackground
+        tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
     }
 
@@ -184,12 +171,6 @@ final class NotesVC: UIViewController {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         view.addGestureRecognizer(tapGesture)
-
-        // MARK: THREE TAP FOR ANIMATIONS:
-
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confettiButtonTapped))
-        confettiGesture.numberOfTapsRequired = 3
-        confettiButton.addGestureRecognizer(confettiGesture)
     }
 
     // MARK: - HELPERS:
@@ -269,13 +250,6 @@ final class NotesVC: UIViewController {
 
     private func loadNotes() {
         arrayNotesRealm = realmManager.localRealm.objects(NoteClassRealm.self).map { $0 }
-    }
-
-    // MARK: FUNC FOR CONFETTI + VIBRATION:
-
-    @objc private func confettiButtonTapped() {
-        vibrationOn.vibrationSucces()
-        confettiLottie.play()
     }
 
     // MARK: FUNC FOR CHANGE COLOR BUTTONS "SAVE" AND "CLEAN":
@@ -387,7 +361,8 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell", for: indexPath) as? NotesCell else { return UITableViewCell() }
         let note = arrayNotesRealm[indexPath.row]
-        cell.configure(text: note.note)
+        cell.backgroundColor = .clear
+        cell.configure(text: note.note, background: .clear)
         return cell
     }
 

@@ -4,7 +4,7 @@ import RealmSwift
 final class NotesCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
-    private let view = UIView()
+    private let containerView = UIView()
     private let noteLabel = UILabel()
 
     // MARK: - LIFECYCLE:
@@ -23,8 +23,8 @@ final class NotesCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     func addSubviews() {
-        contentView.addSubviews(view)
-        view.addSubview(noteLabel)
+        contentView.addSubviews(containerView)
+        containerView.addSubview(noteLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -32,19 +32,19 @@ final class NotesCell: UITableViewCell {
     func configureConstrains() {
         // MARK: VIEW:
 
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
-        view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5).isActive = true
-        view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
-        view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
 
         // MARK: NOTE LABEL:
 
         noteLabel.translatesAutoresizingMaskIntoConstraints = false
-        noteLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
-        noteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
-        noteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
-        noteLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
+        noteLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5).isActive = true
+        noteLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 5).isActive = true
+        noteLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5).isActive = true
+        noteLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -5).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -52,12 +52,12 @@ final class NotesCell: UITableViewCell {
     func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = .colorBackground
+        contentView.backgroundColor = .colorTabBar
 
         // MARK: VIEW:
 
-        view.backgroundColor = .colorTabBar
-        view.layer.cornerRadius = cornerRadius15
+        containerView.backgroundColor = .colorTabBar
+        containerView.layer.cornerRadius = 10
 
         // MARK: NOTE LABEL:
 
@@ -70,7 +70,8 @@ final class NotesCell: UITableViewCell {
 
     // MARK: - CONFIGURE MODEL:
 
-    func configure(text: String) {
+    func configure(text: String, background: UIColor) {
         noteLabel.text = text
+        contentView.backgroundColor = background
     }
 }
