@@ -57,7 +57,7 @@ final class NotesVC: UIViewController {
         // MARK: NOTE BUTTON:
 
         noteButton.translatesAutoresizingMaskIntoConstraints = false
-        noteButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        noteButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         noteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noteButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         noteButton.heightAnchor.constraint(equalTo: noteButton.widthAnchor, multiplier: 0.3).isActive = true
@@ -125,7 +125,7 @@ final class NotesVC: UIViewController {
         noteButton.setTitleColor(.colorLightGray, for: .normal)
         noteButton.contentVerticalAlignment = textAligmentTop
         noteButton.titleLabel?.font = fontMediumStandard14
-        noteButton.layer.cornerRadius = cornerRadius15
+        noteButton.layer.cornerRadius = 30
 
         // MARK: TEXT VIEW:
 
