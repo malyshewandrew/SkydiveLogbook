@@ -61,6 +61,7 @@ final class WeatherCell: UITableViewCell {
 
     private let vibrationOn = Vibration()
     private let mapView = MKMapView()
+    private let permissionLabel = UILabel()
     private let locationManager = CLLocationManager()
     private let arrowImage = UIImageView()
     private let arrowLabel = UILabel()
@@ -85,6 +86,10 @@ final class WeatherCell: UITableViewCell {
         configureUI()
         setStartLocation()
     }
+    
+    override func prepareForReuse() {
+        showPermissonLabel()
+    }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -104,7 +109,7 @@ final class WeatherCell: UITableViewCell {
         visibilityButton.addSubviews(visibilityLabel, visibilityOverlayButton)
         pressureButton.addSubviews(pressureLabel, pressureOverlayButton)
         uvIndexButton.addSubviews(uvIndexLabel, uvIndexOverlayButton)
-        mapView.addSubviews(arrowImage, currentLocationButton, windInfoButton, compasButton, compasImageView)
+        mapView.addSubviews(arrowImage, currentLocationButton, windInfoButton, compasButton, compasImageView, permissionLabel)
         arrowImage.addSubviews(arrowLabel)
     }
 
@@ -367,8 +372,14 @@ final class WeatherCell: UITableViewCell {
         mapView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
         mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-
-        // MARK: - CURRENT LOCATION BUTTON:
+        
+        // MARK: - PERMISSION LABEL:
+        
+        permissionLabel.translatesAutoresizingMaskIntoConstraints = false
+        permissionLabel.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 5).isActive = true
+        permissionLabel.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
+        
+        // MARK: CURRENT LOCATION BUTTON:
 
         currentLocationButton.translatesAutoresizingMaskIntoConstraints = false
         currentLocationButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -10).isActive = true
@@ -386,13 +397,13 @@ final class WeatherCell: UITableViewCell {
         compasButton.bottomAnchor.constraint(equalTo: windInfoButton.topAnchor, constant: -20).isActive = true
         compasButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10).isActive = true
         
-        // MARK: - ARROW IMAGE:
+        // MARK: ARROW IMAGE:
 
         arrowImage.translatesAutoresizingMaskIntoConstraints = false
         arrowImage.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
         arrowImage.centerYAnchor.constraint(equalTo: mapView.centerYAnchor).isActive = true
         
-        // MARK: - ARROW LABEL:
+        // MARK: ARROW LABEL:
 
         arrowLabel.translatesAutoresizingMaskIntoConstraints = false
         arrowLabel.centerXAnchor.constraint(equalTo: arrowImage.centerXAnchor).isActive = true
@@ -400,7 +411,7 @@ final class WeatherCell: UITableViewCell {
         arrowLabel.heightAnchor.constraint(equalTo: arrowImage.heightAnchor, multiplier: 0.6).isActive = true
         arrowLabel.widthAnchor.constraint(equalTo: arrowImage.widthAnchor, multiplier: 0.6).isActive = true
         
-        // MARK: - COMPAS IMAGE:
+        // MARK: COMPAS IMAGE:
         
         compasImageView.translatesAutoresizingMaskIntoConstraints = false
         compasImageView.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
@@ -660,6 +671,13 @@ final class WeatherCell: UITableViewCell {
         mapView.showsCompass = true
         mapView.isRotateEnabled = false
         mapView.preferredConfiguration = mapConfigurator
+        
+        // MARK: - PERMISSION LABEL:
+        
+        permissionLabel.textColor = .colorWhite
+        permissionLabel.font = fontRegularStandard10
+        permissionLabel.text = NSLocalizedString("Permisson label / weather", comment: "")
+        permissionLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: - ARROW IMAGE:
 
@@ -800,6 +818,21 @@ final class WeatherCell: UITableViewCell {
     @objc private func precipitationOverlayButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapPrecipitationOverlayButton()
+    }
+    
+    // MARK: PERMISSON LABEL:
+    
+    private func showPermissonLabel() {
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            permissionLabel.isHidden = true
+        case .denied, .restricted:
+            permissionLabel.isHidden = false
+        case .notDetermined:
+            permissionLabel.isHidden = false
+        default:
+            break
+        }
     }
 
     // MARK: - CONFIGURE MODEL:

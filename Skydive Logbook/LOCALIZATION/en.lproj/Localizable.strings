@@ -15,6 +15,7 @@
 "Delete" = "Delete";
 "Calculate" = "Calculate";
 "Update" = "Update";
+"Settings iphone" = "Settings";
 
 "Ok" = "Ok";
 "Yes" = "Yes";
@@ -83,6 +84,9 @@
 
 "Wind direction" = "Wind direction";
 "Arrow wind direction" = "The arrow shows the direction of the wind near the ground in the place where you are. It works only with an active Internet connection.";
+
+"Permisson label / weather" = "Settings iPhone -> SkydiveBook -> Location (give permission)";
+"Permisson label alert / weather" = "To display the current weather forecast, you need to get permission to determine your location. This can be done in the settings.";
 
 // MARK: - WEATHER ALERTS:
 

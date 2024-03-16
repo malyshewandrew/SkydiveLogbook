@@ -49,6 +49,11 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
         configureTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkPermission()
+    }
+    
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
@@ -403,6 +408,36 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    
+    // MARK: CHECK PERMISSON:
+    
+    private func checkPermission() {
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("ok")
+        case .denied, .restricted:
+            let alert = UIAlertController(title: NSLocalizedString("Error / alert kit", comment: ""), message: NSLocalizedString("Permisson label alert / weather", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Settings iphone", comment: ""), style: .default, handler: { _ in
+                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                }
+            }))
+            self.present(alert, animated: true)
+        case .notDetermined:
+            let alert = UIAlertController(title: NSLocalizedString("Error / alert kit", comment: ""), message: NSLocalizedString("Permisson label alert / weather", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Settings iphone", comment: ""), style: .default, handler: { _ in
+                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                }
+            }))
+            self.present(alert, animated: true)
+        default:
+            break
+        }
+    }
+    
 }
 
 // MARK: - EXTENSION:
