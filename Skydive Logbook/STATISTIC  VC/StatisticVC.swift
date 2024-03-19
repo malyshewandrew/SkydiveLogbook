@@ -358,8 +358,8 @@ extension StatisticVC: StatisticCellDelegate {
                 aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
                 canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
                 mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
-                heightMax = NSLocalizedString("Height", comment: "") + ": " + jump.height + NSLocalizedString("m.", comment: "")
-                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + NSLocalizedString("s.", comment: "")
+                heightMax = NSLocalizedString("Height", comment: "") + ": " + jump.height + " " + NSLocalizedString("m.", comment: "")
+                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + " " + NSLocalizedString("s.", comment: "")
                 cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
             }
         }
@@ -428,8 +428,8 @@ extension StatisticVC: StatisticCellDelegate {
                 aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
                 canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
                 mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
-                heightMin = NSLocalizedString("Height", comment: "") + ": " + jump.height + NSLocalizedString("m.", comment: "")
-                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + NSLocalizedString("s.", comment: "")
+                heightMin = NSLocalizedString("Height", comment: "") + ": " + jump.height + " " + NSLocalizedString("m.", comment: "")
+                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + " " + NSLocalizedString("s.", comment: "")
                 cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
             }
         }
@@ -507,8 +507,8 @@ extension StatisticVC: StatisticCellDelegate {
                 aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
                 canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
                 mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
-                height = NSLocalizedString("Height", comment: "") + ": " + jump.height + NSLocalizedString("m.", comment: "")
-                timeMax = NSLocalizedString("Time", comment: "") + ": " + jump.time + NSLocalizedString("s.", comment: "")
+                height = NSLocalizedString("Height", comment: "") + ": " + jump.height + " " + NSLocalizedString("m.", comment: "")
+                timeMax = NSLocalizedString("Time", comment: "") + ": " + jump.time + " " + NSLocalizedString("s.", comment: "")
                 cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
             }
         }
