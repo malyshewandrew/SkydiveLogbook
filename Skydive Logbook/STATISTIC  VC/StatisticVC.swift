@@ -451,6 +451,16 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE FIRST:
 
     func tapDateFirstButton() {
+        
+        var date = ""
+        var location = ""
+        var aircraft = ""
+        var canopy = ""
+        var mission = ""
+        var heightMin = ""
+        var time = ""
+        var cutaway = ""
+        
         if arrayJumpsRealm.count == 0 {
             let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
@@ -469,12 +479,23 @@ extension StatisticVC: StatisticCellDelegate {
                 guard let year = dayMonthYearPassed.year,
                       let month = dayMonthYearPassed.month,
                       let day = dayMonthYearPassed.day else { return }
+                
+                guard let jump = arrayJumpsRealm.first else { return }
+                
+                date = NSLocalizedString("Date", comment: "") + ": " + jump.date
+                location = NSLocalizedString("Location", comment: "") + ": " + jump.location
+                aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
+                canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
+                mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
+                heightMin = NSLocalizedString("Height", comment: "") + ": " + jump.height + " " + NSLocalizedString("m.", comment: "")
+                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + " " + NSLocalizedString("s.", comment: "")
+                cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
 
                 var message = ""
                 if arrayJumpsRealm.count == 0 {
                     message = "\n" + NSLocalizedString("no jumps", comment: "")
                 } else {
-                    message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))"
+                    message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))\n\n \(date)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMin)\n\(time)\n\(cutaway)"
                 }
 
                 let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
@@ -530,6 +551,16 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE LAST:
 
     func tapDateLastButton() {
+        
+        var date = ""
+        var location = ""
+        var aircraft = ""
+        var canopy = ""
+        var mission = ""
+        var heightMin = ""
+        var time = ""
+        var cutaway = ""
+        
         if arrayJumpsRealm.count == 0 {
             let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
@@ -547,11 +578,27 @@ extension StatisticVC: StatisticCellDelegate {
                 guard let year = dayMonthYearPassed.year,
                       let month = dayMonthYearPassed.month,
                       let day = dayMonthYearPassed.day else { return }
+                
+                guard let jump = arrayJumpsRealm.last else { return }
+                
+                date = NSLocalizedString("Date", comment: "") + ": " + jump.date
+                location = NSLocalizedString("Location", comment: "") + ": " + jump.location
+                aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
+                canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
+                mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
+                heightMin = NSLocalizedString("Height", comment: "") + ": " + jump.height + " " + NSLocalizedString("m.", comment: "")
+                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + " " + NSLocalizedString("s.", comment: "")
+                cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
+                
+                var message = ""
+                if arrayJumpsRealm.count == 0 {
+                    message = "\n" + NSLocalizedString("no jumps", comment: "")
+                } else {
+                    message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))\n\n \(date)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMin)\n\(time)\n\(cutaway)"
+                }
 
                 let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
-                                              message: """
-                                              \n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))
-                                              """,
+                                              message: message,
                                               preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
                 present(alert, animated: true)
