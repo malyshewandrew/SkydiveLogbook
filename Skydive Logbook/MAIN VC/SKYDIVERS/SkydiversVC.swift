@@ -7,6 +7,7 @@ import UIKit
 import WebKit
 
 final class SkydiversVC: UIViewController {
+    private let skydiversBackground = LottieAnimationView(name: "SkydiversBackground")
     private let skydiversLottie = LottieAnimationView(name: "Skydivers")
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let skydiversLottieButton = UIButton()
@@ -32,12 +33,21 @@ final class SkydiversVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(skydiversLottie, skydiversLottieButton, titleLabel, tableView, infoButton, backButton)
+        view.addSubviews(skydiversBackground, skydiversLottie, skydiversLottieButton, titleLabel, tableView, infoButton, backButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
+        
+        // MARK: SKYDIVERS BACKGROUND:
+
+        skydiversBackground.translatesAutoresizingMaskIntoConstraints = false
+        skydiversBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        skydiversBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        skydiversBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        skydiversBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: BACK BUTTON:
 
         backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +97,13 @@ final class SkydiversVC: UIViewController {
         
         view.backgroundColor = .colorBackground
         
+        // MARK: SKYDIVERS BACKGROUND:
+
+        skydiversBackground.play()
+        skydiversBackground.loopMode = .loop
+        skydiversBackground.animationSpeed = 1
+        skydiversBackground.contentMode = .scaleAspectFill
+        
         // MARK: NAVIGATION CONTROLLER:
         
         navigationController?.navigationBar.isHidden = true
@@ -129,7 +146,7 @@ final class SkydiversVC: UIViewController {
         tableView.delegate = self
         tableView.register(SkydiversCell.self, forCellReuseIdentifier: "SkydiversCell")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .colorBackground
+        tableView.backgroundColor = .clear
     }
     
     // MARK: - NETWORK REQUEST:
@@ -271,7 +288,8 @@ extension SkydiversVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.configurePhotos(photos: skydiver.photos)
         }
-        cell.configurePlacesCell(index: indexPath)
+//        cell.configurePlacesCell(index: indexPath)
+        cell.backgroundColor = .clear
         cell.delegate = self
         return cell
     }

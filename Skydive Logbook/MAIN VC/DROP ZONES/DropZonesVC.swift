@@ -166,7 +166,7 @@ final class DropZonesVC: UIViewController {
         
         let karolino = MKPointAnnotation()
         karolino.coordinate = CLLocationCoordinate2D(latitude: 53.635119, longitude: 23.736646)
-        karolino.title = "Zyabrovka"
+        karolino.title = "Karolino"
         karolino.subtitle = "Skydive Grodno"
         mapView.addAnnotation(karolino)
         

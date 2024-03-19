@@ -414,7 +414,7 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private func checkPermission() {
         switch locationManager.authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
-            print("ok")
+            print("Location settings: ON")
         case .denied, .restricted:
             let alert = UIAlertController(title: NSLocalizedString("Error / alert kit", comment: ""), message: NSLocalizedString("Permisson label alert / weather", comment: ""), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))

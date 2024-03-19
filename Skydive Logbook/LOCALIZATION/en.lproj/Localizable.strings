@@ -40,7 +40,7 @@
 "mon." = "mon.";
 "y." = "y.";
 
-// MARK: - Main:
+// MARK: - MAIN:
 
 "First Message" = "\nWelcome to the SkydiveBook!\n\nTo get started, you need to add at least one:\n\nLocation\nType of aircraft\nCanopy\n\nin the section \"Settings\"\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
@@ -196,7 +196,7 @@
 
 // MARK: - SKYDIVERS:
 
-"Rating / skydivers" = "Rating";
+"Rating / skydivers" = "Reputation";
 "Nickname / skydivers" = "Nickname";
 "Country / skydivers" = "Country";
 "Profile / skydivers" = "Profile";
@@ -204,7 +204,7 @@
 "Count of jumps / skydivers" = "Count of jumps";
 "First jump / skydivers" = "First jump";
 "About rating / skydivers" = "More information";
-"About rating message / skydivers" = "Rating is an advertisement for oneself, as well as assistance to the project.\nDetails on Instagram.";
+"About rating message / skydivers" = "Community is an advertisement for oneself, as well as assistance to the project.\nDetails on Instagram.";
 
 // MARK: - Statistic:
 
@@ -504,6 +504,7 @@ It is recommended to make a backup copy from time to time so as not to lose the 
 "Build / info" = "Build";
 "Privacy policy" = "Privacy policy";
 "Terms of use" = "Terms of use";
+"FAQ" = "FAQ";
 "Info text" = "\nSkydiveBook - it is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the SkydiveBook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.\n\nThe data on the loading of the main dome are reference information and are not of a recommendatory nature for choosing parachute equipment.\n\nAll permits for the operation of parachutes must be issued by a valid instructor.\n\nAny information obtained by using the application is purely for reference purposes: study the airfield map yourself, as well as get up-to-date data on weather conditions during jumps.\n\nLike any software, this application can make mistakes and be imperfect due to the human factor.\n\nRemember that skydiving involves a risk to life. Failure to comply with safety regulations can lead to injury and even death.\n";
 "Info text start alert" = "\nSkydiveBook - it is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the SkydiveBook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.\n\nThe data on the loading of the main dome are reference information and are not of a recommendatory nature for choosing parachute equipment.\n\nAll permits for the operation of parachutes must be issued by a valid instructor.\n\nAny information obtained by using the application is purely for reference purposes: study the airfield map yourself, as well as get up-to-date data on weather conditions during jumps.\n\nLike any software, this application can make mistakes and be imperfect due to the human factor.\n\nRemember that skydiving involves a risk to life. Failure to comply with safety regulations can lead to injury and even death.\n\nI've read it and I agree.";
 "Agree" = "Agree";

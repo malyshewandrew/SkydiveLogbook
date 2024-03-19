@@ -173,7 +173,7 @@ final class SkydiversCell: UITableViewCell {
     private func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = .colorBackground
+        contentView.backgroundColor = .clear
 
         // MARK: CONTAINER VIEW:
 

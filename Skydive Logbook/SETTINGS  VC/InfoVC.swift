@@ -13,6 +13,7 @@ final class InfoVC: UIViewController {
     private let infoTextLabel = UILabel()
     private let privacyButton = UIButton()
     private let termsButton = UIButton()
+    private let faqButton = UIButton()
     private let versionButton = UIButton()
     private let vibrationOn = Vibration()
     private var buildVersion = ""
@@ -31,7 +32,7 @@ final class InfoVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(titleLabel, scrollView)
-        scrollView.addSubviews(infoTextView, privacyButton, termsButton, versionButton)
+        scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, versionButton)
         infoTextView.addSubviews(infoTextLabel)
     }
     
@@ -84,10 +85,18 @@ final class InfoVC: UIViewController {
         termsButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         termsButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
         
+        // MARK: FAQ BUTTON:
+
+        faqButton.translatesAutoresizingMaskIntoConstraints = false
+        faqButton.topAnchor.constraint(equalTo: termsButton.bottomAnchor, constant: 15).isActive = true
+        faqButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        faqButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        faqButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
+        
         // MARK: ALERT VERSION BUTTON:
 
         versionButton.translatesAutoresizingMaskIntoConstraints = false
-        versionButton.topAnchor.constraint(equalTo: termsButton.bottomAnchor, constant: 15).isActive = true
+        versionButton.topAnchor.constraint(equalTo: faqButton.bottomAnchor, constant: 15).isActive = true
         versionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         versionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         versionButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
@@ -149,6 +158,16 @@ final class InfoVC: UIViewController {
         termsButton.backgroundColor = .colorCell
         termsButton.titleLabel?.font = fontMediumStandard14
         termsButton.addTarget(self, action: #selector(termsButtonTapped), for: .touchUpInside)
+        
+        // MARK: FAQ BUTTON:
+
+        faqButton.setTitle(NSLocalizedString("FAQ", comment: ""), for: .normal)
+        faqButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        faqButton.setTitleColor(.colorWhite, for: .normal)
+        faqButton.layer.cornerRadius = cornerRadius15
+        faqButton.backgroundColor = .colorCell
+        faqButton.titleLabel?.font = fontMediumStandard14
+        faqButton.addTarget(self, action: #selector(faqButtonTapped), for: .touchUpInside)
         
         // MARK: ALERT VERSION BUTTON:
 
@@ -217,6 +236,16 @@ final class InfoVC: UIViewController {
     @objc private func termsButtonTapped() {
         vibrationOn.vibrationStandart()
         guard let url = URL(string: "https://skydivebook.tilda.ws/termsofuse") else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.delegate = self
+        present(safariViewController, animated: true)
+    }
+    
+    // MARK: OPEN SAFARI FAQ:
+    
+    @objc private func faqButtonTapped() {
+        vibrationOn.vibrationStandart()
+        guard let url = URL(string: "https://skydivebook.tilda.ws/faq") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         present(safariViewController, animated: true)

@@ -342,11 +342,25 @@ extension StatisticVC: StatisticCellDelegate {
     func tapMaxHeightButton() {
         var maxJumpHeight = 0
         var maxHeightDate = ""
+        var location = ""
+        var aircraft = ""
+        var canopy = ""
+        var mission = ""
+        var heightMax = ""
+        var time = ""
+        var cutaway = ""
 
         for jump in arrayJumpsRealm {
             if let height = Int(jump.height), height > maxJumpHeight {
                 maxJumpHeight = height
-                maxHeightDate = jump.date
+                maxHeightDate = NSLocalizedString("Date", comment: "") + ": " + jump.date
+                location = NSLocalizedString("Location", comment: "") + ": " + jump.location
+                aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
+                canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
+                mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
+                heightMax = NSLocalizedString("Height", comment: "") + ": " + jump.height + NSLocalizedString("m.", comment: "")
+                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + NSLocalizedString("s.", comment: "")
+                cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
             }
         }
 
@@ -354,7 +368,7 @@ extension StatisticVC: StatisticCellDelegate {
         if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
-            message = "\n\(NSLocalizedString("Maximum height alert", comment: "")): \(maxHeightDate)"
+            message = "\n\(NSLocalizedString("Maximum height alert", comment: "")):\n\n \(maxHeightDate)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMax)\n\(time)\n\(cutaway)"
         }
 
         let alert = UIAlertController(title: NSLocalizedString("Maximum height", comment: "") + ":",
@@ -398,11 +412,25 @@ extension StatisticVC: StatisticCellDelegate {
     func tapMinHeightButton() {
         var minJumpHeight = Int.max
         var minHeightDate = ""
-
+        var location = ""
+        var aircraft = ""
+        var canopy = ""
+        var mission = ""
+        var heightMin = ""
+        var time = ""
+        var cutaway = ""
+        
         for jump in arrayJumpsRealm {
             if let height = Int(jump.height), height < minJumpHeight {
                 minJumpHeight = height
-                minHeightDate = jump.date
+                minHeightDate = NSLocalizedString("Date", comment: "") + ": " + jump.date
+                location = NSLocalizedString("Location", comment: "") + ": " + jump.location
+                aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
+                canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
+                mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
+                heightMin = NSLocalizedString("Height", comment: "") + ": " + jump.height + NSLocalizedString("m.", comment: "")
+                time = NSLocalizedString("Time", comment: "") + ": " + jump.time + NSLocalizedString("s.", comment: "")
+                cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
             }
         }
 
@@ -410,7 +438,7 @@ extension StatisticVC: StatisticCellDelegate {
         if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
-            message = "\n\(NSLocalizedString("Minimum height alert", comment: "")): \(minHeightDate)"
+            message = "\n\(NSLocalizedString("Minimum height alert", comment: "")):\n\n \(minHeightDate)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMin)\n\(time)\n\(cutaway)"
         }
 
         let alert = UIAlertController(title: NSLocalizedString("Minimum height", comment: "") + ":",
@@ -461,13 +489,27 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: MAX TIME:
 
     func tapMaxTimeButton() {
-        var maxJumpHeight = 0
+        var maxJumpTime = 0
         var maxTimeDate = ""
+        var location = ""
+        var aircraft = ""
+        var canopy = ""
+        var mission = ""
+        var height = ""
+        var timeMax = ""
+        var cutaway = ""
 
         for jump in arrayJumpsRealm {
-            if let height = Int(jump.time), height > maxJumpHeight {
-                maxJumpHeight = height
-                maxTimeDate = jump.date
+            if let time = Int(jump.time), time > maxJumpTime {
+                maxJumpTime = time
+                maxTimeDate = NSLocalizedString("Date", comment: "") + ": " + jump.date
+                location = NSLocalizedString("Location", comment: "") + ": " + jump.location
+                aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
+                canopy = NSLocalizedString("Canopy", comment: "") + ": " + jump.canopy
+                mission = NSLocalizedString("Mission", comment: "") + ": " + (jump.mission?.localizedValue ?? "")
+                height = NSLocalizedString("Height", comment: "") + ": " + jump.height + NSLocalizedString("m.", comment: "")
+                timeMax = NSLocalizedString("Time", comment: "") + ": " + jump.time + NSLocalizedString("s.", comment: "")
+                cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
             }
         }
 
@@ -475,7 +517,7 @@ extension StatisticVC: StatisticCellDelegate {
         if arrayJumpsRealm.count == 0 {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
-            message = "\n\(NSLocalizedString("Maximum time alert", comment: "")): \(maxTimeDate)"
+            message = "\n\(NSLocalizedString("Maximum time alert", comment: "")):\n\n \(maxTimeDate)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(height)\n\(timeMax)\n\(cutaway)"
         }
 
         let alert = UIAlertController(title: NSLocalizedString("Maximum time", comment: "") + ":",
@@ -633,7 +675,7 @@ extension StatisticVC: StatisticCellDelegate {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             for (aircraft, count) in aircraftCount.sorted(by: { $0.value > $1.value }) {
-                message += "\n\(aircraft): \(count)\n"
+                message += "\n\(aircraft): \(count)"
             }
         }
 
@@ -667,7 +709,7 @@ extension StatisticVC: StatisticCellDelegate {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             for (canopy, count) in canopyCount.sorted(by: { $0.value > $1.value }) {
-                message += "\n\(canopy): \(count)\n"
+                message += "\n\(canopy): \(count)"
             }
         }
 
@@ -701,7 +743,7 @@ extension StatisticVC: StatisticCellDelegate {
             message = "\n" + NSLocalizedString("no jumps", comment: "")
         } else {
             for (location, count) in locationCount.sorted(by: { $0.value > $1.value }) {
-                message += "\n\(location): \(count)\n"
+                message += "\n\(location): \(count)"
             }
         }
 
