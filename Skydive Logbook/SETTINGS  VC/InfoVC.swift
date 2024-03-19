@@ -7,6 +7,7 @@ import RealmSwift
 final class InfoVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
+    private let infoBackground = LottieAnimationView(name: "InfoBackground")
     private let titleLabel = UILabel()
     private let scrollView = UIScrollView()
     private let infoTextView = UIView()
@@ -31,7 +32,7 @@ final class InfoVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(titleLabel, scrollView)
+        view.addSubviews(infoBackground, titleLabel, scrollView)
         scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, versionButton)
         infoTextView.addSubviews(infoTextLabel)
     }
@@ -39,6 +40,15 @@ final class InfoVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: INFO BACKGROUND:
+
+        infoBackground.translatesAutoresizingMaskIntoConstraints = false
+        infoBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        infoBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        infoBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        infoBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: TITLE LABEL:
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -112,6 +122,13 @@ final class InfoVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER
         
         navigationController?.navigationBar.isHidden = false
+        
+        // MARK: INFO BACKGROUND:
+        
+        infoBackground.play()
+        infoBackground.loopMode = .loop
+        infoBackground.animationSpeed = 0.1
+        infoBackground.contentMode = .scaleAspectFill
         
         // MARK: TITLE LABEL:
         

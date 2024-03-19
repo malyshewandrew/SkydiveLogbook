@@ -7,6 +7,7 @@ import UniformTypeIdentifiers
 final class BackupVC: UIViewController {
     // MARK: - PROPERTIES:
 
+    private let backupBackground = LottieAnimationView(name: "BackupBackground")
     private let backupLottie = LottieAnimationView(name: "Backup")
     private let infoView = UIView()
     private let infoLabel = UILabel()
@@ -28,17 +29,26 @@ final class BackupVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(backupLottie, infoView, infoLabel, backupButton, restoreButton)
+        view.addSubviews(backupBackground, backupLottie, infoView, infoLabel, backupButton, restoreButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINTS:
 
     private func configureConstraints() {
+        
+        // MARK: BACKUP BACKGROUND:
+
+        backupBackground.translatesAutoresizingMaskIntoConstraints = false
+        backupBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backupBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backupBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        backupBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         // MARK: ANIMATION:
 
         backupLottie.translatesAutoresizingMaskIntoConstraints = false
         backupLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backupLottie.bottomAnchor.constraint(equalTo: infoLabel.topAnchor, constant: 0).isActive = true
+        backupLottie.bottomAnchor.constraint(equalTo: infoLabel.topAnchor, constant: 27).isActive = true
         backupLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
         backupLottie.widthAnchor.constraint(equalToConstant: 150).isActive = true
 
@@ -87,6 +97,13 @@ final class BackupVC: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
+        
+        // MARK: BACKUP BACKGROUND:
+        
+        backupBackground.play()
+        backupBackground.loopMode = .loop
+        backupBackground.animationSpeed = 0.1
+        backupBackground.contentMode = .scaleAspectFill
 
         // MARK: ANIMATION:
 
@@ -97,9 +114,6 @@ final class BackupVC: UIViewController {
 
         infoView.backgroundColor = .colorCell
         infoView.layer.cornerRadius = cornerRadius15
-        infoView.layer.shadowRadius = 50
-        infoView.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        infoView.layer.shadowOpacity = 0.3
 
         // MARK: INFO LABEL:
 

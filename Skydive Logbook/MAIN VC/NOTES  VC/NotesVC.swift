@@ -49,10 +49,10 @@ final class NotesVC: UIViewController {
         // MARK: NOTES BACKGROUND:
 
         notesBackground.translatesAutoresizingMaskIntoConstraints = false
-        notesBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        notesBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         notesBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         notesBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        notesBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        notesBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
         // MARK: NOTE BUTTON:
 
