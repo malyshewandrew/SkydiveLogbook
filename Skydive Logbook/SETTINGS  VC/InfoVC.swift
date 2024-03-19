@@ -8,6 +8,7 @@ final class InfoVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
     private let infoBackground = LottieAnimationView(name: "InfoBackground")
+    private let infoPlusBackground = LottieAnimationView(name: "InfoPlusBackground")
     private let titleLabel = UILabel()
     private let scrollView = UIScrollView()
     private let infoTextView = UIView()
@@ -32,7 +33,7 @@ final class InfoVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(infoBackground, titleLabel, scrollView)
+        view.addSubviews(infoBackground, infoPlusBackground, titleLabel, scrollView)
         scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, versionButton)
         infoTextView.addSubviews(infoTextLabel)
     }
@@ -44,10 +45,18 @@ final class InfoVC: UIViewController {
         // MARK: INFO BACKGROUND:
 
         infoBackground.translatesAutoresizingMaskIntoConstraints = false
-        infoBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        infoBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: -5).isActive = true
         infoBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         infoBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         infoBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        // MARK: INFO PLUS BACKGROUND:
+
+        infoPlusBackground.translatesAutoresizingMaskIntoConstraints = false
+        infoPlusBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: -5).isActive = true
+        infoPlusBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        infoPlusBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        infoPlusBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         // MARK: TITLE LABEL:
         
@@ -127,8 +136,15 @@ final class InfoVC: UIViewController {
         
         infoBackground.play()
         infoBackground.loopMode = .loop
-        infoBackground.animationSpeed = 0.1
+        infoBackground.animationSpeed = 0.3
         infoBackground.contentMode = .scaleAspectFill
+        
+        // MARK: INFO PLUS BACKGROUND:
+        
+        infoPlusBackground.play()
+        infoPlusBackground.loopMode = .loop
+        infoPlusBackground.animationSpeed = 0.5
+        infoPlusBackground.contentMode = .scaleAspectFill
         
         // MARK: TITLE LABEL:
         
