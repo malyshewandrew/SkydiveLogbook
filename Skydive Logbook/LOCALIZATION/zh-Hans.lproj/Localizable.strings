@@ -1,0 +1,580 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "主页";
+"Statistic tab bar" = "统计";
+"Add jump tab bar" = "新增跳转";
+"System tab bar" = "系统";
+"Settings tab bar" = "设置";
+
+// MARK: - MAIN:
+
+"Save" = "保存";
+"Clean" = "清除";
+"Close" = "关闭";
+"Edit" = "编辑";
+"Delete" = "删除";
+"Calculate" = "计算";
+"Update" = "更新";
+"Settings iphone" = "设置";
+
+"Ok" = "确定";
+"Yes" = "是";
+"No" = "否";
+
+"ago" = "前";
+"back" = "返回";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "米";
+"km." = "千米";
+"miles" = "英里";
+"feet" = "英尺";
+
+// MARK: - MEASURING TIME:
+
+"s." = "秒";
+"min." = "分钟";
+"h." = "小时";
+"d." = "天";
+"mon." = "月";
+"y." = "年";
+
+// MARK: - MAIN:
+
+"First Message" = "\n欢迎使用 SkydiveBook！\n\n为了开始使用，请至少添加一项：\n\n位置\n飞行器类型\n降落伞\n\n在“设置”部分\n\n祝您使用愉快，安全跳伞！\n";
+"Delete jump?" = "删除跳伞？";
+"This action cannot be undone." = "此操作无法撤销。";
+
+"License" = "许可证";
+"until" = "直到";
+"Medicine until" = "药物有效期至";
+"Insurance until" = "保险有效期至";
+"Reserve canopy until" = "备用降落伞有效期至";
+
+"Edit/add account" = "要填写账户信息，请转到“设置”部分。";
+
+// MARK: - NOTES:
+
+"New note" = "新建备忘录";
+"Delete note?" = "删除备忘录?";
+
+// MARK: - WEATHER:
+
+"No connection" = "无连接";
+"No connection message / weather" = "需要活动的互联网连接才能接收天气预报数据。";
+
+"mm/h" = "毫米/小时";
+"hPa" = "百帕";
+"mm / pressure" = "毫米";
+"m/s" = "米/秒";
+"km" = "千米";
+"Gusts up to" = "阵风高达";
+
+"Wind speed / weather" = "风速";
+"Temperature / weather" = "温度";
+"Cloud cover / weather" = "云覆盖";
+"Humidity / weather" = "湿度";
+"Dew point / weather" = "露点";
+"Visibility / weather" = "能见度";
+"Precipitation / weather" = "降水量";
+"Pressure / weather" = "气压";
+"UvIndex / weather" = "紫外线指数";
+"It feels like / weather" = "体感温度";
+
+"Wind direction" = "风向";
+"Arrow wind direction" = "箭头显示了您所在地面附近的风向。仅在有活动互联网连接时可用。";
+
+"Permisson label / weather" = "设置iPhone -> SkydiveBook -> 位置（授予权限）";
+"Permisson label alert / weather" = "为显示当前天气预报，您需要获取确定您位置的权限。这可以在设置中完成。";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "风力分类";
+"Wind weather message / alert" = "静风: < 0.3 米/秒\n微风: 0.3—1.5 米/秒\n轻风: 1.6—3.3 米/秒\n中风: 3.4—5.4 米/秒\n清新: 5.5—7.9 米/秒\n强风: 8.0—10.7 米/秒\n近风暴: 10.8—13.8 米/秒\n风暴: 13.9—17.1 米/秒\n强风暴: 17.2—20.7 米/秒\n暴风: 20.8—24.4 米/秒\n狂风暴: 24.5—28.4 米/秒\n飓风: >32.7 米/秒";
+
+"Temperature weather title / alert" = "体感温度";
+"Temperature weather message / alert" = "“体感温度”指标可能与实际温度不同，反映了人体感知温度的方式。 “体感温度”指标受风速和湿度水平的影响。";
+
+"Cloud cover weather title / alert" = "云覆盖";
+"Cloud cover weather message / alert" = "云覆盖以百分比表示。通常表示云覆盖天空的部分。";
+
+"Humidity weather title / alert" = "湿度";
+"Humidity weather message / alert" = "相对湿度或简称湿度是空气中含水量与空气最大可容纳量的比率。";
+
+"Dew point weather title / alert" = "露点";
+"Dew point weather message / alert" = "露点是温度必须下降到才能形成露水的值。这是确定空气湿度的一种方便方法：露点越高，空气越湿润。与当前温度相符的露点意味着空气的相对湿度为100%，可能会形成露水或雾。";
+
+"Visibility weather title / alert" = "能见度";
+"Visibility weather message / alert" = "能见度显示您可以清晰看到建筑物和山丘等物体的距离。能见度是空气透明度的度量，不考虑阳光的数量或障碍物的存在。";
+
+"Precipitation weather title / alert" = "降水";
+"Precipitation weather message / alert" = "降水量是指在地面上形成的水层的高度，如果地面完全平坦，将形成水层的高度。以毫米表示的降水量在数值上等于在1平方米的水平表面上落下的水的质量。";
+
+"Pressure weather title / alert" = "气压";
+"Pressure weather message / alert" = "该表显示相对于您位置的气压正常值的偏差。人们的正常气压通常为760毫米汞柱。但每个人的正常大气压取决于他所在的地区，而该地区的压力取决于该地区的海拔高度。";
+
+"UvIndex weather title / alert" = "紫外线指数";
+"UvIndex weather message / alert" = "紫外线指数（UFI），由世界卫生组织开发，表示紫外线辐射的强度。紫外线指数越高，暴露在阳光下越危险，对健康的影响速度也越快。通过跟踪紫外线指数，您可以决定何时保护自己免受阳光的影响，以及何时最好不要外出。";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "静风";
+"Weak wind / wind speed" = "微风";
+"Light wind / wind speed" = "轻风";
+"Quiet wind / wind speed" = "安静的风";
+"Moderate wind / wind speed" = "中等风";
+"Fresh wind / wind speed" = "清新的风";
+"Strong wind / wind speed" = "强风";
+"Hard wind / wind speed" = "大风";
+"Powerful wind / wind speed" = "强劲的风";
+"Storm wind / wind speed" = "风暴";
+"Hard storm wind / wind speed" = "狂风暴";
+"Hurricane wind / wind speed" = "飓风";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "最高温度";
+"Min temperature / temperature" = "最低温度";
+"Average temperature / temperature" = "平均温度";
+"Feels like temperature / temperature" = "体感温度";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "非常干燥";
+"Dry air / humidity" = "干燥";
+"Moderately dry air / humidity" = "稍干燥";
+"Moderately humid air / humidity" = "稍湿润";
+"Very humid air / humidity" = "非常湿润";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "晴朗";
+"Partly Cloudy / cloud cover" = "局部多云";
+"Variable Cloudiness / cloud cover" = "多变";
+"Cloudy / cloud cover" = "多云";
+"Overcast / cloud cover" = "阴天";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "相对干燥";
+"Moderately humid air / dew point" = "适度湿润";
+"Humid air / dew point" = "湿润";
+"Very humid air / dew point" = "非常湿润";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "优秀";
+"Good / visibility" = "良好";
+"Moderate / visibility" = "一般";
+"Poor / visibility" = "较差";
+"Very Poor / visibility" = "非常差";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "非常轻微";
+"Light / precipitation" = "轻微";
+"Moderate / precipitation" = "中等";
+"Heavy / precipitation" = "大";
+"Very Heavy / precipitation" = "非常大";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "非常低";
+"Low / pressure" = "低";
+"Normal / pressure" = "正常";
+"Hight / pressure" = "高";
+"Very hight / pressure" = "非常高";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "低";
+"Moderate / uv index" = "中等";
+"Hight / uv index" = "高";
+"Very high / uv index" = "非常高";
+"Excessive / uv index" = "过高";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "声誉";
+"Nickname / skydivers" = "昵称";
+"Country / skydivers" = "国家";
+"Profile / skydivers" = "个人资料";
+"Profession / skydivers" = "职业";
+"Count of jumps / skydivers" = "跳伞次数";
+"First jump / skydivers" = "第一次跳伞";
+"About rating / skydivers" = "更多信息";
+"About rating message / skydivers" = "社区既是对自己的宣传，也是对项目的支持。\nInstagram 上的详细信息";
+
+// MARK: - Statistic:
+
+"no jumps" = "要显示统计信息，您需要至少完成一次跳伞。";
+"saving data" = "保存数据中";
+"saving data text" = "为了保存完整的跳伞历史记录，建议您定期在“设置”部分创建备份。\n当切换到新设备时，这一点尤其重要。";
+"jumps by year" = "按年份统计跳伞";
+"year" = "年";
+"Categories USPA" = "类别";
+"Categories USPA List" = "\nA: 25 次跳伞\n自由落体时间：10 分钟（600秒）\n\nB: 50 次跳伞\n自由落体时间：30 分钟（1800秒）\n\nC: 200 次跳伞\n自由落体时间：60 分钟（3600秒）\n\nD: 500 次跳伞\n自由落体时间：180 分钟（10800秒）\n";
+"Maximum time" = "最大自由落体时间";
+"Maximum time alert" = "已完成最大自由落体时间的跳伞";
+"Maximum height" = "最大高度";
+"Maximum height alert" = "已完成舱室最大高度的跳伞";
+"Average height" = "平均高度";
+"Minimum height" = "最小高度";
+"Minimum height alert" = "已完成舱室最小高度的跳伞";
+"First jump / statistic" = "完成了第一次跳伞";
+"Last jump / statistic" = "完成了最后一次跳伞";
+"Max in one day" = "一天内最大次数";
+"Average height of jump" = "跳伞的平均高度";
+"Average free fall time of jump" = "跳伞的平均自由落体时间";
+"Average time" = "跳伞的平均时间";
+"Max count of jumps" = "最大跳伞次数";
+"Max count of jumps text" = "一天内完成的最大跳伞次数";
+"Jumps no found" = "未找到跳伞记录";
+"Сount of cutaways" = "割线次数";
+"Date last jump" = "最近一次跳伞日期";
+"Date first jump" = "第一次跳伞日期";
+"List aircrafts" = "飞行器列表";
+"List canopies" = "降落伞列表";
+"List locations" = "位置列表";
+
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "总体信息";
+"Total height" = "总高度";
+"Total time" = "总时间";
+"Total jumps" = "总跳伞次数";
+"In this year" = "今年";
+"Category" = "类别";
+
+"Average info" = "平均信息";
+
+"Max. height" = "最大高度";
+"Av. height" = "平均高度";
+"Min. height" = "最小高度";
+"First jump" = "第一次跳伞";
+"Max. time" = "最大时间";
+"Last jump" = "最后一次跳伞";
+"Max. in day" = "一天内最大次数";
+"Av. time" = "平均时间";
+"CutawayStatistic" = "割线统计";
+"Count cutaway" = "割线次数";
+"Aircraft" = "飞行器";
+"Canopies" = "降落伞";
+"Locations" = "位置";
+"Missions" = "任务";
+
+"Accuracy" = "准确性";
+"Acrobatics" = "特技";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "降落伞编队";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "娱乐";
+"Group" = "团体";
+"Instructor" = "教练";
+"Military" = "军事";
+"Para-ski" = "Para-ski";
+"Proximity" = "接近";
+"Skysurfing" = "滑空";
+"Static-line" = "静态线";
+"Piloting" = "驾驶";
+"Tandem" = "双人";
+"Vertical" = "垂直";
+"Video" = "视频";
+"Wingsuit" = "Wingsuit";
+"Formation" = "编队";
+"Top 10:" = "前10名：";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "新增跳伞";
+"Manual / new jump" = "要开始，请转到“设置”部分并输入以下数据：\n\n位置\n飞行器\n降落伞";
+
+// MARK: - CellNewJump:
+
+"Date" = "日期";
+"Location" = "位置";
+"Aircraft" = "飞机";
+"Canopy" = "天篷";
+"Mission" = "任务";
+"Height" = "高度";
+"Time" = "时间";
+"Cutaway" = "切割";
+"Comment" = "评论";
+
+"Date placeholder" = "日期";
+"Location placeholder" = "降落区";
+"Aircraft placeholder" = "飞机类型";
+"Canopy placeholder" = "主降落伞";
+"Mission placeholder" = "跳伞类型";
+"Height placeholder" = "米";
+"Time placeholder" = "秒";
+"Cutaway placeholder" = "否 / 是";
+"Comment placeholder" = "可选";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "添加新系统";
+"Comment" = "评论";
+"No comments" = "未找到评论";
+"Container system" = "容器系统";
+"AAD system" = "保险器具";
+"Main canopy system" = "主降落伞";
+"Reserve canopy system" = "备用降落伞";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "编号";
+"DOM system" = "DOM";
+"Service life system" = "使用寿命";
+"Valid until system" = "有效期至";
+"Counts of the jumps system" = "跳伞次数";
+"Resource system" = "资源";
+"Counts of repack system" = "折叠次数";
+"Packed system" = "已折叠";
+
+"years system" = "年";
+"jumps system" = "跳伞次数";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "添加系统";
+"Container alert" = "容器";
+"AAD alert" = "安全装置";
+"Main canopy alert" = "主降落伞";
+"Reserve canopy alert" = "备用降落伞";
+
+"Name and model container alert" = "容器的名称和型号";
+"Name and model AAD alert" = "安全装置的名称和型号";
+"Name and model main canopy alert" = "主降落伞的名称和型号。您必须先在\"设置\"->\"编辑降落伞\"部分添加";
+"Name and model reserve canopy alert" = "备用降落伞的名称和型号";
+
+"DOM alert" = "制造日期";
+"Serial number alert" = "序列号";
+"Warranty resource container alert" = "保修年限（通常制造商指定为10-20年，或根据技术状况";
+"Warranty resource AAD alert" = "保修年限（保证年数，或日常维护前的年数";
+"Warranty resource main canopy alert" = "保修年限（通常制造商指定为10-20年，或根据技术状况";
+"Warranty resource jumps main canopy alert" = "跳伞保修次数（通常制造商指定为500次，或根据技术状况最多1000次";
+"Counts of jumps main canopy alert" = "使用次数（如果降落伞不是新购买的，已经进行过跳伞，请指定此次数）。为了正确计算，只需指定此应用程序的一般跳伞列表中未记录的跳伞次数";
+"Warranty resource reserve canopy alert" = "保修年限（通常制造商指定为10-20年，或根据技术状况";
+"Counts of repack reserve canopy alert" = "重装次数（如果降落伞不是新购买的，并且已经进行过折叠，请指定此次数";
+"Date of pack reserve canopy alert" = "折叠日期";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "名称系统";
+"Name / new system cell" = "名称";
+"Container / new system cell" = "容器";
+"Name container / new system cell" = "名称容器";
+
+"DOM / new system cell" = "制造日期";
+"Date mm.yyyy / new system cell" = "月份。 年份";
+"Serial number / new system cell" = "序列号";
+"Warranty resource / new system cell" = "保修资源";
+"Counts of years / new system cell" = "年数";
+"Counts of jumps / new system cell" = "跳伞次数";
+
+"AAD / new system cell" = "安全装置";
+"Name AAD / new system cell" = "安全装置名称";
+
+"Main canopy / new system cell" = "主降落伞";
+"Name main canopy / new system cell" = "名称天篷";
+"Counts of jumps main canopy / new system cell" = "跳伞次数";
+"The value of the purchase / new system cell" = "购买价值";
+
+"Reserve canopy / new system cell" = "备用天篷";
+"Name reserve canopy / new system cell" = "名称天篷";
+"Counts of repack reserve canopy / new system cell" = "折叠次数";
+"Date of packing reserve canopy / new system cell" = "折叠日期";
+"Date dd.mm.yyyy / new system cell" = "一天。 月份。 年份";
+"Count / new system cell" = "数量";
+
+"Comment / new system cell" = "评论";
+"Optional / new system cell" = "可选（线条等情况）";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "编辑账户";
+"Edit locations" = "编辑位置";
+"Delete location?" = "删除位置？";
+"Edit aircrafts" = "编辑飞机";
+"Delete aircraft?" = "删除飞机？";
+"Edit canopies" = "编辑天篷";
+"Drop zones" = "降落区";
+"Delete canopy?" = "删除天篷？";
+"Backup copy" = "备份副本";
+"Calculator loading" = "计算器加载中";
+"Information" = "信息";
+"Premium version" = "高级版本";
+"Share the app" = "分享应用";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "昵称";
+"Name user / edit account vc" = "用户名";
+"License / edit account vc" = "驾照";
+"Type / number / edit account vc" = "类型 / 编号";
+"Valid until / edit account vc" = "有效期至";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "药物";
+"Insurance / edit account vc" = "保险";
+"Reserve canopy / edit account vc" = "备用天篷";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "输入降落区名称";
+"Enter aircraft" = "输入飞机名称";
+"Enter canopy" = "输入天篷名称";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\n备份副本保存应用程序中记录的所有数据。\n建议定期创建备份副本，以免丢失输入的数据。\n";
+"Backup / backup" = "创建备份";
+"Restore / backup" = "恢复";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "总重量";
+"kg." = "千克";
+"ft" = "平方英尺";
+"Square canopy" = "正方形天篷";
+"1-50A" = "\n降落伞类型：学生。\n等级：A。\n跳伞次数：1-50次。\n";
+"51-200B" = "\n降落伞类型：过渡。\n等级：B。\n跳伞次数：51-200次。\n";
+"201-500C" = "\n降落伞类型：中速。\n等级：C。\n跳伞次数：201-500次。\n";
+"501-1000D1" = "\n降落伞类型：高速/椭圆形。\n等级：D。\n跳伞次数：501-1000次。\n";
+"1000D2" = "\n降落伞类型：超高速。\n等级：D。\n跳伞次数：1000+次。\n";
+"1000D3" = "\n降落伞类型：超高速/交叉撑。\n等级：D。\n跳伞次数：1000+次。\n";
+
+// MARK: - INFO:
+
+"App version" = "关于应用程序";
+"Version / info" = "版本";
+"Build / info" = "生成";
+"Privacy policy" = "隐私政策";
+"Terms of use" = "使用条款";
+"FAQ" = "常见问题解答";
+"Info text" = "\nSkydiveBook - 这并不是对应用程序用户是专业跳伞者的官方确认。\n\n它作为官方跳伞者书籍或证书的可选附加内容。\n\n在SkydiveBook中记录的跳伞次数不是这些跳伞的证据，不能作为发布官方文件、证书、等级的依据。\n\n该应用程序旨在用于个人使用，提供便利的跳伞体验和高级分析。\n\n关于主伞的负载数据是参考信息，不具备为选择降落伞设备的推荐性质。\n\n所有跳伞伞具操作许可必须由有效的教练员颁发。\n\n使用该应用程序获得的任何信息纯粹是为了参考目的：自行研究机场地图，以及获取跳伞期间的天气状况的最新数据。\n\n与任何软件一样，这个应用程序可能因人为因素而出现错误和不完善。\n\n请记住，跳伞涉及生命风险。不遵守安全规定可能导致受伤甚至死亡。\n";
+"Info text start alert" = "\nSkydiveBook - 这并不是对应用程序用户是专业跳伞者的官方确认。\n\n它作为官方跳伞者书籍或证书的可选附加内容。\n\n在SkydiveBook中记录的跳伞次数不是这些跳伞的证据，不能作为发布官方文件、证书、等级的依据。\n\n该应用程序旨在用于个人使用，提供便利的跳伞体验和高级分析。\n\n关于主伞的负载数据是参考信息，不具备为选择降落伞设备的推荐性质。\n\n所有跳伞伞具操作许可必须由有效的教练员颁发。\n\n使用该应用程序获得的任何信息纯粹是为了参考目的：自行研究机场地图，以及获取跳伞期间的天气状况的最新数据。\n\n与任何软件一样，这个应用程序可能因人为因素而出现错误和不完善。\n\n请记住，跳伞涉及生命风险。不遵守安全规定可能导致受伤甚至死亡。\n\n我已阅读并同意。";
+"Agree" = "同意";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\n在应用程序的免费版本中，您可以保存50次跳伞记录。\n\n⭐️ ⭐️ ⭐️\n\n应用程序的高级版本允许您保存无限次跳伞记录。\n";
+"1 month" = "$9.99 / 月";
+"12 months" = "$49.99 / 年\n($4.16/月)";
+"Restore purchases" = "恢复购买";
+
+"Buy status" = "购买状态 / 已找到购买 / 未找到购买";
+"Restore Successful" = "恢复成功";
+"All purchases have been successfully restored." = "所有购买已成功恢复。";
+"Restore Failed" = "恢复失败";
+"Some purchases could not be restored. Please try again later." = "部分购买无法恢复。请稍后重试。";
+"No Purchases to Restore" = "没有购买可恢复";
+"There are no previous purchases to restore." = "没有可恢复的先前购买记录。";
+
+// ADAPTY:
+
+"No connection / adapty" = "无连接";
+"Message / adapty" = "需要保持网络连接才能接收数据。";
+
+"Alert / adapty status" = "需要高级版";
+"Message / adapty status" = "在免费版本中，您只能保存：\n\n50次跳伞记录。\n10条注释。\n1个系统。\n\n要移除所有限制，请在“设置”部分购买高级版。";
+
+// MARK: - SYSTEM:
+
+"System" = "系统";
+"Delete system?" = "删除系统？";
+"System empty message / system" = "您尚未添加任何降落伞系统。";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "降落区";
+"Message / drop zones" = "这里只会显示已验证的降落区。您可以通过Instagram添加您的位置。";
+"Map type" = "地图类型";
+"Standard / map type" = "标准";
+"Satellite / map type" = "卫星";
+"Hybrid / map type" = "混合";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "成功";
+"Error / alert kit" = "错误";
+
+"Jump added / alert kit" = "跳伞已添加";
+"Jump deleted / alert kit" = "跳伞已删除";
+"Jump updated / alert kit" = "跳伞已更新";
+
+"Note added / alert kit" = "备注已添加";
+"Note deleted / alert kit" = "备注已删除";
+
+"System added / alert kit" = "系统已添加";
+"System deleted / alert kit" = "系统已删除";
+"System updated / alert kit" = "系统已更新";
+
+"Backup saved / alert kit" = "备份已保存";
+"Backup upload / alert kit" = "备份已上传";
+
+"Location added / alert kit" = "位置已添加";
+"Location deleted / alert kit" = "位置已删除";
+
+"Aircraft added / alert kit" = "飞机已添加";
+"Aircraft deleted / alert kit" = "飞机已删除";
+
+"Canopy added / alert kit" = "天篷已添加";
+"Canopy deleted / alert kit" = "天篷已删除";
