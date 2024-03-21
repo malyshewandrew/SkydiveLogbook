@@ -538,7 +538,7 @@ final class MainVC: UIViewController {
         })
         loadingLottie.removeFromSuperview()
     }
-
+    
     // MARK: ALERT KIT SUCCESS:
 
     private func alertKitSuccess() {
@@ -549,6 +549,8 @@ final class MainVC: UIViewController {
             haptic: .success
         )
     }
+    
+    // MARK: - TRANSITIONS:
     
     // MARK: TRANSITION ON ACCOUNT VIEW CONTROLLER:
 
@@ -579,7 +581,7 @@ final class MainVC: UIViewController {
         present(dropzones, animated: true)
     }
 
-    // MARK: - TRANSITION ON SKYDIVERS VIEW CONTROLLER:
+    // MARK: TRANSITION ON SKYDIVERS VIEW CONTROLLER:
 
     @objc private func skydiversButtonTapped() {
         vibrationOn.vibrationStandart()

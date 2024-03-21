@@ -55,7 +55,7 @@ final class EditLocationsVC: UIViewController {
         enterTextTextField.translatesAutoresizingMaskIntoConstraints = false
         enterTextTextField.topAnchor.constraint(equalTo: locationLottie.bottomAnchor, constant: 0).isActive = true
         enterTextTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        enterTextTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        enterTextTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         enterTextTextField.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
 
         // MARK: SAVE BUTTON:

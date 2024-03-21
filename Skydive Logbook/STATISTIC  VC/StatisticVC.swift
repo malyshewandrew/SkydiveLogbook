@@ -280,6 +280,7 @@ extension StatisticVC: StatisticCellDelegate {
         imageLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
         imageLottie.widthAnchor.constraint(equalToConstant: 300).isActive = true
         imageLottie.play()
+        imageLottie.animationSpeed = 0.5
         imageLottie.loopMode = .loop
 
         present(alert, animated: true)
@@ -495,7 +496,7 @@ extension StatisticVC: StatisticCellDelegate {
                 if arrayJumpsRealm.count == 0 {
                     message = "\n" + NSLocalizedString("no jumps", comment: "")
                 } else {
-                    message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))\n\n \(date)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMin)\n\(time)\n\(cutaway)"
+                    message = "\n\(NSLocalizedString("First jump / statistic", comment: "")) \(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))\n\n \(date)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMin)\n\(time)\n\(cutaway)"
                 }
 
                 let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
@@ -594,7 +595,7 @@ extension StatisticVC: StatisticCellDelegate {
                 if arrayJumpsRealm.count == 0 {
                     message = "\n" + NSLocalizedString("no jumps", comment: "")
                 } else {
-                    message = "\n\(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))\n\n \(date)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMin)\n\(time)\n\(cutaway)"
+                    message = "\n\(NSLocalizedString("Last jump / statistic", comment: "")) \(year) \(NSLocalizedString("y.", comment: "")) \(month) \(NSLocalizedString("mon.", comment: "")) \(day) \(NSLocalizedString("d.", comment: "")) \(NSLocalizedString("ago", comment: ""))\n\n \(date)\n\(location)\n\(aircraft)\n\(canopy)\n\(mission)\n\(heightMin)\n\(time)\n\(cutaway)"
                 }
 
                 let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",

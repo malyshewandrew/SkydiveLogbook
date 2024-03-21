@@ -222,6 +222,8 @@
 "Average height" = "Average height";
 "Minimum height" = "Minimum height";
 "Minimum height alert" = "The jump with the minimum height of the compartment was completed";
+"First jump / statistic" = "The first jump was made";
+"Last jump / statistic" = "The last jump was made";
 "Max in one day" = "Max in one day";
 "Average height of jump" = "Average height of jump";
 "Average free fall time of jump" = "Average free fall time of jump";
@@ -339,6 +341,7 @@
 "Top 10:" = "Тop 10:";
 
 // MARK: - NewJump:
+
 "Add new jump / new jump" = "New jump";
 "Manual / new jump" = "To get started, go to the \"Settings\" section and enter the following data:\n\nLocations\nAircrafts\nCanopies";
 
@@ -479,6 +482,7 @@
 "Enter canopy" = "Name canopy";
 
 // MARK: - BACKUP:
+
 "Info / backup" = "\nThe backup copy saves all the data recorded in the application.\n
 It is recommended to make a backup copy from time to time so as not to lose the entered data.\n";
 "Backup / backup" = "Create backup";

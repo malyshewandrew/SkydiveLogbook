@@ -151,7 +151,6 @@ final class InfoVC: UIViewController {
         titleLabel.textAlignment = .center
         titleLabel.font = fontMediumStandard18
         
-        
         // MARK: SCROLL VIEW:
         
         scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
