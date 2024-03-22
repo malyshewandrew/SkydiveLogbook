@@ -16,6 +16,7 @@ final class InfoVC: UIViewController {
     private let privacyButton = UIButton()
     private let termsButton = UIButton()
     private let faqButton = UIButton()
+    private let languagesButton = UIButton()
     private let versionButton = UIButton()
     private let vibrationOn = Vibration()
     private var buildVersion = ""
@@ -34,7 +35,7 @@ final class InfoVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(infoBackground, infoBackgroundView, titleLabel, scrollView)
-        scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, versionButton)
+        scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, languagesButton, versionButton)
         infoTextView.addSubviews(infoTextLabel)
     }
     
@@ -76,7 +77,7 @@ final class InfoVC: UIViewController {
         
         infoTextView.translatesAutoresizingMaskIntoConstraints = false
         infoTextView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        infoTextView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 75).isActive = true
+        infoTextView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 20).isActive = true
         infoTextView.heightAnchor.constraint(greaterThanOrEqualTo: infoTextLabel.heightAnchor, constant: 10).isActive = true
         infoTextView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.7).isActive = true
         
@@ -112,10 +113,18 @@ final class InfoVC: UIViewController {
         faqButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         faqButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
         
-        // MARK: ALERT VERSION BUTTON:
+        // MARK: LANGUAGES BUTTON (ALERT):
+        
+        languagesButton.translatesAutoresizingMaskIntoConstraints = false
+        languagesButton.topAnchor.constraint(equalTo: faqButton.bottomAnchor, constant: 15).isActive = true
+        languagesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        languagesButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        languagesButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: VERSION BUTTON (ALERT):
 
         versionButton.translatesAutoresizingMaskIntoConstraints = false
-        versionButton.topAnchor.constraint(equalTo: faqButton.bottomAnchor, constant: 15).isActive = true
+        versionButton.topAnchor.constraint(equalTo: languagesButton.bottomAnchor, constant: 15).isActive = true
         versionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         versionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         versionButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
@@ -199,7 +208,16 @@ final class InfoVC: UIViewController {
         faqButton.titleLabel?.font = fontMediumStandard14
         faqButton.addTarget(self, action: #selector(faqButtonTapped), for: .touchUpInside)
         
-        // MARK: ALERT VERSION BUTTON:
+        // MARK: LANGUAGES BUTTON (ALERT):
+        
+        languagesButton.setTitle(NSLocalizedString("App language / info", comment: ""), for: .normal)
+        languagesButton.setTitleColor(.colorWhite, for: .normal)
+        languagesButton.layer.cornerRadius = cornerRadius15
+        languagesButton.backgroundColor = .colorCell
+        languagesButton.titleLabel?.font = fontMediumStandard14
+        languagesButton.addTarget(self, action: #selector(languagesButtonTapped), for: .touchUpInside)
+        
+        // MARK: VERSION BUTTON (ALERT):
 
         versionButton.setTitle(NSLocalizedString("App version", comment: ""), for: .normal)
         versionButton.setTitleColor(.colorWhite, for: .normal)
@@ -211,7 +229,16 @@ final class InfoVC: UIViewController {
     
     // MARK: - HELPERS:
     
-    // MARK: FUNC FOR ALERT VERSION BUTTON:
+    // MARK: FUNC FOR LANGUAGES BUTTON (ALERT):
+
+    @objc private func languagesButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let alert = UIAlertController(title: NSLocalizedString("App language / info", comment: ""), message: NSLocalizedString("App language text / info", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
+        present(alert, animated: true)
+    }
+    
+    // MARK: FUNC FOR VERSION BUTTON (ALERT):
 
     @objc private func versionButtonTapped() {
         vibrationOn.vibrationStandart()

@@ -1,0 +1,581 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "HAUPT";
+"Statistic tab bar" = "STATISTIK";
+"Add jump tab bar" = "NEUER SPRUNG";
+"System tab bar" = "SYSTEM";
+"Settings tab bar" = "EINSTELLUNGEN";
+
+// MARK: - MAIN:
+
+"Save" = "Speichern";
+"Clean" = "Löschen";
+"Close" = "Schließen";
+"Edit" = "Bearbeiten";
+"Delete" = "Löschen";
+"Calculate" = "Berechnen";
+"Update" = "Aktualisieren";
+"Settings iphone" = "Einstellungen";
+
+"Ok" = "Ok";
+"Yes" = "Ja";
+"No" = "Nein";
+
+"ago" = "vor";
+"back" = "Zurück";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "Meilen";
+"feet" = "Fuß";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "h.";
+"d." = "d.";
+"mon." = "mon.";
+"y." = "J.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nWillkommen bei SkydiveBook!\n\nUm loszulegen, müssen Sie mindestens eine hinzufügen:\n\nOrt\nFlugzeugtyp\nFallschirm\n\nim Abschnitt \"Einstellungen\"\n\nViel Spaß und sichere Sprünge!\n";
+"Delete jump?" = "Sprung löschen?";
+"This action cannot be undone." = "Diese Aktion kann nicht rückgängig gemacht werden.";
+
+"License" = "Lizenz";
+"until" = "bis";
+"Medicine until" = "Medizinisch bis";
+"Insurance until" = "Versicherung bis";
+"Reserve canopy until" = "Reserve Fallschirm bis";
+
+"Edit/add account" = "Um das Konto zu füllen, gehen Sie zum Abschnitt \"Einstellungen\".";
+
+// MARK: - NOTES:
+
+"New note" = "Neue Notiz";
+"Delete note?" = "Notiz löschen?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Keine Verbindung";
+"No connection message / weather" = "Für die Wettervorhersage ist eine aktive Internetverbindung erforderlich.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Böen bis zu";
+
+"Wind speed / weather" = "Windgeschwindigkeit";
+"Temperature / weather" = "Temperatur";
+"Cloud cover / weather" = "Wolkenbedeckung";
+"Humidity / weather" = "Luftfeuchtigkeit";
+"Dew point / weather" = "Taupunkt";
+"Visibility / weather" = "Sichtweite";
+"Precipitation / weather" = "Niederschlag";
+"Pressure / weather" = "Druck";
+"UvIndex / weather" = "UV-Index";
+"It feels like / weather" = "Gefühlte Temperatur";
+
+"Wind direction" = "Windrichtung";
+"Arrow wind direction" = "Der Pfeil zeigt die Windrichtung nahe dem Boden an Ihrem Standort an. Dies funktioniert nur bei aktiver Internetverbindung.";
+
+"Permission label / weather" = "Einstellungen iPhone -> SkydiveBook -> Standort (Berechtigung erteilen)";
+"Permission label alert / weather" = "Um die aktuelle Wettervorhersage anzuzeigen, müssen Sie die Erlaubnis zur Standortbestimmung erhalten. Dies kann in den Einstellungen erfolgen.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Windklassifikation";
+"Wind weather message / alert" = "Ruhig: < 0,3 m/s\nLeise: 0,3—1,5 m/s\nLeicht: 1,6—3,3 m/s\nMäßig: 3,4—5,4 m/s\nFrisch: 5,5—7,9 m/s\nStark: 8,0—10,7 m/s\nSturm: 20,8—24,4 m/s\nOrkan: >32,7 m/s";
+
+"Temperature weather title / alert" = "Gefühlt wie";
+"Temperature weather message / alert" = "Der Indikator „Gefühlt wie“ kann von der tatsächlichen Temperatur abweichen und zeigt an, wie die Temperatur von einer Person wahrgenommen wird. Der „Gefühlt wie“-Indikator wird von Windcharakteristiken und Feuchtigkeitsniveaus beeinflusst.";
+
+"Cloud cover weather title / alert" = "Bewölkung";
+"Cloud cover weather message / alert" = "Die Bewölkung wird als Prozentsatz gemessen. Sie wird in der Regel in den Teilen des Himmels ausgedrückt, die von Wolken bedeckt sind.";
+
+"Humidity weather title / alert" = "Luftfeuchtigkeit";
+"Humidity weather message / alert" = "Die relative Luftfeuchtigkeit oder einfach Luftfeuchtigkeit ist das Verhältnis der Menge an Feuchtigkeit in der Luft zur maximalen Menge, die die Luft enthalten kann.";
+
+"Dew point weather title / alert" = "Taupunkt";
+"Dew point weather message / alert" = "Der Taupunkt ist der Wert, auf den die Temperatur fallen muss, damit sich Tau bildet. Dies ist eine bequeme Möglichkeit, die Luftfeuchtigkeit zu bestimmen: Je höher der Taupunkt, desto feuchter fühlt sich die Luft an. Der Taupunkt, der mit der aktuellen Temperatur übereinstimmt, bedeutet, dass die relative Luftfeuchtigkeit der Luft 100% beträgt und sich Tau oder Nebel bilden können.";
+
+"Visibility weather title / alert" = "Sichtweite";
+"Visibility weather message / alert" = "Die Sichtbarkeit zeigt an, in welchem Abstand von Ihnen aus Sie Objekte wie Gebäude und Hügel deutlich sehen können. Die Sichtbarkeit ist ein Maß für die Luftdurchlässigkeit und berücksichtigt nicht die Menge des Sonnenlichts oder das Vorhandensein von Hindernissen.";
+
+"Precipitation weather title / alert" = "Niederschlag";
+"Precipitation weather message / alert" = "Die Menge des Niederschlags ist die Höhe der Wassertragschicht in Millimetern, die sich auf der Erdoberfläche bilden würde, wenn sie vollkommen flach wäre. Die Menge des Niederschlags in Millimetern entspricht numerisch der Masse des auf einer horizontalen Fläche von 1 Quadratmeter gefallenen Wassers.";
+
+"Pressure weather title / alert" = "Druck";
+"Pressure weather message / alert" = "Die Tabelle zeigt Abweichungen von der Drucknorm relativ zu Ihrem Standort. Der übliche Druck für Menschen beträgt 760 Millimeter Quecksilber. Aber der normale atmosphärische Druck für jede Person hängt von der Region ab, in der er sich befindet, und der Druck der Region hängt von der Höhe des Gebiets ab.";
+
+"UvIndex weather title / alert" = "UV-Index";
+"UvIndex weather message / alert" = "Der UV-Index (UFI), entwickelt von der Weltgesundheitsorganisation, zeigt die Stärke der ultravioletten Strahlung an. Je höher der UV-Index, desto gefährlicher ist es, in der Sonne zu sein, und desto schneller kann es Ihrer Gesundheit schaden. Durch die Verfolgung des UV-Index können Sie entscheiden, wann Sie sich vor der Sonne schützen müssen und wann es besser ist, nicht nach draußen zu gehen.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Windstille";
+"Weak wind / wind speed" = "Schwacher Wind";
+"Light wind / wind speed" = "Leichter Wind";
+"Quiet wind / wind speed" = "Ruhiger Wind";
+"Moderate wind / wind speed" = "Mäßiger Wind";
+"Fresh wind / wind speed" = "Frischer Wind";
+"Strong wind / wind speed" = "Starker Wind";
+"Hard wind / wind speed" = "Heftiger Wind";
+"Powerful wind / wind speed" = "Kraftvoller Wind";
+"Storm wind / wind speed" = "Sturm";
+"Hard storm wind / wind speed" = "Heftiger Sturm";
+"Hurricane wind / wind speed" = "Hurrikan";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Maximaltemperatur";
+"Min temperature / temperature" = "Minimaltemperatur";
+"Average temperature / temperature" = "Durchschnittstemperatur";
+"Feels like temperature / temperature" = "Gefühlte Temperatur";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Sehr trocken";
+"Dry air / humidity" = "Trocken";
+"Moderately dry air / humidity" = "Mäßig trocken";
+"Moderately humid air / humidity" = "Mäßig feucht";
+"Very humid air / humidity" = "Sehr feucht";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Klar";
+"Partly Cloudy / cloud cover" = "Teilweise bewölkt";
+"Variable Cloudiness / cloud cover" = "Wechselnde Bewölkung";
+"Cloudy / cloud cover" = "Bewölkt";
+"Overcast / cloud cover" = "Bedeckt";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Relativ trocken";
+"Moderately humid air / dew point" = "Mäßig feucht";
+"Humid air / dew point" = "Feucht";
+"Very humid air / dew point" = "Sehr feucht";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Ausgezeichnet";
+"Good / visibility" = "Gut";
+"Moderate / visibility" = "Mäßig";
+"Poor / visibility" = "Schlecht";
+"Very Poor / visibility" = "Sehr schlecht";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Sehr leicht";
+"Light / precipitation" = "Leicht";
+"Moderate / precipitation" = "Mäßig";
+"Heavy / precipitation" = "Schwer";
+"Very Heavy / precipitation" = "Sehr schwer";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Sehr niedrig";
+"Low / pressure" = "Niedrig";
+"Normal / pressure" = "Normal";
+"Hight / pressure" = "Hoch";
+"Very hight / pressure" = "Sehr hoch";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Niedrig";
+"Moderate / uv index" = "Mäßig";
+"Hight / uv index" = "Hoch";
+"Very high / uv index" = "Sehr hoch";
+"Excessive / uv index" = "Extrem";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Bewertung";
+"Nickname / skydivers" = "Spitzname";
+"Country / skydivers" = "Land";
+"Profile / skydivers" = "Profil";
+"Profession / skydivers" = "Beruf";
+"Count of jumps / skydivers" = "Anzahl der Sprünge";
+"First jump / skydivers" = "Erster Sprung";
+"About rating / skydivers" = "Mehr Informationen";
+"About rating message / skydivers" = "Die Community ist eine Selbstwerbung sowie eine Unterstützung für das Projekt.\nDetails auf Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Um Statistiken anzuzeigen, müssen Sie mindestens einen Sprung machen.";
+"saving data" = "Daten speichern";
+"saving data text" = "Um Ihre vollständige Sprunggeschichte zu speichern, wird empfohlen, regelmäßig Backups im Abschnitt \"Einstellungen\" zu erstellen. \nDies ist besonders wichtig beim Wechsel zu einem neuen Gerät.";
+"jumps by year" = "Sprünge nach Jahr";
+"year" = "Jahr";
+"Categories USPA" = "Kategorien";
+"Categories USPA List" = "\nA: 25 Sprünge\nFreifallzeit: 10 min. (600s.)\n\nB: 50 Sprünge\nFreifallzeit: 30 min. (1800s.)\n\nC: 200 Sprünge\nFreifallzeit: 60 min. (3600s.)\n\nD: 500 Sprünge\nFreifallzeit: 180 min. (10800s.)\n";
+"Maximum time" = "Maximale Zeit";
+"Maximum time alert" = "Der Sprung mit der längsten Freifallzeit wurde abgeschlossen";
+"Maximum height" = "Maximale Höhe";
+"Maximum height alert" = "Der Sprung mit der maximalen Höhe des Abteils wurde abgeschlossen";
+"Average height" = "Durchschnittliche Höhe";
+"Minimum height" = "Mindesthöhe";
+"Minimum height alert" = "Der Sprung mit der minimalen Höhe des Abteils wurde abgeschlossen";
+"First jump / statistic" = "Der erste Sprung wurde gemacht";
+"Last jump / statistic" = "Der letzte Sprung wurde gemacht";
+"Max in one day" = "Max an einem Tag";
+"Average height of jump" = "Durchschnittliche Höhe des Sprungs";
+"Average free fall time of jump" = "Durchschnittliche Freifallzeit des Sprungs";
+"Average time" = "Durchschnittliche Zeit des Sprungs";
+"Max count of jumps" = "Anzahl der Sprünge";
+"Max count of jumps text" = "Die maximale Anzahl von Sprüngen an einem Tag wurde absolviert";
+"Jumps no found" = "Keine Sprünge gefunden";
+"Сount of cutaways" = "Anzahl der Aussetzer";
+"Date last jump" = "Letzter Sprung";
+"Date first jump" = "Erster Sprung";
+"List aircrafts" = "Liste der Flugzeuge";
+"List canopies" = "Liste der Schirme";
+"List locations" = "Liste der Orte";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Allgemeine Informationen";
+"Total height" = "Gesamthöhe";
+"Total time" = "Gesamtzeit";
+"Total jumps" = "Gesamtsprünge";
+"In this year" = "In diesem Jahr";
+"Category" = "Kategorie";
+
+"Average info" = "Durchschnittsinformationen";
+
+"Max. height" = "Max. Höhe";
+"Av. height" = "Durchschn. Höhe";
+"Min. height" = "Min. Höhe";
+"First jump" = "Erster Sprung";
+"Max. time" = "Max. Zeit";
+"Last jump" = "Letzter Sprung";
+"Max. in day" = "Max. an einem Tag";
+"Av. time" = "Durchschn. Zeit";
+"CutawayStatistic" = "Absetzer";
+"Count cutaway" = "Anzahl der Absetzer";
+"Aircraft" = "Flugzeugtyp";
+"Canopies" = "Fallschirme";
+"Locations" = "Orte";
+"Missions" = "Missionen";
+
+"Accuracy" = "Präzision";
+"Acrobatics" = "Akrobatik";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Kappenschleifen";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "Spaß";
+"Group" = "Gruppensprung";
+"Instructor" = "Instruktor";
+"Military" = "Militär";
+"Para-ski" = "Para-Ski";
+"Proximity" = "Nähe";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Static-line";
+"Piloting" = "Pilotierung";
+"Tandem" = "Tandemsprung";
+"Vertical" = "Vertikal";
+"Video" = "Video";
+"Wingsuit" = "Wingsuit";
+"Formation" = "Formation";
+"Top 10:" = "Top 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Neuer Sprung";
+"Manual / new jump" = "Um zu beginnen, gehen Sie zum Abschnitt \"Einstellungen\" und geben Sie die folgenden Daten ein:\n\nOrte\nFlugzeuge\nFallschirme";
+
+// MARK: - CellNewJump:
+
+"Date" = "Datum";
+"Location" = "Ort";
+"Aircraft" = "Flugzeug";
+"Canopy" = "Fallschirm";
+"Mission" = "Mission";
+"Height" = "Höhe";
+"Time" = "Zeit";
+"Cutaway" = "Absetzer";
+"Comment" = "Kommentar";
+
+"Date placeholder" = "tt.mm.jjjj";
+"Location placeholder" = "Sprungzone";
+"Aircraft placeholder" = "Flugzeugtyp";
+"Canopy placeholder" = "Hauptfallschirm";
+"Mission placeholder" = "Art des Sprungs";
+"Height placeholder" = "Meter";
+"Time placeholder" = "Sekunden";
+"Cutaway placeholder" = "Nein / Ja";
+"Comment placeholder" = "Optional";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Ein neues System hinzufügen";
+"Comment" = "Kommentar";
+"No comments" = "Keine Kommentare gefunden";
+"Container system" = "Container-System";
+"AAD system" = "Versicherungsgerät";
+"Main canopy system" = "Haupt-Fallschirm";
+"Reserve canopy system" = "Reserve-Fallschirm";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Nummer";
+"DOM system" = "Herstellungsdatum";
+"Service life system" = "Lebensdauer";
+"Valid until system" = "Gültig bis";
+"Counts of the jumps system" = "Anzahl der Sprünge";
+"Resource system" = "Ressource";
+"Counts of repack system" = "Anzahl der Packungen";
+"Packed system" = "Verpackt";
+
+"years system" = "Jahre";
+"jumps system" = "Sprünge";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "System hinzufügen";
+"Container alert" = "Container";
+"AAD alert" = "Versicherungsgerät";
+"Main canopy alert" = "Haupt-Fallschirm";
+"Reserve canopy alert" = "Reserve-Fallschirm";
+
+"Name and model container alert" = "Name und Modell Behälter";
+"Name and model AAD alert" = "Name und Modell des Versicherungsgeräts";
+"Name and model main canopy alert" = "Name und Modell Haupt-Fallschirm. Sie müssen es zuerst im Bereich \"Einstellungen\" -> \"Fallschirme bearbeiten\" hinzufügen";
+"Name and model reserve canopy alert" = "Name und Modell Reserve-Fallschirm";
+
+"DOM alert" = "Herstellungsdatum";
+"Serial number alert" = "Seriennummer";
+"Warranty resource container alert" = "Garantielebensdauer (normalerweise gibt der Hersteller 10-20 Jahre an oder gemäß technischem Zustand)";
+"Warranty resource AAD alert" = "Garantielebensdauer (die garantierte Anzahl von Jahren oder die Anzahl der Jahre vor der routinemäßigen Wartung)";
+"Warranty resource main canopy alert" = "Garantielebensdauer in Jahren (normalerweise gibt der Hersteller 10-20 Jahre an oder gemäß technischem Zustand)";
+"Warranty resource jumps main canopy alert" = "Die Garantielebensdauer für Sprünge (normalerweise gibt der Hersteller 500 Sprünge an oder gemäß technischem Zustand bis zu 1000 Sprünge)";
+"Counts of jumps main canopy alert" = "Anzahl der Anwendungen (wenn der Fallschirm nicht neu gekauft wurde und bereits Sprünge damit gemacht wurden, geben Sie diese Zahl an). Zur korrekten Berechnung ist es notwendig, nur die Anzahl der Sprünge anzugeben, die nicht zuvor in der allgemeinen Sprungliste dieser Anwendung erfasst wurden)";
+"Warranty resource reserve canopy alert" = "Garantielebensdauer (normalerweise gibt der Hersteller 10-20 Jahre an oder gemäß technischem Zustand)";
+"Counts of repack reserve canopy alert" = "Wenn der Fallschirm nicht neu gekauft wurde und bereits verpackt wurde, geben Sie diese Menge an";
+"Date of pack reserve canopy alert" = "Datum der Verpackung";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Namenssystem";
+"Name / new system cell" = "Name";
+"Container / new system cell" = "Container";
+"Name container / new system cell" = "Name Behälter";
+
+"DOM / new system cell" = "Herstellungsdatum";
+"Date mm.yyyy / new system cell" = "mm.yyyy";
+"Serial number / new system cell" = "Seriennummer";
+"Warranty resource / new system cell" = "Garantieressource";
+"Counts of years / new system cell" = "Jahreszählung";
+"Counts of jumps / new system cell" = "Sprünge zählen";
+
+"AAD / new system cell" = "versicherungsgerät";
+"Name AAD / new system cell" = "Name des Versicherungsgeräts";
+
+"Main canopy / new system cell" = "Hauptkappe";
+"Name main canopy / new system cell" = "Name Kappe";
+"Counts of jumps main canopy / new system cell" = "Sprünge zählen";
+"The value of the purchase / new system cell" = "Kaufwert";
+
+"Reserve canopy / new system cell" = "Reservekappe";
+"Name reserve canopy / new system cell" = "Name Kappe";
+"Counts of repack reserve canopy / new system cell" = "Nachpackungen zählen";
+"Date of packing reserve canopy / new system cell" = "Verpackungsdatum";
+"Date dd.mm.yyyy / new system cell" = "tt.mm.jjjj";
+"Count / new system cell" = "Anzahl";
+
+"Comment / new system cell" = "Kommentar";
+"Optional / new system cell" = "Optional (Zustand der Leinen usw.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Konto bearbeiten";
+"Edit locations" = "Standorte bearbeiten";
+"Delete location?" = "Standort löschen?";
+"Edit aircrafts" = "Flugzeuge bearbeiten";
+"Delete aircraft?" = "Flugzeug löschen?";
+"Edit canopies" = "Kappen bearbeiten";
+"Drop zones" = "Sprungplätze";
+"Delete canopy?" = "Kappe löschen?";
+"Backup copy" = "Sicherungskopie";
+"Calculator loading" = "Rechner laden";
+"Information" = "Information";
+"Premium version" = "Premium-Version";
+"Share the app" = "App teilen";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Spitzname";
+"Name user / edit account vc" = "Benutzername";
+"License / edit account vc" = "Lizenz";
+"Type / number / edit account vc" = "Typ / Nummer";
+"Valid until / edit account vc" = "Gültig bis";
+"Date / dd.mm.yyyy / edit account vc" = "tt.mm.jjjj";
+"Medicine / edit account vc" = "Medikament";
+"Insurance / edit account vc" = "Versicherung";
+"Reserve canopy / edit account vc" = "Reservekappe";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Sprungplatzname eingeben";
+"Enter aircraft" = "Flugzeugname eingeben";
+"Enter canopy" = "Kappenname eingeben";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nDie Sicherungskopie speichert alle Daten, die in der Anwendung erfasst wurden.\nEs wird empfohlen, von Zeit zu Zeit eine Sicherungskopie zu erstellen, um die eingegebenen Daten nicht zu verlieren.\n";
+"Backup / backup" = "Sicherung erstellen";
+"Restore / backup" = "Wiederherstellen";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Gesamtgewicht";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "Quadrat-Kappe";
+"1-50A" = "\nFallschirmtyp: Student.\nKategorie: A.\nAnzahl der Sprünge: 1-50 Sprünge.\n";
+"51-200B" = "\nFallschirmtyp: Übergang.\nKategorie: B.\nAnzahl der Sprünge: 51-200 Sprünge.\n";
+"201-500C" = "\nFallschirmtyp: Mittelschnell.\nKategorie: C.\nAnzahl der Sprünge: 201-500 Sprünge.\n";
+"501-1000D1" = "\nFallschirmtyp: Schnell/elliptisch.\nKategorie: D.\nAnzahl der Sprünge: 501-1000 Sprünge.\n";
+"1000D2" = "\nFallschirmtyp: Hochgeschwindigkeit.\nKategorie: D.\nAnzahl der Sprünge: 1000+ Sprünge.\n";
+"1000D3" = "\nFallschirmtyp: Hochgeschwindigkeit/Crossbraced.\nKategorie: D.\nAnzahl der Sprünge: 1000+ Sprünge.\n";
+
+// MARK: - INFO:
+
+"App version" = "Über die Anwendung";
+"Version / info" = "Version";
+"Build / info" = "Build";
+"Privacy policy" = "Datenschutzbestimmungen";
+"Terms of use" = "Nutzungsbedingungen";
+"FAQ" = "FAQ";
+"App language / info" = "Anwendungssprache";
+"App language text / info" = "Diese Anwendung verwendet die auf Ihrem Telefon als Haupt eingestellte Sprache. Wenn Ihre Sprache von der Anwendung nicht unterstützt wird, wird standardmäßig Englisch verwendet.\n\nListe der unterstützten Sprachen:\nArabisch\nEnglisch\nFranzösisch\nHindi\nSpanisch\nItalienisch\nJapanisch\nChinesisch\nDeutsch\nPortugiesisch\nRussisch\n\nDie Übersetzung wurde mit künstlicher Intelligenz durchgeführt, daher können Fehler auftreten.\nWenn Sie das Projekt unterstützen und die App in Ihre Sprache übersetzen oder bei der Fehlerbehebung helfen möchten, wenden Sie sich bitte an den Entwickler.";
+"Info text" = "\nSkydiveBook - Es handelt sich nicht um eine offizielle Bestätigung, dass der Benutzer der Anwendung ein professioneller Fallschirmspringer ist.\n\nEs dient als optionale Ergänzung zum offiziellen Fallschirmbuch oder Zertifikat eines Fallschirmspringers jeder Kategorie.\n\nDie in SkydiveBook erfassten Sprünge sind kein Nachweis für diese Sprünge und können nicht als Grundlage für die Ausstellung offizieller Dokumente, Zertifikate oder Kategorien angesehen werden.\n\nDie Anwendung ist für den persönlichen Gebrauch, die Bequemlichkeit beim Fallschirmspringen und fortgeschrittene Analysen konzipiert.\n\nDie Daten zur Beladung des Hauptdoms sind Referenzinformationen und haben keine empfehlende Wirkung für die Auswahl von Fallschirmausrüstung.\n\nAlle Genehmigungen für den Betrieb von Fallschirmen müssen von einem gültigen Ausbilder ausgestellt werden.\n\nAlle Informationen, die durch die Verwendung der Anwendung erhalten werden, dienen ausschließlich Referenzzwecken: Studieren Sie die Flugplatzkarte selbst und erhalten Sie aktuelle Daten zu den Wetterbedingungen während der Sprünge.\n\nWie jede Software kann auch diese Anwendung aufgrund des menschlichen Faktors Fehler machen und unvollkommen sein.\n\nDenken Sie daran, dass Fallschirmspringen ein Risiko für das Leben birgt. Die Nichteinhaltung von Sicherheitsvorschriften kann zu Verletzungen und sogar zum Tod führen.\n";
+"Info text start alert" = "\nSkydiveBook - Es handelt sich nicht um eine offizielle Bestätigung, dass der Benutzer der Anwendung ein professioneller Fallschirmspringer ist.\n\nEs dient als optionale Ergänzung zum offiziellen Fallschirmbuch oder Zertifikat eines Fallschirmspringers jeder Kategorie.\n\nDie in SkydiveBook erfassten Sprünge sind kein Nachweis für diese Sprünge und können nicht als Grundlage für die Ausstellung offizieller Dokumente, Zertifikate oder Kategorien angesehen werden.\n\nDie Anwendung ist für den persönlichen Gebrauch, die Bequemlichkeit beim Fallschirmspringen und fortgeschrittene Analysen konzipiert.\n\nDie Daten zur Beladung des Hauptdoms sind Referenzinformationen und haben keine empfehlende Wirkung für die Auswahl von Fallschirmausrüstung.\n\nAlle Genehmigungen für den Betrieb von Fallschirmen müssen von einem gültigen Ausbilder ausgestellt werden.\n\nAlle Informationen, die durch die Verwendung der Anwendung erhalten werden, dienen ausschließlich Referenzzwecken: Studieren Sie die Flugplatzkarte selbst und erhalten Sie aktuelle Daten zu den Wetterbedingungen während der Sprünge.\n\nWie jede Software kann auch diese Anwendung aufgrund des menschlichen Faktors Fehler machen und unvollkommen sein.\n\nDenken Sie daran, dass Fallschirmspringen ein Risiko für das Leben birgt. Die Nichteinhaltung von Sicherheitsvorschriften kann zu Verletzungen und sogar zum Tod führen.\n\nIch habe es gelesen und stimme zu.";
+"Agree" = "Zustimmen";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nIn der kostenlosen Version der App können Sie 50 Sprünge speichern.\n\n⭐️ ⭐️ ⭐️\n\nDie Premium-Version der App ermöglicht es Ihnen, eine unbegrenzte Anzahl von Sprüngen zu speichern.\n";
+"1 month" = "$9,99 / Monat";
+"12 months" = "$49,99 / Jahr\n($4,16/Monat)";
+"Restore purchases" = "Käufe wiederherstellen";
+
+"Buy status" = "Kaufen finden / Kaufen nicht finden";
+"Restore Successful" = "Wiederherstellen erfolgreich";
+"All purchases have been successfully restored." = "Alle Käufe wurden erfolgreich wiederhergestellt.";
+"Restore Failed" = "Wiederherstellen fehlgeschlagen";
+"Some purchases could not be restored. Please try again later." = "Einige Käufe konnten nicht wiederhergestellt werden. Bitte versuchen Sie es später erneut.";
+"No Purchases to Restore" = "Keine Käufe zum Wiederherstellen";
+"There are no previous purchases to restore." = "Es gibt keine vorherigen Käufe zum Wiederherstellen.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Keine Verbindung";
+"Message / adapty" = "Für den Empfang von Daten ist eine aktive Internetverbindung erforderlich.";
+
+"Alert / adapty status" = "Premium erforderlich";
+"Message / adapty status" = "In der kostenlosen Version können Sie nur speichern:\n\n50 Sprünge.\n10 Notizen.\n1 System.\n\nUm alle Einschränkungen zu entfernen, kaufen Sie PREMIUM im Abschnitt \"Einstellungen\".";
+
+// MARK: - SYSTEM:
+
+"System" = "SYSTEM";
+"Delete system?" = "System löschen?";
+"System empty message / system" = "Sie haben noch keine Fallschirmsysteme hinzugefügt.";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "Sprungplätze";
+"Message / drop zones" = "Hier werden nur verifizierte Sprungplätze angezeigt. Sie können Ihren Standort hinzufügen, indem Sie uns auf Instagram schreiben.";
+"Map type" = "Kartentyp";
+"Standard / map type" = "Standard";
+"Satellite / map type" = "Satellit";
+"Hybrid / map type" = "Hybrid";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Erfolg";
+"Error / alert kit" = "Fehler";
+
+"Jump added / alert kit" = "Sprung hinzugefügt";
+"Jump deleted / alert kit" = "Sprung gelöscht";
+"Jump updated / alert kit" = "Sprung aktualisiert";
+
+"Note added / alert kit" = "Notiz hinzugefügt";
+"Note deleted / alert kit" = "Notiz gelöscht";
+
+"System added / alert kit" = "System hinzugefügt";
+"System deleted / alert kit" = "System gelöscht";
+"System updated / alert kit" = "System aktualisiert";
+
+"Backup saved / alert kit" = "Backup gespeichert";
+"Backup upload / alert kit" = "Backup hochladen";
+
+"Location added / alert kit" = "Standort hinzugefügt";
+"Location deleted / alert kit" = "Standort gelöscht";
+
+"Aircraft added / alert kit" = "Flugzeug hinzugefügt";
+"Aircraft deleted / alert kit" = "Flugzeug gelöscht";
+
+"Canopy added / alert kit" = "Fallschirm hinzugefügt";
+"Canopy deleted / alert kit" = "Fallschirm gelöscht";

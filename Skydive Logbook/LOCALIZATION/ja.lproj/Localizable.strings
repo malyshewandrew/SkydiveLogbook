@@ -1,0 +1,581 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "メイン";
+"Statistic tab bar" = "統計";
+"Add jump tab bar" = "新しいジャンプ";
+"System tab bar" = "システム";
+"Settings tab bar" = "設定";
+
+// MARK: - MAIN:
+
+"Save" = "保存";
+"Clean" = "クリーン";
+"Close" = "閉じる";
+"Edit" = "編集";
+"Delete" = "削除";
+"Calculate" = "計算";
+"Update" = "更新";
+"Settings iphone" = "設定";
+
+"Ok" = "はい";
+"Yes" = "はい";
+"No" = "いいえ";
+
+"ago" = "前";
+"back" = "戻る";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "マイル";
+"feet" = "フィート";
+
+// MARK: - MEASURING TIME:
+
+"s." = "秒";
+"min." = "分";
+"h." = "時間";
+"d." = "日";
+"mon." = "月";
+"y." = "年";
+
+// MARK: - MAIN:
+
+"First Message" = "\nSkydiveBookへようこそ！\n\n始めるには、少なくとも1つの次を追加する必要があります:\n\nロケーション\n航空機の種類\nキャノピー\n\n\"設定\"セクションで\n\nお楽しみください、そして安全なジャンプを！\n";
+"Delete jump?" = "ジャンプを削除しますか？";
+"This action cannot be undone." = "この操作は元に戻せません。";
+
+"License" = "ライセンス";
+"until" = "まで";
+"Medicine until" = "薬の有効期限";
+"Insurance until" = "保険の有効期限";
+"Reserve canopy until" = "予備キャノピーの有効期限";
+
+"Edit/add account" = "アカウントを入力するには、「設定」セクションに移動してください。";
+
+// MARK: - NOTES:
+
+"New note" = "新しいノート";
+"Delete note?" = "ノートを削除しますか？";
+
+// MARK: - WEATHER:
+
+"No connection" = "接続なし";
+"No connection message / weather" = "天気予報データを受信するには、インターネット接続が必要です。";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "最大風速";
+
+"Wind speed / weather" = "風速";
+"Temperature / weather" = "気温";
+"Cloud cover / weather" = "雲量";
+"Humidity / weather" = "湿度";
+"Dew point / weather" = "露点";
+"Visibility / weather" = "視程";
+"Precipitation / weather" = "降水量";
+"Pressure / weather" = "気圧";
+"UvIndex / weather" = "UV指数";
+"It feels like / weather" = "体感温度";
+
+"Wind direction" = "風向";
+"Arrow wind direction" = "矢印は、あなたのいる場所の地上付近の風向を示します。アクティブなインターネット接続が必要です。";
+
+"Permisson label / weather" = "設定iPhone -> SkydiveBook -> 位置情報（許可を与える）";
+"Permisson label alert / weather" = "現在の天気予報を表示するには、位置情報を取得する許可が必要です。設定で行えます。";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "風の分類";
+"Wind weather message / alert" = "穏やか：＜0.3 m/s\n静か：0.3—1.5 m/s\n軽い：1.6—3.3 m/s\n中程度：3.4—5.4 m/s\n新鮮な：5.5—7.9 m/s\n強い：8.0—10.7 m/s\n近狂：10.8—13.8 m/s\n狂風：13.9—17.1 m/s\n強烈な狂風：17.2—20.7 m/s\n嵐：20.8—24.4 m/s\n猛烈な嵐：24.5—28.4 m/s\nハリケーン：＞32.7 m/s";
+
+"Temperature weather title / alert" = "体感温度";
+"Temperature weather message / alert" = "指標「体感温度」は、実際の気温と異なる場合があり、気温が人にどのように感じられるかを反映しています。 「体感温度」指標は、風の特性や湿度レベルに影響を受けます。";
+
+"Cloud cover weather title / alert" = "雲量";
+"Cloud cover weather message / alert" = "雲量はパーセンテージで測定されます。通常は、雲に覆われた空の部分を示します。";
+
+"Humidity weather title / alert" = "湿度";
+"Humidity weather message / alert" = "相対湿度、または単に湿度は、空気中の水分量と、空気中に含まれる最大量の比率です。";
+
+"Dew point weather title / alert" = "露点";
+"Dew point weather message / alert" = "露点は、露が形成されるために温度が下がる値です。これは空気の湿度を決定する便利な方法です：露点が高いほど、空気はより湿気を感じます。現在の温度と一致する露点は、空気の相対湿度が100％であり、露や霧が発生する可能性があることを意味します。";
+
+"Visibility weather title / alert" = "視程";
+"Visibility weather message / alert" = "視程は、自分からどの程度の距離で建物や丘などの物体がはっきり見えるかを示します。 視程は空気の透明度の尺度であり、日光の量や障害物の存在を考慮に入れません。";
+
+"Precipitation weather title / alert" = "降水量";
+"Precipitation weather message / alert" = "降水量は、完全に平坦な地球上に水層の高さをミリメートル単位で示します。 ミリメートル単位の降水量は、1平方メートルの水平な表面に降った水の質量と数値的に等しいです。";
+
+"Pressure weather title / alert" = "気圧";
+"Pressure weather message / alert" = "表は、あなたの位置に対する気圧規格からの偏差を示しています。 人々の通常の気圧は、水銀柱760ミリメートルです。 ただし、各人の通常の気圧は、彼がいる地域に依存し、その地域の気圧はその地域の高度に依存します。";
+
+"UvIndex weather title / alert" = "UV指数";
+"UvIndex weather message / alert" = "世界保健機関が開発したUV指数（UFI）は、紫外線の力を示します。 UV指数が高いほど、太陽の下でいることがより危険であり、健康に害を与える速さが増します。 UV指数を追跡することで、太陽から身を守る時期を決定し、外出しない方が良い時期を知ることができます。";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "静穏";
+"Weak wind / wind speed" = "弱い風";
+"Light wind / wind speed" = "軽い風";
+"Quiet wind / wind speed" = "静かな風";
+"Moderate wind / wind speed" = "穏やかな風";
+"Fresh wind / wind speed" = "新鮮な風";
+"Strong wind / wind speed" = "強い風";
+"Hard wind / wind speed" = "強風";
+"Powerful wind / wind speed" = "パワフルな風";
+"Storm wind / wind speed" = "嵐";
+"Hard storm wind / wind speed" = "強烈な嵐";
+"Hurricane wind / wind speed" = "ハリケーン";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "最高気温";
+"Min temperature / temperature" = "最低気温";
+"Average temperature / temperature" = "平均気温";
+"Feels like temperature / temperature" = "体感温度";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "非常に乾燥";
+"Dry air / humidity" = "乾燥";
+"Moderately dry air / humidity" = "やや乾燥";
+"Moderately humid air / humidity" = "やや湿気";
+"Very humid air / humidity" = "非常に湿気";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "晴れ";
+"Partly Cloudy / cloud cover" = "一部曇り";
+"Variable Cloudiness / cloud cover" = "変わりやすい";
+"Cloudy / cloud cover" = "曇り";
+"Overcast / cloud cover" = "曇天";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "比較的乾燥";
+"Moderately humid air / dew point" = "やや湿気";
+"Humid air / dew point" = "湿気";
+"Very humid air / dew point" = "非常に湿気";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "優れた";
+"Good / visibility" = "良好な";
+"Moderate / visibility" = "適度な";
+"Poor / visibility" = "悪い";
+"Very Poor / visibility" = "非常に悪い";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "非常に軽い";
+"Light / precipitation" = "軽い";
+"Moderate / precipitation" = "適度な";
+"Heavy / precipitation" = "重い";
+"Very Heavy / precipitation" = "非常に重い";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "非常に低い";
+"Low / pressure" = "低い";
+"Normal / pressure" = "正常";
+"Hight / pressure" = "高い";
+"Very hight / pressure" = "非常に高い";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "低い";
+"Moderate / uv index" = "適度な";
+"Hight / uv index" = "高い";
+"Very high / uv index" = "非常に高い";
+"Excessive / uv index" = "過剰";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "評判";
+"Nickname / skydivers" = "ニックネーム";
+"Country / skydivers" = "国";
+"Profile / skydivers" = "プロフィール";
+"Profession / skydivers" = "職業";
+"Count of jumps / skydivers" = "ジャンプ回数";
+"First jump / skydivers" = "最初のジャンプ";
+"About rating / skydivers" = "詳細情報";
+"About rating message / skydivers" = "コミュニティは自己宣伝であり、プロジェクトへの支援でもあります。\nInstagramで詳細を確認してください。";
+
+// MARK: - Statistic:
+
+"no jumps" = "統計を表示するには、少なくとも1回ジャンプする必要があります。";
+"saving data" = "データを保存中";
+"saving data text" = "完全なジャンプ履歴を保存するには、「設定」セクションで定期的にバックアップを作成することをお勧めします。\n特に新しいデバイスに切り替える場合に重要です。";
+"jumps by year" = "年別ジャンプ";
+"year" = "年";
+"Categories USPA" = "カテゴリ";
+"Categories USPA List" = "\nA: 25回ジャンプ\nフリーフォール時間：10分（600秒）\n\nB: 50回ジャンプ\nフリーフォール時間：30分（1800秒）\n\nC: 200回ジャンプ\nフリーフォール時間：60分（3600秒）\n\nD: 500回ジャンプ\nフリーフォール時間：180分（10800秒）\n";
+"Maximum time" = "最大時間";
+"Maximum time alert" = "最大フリーフォール時間のジャンプが完了しました";
+"Maximum height" = "最大高度";
+"Maximum height alert" = "コンパートメントの最大高度のジャンプが完了しました";
+"Average height" = "平均高度";
+"Minimum height" = "最低高度";
+"Minimum height alert" = "コンパートメントの最低高度のジャンプが完了しました";
+"First jump / statistic" = "最初のジャンプが行われました";
+"Last jump / statistic" = "最後のジャンプが行われました";
+"Max in one day" = "1日の最大ジャンプ数";
+"Average height of jump" = "ジャンプの平均高度";
+"Average free fall time of jump" = "ジャンプの平均フリーフォール時間";
+"Average time" = "ジャンプの平均時間";
+"Max count of jumps" = "最大ジャンプ回数";
+"Max count of jumps text" = "1日の最大ジャンプ回数を完了しました";
+"Jumps no found" = "ジャンプが見つかりませんでした";
+"Сount of cutaways" = "カットアウェイの回数";
+"Date last jump" = "最終ジャンプ日";
+"Date first jump" = "最初のジャンプ日";
+"List aircrafts" = "航空機の一覧";
+"List canopies" = "キャノピーの一覧";
+"List locations" = "ロケーションの一覧";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "一般情報";
+"Total height" = "合計高度";
+"Total time" = "合計時間";
+"Total jumps" = "合計ジャンプ回数";
+"In this year" = "今年の";
+"Category" = "カテゴリ";
+
+"Average info" = "平均情報";
+
+"Max. height" = "最大高度";
+"Av. height" = "平均高度";
+"Min. height" = "最低高度";
+"First jump" = "最初のジャンプ";
+"Max. time" = "最大時間";
+"Last jump" = "最後のジャンプ";
+"Max. in day" = "1日の最大";
+"Av. time" = "平均時間";
+"CutawayStatistic" = "カットアウェイ";
+"Count cutaway" = "カットアウェイの回数";
+"Aircraft" = "航空機";
+"Canopies" = "キャノピー";
+"Locations" = "ロケーション";
+"Missions" = "ミッション";
+
+"Accuracy" = "精度";
+"Acrobatics" = "曲芸";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "キャノピー形成";
+"Freefly" = "フリーフライ";
+"Freestyle" = "フリースタイル";
+"Fun" = "楽しい";
+"Group" = "グループ";
+"Instructor" = "インストラクター";
+"Military" = "軍事";
+"Para-ski" = "パラスキー";
+"Proximity" = "プロキシミティ";
+"Skysurfing" = "スカイサーフィン";
+"Static-line" = "スタティックライン";
+"Piloting" = "パイロティング";
+"Tandem" = "タンデム";
+"Vertical" = "垂直";
+"Video" = "ビデオ";
+"Wingsuit" = "ウイングスーツ";
+"Formation" = "フォーメーション";
+"Top 10:" = "トップ10：";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "新しいジャンプ";
+"Manual / new jump" = "始めるには、「設定」セクションに移動し、次のデータを入力してください：\n\nロケーション\n航空機\nキャノピー";
+
+// MARK: - CellNewJump:
+
+"Date" = "日付";
+"Location" = "場所";
+"Aircraft" = "航空機";
+"Canopy" = "キャノピー";
+"Mission" = "ミッション";
+"Height" = "高度";
+"Time" = "時間";
+"Cutaway" = "カットアウェイ";
+"Comment" = "コメント";
+
+"Date placeholder" = "dd.mm.yyyy";
+"Location placeholder" = "ドロップゾーン";
+"Aircraft placeholder" = "機種";
+"Canopy placeholder" = "メインキャノピー";
+"Mission placeholder" = "ジャンプタイプ";
+"Height placeholder" = "メートル";
+"Time placeholder" = "秒";
+"Cutaway placeholder" = "No / Yes";
+"Comment placeholder" = "任意";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "新しいシステムを追加";
+"Comment" = "コメント";
+"No comments" = "コメントが見つかりません";
+"Container system" = "コンテナ";
+"AAD system" = "安全装置";
+"Main canopy system" = "メインキャノピー";
+"Reserve canopy system" = "リザーブキャノピー";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "番号";
+"DOM system" = "DOM";
+"Service life system" = "寿命";
+"Valid until system" = "有効期限";
+"Counts of the jumps system" = "ジャンプ回数";
+"Resource system" = "リソース";
+"Counts of repack system" = "リパック回数";
+"Packed system" = "パックされた";
+
+"years system" = "年";
+"jumps system" = "ジャンプ";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "システムを追加";
+"Container alert" = "コンテナ";
+"AAD alert" = "安全装置";
+"Main canopy alert" = "メインキャノピー";
+"Reserve canopy alert" = "リザーブキャノピー";
+
+"Name and model container alert" = "コンテナの名前とモデル";
+"Name and model AAD alert" = "安全装置の名前とモデル";
+"Name and model main canopy alert" = "メインキャノピーの名前とモデル。最初に「設定」->「キャノピー編集」セクションに追加する必要があります";
+"Name and model reserve canopy alert" = "リザーブキャノピーの名前とモデル";
+
+"DOM alert" = "製造年月日";
+"Serial number alert" = "シリアル番号";
+"Warranty resource container alert" = "保証寿命（通常、メーカーが10〜20年、または技術状態に従って指定します）";
+"Warranty resource AAD alert" = "保証の生命（定期整備の前の保証された年の数、か年の数）";
+"Warranty resource main canopy alert" = "年数での保証寿命（通常、メーカーは10〜20年を示しますが、技術的な状態によって異なります）";
+"Warranty resource jumps main canopy alert" = "ジャンプ用の保証リソース（通常、メーカーは500回のジャンプを示しますが、技術的な状態によっては最大1000回まで可能です）";
+"Counts of jumps main canopy alert" = "応用の回数（パラシュートが新品でない場合、またはすでにジャンプが行われている場合、この数を指定します）。正確な計算のためには、この応用の一般ジャンプリストに以前に記録されていないジャンプの数だけを指定する必要があります";
+"Warranty resource reserve canopy alert" = "保証寿命（通常、メーカーは10〜20年を示しますが、技術的な状態によって異なります）";
+"Counts of repack reserve canopy alert" = "パラシュートが新品でない場合、またはすでに格納されている場合、この数を指定します";
+"Date of pack reserve canopy alert" = "パックの日付";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "名前システム";
+"Name / new system cell" = "名前";
+"Container / new system cell" = "コンテナ";
+"Name container / new system cell" = "名前コンテナ";
+
+"DOM / new system cell" = "製造日";
+"Date mm.yyyy / new system cell" = "mm.yyyy";
+"Serial number / new system cell" = "シリアル番号";
+"Warranty resource / new system cell" = "保証リソース";
+"Counts of years / new system cell" = "年数の数";
+"Counts of jumps / new system cell" = "ジャンプの数";
+
+"AAD / new system cell" = "安全装置";
+"Name AAD / new system cell" = "安全装置の名前";
+
+"Main canopy / new system cell" = "メインキャノピー";
+"Name main canopy / new system cell" = "キャノピーの名前";
+"Counts of jumps main canopy / new system cell" = "ジャンプ回数";
+"The value of the purchase / new system cell" = "購入価格";
+
+"Reserve canopy / new system cell" = "リザーブキャノピー";
+"Name reserve canopy / new system cell" = "キャノピーの名前";
+"Counts of repack reserve canopy / new system cell" = "リパック回数";
+"Date of packing reserve canopy / new system cell" = "パックの日付";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+"Count / new system cell" = "数";
+
+"Comment / new system cell" = "コメント";
+"Optional / new system cell" = "オプション（ラインの状態など）";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "アカウントを編集";
+"Edit locations" = "場所を編集";
+"Delete location?" = "場所を削除しますか？";
+"Edit aircrafts" = "航空機を編集";
+"Delete aircraft?" = "航空機を削除しますか？";
+"Edit canopies" = "キャノピーを編集";
+"Drop zones" = "ドロップゾーン";
+"Delete canopy?" = "キャノピーを削除しますか？";
+"Backup copy" = "バックアップコピー";
+"Calculator loading" = "計算機の読み込み";
+"Information" = "情報";
+"Premium version" = "プレミアム版";
+"Share the app" = "アプリを共有";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "ニックネーム";
+"Name user / edit account vc" = "ユーザー名";
+"License / edit account vc" = "ライセンス";
+"Type / number / edit account vc" = "タイプ / 番号";
+"Valid until / edit account vc" = "有効期限";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "医療";
+"Insurance / edit account vc" = "保険";
+"Reserve canopy / edit account vc" = "リザーブキャノピー";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "ドロップゾーンの名前を入力してください";
+"Enter aircraft" = "航空機の名前を入力してください";
+"Enter canopy" = "キャノピーの名前を入力してください";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nバックアップコピーは、アプリケーションに記録されたすべてのデータを保存します。\nデータを失わないようにするために、定期的にバックアップコピーを作成することをお勧めします。\n";
+"Backup / backup" = "バックアップ作成";
+"Restore / backup" = "復元";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "総重量";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "正方形キャノピー";
+"1-50A" = "\nパラシュートの種類：スチューデント。\nカテゴリ：A。\nジャンプ回数：1-50回。\n";
+"51-200B" = "\nパラシュートの種類：トランジション。\nカテゴリ：B。\nジャンプ回数：51-200回。\n";
+"201-500C" = "\nパラシュートの種類：ミディアムスピード。\nカテゴリ：C。\nジャンプ回数：201-500回。\n";
+"501-1000D1" = "\nパラシュートの種類：スピード/エリプティカル。\nカテゴリ：D。\nジャンプ回数：501-1000回。\n";
+"1000D2" = "\nパラシュートの種類：ハイスピード。\nカテゴリ：D。\nジャンプ回数：1000回以上。\n";
+"1000D3" = "\nパラシュートの種類：ハイスピード/クロスブレイスド。\nカテゴリ：D。\nジャンプ回数：1000回以上。\n";
+
+// MARK: - INFO:
+
+"App version" = "アプリについて";
+"Version / info" = "バージョン";
+"Build / info" = "ビルド";
+"Privacy policy" = "プライバシーポリシー";
+"Terms of use" = "利用規約";
+"FAQ" = "よくある質問";
+"App language / info" = "アプリの言語";
+"App language text / info" = "このアプリケーションは、お使いの電話で主要に設定されている言語を使用します。アプリでサポートされていない言語の場合、デフォルトで英語が使用されます。\n\nサポートされている言語のリスト:\nアラビア語\n英語\nフランス語\nヒンディー語\nスペイン語\nイタリア語\n日本語\n中国語\nドイツ語\nポルトガル語\nロシア語\n\n翻訳は人工知能を使用して行われたため、エラーが発生する可能性があります。\nプロジェクトをサポートしてアプリをあなたの言語に翻訳したり、エラーを修正する手助けをしたい場合は、開発者にお問い合わせください。";
+"Info text" = "\nSkydiveBook - このアプリの使用者がプロのスカイダイバーであることの公式確認ではありません。\n\nそれは、任意のカテゴリのスカイダイバーの公式パラシュートブックや証明書に追加するためのオプションとして機能します。\n\nSkydiveBook に記録されたジャンプは、これらのジャンプの証拠ではなく、公式文書、証明書、カテゴリの発行の基礎と見なすことはできません。\n\nこのアプリケーションは個人使用、スカイダイビングの利便性、高度な分析のために設計されています。\n\nメインドームの負荷データは参考情報であり、パラシュート装備の選択に対する推奨の性質ではありません。\n\nパラシュートの操作許可はすべて、有効なインストラクターから発行されなければなりません。\n\nこのアプリケーションを使用して得られる情報は、参考情報のみです：エアフィールドマップを自分で確認し、ジャンプ中の最新の気象条件を把握してください。\n\nすべてのソフトウェアと同様に、このアプリケーションには人為的なミスや不完全さがあります。\n\nスカイダイビングには命を危険にさらすリスクが伴います。安全基準を守らないと、負傷や死に至る可能性があります。\n";
+"Info text start alert" = "\nSkydiveBook - このアプリの使用者がプロのスカイダイバーであることの公式確認ではありません。\n\nそれは、任意のカテゴリのスカイダイバーの公式パラシュートブックや証明書に追加するためのオプションとして機能します。\n\nSkydiveBook に記録されたジャンプは、これらのジャンプの証拠ではなく、公式文書、証明書、カテゴリの発行の基礎と見なすことはできません。\n\nこのアプリケーションは個人使用、スカイダイビングの利便性、高度な分析のために設計されています。\n\nメインドームの負荷データは参考情報であり、パラシュート装備の選択に対する推奨の性質ではありません。\n\nパラシュートの操作許可はすべて、有効なインストラクターから発行されなければなりません。\n\nこのアプリケーションを使用して得られる情報は、参考情報のみです：エアフィールドマップを自分で確認し、ジャンプ中の最新の気象条件を把握してください。\n\nすべてのソフトウェアと同様に、このアプリケーションには人為的なミスや不完全さがあります。\n\nスカイダイビングには命を危険にさらすリスクが伴います。安全基準を守らないと、負傷や死に至る可能性があります。\n\n私は読みました、同意します。";
+"Agree" = "同意する";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\n無料版のアプリでは、50回のジャンプを保存できます。\n\n⭐️ ⭐️ ⭐️\n\nプレミアム版のアプリでは、無制限のジャンプを保存できます。\n";
+"1 month" = "¥9.99 / 月";
+"12 months" = "¥49.99 / 年\n(¥4.16/月)";
+"Restore purchases" = "購入を復元";
+
+"Buy status" = "購入あり / 購入なし";
+"Restore Successful" = "復元成功";
+"All purchases have been successfully restored." = "全ての購入が正常に復元されました。";
+"Restore Failed" = "復元失敗";
+"Some purchases could not be restored. Please try again later." = "一部の購入が復元できませんでした。後でもう一度お試しください。";
+"No Purchases to Restore" = "復元する購入がありません";
+"There are no previous purchases to restore." = "復元する前の購入がありません。";
+
+// ADAPTY:
+
+"No connection / adapty" = "接続なし";
+"Message / adapty" = "データを受信するには、インターネット接続が必要です。";
+
+"Alert / adapty status" = "プレミアムが必要です";
+"Message / adapty status" = "無料版では、以下のみ保存できます:\n\n50回のジャンプ。\n10個のメモ。\n1つのシステム。\n\nすべての制限を解除するには、「設定」セクションでプレミアムを購入してください。";
+
+// MARK: - SYSTEM:
+
+"System" = "システム";
+"Delete system?" = "システムを削除しますか？";
+"System empty message / system" = "まだ追加されたパラシュートシステムはありません。";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "ドロップゾーン";
+"Message / drop zones" = "ここには検証済みのドロップゾーンのみが表示されます。Instagramでメッセージを送信して、あなたのロケーションを追加できます。";
+"Map type" = "地図タイプ";
+"Standard / map type" = "標準";
+"Satellite / map type" = "衛星";
+"Hybrid / map type" = "ハイブリッド";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "成功";
+"Error / alert kit" = "エラー";
+
+"Jump added / alert kit" = "ジャンプが追加されました";
+"Jump deleted / alert kit" = "ジャンプが削除されました";
+"Jump updated / alert kit" = "ジャンプが更新されました";
+
+"Note added / alert kit" = "メモが追加されました";
+"Note deleted / alert kit" = "メモが削除されました";
+
+"System added / alert kit" = "システムが追加されました";
+"System deleted / alert kit" = "システムが削除されました";
+"System updated / alert kit" = "システムが更新されました";
+
+"Backup saved / alert kit" = "バックアップが保存されました";
+"Backup upload / alert kit" = "バックアップのアップロード";
+
+"Location added / alert kit" = "ロケーションが追加されました";
+"Location deleted / alert kit" = "ロケーションが削除されました";
+
+"Aircraft added / alert kit" = "航空機が追加されました";
+"Aircraft deleted / alert kit" = "航空機が削除されました";
+
+"Canopy added / alert kit" = "キャノピーが追加されました";
+"Canopy deleted / alert kit" = "キャノピーが削除されました";

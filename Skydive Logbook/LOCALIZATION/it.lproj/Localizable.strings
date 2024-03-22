@@ -1,0 +1,581 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "PRINCIPALE";
+"Statistic tab bar" = "STATISTICA";
+"Add jump tab bar" = "NUOVO SALTO";
+"System tab bar" = "SISTEMA";
+"Settings tab bar" = "IMPOSTAZIONI";
+
+// MARK: - MAIN:
+
+"Save" = "Salva";
+"Clean" = "Pulisci";
+"Close" = "Chiudi";
+"Edit" = "Modifica";
+"Delete" = "Elimina";
+"Calculate" = "Calcola";
+"Update" = "Aggiorna";
+"Settings iphone" = "Impostazioni";
+
+"Ok" = "Ok";
+"Yes" = "Sì";
+"No" = "No";
+
+"ago" = "fa";
+"back" = "Indietro";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "miglia";
+"feet" = "piedi";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "h.";
+"d." = "g.";
+"mon." = "mese";
+"y." = "a.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nBenvenuto in SkydiveBook!\n\nPer iniziare, devi aggiungere almeno un elemento:\n\nPosizione\nTipo di aeromobile\nVela\n\nnella sezione \"Impostazioni\"\n\nGoditi l'utilizzo e i tuoi lanci in sicurezza!\n";
+"Delete jump?" = "Eliminare il lancio ?";
+"This action cannot be undone." = "Questa azione è irreversibile.";
+
+"License" = "Licenza";
+"until" = "fino a";
+"Medicine until" = "Medicina fino a";
+"Insurance until" = "Assicurazione fino a";
+"Reserve canopy until" = "Vela di riserva fino a";
+
+"Edit/add account" = "Per compilare il Profilo, vai alla sezione \"Impostazioni\".";
+
+// MARK: - NOTES:
+
+"New note" = "Nuova nota";
+"Delete note?" = "Eliminare la nota ?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Nessuna connessione";
+"No connection message / weather" = "È necessaria una connessione Internet attiva per ricevere i dati di previsione del tempo.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Raffiche fino a";
+
+"Wind speed / weather" = "Velocità del vento";
+"Temperature / weather" = "Temperatura";
+"Cloud cover / weather" = "Copertura nuvolosa";
+"Humidity / weather" = "Umidità";
+"Dew point / weather" = "Punto di rugiada";
+"Visibility / weather" = "Visibilità";
+"Precipitation / weather" = "Precipitazioni";
+"Pressure / weather" = "Pressione";
+"UvIndex / weather" = "Indice UV";
+"It feels like / weather" = "Sensazione termica";
+
+"Wind direction" = "Direzione del vento";
+"Arrow wind direction" = "La freccia mostra la direzione del vento vicino al suolo nel luogo in cui ti trovi. Funziona solo con una connessione Internet attiva.";
+
+"Permisson label / weather" = "Impostazioni iPhone -> SkydiveBook -> Posizione (concedi il permesso)";
+"Permisson label alert / weather" = "Per visualizzare le previsioni meteorologiche attuali, è necessario ottenere l'autorizzazione per determinare la tua posizione. Ciò può essere fatto nelle impostazioni.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Classificazione del vento";
+"Wind weather message / alert" = "Calmato: < 0,3 m/s\nTranquillo: 0,3—1,5 m/s\nLeggero: 1,6—3,3 m/s\nModerato: 3,4—5,4 m/s\nFresco: 5,5—7,9 m/s\nForte: 8,0—10,7 m/s\nTemporale: 10,8—13,8 m/s\nTempesta: 13,9—17,1 m/s\nTempesta forte: 17,2—20,7 m/s\nBurrasca: 20,8—24,4 m/s\nTempesta violenta: 24,5—28,4 m/s\nUragano: >32,7 m/s";
+
+"Temperature weather title / alert" = "Sensazione termica";
+"Temperature weather message / alert" = "L'indicatore « Sensazione termica » può differire dalla temperatura effettiva, riflettendo come la temperatura viene percepita da una persona. L'indicatore « Sensazione termica » è influenzato dalle caratteristiche del vento e dai livelli di umidità.";
+
+"Cloud cover weather title / alert" = "Copertura nuvolosa";
+"Cloud cover weather message / alert" = "La copertura nuvolosa è misurata in percentuale. Di solito è espressa in parti del cielo occupate dalle nuvole.";
+
+"Humidity weather title / alert" = "Umidità";
+"Humidity weather message / alert" = "L'umidità relativa, o semplicemente umidità, è il rapporto tra la quantità di umidità presente nell'aria e la quantità massima che può essere contenuta nell'aria.";
+
+"Dew point weather title / alert" = "Punto di rugiada";
+"Dew point weather message / alert" = "Il punto di rugiada è il valore a cui la temperatura deve scendere affinché si formi la rugiada. Questo è un modo comodo per determinare l'umidità dell'aria: più alto è il punto di rugiada, più umido si sente l'aria. Il punto di rugiada coincidente con la temperatura attuale significa che l'umidità relativa dell'aria è del 100% e può formarsi rugiada o nebbia.";
+
+"Visibility weather title / alert" = "Visibilità";
+"Visibility weather message / alert" = "La visibilità indica a quale distanza da te puoi vedere chiaramente oggetti come edifici e colline. La visibilità è una misura della trasparenza dell'aria e non tiene conto della quantità di luce solare o della presenza di ostacoli.";
+
+"Precipitation weather title / alert" = "Precipitazioni";
+"Precipitation weather message / alert" = "La quantità di precipitazioni è l'altezza dello strato d'acqua in millimetri che si formerebbe sulla superficie terrestre se fosse completamente piatta. La quantità di precipitazioni in millimetri è numericamente uguale alla massa d'acqua che è caduta su una superficie orizzontale di 1 metro quadrato.";
+
+"Pressure weather title / alert" = "Pressione";
+"Pressure weather message / alert" = "La tabella mostra le deviazioni rispetto alla norma di pressione relativa alla tua posizione. La pressione abituale per le persone è di 760 millimetri di mercurio. Ma la pressione atmosferica normale per ogni persona dipende dalla regione in cui si trova, e la pressione della regione dipende dall'altitudine dell'area.";
+
+"UvIndex weather title / alert" = "Indice UV";
+"UvIndex weather message / alert" = "L'indice UV (UFI), sviluppato dall'Organizzazione Mondiale della Sanità, indica la potenza della radiazione ultravioletta. Più alto è l'indice UV, più pericoloso è essere al sole e più velocemente può nuocere alla tua salute. Seguendo l'indice UV, puoi decidere quando proteggerti dal sole e quando è meglio non uscire.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Vento calmo";
+"Weak wind / wind speed" = "Vento debole";
+"Light wind / wind speed" = "Vento leggero";
+"Quiet wind / wind speed" = "Vento tranquillo";
+"Moderate wind / wind speed" = "Vento moderato";
+"Fresh wind / wind speed" = "Vento fresco";
+"Strong wind / wind speed" = "Vento forte";
+"Hard wind / wind speed" = "Vento duro";
+"Powerful wind / wind speed" = "Vento potente";
+"Storm wind / wind speed" = "Vento di tempesta";
+"Hard storm wind / wind speed" = "Vento di tempesta forte";
+"Hurricane wind / wind speed" = "Vento di uragano";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Temperatura massima";
+"Min temperature / temperature" = "Temperatura minima";
+"Average temperature / temperature" = "Temperatura media";
+"Feels like temperature / temperature" = "Temperatura percepita";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Aria molto secca";
+"Dry air / humidity" = "Aria secca";
+"Moderately dry air / humidity" = "Aria moderatamente secca";
+"Moderately humid air / humidity" = "Aria moderatamente umida";
+"Very humid air / humidity" = "Aria molto umida";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Sereno";
+"Partly Cloudy / cloud cover" = "Parzialmente nuvoloso";
+"Variable Cloudiness / cloud cover" = "Variabile";
+"Cloudy / cloud cover" = "Nuvoloso";
+"Overcast / cloud cover" = "Coperto";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Aria relativamente secca";
+"Moderately humid air / dew point" = "Aria moderatamente umida";
+"Humid air / dew point" = "Aria umida";
+"Very humid air / dew point" = "Aria molto umida";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Eccellente";
+"Good / visibility" = "Buona";
+"Moderate / visibility" = "Moderata";
+"Poor / visibility" = "Scarsa";
+"Very Poor / visibility" = "Molto scarsa";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Molto leggera";
+"Light / precipitation" = "Leggera";
+"Moderate / precipitation" = "Moderata";
+"Heavy / precipitation" = "Pesante";
+"Very Heavy / precipitation" = "Molto pesante";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Molto bassa";
+"Low / pressure" = "Bassa";
+"Normal / pressure" = "Normale";
+"Hight / pressure" = "Alta";
+"Very hight / pressure" = "Molto alta";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Basso";
+"Moderate / uv index" = "Moderato";
+"Hight / uv index" = "Alto";
+"Very high / uv index" = "Molto alto";
+"Excessive / uv index" = "Eccessivo";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Reputazione";
+"Nickname / skydivers" = "Soprannome";
+"Country / skydivers" = "Paese";
+"Profile / skydivers" = "Profilo";
+"Profession / skydivers" = "Professione";
+"Count of jumps / skydivers" = "Numero di lanci";
+"First jump / skydivers" = "Primo lancio";
+"About rating / skydivers" = "Maggiori informazioni";
+"About rating message / skydivers" = "La community è una pubblicità per sé stessi, nonché un aiuto al progetto.\nDettagli su Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Per visualizzare le statistiche, è necessario effettuare almeno un salto.";
+"saving data" = "Salvataggio dati";
+"saving data text" = "Per salvare l'intero storico dei tuoi lanci, è consigliabile creare periodicamente backup nella sezione 'Impostazioni'. \nQuesto è particolarmente importante quando si passa a un nuovo dispositivo.";
+"jumps by year" = "Lanci per anno";
+"year" = "anno";
+"Categories USPA" = "Categorie";
+"Categories USPA List" = "\nA: 25 lanci\nTempo di caduta libera: 10 min. (600s.)\n\nB: 50 lanci\nTempo di caduta libera: 30 min. (1800s.)\n\nC: 200 lanci\nTempo di caduta libera: 60 min. (3600s.)\n\nD: 500 lanci\nTempo di caduta libera: 180 min. (10800s.)\n";
+"Maximum time" = "Tempo massimo";
+"Maximum time alert" = "È stato completato il lancio con il tempo di caduta libera massimo";
+"Maximum height" = "Altezza massima";
+"Maximum height alert" = "È stato completato il lancio con l'altezza del compartimento massima";
+"Average height" = "Altezza media";
+"Minimum height" = "Altezza minima";
+"Minimum height alert" = "È stato completato il lancio con l'altezza del compartimento minima";
+"First jump / statistic" = "Primo lancio effettuato";
+"Last jump / statistic" = "Ultimo lancio effettuato";
+"Max in one day" = "Max in un giorno";
+"Average height of jump" = "Altezza media del lancio";
+"Average free fall time of jump" = "Tempo medio di caduta libera del lancio";
+"Average time" = "Tempo medio del lancio";
+"Max count of jumps" = "Numero di lanci";
+"Max count of jumps text" = "È stato completato il numero massimo di lanci in un giorno";
+"Jumps no found" = "Nessun lancio trovato";
+"Сount of cutaways" = "Numero di scappamenti";
+"Date last jump" = "Ultimo lancio";
+"Date first jump" = "Primo lancio";
+"List aircrafts" = "Elenco degli aerei";
+"List canopies" = "Elenco dei paracadute";
+"List locations" = "Elenco delle località";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Informazioni generali";
+"Total height" = "Altezza totale";
+"Total time" = "Tempo totale";
+"Total jumps" = "Totale lanci";
+"In this year" = "Quest'anno";
+"Category" = "Categoria";
+
+"Average info" = "Informazioni medie";
+
+"Max. height" = "Altezza max.";
+"Av. height" = "Altezza media";
+"Min. height" = "Altezza min.";
+"First jump" = "Primo salto";
+"Max. time" = "Tempo max.";
+"Last jump" = "Ultimo salto";
+"Max. in day" = "Max. in un giorno";
+"Av. time" = "Tempo medio";
+"CutawayStatistic" = "Taglio";
+"Count cutaway" = "Numero di tagli";
+"Aircraft" = "Aeromobile";
+"Canopies" = "Paracaduti";
+"Locations" = "Posizioni";
+"Missions" = "Missioni";
+
+"Accuracy" = "Precisione";
+"Acrobatics" = "Acrobazie";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Formazione del paracadute";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "Divertimento";
+"Group" = "Gruppo";
+"Instructor" = "Istruttore";
+"Military" = "Militare";
+"Para-ski" = "Para-sci";
+"Proximity" = "Prossimità";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Linea statica";
+"Piloting" = "Pilotaggio";
+"Tandem" = "Tandem";
+"Vertical" = "Verticale";
+"Video" = "Video";
+"Wingsuit" = "Tuta alare";
+"Formation" = "Formazione";
+"Top 10:" = "Top 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Nuovo salto";
+"Manual / new jump" = "Per iniziare, vai alla sezione \"Impostazioni\" e inserisci i seguenti dati:\n\nLocalità\nAeromobili\nParacaduti";
+
+// MARK: - CellNewJump:
+
+"Date" = "Data";
+"Location" = "Località";
+"Aircraft" = "Aeromobile";
+"Canopy" = "Paracadute";
+"Mission" = "Missione";
+"Height" = "Altezza";
+"Time" = "Tempo";
+"Cutaway" = "Taglio";
+"Comment" = "Commento";
+
+"Date placeholder" = "gg.mm.aaaa";
+"Location placeholder" = "Zona di lancio";
+"Aircraft placeholder" = "Tipo di aeromobile";
+"Canopy placeholder" = "Paracadute principale";
+"Mission placeholder" = "Tipo di salto";
+"Height placeholder" = "Metri";
+"Time placeholder" = "Secondi";
+"Cutaway placeholder" = "No / Sì";
+"Comment placeholder" = "Opzionale";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Aggiungi un nuovo sistema";
+"Comment" = "Commento";
+"No comments" = "Commenti non trovati";
+"Container system" = "Contenitore";
+"AAD system" = "Dispositivo di assicurazione";
+"Main canopy system" = "Paracadute principale";
+"Reserve canopy system" = "Paracadute di riserva";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Numero";
+"DOM system" = "DOM";
+"Service life system" = "Durata di vita";
+"Valid until system" = "Valido fino al";
+"Counts of the jumps system" = "Numero di salti";
+"Resource system" = "Risorsa";
+"Counts of repack system" = "Numero di ripiegature";
+"Packed system" = "Pacco";
+
+"years system" = "anni";
+"jumps system" = "sauts";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Aggiungi sistema";
+"Container alert" = "Contenitore";
+"AAD alert" = "Dispositivo di assicurazione";
+"Main canopy alert" = "Paracadute principale";
+"Reserve canopy alert" = "Paracadute di riserva";
+
+"Name and model container alert" = "Nome e modello del contenitore";
+"Name and model AAD alert" = "Nome e modello del dispositivo di assicurazione";
+"Name and model main canopy alert" = "Nome e modello del paracadute principale. Devi prima aggiungerlo nella sezione \"Impostazioni\" -> \"Modifica paracadute principale\"";
+"Name and model reserve canopy alert" = "Nome e modello del paracadute di riserva";
+
+"DOM alert" = "Data di fabbricazione";
+"Serial number alert" = "Numero di serie";
+"Warranty resource container alert" = "Garanzia di durata (di solito il produttore indica 10-20 anni, o in base alle condizioni tecniche)";
+"Warranty resource AAD alert" = "Durata della garanzia (il numero di anni garantiti, o il numero di anni prima della manutenzione ordinaria)";
+"Warranty resource main canopy alert" = "Durata della garanzia in anni (di solito il produttore indica 10-20 anni, o secondo le condizioni tecniche)";
+"Warranty resource jumps main canopy alert" = "La risorsa garantita per i salti (di solito il produttore indica 500 salti, o secondo le condizioni tecniche fino a 1000 salti)";
+"Counts of jumps main canopy alert" = "Il numero di salti (se il paracadute non è stato acquistato nuovo e sono stati già effettuati dei salti, specificare questo numero). Per un calcolo corretto, è necessario specificare solo il numero di salti che non sono stati precedentemente registrati nell'elenco generale dei salti di questa applicazione";
+"Warranty resource reserve canopy alert" = "Durata della garanzia (di solito il produttore indica 10-20 anni, o secondo le condizioni tecniche)";
+"Counts of repack reserve canopy alert" = "Se il paracadute non è stato acquistato nuovo e è già stato ripiegato, specificare questa quantità";
+"Date of pack reserve canopy alert" = "Data di ripiegamento";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Nome sistema";
+"Name / new system cell" = "Nome";
+"Container / new system cell" = "Contenitore";
+"Name container / new system cell" = "Nome contenitore";
+
+"DOM / new system cell" = "Data di fabbricazione";
+"Date mm.yyyy / new system cell" = "mm.aaaa";
+"Serial number / new system cell" = "Numero di serie";
+"Warranty resource / new system cell" = "Risorsa di garanzia";
+"Counts of years / new system cell" = "Numero di anni";
+"Counts of jumps / new system cell" = "Numero di salti";
+
+"AAD / new system cell" = "Dispositivo di assicurazione";
+"Name AAD / new system cell" = "Nome del dispositivo di assicurazione";
+
+"Main canopy / new system cell" = "Aeroplano principale";
+"Name main canopy / new system cell" = "Nome del paracadute";
+"Counts of jumps main canopy / new system cell" = "Numero di salti";
+"The value of the purchase / new system cell" = "Valore di acquisto";
+
+"Reserve canopy / new system cell" = "Paracadute di riserva";
+"Name reserve canopy / new system cell" = "Nome del paracadute";
+"Counts of repack reserve canopy / new system cell" = "Numero di impacchettamenti";
+"Date of packing reserve canopy / new system cell" = "Data di impacchettamento";
+"Date dd.mm.yyyy / new system cell" = "gg.mm.aaaa";
+"Count / new system cell" = "Numero";
+
+"Comment / new system cell" = "Commento";
+"Optional / new system cell" = "Opzionale (condizione delle linee, ecc.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Modifica account";
+"Edit locations" = "Modifica posizioni";
+"Delete location?" = "Elimina posizione?";
+"Edit aircrafts" = "Modifica aerei";
+"Delete aircraft?" = "Elimina aereo?";
+"Edit canopies" = "Modifica paracadute";
+"Drop zones" = "Zone di lancio";
+"Delete canopy?" = "Elimina paracadute?";
+"Backup copy" = "Copia di backup";
+"Calculator loading" = "Caricamento calcolatrice";
+"Information" = "Informazioni";
+"Premium version" = "Versione Premium";
+"Share the app" = "Condividi l'app";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Nickname";
+"Name user / edit account vc" = "Nome utente";
+"License / edit account vc" = "Licenza";
+"Type / number / edit account vc" = "Tipo / numero";
+"Valid until / edit account vc" = "Valido fino al";
+"Date / dd.mm.yyyy / edit account vc" = "gg.mm.aaaa";
+"Medicine / edit account vc" = "Medicina";
+"Insurance / edit account vc" = "Assicurazione";
+"Reserve canopy / edit account vc" = "Paracadute di riserva";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Nome zona di lancio";
+"Enter aircraft" = "Nome aereo";
+"Enter canopy" = "Nome paracadute";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nLa copia di backup salva tutti i dati registrati nell'applicazione.\nSi consiglia di fare una copia di backup di tanto in tanto per non perdere i dati inseriti.\n";
+"Backup / backup" = "Crea backup";
+"Restore / backup" = "Ripristina";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Peso totale";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "Paracadute quadrato";
+"1-50A" = "\nTipo di paracadute: Studente.\nCategoria: A.\nNumero di lanci: 1-50 lanci.\n";
+"51-200B" = "\nTipo di paracadute: Transizione.\nCategoria: B.\nNumero di lanci: 51-200 lanci.\n";
+"201-500C" = "\nTipo di paracadute: Media velocità.\nCategoria: C.\nNumero di lanci: 201-500 lanci.\n";
+"501-1000D1" = "\nTipo di paracadute: Velocità/ellittico.\nCategoria: D.\nNumero di lanci: 501-1000 lanci.\n";
+"1000D2" = "\nTipo di paracadute: Alta velocità.\nCategoria: D.\nNumero di lanci: 1000+ lanci.\n";
+"1000D3" = "\nTipo di paracadute: Alta velocità/struttura incrociata.\nCategoria: D.\nNumero di lanci: 1000+ lanci.\n";
+
+// MARK: - INFO:
+
+"App version" = "Informazioni sull'applicazione";
+"Version / info" = "Versione";
+"Build / info" = "Build";
+"Privacy policy" = "Informativa sulla privacy";
+"Terms of use" = "Condizioni d'uso";
+"FAQ" = "Domande frequenti";
+"App language / info" = "Lingua dell'applicazione";
+"App language text / info" = "Questa applicazione utilizza la lingua impostata come principale sul tuo telefono. Se la tua lingua non è supportata dall'app, verrà utilizzato l'inglese per impostazione predefinita.\n\nElenco delle lingue supportate:\nArabo\nInglese\nFrancese\nHindi\nSpagnolo\nItaliano\nGiapponese\nCinese\nTedesco\nPortoghese\nRusso\n\nLa traduzione è stata eseguita utilizzando l'intelligenza artificiale, quindi potrebbero esserci errori.\nSe desideri contribuire al progetto e tradurre l'applicazione nella tua lingua o aiutare a correggere gli errori, contatta lo sviluppatore.";
+"Info text" = "\nSkydiveBook - Non è una conferma ufficiale che l'utente dell'applicazione sia un paracadutista professionista.\n\nServe come aggiunta facoltativa al libretto ufficiale del paracadute o al certificato di un paracadutista di qualsiasi categoria.\n\nI lanci registrati nel SkydiveBook non sono la prova di questi lanci e non possono essere considerati come base per rilasciare documenti ufficiali, certificati, categorie.\n\nL'applicazione è progettata per uso personale, comodità del paracadutismo e analisi avanzata.\n\nI dati sul carico del paracadute principale sono informazioni di riferimento e non hanno natura raccomandata per la scelta dell'attrezzatura da paracadute.\n\nTutte le autorizzazioni per l'uso di paracadute devono essere rilasciate da un istruttore valido.\n\nTutte le informazioni ottenute utilizzando l'applicazione sono solo a scopo di riferimento: studia da solo la mappa dell'aerodromo, così come ottieni dati aggiornati sulle condizioni meteorologiche durante i lanci.\n\nCome qualsiasi software, questa applicazione può commettere errori e essere imperfetta a causa del fattore umano.\n\nRicorda che il paracadutismo comporta un rischio per la vita. Il mancato rispetto delle norme di sicurezza può causare lesioni e persino la morte.\n";
+"Info text start alert" = "\nSkydiveBook - Non è una conferma ufficiale che l'utente dell'applicazione sia un paracadutista professionista.\n\nServe come aggiunta facoltativa al libretto ufficiale del paracadute o al certificato di un paracadutista di qualsiasi categoria.\n\nI lanci registrati nel SkydiveBook non sono la prova di questi lanci e non possono essere considerati come base per rilasciare documenti ufficiali, certificati, categorie.\n\nL'applicazione è progettata per uso personale, comodità del paracadutismo e analisi avanzata.\n\nI dati sul carico del paracadute principale sono informazioni di riferimento e non hanno natura raccomandata per la scelta dell'attrezzatura da paracadute.\n\nTutte le autorizzazioni per l'uso di paracadute devono essere rilasciate da un istruttore valido.\n\nTutte le informazioni ottenute utilizzando l'applicazione sono solo a scopo di riferimento: studia da solo la mappa dell'aerodromo, così come ottieni dati aggiornati sulle condizioni meteorologiche durante i lanci.\n\nCome qualsiasi software, questa applicazione può commettere errori e essere imperfetta a causa del fattore umano.\n\nRicorda che il paracadutismo comporta un rischio per la vita. Il mancato rispetto delle norme di sicurezza può causare lesioni e persino la morte.\n\nHo letto e accetto.";
+"Agree" = "Accetto";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nNella versione gratuita dell'app, puoi salvare 50 lanci.\n\n⭐️ ⭐️ ⭐️\n\nLa versione premium dell'app ti permette di salvare un numero illimitato di lanci.\n";
+"1 month" = "9,99 $ / Mese";
+"12 months" = "49,99 $ / Anno\n(4,16 $/mese)";
+"Restore purchases" = "Ripristina acquisti";
+
+"Buy status" = "Acquisto trovato / non trovato";
+"Restore Successful" = "Ripristino riuscito";
+"Tutti gli acquisti sono stati ripristinati con successo." = "Tutti gli acquisti sono stati ripristinati con successo.";
+"Restore Failed" = "Ripristino fallito";
+"Alcuni acquisti non hanno potuto essere ripristinati. Per favore, riprova più tardi." = "Alcuni acquisti non hanno potuto essere ripristinati. Per favore, riprova più tardi.";
+"No Purchases to Restore" = "Nessun acquisto da ripristinare";
+"Non ci sono acquisti precedenti da ripristinare." = "Non ci sono acquisti precedenti da ripristinare.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Nessuna connessione";
+"Message / adapty" = "È necessaria una connessione internet attiva per ricevere dati.";
+
+"Alert / adapty status" = "Premium necessario";
+"Message / adapty status" = "Nella versione gratuita, puoi salvare solo:\n\n50 lanci.\n10 note.\n1 sistema.\n\nPer rimuovere tutte le restrizioni, acquista la versione PREMIUM nella sezione \"Impostazioni\".";
+
+// MARK: - SYSTEM:
+
+"System" = "SISTEMA";
+"Delete system?" = "Eliminare il sistema?";
+"System empty message / system" = "Non hai ancora aggiunto sistemi di paracadute.";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "Zone di lancio";
+"Message / drop zones" = "Ci saranno solo zone di lancio verificate qui. Puoi aggiungere la tua posizione scrivendo su Instagram.";
+"Map type" = "Tipo di mappa";
+"Standard / map type" = "Standard";
+"Satellite / map type" = "Satellite";
+"Hybrid / map type" = "Ibrido";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Successo";
+"Error / alert kit" = "Errore";
+
+"Jump added / alert kit" = "Salto aggiunto";
+"Jump deleted / alert kit" = "Salto eliminato";
+"Jump updated / alert kit" = "Salto aggiornato";
+
+"Note added / alert kit" = "Nota aggiunta";
+"Note deleted / alert kit" = "Nota eliminata";
+
+"System added / alert kit" = "Sistema aggiunto";
+"System deleted / alert kit" = "Sistema eliminato";
+"System updated / alert kit" = "Sistema aggiornato";
+
+"Backup saved / alert kit" = "Backup salvato";
+"Backup upload / alert kit" = "Caricamento del backup";
+
+"Location added / alert kit" = "Posizione aggiunta";
+"Location deleted / alert kit" = "Posizione eliminata";
+
+"Aircraft added / alert kit" = "Aeromobile aggiunto";
+"Aircraft deleted / alert kit" = "Aeromobile eliminato";
+
+"Canopy added / alert kit" = "Capote aggiunta";
+"Canopy deleted / alert kit" = "Capote eliminata";

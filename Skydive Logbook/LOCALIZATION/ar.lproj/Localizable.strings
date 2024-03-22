@@ -1,0 +1,581 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "الرئيسية";
+"Statistic tab bar" = "الإحصائيات";
+"Add jump tab bar" = "قفزة جديدة";
+"System tab bar" = "النظام";
+"Settings tab bar" = "الإعدادات";
+
+// MARK: - MAIN:
+
+"Save" = "حفظ";
+"Clean" = "نظيف";
+"Close" = "إغلاق";
+"Edit" = "تحرير";
+"Delete" = "حذف";
+"Calculate" = "حساب";
+"Update" = "تحديث";
+"Settings iphone" = "الإعدادات";
+
+"Ok" = "موافق";
+"Yes" = "نعم";
+"No" = "لا";
+
+"ago" = "منذ";
+"back" = "الى الخلف";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "م.";
+"km." = "كم.";
+"miles" = "أميال";
+"feet" = "قدم";
+
+// MARK: - MEASURING TIME:
+
+"s." = "ثانية";
+"min." = "دقيقة";
+"h." = "ساعة";
+"d." = "يوم";
+"mon." = "شهر";
+"y." = "سنة";
+
+// MARK: - MAIN:
+
+"First Message" = "\nمرحبًا بك في SkydiveBook!\n\nللبدء، يجب عليك إضافة واحد على الأقل من:\n\nالموقع\nنوع الطائرة\nالكانوبي\n\nفي قسم \"الإعدادات\"\n\nاستمتع باستخدامك وقفزات آمنة!\n";
+"Delete jump?" = "حذف القفزة؟";
+"This action cannot be undone." = "لا يمكن التراجع عن هذا الإجراء.";
+
+"License" = "رخصة";
+"until" = "حتى";
+"Medicine until" = "الطب حتى";
+"Insurance until" = "التأمين حتى";
+"Reserve canopy until" = "الكانوبي الاحتياطي حتى";
+
+"Edit/add account" = "لملء الحساب، انتقل إلى قسم \"الإعدادات\".";
+
+// MARK: - NOTES:
+
+"New note" = "ملاحظة جديدة";
+"Delete note?" = "حذف الملاحظة؟";
+
+// MARK: - WEATHER:
+
+"No connection" = "لا يوجد اتصال";
+"No connection message / weather" = "يتطلب اتصال إنترنت نشط لاستقبال بيانات التنبؤ بالطقس.";
+
+"mm/h" = "مم/س";
+"hPa" = "هكتوباسكال";
+"mm / pressure" = "مم";
+"m/s" = "م/ث";
+"km" = "كم";
+"Gusts up to" = "نسبة الهبوب تصل إلى";
+
+"Wind speed / weather" = "سرعة الرياح";
+"Temperature / weather" = "درجة الحرارة";
+"Cloud cover / weather" = "تغطية الغيوم";
+"Humidity / weather" = "الرطوبة";
+"Dew point / weather" = "نقطة الندى";
+"Visibility / weather" = "الرؤية";
+"Precipitation / weather" = "هطول الأمطار";
+"Pressure / weather" = "الضغط";
+"UvIndex / weather" = "مؤشر الأشعة فوق البنفسجية";
+"It feels like / weather" = "الإحساس بمثل هذا الطقس";
+
+"Wind direction" = "اتجاه الرياح";
+"Arrow wind direction" = "السهم يظهر اتجاه الرياح بالقرب من الأرض في المكان الذي تتواجد فيه. يعمل فقط مع اتصال إنترنت نشط.";
+
+"Permisson label / weather" = "إعدادات iPhone -> SkydiveBook -> الموقع (منح الإذن)";
+"Permisson label alert / weather" = "لعرض تنبؤات الطقس الحالية، يجب عليك الحصول على إذن لتحديد موقعك. يمكن القيام بذلك في الإعدادات.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "تصنيف الرياح";
+"Wind weather message / alert" = "هدوء: < 0.3 م/ث\nهادئ: 0.3—1.5 م/ث\nخفيف: 1.6—3.3 م/ث\nمعتدل: 3.4—5.4 م/ث\nطازج: 5.5—7.9 م/ث\nقوي: 8.0—10.7 م/ث\nقرب العاصفة: 10.8—13.8 م/ث\nعاصفة: 13.9—17.1 م/ث\nعاصفة قوية: 17.2—20.7 م/ث\nعاصفة: 20.8—24.4 م/ث\nعاصفة عاتية: 24.5—28.4 م/ث\nإعصار: >32.7 م/ث";
+
+"Temperature weather title / alert" = "كما يشعر";
+"Temperature weather message / alert" = "قد يختلف مؤشر \"كما يشعر\" عن درجة الحرارة الفعلية، معبرًا عن كيفية توصل الشخص إلى درجة الحرارة. يتأثر مؤشر \"كما يشعر\" بخصائص الرياح ومستويات الرطوبة.";
+
+"Cloud cover weather title / alert" = "تغطية الغيوم";
+"Cloud cover weather message / alert" = "يتم قياس تغطية الغيوم كنسبة مئوية. عادة ما يتم التعبير عنها في أجزاء السماء التي تحتلها الغيوم.";
+
+"Humidity weather title / alert" = "الرطوبة";
+"Humidity weather message / alert" = "الرطوبة النسبية، أو ببساطة الرطوبة، هي نسبة كمية الرطوبة في الهواء إلى الحد الأقصى الذي يمكن أن يحتويه الهواء.";
+
+"Dew point weather title / alert" = "نقطة الندى";
+"Dew point weather message / alert" = "نقطة الندى هي القيمة التي يجب أن تنخفض إليها درجة الحرارة لتشكل الندى. هذه طريقة مريحة لتحديد رطوبة الهواء: كلما ارتفعت نقطة الندى، زادت الرطوبة في الهواء. نقطة الندى التي تتطابق مع درجة الحرارة الحالية يعني أن الرطوبة النسبية في الهواء 100% وقد تتشكل الندى أو الضباب.";
+
+"Visibility weather title / alert" = "الرؤية";
+"Visibility weather message / alert" = "تُظهر الرؤية عند أي مسافة يمكنك فيها رؤية الأشياء بوضوح مثل المباني والتلال. الرؤية هي مقياس لشفافية الهواء ولا تأخذ في الاعتبار كمية الضوء الشمسي أو وجود العوائق.";
+
+"Precipitation weather title / alert" = "الهطول";
+"Precipitation weather message / alert" = "كمية الهطول هي ارتفاع طبقة الماء بالميليمترات التي ستتشكل على سطح الأرض إذا كان مسطحًا تمامًا. كمية الهطول بالميليمترات تساوي عدديًا كتلة الماء التي سقطت على سطح أفقي بمساحة 1 متر مربع.";
+
+"Pressure weather title / alert" = "الضغط";
+"Pressure weather message / alert" = "تُظهر الجدول انحرافات عن المعيار الضغطي بالنسبة إلى موقعك. الضغط العادي للأشخاص هو 760 مم زئبق. ولكن الضغط الجوي الطبيعي لكل شخص يعتمد على المنطقة التي يتواجد فيها، ويعتمد ضغط المنطقة على ارتفاع المنطقة.";
+
+"UvIndex weather title / alert" = "مؤشر الأشعة فوق البنفسجية";
+"UvIndex weather message / alert" = "مؤشر الأشعة فوق البنفسجية (UFI)، الذي وضعته منظمة الصحة العالمية، يشير إلى قوة الإشعاع فوق البنفسجية. كلما زاد مؤشر الأشعة فوق البنفسجية، زادت خطورته على البقاء في الشمس وتسريع تأثيره على صحتك. من خلال تتبع مؤشر الأشعة فوق البنفسجية، يمكنك تحديد متى تحمي نفسك من الشمس ومتى من الأفضل عدم الخروج.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "رياح هادئة";
+"Weak wind / wind speed" = "رياح ضعيفة";
+"Light wind / wind speed" = "رياح خفيفة";
+"Quiet wind / wind speed" = "رياح هادئة";
+"Moderate wind / wind speed" = "رياح معتدلة";
+"Fresh wind / wind speed" = "رياح منعشة";
+"Strong wind / wind speed" = "رياح قوية";
+"Hard wind / wind speed" = "رياح شديدة";
+"Powerful wind / wind speed" = "رياح قوية جدًا";
+"Storm wind / wind speed" = "عاصفة";
+"Hard storm wind / wind speed" = "عاصفة شديدة";
+"Hurricane wind / wind speed" = "إعصار";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "أقصى درجة حرارة";
+"Min temperature / temperature" = "أدنى درجة حرارة";
+"Average temperature / temperature" = "درجة حرارة متوسطة";
+"Feels like temperature / temperature" = "كما يشعر";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "هواء جاف جدًا";
+"Dry air / humidity" = "هواء جاف";
+"Moderately dry air / humidity" = "هواء متوسط الجفاف";
+"Moderately humid air / humidity" = "هواء متوسط الرطوبة";
+"Very humid air / humidity" = "هواء رطب جدًا";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "صافٍ";
+"Partly Cloudy / cloud cover" = "غائم جزئيًا";
+"Variable Cloudiness / cloud cover" = "غائم متغير";
+"Cloudy / cloud cover" = "غائم";
+"Overcast / cloud cover" = "ملبد بالغيوم";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "جاف نسبيًا";
+"Moderately humid air / dew point" = "رطوبة معتدلة";
+"Humid air / dew point" = "رطوبة";
+"Very humid air / dew point" = "رطوبة شديدة";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "ممتاز";
+"Good / visibility" = "جيد";
+"Moderate / visibility" = "معتدل";
+"Poor / visibility" = "ضعيف";
+"Very Poor / visibility" = "ضعيف جدًا";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "خفيف جدًا";
+"Light / precipitation" = "خفيف";
+"Moderate / precipitation" = "معتدل";
+"Heavy / precipitation" = "ثقيل";
+"Very Heavy / precipitation" = "ثقيل جدًا";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "منخفض جدًا";
+"Low / pressure" = "منخفض";
+"Normal / pressure" = "عادي";
+"Hight / pressure" = "مرتفع";
+"Very hight / pressure" = "عالي جدًا";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "منخفض";
+"Moderate / uv index" = "معتدل";
+"Hight / uv index" = "عالي";
+"Very high / uv index" = "عالي جدًا";
+"Excessive / uv index" = "مفرط";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "سمعة";
+"Nickname / skydivers" = "اسم مستعار";
+"Country / skydivers" = "بلد";
+"Profile / skydivers" = "الملف الشخصي";
+"Profession / skydivers" = "مهنة";
+"Count of jumps / skydivers" = "عدد القفزات";
+"First jump / skydivers" = "القفزة الأولى";
+"About rating / skydivers" = "مزيد من المعلومات";
+"About rating message / skydivers" = "المجتمع هو إعلان للنفس، بالإضافة إلى مساعدة المشروع.\nالتفاصيل على Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "لعرض الإحصائيات، يجب عليك إجراء قفزة واحدة على الأقل.";
+"saving data" = "جارٍ حفظ البيانات";
+"saving data text" = "لحفظ سجل القفزات الكامل، يُوصى بانتظام بإنشاء نسخ احتياطية في قسم \"الإعدادات\".\nهذا مهم خاصة عند التبديل إلى جهاز جديد.";
+"jumps by year" = "القفزات حسب السنة";
+"year" = "السنة";
+"Categories USPA" = "الفئات";
+"Categories USPA List" = "\nA: 25 قفزة\nوقت الحركة الحرة: 10 دقائق (600 ثانية)\n\nB: 50 قفزة\nوقت الحركة الحرة: 30 دقيقة (1800 ثانية)\n\nC: 200 قفزة\nوقت الحركة الحرة: 60 دقيقة (3600 ثانية)\n\nD: 500 قفزة\nوقت الحركة الحرة: 180 دقيقة (10800 ثانية)\n";
+"Maximum time" = "الوقت الأقصى";
+"Maximum time alert" = "تم الانتهاء من القفزة بأطول وقت للحركة الحرة";
+"Maximum height" = "الارتفاع الأقصى";
+"Maximum height alert" = "تم الانتهاء من القفزة بأعلى ارتفاع للقمرة";
+"Average height" = "الارتفاع المتوسط";
+"Minimum height" = "الارتفاع الأدنى";
+"Minimum height alert" = "تم الانتهاء من القفزة بأقل ارتفاع للقمرة";
+"First jump / statistic" = "تمت القفزة الأولى";
+"Last jump / statistic" = "تمت القفزة الأخيرة";
+"Max in one day" = "الأقصى في يوم واحد";
+"Average height of jump" = "الارتفاع المتوسط للقفزة";
+"Average free fall time of jump" = "الوقت المتوسط للحركة الحرة للقفزة";
+"Average time" = "الوقت المتوسط للقفزة";
+"Max count of jumps" = "عدد القفزات";
+"Max count of jumps text" = "تم الانتهاء من أقصى عدد من القفزات في يوم واحد";
+"Jumps no found" = "لم يتم العثور على قفزات";
+"Count of cutaways" = "عدد الانقاذ";
+"Date last jump" = "القفزة الأخيرة";
+"Date first jump" = "القفزة الأولى";
+"List aircrafts" = "قائمة الطائرات";
+"List canopies" = "قائمة الكنبات";
+"List locations" = "قائمة المواقع";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "معلومات عامة";
+"Total height" = "الارتفاع الإجمالي";
+"Total time" = "الوقت الإجمالي";
+"Total jumps" = "إجمالي القفزات";
+"In this year" = "في هذه السنة";
+"Category" = "الفئة";
+
+"Average info" = "معلومات متوسطة";
+
+"Max. height" = "أقصى ارتفاع";
+"Av. height" = "الارتفاع المتوسط";
+"Min. height" = "أدنى ارتفاع";
+"First jump" = "القفزة الأولى";
+"Max. time" = "أقصى وقت";
+"Last jump" = "القفزة الأخيرة";
+"Max. in day" = "الأقصى في اليوم";
+"Av. time" = "الوقت المتوسط";
+"CutawayStatistic" = "Cutaway";
+"Count cutaway" = "عدد الإنقاذات";
+"Aircraft" = "الطائرة";
+"Canopies" = "المظلات الجوية";
+"Locations" = "المواقع";
+"Missions" = "المهام";
+
+"Accuracy" = "الدقة";
+"Acrobatics" = "الأكروبات";
+"AFF" = "AFF";
+"Base" = "القاعدة";
+"Base/Wingsuit" = "القاعدة/البدلة الطائرة";
+"Canopy formation" = "تشكيل المظلة الجوية";
+"Freefly" = "الطيران الحر";
+"Freestyle" = "الحرية";
+"Fun" = "المتعة";
+"Group" = "المجموعة";
+"Instructor" = "المعلم";
+"Military" = "العسكري";
+"Para-ski" = "بارا-سكي";
+"Proximity" = "القرب";
+"Skysurfing" = "سكاي سيرفينج";
+"Static-line" = "الخط الثابت";
+"Piloting" = "التوجيه";
+"Tandem" = "التندم";
+"Vertical" = "عمودي";
+"Video" = "الفيديو";
+"Wingsuit" = "البدلة الطائرة";
+"Formation" = "التكوين";
+"Top 10:" = "أفضل ١٠:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "قفزة جديدة";
+"Manual / new jump" = "للبدء، اذهب إلى قسم \"الإعدادات\" وأدخل البيانات التالية:\n\nالمواقع\nالطائرات\nالمظلات الجوية";
+
+// MARK: - CellNewJump:
+
+"Date" = "التاريخ";
+"Location" = "الموقع";
+"Aircraft" = "الطائرة";
+"Canopy" = "المظلة";
+"Mission" = "المهمة";
+"Height" = "الارتفاع";
+"Time" = "الوقت";
+"Cutaway" = "القاطع";
+"Comment" = "تعليق";
+
+"Date placeholder" = "يوم.شهر.سنة";
+"Location placeholder" = "منطقة الهبوط";
+"Aircraft placeholder" = "نوع الطائرة";
+"Canopy placeholder" = "المظلة الرئيسية";
+"Mission placeholder" = "نوع القفزة";
+"Height placeholder" = "أمتار";
+"Time placeholder" = "ثواني";
+"Cutaway placeholder" = "نعم / لا";
+"Comment placeholder" = "اختياري";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "إضافة نظام جديد";
+"Comment" = "تعليق";
+"No comments" = "لم يتم العثور على تعليقات";
+"Container system" = "الحاوية";
+"AAD system" = "جهاز السلامة";
+"Main canopy system" = "المظلة الرئيسية";
+"Reserve canopy system" = "المظلة الاحتياطية";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "الرقم";
+"DOM system" = "DOM";
+"Service life system" = "عمر الخدمة";
+"Valid until system" = "صالحة حتى";
+"Counts of the jumps system" = "عدد القفزات";
+"Resource system" = "الموارد";
+"Counts of repack system" = "عدد إعادة التعبئة";
+"Packed system" = "معبأ";
+
+"years system" = "سنوات";
+"jumps system" = "قفزات";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "إضافة نظام";
+"Container alert" = "الحاوية";
+"AAD alert" = "جهاز السلامة";
+"Main canopy alert" = "المظلة الرئيسية";
+"Reserve canopy alert" = "المظلة الاحتياطية";
+
+"Name and model container alert" = "اسم ونموذج الحاوية";
+"Name and model AAD alert" = "اسم وطراز جهاز التأمين";
+"Name and model main canopy alert" = "اسم ونموذج المظلة الرئيسية. يجب عليك أولاً إضافتها في قسم \"الإعدادات\" -> \"تعديل المظلات\"";
+"Name and model reserve canopy alert" = "اسم ونموذج المظلة الاحتياطية";
+
+"DOM alert" = "تاريخ التصنيع";
+"Serial number alert" = "الرقم التسلسلي";
+"Warranty resource container alert" = "عمر الضمان (عادة ما يحدده الشركة المصنعة بين 10-20 سنة، أو وفقًا للحالة التقنية)";
+"Warranty resource AAD alert" = "الضمان مدى الحياة (عدد السنوات المضمونة ، أو عدد السنوات قبل الصيانة الروتينية)";
+"Warranty resource main canopy alert" = "عمر الضمان بالسنوات (عادة ما يحدده الشركة المصنعة بين 10-20 سنة، أو وفقًا للحالة التقنية)";
+"Warranty resource jumps main canopy alert" = "موارد الضمان للقفزات (عادةً ما تشير الشركة المصنعة إلى 500 قفزة، أو وفقًا للحالة التقنية حتى 1000 قفزة)";
+"Counts of jumps main canopy alert" = "عدد القفزات (إذا لم يتم شراء المظلة جديدة وتم إجراء قفزات عليها بالفعل، فقم بتحديد هذا العدد). لحساب صحيح، من الضروري تحديد فقط عدد القفزات التي لم تُسجل سابقًا في القائمة العامة للقفزات في هذا التطبيق";
+"Warranty resource reserve canopy alert" = "عمر الضمان (عادة ما يحدده الشركة المصنعة بين 10-20 سنة، أو وفقًا للحالة التقنية)";
+"Counts of repack reserve canopy alert" = "إذا لم يتم شراء المظلة جديدة وتمت تعبئتها بالفعل، فحدد هذا العدد";
+"Date of pack reserve canopy alert" = "تاريخ التعبئة";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "اسم النظام";
+"Name / new system cell" = "الاسم";
+"Container / new system cell" = "الحاوية";
+"Name container / new system cell" = "اسم الحاوية";
+
+"DOM / new system cell" = "تاريخ التصنيع";
+"Date mm.yyyy / new system cell" = "شهر.سنة";
+"Serial number / new system cell" = "الرقم التسلسلي";
+"Warranty resource / new system cell" = "عمر الضمان";
+"Counts of years / new system cell" = "عدد السنوات";
+"Counts of jumps / new system cell" = "عدد القفزات";
+
+"AAD / new system cell" = "جهاز السلامة";
+"Name AAD / new system cell" = "اسم جهاز السلامة";
+
+"Main canopy / new system cell" = "المظلة الرئيسية";
+"Name main canopy / new system cell" = "اسم المظلة";
+"Counts of jumps main canopy / new system cell" = "عدد القفزات";
+"The value of the purchase / new system cell" = "قيمة الشراء";
+
+"Reserve canopy / new system cell" = "المظلة الاحتياطية";
+"Name reserve canopy / new system cell" = "اسم المظلة";
+"Counts of repack reserve canopy / new system cell" = "عدد إعادة التعبئة";
+"Date of packing reserve canopy / new system cell" = "تاريخ التعبئة";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+"Count / new system cell" = "العدد";
+
+"Comment / new system cell" = "تعليق";
+"Optional / new system cell" = "اختياري (حالة الخطوط الخ.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "تعديل الحساب";
+"Edit locations" = "تعديل المواقع";
+"Delete location?" = "حذف الموقع؟";
+"Edit aircrafts" = "تعديل الطائرات";
+"Delete aircraft?" = "حذف الطائرة؟";
+"Edit canopies" = "تعديل الأغطية";
+"Drop zones" = "المناطق الهبوطية";
+"Delete canopy?" = "حذف الغطاء؟";
+"Backup copy" = "نسخة احتياطية";
+"Calculator loading" = "تحميل الآلة الحاسبة";
+"Information" = "معلومات";
+"Premium version" = "النسخة المميزة";
+"Share the app" = "مشاركة التطبيق";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "اسم المستخدم";
+"Name user / edit account vc" = "اسم المستخدم";
+"License / edit account vc" = "الرخصة";
+"Type / number / edit account vc" = "النوع / الرقم";
+"Valid until / edit account vc" = "صالح حتى";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "الطب";
+"Insurance / edit account vc" = "التأمين";
+"Reserve canopy / edit account vc" = "الغطاء الاحتياطي";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "اسم منطقة الهبوط";
+"Enter aircraft" = "اسم الطائرة";
+"Enter canopy" = "اسم الغطاء";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nالنسخ الاحتياطي يحفظ جميع البيانات المسجلة في التطبيق.\nمن الأفضل عمل نسخ احتياطية بين الحين والآخر لعدم فقدان البيانات المدخلة.\n";
+"Backup / backup" = "إنشاء نسخة احتياطية";
+"Restore / backup" = "استعادة";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "الوزن الإجمالي";
+"kg." = "كغ";
+"ft" = "قدم²";
+"Square canopy" = "غطاء مربع";
+"1-50A" = "\nنوع المظلة: طالب.\nالفئة: A.\nعدد القفزات: 1-50 قفزة.\n";
+"51-200B" = "\nنوع المظلة: انتقالية.\nالفئة: B.\nعدد القفزات: 51-200 قفزة.\n";
+"201-500C" = "\nنوع المظلة: متوسطة السرعة.\nالفئة: C.\nعدد القفزات: 201-500 قفزة.\n";
+"501-1000D1" = "\nنوع المظلة: سرعة/قطعة الزخرفة.\nالفئة: D.\nعدد القفزات: 501-1000 قفزة.\n";
+"1000D2" = "\nنوع المظلة: عالية السرعة.\nالفئة: D.\nعدد القفزات: 1000+ قفزة.\n";
+"1000D3" = "\nنوع المظلة: عالية السرعة/عبر البروس.\nالفئة: D.\nعدد القفزات: 1000+ قفزة.\n";
+
+// MARK: - INFO:
+
+"App version" = "عن التطبيق";
+"Version / info" = "الإصدار";
+"Build / info" = "البنية";
+"Privacy policy" = "سياسة الخصوصية";
+"Terms of use" = "شروط الاستخدام";
+"FAQ" = "الأسئلة الشائعة";
+"App language / info" = "لغة التطبيق";
+"App language text / info" = "يستخدم هذا التطبيق اللغة المثبتة كلغة رئيسية على هاتفك. إذا لم يتم دعم لغتك من قبل التطبيق، فسيتم استخدام اللغة الإنجليزية افتراضيًا.\n\nقائمة اللغات المدعومة:\nالعربية\nالإنجليزية\nالفرنسية\nالهندية\nالإسبانية\nالإيطالية\nاليابانية\nالصينية\nالألمانية\nالبرتغالية\nالروسية\n\nتم الترجمة باستخدام الذكاء الاصطناعي، وقد تحتوي على أخطاء.\nإذا كنت ترغب في مساعدة المشروع وترجمة التطبيق إلى لغتك أو مساعدة في تصحيح الأخطاء، يرجى التواصل مع المطور.";
+"Info text" = "\nSkydiveBook - ليست تأكيدًا رسميًا بأن مستخدم التطبيق هو غواص سماء محترف.\n\nإنها إضافة اختيارية إلى الكتاب الرسمي للمظلي أو شهادته بغوص سماء من أي فئة.\n\nالقفزات المسجلة في SkydiveBook ليست دليلاً على هذه القفزات ولا يمكن اعتبارها أساسًا لإصدار مستندات رسمية أو شهادات أو فئات.\n\nالتطبيق مصمم للاستخدام الشخصي وراحة الغوص بالمظلات والتحليلات المتقدمة.\n\nالبيانات حول تحميل القبة الرئيسية هي معلومات مرجعية وليست طبيعة توصية لاختيار معدات المظلة.\n\nيجب أن تصدر جميع التصاريح لتشغيل المظلات من مدرب صحيح.\n\nأي معلومات تحصل عليها باستخدام التطبيق هي لأغراض المرجعية فقط: دراسة خريطة المطار بنفسك، بالإضافة إلى الحصول على بيانات محدثة حول ظروف الطقس أثناء القفزات.\n\nمثل أي برنامج، يمكن أن يحتوي هذا التطبيق على أخطاء وأن يكون غير مثالي بسبب العامل البشري.\n\nتذكر أن الغوص بالمظلات ينطوي على مخاطر على الحياة. عدم الامتثال للتعليمات الأمنية يمكن أن يؤدي إلى الإصابة وحتى الوفاة.\n";
+"Info text start alert" = "\nSkydiveBook - ليست تأكيدًا رسميًا بأن مستخدم التطبيق هو غواص سماء محترف.\n\nإنها إضافة اختيارية إلى الكتاب الرسمي للمظلي أو شهادته بغوص سماء من أي فئة.\n\nالقفزات المسجلة في SkydiveBook ليست دليلاً على هذه القفزات ولا يمكن اعتبارها أساسًا لإصدار مستندات رسمية أو شهادات أو فئات.\n\nالتطبيق مصمم للاستخدام الشخصي وراحة الغوص بالمظلات والتحليلات المتقدمة.\n\nالبيانات حول تحميل القبة الرئيسية هي معلومات مرجعية وليست طبيعة توصية لاختيار معدات المظلة.\n\nيجب أن تصدر جميع التصاريح لتشغيل المظلات من مدرب صحيح.\n\nأي معلومات تحصل عليها باستخدام التطبيق هي لأغراض المرجعية فقط: دراسة خريطة المطار بنفسك، بالإضافة إلى الحصول على بيانات محدثة حول ظروف الطقس أثناء القفزات.\n\nمثل أي برنامج، يمكن أن يحتوي هذا التطبيق على أخطاء وأن يكون غير مثالي بسبب العامل البشري.\n\nتذكر أن الغوص بالمظلات ينطوي على مخاطر على الحياة. عدم الامتثال للتعليمات الأمنية يمكن أن يؤدي إلى الإصابة وحتى الوفاة.\n\nلقد قرأتها وأوافق.";
+"Agree" = "موافق";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nفي الإصدار المجاني من التطبيق، يمكنك حفظ 50 قفزة.\n\n⭐️ ⭐️ ⭐️\n\nالإصدار المميز من التطبيق يتيح لك حفظ عدد غير محدود من القفزات.\n";
+"1 month" = "$9.99 / شهر";
+"12 months" = "$49.99 / سنة\n($4.16/شهر)";
+"Restore purchases" = "استعادة المشتريات";
+
+"Buy status" = "الحالة الشرائية";
+"Restore Successful" = "تمت الاستعادة بنجاح";
+"All purchases have been successfully restored." = "تمت استعادة جميع المشتريات بنجاح.";
+"Restore Failed" = "فشلت عملية الاستعادة";
+"Some purchases could not be restored. Please try again later." = "تعذر استعادة بعض المشتريات. يرجى المحاولة مرة أخرى لاحقًا.";
+"No Purchases to Restore" = "لا توجد مشتريات لاستعادتها";
+"There are no previous purchases to restore." = "لا توجد مشتريات سابقة لاستعادتها.";
+
+// ADAPTY:
+
+"No connection / adapty" = "لا يوجد اتصال";
+"Message / adapty" = "يتطلب وجود اتصال إنترنت نشط لاستقبال البيانات.";
+
+"Alert / adapty status" = "النسخة المميزة مطلوبة";
+"Message / adapty status" = "في الإصدار المجاني، يمكنك حفظ فقط:\n\n50 قفزة.\n10 ملاحظات.\n1 نظام.\n\nلإزالة جميع القيود، اشتري الإصدار المميز في قسم \"الإعدادات\".";
+
+// MARK: - SYSTEM:
+
+"System" = "النظام";
+"Delete system?" = "حذف النظام؟";
+"System empty message / system" = "ليس لديك أي أنظمة مظلة مضافة حتى الآن.";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "مناطق القفز";
+"Message / drop zones" = "سيتم وضع مناطق القفز الموثوقة هنا فقط. يمكنك إضافة موقعك عن طريق الكتابة إلى Instagram.";
+"Map type" = "نوع الخريطة";
+"Standard / map type" = "قياسي";
+"Satellite / map type" = "فضائي";
+"Hybrid / map type" = "هجين";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "نجاح";
+"Error / alert kit" = "خطأ";
+
+"Jump added / alert kit" = "تمت إضافة القفز";
+"Jump deleted / alert kit" = "تم حذف القفز";
+"Jump updated / alert kit" = "تم تحديث القفز";
+
+"Note added / alert kit" = "تمت إضافة الملاحظة";
+"Note deleted / alert kit" = "تم حذف الملاحظة";
+
+"System added / alert kit" = "تمت إضافة النظام";
+"System deleted / alert kit" = "تم حذف النظام";
+"System updated / alert kit" = "تم تحديث النظام";
+
+"Backup saved / alert kit" = "تم حفظ النسخة الاحتياطية";
+"Backup upload / alert kit" = "تم تحميل النسخة الاحتياطية";
+
+"Location added / alert kit" = "تمت إضافة الموقع";
+"Location deleted / alert kit" = "تم حذف الموقع";
+
+"Aircraft added / alert kit" = "تمت إضافة الطائرة";
+"Aircraft deleted / alert kit" = "تم حذف الطائرة";
+
+"Canopy added / alert kit" = "تمت إضافة المظلة";
+"Canopy deleted / alert kit" = "تم حذف المظلة";

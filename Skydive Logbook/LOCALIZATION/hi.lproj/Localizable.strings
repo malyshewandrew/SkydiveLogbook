@@ -1,0 +1,581 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "मुख्य";
+"Statistic tab bar" = "आंकड़ा";
+"Add jump tab bar" = "नया जंप";
+"System tab bar" = "सिस्टम";
+"Settings tab bar" = "सेटिंग्स";
+
+// MARK: - MAIN:
+
+"Save" = "सहेजें";
+"Clean" = "साफ";
+"Close" = "बंद करें";
+"Edit" = "संपादित करें";
+"Delete" = "हटाएं";
+"Calculate" = "गणना";
+"Update" = "अद्यतन";
+"Settings iphone" = "सेटिंग्स";
+
+"Ok" = "ठीक";
+"Yes" = "हाँ";
+"No" = "नहीं";
+
+"ago" = "पहले";
+"back" = "पीछे";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "मी.";
+"km." = "किमी.";
+"miles" = "मील";
+"feet" = "फ़ीट";
+
+// MARK: - MEASURING TIME:
+
+"s." = "सेक.";
+"min." = "मिनट";
+"h." = "घंटा";
+"d." = "दिन";
+"mon." = "माह";
+"y." = "वर्ष";
+
+// MARK: - MAIN:
+
+"First Message" = "\nस्काईडाइवबुक में आपका स्वागत है!\n\nशुरू करने के लिए, आपको कम से कम एक जगह:\n\nस्थान\nविमान के प्रकार\nकैनोपी\n\n\"सेटिंग्स\" खंड में जाना होगा\n\nआनंद लें और सुरक्षित जंप करें!\n";
+"Delete jump?" = "जंप हटाएं?";
+"This action cannot be undone." = "यह कार्रवाई पूर्वावलोकन नहीं हो सकती।";
+
+"License" = "लाइसेंस";
+"until" = "तक";
+"Medicine until" = "दवा तक";
+"Insurance until" = "बीमा तक";
+"Reserve canopy until" = "रिजर्व कैनोपी तक";
+
+"Edit/add account" = "खाता भरने के लिए, \"सेटिंग्स\" खंड में जाएं।";
+
+// MARK: - NOTES:
+
+"New note" = "नई नोट";
+"Delete note?" = "नोट हटाएं?";
+
+// MARK: - WEATHER:
+
+"No connection" = "कोई कनेक्शन नहीं";
+"No connection message / weather" = "मौसम का पूर्वानुमान डेटा प्राप्त करने के लिए एक सक्रिय इंटरनेट कनेक्शन की आवश्यकता है।";
+
+"mm/h" = "मिमी/घंटा";
+"hPa" = "हेक्टोपास्कल";
+"mm / pressure" = "मिमी";
+"m/s" = "मी/सेक";
+"km" = "किमी";
+"Gusts up to" = "उठाओ तक";
+
+"Wind speed / weather" = "हवा की गति";
+"Temperature / weather" = "तापमान";
+"Cloud cover / weather" = "बादल कवर";
+"Humidity / weather" = "नमी";
+"Dew point / weather" = "टाइफॉर्मेशन प्वाइंट";
+"Visibility / weather" = "दृश्यता";
+"Precipitation / weather" = "वर्षा";
+"Pressure / weather" = "दबाव";
+"UvIndex / weather" = "यूवी इंडेक्स";
+"It feels like / weather" = "यह ऐसा लगता है";
+
+"Wind direction" = "हवा की दिशा";
+"Arrow wind direction" = "तीर की दिशा आपके नजदीकी भूमि की हवा की दिशा को दिखाता है जहां आप हैं। यह केवल एक सक्रिय इंटरनेट कनेक्शन के साथ काम करता है।";
+
+"Permisson label / weather" = "सेटिंग्स आईफोन -> स्काईडाइवबुक -> स्थान (अनुमति दें)";
+"Permisson label alert / weather" = "वर्तमान मौसम का पूर्वानुमान प्रदर्शित करने के लिए, आपको अपनी स्थिति की निर्धारण की अनुमति प्राप्त करनी होगी। इसे सेटिंग्स में किया जा सकता है।";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "हवा वर्गीकरण";
+"Wind weather message / alert" = "शांत: < 0.3 मी/सेक\nशांत: 0.3—1.5 मी/सेक\nहल्का: 1.6—3.3 मी/सेक\nमध्यम: 3.4—5.4 मी/सेक\nताजा: 5.5—7.9 मी/सेक\nमजबूत: 8.0—10.7 मी/सेक\nनियर गेल: 10.8—13.8 मी/सेक\nगेल: 13.9—17.1 मी/सेक\nमजबूत गेल: 17.2—20.7 मी/सेक\nतूफ़ान: 20.8—24.4 मी/सेक\nबलवीराण तूफ़ान: 24.5—28.4 मी/सेक\nहड़कंप: >32.7 मी/सेक";
+
+"Temperature weather title / alert" = "ऐसा लगता है";
+"Temperature weather message / alert" = "इंडिकेटर 'ऐसा लगता है' वास्तविक तापमान से भिन्न हो सकता है, जो एक व्यक्ति द्वारा तापमान को कैसे महसूस किया जाता है को दर्शाता है। 'ऐसा लगता है' इंडिकेटर हवा की गति और नमी स्तरों से प्रभावित होता है।";
+
+"Cloud cover weather title / alert" = "बादल कवर";
+"Cloud cover weather message / alert" = "बादल कवर को प्रतिशत में मापा जाता है। यह आमतौर पर बादलों द्वारा अधिगृहीत आकाश के हिस्सों में व्यक्त किया जाता है।";
+
+"Humidity weather title / alert" = "नमी";
+"Humidity weather message / alert" = "सापेक्ष नमी, या बस नमी, वायु में नमी की मात्रा को वायु में बन सकने वाली अधिकतम मात्रा से अनुपातित करती है।";
+
+"Dew point weather title / alert" = "टाइफॉर्मेशन प्वाइंट";
+"Dew point weather message / alert" = "टाइफॉर्मेशन प्वाइंट वह मान है जिस पर तापमान को घटाने की आवश्यकता होती है ताकि शांति बन सके। यह वायु की नमी का निर्धारण करने का एक सुविधाजनक तरीका है: ज्यादा टाइफॉर्मेशन प्वाइंट, वायु की नमी ज्यादा होती है।";
+
+"Visibility weather title / alert" = "दृश्यता";
+"Visibility weather message / alert" = "दृश्यता दिखाती है कि आप स्पष्ट रूप से वस्तुओं जैसे इमारतें और पहाड़ों को कितनी दूरी से देख सकते हैं। दृश्यता वायु के पारदर्शिता का मापन है और सूर्य की प्रकाश की मात्रा या बाधाओं की उपस्थिति को ध्यान में नहीं लेता।";
+
+"Precipitation weather title / alert" = "वर्षा";
+"Precipitation weather message / alert" = "वर्षा की मात्रा पृथ्वी की सतह पर पानी की परत की ऊंचाई मेटर में है जो कि पूरी तरह से समतल होती है";
+
+"Pressure weather title / alert" = "दबाव";
+"Pressure weather message / alert" = "यह तालिका आपकी स्थानांतरित स्थिति के अनुसार दबाव सामान्य से किए गए विचलनों को दिखाता है। लोगों के लिए सामान्य दबाव 760 मिमी ऑफ़ मरक्यरी होता है। लेकिन प्रत्येक व्यक्ति के लिए सामान्य वायव्य दबाव उस क्षेत्र पर निर्भर करता है जिसमें वह स्थित है, और क्षेत्र का दबाव क्षेत्र की ऊंचाई पर निर्भर करता है।";
+
+"UvIndex weather title / alert" = "यूवी इंडेक्स";
+"UvIndex weather message / alert" = "यूवी इंडेक्स (UFI), जो विश्व स्वास्थ्य संगठन द्वारा विकसित किया गया है, यह अल्ट्रावायलेट रेडिएशन की शक्ति को दर्शाता है। यूवी इंडेक्स का उच्च होना सूर्य के नीचे होने के लिए ज्यादा खतरनाक होने का संकेत है और यह आपके स्वास्थ्य को तेजी से हानि पहुंचा सकता है। यूवी इंडेक्स को ट्रैक करके, आप सूर्य से खुद को सुरक्षित रखने का निर्णय कर सकते हैं और कब बाहर न जाने का बेहतर है यह भी तय कर सकते हैं।";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "शांत";
+"Weak wind / wind speed" = "कमजोर हवा";
+"Light wind / wind speed" = "हल्की हवा";
+"Quiet wind / wind speed" = "शांत हवा";
+"Moderate wind / wind speed" = "मध्यम हवा";
+"Fresh wind / wind speed" = "ताजगी हवा";
+"Strong wind / wind speed" = "मजबूत हवा";
+"Hard wind / wind speed" = "कठोर हवा";
+"Powerful wind / wind speed" = "शक्तिशाली हवा";
+"Storm wind / wind speed" = "तूफ़ान";
+"Hard storm wind / wind speed" = "कठोर तूफ़ान";
+"Hurricane wind / wind speed" = "हड़कंप";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "अधिकतम तापमान";
+"Min temperature / temperature" = "न्यूनतम तापमान";
+"Average temperature / temperature" = "औसत तापमान";
+"Feels like temperature / temperature" = "ऐसा लगता है तापमान";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "बहुत सूखी";
+"Dry air / humidity" = "सूखी";
+"Moderately dry air / humidity" = "मध्यम रूप से सूखी";
+"Moderately humid air / humidity" = "मध्यम नमी";
+"Very humid air / humidity" = "बहुत नमी";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "स्पष्ट";
+"Partly Cloudy / cloud cover" = "आंशिक मेघ";
+"Variable Cloudiness / cloud cover" = "परिवर्तनशील मेघाच्छादन";
+"Cloudy / cloud cover" = "बादलदार";
+"Overcast / cloud cover" = "ढेर मेघ";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "मामूली सूखी";
+"Moderately humid air / dew point" = "मध्यम नमी";
+"Humid air / dew point" = "नमी";
+"Very humid air / dew point" = "बहुत नमी";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "उत्कृष्ट";
+"Good / visibility" = "अच्छी";
+"Moderate / visibility" = "मध्यम";
+"Poor / visibility" = "खराब";
+"Very Poor / visibility" = "बहुत खराब";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "बहुत हल्की";
+"Light / precipitation" = "हल्की";
+"Moderate / precipitation" = "मध्यम";
+"Heavy / precipitation" = "भारी";
+"Very Heavy / precipitation" = "बहुत भारी";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "बहुत कम";
+"Low / pressure" = "कम";
+"Normal / pressure" = "सामान्य";
+"Hight / pressure" = "उच्च";
+"Very hight / pressure" = "बहुत उच्च";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "कम";
+"Moderate / uv index" = "मध्यम";
+"Hight / uv index" = "उच्च";
+"Very high / uv index" = "बहुत उच्च";
+"Excessive / uv index" = "अत्यधिक";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "प्रतिष्ठा";
+"Nickname / skydivers" = "उपनाम";
+"Country / skydivers" = "देश";
+"Profile / skydivers" = "प्रोफ़ाइल";
+"Profession / skydivers" = "व्यवसाय";
+"Count of jumps / skydivers" = "उछलों की संख्या";
+"First jump / skydivers" = "पहला उछल";
+"About rating / skydivers" = "अधिक जानकारी";
+"About rating message / skydivers" = "समुदाय खुद के लिए एक विज्ञापन है, साथ ही परियोजना के लिए सहायता भी है।\nInstagram पर विवरण।";
+
+// MARK: - Statistic:
+
+"no jumps" = "सांख्यिकी दिखाने के लिए, आपको कम से कम एक उछल करना होगा।";
+"saving data" = "डेटा सहेज रहे हैं";
+"saving data text" = "अपना पूरा उछल इतिहास सहेजने के लिए, सिफारिश की जाती है कि आप नियमित अंतराल में \"सेटिंग्स\" खंड में बैकअप बनाते रहें। \nयह खासतौर पर जरूरी है जब आप एक नए डिवाइस पर स्विच करते हैं।";
+"jumps by year" = "वर्षानुसार उछल";
+"year" = "साल";
+"Categories USPA" = "श्रेणियाँ";
+"Categories USPA List" = "\nA: 25 उछल\nफ्री फॉल समय: 10 मिनट (600s.)\n\nB: 50 उछल\nफ्री फॉल समय: 30 मिनट (1800s.)\n\nC: 200 उछल\nफ्री फॉल समय: 60 मिनट (3600s.)\n\nD: 500 उछल\nफ्री फॉल समय: 180 मिनट (10800s.)\n";
+"Maximum time" = "अधिकतम समय";
+"Maximum time alert" = "अधिकतम फ्री फॉल समय वाला उछल पूरा किया गया था";
+"Maximum height" = "अधिकतम ऊँचाई";
+"Maximum height alert" = "अधिकतम कंपार्टमेंट की ऊंचाई वाला उछल पूरा किया गया था";
+"Average height" = "औसत ऊँचाई";
+"Minimum height" = "न्यूनतम ऊँचाई";
+"Minimum height alert" = "न्यूनतम कंपार्टमेंट की ऊंचाई वाला उछल पूरा किया गया था";
+"First jump / statistic" = "पहला उछल किया गया था";
+"Last jump / statistic" = "आखिरी उछल किया गया था";
+"Max in one day" = "एक दिन में अधिकतम";
+"Average height of jump" = "उछल की औसत ऊँचाई";
+"Average free fall time of jump" = "उछल की औसत फ्री फॉल समय";
+"Average time" = "उछल की औसत समय";
+"Max count of jumps" = "उछलों की संख्या";
+"Max count of jumps text" = "एक दिन में अधिकतम उछल की संख्या पूरी की गई थी";
+"Jumps no found" = "उछल नहीं मिले";
+"Сount of cutaways" = "कटआउट्स की संख्या";
+"Date last jump" = "आखिरी उछल";
+"Date first jump" = "पहला उछल";
+"List aircrafts" = "विमानों की सूची";
+"List canopies" = "कैनोपी की सूची";
+"List locations" = "स्थानों की सूची";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "सामान्य जानकारी";
+"Total height" = "कुल ऊँचाई";
+"Total time" = "कुल समय";
+"Total jumps" = "कुल उछल";
+"In this year" = "इस साल में";
+"Category" = "श्रेणी";
+
+"Average info" = "औसत जानकारी";
+
+"Max. height" = "अधिकतम ऊँचाई";
+"Av. height" = "औसत ऊँचाई";
+"Min. height" = "न्यूनतम ऊँचाई";
+"First jump" = "पहला उछल";
+"Max. time" = "अधिकतम समय";
+"Last jump" = "आखिरी उछल";
+"Max. in day" = "एक दिन में अधिकतम";
+"Av. time" = "औसत समय";
+"CutawayStatistic" = "कटआउट";
+"Count cutaway" = "कटआउट की संख्या";
+"Aircraft" = "विमान";
+"Canopies" = "कैनोपी";
+"Locations" = "स्थान";
+"Missions" = "मिशन";
+
+"Accuracy" = "सटीकता";
+"Acrobatics" = "एक्रोबैटिक्स";
+"AFF" = "AFF";
+"Base" = "बेस";
+"Base/Wingsuit" = "बेस/विंगसूट";
+"Canopy formation" = "कैनोपी फॉर्मेशन";
+"Freefly" = "फ्रीफ्लाई";
+"Freestyle" = "फ्रीस्टाइल";
+"Fun" = "मज़ा";
+"Group" = "समूह";
+"Instructor" = "इंस्ट्रक्टर";
+"Military" = "सैन्य";
+"Para-ski" = "पैरा-स्की";
+"Proximity" = "प्रोक्सिमिटी";
+"Skysurfing" = "स्काईसर्फिंग";
+"Static-line" = "स्टेटिक लाइन";
+"Piloting" = "पायलटिंग";
+"Tandem" = "टेंडेम";
+"Vertical" = "उभरन";
+"Video" = "वीडियो";
+"Wingsuit" = "विंगसूट";
+"Formation" = "फॉर्मेशन";
+"Top 10:" = "शीर्ष 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "नया उछल";
+"Manual / new jump" = "शुरुआत करने के लिए, \"सेटिंग्स\" खंड में जाएं और निम्नलिखित डेटा दर्ज करें:\n\nस्थान\nविमान\nकैनोपी";
+
+// MARK: - CellNewJump:
+
+"Date" = "तारीख";
+"Location" = "स्थान";
+"Aircraft" = "विमान";
+"Canopy" = "कैनोपी";
+"Mission" = "मिशन";
+"Height" = "ऊँचाई";
+"Time" = "समय";
+"Cutaway" = "कटआउट";
+"Comment" = "टिप्पणी";
+
+"Date placeholder" = "dd.mm.yyyy";
+"Location placeholder" = "ड्रॉपज़ोन";
+"Aircraft placeholder" = "विमान का प्रकार";
+"Canopy placeholder" = "मुख्य कैनोपी";
+"Mission placeholder" = "उछल के प्रकार";
+"Height placeholder" = "मीटर";
+"Time placeholder" = "सेकंड";
+"Cutaway placeholder" = "नहीं / हां";
+"Comment placeholder" = "वैकल्पिक";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "नया सिस्टम जोड़ें";
+"Comment" = "टिप्पणी";
+"No comments" = "कोई टिप्पणियाँ नहीं मिलीं";
+"Container system" = "कंटेनर";
+"AAD system" = "सुरक्षा उपकरण";
+"Main canopy system" = "मुख्य कैनोपी";
+"Reserve canopy system" = "रिज़र्व कैनोपी";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "संख्या";
+"DOM system" = "डीओएम";
+"Service life system" = "सेवा जीवन";
+"Valid until system" = "समाप्त होने तक";
+"Counts of the jumps system" = "उछलों की गिनती";
+"Resource system" = "संसाधन";
+"Counts of repack system" = "रिपैक की गिनती";
+"Packed system" = "पैक";
+
+"years system" = "वर्ष";
+"jumps system" = "उछल";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "सिस्टम जोड़ें";
+"Container alert" = "कंटेनर";
+"AAD alert" = "सुरक्षा उपकरण";
+"Main canopy alert" = "मुख्य कैनोपी";
+"Reserve canopy alert" = "रिजर्व कैनोपी";
+
+"Name and model container alert" = "नाम और मॉडल कंटेनर";
+"Name and model AAD alert" = "नाम और मॉडल AAD";
+"Name and model main canopy alert" = "नाम और मॉडल मुख्य कैनोपी। आपको पहले \"सेटिंग्स\" -> \"कैनोपी संपादित करें\" खंड में इसे जोड़ना होगा";
+"Name and model reserve canopy alert" = "नाम और मॉडल रिजर्व कैनोपी";
+
+"DOM alert" = "निर्माण की तारीख";
+"Serial number alert" = "सीरियल नंबर";
+"Warranty resource container alert" = "वारंटी जीवन (सामान्यतः निर्माता 10-20 वर्ष या तकनीकी स्थिति के अनुसार इसे दिखाता है)";
+"Warranty resource AAD alert" = "वारंटी जीवन (वर्षों की गारंटीकृत संख्या, या नियमित रखरखाव से पहले वर्षों की संख्या)";
+"Warranty resource main canopy alert" = "वारंटी जीवन वर्षों के अनुसार (सामान्यतः निर्माता 10-20 वर्ष या तकनीकी स्थिति के अनुसार)";
+"Warranty resource jumps main canopy alert" = "उछलों के लिए वारंटी संसाधन (सामान्यतः निर्माता 500 उछलें दिखाता है, या तकनीकी स्थिति के अनुसार 1000 उछलें)";
+"Counts of jumps main canopy alert" = "आवेदनों की संख्या (यदि पैराशूट नया नहीं खरीदा गया है और उछल पहले से ही किए गए हैं, तो इस संख्या को निर्दिष्ट करें)। सही गणना के लिए, केवल उछलों की संख्या को निर्दिष्ट करना आवश्यक है जो पहले से ही इस आवेदन की सामान्य उछलों की सूची में नहीं थीं";
+"Warranty resource reserve canopy alert" = "वारंटी जीवन (सामान्यतः निर्माता 10-20 वर्ष या तकनीकी स्थिति के अनुसार)";
+"Counts of repack reserve canopy alert" = "यदि पैराशूट नया नहीं खरीदा गया है और इसे पहले ही रखा गया है, तो इस राशि को निर्दिष्ट करें";
+"Date of pack reserve canopy alert" = "पैकिंग की तारीख";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "नाम प्रणाली";
+"Name / new system cell" = "नाम";
+"Container / new system cell" = "कंटेनर";
+"Name container / new system cell" = "कंटेनर का नाम";
+
+"DOM / new system cell" = "निर्माण की तारीख";
+"Date mm.yyyy / new system cell" = "महीना.साल";
+"Serial number / new system cell" = "सीरियल नंबर";
+"Warranty resource / new system cell" = "वारंटी संसाधन";
+"Counts of years / new system cell" = "वर्षों की संख्या";
+"Counts of jumps / new system cell" = "उछलों की संख्या";
+
+"AAD / new system cell" = "सुरक्षा उपकरण";
+"Name AAD / new system cell" = "सुरक्षा उपकरण का नाम";
+
+"Main canopy / new system cell" = "मुख्य कैनोपी";
+"Name main canopy / new system cell" = "नाम कैनोपी";
+"Counts of jumps main canopy / new system cell" = "उछलों की संख्या";
+"The value of the purchase / new system cell" = "क्रय की मूल्य";
+
+"Reserve canopy / new system cell" = "रिजर्व कैनोपी";
+"Name reserve canopy / new system cell" = "नाम कैनोपी";
+"Counts of repack reserve canopy / new system cell" = "पुनः पैक की संख्या";
+"Date of packing reserve canopy / new system cell" = "पैकिंग की तारीख";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+"Count / new system cell" = "संख्या";
+
+"Comment / new system cell" = "टिप्पणी";
+"Optional / new system cell" = "वैकल्पिक (लाइनों की स्थिति इत्यादि)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "खाता संपादित करें";
+"Edit locations" = "स्थान संपादित करें";
+"Delete location?" = "स्थान हटाएं?";
+"Edit aircrafts" = "विमान संपादित करें";
+"Delete aircraft?" = "विमान हटाएं?";
+"Edit canopies" = "कैनोपी संपादित करें";
+"Drop zones" = "ड्रॉप ज़ोन";
+"Delete canopy?" = "कैनोपी हटाएं?";
+"Backup copy" = "बैकअप प्रतिलिपि";
+"Calculator loading" = "कैलकुलेटर लोड हो रहा है";
+"Information" = "सूचना";
+"Premium version" = "प्रीमियम संस्करण";
+"Share the app" = "ऐप को साझा करें";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "उपनाम";
+"Name user / edit account vc" = "उपयोगकर्ता का नाम";
+"License / edit account vc" = "लाइसेंस";
+"Type / number / edit account vc" = "प्रकार / संख्या";
+"Valid until / edit account vc" = "मान्यता समाप्त होने तक";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "दवा";
+"Insurance / edit account vc" = "बीमा";
+"Reserve canopy / edit account vc" = "रिजर्व कैनोपी";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "नाम ड्रॉप ज़ोन";
+"Enter aircraft" = "नाम विमान";
+"Enter canopy" = "नाम कैनोपी";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nबैकअप प्रतिलिपि में ऐप्लिकेशन में दर्ज सभी डेटा को सहेजता है।\nडेटा खोने से बचने के लिए समय-समय पर बैकअप प्रतिलिपि बनाना सुझाया जाता है।\n";
+"Backup / backup" = "बैकअप बनाएं";
+"Restore / backup" = "पुनर्स्थापित करें";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "कुल वजन";
+"kg." = "किलोग्राम";
+"ft" = "फीट²";
+"Square canopy" = "वर्ग कैनोपी";
+"1-50A" = "\nपैराशूट प्रकार: छात्र।\nश्रेणी: ए.\nउतारने की संख्या: 1-50 उतारने।\n";
+"51-200B" = "\nपैराशूट प्रकार: संक्रमण।\nश्रेणी: बी.\nउतारने की संख्या: 51-200 उतारने।\n";
+"201-500C" = "\nपैराशूट प्रकार: मध्य गति।\nश्रेणी: सी.\nउतारने की संख्या: 201-500 उतारने।\n";
+"501-1000D1" = "\nपैराशूट प्रकार: गति/अंडाकारी।\nश्रेणी: डी।\nउतारने की संख्या: 501-1000 उतारने।\n";
+"1000D2" = "\nपैराशूट प्रकार: उच्च गति।\nश्रेणी: डी।\nउतारने की संख्या: 1000+ उतारने।\n";
+"1000D3" = "\nपैराशूट प्रकार: उच्च गति/क्रॉसब्रेस्ड।\nश्रेणी: डी।\nउतारने की संख्या: 1000+ उतारने।\n";
+
+// MARK: - INFO:
+
+"App version" = "ऐप्लिकेशन के बारे में";
+"Version / info" = "संस्करण";
+"Build / info" = "निर्माण";
+"Privacy policy" = "गोपनीयता नीति";
+"Terms of use" = "उपयोग की शर्तें";
+"FAQ" = "सामान्य प्रश्न";
+"App language / info" = "ऐप की भाषा";
+"App language text / info" = "इस एप्लिकेशन में फोन पर प्राथमिक रूप से सेट भाषा का उपयोग किया जाता है। अगर एप्लिकेशन द्वारा आपकी भाषा का समर्थन नहीं किया जाता है, तो डिफ़ॉल्ट रूप से अंग्रेज़ी का उपयोग किया जाएगा।\n\nसमर्थित भाषाओं की सूची:\nअरबी\nअंग्रेज़ी\nफ़्रेंच\nहिंदी\nस्पैनिश\nइटैलियन\nजापानीज़\nचीनी\nजर्मन\nपुर्तगाली\nरूसी\n\nअनुवाद को कृत्रिम बुद्धिमत्ता का उपयोग करके किया गया है, इसलिए गलतियाँ हो सकती हैं।\nयदि आप परियोजना में सहायता करना चाहते हैं और एप्लिकेशन को अपनी भाषा में अनुवादित करना चाहते हैं या गलतियाँ सुधारने में मदद करना चाहते हैं, तो कृपया डेवलपर से संपर्क करें।";
+"Info text" = "\nSkydiveBook - यह आधिकारिक पुष्टि नहीं है कि ऐप्लिकेशन के उपयोगकर्ता एक पेशेवर आकाशी जंपर हैं।\n\nयह आकाशी पुस्तिका या किसी भी श्रेणी के पेशेवर आकाशी के प्रमाणित पुस्तिका के वैकल्पिक अतिरिक्त रूप के रूप में काम करता है।\n\nSkydiveBook में दर्ज उतारने इन जंपर्स के प्रमाण नहीं हैं और इन जंप्स का प्रमाण नहीं है और इन्हें आधिकारिक दस्तावेज़, प्रमाणपत्र, श्रेणियों के जारी करने के लिए आधार माना जाना नहीं चाहिए।\n\nयह एप्लिकेशन व्यक्तिगत उपयोग, आकाशी की सुविधा और उन्नत एनालिटिक्स के लिए डिज़ाइन किया गया है।\n\nमुख्य डोम के लोडिंग की डेटा संदर्भ सूचना हैं और पैराशूट उपकरण का चयन करने के लिए अनुशंसात्मक प्रकृति की नहीं हैं।\n\nसभी पैराशूटों के चालन के लिए अनुमतियां एक मान्य इंस्ट्रक्टर द्वारा जारी की जानी चाहिए।\n\nएप्लिकेशन का उपयोग करने से प्राप्त कोई भी जानकारी केवल संदर्भ के उद्देश्यों के लिए है: खुद हवाई अड्डे का नक्शा पढ़ें, साथ ही उतारने के दौरान मौसम की आधुनिक जानकारी प्राप्त करें।\n\nजैसा कि कोई भी सॉफ़्टवेयर, इस एप्लिकेशन में गलतियों की संभावना है और मानव कारक के कारण अधूरी हो सकती है।\n\nध्यान दें कि हवाई उड़ान जिंदगी के लिए एक जोखिम होती है। सुरक्षा नियमों का पालन न करने पर चो";
+"Info text start alert" = "\nSkydiveBook - यह एक आधिकारिक पुष्टि नहीं है कि आवेदन के उपयोगकर्ता एक पेशेवर स्काइडाइवर हैं।\n\nयह एक आधिकारिक पराचूट पुस्तिका या प्रमाणपत्र के लिए एक ऐप्शनल अतिरिक्त सेवा का रूप देता है जो किसी भी श्रेणी के स्काइडाइवर के लिए।\n\nSkydiveBook में रिकॉर्ड की गई जंप को कोई सबूत नहीं है और इन जंप्स को आधिकारिक दस्तावेज़, प्रमाणपत्र, श्रेणियों के जारी करने का आधार माना नहीं जा सकता।\n\nयह एप्लिकेशन व्यक्तिगत उपयोग, स्काइडाइविंग की सुविधा और उन्नत विश्लेषण के लिए डिज़ाइन किया गया है।\n\nमुख्य गुंबद के भार और साथी जानकारी संदर्भ सूचना हैं और पैराशूट उपकरण चयन के लिए सिफारिशी प्रकृति की नहीं हैं।\n\nपैराशूटों के संचालन के लिए सभी अनुमतियाँ वैध इंस्ट्रक्टर द्वारा जारी की जानी चाहिए।\n\nएप्लिकेशन का उपयोग करके प्राप्त कोई भी जानकारी केवल संदर्भ के उद्देश्यों के लिए है: हवाई अड्डे का नक्शा खुद से अध्ययन करें, साथ ही जंप के दौरान मौसमी स्थितियों के नवीनतम डेटा प्राप्त करें।\n\nइस एप्लिकेशन कोई भी सॉफ़्टवेयर की तरह गलतियाँ कर सकता है और मानव कारक के कारण अधूरा हो सकता है।\n\nध्यान रखें कि स्काइडाइविंग जीवन के एक जोखिम को शामिल करती है। सुरक्षा विनियमन का पालन न करने पर चोट और मौत तक पहुंच सकती है।\n\nमैंने इसे पढ़ा है और मैं सहमत हूँ।";
+"Agree" = "सहमत";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nऐप के मुफ्त संस्करण में, आप 50 जंप्स को सहेज सकते हैं।\n\n⭐️ ⭐️ ⭐️\n\nऐप के प्रीमियम संस्करण में आप असीमित जंप्स को सहेज सकते हैं।\n";
+"1 month" = "$9.99 / माह";
+"12 months" = "$49.99 / वर्ष\n($4.16/माह)";
+"Restore purchases" = "खरीदारी पुनः स्थापित करें";
+
+"Buy status" = "खरीदें खोजें / खरीदें नहीं मिलेगा";
+"Restore Successful" = "पुनर्स्थापन सफल";
+"All purchases have been successfully restored." = "सभी खरीदारी सफलतापूर्वक पुनर्स्थापित की गई हैं।";
+"Restore Failed" = "पुनर्स्थापन असफल";
+"Some purchases could not be restored. Please try again later." = "कुछ खरीदारी पुनः स्थापित नहीं की जा सकी। कृपया बाद में पुनः प्रयास करें।";
+"No Purchases to Restore" = "पुनर्स्थापित करने के लिए कोई खरीदारी नहीं है";
+"There are no previous purchases to restore." = "पुनर्स्थापित करने के लिए कोई पूर्व खरीदारी नहीं है।";
+
+// ADAPTY:
+
+"No connection / adapty" = "कोई कनेक्शन नहीं";
+"Message / adapty" = "डेटा प्राप्त करने के लिए एक सक्रिय इंटरनेट कनेक्शन की आवश्यकता है।";
+
+"Alert / adapty status" = "प्रीमियम की जरुरत है";
+"Message / adapty status" = "मुफ्त संस्करण में, आप केवल सहेज सकते हैं:\n\n50 जंप्स।\n10 नोट्स।\n1 सिस्टम।\n\nसभी प्रतिबंधों को हटाने के लिए, \"सेटिंग्स\" खंड में प्रीमियम खरीदें।";
+
+// MARK: - SYSTEM:
+
+"System" = "सिस्टम";
+"Delete system?" = "सिस्टम को हटाएं?";
+"System empty message / system" = "आपके पास अभी तक कोई पैराशूट सिस्टम जोड़ा नहीं है।";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "ड्रॉप ज़ोन्स";
+"Message / drop zones" = "यहाँ केवल सत्यापित ड्रॉप ज़ोन्स होंगे। आप अपनी स्थान सूचित करके इंस्टाग्राम पर लिख सकते हैं।";
+"Map type" = "नक्शा प्रकार";
+"Standard / map type" = "मानक";
+"Satellite / map type" = "सैटेलाइट";
+"Hybrid / map type" = "हाइब्रिड";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "सफलता";
+"Error / alert kit" = "त्रुटि";
+
+"Jump added / alert kit" = "जंप जोड़ा गया";
+"Jump deleted / alert kit" = "जंप हटा दिया गया";
+"Jump updated / alert kit" = "जंप अपडेट किया गया";
+
+"Note added / alert kit" = "नोट जोड़ा गया";
+"Note deleted / alert kit" = "नोट हटा दिया गया";
+
+"System added / alert kit" = "सिस्टम जोड़ा गया";
+"System deleted / alert kit" = "सिस्टम हटा दिया गया";
+"System updated / alert kit" = "सिस्टम अपडेट किया गया";
+
+"Backup saved / alert kit" = "बैकअप सहेजा गया";
+"Backup upload / alert kit" = "बैकअप अपलोड";
+
+"Location added / alert kit" = "स्थान जोड़ा गया";
+"Location deleted / alert kit" = "स्थान हटा दिया गया";
+
+"Aircraft added / alert kit" = "हवाई जहाज जोड़ा गया";
+"Aircraft deleted / alert kit" = "हवाई जहाज हटा दिया गया";
+
+"Canopy added / alert kit" = "कैनोपी जोड़ी गई";
+"Canopy deleted / alert kit" = "कैनोपी हटा दी गई";

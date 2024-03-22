@@ -1,0 +1,581 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "PRINCIPAL";
+"Statistic tab bar" = "ESTATÍSTICAS";
+"Add jump tab bar" = "NOVO SALTO";
+"System tab bar" = "SISTEMA";
+"Settings tab bar" = "CONFIGURAÇÕES";
+
+// MARK: - MAIN:
+
+"Save" = "Salvar";
+"Clean" = "Limpar";
+"Close" = "Fechar";
+"Edit" = "Editar";
+"Delete" = "Excluir";
+"Calculate" = "Calcular";
+"Update" = "Atualizar";
+"Settings iphone" = "Configurações";
+
+"Ok" = "Ok";
+"Yes" = "Sim";
+"No" = "Não";
+
+"ago" = "atrás";
+"back" = "Voltar";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "milhas";
+"feet" = "pés";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "h.";
+"d." = "d.";
+"mon." = "mês";
+"y." = "ano";
+
+// MARK: - MAIN:
+
+"First Message" = "\nBem-vindo ao SkydiveBook!\n\nPara começar, você precisa adicionar pelo menos um:\n\nLocalização\nTipo de aeronave\nParaquedas\n\nna seção \"Configurações\"\n\nAproveite o uso e bons saltos!\n";
+"Delete jump?" = "Excluir salto?";
+"This action cannot be undone." = "Esta ação não pode ser desfeita.";
+
+"License" = "Licença";
+"until" = "até";
+"Medicine until" = "Medicina até";
+"Insurance until" = "Seguro até";
+"Reserve canopy until" = "Paraquedas reserva até";
+
+"Edit/add account" = "Para preencher a Conta, vá para a seção \"Configurações\".";
+
+// MARK: - NOTES:
+
+"New note" = "Nova nota";
+"Delete note?" = "Excluir nota?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Sem conexão";
+"No connection message / weather" = "É necessária uma conexão de internet ativa para receber dados de previsão do tempo.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Rajadas de até";
+
+"Wind speed / weather" = "Velocidade do vento";
+"Temperature / weather" = "Temperatura";
+"Cloud cover / weather" = "Cobertura de nuvens";
+"Humidity / weather" = "Umidade";
+"Dew point / weather" = "Ponto de orvalho";
+"Visibility / weather" = "Visibilidade";
+"Precipitation / weather" = "Precipitação";
+"Pressure / weather" = "Pressão";
+"UvIndex / weather" = "Índice UV";
+"It feels like / weather" = "Sensação térmica";
+
+"Wind direction" = "Direção do vento";
+"Arrow wind direction" = "A seta mostra a direção do vento próximo ao solo no local onde você está. Funciona apenas com uma conexão de Internet ativa.";
+
+"Permisson label / weather" = "Configurações iPhone -> SkydiveBook -> Localização (dar permissão)";
+"Permisson label alert / weather" = "Para exibir a previsão do tempo atual, você precisa obter permissão para determinar sua localização. Isso pode ser feito nas configurações.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Classificação do Vento";
+"Wind weather message / alert" = "Calmo: < 0.3 m/s\nTranquilo: 0.3—1.5 m/s\nLeve: 1.6—3.3 m/s\nModerado: 3.4—5.4 m/s\nFresco: 5.5—7.9 m/s\nForte: 8.0—10.7 m/s\nPerto de Gale: 10.8—13.8 m/s\nGale: 13.9—17.1 m/s\nGale Forte: 17.2—20.7 m/s\nTempestade: 20.8—24.4 m/s\nTempestade Violenta: 24.5—28.4 m/s\nFuracão: >32.7 m/s";
+
+"Temperature weather title / alert" = "Sensação Térmica";
+"Temperature weather message / alert" = "O indicador 'Sensação Térmica' pode diferir da temperatura real, refletindo como a temperatura é percebida por uma pessoa. O indicador 'Sensação Térmica' é influenciado pelas características do vento e pelos níveis de umidade.";
+
+"Cloud cover weather title / alert" = "Cobertura de Nuvens";
+"Cloud cover weather message / alert" = "A cobertura de nuvens é medida em porcentagem. Geralmente é expressa nas partes do céu ocupadas por nuvens.";
+
+"Humidity weather title / alert" = "Umidade";
+"Humidity weather message / alert" = "A umidade relativa, ou simplesmente umidade, é a relação entre a quantidade de umidade no ar e a quantidade máxima que pode ser contida no ar.";
+
+"Dew point weather title / alert" = "Ponto de Orvalho";
+"Dew point weather message / alert" = "O ponto de orvalho é o valor para o qual a temperatura deve cair para que o orvalho se forme. Esta é uma maneira conveniente de determinar a umidade do ar: quanto maior o ponto de orvalho, mais úmido o ar parece. O ponto de orvalho coincidindo com a temperatura atual significa que a umidade relativa do ar é de 100% e o orvalho ou a névoa podem se formar.";
+
+"Visibility weather title / alert" = "Visibilidade";
+"Visibility weather message / alert" = "A visibilidade mostra a que distância de si mesmo você pode ver claramente objetos como edifícios e montanhas. A visibilidade é uma medida de transparência do ar e não leva em consideração a quantidade de luz solar ou a presença de obstáculos.";
+
+"Precipitation weather title / alert" = "Precipitação";
+"Precipitation weather message / alert" = "A quantidade de precipitação é a altura da camada de água em milímetros que se formaria na superfície da Terra se fosse completamente plana. A quantidade de precipitação em milímetros é numericamente igual à massa de água que caiu em uma superfície horizontal de 1 metro quadrado.";
+
+"Pressure weather title / alert" = "Pressão";
+"Pressure weather message / alert" = "A tabela mostra desvios da norma de pressão em relação à sua localização. A pressão usual para as pessoas é de 760 milímetros de mercúrio. Mas a pressão atmosférica normal para cada pessoa depende da região em que ele está localizado, e a pressão da região depende da altitude da área.";
+
+"UvIndex weather title / alert" = "Índice UV";
+"UvIndex weather message / alert" = "O índice UV (UFI), desenvolvido pela Organização Mundial da Saúde, indica a potência da radiação ultravioleta. Quanto maior o índice UV, mais perigoso é estar no sol e mais rápido pode prejudicar sua saúde. Ao acompanhar o índice UV, você pode decidir quando se proteger do sol e quando é melhor não sair.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Vento Calmo";
+"Weak wind / wind speed" = "Vento Fraco";
+"Light wind / wind speed" = "Vento Leve";
+"Quiet wind / wind speed" = "Vento Tranquilo";
+"Moderate wind / wind speed" = "Vento Moderado";
+"Fresh wind / wind speed" = "Vento Fresco";
+"Strong wind / wind speed" = "Vento Forte";
+"Hard wind / wind speed" = "Vento Duro";
+"Powerful wind / wind speed" = "Vento Poderoso";
+"Storm wind / wind speed" = "Tempestade";
+"Hard storm wind / wind speed" = "Tempestade Forte";
+"Hurricane wind / wind speed" = "Furacão";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Temperatura Máxima";
+"Min temperature / temperature" = "Temperatura Mínima";
+"Average temperature / temperature" = "Temperatura Média";
+"Feels like temperature / temperature" = "Sensação Térmica";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Ar Muito Seco";
+"Dry air / humidity" = "Ar Seco";
+"Moderately dry air / humidity" = "Ar Moderadamente Seco";
+"Moderately humid air / humidity" = "Ar Moderadamente Úmido";
+"Very humid air / humidity" = "Ar Muito Úmido";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Céu Limpo";
+"Partly Cloudy / cloud cover" = "Parcialmente Nublado";
+"Variable Cloudiness / cloud cover" = "Nubosidade Variável";
+"Cloudy / cloud cover" = "Nublado";
+"Overcast / cloud cover" = "Encoberto";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Ar Relativamente Seco";
+"Moderately humid air / dew point" = "Ar Moderadamente Úmido";
+"Humid air / dew point" = "Ar Úmido";
+"Very humid air / dew point" = "Ar Muito Úmido";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Excelente";
+"Good / visibility" = "Bom";
+"Moderate / visibility" = "Moderado";
+"Poor / visibility" = "Ruim";
+"Very Poor / visibility" = "Muito Ruim";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Chuva Muito Fraca";
+"Light / precipitation" = "Chuva Fraca";
+"Moderate / precipitation" = "Chuva Moderada";
+"Heavy / precipitation" = "Chuva Forte";
+"Very Heavy / precipitation" = "Chuva Muito Forte";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Pressão Muito Baixa";
+"Low / pressure" = "Pressão Baixa";
+"Normal / pressure" = "Pressão Normal";
+"Hight / pressure" = "Pressão Alta";
+"Very hight / pressure" = "Pressão Muito Alta";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Baixo";
+"Moderate / uv index" = "Moderado";
+"Hight / uv index" = "Alto";
+"Very high / uv index" = "Muito Alto";
+"Excessive / uv index" = "Excessivo";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Reputação";
+"Nickname / skydivers" = "Apelido";
+"Country / skydivers" = "País";
+"Profile / skydivers" = "Perfil";
+"Profession / skydivers" = "Profissão";
+"Count of jumps / skydivers" = "Contagem de Saltos";
+"First jump / skydivers" = "Primeiro Salto";
+"About rating / skydivers" = "Mais informações";
+"About rating message / skydivers" = "A Comunidade é uma divulgação de si mesmo, bem como uma ajuda ao projeto.\nDetalhes no Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Para exibir estatísticas, é necessário fazer pelo menos um salto.";
+"saving data" = "Salvando dados";
+"saving data text" = "Para salvar seu histórico completo de saltos, é recomendável criar periodicamente backups na seção \"Configurações\".\nIsso é especialmente importante ao mudar para um novo dispositivo.";
+"jumps by year" = "Saltos por ano";
+"year" = "ano";
+"Categories USPA" = "Categorias";
+"Categories USPA List" = "\nA: 25 saltos\nTempo de queda livre: 10 min. (600s.)\n\nB: 50 saltos\nTempo de queda livre: 30 min. (1800s.)\n\nC: 200 saltos\nTempo de queda livre: 60 min. (3600s.)\n\nD: 500 saltos\nTempo de queda livre: 180 min. (10800s.)\n";
+"Maximum time" = "Tempo Máximo";
+"Maximum time alert" = "O salto com o tempo máximo de queda livre foi concluído";
+"Maximum height" = "Altura Máxima";
+"Maximum height alert" = "O salto com a altura máxima da compartimentação foi concluído";
+"Average height" = "Altura Média";
+"Minimum height" = "Altura Mínima";
+"Minimum height alert" = "O salto com a altura mínima da compartimentação foi concluído";
+"First jump / statistic" = "O primeiro salto foi feito";
+"Last jump / statistic" = "O último salto foi feito";
+"Max in one day" = "Máximo em um dia";
+"Average height of jump" = "Altura média do salto";
+"Average free fall time of jump" = "Tempo médio de queda livre do salto";
+"Average time" = "Tempo médio do salto";
+"Max count of jumps" = "Contagem de Saltos";
+"Max count of jumps text" = "O número máximo de saltos em um dia foi concluído";
+"Jumps no found" = "Saltos não encontrados";
+"Сount of cutaways" = "Contagem de Acionamentos de Emergência";
+"Date last jump" = "Último salto";
+"Date first jump" = "Primeiro salto";
+"List aircrafts" = "Lista de Aeronaves";
+"List canopies" = "Lista de Paraquedas";
+"List locations" = "Lista de Locais";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Informações Gerais";
+"Total height" = "Altura Total";
+"Total time" = "Tempo Total";
+"Total jumps" = "Total de Saltos";
+"In this year" = "Neste ano";
+"Category" = "Categoria";
+
+"Average info" = "Informações Médias";
+
+"Max. height" = "Altura Máxima";
+"Av. height" = "Altura Média";
+"Min. height" = "Altura Mínima";
+"First jump" = "Primeiro Salto";
+"Max. time" = "Tempo Máximo";
+"Last jump" = "Último Salto";
+"Max. in day" = "Máximo em um dia";
+"Av. time" = "Tempo Médio";
+"CutawayStatistic" = "Acionamento de Emergência";
+"Count cutaway" = "Contagem de Acionamentos de Emergência";
+"Aircraft" = "Aeronaves";
+"Canopies" = "Paraquedas";
+"Locations" = "Locais";
+"Missions" = "Missões";
+
+"Accuracy" = "Precisão";
+"Acrobatics" = "Acrobacias";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Formação em Paraquedas";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "Diversão";
+"Group" = "Grupo";
+"Instructor" = "Instrutor";
+"Military" = "Militar";
+"Para-ski" = "Para-ski";
+"Proximity" = "Proximidade";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Static-line";
+"Piloting" = "Pilotagem";
+"Tandem" = "Tandem";
+"Vertical" = "Vertical";
+"Video" = "Vídeo";
+"Wingsuit" = "Wingsuit";
+"Formation" = "Formação";
+"Top 10:" = "Top 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Novo Salto";
+"Manual / new jump" = "Para começar, vá para a seção \"Configurações\" e insira os seguintes dados:\n\nLocais\nAeronaves\nParaquedas";
+
+// MARK: - CellNewJump:
+
+"Date" = "Data";
+"Location" = "Local";
+"Aircraft" = "Aeronave";
+"Canopy" = "Paraquedas";
+"Mission" = "Missão";
+"Height" = "Altura";
+"Time" = "Tempo";
+"Cutaway" = "Acionamento de Emergência";
+"Comment" = "Comentário";
+
+"Date placeholder" = "dd.mm.aaaa";
+"Location placeholder" = "Zona de Saltos";
+"Aircraft placeholder" = "Tipo de Aeronave";
+"Canopy placeholder" = "Paraquedas Principal";
+"Mission placeholder" = "Tipo de Salto";
+"Height placeholder" = "Metros";
+"Time placeholder" = "Segundos";
+"Cutaway placeholder" = "Não / Sim";
+"Comment placeholder" = "Opcional";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Adicionar um novo sistema";
+"Comment" = "Comentário";
+"No comments" = "Nenhum comentário encontrado";
+"Container system" = "Sistema de Contêiner";
+"AAD system" = "Dispositivo de seguro";
+"Main canopy system" = "Sistema de pára-quedas principal";
+"Reserve canopy system" = "Sistema de pára-quedas reserva";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Número";
+"DOM system" = "DOM";
+"Service life system" = "Vida útil";
+"Valid until system" = "Válido até";
+"Counts of the jumps system" = "Contagem dos saltos";
+"Resource system" = "Recurso";
+"Counts of repack system" = "Contagem de revisões";
+"Packed system" = "Empacotado";
+
+"years system" = "anos";
+"jumps system" = "saltos";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Adicionar sistema";
+"Container alert" = "Container";
+"AAD alert" = "Dispositivo de seguro";
+"Main canopy alert" = "Paraquedas principal";
+"Reserve canopy alert" = "Paraquedas reserva";
+
+"Name and model container alert" = "Nome e modelo do contêiner";
+"Name and model AAD alert" = "Nome e modelo do dispositivo de seguro";
+"Name and model main canopy alert" = "Nome e modelo do paraquedas principal. Você deve primeiro adicionar na seção \"Configurações\" -> \"Editar paraquedas\"";
+"Name and model reserve canopy alert" = "Nome e modelo do paraquedas reserva";
+
+"DOM alert" = "Data de fabricação";
+"Serial number alert" = "Número de série";
+"Warranty resource container alert" = "Vida útil da garantia (normalmente o fabricante indica de 10 a 20 anos, ou de acordo com a condição técnica)";
+"Warranty resource AAD alert" = "Warranty life (the guaranteed number of years, or the number of years before routine maintenance)";
+"Warranty resource main canopy alert" = "Vida útil da garantia (o número de anos garantidos ou o número de anos antes da manutenção de rotina)";
+"Warranty resource jumps main canopy alert" = "A garantia de recursos para saltos (normalmente o fabricante indica 500 saltos, ou de acordo com a condição técnica até 1000 saltos)";
+"Counts of jumps main canopy alert" = "O número de aplicações (se o paraquedas não foi comprado novo e já foram feitos saltos nele, especifique este número). Para um cálculo correto, é necessário especificar apenas o número de saltos que não foram previamente registrados na lista geral de saltos deste aplicativo";
+"Warranty resource reserve canopy alert" = "Vida útil da garantia (normalmente o fabricante indica de 10 a 20 anos, ou de acordo com a condição técnica)";
+"Counts of repack reserve canopy alert" = "Se o paraquedas não foi comprado novo e já foi estivado, especifique essa quantidade";
+"Date of pack reserve canopy alert" = "Data do empacotamento";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Name system";
+"Name / new system cell" = "Name";
+"Container / new system cell" = "Container";
+"Name container / new system cell" = "Name container";
+
+"DOM / new system cell" = "Date of manufacture";
+"Date mm.yyyy / new system cell" = "mm.yyyy";
+"Serial number / new system cell" = "Serial number";
+"Warranty resource / new system cell" = "Warranty resource";
+"Counts of years / new system cell" = "Counts of years";
+"Counts of jumps / new system cell" = "Counts of jumps";
+
+"AAD / new system cell" = "Dispositivo de seguro";
+"Name AAD / new system cell" = "Nome do dispositivo de seguro";
+
+"Main canopy / new system cell" = "Main canopy";
+"Name main canopy / new system cell" = "Name canopy";
+"Counts of jumps main canopy / new system cell" = "Counts of jumps";
+"The value of the purchase / new system cell" = "Value of the purchase";
+
+"Reserve canopy / new system cell" = "Reserve canopy";
+"Name reserve canopy / new system cell" = "Name canopy";
+"Counts of repack reserve canopy / new system cell" = "Counts of repack";
+"Date of packing reserve canopy / new system cell" = "Date of packing";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+"Count / new system cell" = "Number";
+
+"Comment / new system cell" = "Comment";
+"Optional / new system cell" = "Optional (condition of the lines, etc.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Editar conta";
+"Edit locations" = "Editar localizações";
+"Delete location?" = "Excluir localização?";
+"Edit aircrafts" = "Editar aeronaves";
+"Delete aircraft?" = "Excluir aeronave?";
+"Edit canopies" = "Editar paraquedas";
+"Drop zones" = "Zonas de salto";
+"Delete canopy?" = "Excluir paraquedas?";
+"Backup copy" = "Cópia de segurança";
+"Calculator loading" = "Carregamento da calculadora";
+"Information" = "Informações";
+"Premium version" = "Versão premium";
+"Share the app" = "Compartilhar o aplicativo";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Apelido";
+"Name user / edit account vc" = "Nome do usuário";
+"License / edit account vc" = "Licença";
+"Type / number / edit account vc" = "Tipo / número";
+"Valid until / edit account vc" = "Válido até";
+"Date / dd.mm.yyyy / edit account vc" = "Data / dd.mm.aaaa";
+"Medicine / edit account vc" = "Medicina";
+"Insurance / edit account vc" = "Seguro";
+"Reserve canopy / edit account vc" = "Paraquedas reserva";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Nome do local de salto";
+"Enter aircraft" = "Nome da aeronave";
+"Enter canopy" = "Nome do paraquedas";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nA cópia de segurança salva todos os dados registrados no aplicativo.\nÉ recomendável fazer uma cópia de segurança de vez em quando para não perder os dados inseridos.\n";
+"Backup / backup" = "Criar cópia de segurança";
+"Restore / backup" = "Restaurar";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Peso total";
+"kg." = "kg";
+"ft" = "pés²";
+"Square canopy" = "Paraquedas quadrado";
+"1-50A" = "\nTipo de paraquedas: Aluno.\nCategoria: A.\nNúmero de saltos: 1-50 saltos.\n";
+"51-200B" = "\nTipo de paraquedas: Transição.\nCategoria: B.\nNúmero de saltos: 51-200 saltos.\n";
+"201-500C" = "\nTipo de paraquedas: Médio.\nCategoria: C.\nNúmero de saltos: 201-500 saltos.\n";
+"501-1000D1" = "\nTipo de paraquedas: Velocidade/Elíptico.\nCategoria: D.\nNúmero de saltos: 501-1000 saltos.\n";
+"1000D2" = "\nTipo de paraquedas: Alta velocidade.\nCategoria: D.\nNúmero de saltos: 1000+ saltos.\n";
+"1000D3" = "\nTipo de paraquedas: Alta velocidade/Crossbraced.\nCategoria: D.\nNúmero de saltos: 1000+ saltos.\n";
+
+// MARK: - INFO:
+
+"App version" = "Sobre o aplicativo";
+"Version / info" = "Versão";
+"Build / info" = "Compilação";
+"Privacy policy" = "Política de privacidade";
+"Terms of use" = "Termos de uso";
+"FAQ" = "FAQ";
+"App language / info" = "Idioma do aplicativo";
+"App language text / info" = "Este aplicativo usa o idioma configurado como principal no seu telefone. Se o seu idioma não for suportado pelo aplicativo, o inglês será usado por padrão.\n\nLista de idiomas suportados:\nÁrabe\nInglês\nFrancês\nHindi\nEspanhol\nItaliano\nJaponês\nChinês\nAlemão\nPortuguês\nRusso\n\nA tradução foi feita usando inteligência artificial, então pode haver erros.\nSe você deseja ajudar o projeto e traduzir o aplicativo para o seu idioma ou ajudar a corrigir erros, entre em contato com o desenvolvedor.";
+"Info text" = "\nSkydiveBook - não é uma confirmação oficial de que o usuário do aplicativo é um paraquedista profissional.\n\nServe como um complemento opcional ao livro de paraquedismo oficial ou certificado de um paraquedista de qualquer categoria.\n\nOs saltos registrados no SkydiveBook não são evidências desses saltos e não podem ser considerados como base para emissão de documentos, certificados, categorias oficiais.\n\nO aplicativo é projetado para uso pessoal, conveniência do paraquedismo e análises avançadas.\n\nOs dados sobre o carregamento do dossel principal são informações de referência e não têm natureza recomendatória para a escolha de equipamentos de paraquedismo.\n\nTodos os autorizações para a operação de paraquedas devem ser emitidas por um instrutor válido.\n\nQualquer informação obtida através do uso do aplicativo é puramente para fins de referência: estude o mapa do aeródromo por si mesmo, bem como obtenha dados atualizados sobre as condições meteorológicas durante os saltos.\n\nComo qualquer software, este aplicativo pode cometer erros e ser imperfeito devido ao fator humano.\n\nLembre-se de que o paraquedismo envolve um risco de vida. A não observância das regulamentações de segurança pode levar a ferimentos e até mesmo à morte.\n";
+"Info text start alert" = "\nSkydiveBook - não é uma confirmação oficial de que o usuário do aplicativo é um paraquedista profissional.\n\nServe como um complemento opcional ao livro de paraquedismo oficial ou certificado de um paraquedista de qualquer categoria.\n\nOs saltos registrados no SkydiveBook não são evidências desses saltos e não podem ser considerados como base para emissão de documentos, certificados, categorias oficiais.\n\nO aplicativo é projetado para uso pessoal, conveniência do paraquedismo e análises avançadas.\n\nOs dados sobre o carregamento do dossel principal são informações de referência e não têm natureza recomendatória para a escolha de equipamentos de paraquedismo.\n\nTodos os autorizações para a operação de paraquedas devem ser emitidas por um instrutor válido.\n\nQualquer informação obtida através do uso do aplicativo é puramente para fins de referência: estude o mapa do aeródromo por si mesmo, bem como obtenha dados atualizados sobre as condições meteorológicas durante os saltos.\n\nComo qualquer software, este aplicativo pode cometer erros e ser imperfeito devido ao fator humano.\n\nLembre-se de que o paraquedismo envolve um risco de vida. A não observância das regulamentações de segurança pode levar a ferimentos e até mesmo à morte.\n\nEu li e concordo.";
+"Agree" = "Concordo";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nNa versão gratuita do aplicativo, você pode salvar 50 saltos.\n\n⭐️ ⭐️ ⭐️\n\nA versão premium do aplicativo permite que você salve um número ilimitado de saltos.\n";
+"1 month" = "$9.99 / Mês";
+"12 months" = "$49.99 / Ano\n($4.16/mês)";
+"Restore purchases" = "Restaurar compras";
+
+"Buy status" = "Compras disponíveis / Compras não encontradas";
+"Restore Successful" = "Restauração bem-sucedida";
+"Todas as compras foram restauradas com sucesso." = "Todas as compras foram restauradas com sucesso.";
+"Restore Failed" = "Restauração falhou";
+"Algumas compras não puderam ser restauradas. Por favor, tente novamente mais tarde." = "Algumas compras não puderam ser restauradas. Por favor, tente novamente mais tarde.";
+"No Purchases to Restore" = "Nenhuma compra para restaurar";
+"Não há compras anteriores para restaurar." = "Não há compras anteriores para restaurar.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Sem conexão";
+"Message / adapty" = "Uma conexão ativa com a internet é necessária para receber dados.";
+
+"Alert / adapty status" = "Premium necessário";
+"Message / adapty status" = "Na versão gratuita, você só pode salvar:\n\n50 saltos.\n10 notas.\n1 sistema.\n\nPara remover todas as restrições, compre o PREMIUM na seção \"Configurações\".";
+
+// MARK: - SYSTEM:
+
+"System" = "SISTEMA";
+"Delete system?" = "Excluir sistema?";
+"System empty message / system" = "Você ainda não adicionou nenhum sistema de paraquedas.";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "Zonas de Salto";
+"Message / drop zones" = "Apenas zonas de salto verificadas estarão aqui. Você pode adicionar sua localização escrevendo para o Instagram.";
+"Map type" = "Tipo de Mapa";
+"Standard / map type" = "Padrão";
+"Satellite / map type" = "Satélite";
+"Hybrid / map type" = "Híbrido";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Sucesso";
+"Error / alert kit" = "Erro";
+
+"Jump added / alert kit" = "Salto adicionado";
+"Jump deleted / alert kit" = "Salto excluído";
+"Jump updated / alert kit" = "Salto atualizado";
+
+"Note added / alert kit" = "Nota adicionada";
+"Note deleted / alert kit" = "Nota excluída";
+
+"System added / alert kit" = "Sistema adicionado";
+"System deleted / alert kit" = "Sistema excluído";
+"System updated / alert kit" = "Sistema atualizado";
+
+"Backup saved / alert kit" = "Backup salvo";
+"Backup upload / alert kit" = "Backup carregado";
+
+"Location added / alert kit" = "Localização adicionada";
+"Location deleted / alert kit" = "Localização excluída";
+
+"Aircraft added / alert kit" = "Aeronave adicionada";
+"Aircraft deleted / alert kit" = "Aeronave excluída";
+
+"Canopy added / alert kit" = "Paraquedas adicionado";
+"Canopy deleted / alert kit" = "Paraquedas excluído";
