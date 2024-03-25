@@ -42,7 +42,7 @@
 
 // MARK: - MAIN:
 
-"First Message" = "\n欢迎使用 SkydiveBook！\n\n为了开始使用，请至少添加一项：\n\n位置\n飞行器类型\n降落伞\n\n在“设置”部分\n\n祝您使用愉快，安全跳伞！\n";
+"First Message" = "\n欢迎使用 SkydiveBook！\n\n为了开始使用，请至少添加一项：\n\n您的所有跳伞活动都将显示在此屏幕上\n\n祝您使用愉快，安全跳伞！\n";
 "Delete jump?" = "删除跳伞？";
 "This action cannot be undone." = "此操作无法撤销。";
 

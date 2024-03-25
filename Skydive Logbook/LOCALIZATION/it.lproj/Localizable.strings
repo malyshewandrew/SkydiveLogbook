@@ -42,7 +42,7 @@
 
 // MARK: - MAIN:
 
-"First Message" = "\nBenvenuto in SkydiveBook!\n\nPer iniziare, devi aggiungere almeno un elemento:\n\nPosizione\nTipo di aeromobile\nVela\n\nnella sezione \"Impostazioni\"\n\nGoditi l'utilizzo e i tuoi lanci in sicurezza!\n";
+"First Message" = "\nBenvenuto in SkydiveBook!\n\nQuesta schermata mostrerà tutti i tuoi salti con il paracadute\n\nGoditi l'utilizzo e i tuoi lanci in sicurezza!\n";
 "Delete jump?" = "Eliminare il lancio ?";
 "This action cannot be undone." = "Questa azione è irreversibile.";
 

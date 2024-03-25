@@ -42,7 +42,7 @@
 
 // MARK: - MAIN:
 
-"First Message" = "\n¡Bienvenido a SkydiveBook!\n\nPara empezar, debes añadir al menos uno de estos elementos:\n\nUbicación\nTipo de aeronave\nParacaídas\n\nen la sección \"Configuración\"\n\n¡Disfruta del uso y de los saltos seguros!\n";
+"First Message" = "\n¡Bienvenido a SkydiveBook!\n\nEsta pantalla mostrará todos sus saltos en paracaídas\n\n¡Disfruta del uso y de los saltos seguros!\n";
 "Delete jump?" = "¿Eliminar salto?";
 "This action cannot be undone." = "Esta acción no se puede deshacer.";
 

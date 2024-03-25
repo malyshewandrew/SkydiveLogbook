@@ -42,7 +42,7 @@
 
 // MARK: - MAIN:
 
-"First Message" = "\nWelcome to the SkydiveBook!\n\nTo get started, you need to add at least one:\n\nLocation\nType of aircraft\nCanopy\n\nin the section \"Settings\"\n\nEnjoy your use and safe jumps!\n";
+"First Message" = "\nWelcome to the SkydiveBook!\n\nAll your skydiving activities will be displayed on this screen\n\nEnjoy your use and safe jumps!\n";
 "Delete jump?" = "Delete jump?";
 "This action cannot be undone." = "This action cannot be undone.";
 

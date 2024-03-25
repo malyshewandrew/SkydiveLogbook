@@ -455,34 +455,37 @@ final class MainVC: UIViewController {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.topAnchor.constraint(equalTo: alert.view.topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -50).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        containerView.heightAnchor.constraint(equalTo: alert.view.widthAnchor, multiplier: 0.8).isActive = true
         containerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalTo: alert.view.widthAnchor, multiplier: 1).isActive = true
 
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 50).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        scrollView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 1).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 5).isActive = true
+        scrollView.alwaysBounceVertical = true
         scrollView.isScrollEnabled = true
         scrollView.isDirectionalLockEnabled = true
         scrollView.showsVerticalScrollIndicator = true
+        scrollView.backgroundColor = .colorAlert
 
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         messageLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         messageLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         messageLabel.text = NSLocalizedString("Info text start alert", comment: "")
-        messageLabel.textColor = .colorWhite
+        messageLabel.textColor = .colorStartAlert
         messageLabel.numberOfLines = 0
         messageLabel.font = fontRegularStandard10
         messageLabel.textAlignment = .center
-
+        
         sliderButton.translatesAutoresizingMaskIntoConstraints = false
         sliderButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 10).isActive = true
         sliderButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         sliderButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -5).isActive = true
-        sliderButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
+        sliderButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.6).isActive = true
         sliderButton.layer.masksToBounds = true
         sliderButton.backgroundColor = .systemRed
         sliderButton.layer.cornerRadius = cornerRadius15

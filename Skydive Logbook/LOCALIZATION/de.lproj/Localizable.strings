@@ -42,7 +42,7 @@
 
 // MARK: - MAIN:
 
-"First Message" = "\nWillkommen bei SkydiveBook!\n\nUm loszulegen, müssen Sie mindestens eine hinzufügen:\n\nOrt\nFlugzeugtyp\nFallschirm\n\nim Abschnitt \"Einstellungen\"\n\nViel Spaß und sichere Sprünge!\n";
+"First Message" = "\nWillkommen bei SkydiveBook!\n\nAuf diesem Bildschirm werden alle Ihre Fallschirmsprünge angezeigt\n\nViel Spaß und sichere Sprünge!\n";
 "Delete jump?" = "Sprung löschen?";
 "This action cannot be undone." = "Diese Aktion kann nicht rückgängig gemacht werden.";
 

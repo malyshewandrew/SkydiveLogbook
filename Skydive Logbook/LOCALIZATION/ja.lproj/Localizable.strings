@@ -42,7 +42,7 @@
 
 // MARK: - MAIN:
 
-"First Message" = "\nSkydiveBookへようこそ！\n\n始めるには、少なくとも1つの次を追加する必要があります:\n\nロケーション\n航空機の種類\nキャノピー\n\n\"設定\"セクションで\n\nお楽しみください、そして安全なジャンプを！\n";
+"First Message" = "\nSkydiveBookへようこそ！\n\nすべてのスカイダイビング活動は、この画面に表示されます\n\nお楽しみください、そして安全なジャンプを！\n";
 "Delete jump?" = "ジャンプを削除しますか？";
 "This action cannot be undone." = "この操作は元に戻せません。";
 

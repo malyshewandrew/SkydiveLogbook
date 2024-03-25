@@ -42,7 +42,7 @@
 
 // MARK: - MAIN:
 
-"First Message" = "\nBienvenue dans le SkydiveBook !\n\nPour commencer, vous devez ajouter au moins un élément :\n\nEmplacement\nType d'aéronef\nVoile\n\ndans la section \"Paramètres\"\n\nProfitez de votre utilisation et de vos sauts en toute sécurité !\n";
+"First Message" = "\nBienvenue dans le SkydiveBook !\n\nCet écran affiche tous vos sauts en parachute\n\nProfitez de votre utilisation et de vos sauts en toute sécurité !\n";
 "Delete jump?" = "Supprimer le saut ?";
 "This action cannot be undone." = "Cette action est irréversible.";
 
