@@ -13,6 +13,7 @@ final class MainVC: UIViewController {
     private let mainLottie = LottieAnimationView(name: "Main")
     private let mainStartLottie = LottieAnimationView(name: "Main")
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
+    private let startConfettiTopLottie = LottieAnimationView(name: "StartConfettiTop")
     private let confettiButton = UIButton()
     private let accountImage = UIImageView()
     private let accountButton = UIButton()
@@ -59,7 +60,7 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, weatherImage, weatherButton, dropzonesImage, dropzonesButton, skydiversImage, skydiversButton, calculatorImage, calculatorButton, notesImage, notesButton, tableView, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
+        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, weatherImage, weatherButton, dropzonesImage, dropzonesButton, skydiversImage, skydiversButton, calculatorImage, calculatorButton, notesImage, notesButton, tableView, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
         loadingView.addSubview(loadingLottie)
     }
 
@@ -383,17 +384,31 @@ final class MainVC: UIViewController {
         firstMessageLabel.textAlignment = .center
         firstMessageLabel.adjustsFontSizeToFitWidth = true
         firstMessageLabel.text = NSLocalizedString("First Message", comment: "")
+        
+        // MARK: START CONFETTI LOTTIE:
+        
+        startConfettiTopLottie.translatesAutoresizingMaskIntoConstraints = false
+        startConfettiTopLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        startConfettiTopLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        startConfettiTopLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        startConfettiTopLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
         if arrayJumpsRealm.count == 0 {
             firstMessageView.isHidden = false
             firstMessageLabel.isHidden = false
             mainStartLottie.isHidden = false
+            startConfettiTopLottie.isHidden = false
             mainStartLottie.play()
             mainStartLottie.loopMode = .autoReverse
+            startConfettiTopLottie.play()
+            startConfettiTopLottie.loopMode = .loop
+            startConfettiTopLottie.contentMode = .scaleAspectFill
+            startConfettiTopLottie.animationSpeed = 0.5
         } else {
             mainStartLottie.isHidden = true
             firstMessageView.isHidden = true
             firstMessageLabel.isHidden = true
+            startConfettiTopLottie.isHidden = true
 
             mainLottie.isHidden = false
             confettiLottie.isHidden = false

@@ -1,0 +1,581 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "GŁÓWNA";
+"Statistic tab bar" = "STATYSTYKA";
+"Add jump tab bar" = "NOWY SKOK";
+"System tab bar" = "SYSTEM";
+"Settings tab bar" = "USTAWIENIA";
+
+// MARK: - MAIN:
+
+"Save" = "Zapisz";
+"Clean" = "Wyczyść";
+"Close" = "Zamknij";
+"Edit" = "Edytuj";
+"Delete" = "Usuń";
+"Calculate" = "Oblicz";
+"Update" = "Aktualizuj";
+"Settings iphone" = "Ustawienia";
+
+"Ok" = "Ok";
+"Yes" = "Tak";
+"No" = "Nie";
+
+"ago" = "temu";
+"back" = "Wstecz";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "mile";
+"feet" = "stopy";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "h.";
+"d." = "d.";
+"mon." = "mies.";
+"y." = "r.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nWitaj w SkydiveBook!\n\nWszystkie Twoje aktywności w skokach spadochronowych zostaną wyświetlone na tym ekranie.\n\nMiłego użytkowania i bezpiecznych skoków!\n";
+"Delete jump?" = "Usunąć skok?";
+"This action cannot be undone." = "Tej czynności nie można cofnąć.";
+
+"License" = "Licencja";
+"until" = "do";
+"Medicine until" = "Lekarstwo do";
+"Insurance until" = "Ubezpieczenie do";
+"Reserve canopy until" = "Spadochron rezerwowy do";
+
+"Edit/add account" = "Aby wypełnić konto, przejdź do sekcji \"Ustawienia\".";
+
+// MARK: - NOTES:
+
+"New note" = "Nowa notatka";
+"Delete note?" = "Usunąć notatkę?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Brak połączenia";
+"No connection message / weather" = "Aktywne połączenie internetowe jest wymagane do otrzymywania danych o prognozie pogody.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Porywy do";
+
+"Wind speed / weather" = "Prędkość wiatru";
+"Temperature / weather" = "Temperatura";
+"Cloud cover / weather" = "Zachmurzenie";
+"Humidity / weather" = "Wilgotność";
+"Dew point / weather" = "Punkt rosy";
+"Visibility / weather" = "Widzialność";
+"Precipitation / weather" = "Opady";
+"Pressure / weather" = "Ciśnienie";
+"UvIndex / weather" = "Wskaźnik UV";
+"It feels like / weather" = "Odczuwalna temperatura";
+
+"Wind direction" = "Kierunek wiatru";
+"Arrow wind direction" = "Strzałka pokazuje kierunek wiatru w pobliżu ziemi w miejscu, w którym się znajdujesz. Działa tylko przy aktywnym połączeniu internetowym.";
+
+"Permisson label / weather" = "Ustawienia iPhone'a -> SkydiveBook -> Lokalizacja (udziel uprawnienia)";
+"Permisson label alert / weather" = "Aby wyświetlić aktualną prognozę pogody, musisz uzyskać zgodę na określenie Twojej lokalizacji. Można to zrobić w ustawieniach.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Klasyfikacja wiatru";
+"Wind weather message / alert" = "Spokojny: < 0,3 m/s\nCichy: 0,3—1,5 m/s\nLekki: 1,6—3,3 m/s\nŚredni: 3,4—5,4 m/s\nŚwieży: 5,5—7,9 m/s\nSilny: 8,0—10,7 m/s\nBliski wichru: 10,8—13,8 m/s\nWichr: 13,9—17,1 m/s\nSilny wichr: 17,2—20,7 m/s\nBurza: 20,8—24,4 m/s\nBardzo silna burza: 24,5—28,4 m/s\nHuragan: >32,7 m/s";
+
+"Temperature weather title / alert" = "Odczuwalna temperatura";
+"Temperature weather message / alert" = "Wskaźnik „Odczuwalna temperatura” może różnić się od rzeczywistej temperatury, odzwierciedlając sposób, w jaki temperatura jest odczuwana przez osobę. Wskaźnik „Odczuwalna temperatura” jest wpływany przez cechy wiatru i poziomy wilgotności.";
+
+"Cloud cover weather title / alert" = "Zachmurzenie";
+"Cloud cover weather message / alert" = "Zachmurzenie jest mierzone jako procent. Zazwyczaj wyrażane jest w częściach nieba zajętych przez chmury.";
+
+"Humidity weather title / alert" = "Wilgotność";
+"Humidity weather message / alert" = "Wilgotność względna, lub po prostu wilgotność, to stosunek ilości wilgoci w powietrzu do maksymalnej ilości, którą może zawierać powietrze.";
+
+"Dew point weather title / alert" = "Punkt rosy";
+"Dew point weather message / alert" = "Punkt rosy to wartość, do której temperatura musi spaść, aby powstała rosa. Jest to wygodny sposób określenia wilgotności powietrza: im wyższy punkt rosy, tym bardziej wilgotne jest powietrze. Punkt rosy pokrywający się z obecną temperaturą oznacza, że wilgotność powietrza wynosi 100%, a może pojawić się rosa lub mgła.";
+
+"Visibility weather title / alert" = "Widzialność";
+"Visibility weather message / alert" = "Widzialność pokazuje, na jakim odległości od siebie można wyraźnie widzieć obiekty, takie jak budynki i wzgórza. Widzialność jest miarą przezroczystości powietrza i nie uwzględnia ilości światła słonecznego ani obecności przeszkód.";
+
+"Precipitation weather title / alert" = "Opady";
+"Precipitation weather message / alert" = "Ilość opadów to wysokość warstwy wody w milimetrach, która by się utworzyła na powierzchni ziemi, gdyby była całkowicie płaska. Ilość opadów w milimetrach jest numerycznie równa masie wody, która spadła na poziomą powierzchnię 1 metra kwadratowego.";
+
+"Pressure weather title / alert" = "Ciśnienie";
+"Pressure weather message / alert" = "Tabela pokazuje odchylenia od normy ciśnienia względem Twojej lokalizacji. Zwykłe ciśnienie dla ludzi wynosi 760 milimetrów rtęci. Jednak normalne ciśnienie atmosferyczne dla każdej osoby zależy od regionu, w którym się znajduje, a ciśnienie regionu zależy od wysokości terenu.";
+
+"UvIndex weather title / alert" = "Wskaźnik UV";
+"UvIndex weather message / alert" = "Wskaźnik UV (UFI), opracowany przez Światową Organizację Zdrowia, wskazuje na siłę promieniowania ultrafioletowego. Im wyższy wskaźnik UV, tym bardziej niebezpieczne jest przebywanie na słońcu i szybciej może to zaszkodzić Twojemu zdrowiu. Śledząc wskaźnik UV, możesz zdecydować, kiedy chronić się przed słońcem, a kiedy lepiej nie wychodzić na zewnątrz.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Spokojny";
+"Weak wind / wind speed" = "Słaby wiatr";
+"Light wind / wind speed" = "Lekki wiatr";
+"Quiet wind / wind speed" = "Cichy wiatr";
+"Moderate wind / wind speed" = "Umiarkowany wiatr";
+"Fresh wind / wind speed" = "Świeży wiatr";
+"Strong wind / wind speed" = "Silny wiatr";
+"Hard wind / wind speed" = "Twardy wiatr";
+"Powerful wind / wind speed" = "Potężny wiatr";
+"Storm wind / wind speed" = "Burza";
+"Hard storm wind / wind speed" = "Mocna burza";
+"Hurricane wind / wind speed" = "Huragan";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Maksymalna temperatura";
+"Min temperature / temperature" = "Minimalna temperatura";
+"Average temperature / temperature" = "Średnia temperatura";
+"Feels like temperature / temperature" = "Odczuwalna temperatura";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Bardzo suchy";
+"Dry air / humidity" = "Suchy";
+"Moderately dry air / humidity" = "Średnio suchy";
+"Moderately humid air / humidity" = "Średnio wilgotny";
+"Very humid air / humidity" = "Bardzo wilgotny";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Bezchmurnie";
+"Partly Cloudy / cloud cover" = "Częściowe zachmurzenie";
+"Variable Cloudiness / cloud cover" = "Zmienny stopień zachmurzenia";
+"Cloudy / cloud cover" = "Zachmurzenie";
+"Overcast / cloud cover" = "Pochmurnie";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Stosunkowo suchy";
+"Moderately humid air / dew point" = "Średnio wilgotny";
+"Humid air / dew point" = "Wilgotny";
+"Very humid air / dew point" = "Bardzo wilgotny";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Doskonała";
+"Good / visibility" = "Dobra";
+"Moderate / visibility" = "Średnia";
+"Poor / visibility" = "Słaba";
+"Very Poor / visibility" = "Bardzo słaba";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Bardzo lekki";
+"Light / precipitation" = "Lekki";
+"Moderate / precipitation" = "Średni";
+"Heavy / precipitation" = "Ciężki";
+"Very Heavy / precipitation" = "Bardzo ciężki";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Bardzo niskie";
+"Low / pressure" = "Niskie";
+"Normal / pressure" = "Normalne";
+"Hight / pressure" = "Wysokie";
+"Very hight / pressure" = "Bardzo wysokie";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Niski";
+"Moderate / uv index" = "Średni";
+"Hight / uv index" = "Wysoki";
+"Very high / uv index" = "Bardzo wysoki";
+"Excessive / uv index" = "Nadmierny";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Reputacja";
+"Nickname / skydivers" = "Nick";
+"Country / skydivers" = "Kraj";
+"Profile / skydivers" = "Profil";
+"Profession / skydivers" = "Zawód";
+"Count of jumps / skydivers" = "Liczba skoków";
+"First jump / skydivers" = "Pierwszy skok";
+"About rating / skydivers" = "Więcej informacji";
+"About rating message / skydivers" = "Społeczność jest reklamą dla siebie oraz pomocą dla projektu.\nSzczegóły na Instagramie.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Aby wyświetlić statystyki, musisz wykonać przynajmniej jeden skok.";
+"saving data" = "Zapisywanie danych";
+"saving data text" = "Aby zachować kompletną historię skoków, zaleca się regularne tworzenie kopii zapasowych w sekcji „Ustawienia”. \nJest to szczególnie ważne przy zmianie urządzenia.";
+"jumps by year" = "Skoki według roku";
+"year" = "rok";
+"Categories USPA" = "Kategorie USPA";
+"Categories USPA List" = "\nA: 25 skoków\nCzas swobodnego spadania: 10 min. (600s.)\n\nB: 50 skoków\nCzas swobodnego spadania: 30 min. (1800s.)\n\nC: 200 skoków\nCzas swobodnego spadania: 60 min. (3600s.)\n\nD: 500 skoków\nCzas swobodnego spadania: 180 min. (10800s.)\n";
+"Maximum time" = "Maksymalny czas";
+"Maximum time alert" = "Skok z maksymalnym czasem swobodnego spadania został zakończony";
+"Maximum height" = "Maksymalna wysokość";
+"Maximum height alert" = "Skok z maksymalną wysokością przeprowadzenia został zakończony";
+"Average height" = "Średnia wysokość";
+"Minimum height" = "Minimalna wysokość";
+"Minimum height alert" = "Skok z minimalną wysokością przeprowadzenia został zakończony";
+"First jump / statistic" = "Wykonano pierwszy skok";
+"Last jump / statistic" = "Wykonano ostatni skok";
+"Max in one day" = "Max w jednym dniu";
+"Average height of jump" = "Średnia wysokość skoku";
+"Average free fall time of jump" = "Średni czas swobodnego spadania skoku";
+"Average time" = "Średni czas skoku";
+"Max count of jumps" = "Liczba skoków";
+"Max count of jumps text" = "Maksymalna liczba skoków w ciągu jednego dnia została wykonana";
+"Jumps no found" = "Nie znaleziono skoków";
+"Count of cutaways" = "Liczba odcięć";
+"Date last jump" = "Data ostatniego skoku";
+"Date first jump" = "Data pierwszego skoku";
+"List aircrafts" = "Lista samolotów";
+"List canopies" = "Lista spadochronów";
+"List locations" = "Lista miejsc";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Informacje ogólne";
+"Total height" = "Całkowita wysokość";
+"Total time" = "Całkowity czas";
+"Total jumps" = "Całkowita liczba skoków";
+"In this year" = "W tym roku";
+"Category" = "Kategoria";
+
+"Average info" = "Średnie informacje";
+
+"Max. height" = "Maks. wysokość";
+"Av. height" = "Śred. wysokość";
+"Min. height" = "Min. wysokość";
+"First jump" = "Pierwszy skok";
+"Max. time" = "Maks. czas";
+"Last jump" = "Ostatni skok";
+"Max. in day" = "Max. w dniu";
+"Av. time" = "Średni czas";
+"CutawayStatistic" = "Odcięcia";
+"Count cutaway" = "Liczba odcięć";
+"Aircraft" = "Samoloty";
+"Canopies" = "Spadochrony";
+"Locations" = "Miejsca";
+"Missions" = "Misje";
+
+"Accuracy" = "Precyzja";
+"Acrobatics" = "Akrobatyka";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Formacje ze spadochronem";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "Zabawa";
+"Group" = "Grupa";
+"Instructor" = "Instruktor";
+"Military" = "Wojskowe";
+"Para-ski" = "Para-ski";
+"Proximity" = "Bliskość";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Static-line";
+"Piloting" = "Piloting";
+"Tandem" = "Tandem";
+"Vertical" = "Pion";
+"Video" = "Video";
+"Wingsuit" = "Wingsuit";
+"Formation" = "Formacja";
+"Top 10:" = "Top 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Nowy skok";
+"Manual / new jump" = "Aby rozpocząć, przejdź do sekcji „Ustawienia” i wprowadź następujące dane:\n\nMiejsca\nSamoloty\nSpadochrony";
+
+// MARK: - CellNewJump:
+
+"Date" = "Data";
+"Location" = "Miejsce";
+"Aircraft" = "Samolot";
+"Canopy" = "Spadochron";
+"Mission" = "Misja";
+"Height" = "Wysokość";
+"Time" = "Czas";
+"Cutaway" = "Odcięcie";
+"Comment" = "Komentarz";
+
+"Date placeholder" = "dd.mm.rrrr";
+"Location placeholder" = "Strefa zrzutu";
+"Aircraft placeholder" = "Rodzaj samolotu";
+"Canopy placeholder" = "Główny spadochron";
+"Mission placeholder" = "Rodzaj skoku";
+"Height placeholder" = "Metry";
+"Time placeholder" = "Sekundy";
+"Cutaway placeholder" = "Nie / Tak";
+"Comment placeholder" = "Opcjonalny";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Dodaj nowy system";
+"Comment" = "Komentarz";
+"No comments" = "Komentarze nie znalezione";
+"Container system" = "System kontenerowy";
+"AAD system" = "Urządzenie ubezpieczeniowe";
+"Main canopy system" = "Główny spadochron";
+"Reserve canopy system" = "Rezerwowy spadochron";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Numer";
+"DOM system" = "DOM";
+"Service life system" = "Okres użytkowania";
+"Valid until system" = "Ważny do";
+"Counts of the jumps system" = "Liczba skoków";
+"Resource system" = "Zasób";
+"Counts of repack system" = "Liczba pakowań";
+"Packed system" = "Spakowany";
+
+"years system" = "lata";
+"jumps system" = "skoki";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Dodaj system";
+"Container alert" = "Kontener";
+"AAD alert" = "Urządzenie ubezpieczeniowe";
+"Main canopy alert" = "Główny spadochron";
+"Reserve canopy alert" = "Rezerwowy spadochron";
+
+"Name and model container alert" = "Nazwa i model kontenera";
+"Name and model AAD alert" = "Nazwa i model urządzenia ubezpieczeniowego";
+"Name and model main canopy alert" = "Nazwa i model głównego spadochronu. Najpierw musisz dodać go w sekcji „Ustawienia” -> „Edytuj spadochrony”";
+"Name and model reserve canopy alert" = "Nazwa i model rezerwowego spadochronu";
+
+"DOM alert" = "Data produkcji";
+"Serial number alert" = "Numer seryjny";
+"Warranty resource container alert" = "Okres gwarancji (zazwyczaj producent określa 10-20 lat lub według stanu technicznego)";
+"Warranty resource AAD alert" = "Okres gwarancji (gwarantowana liczba lat lub liczba lat przed rutynową konserwacją)";
+"Warranty resource main canopy alert" = "Okres gwarancji w latach (zazwyczaj producent określa 10-20 lat, lub według stanu technicznego)";
+"Warranty resource jumps main canopy alert" = "Okres gwarancji w ilości skoków (zazwyczaj producent określa 500 skoków, lub według stanu technicznego nawet do 1000 skoków)";
+"Counts of jumps main canopy alert" = "Liczba skoków (jeśli spadochron nie został kupiony nowy i już wykonano na nim skoki, podaj tę liczbę). Dla poprawnego obliczenia konieczne jest podanie tylko liczby skoków, które wcześniej nie zostały zarejestrowane w ogólnym spisie skoków tego wniosku";
+"Warranty resource reserve canopy alert" = "Okres gwarancji w latach (zazwyczaj producent określa 10-20 lat, lub według stanu technicznego)";
+"Counts of repack reserve canopy alert" = "Jeśli spadochron nie został kupiony nowy i już był składany, podaj tę wartość";
+"Date of pack reserve canopy alert" = "Data spakowania";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Nazwa systemu";
+"Name / new system cell" = "Nazwa";
+"Container / new system cell" = "Kontener";
+"Name container / new system cell" = "Nazwa kontenera";
+
+"DOM / new system cell" = "Data produkcji";
+"Date mm.yyyy / new system cell" = "mm.rrrr";
+"Serial number / new system cell" = "Numer seryjny";
+"Warranty resource / new system cell" = "Okres gwarancji";
+"Counts of years / new system cell" = "Liczba lat";
+"Counts of jumps / new system cell" = "Liczba skoków";
+
+"AAD / new system cell" = "Urządzenie ubezpieczeniowe";
+"Name AAD / new system cell" = "Nazwa rezerwowego spadochronu";
+
+"Main canopy / new system cell" = "Główny spadochron";
+"Name main canopy / new system cell" = "Nazwa spadochronu";
+"Counts of jumps main canopy / new system cell" = "Liczba skoków";
+"The value of the purchase / new system cell" = "Wartość zakupu";
+
+"Reserve canopy / new system cell" = "Rezerwowy spadochron";
+"Name reserve canopy / new system cell" = "Nazwa spadochronu";
+"Counts of repack reserve canopy / new system cell" = "Liczba pakowań";
+"Date of packing reserve canopy / new system cell" = "Data pakowania";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.rrrr";
+"Count / new system cell" = "Liczba";
+
+"Comment / new system cell" = "Komentarz";
+"Optional / new system cell" = "Opcjonalne (stan linii itp.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Edytuj konto";
+"Edit locations" = "Edytuj lokalizacje";
+"Delete location?" = "Usunąć lokalizację?";
+"Edit aircrafts" = "Edytuj samoloty";
+"Delete aircraft?" = "Usunąć samolot?";
+"Edit canopies" = "Edytuj spadochrony";
+"Drop zones" = "Strefy zrzutu";
+"Delete canopy?" = "Usunąć spadochron?";
+"Backup copy" = "Kopia zapasowa";
+"Calculator loading" = "Ładowanie kalkulatora";
+"Information" = "Informacje";
+"Premium version" = "Wersja premium";
+"Share the app" = "Udostępnij aplikację";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Pseudonim";
+"Name user / edit account vc" = "Imię i nazwisko";
+"License / edit account vc" = "Licencja";
+"Type / number / edit account vc" = "Typ / numer";
+"Valid until / edit account vc" = "Ważne do";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.rrrr";
+"Medicine / edit account vc" = "Medycyna";
+"Insurance / edit account vc" = "Ubezpieczenie";
+"Reserve canopy / edit account vc" = "Spadochron rezerwowy";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Nazwa strefy zrzutu";
+"Enter aircraft" = "Nazwa samolotu";
+"Enter canopy" = "Nazwa spadochronu";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nKopia zapasowa zapisuje wszystkie dane zarejestrowane w aplikacji.\nZaleca się regularnie tworzyć kopię zapasową, aby nie utracić wprowadzonych danych.\n";
+"Backup / backup" = "Utwórz kopię zapasową";
+"Restore / backup" = "Przywróć";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Łączna waga";
+"kg." = "kg";
+"ft" = "stóp²";
+"Square canopy" = "Spadochron kwadratowy";
+"1-50A" = "\nTyp spadochronu: Studencki.\nKategoria: A.\nLiczba skoków: 1-50 skoków.\n";
+"51-200B" = "\nTyp spadochronu: Przejściowy.\nKategoria: B.\nLiczba skoków: 51-200 skoków.\n";
+"201-500C" = "\nTyp spadochronu: Średniej prędkości.\nKategoria: C.\nLiczba skoków: 201-500 skoków.\n";
+"501-1000D1" = "\nTyp spadochronu: Szybki/ellipsoidalny.\nKategoria: D.\nLiczba skoków: 501-1000 skoków.\n";
+"1000D2" = "\nTyp spadochronu: Wysoka prędkość.\nKategoria: D.\nLiczba skoków: 1000+ skoków.\n";
+"1000D3" = "\nTyp spadochronu: Wysoka prędkość/krzyżowy.\nKategoria: D.\nLiczba skoków: 1000+ skoków.\n";
+
+// MARK: - INFO:
+
+"App version" = "O aplikacji";
+"Version / info" = "Wersja";
+"Build / info" = "Budowa";
+"Privacy policy" = "Polityka prywatności";
+"Terms of use" = "Warunki korzystania";
+"FAQ" = "FAQ";
+"App language / info" = "Język aplikacji";
+"App language text / info" = "Ta aplikacja używa języka ustawionego jako główny na Twoim telefonie. Jeśli Twój język nie jest obsługiwany przez aplikację, domyślnie będzie używany język angielski.\n\nLista obsługiwanych języków:\nArabski\nAngielski\nFrancuski\nHindi\nHiszpański\nWłoski\nJapoński\nChiński\nNiemiecki\nPortugalski\nPolski\nRosyjski\n\nTłumaczenie zostało wykonane przy użyciu sztucznej inteligencji, więc mogą występować błędy.\nJeśli chcesz pomóc projektowi i przetłumaczyć aplikację na swój język lub pomóc naprawić błędy, skontaktuj się z deweloperem.";
+"Info text" = "\nSkydiveBook - to nie jest oficjalne potwierdzenie, że użytkownik aplikacji jest profesjonalnym skoczkowem spadochronowym.\n\nSłuży jako opcjonalne uzupełnienie oficjalnej książki spadochronowej lub certyfikatu skoczka spadochronowego dowolnej kategorii.\n\nZapisane w SkydiveBook skoki nie są dowodem tych skoków i nie mogą być uznane za podstawę do wydawania oficjalnych dokumentów, certyfikatów, kategorii.\n\nAplikacja jest przeznaczona do użytku osobistego, ułatwienia uprawiania spadochroniarstwa oraz zaawansowanej analizy.\n\nDane dotyczące obciążenia głównego spadochronu są informacjami referencyjnymi i nie mają charakteru zalecającego w wyborze sprzętu spadochronowego.\n\nWszystkie zezwolenia na eksploatację spadochronów muszą być wydane przez ważnego instruktora.\n\nJakiekolwiek informacje uzyskane przy użyciu aplikacji są czysto informacyjne: samodzielnie zapoznaj się z mapą lotniska oraz uzyskaj aktualne dane na temat warunków pogodowych podczas skoków.\n\nJak każde oprogramowanie, ta aplikacja może zawierać błędy i być niedoskonała z powodu czynnika ludzkiego.\n\nPamiętaj, że uprawianie spadochroniarstwa wiąże się z ryzykiem dla życia. Niedopełnienie przepisów bezpieczeństwa może prowadzić do obrażeń, a nawet śmierci.\n";
+"Info text start alert" = "\nSkydiveBook - to nie jest oficjalne potwierdzenie, że użytkownik aplikacji jest profesjonalnym skoczkowem spadochronowym.\n\nSłuży jako opcjonalne uzupełnienie oficjalnej książki spadochronowej lub certyfikatu skoczka spadochronowego dowolnej kategorii.\n\nZapisane w SkydiveBook skoki nie są dowodem tych skoków i nie mogą być uznane za podstawę do wydawania oficjalnych dokumentów, certyfikatów, kategorii.\n\nAplikacja jest przeznaczona do użytku osobistego, ułatwienia uprawiania spadochroniarstwa oraz zaawansowanej analizy.\n\nDane dotyczące obciążenia głównego spadochronu są informacjami referencyjnymi i nie mają charakteru zalecającego w wyborze sprzętu spadochronowego.\n\nWszystkie zezwolenia na eksploatację spadochronów muszą być wydane przez ważnego instruktora.\n\nJakiekolwiek informacje uzyskane przy użyciu aplikacji są czysto informacyjne: samodzielnie zapoznaj się z mapą lotniska oraz uzyskaj aktualne dane na temat warunków pogodowych podczas skoków.\n\nJak każde oprogramowanie, ta aplikacja może zawierać błędy i być niedoskonała z powodu czynnika ludzkiego.\n\nPamiętaj, że uprawianie spadochroniarstwa wiąże się z ryzykiem dla życia. Niedopełnienie przepisów bezpieczeństwa może prowadzić do obrażeń, a nawet śmierci.\n\nPrzeczytałem to i zgadzam się.";
+"Agree" = "Zgadzam się";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nW wersji darmowej aplikacji możesz zapisać 50 skoków.\n\n⭐️ ⭐️ ⭐️\n\nWersja premium aplikacji pozwala na zapisanie nieograniczonej liczby skoków.\n";
+"1 month" = "$9.99 / Miesiąc";
+"12 months" = "$49.99 / Rok\n($4.16/miesiąc)";
+"Restore purchases" = "Przywróć zakupy";
+
+"Buy status" = "Status zakupu";
+"Restore Successful" = "Przywracanie zakupów powiodło się";
+"All purchases have been successfully restored." = "Wszystkie zakupy zostały pomyślnie przywrócone.";
+"Restore Failed" = "Przywracanie zakupów nie powiodło się";
+"Some purchases could not be restored. Please try again later." = "Niektóre zakupy nie mogły zostać przywrócone. Spróbuj ponownie później.";
+"No Purchases to Restore" = "Brak zakupów do przywrócenia";
+"There are no previous purchases to restore." = "Brak poprzednich zakupów do przywrócenia.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Brak połączenia";
+"Message / adapty" = "Do odbierania danych wymagane jest aktywne połączenie internetowe.";
+
+"Alert / adapty status" = "Wymagana wersja Premium";
+"Message / adapty status" = "W wersji darmowej możesz zapisać tylko:\n\n50 skoków.\n10 notatek.\n1 system.\n\nAby usunąć wszystkie ograniczenia, kup PREMIUM w sekcji „Ustawienia”.";
+
+// MARK: - SYSTEM:
+
+"System" = "SYSTEM";
+"Delete system?" = "Usunąć system?";
+"System empty message / system" = "Nie masz jeszcze dodanych żadnych systemów spadochronowych.";
+
+// MARK: - DROP ZONES:
+
+"Drop Zones / drop zones" = "Strefy zrzutów";
+"Message / drop zones" = "Tutaj znajdą się tylko zweryfikowane strefy zrzutów. Możesz dodać swoją lokalizację, pisząc na Instagram.";
+"Map type" = "Typ mapy";
+"Standard / map type" = "Standardowa";
+"Satellite / map type" = "Satelitarna";
+"Hybrid / map type" = "Hybrydowa";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Sukces";
+"Error / alert kit" = "Błąd";
+
+"Jump added / alert kit" = "Skok dodany";
+"Jump deleted / alert kit" = "Skok usunięty";
+"Jump updated / alert kit" = "Skok zaktualizowany";
+
+"Note added / alert kit" = "Notatka dodana";
+"Note deleted / alert kit" = "Notatka usunięta";
+
+"System added / alert kit" = "System dodany";
+"System deleted / alert kit" = "System usunięty";
+"System updated / alert kit" = "System zaktualizowany";
+
+"Backup saved / alert kit" = "Kopia zapasowa zapisana";
+"Backup upload / alert kit" = "Przesłanie kopii zapasowej";
+
+"Location added / alert kit" = "Lokalizacja dodana";
+"Location deleted / alert kit" = "Lokalizacja usunięta";
+
+"Aircraft added / alert kit" = "Samolot dodany";
+"Aircraft deleted / alert kit" = "Samolot usunięty";
+
+"Canopy added / alert kit" = "Spadochron dodany";
+"Canopy deleted / alert kit" = "Spadochron usunięty";

@@ -268,7 +268,6 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
         case .close:
             dismiss(animated: true) { [weak self] in
                 guard let self = self else { return }
-                self.vibrationOn.vibrationStandart()
             }
         case let .custom(id):
             print(id)

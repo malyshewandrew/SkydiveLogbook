@@ -248,13 +248,13 @@ final class JumpCell: UITableViewCell {
         
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
-        effectOneLottie.animationSpeed = 0.1
+        effectOneLottie.animationSpeed = 0.3
         
         // MARK: EFFECT TWO LOTTIE:
         
         effectTwoLottie.play()
         effectTwoLottie.loopMode = .loop
-        effectTwoLottie.animationSpeed = 0.2
+        effectTwoLottie.animationSpeed = 0.1
         effectTwoLottie.transform = CGAffineTransform(scaleX: -1, y: 1)
 
         // MARK: NUMBER AND DATE:
