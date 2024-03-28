@@ -266,9 +266,8 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
     func paywallController(_ controller: AdaptyPaywallController, didPerform action: AdaptyUI.Action) {
         switch action {
         case .close:
-            dismiss(animated: true) { [weak self] in
-                guard let self = self else { return }
-            }
+            dismiss(animated: true)
+            print(action)
         case let .custom(id):
             print(id)
         case let .openURL(url: url):
