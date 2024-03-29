@@ -486,6 +486,13 @@
 "Info / backup" = "\n备份副本保存应用程序中记录的所有数据。\n建议定期创建备份副本，以免丢失输入的数据。\n";
 "Backup / backup" = "创建备份";
 "Restore / backup" = "恢复";
+"Title / backup" = "数据库统计";
+"Jumps / backup" = "跳跃次数";
+"Systems / backup" = "系统";
+"Notes / backup" = "笔记";
+"Aircrafts / backup" = "飞行器";
+"Canopies / backup" = "降落伞";
+"Locations / backup" = "位置";
 
 // MARK: - CALCULATOR:
 

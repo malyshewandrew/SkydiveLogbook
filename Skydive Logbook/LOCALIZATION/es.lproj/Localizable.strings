@@ -486,6 +486,13 @@
 "Info / backup" = "\nLa copia de seguridad guarda todos los datos registrados en la aplicación.\nSe recomienda hacer una copia de seguridad de vez en cuando para no perder los datos ingresados.\n";
 "Backup / backup" = "Crear copia de seguridad";
 "Restore / backup" = "Restaurar";
+"Title / backup" = "Estadísticas de la base de datos";
+"Jumps / backup" = "Saltos";
+"Systems / backup" = "Sistemas";
+"Notes / backup" = "Notas";
+"Aircrafts / backup" = "Aeronaves";
+"Canopies / backup" = "Paracaídas";
+"Locations / backup" = "Ubicaciones";
 
 // MARK: - CALCULATOR:
 

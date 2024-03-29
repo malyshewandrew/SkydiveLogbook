@@ -486,6 +486,13 @@
 "Info / backup" = "\nबैकअप प्रतिलिपि में ऐप्लिकेशन में दर्ज सभी डेटा को सहेजता है।\nडेटा खोने से बचने के लिए समय-समय पर बैकअप प्रतिलिपि बनाना सुझाया जाता है।\n";
 "Backup / backup" = "बैकअप बनाएं";
 "Restore / backup" = "पुनर्स्थापित करें";
+"Title / backup" = "डेटाबेस सांख्यिकी";
+"Jumps / backup" = "छलांग";
+"Systems / backup" = "सिस्टम";
+"Notes / backup" = "नोट्स";
+"Aircrafts / backup" = "एयरक्राफ्ट";
+"Canopies / backup" = "कैनोपी";
+"Locations / backup" = "स्थान";
 
 // MARK: - CALCULATOR:
 

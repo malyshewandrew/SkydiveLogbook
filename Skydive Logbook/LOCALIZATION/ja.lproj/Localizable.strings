@@ -486,6 +486,13 @@
 "Info / backup" = "\nバックアップコピーは、アプリケーションに記録されたすべてのデータを保存します。\nデータを失わないようにするために、定期的にバックアップコピーを作成することをお勧めします。\n";
 "Backup / backup" = "バックアップ作成";
 "Restore / backup" = "復元";
+"Title / backup" = "バックアップ統計";
+"Jumps / backup" = "ジャンプ";
+"Systems / backup" = "システム";
+"Notes / backup" = "ノート";
+"Aircrafts / backup" = "航空機";
+"Canopies / backup" = "キャノピー";
+"Locations / backup" = "ロケーション";
 
 // MARK: - CALCULATOR:
 

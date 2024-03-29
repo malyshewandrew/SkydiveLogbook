@@ -486,6 +486,13 @@
 "Info / backup" = "\nDie Sicherungskopie speichert alle Daten, die in der Anwendung erfasst wurden.\nEs wird empfohlen, von Zeit zu Zeit eine Sicherungskopie zu erstellen, um die eingegebenen Daten nicht zu verlieren.\n";
 "Backup / backup" = "Sicherung erstellen";
 "Restore / backup" = "Wiederherstellen";
+"Title / backup" = "Datenbankstatistik";
+"Jumps / backup" = "Sprünge";
+"Systems / backup" = "Systeme";
+"Notes / backup" = "Notizen";
+"Aircrafts / backup" = "Flugzeuge";
+"Canopies / backup" = "Fallschirme";
+"Locations / backup" = "Standorte";
 
 // MARK: - CALCULATOR:
 

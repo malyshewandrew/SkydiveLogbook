@@ -13,6 +13,8 @@ final class BackupVC: UIViewController {
     private let infoLabel = UILabel()
     private let backupButton = UIButton()
     private let restoreButton = UIButton()
+    private let countsView = UIView()
+    private let countsLabel = UILabel()
     private let realmManager = RealmManager()
     private let vibrationOn = Vibration()
     private let activityIndicator = UIActivityIndicatorView(style: .large)
@@ -29,7 +31,8 @@ final class BackupVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(backupBackground, backupLottie, infoView, infoLabel, backupButton, restoreButton)
+        view.addSubviews(backupBackground, backupLottie, infoView, infoLabel, backupButton, restoreButton, countsView)
+        countsView.addSubviews(countsLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -56,7 +59,7 @@ final class BackupVC: UIViewController {
 
         infoView.translatesAutoresizingMaskIntoConstraints = false
         infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -15).isActive = true
+        infoView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
         infoView.heightAnchor.constraint(greaterThanOrEqualTo: infoLabel.heightAnchor, constant: 10).isActive = true
         infoView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
@@ -72,7 +75,7 @@ final class BackupVC: UIViewController {
 
         backupButton.translatesAutoresizingMaskIntoConstraints = false
         backupButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backupButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 15).isActive = true
+        backupButton.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 15).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         backupButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
@@ -83,6 +86,22 @@ final class BackupVC: UIViewController {
         restoreButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 15).isActive = true
         restoreButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         restoreButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: COUNTS VIEW:
+        
+        countsView.translatesAutoresizingMaskIntoConstraints = false
+        countsView.topAnchor.constraint(equalTo: restoreButton.bottomAnchor, constant: 30).isActive = true
+        countsView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        countsView.heightAnchor.constraint(greaterThanOrEqualTo: countsLabel.heightAnchor, constant: 10).isActive = true
+        countsView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: COUNTS LABEL:
+        
+        countsLabel.translatesAutoresizingMaskIntoConstraints = false
+        countsLabel.centerXAnchor.constraint(equalTo: countsView.centerXAnchor).isActive = true
+        countsLabel.centerYAnchor.constraint(equalTo: countsView.centerYAnchor).isActive = true
+        countsLabel.leadingAnchor.constraint(equalTo: countsView.leadingAnchor, constant: 10).isActive = true
+        countsLabel.trailingAnchor.constraint(equalTo: countsView.trailingAnchor, constant: -10).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -147,6 +166,30 @@ final class BackupVC: UIViewController {
         restoreButton.titleLabel?.textAlignment = .center
         restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restoreButton.addTarget(self, action: #selector(restoreBackup), for: .touchUpInside)
+        
+        // MARK: COUNTS VIEW:
+        
+        countsView.backgroundColor = .colorCell
+        countsView.layer.cornerRadius = cornerRadius15
+        
+        // MARK: COUNTS LABEL:
+        
+        countsLabel.textColor = .colorWhite
+        countsLabel.font = .systemFont(ofSize: 12, weight: .regular, width: .standard)
+        countsLabel.numberOfLines = 0
+        countsLabel.textAlignment = .center
+        countsLabel.adjustsFontSizeToFitWidth = true
+        countsLabel.text = 
+        """
+        \(NSLocalizedString("Title / backup", comment: "")):
+        
+        \(NSLocalizedString("Jumps / backup", comment: "")): \((arrayJumpsRealm.count))
+        \(NSLocalizedString("Systems / backup", comment: "")): \((arraySystemsRealm.count))
+        \(NSLocalizedString("Notes / backup", comment: "")): \((arrayNotesRealm.count))
+        \(NSLocalizedString("Aircrafts / backup", comment: "")): \((arrayAircraftsRealm.count))
+        \(NSLocalizedString("Canopies / backup", comment: "")): \((arrayCanopiesRealm.count))
+        \(NSLocalizedString("Locations / backup", comment: "")): \((arrayLocationsRealm.count))
+        """
     }
     
     // MARK: - ALERT KIT SUCCESS:
@@ -323,5 +366,6 @@ extension BackupVC: UIDocumentPickerDelegate {
             self.activityIndicator.stopAnimating()
             self.activityIndicator.removeFromSuperview()
         }
+        self.configureUI()
     }
 }

@@ -486,6 +486,13 @@
 "Info / backup" = "\nРезервная копия сохраняет все данные записанные в приложение.\nРекомендуется время от времени делать резервную копию, чтобы не потерять внесенные данные.\n";
 "Backup / backup" = "Создать копию";
 "Restore / backup" = "Загрузить копию";
+"Title / backup" = "Статистика базы данных";
+"Jumps / backup" = "Прыжки";
+"Systems / backup" = "Системы";
+"Notes / backup" = "Заметки";
+"Aircrafts / backup" = "Авиатехника";
+"Canopies / backup" = "Парашюты";
+"Locations / backup" = "Локации";
 
 // MARK: - CALCULATOR:
 

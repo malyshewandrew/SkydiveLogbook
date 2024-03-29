@@ -485,7 +485,14 @@
 
 "Info / backup" = "\nThe backup copy saves all the data recorded in the application.\nIt is recommended to make a backup copy from time to time so as not to lose the entered data.\n";
 "Backup / backup" = "Create backup";
-"Restore / backup" = "Restore"; 
+"Restore / backup" = "Restore";
+"Title / backup" = "Database statistics";
+"Jumps / backup" = "Jumps";
+"Systems / backup" = "Systems";
+"Notes / backup" = "Notes";
+"Aircrafts / backup" = "Aircrafts";
+"Canopies / backup" = "Canopies";
+"Locations / backup" = "Locations";
 
 // MARK: - CALCULATOR:
 

@@ -5,6 +5,7 @@ import RealmSwift
 final class StatisticVC: UIViewController {
     // MARK: - PROPERTIES:
 
+    private let effectLottie = LottieAnimationView(name: "Effect")
     private let statisticLottie = LottieAnimationView(name: "Statistic")
     private let confettiLottie = LottieAnimationView(name: "StatisticConfetti")
     private let confettiButton = UIButton()
@@ -33,7 +34,7 @@ final class StatisticVC: UIViewController {
     // MARK: - ADD SUBVIEWS::
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, tableView, statisticLottie, confettiButton)
+        view.addSubviews(confettiLottie, effectLottie, tableView, statisticLottie, confettiButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -53,6 +54,13 @@ final class StatisticVC: UIViewController {
         confettiLottie.centerXAnchor.constraint(equalTo: statisticLottie.centerXAnchor).isActive = true
         confettiLottie.centerYAnchor.constraint(equalTo: statisticLottie.centerYAnchor).isActive = true
         confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: EFFECT LOTTIE:
+        
+        effectLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectLottie.centerXAnchor.constraint(equalTo: confettiLottie.centerXAnchor).isActive = true
+        effectLottie.centerYAnchor.constraint(equalTo: confettiLottie.centerYAnchor).isActive = true
+        effectLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
@@ -93,7 +101,13 @@ final class StatisticVC: UIViewController {
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
-
+        
+        // MARK: EFFECT LOTTIE:
+        
+        effectLottie.play()
+        effectLottie.loopMode = .loop
+        effectLottie.animationSpeed = 0.2
+        
         // MARK: TABLE VIEW:
 
         tableView.backgroundColor = .colorBackground

@@ -486,6 +486,13 @@
 "Info / backup" = "\nالنسخ الاحتياطي يحفظ جميع البيانات المسجلة في التطبيق.\nمن الأفضل عمل نسخ احتياطية بين الحين والآخر لعدم فقدان البيانات المدخلة.\n";
 "Backup / backup" = "إنشاء نسخة احتياطية";
 "Restore / backup" = "استعادة";
+"Title / backup" = "إحصائيات قاعدة البيانات";
+"Jumps / backup" = "قفزات";
+"Systems / backup" = "أنظمة";
+"Notes / backup" = "ملاحظات";
+"Aircrafts / backup" = "طائرات";
+"Canopies / backup" = "مظلات";
+"Locations / backup" = "المواقع";
 
 // MARK: - CALCULATOR:
 

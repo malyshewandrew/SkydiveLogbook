@@ -486,6 +486,13 @@
 "Info / backup" = "\nKopia zapasowa zapisuje wszystkie dane zarejestrowane w aplikacji.\nZaleca się regularnie tworzyć kopię zapasową, aby nie utracić wprowadzonych danych.\n";
 "Backup / backup" = "Utwórz kopię zapasową";
 "Restore / backup" = "Przywróć";
+"Title / backup" = "Statystyki kopii zapasowej";
+"Jumps / backup" = "Skoki";
+"Systems / backup" = "Systemy";
+"Notes / backup" = "Notatki";
+"Aircrafts / backup" = "Samoloty";
+"Canopies / backup" = "Spadochrony";
+"Locations / backup" = "Lokacje";
 
 // MARK: - CALCULATOR:
 

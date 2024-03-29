@@ -486,6 +486,13 @@
 "Info / backup" = "\nLa copia di backup salva tutti i dati registrati nell'applicazione.\nSi consiglia di fare una copia di backup di tanto in tanto per non perdere i dati inseriti.\n";
 "Backup / backup" = "Crea backup";
 "Restore / backup" = "Ripristina";
+"Title / backup" = "Statistiche del backup";
+"Jumps / backup" = "Salti";
+"Systems / backup" = "Sistemi";
+"Notes / backup" = "Note";
+"Aircrafts / backup" = "Aerei";
+"Canopies / backup" = "Paracadute";
+"Locations / backup" = "Posizioni";
 
 // MARK: - CALCULATOR:
 
