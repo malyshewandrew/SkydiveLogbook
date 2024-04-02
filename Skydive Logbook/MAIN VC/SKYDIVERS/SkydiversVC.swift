@@ -19,6 +19,11 @@ final class SkydiversVC: UIViewController {
     private let vibrationOn = Vibration()
     private var arraySkydivers: [Skydiver] = []
     
+    private let news: String = NSLocalizedString("News", comment: "")
+    private let skydivers: String = NSLocalizedString("Skydivers", comment: "")
+    private let shops: String = NSLocalizedString("Shops", comment: "")
+    private var segmentControl = UISegmentedControl()
+    
     // MARK: - LIFYCYCLE:
     
     override func viewDidLoad() {
@@ -28,12 +33,15 @@ final class SkydiversVC: UIViewController {
         configureUI()
         configureTableView()
         requestFirebase()
+        segmentControl.selectedSegmentIndex = 0
+        segmentedControlValueChanged(segmentControl)
+        segmentControl.isHidden = true
     }
     
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(skydiversBackground, skydiversLottie, skydiversLottieButton, titleLabel, tableView, infoButton, backButton)
+        view.addSubviews(skydiversBackground, skydiversLottie, skydiversLottieButton, titleLabel, segmentControl, tableView, infoButton, backButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -74,6 +82,13 @@ final class SkydiversVC: UIViewController {
         skydiversLottieButton.bottomAnchor.constraint(equalTo: skydiversLottie.bottomAnchor).isActive = true
         skydiversLottieButton.leadingAnchor.constraint(equalTo: skydiversLottie.leadingAnchor).isActive = true
         skydiversLottieButton.trailingAnchor.constraint(equalTo: skydiversLottie.trailingAnchor).isActive = true
+        
+        // MARK: SEGMENT CONTROL:
+
+        segmentControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentControl.topAnchor.constraint(equalTo: skydiversLottieButton.bottomAnchor).isActive = true
+        segmentControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        segmentControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         
         // MARK: TITLE LABEL:
         
@@ -137,6 +152,16 @@ final class SkydiversVC: UIViewController {
         titleLabel.textAlignment = .center
         titleLabel.textColor = .colorWhite
         titleLabel.font = fontMediumStandard18
+        
+        // MARK: SEGMENT CONTROL:
+
+        segmentControl.insertSegment(withTitle: news, at: 0, animated: true)
+        segmentControl.insertSegment(withTitle: skydivers, at: 1, animated: true)
+        segmentControl.insertSegment(withTitle: shops, at: 2, animated: true)
+        segmentControl.selectedSegmentIndex = 0
+        segmentControl.backgroundColor = .colorCell
+        segmentControl.selectedSegmentTintColor = .systemBlue
+        segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
     }
     
     // MARK: - CONFIGURE TABLE VIEW:
@@ -269,6 +294,18 @@ final class SkydiversVC: UIViewController {
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         present(safariViewController, animated: true)
+    }
+    
+    // MARK: SEGMENT CONTROL VALUE CHANGED:
+
+    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            
+        } else if sender.selectedSegmentIndex == 2 {
+            
+        }
     }
 }
 

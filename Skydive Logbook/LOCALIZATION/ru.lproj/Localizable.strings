@@ -357,6 +357,10 @@
 "Cutaway" = "Отцепка";
 "Comment" = "Комментарий";
 
+"One jump / cell new jump" = "Один прыжок";
+"Few jumps / cell new jump" = "Несколько прыжков";
+"Counts of identical jumps / cell ne jump" = "Количество одинаковых прыжков";
+
 "Date placeholder" = "дд.мм.гггг";
 "Location placeholder" = "Дропзона";
 "Aircraft placeholder" = "Тип воздушного судна";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "Дроп зоны";
-"Message / drop zones" = "Здесь будут только проверенные дропзоны. Добавить свою локацию можно написав в Instagram.";
+"Drop zones / drop zones" = "Дроп зоны";
+"Wind tunnels / drop zones" = "Аэротрубы";
+"Information / drop zones" = "Информация";
+"Message / drop zones" = "Здесь будут только проверенные дропзоны и аэротрубы. Добавить свою локацию можно написав в Instagram.";
 "Map type" = "Тип карты";
 "Standard / map type" = "Стандарт";
 "Satellite / map type" = "Спутник";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "Выполнено";
 "Error / alert kit" = "Ошибка";
+"Error counts / alert kit" = "Больше не прыгаешь!";
 
 "Jump added / alert kit" = "Прыжок добавлен";
+"Jumps added / alert kit" = "Прыжков добавлено";
 "Jump deleted / alert kit" = "Прыжок удален";
 "Jump updated / alert kit" = "Прыжок обновлен";
 

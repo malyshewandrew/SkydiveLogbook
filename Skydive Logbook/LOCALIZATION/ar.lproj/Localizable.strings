@@ -357,6 +357,10 @@
 "Cutaway" = "القاطع";
 "Comment" = "تعليق";
 
+"One jump / cell new jump" = "قفزة واحدة";
+"Few jumps / cell new jump" = "عدة قفزات";
+"Counts of identical jumps / cell ne jump" = "عدد القفزات المتطابقة";
+
 "Date placeholder" = "يوم.شهر.سنة";
 "Location placeholder" = "منطقة الهبوط";
 "Aircraft placeholder" = "نوع الطائرة";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "مناطق القفز";
-"Message / drop zones" = "سيتم وضع مناطق القفز الموثوقة هنا فقط. يمكنك إضافة موقعك عن طريق الكتابة إلى Instagram.";
+"Drop zones / drop zones" = "مناطق الإسقاط";
+"Wind tunnels / drop zones" = "أنفاق الهواء";
+"Information / drop zones" = "معلومات";
+"Message / drop zones" = "سيتم وضع مناطق القفز الموثوقة هنا فقط. يمكنك إضافة موقعك عن طريق الكتابة إلى سيتم هنا فقط عرض المناطق المعتمدة للقفز بالمظلات والأنفاق الهوائية. يمكنك إضافة موقعك عن طريق الكتابة على إنستغرام.";
 "Map type" = "نوع الخريطة";
 "Standard / map type" = "قياسي";
 "Satellite / map type" = "فضائي";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "نجاح";
 "Error / alert kit" = "خطأ";
+"Error counts / alert kit" = "لا تقفز بعد الآن!";
 
 "Jump added / alert kit" = "تمت إضافة القفز";
+"Jumps added / alert kit" = "تمت إضافة القفزات";
 "Jump deleted / alert kit" = "تم حذف القفز";
 "Jump updated / alert kit" = "تم تحديث القفز";
 

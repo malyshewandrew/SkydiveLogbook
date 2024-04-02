@@ -357,6 +357,10 @@
 "Cutaway" = "Absetzer";
 "Comment" = "Kommentar";
 
+"One jump / cell new jump" = "Ein Sprung";
+"Few jumps / cell new jump" = "Einige Sprünge";
+"Counts of identical jumps / cell ne jump" = "Anzahl identischer Sprünge";
+
 "Date placeholder" = "tt.mm.jjjj";
 "Location placeholder" = "Sprungzone";
 "Aircraft placeholder" = "Flugzeugtyp";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "Sprungplätze";
-"Message / drop zones" = "Hier werden nur verifizierte Sprungplätze angezeigt. Sie können Ihren Standort hinzufügen, indem Sie uns auf Instagram schreiben.";
+"Drop zones / drop zones" = "Drop-Zonen";
+"Wind tunnels / drop zones" = "Windkanäle";
+"Information / drop zones" = "Informationen";
+"Message / drop zones" = "Hier sind nur verifizierte Fallschirmsprung-Zonen und Windkanäle. Sie können Ihren Standort hinzufügen, indem Sie auf Instagram schreiben.";
 "Map type" = "Kartentyp";
 "Standard / map type" = "Standard";
 "Satellite / map type" = "Satellit";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "Erfolg";
 "Error / alert kit" = "Fehler";
+"Error counts / alert kit" = "Keine Sprünge mehr!";
 
 "Jump added / alert kit" = "Sprung hinzugefügt";
+"Jumps added / alert kit" = "Sprünge hinzugefügt";
 "Jump deleted / alert kit" = "Sprung gelöscht";
 "Jump updated / alert kit" = "Sprung aktualisiert";
 

@@ -357,6 +357,10 @@
 "Cutaway" = "Éjection";
 "Comment" = "Commentaire";
 
+"One jump / cell new jump" = "Un saut";
+"Few jumps / cell new jump" = "Quelques sauts";
+"Counts of identical jumps / cell ne jump" = "Nombre de sauts identiques";
+
 "Date placeholder" = "jj.mm.aaaa";
 "Location placeholder" = "Zone de saut";
 "Aircraft placeholder" = "Type d'aéronef";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "Drop Zones";
-"Message / drop zones" = "Il n'y aura que des zones de largage vérifiées ici. Vous pouvez ajouter votre emplacement en écrivant sur Instagram.";
+"Drop zones / drop zones" = "Zones de largage";
+"Wind tunnels / drop zones" = "Tunnels de vent";
+"Information / drop zones" = "Information";
+"Message / drop zones" = "Ici seront uniquement répertoriées les zones de saut en parachute et les souffleries vérifiées. Vous pouvez ajouter votre emplacement en écrivant sur Instagram.";
 "Map type" = "Type de carte";
 "Standard / map type" = "Standard";
 "Satellite / map type" = "Satellite";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "Succès";
 "Error / alert kit" = "Erreur";
+"Error counts / alert kit" = "Plus de sauts !";
 
 "Jump added / alert kit" = "Saut ajouté";
+"Jumps added / alert kit" = "Sauts ajoutés";
 "Jump deleted / alert kit" = "Saut supprimé";
 "Jump updated / alert kit" = "Saut mis à jour";
 

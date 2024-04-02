@@ -357,6 +357,10 @@
 "Cutaway" = "Acionamento de Emergência";
 "Comment" = "Comentário";
 
+"One jump / cell new jump" = "Um salto";
+"Few jumps / cell new jump" = "Alguns saltos";
+"Counts of identical jumps / cell ne jump" = "Contagem de saltos idênticos";
+
 "Date placeholder" = "dd.mm.aaaa";
 "Location placeholder" = "Zona de Saltos";
 "Aircraft placeholder" = "Tipo de Aeronave";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "Zonas de Salto";
-"Message / drop zones" = "Apenas zonas de salto verificadas estarão aqui. Você pode adicionar sua localização escrevendo para o Instagram.";
+"Drop zones / drop zones" = "Zonas de soltura";
+"Wind tunnels / drop zones" = "Túneis de vento";
+"Information / drop zones" = "Informação";
+"Message / drop zones" = "Aqui estarão apenas zonas de salto de paraquedas e túneis de vento verificados. Pode adicionar a sua localização escrevendo no Instagram.";
 "Map type" = "Tipo de Mapa";
 "Standard / map type" = "Padrão";
 "Satellite / map type" = "Satélite";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "Sucesso";
 "Error / alert kit" = "Erro";
+"Error counts / alert kit" = "Não salte mais!";
 
 "Jump added / alert kit" = "Salto adicionado";
+"Jumps added / alert kit" = "Saltos adicionados";
 "Jump deleted / alert kit" = "Salto excluído";
 "Jump updated / alert kit" = "Salto atualizado";
 

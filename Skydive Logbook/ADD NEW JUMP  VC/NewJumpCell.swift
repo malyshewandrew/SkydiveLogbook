@@ -78,7 +78,6 @@ final class NewJumpCell: UITableViewCell {
         aircraftPickerView.delegate = self
         cutawayPickerView.delegate = self
         
-        dateTextField.delegate = self
         heightTextField.delegate = self
         timeTextField.delegate = self
         
@@ -631,7 +630,7 @@ final class NewJumpCell: UITableViewCell {
         }
     }
     
-    // MARK: SHOR ERROR FOR EMPTY FIELDS:
+    // MARK: SHOW ERROR FOR EMPTY FIELDS:
     
     private func showError(textField: UITextField) {
         textField.backgroundColor = .colorRed

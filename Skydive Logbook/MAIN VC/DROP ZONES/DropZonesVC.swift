@@ -12,7 +12,12 @@ final class DropZonesVC: UIViewController {
     private let locationManager = CLLocationManager()
     private let currentLocationButton = UIButton()
     private let mapTypeButton = UIButton()
-    private let backButton = UIButton()
+    private let closeButton = UIButton()
+    
+    private let dropZones: String = NSLocalizedString("Drop zones / drop zones", comment: "")
+    private let windTunnels: String = NSLocalizedString("Wind tunnels / drop zones", comment: "")
+    private var segmentControl = UISegmentedControl()
+    
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 36)
     private let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
     
@@ -24,14 +29,19 @@ final class DropZonesVC: UIViewController {
         configureConstraints()
         configureUI()
         getUserLocation()
-        configurePoints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        segmentControl.selectedSegmentIndex = 0
+        segmentedControlValueChanged(segmentControl)
     }
     
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
         view.addSubviews(mapView)
-        mapView.addSubviews(infoButton, currentLocationButton, backButton, mapTypeButton)
+        mapView.addSubviews(infoButton, currentLocationButton, closeButton, segmentControl, mapTypeButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -59,10 +69,16 @@ final class DropZonesVC: UIViewController {
         
         // MARK: BACK BUTTON:
 
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 15).isActive = true
-        backButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 15).isActive = true
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: 15).isActive = true
+        closeButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 15).isActive = true
         
+        // MARK: SEGMENT CONTROL:
+
+        segmentControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentControl.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
+        segmentControl.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -25).isActive = true
+
         // MARK: MAP TYPE BUTTON:
         
         mapTypeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -82,13 +98,14 @@ final class DropZonesVC: UIViewController {
         mapView.showsUserLocation = true
         mapView.showsScale = true
         mapView.showsCompass = true
+        mapView.isRotateEnabled = false
         mapView.preferredConfiguration = mapConfigurator
         
         // MARK: BACK BUTTON:
 
-        backButton.setTitle(NSLocalizedString("Close", comment: ""), for: .normal)
-        backButton.setTitleColor(.systemBlue, for: .normal)
-        backButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
+        closeButton.setTitle(NSLocalizedString("Close", comment: ""), for: .normal)
+        closeButton.setTitleColor(.systemBlue, for: .normal)
+        closeButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
         
         // MARK: INFO BUTTON:
 
@@ -107,6 +124,15 @@ final class DropZonesVC: UIViewController {
         let mapImage = UIImage(systemName: "map.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorTabBar, renderingMode: .alwaysOriginal)
         mapTypeButton.setImage(mapImage, for: .normal)
         mapTypeButton.addTarget(self, action: #selector(mapTypeButtonTapped), for: .touchUpInside)
+        
+        // MARK: SEGMENT CONTROL:
+
+        segmentControl.insertSegment(withTitle: dropZones, at: 0, animated: true)
+        segmentControl.insertSegment(withTitle: windTunnels, at: 1, animated: true)
+        segmentControl.selectedSegmentIndex = 0
+        segmentControl.backgroundColor = .colorCell
+        segmentControl.selectedSegmentTintColor = .systemBlue
+        segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
     }
     
     // MARK: GET USER LOCATION:
@@ -119,7 +145,7 @@ final class DropZonesVC: UIViewController {
     
     // MARK: - CONFIGURE DROP ZONES:
     
-    private func configurePoints() {
+    private func configureDropZonesPoints() {
         // MARK: - BELARUS:
 
         let lipki = MKPointAnnotation()
@@ -209,6 +235,38 @@ final class DropZonesVC: UIViewController {
         mapView.addAnnotation(skydiveHawaii)
     }
     
+    // MARK: - CONFIGURE WIND TUNNELS:
+    
+    private func configureWindTunnelsPoints() {
+        // MARK: - BELARUS:
+
+        let iFlyMinsk = MKPointAnnotation()
+        iFlyMinsk.coordinate = CLLocationCoordinate2D(latitude: 53.926960, longitude: 27.509481)
+        iFlyMinsk.title = "iFLY"
+        iFlyMinsk.subtitle = "iFLY Minsk"
+        mapView.addAnnotation(iFlyMinsk)
+        
+        let flyAway = MKPointAnnotation()
+        flyAway.coordinate = CLLocationCoordinate2D(latitude: 53.850693, longitude: 27.432016)
+        flyAway.title = "FlyAway"
+        flyAway.subtitle = "FlyAway"
+        mapView.addAnnotation(flyAway)
+        
+        // MARK: - UKRAINE:
+        let aerodiumKiev = MKPointAnnotation()
+        aerodiumKiev.coordinate = CLLocationCoordinate2D(latitude: 50.373749, longitude: 30.446368)
+        aerodiumKiev.title = "Aerodium"
+        aerodiumKiev.subtitle = "Aerodium Kiev"
+        mapView.addAnnotation(aerodiumKiev)
+        
+        // MARK: - LATVIA:
+        let aerodiumSigulda = MKPointAnnotation()
+        aerodiumSigulda.coordinate = CLLocationCoordinate2D(latitude: 57.133440, longitude: 24.786326)
+        aerodiumSigulda.title = "Aerodium"
+        aerodiumSigulda.subtitle = "Aerodium Sigulda"
+        mapView.addAnnotation(aerodiumSigulda)
+    }
+    
     // MARK: - HELPERS:
     
     // MARK: MAP TYPE BUTTON ACTION:
@@ -234,6 +292,18 @@ final class DropZonesVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: SEGMENT CONTROL VALUE CHANGED:
+
+    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            mapView.removeAnnotations(mapView.annotations)
+            configureDropZonesPoints()
+        } else if sender.selectedSegmentIndex == 1 {
+            mapView.removeAnnotations(mapView.annotations)
+            configureWindTunnelsPoints()
+        }
+    }
+    
     // MARK: FUNC FOR CURRENT LOCATION:
 
     @objc private func currentLocationButtonTapped() {
@@ -249,7 +319,7 @@ final class DropZonesVC: UIViewController {
     
     @objc private func infoButtonTapped() {
         vibrationOn.vibrationStandart()
-        let alert = UIAlertController(title: NSLocalizedString("Drop Zones / drop zones", comment: ""), message: NSLocalizedString("Message / drop zones", comment: ""), preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Information / drop zones", comment: ""), message: NSLocalizedString("Message / drop zones", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Instagram", comment: ""), style: .default, handler: { _ in
             self.tapInstagramButton()

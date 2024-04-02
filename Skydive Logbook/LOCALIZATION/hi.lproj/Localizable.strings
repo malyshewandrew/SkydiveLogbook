@@ -357,6 +357,10 @@
 "Cutaway" = "कटआउट";
 "Comment" = "टिप्पणी";
 
+"One jump / cell new jump" = "एक छलांग";
+"Few jumps / cell new jump" = "कुछ छलांगें";
+"Counts of identical jumps / cell ne jump" = "एक समान छलांगों की गिनती";
+
 "Date placeholder" = "dd.mm.yyyy";
 "Location placeholder" = "ड्रॉपज़ोन";
 "Aircraft placeholder" = "विमान का प्रकार";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "ड्रॉप ज़ोन्स";
-"Message / drop zones" = "यहाँ केवल सत्यापित ड्रॉप ज़ोन्स होंगे। आप अपनी स्थान सूचित करके इंस्टाग्राम पर लिख सकते हैं।";
+"Drop zones / drop zones" = "ड्रॉप ज़ोन्स";
+"Wind tunnels / drop zones" = "हवा के सुरंग / ड्रॉप ज़ोन्स";
+"Information / drop zones" = "सूचना";
+"Message / drop zones" = "यहाँ केवल सत्यापित ड्रॉप ज़ोन्स और विंड टनल्स होंगे। आप अपनी स्थिति को इंस्टाग्राम पर लिखकर जोड़ सकते हैं।";
 "Map type" = "नक्शा प्रकार";
 "Standard / map type" = "मानक";
 "Satellite / map type" = "सैटेलाइट";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "सफलता";
 "Error / alert kit" = "त्रुटि";
+"Error counts / alert kit" = "अब जंप नहीं करो!";
 
 "Jump added / alert kit" = "जंप जोड़ा गया";
+"Jumps added / alert kit" = "जंप जोड़े गए";
 "Jump deleted / alert kit" = "जंप हटा दिया गया";
 "Jump updated / alert kit" = "जंप अपडेट किया गया";
 

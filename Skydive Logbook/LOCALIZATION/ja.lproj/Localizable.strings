@@ -357,6 +357,10 @@
 "Cutaway" = "カットアウェイ";
 "Comment" = "コメント";
 
+"One jump / cell new jump" = "一ジャンプ";
+"Few jumps / cell new jump" = "数ジャンプ";
+"Counts of identical jumps / cell ne jump" = "同じジャンプのカウント";
+
 "Date placeholder" = "dd.mm.yyyy";
 "Location placeholder" = "ドロップゾーン";
 "Aircraft placeholder" = "機種";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "ドロップゾーン";
-"Message / drop zones" = "ここには検証済みのドロップゾーンのみが表示されます。Instagramでメッセージを送信して、あなたのロケーションを追加できます。";
+"Drop zones / drop zones" = "ドロップゾーン";
+"Wind tunnels / drop zones" = "ウィンドトンネル";
+"Information / drop zones" = "情報";
+"Message / drop zones" = "ここには検証されたドロップゾーンと風洞のみが表示されます。Instagramで書き込むことで、自分の位置を追加できます。";
 "Map type" = "地図タイプ";
 "Standard / map type" = "標準";
 "Satellite / map type" = "衛星";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "成功";
 "Error / alert kit" = "エラー";
+"Error counts / alert kit" = "エラー回数が増えました";
 
 "Jump added / alert kit" = "ジャンプが追加されました";
+"Jumps added / alert kit" = "追加されたジャンプ";
 "Jump deleted / alert kit" = "ジャンプが削除されました";
 "Jump updated / alert kit" = "ジャンプが更新されました";
 

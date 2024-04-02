@@ -357,6 +357,10 @@
 "Cutaway" = "Odcięcie";
 "Comment" = "Komentarz";
 
+"One jump / cell new jump" = "Jeden skok";
+"Few jumps / cell new jump" = "Kilka skoków";
+"Counts of identical jumps / cell ne jump" = "Ilość identycznych skoków";
+
 "Date placeholder" = "dd.mm.rrrr";
 "Location placeholder" = "Strefa zrzutu";
 "Aircraft placeholder" = "Rodzaj samolotu";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "Strefy zrzutów";
-"Message / drop zones" = "Tutaj znajdą się tylko zweryfikowane strefy zrzutów. Możesz dodać swoją lokalizację, pisząc na Instagram.";
+"Drop zones / drop zones" = "Strefy zrzutu";
+"Wind tunnels / drop zones" = "Tunele powietrzne";
+"Information / drop zones" = "Informacje";
+"Message / drop zones" = "Tutaj znajdują się tylko sprawdzone strefy skoków i tunele aerodynamiczne. Możesz dodać swoją lokalizację, pisząc na Instagramie.";
 "Map type" = "Typ mapy";
 "Standard / map type" = "Standardowa";
 "Satellite / map type" = "Satelitarna";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "Sukces";
 "Error / alert kit" = "Błąd";
+"Error counts / alert kit" = "Nie skacz więcej!";
 
 "Jump added / alert kit" = "Skok dodany";
+"Jumps added / alert kit" = "Dodane skoki";
 "Jump deleted / alert kit" = "Skok usunięty";
 "Jump updated / alert kit" = "Skok zaktualizowany";
 

@@ -357,6 +357,10 @@
 "Cutaway" = "切割";
 "Comment" = "评论";
 
+"One jump / cell new jump" = "一跳";
+"Few jumps / cell new jump" = "几跳";
+"Counts of identical jumps / cell ne jump" = "相同跳数";
+
 "Date placeholder" = "日期";
 "Location placeholder" = "降落区";
 "Aircraft placeholder" = "飞机类型";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "降落区";
-"Message / drop zones" = "这里只会显示已验证的降落区。您可以通过Instagram添加您的位置。";
+"Drop zones / drop zones" = "拖放区域";
+"Wind tunnels / drop zones" = "风洞";
+"Information / drop zones" = "信息";
+"Message / drop zones" = "这里只有经过验证的跳伞区和风洞。您可以在Instagram上添加您的位置。";
 "Map type" = "地图类型";
 "Standard / map type" = "标准";
 "Satellite / map type" = "卫星";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "成功";
 "Error / alert kit" = "错误";
+"Error counts / alert kit" = "不再跳";
 
 "Jump added / alert kit" = "跳伞已添加";
+"Jumps added / alert kit" = "跳跃已添加";
 "Jump deleted / alert kit" = "跳伞已删除";
 "Jump updated / alert kit" = "跳伞已更新";
 

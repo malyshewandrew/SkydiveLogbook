@@ -357,6 +357,10 @@
 "Cutaway" = "Cutaway";
 "Comment" = "Comment";
 
+"One jump / cell new jump" = "One jump";
+"Few jumps / cell new jump" = "Few jumps";
+"Counts of identical jumps / cell ne jump" = "Counts of identical jumps";
+
 "Date placeholder" = "dd.mm.yyyy";
 "Location placeholder" = "Dropzone";
 "Aircraft placeholder" = "Type aircraft";
@@ -552,8 +556,10 @@
 
 // MARK: - DROP ZONES:
 
-"Drop Zones / drop zones" = "Drop Zones";
-"Message / drop zones" = "There will be only verified drop zones here. You can add your location by writing to Instagram.";
+"Drop zones / drop zones" = "Drop zones";
+"Wind tunnels / drop zones" = "Wind tunnels";
+"Information / drop zones" = "Information";
+"Message / drop zones" = "Here will be only verified drop zones and wind tunnels. You can add your location by writing on Instagram.";
 "Map type" = "Map type";
 "Standard / map type" = "Standard";
 "Satellite / map type" = "Satellite";
@@ -563,8 +569,10 @@
 
 "Success / alert kit" = "Success";
 "Error / alert kit" = "Error";
+"Error counts / alert kit" = "You're not jumping anymore!";
 
 "Jump added / alert kit" = "Jump added";
+"Jumps added / alert kit" = "Jumps added";
 "Jump deleted / alert kit" = "Jump deleted";
 "Jump updated / alert kit" = "Jump updated";
 
