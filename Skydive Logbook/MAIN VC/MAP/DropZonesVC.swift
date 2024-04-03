@@ -16,6 +16,7 @@ final class DropZonesVC: UIViewController {
     
     private let dropZones: String = NSLocalizedString("Drop zones / drop zones", comment: "")
     private let windTunnels: String = NSLocalizedString("Wind tunnels / drop zones", comment: "")
+    private let shops: String = NSLocalizedString("Shops / drop zones", comment: "")
     private var segmentControl = UISegmentedControl()
     
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 36)
@@ -129,6 +130,7 @@ final class DropZonesVC: UIViewController {
 
         segmentControl.insertSegment(withTitle: dropZones, at: 0, animated: true)
         segmentControl.insertSegment(withTitle: windTunnels, at: 1, animated: true)
+        segmentControl.insertSegment(withTitle: shops, at: 2, animated: true)
         segmentControl.selectedSegmentIndex = 0
         segmentControl.backgroundColor = .colorCell
         segmentControl.selectedSegmentTintColor = .systemBlue
@@ -249,10 +251,11 @@ final class DropZonesVC: UIViewController {
         let flyAway = MKPointAnnotation()
         flyAway.coordinate = CLLocationCoordinate2D(latitude: 53.850693, longitude: 27.432016)
         flyAway.title = "FlyAway"
-        flyAway.subtitle = "FlyAway"
+        flyAway.subtitle = "FlyAway Minsk"
         mapView.addAnnotation(flyAway)
         
         // MARK: - UKRAINE:
+        
         let aerodiumKiev = MKPointAnnotation()
         aerodiumKiev.coordinate = CLLocationCoordinate2D(latitude: 50.373749, longitude: 30.446368)
         aerodiumKiev.title = "Aerodium"
@@ -260,11 +263,64 @@ final class DropZonesVC: UIViewController {
         mapView.addAnnotation(aerodiumKiev)
         
         // MARK: - LATVIA:
+        
         let aerodiumSigulda = MKPointAnnotation()
         aerodiumSigulda.coordinate = CLLocationCoordinate2D(latitude: 57.133440, longitude: 24.786326)
         aerodiumSigulda.title = "Aerodium"
         aerodiumSigulda.subtitle = "Aerodium Sigulda"
         mapView.addAnnotation(aerodiumSigulda)
+        
+        // MARK: - POLAND:
+        
+        let flyspotPoland = MKPointAnnotation()
+        flyspotPoland.coordinate = CLLocationCoordinate2D(latitude: 52.215476, longitude: 20.861399)
+        flyspotPoland.title = "Flyspot"
+        flyspotPoland.subtitle = "Warsaw Indoor Skydiving"
+        mapView.addAnnotation(flyspotPoland)
+        
+        // MARK: - HUNGARY:
+
+        let skywardBudapest = MKPointAnnotation()
+        skywardBudapest.coordinate = CLLocationCoordinate2D(latitude: 47.43239502009966, longitude: 19.055754789632893)
+        skywardBudapest.title = "Skyward"
+        skywardBudapest.subtitle = "Skyward Indoor skydiving Budapest"
+        mapView.addAnnotation(skywardBudapest)
+    }
+    
+    // MARK: - CONFIGURE SHOPS:
+    
+    private func configureShopsPoints() {
+        // MARK: - LITHUANIA:
+
+        let skyShopLithuania = MKPointAnnotation()
+        skyShopLithuania.coordinate = CLLocationCoordinate2D(latitude: 54.67961665060792, longitude: 25.28561112602266)
+        skyShopLithuania.title = "Sky-Shop"
+        skyShopLithuania.subtitle = "Sky-Shop Skydiving Gear Store Europe"
+        mapView.addAnnotation(skyShopLithuania)
+        
+        // MARK: - USA:
+
+        let skydiveStoreFlorida = MKPointAnnotation()
+        skydiveStoreFlorida.coordinate = CLLocationCoordinate2D(latitude: 28.805276, longitude: -82.323445)
+        skydiveStoreFlorida.title = "Skydive Store"
+        skydiveStoreFlorida.subtitle = "Skydive Store Inc"
+        mapView.addAnnotation(skydiveStoreFlorida)
+        
+        // MARK: - HUNGARY:
+        
+        let intrudairHungary = MKPointAnnotation()
+        intrudairHungary.coordinate = CLLocationCoordinate2D(latitude: 47.93826421863233, longitude: 21.712176888968195)
+        intrudairHungary.title = "Intrudair"
+        intrudairHungary.subtitle = "Intrudair Skydive and Base gear"
+        mapView.addAnnotation(intrudairHungary)
+        
+        // MARK: - CZECH:
+        
+        let marsCzech = MKPointAnnotation()
+        marsCzech.coordinate = CLLocationCoordinate2D(latitude: 49.63286892244522, longitude: 16.715628983432094)
+        marsCzech.title = "Mars"
+        marsCzech.subtitle = "MarS a.s."
+        mapView.addAnnotation(marsCzech)
     }
     
     // MARK: - HELPERS:
@@ -296,11 +352,17 @@ final class DropZonesVC: UIViewController {
 
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
+            vibrationOn.vibrationStandart()
             mapView.removeAnnotations(mapView.annotations)
             configureDropZonesPoints()
         } else if sender.selectedSegmentIndex == 1 {
+            vibrationOn.vibrationStandart()
             mapView.removeAnnotations(mapView.annotations)
             configureWindTunnelsPoints()
+        } else if sender.selectedSegmentIndex == 2 {
+            vibrationOn.vibrationStandart()
+            mapView.removeAnnotations(mapView.annotations)
+            configureShopsPoints()
         }
     }
     

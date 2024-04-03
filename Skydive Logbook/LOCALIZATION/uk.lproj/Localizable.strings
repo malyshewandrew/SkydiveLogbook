@@ -1,0 +1,597 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "ГОЛОВНА";
+"Statistic tab bar" = "СТАТИСТИКА";
+"Add jump tab bar" = "НОВИЙ ПРИСКОК";
+"System tab bar" = "СИСТЕМА";
+"Settings tab bar" = "НАЛАШТУВАННЯ";
+
+// MARK: - MAIN:
+
+"Save" = "Зберегти";
+"Clean" = "Очистити";
+"Close" = "Закрити";
+"Edit" = "Редагувати";
+"Delete" = "Видалити";
+"Calculate" = "Розрахувати";
+"Update" = "Оновити";
+"Settings iphone" = "Налаштування";
+
+"Ok" = "Ок";
+"Yes" = "Так";
+"No" = "Ні";
+
+"ago" = "тому";
+"back" = "Назад";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "м.";
+"km." = "км.";
+"miles" = "милі";
+"feet" = "футів";
+
+// MARK: - MEASURING TIME:
+
+"s." = "с.";
+"min." = "хв.";
+"h." = "г.";
+"d." = "д.";
+"mon." = "міс.";
+"y." = "р.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nЛаскаво просимо до SkydiveBook!\n\nУсі ваші стрибки з парашутом будуть відображені на цьому екрані\n\nНасолоджуйтесь користуванням та безпечними стрибками!\n";
+"Delete jump?" = "Видалити стрибок?";
+"This action cannot be undone." = "Цю дію неможливо скасувати.";
+
+"License" = "Ліцензія";
+"until" = "до";
+"Medicine until" = "Медичний огляд до";
+"Insurance until" = "Страхування до";
+"Reserve canopy until" = "Резервний парашут до";
+
+"Edit/add account" = "Щоб заповнити обліковий запис, перейдіть в розділ \"Налаштування\".";
+
+// MARK: - NOTES:
+
+"New note" = "Нова нотатка";
+"Delete note?" = "Видалити нотатку?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Відсутнє з'єднання";
+"No connection message / weather" = "Для отримання прогнозу погоди необхідне активне підключення до Інтернету.";
+
+"mm/h" = "мм/год";
+"hPa" = "гПа";
+"mm / pressure" = "мм";
+"m/s" = "м/с";
+"km" = "км";
+"Gusts up to" = "Пориви до";
+
+"Wind speed / weather" = "Швидкість вітру";
+"Temperature / weather" = "Температура";
+"Cloud cover / weather" = "Хмарність";
+"Humidity / weather" = "Вологість";
+"Dew point / weather" = "Точка роси";
+"Visibility / weather" = "Видимість";
+"Precipitation / weather" = "Опади";
+"Pressure / weather" = "Тиск";
+"UvIndex / weather" = "Індекс УФ";
+"It feels like / weather" = "Відчувається як";
+
+"Wind direction" = "Напрям вітру";
+"Arrow wind direction" = "Стрілка показує напрям вітру близько до землі у місці, де ви знаходитесь. Вона працює лише з активним Інтернет-з'єднанням.";
+
+"Permisson label / weather" = "Налаштування iPhone -> SkydiveBook -> Місцезнаходження (надати дозвіл)";
+"Permisson label alert / weather" = "Для відображення поточного прогнозу погоди потрібно отримати дозвіл на визначення вашого місцезнаходження. Це можна зробити в налаштуваннях.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Класифікація вітру";
+"Wind weather message / alert" = "Спокійний: < 0.3 м/с\nТихий: 0.3—1.5 м/с\nЛегкий: 1.6—3.3 м/с\nСередній: 3.4—5.4 м/с\nСвіжий: 5.5—7.9 м/с\nСильний: 8.0—10.7 м/с\nБлизько до шторму: 10.8—13.8 м/с\nШторм: 13.9—17.1 м/с\nСильний шторм: 17.2—20.7 м/с\nШтормовий: 20.8—24.4 м/с\nЖорсткий шторм: 24.5—28.4 м/с\nУраган: >32.7 м/с";
+
+"Temperature weather title / alert" = "Відчувається як";
+"Temperature weather message / alert" = "Показник «Відчувається як» може відрізнятися від фактичної температури, відображаючи, як температуру сприймає людина. Показник «Відчувається як» впливає на характеристики вітру та рівні вологості.";
+
+"Cloud cover weather title / alert" = "Хмарність";
+"Cloud cover weather message / alert" = "Хмарність вимірюється у відсотках. Зазвичай вона виражена у частинах неба, які зайняті хмарами.";
+
+"Humidity weather title / alert" = "Вологість";
+"Humidity weather message / alert" = "Відносна вологість, або просто вологість, - це відношення кількості вологи в повітрі до максимальної кількості, яку може містити повітря.";
+
+"Dew point weather title / alert" = "Точка роси";
+"Dew point weather message / alert" = "Точка роси - це значення, при якому температура повинна опуститися, щоб утворилася роса. Це зручний спосіб визначити вологість повітря: чим вища точка роси, тим більш відчувається вологость повітря. Точка роси, що співпадає з поточною температурою, означає, що відносна вологість повітря 100%, і може утворюватися роса або туман.";
+
+"Visibility weather title / alert" = "Видимість";
+"Visibility weather message / alert" = "Видимість показує на якій відстані ви можете чітко бачити об'єкти, такі як будівлі та пагорби. Видимість - це міра прозорості повітря і не враховує кількість сонячного світла або наявність перешкод.";
+
+"Precipitation weather title / alert" = "Опади";
+"Precipitation weather message / alert" = "Кількість опадів - це висота водного шару у міліметрах, який утворився б на поверхні Землі, якщо б вона була повністю рівною. Кількість опадів у міліметрах числово дорівнює масі води, яка випала на горизонтальну поверхню площею 1 квадратний метр.";
+
+"Pressure weather title / alert" = "Тиск";
+"Pressure weather message / alert" = "Таблиця показує відхилення від норми тиску відносно вашого місцезнаходження. Звичайний тиск для людини - 760 міліметрів ртутного стовпа. Проте нормальний атмосферний тиск для кожної особи залежить від регіону, де він знаходиться, і тиск регіону залежить від висоти місцевості.";
+
+"UvIndex weather title / alert" = "Індекс УФ";
+"UvIndex weather message / alert" = "Індекс УФ (UFI), розроблений Всесвітньою організацією охорони здоров'я, вказує на потужність ультрафіолетового випромінювання. Чим вище Індекс УФ, тим небезпечніше перебування на сонці і швидше може воно зашкодити вашому здоров'ю. Слідкуючи за Індексом УФ, ви можете вирішити, коли потрібно захищати себе від сонця, а коли краще не виходити на вулицю.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Спокійний вітер";
+"Weak wind / wind speed" = "Слабкий вітер";
+"Light wind / wind speed" = "Легкий вітер";
+"Quiet wind / wind speed" = "Тихий вітер";
+"Moderate wind / wind speed" = "Помірний вітер";
+"Fresh wind / wind speed" = "Свіжий вітер";
+"Strong wind / wind speed" = "Сильний вітер";
+"Hard wind / wind speed" = "Жорсткий вітер";
+"Powerful wind / wind speed" = "Могутній вітер";
+"Storm wind / wind speed" = "Штормовий вітер";
+"Hard storm wind / wind speed" = "Жорсткий штормовий вітер";
+"Hurricane wind / wind speed" = "Ураганний вітер";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Максимальна температура";
+"Min temperature / temperature" = "Мінімальна температура";
+"Average temperature / temperature" = "Середня температура";
+"Feels like temperature / temperature" = "Відчувається як температура";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Дуже сухе повітря";
+"Dry air / humidity" = "Сухе повітря";
+"Moderately dry air / humidity" = "Помірно сухе повітря";
+"Moderately humid air / humidity" = "Помірно вологе повітря";
+"Very humid air / humidity" = "Дуже вологе повітря";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Чисте небо";
+"Partly Cloudy / cloud cover" = "Частково хмарно";
+"Variable Cloudiness / cloud cover" = "Змінна хмарність";
+"Cloudy / cloud cover" = "Хмарно";
+"Overcast / cloud cover" = "Хмарний день";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Відносно сухе повітря";
+"Moderately humid air / dew point" = "Помірно вологе повітря";
+"Humid air / dew point" = "Вологе повітря";
+"Very humid air / dew point" = "Дуже вологе повітря";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Відмінна";
+"Good / visibility" = "Добра";
+"Moderate / visibility" = "Помірна";
+"Poor / visibility" = "Погана";
+"Very Poor / visibility" = "Дуже погана";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Дуже слабкі";
+"Light / precipitation" = "Слабкі";
+"Moderate / precipitation" = "Помірні";
+"Heavy / precipitation" = "Сильні";
+"Very Heavy / precipitation" = "Дуже сильні";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Дуже низький";
+"Low / pressure" = "Низький";
+"Normal / pressure" = "Нормальний";
+"High / pressure" = "Високий";
+"Very high / pressure" = "Дуже високий";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Низький";
+"Moderate / uv index" = "Помірний";
+"High / uv index" = "Високий";
+"Very high / uv index" = "Дуже високий";
+"Excessive / uv index" = "Надмірний";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Рейтинг";
+"Nickname / skydivers" = "Псевдонім";
+"Country / skydivers" = "Країна";
+"Profile / skydivers" = "Профіль";
+"Profession / skydivers" = "Професія";
+"Count of jumps / skydivers" = "Кількість стрибків";
+"First jump / skydivers" = "Перший стрибок";
+"About rating / skydivers" = "Більше інформації";
+"About rating message / skydivers" = "Спільнота є рекламою для себе, а також допомогою проекту.\nДеталі в Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Для відображення статистики потрібно зробити хоча б один стрибок.";
+"saving data" = "Збереження даних";
+"saving data text" = "Для збереження повної історії ваших стрибків рекомендується періодично створювати резервні копії в розділі \"Налаштування\". \nЦе особливо важливо при переході на новий пристрій.";
+"jumps by year" = "Стрибки за рік";
+"year" = "рік";
+"Categories USPA" = "Категорії";
+"Categories USPA List" = "\nA: 25 стрибків\nЧас вільного падіння: 10 хв. (600 с.)\n\nB: 50 стрибків\nЧас вільного падіння: 30 хв. (1800 с.)\n\nC: 200 стрибків\nЧас вільного падіння: 60 хв. (3600 с.)\n\nD: 500 стрибків\nЧас вільного падіння: 180 хв. (10800 с.)\n";
+"Maximum time" = "Максимальний час";
+"Maximum time alert" = "Зроблено стрибок з максимальним часом вільного падіння";
+"Maximum height" = "Максимальна висота";
+"Maximum height alert" = "Зроблено стрибок з максимальною висотою виходу з кабіни";
+"Average height" = "Середня висота";
+"Minimum height" = "Мінімальна висота";
+"Minimum height alert" = "Зроблено стрибок з мінімальною висотою виходу з кабіни";
+"First jump / statistic" = "Перший стрибок виконано";
+"Last jump / statistic" = "Останній стрибок виконано";
+"Max in one day" = "Максимально за день";
+"Average height of jump" = "Середня висота стрибка";
+"Average free fall time of jump" = "Середній час вільного падіння стрибка";
+"Average time" = "Середній час стрибка";
+"Max count of jumps" = "Максимальна кількість стрибків";
+"Max count of jumps text" = "Зроблено максимальну кількість стрибків за один день";
+"Jumps no found" = "Стрибків не знайдено";
+"Сount of cutaways" = "Кількість збитих парашутів";
+"Date last jump" = "Останній стрибок";
+"Date first jump" = "Перший стрибок";
+"List aircrafts" = "Список літаків";
+"List canopies" = "Список парашутів";
+"List locations" = "Список місць";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Загальна інформація";
+"Total height" = "Загальна висота";
+"Total time" = "Загальний час";
+"Total jumps" = "Загальна кількість стрибків";
+"In this year" = "У цьому році";
+"Category" = "Категорія";
+
+"Average info" = "Середня інформація";
+
+"Max. height" = "Макс. висота";
+"Av. height" = "Сер. висота";
+"Min. height" = "Мін. висота";
+"First jump" = "Перший стрибок";
+"Max. time" = "Макс. час";
+"Last jump" = "Останній стрибок";
+"Max. in day" = "Макс. за день";
+"Av. time" = "Сер. час";
+"CutawayStatistic" = "Відключення парашуту";
+"Count cutaway" = "Кількість відключень";
+"Aircraft" = "Літак";
+"Canopies" = "Парашути";
+"Locations" = "Місця";
+"Missions" = "Місії";
+
+"Accuracy" = "Активність";
+"Acrobatics" = "Акробатика";
+"AFF" = "AFF";
+"Base" = "Бейс";
+"Base/Wingsuit" = "Бейс/Костюм";
+"Canopy formation" = "Формація з парашутами";
+"Freefly" = "Вільний стиль";
+"Freestyle" = "Фрістайл";
+"Fun" = "Розваги";
+"Group" = "Група";
+"Instructor" = "Інструктор";
+"Military" = "Військовий";
+"Para-ski" = "Пара-ски";
+"Proximity" = "Близькість";
+"Skysurfing" = "Скайсерфінг";
+"Static-line" = "Статичний шнур";
+"Piloting" = "Пілотування";
+"Tandem" = "Тандем";
+"Vertical" = "Вертикаль";
+"Video" = "Відео";
+"Wingsuit" = "Костюм";
+"Formation" = "Формація";
+"Top 10:" = "Топ 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Новий стрибок";
+"Manual / new jump" = "Для початку перейдіть в розділ \"Налаштування\" та введіть наступні дані:\n\nМісця\nЛітаки\nПарашути";
+
+// MARK: - CellNewJump:
+
+"Date" = "Дата";
+"Location" = "Місце";
+"Aircraft" = "Літак";
+"Canopy" = "Парашут";
+"Mission" = "Місія";
+"Height" = "Висота";
+"Time" = "Час";
+"Cutaway" = "Відключення";
+"Comment" = "Коментар";
+
+"One jump / cell new jump" = "Один стрибок";
+"Few jumps / cell new jump" = "Декілька стрибків";
+"Counts of identical jumps / cell new jump" = "Кількість однакових стрибків";
+
+"Date placeholder" = "дд.мм.рррр";
+"Location placeholder" = "Дропзона";
+"Aircraft placeholder" = "Тип літака";
+"Canopy placeholder" = "Головний парашут";
+"Mission placeholder" = "Тип стрибка";
+"Height placeholder" = "Метри";
+"Time placeholder" = "Секунди";
+"Cutaway placeholder" = "Ні / Так";
+"Comment placeholder" = "Додатково";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Додати нову систему";
+"Comment" = "Коментар";
+"No comments" = "Коментарі не знайдені";
+"Container system" = "Контейнер";
+"AAD system" = "Страхуючий прилад";
+"Main canopy system" = "Головний парашут";
+"Reserve canopy system" = "Запасний парашут";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Номер";
+"DOM system" = "ДОМ";
+"Service life system" = "Термін служби";
+"Valid until system" = "Дійсний до";
+"Counts of the jumps system" = "Кількість стрибків";
+"Resource system" = "Ресурс";
+"Counts of repack system" = "Кількість перепакувань";
+"Packed system" = "Запакований";
+
+"years system" = "років";
+"jumps system" = "стрибків";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Додати систему";
+"Container alert" = "Контейнер";
+"AAD alert" = "Страхуючий прилад";
+"Main canopy alert" = "Головний парашут";
+"Reserve canopy alert" = "Запасний парашут";
+
+"Name and model container alert" = "Назва та модель контейнера";
+"Name and model AAD alert" = "Ім'я і модель страхуючого приладу";
+"Name and model main canopy alert" = "Назва та модель головного парашуту. Спершу вам потрібно додати їх в розділі \"Налаштування\" -> \"Редагувати парашути\"";
+"Name and model reserve canopy alert" = "Назва та модель запасного парашуту";
+
+"DOM alert" = "Дата виробництва";
+"Serial number alert" = "Серійний номер";
+"Warranty resource container alert" = "Термін служби (зазвичай виробник вказує 10-20 років, або за технічним станом)";
+"Warranty resource AAD alert" = "Гарантійний термін служби (гарантована кількість років або кількість років до проведення планового технічного обслуговування)";
+"Warranty resource main canopy alert" = "Термін служби у роках (зазвичай виробник вказує 10-20 років, або за технічним станом)";
+"Warranty resource jumps main canopy alert" = "Термін служби за кількістю стрибків (зазвичай виробник вказує 500 стрибків, або за технічним станом до 1000 стрибків)";
+"Counts of jumps main canopy alert" = "Кількість застосувань (якщо парашут не був куплений новим і на ньому вже були зроблені стрибки, вкажіть цю кількість). Для правильного розрахунку необхідно вказати тільки кількість стрибків, які раніше не були внесені в загальний список стрибків цього застосування";
+"Warranty resource reserve canopy alert" = "Термін служби (зазвичай виробник вказує 10-20 років, або за технічним станом)";
+"Counts of repack reserve canopy alert" = "Якщо парашут не був куплений новим і вже був запакований, вкажіть цю кількість";
+"Date of pack reserve canopy alert" = "Дата пакування";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Назва системи";
+"Name / new system cell" = "Назва";
+"Container / new system cell" = "Контейнер";
+"Name container / new system cell" = "Назва контейнера";
+
+"DOM / new system cell" = "Дата виробництва";
+"Date mm.yyyy / new system cell" = "мм.рррр";
+"Serial number / new system cell" = "Серійний номер";
+"Warranty resource / new system cell" = "Термін служби";
+"Counts of years / new system cell" = "Кількість років";
+"Counts of jumps / new system cell" = "Кількість стрибків";
+
+"AAD / new system cell" = "Страхуючий прилад";
+"Name AAD / new system cell" = "Ім'я страхуючого приладу";
+
+"Main canopy / new system cell" = "Головний парашут";
+"Name main canopy / new system cell" = "Назва парашута";
+"Counts of jumps main canopy / new system cell" = "Кількість стрибків";
+"The value of the purchase / new system cell" = "Вартість придбання";
+
+"Reserve canopy / new system cell" = "Запасний парашут";
+"Name reserve canopy / new system cell" = "Назва парашута";
+"Counts of repack reserve canopy / new system cell" = "Кількість перепаковок";
+"Date of packing reserve canopy / new system cell" = "Дата упаковки";
+"Date dd.mm.yyyy / new system cell" = "дд.мм.рррр";
+"Count / new system cell" = "Кількість";
+
+"Comment / new system cell" = "Коментар";
+"Optional / new system cell" = "Додатково (стан шнурів тощо)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Редагувати обліковий запис";
+"Edit locations" = "Редагувати місця";
+"Delete location?" = "Видалити місце?";
+"Edit aircrafts" = "Редагувати літальні апарати";
+"Delete aircraft?" = "Видалити літальний апарат?";
+"Edit canopies" = "Редагувати парашути";
+"Drop zones" = "Площадки";
+"Delete canopy?" = "Видалити парашут?";
+"Backup copy" = "Резервне копіювання";
+"Calculator loading" = "Завантаження калькулятора";
+"Information" = "Інформація";
+"Premium version" = "Преміум-версія";
+"Share the app" = "Поділитися додатком";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Псевдонім";
+"Name user / edit account vc" = "Ім'я користувача";
+"License / edit account vc" = "Ліцензія";
+"Type / number / edit account vc" = "Тип / номер";
+"Valid until / edit account vc" = "Дійсний до";
+"Date / dd.mm.yyyy / edit account vc" = "дд.мм.рррр";
+"Medicine / edit account vc" = "Медицина";
+"Insurance / edit account vc" = "Страхування";
+"Reserve canopy / edit account vc" = "Запасний парашут";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Назва площадки";
+"Enter aircraft" = "Назва літального апарату";
+"Enter canopy" = "Назва парашута";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nРезервне копіювання зберігає всі дані, внесені в додаток.\nРекомендується регулярно створювати резервну копію, щоб не втратити введені дані.\n";
+"Backup / backup" = "Створити резервну копію";
+"Restore / backup" = "Відновлення";
+"Title / backup" = "Статистика бази даних";
+"Jumps / backup" = "Стрибки";
+"Systems / backup" = "Системи";
+"Notes / backup" = "Нотатки";
+"Aircrafts / backup" = "Літальні апарати";
+"Canopies / backup" = "Парашути";
+"Locations / backup" = "Площадки";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Загальна вага";
+"kg." = "кг";
+"ft" = "фут²";
+"Square canopy" = "Площа парашута";
+"1-50A" = "\nТип парашута: Студентський.\nКатегорія: A.\nКількість стрибків: 1-50 стрибків.\n";
+"51-200B" = "\nТип парашута: Перехідний.\nКатегорія: B.\nКількість стрибків: 51-200 стрибків.\n";
+"201-500C" = "\nТип парашута: Середня швидкість.\nКатегорія: C.\nКількість стрибків: 201-500 стрибків.\n";
+"501-1000D1" = "\nТип парашута: Швидкісний/еліптичний.\nКатегорія: D.\nКількість стрибків: 501-1000 стрибків.\n";
+"1000D2" = "\nТип парашута: Високошвидкісний.\nКатегорія: D.\nКількість стрибків: 1000+ стрибків.\n";
+"1000D3" = "\nТип парашута: Високошвидкісний/перехресний.\nКатегорія: D.\nКількість стрибків: 1000+ стрибків.\n";
+
+// MARK: - INFO:
+
+"App version" = "Про додаток";
+"Version / info" = "Версія";
+"Build / info" = "Будівля";
+"Privacy policy" = "Політика конфіденційності";
+"Terms of use" = "Умови використання";
+"FAQ" = "Питання та відповіді";
+"App language / info" = "Мова додатка";
+"App language text / info" = "Цей додаток використовує мову, встановлену як основну на вашому телефоні. Якщо ваша мова не підтримується додатком, англійська мова буде використовуватися за замовчуванням.\n\nСписок підтримуваних мов:\nАрабська\nАнглійська\nФранцузька\nГінді\nІспанська\nІталійська\nЯпонська\nКитайська\nНімецька\nПортугальська\nПольська\nРосійська\n\nПереклад був здійснений за допомогою штучного інтелекту, тому можливі помилки.\nЯкщо ви хочете допомогти проекту і перекласти додаток на вашу мову або допомогти у виправленні помилок, будь ласка, зв'яжіться з розробником.";
+"Info text" = "\nSkydiveBook - це не офіційне підтвердження того, що користувач додатка є професійним парашутистом.\n\nВін служить додатковою інформацією до офіційної книги парашутиста або сертифіката будь-якої категорії.\n\nЗаписи в SkydiveBook не є доказом цих стрибків і не можуть бути використані як підстава для видачі офіційних документів, сертифікатів, категорій.\n\nДодаток призначений для особистого використання, зручності парашутного стрибка та продвинутої аналітики.\n\nДані щодо навантаження головного парашута є довідковою інформацією і не мають рекомендаційного характеру для вибору парашутного обладнання.\n\nВсі дозволи на експлуатацію парашутів повинні бути видані валідним інструктором.\n\nБудь-яка інформація, отримана за допомогою додатка, є чисто довідковою: вивчайте карти аеродромів самостійно, а також отримуйте актуальні дані про погодні умови під час стрибків.\n\nЯк будь-яке програмне забезпечення, цей додаток може допускати помилки та бути недосконалим через людський фактор.\n\nПам'ятайте, що парашутний спорт пов'язаний з ризиком для життя. Невиконання правил безпеки може призвести до травм та навіть смерті.\n";
+"Info text start alert" = "\nSkydiveBook - це не офіційне підтвердження того, що користувач додатка є професійним парашутистом.\n\nВін служить додатковою інформацією до офіційної книги парашутиста або сертифіката будь-якої категорії.\n\nЗаписи в SkydiveBook не є доказом цих стрибків і не можуть бути використані як підстава для видачі офіційних документів, сертифікатів, категорій.\n\nДодаток призначений для особистого використання, зручності парашутного стрибка та продвинутої аналітики.\n\nДані щодо навантаження головного парашута є довідковою інформацією і не мають рекомендаційного характеру для вибору парашутного обладнання.\n\nВсі дозволи на експлуатацію парашутів повинні бути видані валідним інструктором.\n\nБудь-яка інформація, отримана за допомогою додатка, є чисто довідковою: вивчайте карти аеродромів самостійно, а також отримуйте актуальні дані про погодні умови під час стрибків.\n\nЯк будь-яке програмне забезпечення, цей додаток може допускати помилки та бути недосконалим через людський фактор.\n\nПам'ятайте, що парашутний спорт пов'язаний з ризиком для життя. Невиконання правил безпеки може призвести до травм та навіть смерті.\n\nЯ прочитав і погоджуюся.";
+"Agree" = "Погоджуюся";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nУ безкоштовній версії додатка ви можете зберегти 50 стрибків.\n\n⭐️ ⭐️ ⭐️\n\nПреміум-версія додатка дозволяє зберігати необмежену кількість стрибків.\n";
+"1 month" = "$9.99 / Місяць";
+"12 months" = "$49.99 / Рік\n($4.16/місяць)";
+"Restore purchases" = "Відновити покупки";
+
+"Buy status" = "Придбати знайти / придбати не знайти";
+"Restore Successful" = "Відновлення успішно";
+"All purchases have been successfully restored." = "Всі покупки успішно відновлені.";
+"Restore Failed" = "Відновлення не вдалося";
+"Some purchases could not be restored. Please try again later." = "Деякі покупки не вдалося відновити. Спробуйте ще раз пізніше.";
+"No Purchases to Restore" = "Немає покупок для відновлення";
+"There are no previous purchases to restore." = "Немає попередніх покупок для відновлення.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Немає з'єднання";
+"Message / adapty" = "Для отримання даних потрібне активне Інтернет-з'єднання.";
+
+"Alert / adapty status" = "Потрібний преміум";
+"Message / adapty status" = "У безкоштовній версії ви можете зберегти тільки:\n\n50 стрибків.\n10 нотаток.\n1 систему.\n\nЩоб видалити всі обмеження, придбайте ПРЕМІУМ у розділі «Налаштування».";
+
+// MARK: - SYSTEM:
+
+"System" = "СИСТЕМА";
+"Delete system?" = "Видалити систему?";
+"System empty message / system" = "У вас ще немає доданих парашутних систем.";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "Пункти приземлення";
+"Wind tunnels / drop zones" = "Тунелі вітру";
+"Shops / drop zones" = "Магазини";
+"Information / drop zones" = "Інформація";
+"Message / drop zones" = "Тут будуть лише перевірені пункти приземлення та тунелі вітру. Ви можете додати свою локацію, написавши в Instagram.";
+"Map type" = "Тип карти";
+"Standard / map type" = "Стандартний";
+"Satellite / map type" = "Супутниковий";
+"Hybrid / map type" = "Гібридний";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Успішно";
+"Error / alert kit" = "Помилка";
+"Error counts / alert kit" = "Ви вже не стрибаєте!";
+
+"Jump added / alert kit" = "Стрибок доданий";
+"Jumps added / alert kit" = "Стрибки додані";
+"Jump deleted / alert kit" = "Стрибок видалений";
+"Jump updated / alert kit" = "Стрибок оновлено";
+
+"Note added / alert kit" = "Примітка додана";
+"Note deleted / alert kit" = "Примітка видалена";
+
+"System added / alert kit" = "Система додана";
+"System deleted / alert kit" = "Система видалена";
+"System updated / alert kit" = "Система оновлена";
+
+"Backup saved / alert kit" = "Резервне копіювання збережено";
+"Backup upload / alert kit" = "Завантаження резервного копіювання";
+
+"Location added / alert kit" = "Локація додана";
+"Location deleted / alert kit" = "Локація видалена";
+
+"Aircraft added / alert kit" = "Літак доданий";
+"Aircraft deleted / alert kit" = "Літак видалений";
+
+"Canopy added / alert kit" = "Парашут доданий";
+"Canopy deleted / alert kit" = "Парашут видалений";

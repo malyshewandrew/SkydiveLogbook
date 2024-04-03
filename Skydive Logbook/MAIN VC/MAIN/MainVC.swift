@@ -491,10 +491,10 @@ final class MainVC: UIViewController {
         messageLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         messageLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         messageLabel.text = NSLocalizedString("Info text start alert", comment: "")
+        messageLabel.font = fontRegularStandard8
+        messageLabel.textAlignment = .center
         messageLabel.textColor = .colorStartAlert
         messageLabel.numberOfLines = 0
-        messageLabel.font = fontRegularStandard10
-        messageLabel.textAlignment = .center
         
         sliderButton.translatesAutoresizingMaskIntoConstraints = false
         sliderButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 10).isActive = true

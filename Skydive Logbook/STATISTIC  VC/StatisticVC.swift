@@ -5,7 +5,8 @@ import RealmSwift
 final class StatisticVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let effectLottie = LottieAnimationView(name: "Effect")
+    private let effectOneLottie = LottieAnimationView(name: "Effect")
+    private let effectTwoLottie = LottieAnimationView(name: "Effect")
     private let statisticLottie = LottieAnimationView(name: "Statistic")
     private let confettiLottie = LottieAnimationView(name: "StatisticConfetti")
     private let confettiButton = UIButton()
@@ -34,7 +35,7 @@ final class StatisticVC: UIViewController {
     // MARK: - ADD SUBVIEWS::
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, effectLottie, tableView, statisticLottie, confettiButton)
+        view.addSubviews(confettiLottie, effectOneLottie, effectTwoLottie, tableView, statisticLottie, confettiButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -55,12 +56,19 @@ final class StatisticVC: UIViewController {
         confettiLottie.centerYAnchor.constraint(equalTo: statisticLottie.centerYAnchor).isActive = true
         confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         
-        // MARK: EFFECT LOTTIE:
+        // MARK: EFFECT ONE LOTTIE:
         
-        effectLottie.translatesAutoresizingMaskIntoConstraints = false
-        effectLottie.centerXAnchor.constraint(equalTo: confettiLottie.centerXAnchor).isActive = true
-        effectLottie.centerYAnchor.constraint(equalTo: confettiLottie.centerYAnchor).isActive = true
-        effectLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectOneLottie.centerXAnchor.constraint(equalTo: confettiLottie.centerXAnchor).isActive = true
+        effectOneLottie.centerYAnchor.constraint(equalTo: confettiLottie.centerYAnchor).isActive = true
+        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: EFFECT TWO LOTTIE:
+        
+        effectTwoLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectTwoLottie.centerXAnchor.constraint(equalTo: confettiLottie.centerXAnchor).isActive = true
+        effectTwoLottie.centerYAnchor.constraint(equalTo: confettiLottie.centerYAnchor).isActive = true
+        effectTwoLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
@@ -102,11 +110,18 @@ final class StatisticVC: UIViewController {
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
         
-        // MARK: EFFECT LOTTIE:
+        // MARK: EFFECT ONE LOTTIE:
         
-        effectLottie.play()
-        effectLottie.loopMode = .loop
-        effectLottie.animationSpeed = 0.2
+        effectOneLottie.play()
+        effectOneLottie.loopMode = .loop
+        effectOneLottie.animationSpeed = 0.2
+        
+        // MARK: EFFECT TWO LOTTIE:
+        
+        effectTwoLottie.play()
+        effectTwoLottie.loopMode = .loop
+        effectTwoLottie.animationSpeed = 0.1
+        effectTwoLottie.transform = CGAffineTransform(scaleX: -1, y: 1)
         
         // MARK: TABLE VIEW:
 

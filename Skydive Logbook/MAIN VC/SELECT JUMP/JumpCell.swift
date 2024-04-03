@@ -248,7 +248,7 @@ final class JumpCell: UITableViewCell {
         
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
-        effectOneLottie.animationSpeed = 0.3
+        effectOneLottie.animationSpeed = 0.2
         
         // MARK: EFFECT TWO LOTTIE:
         

@@ -77,7 +77,7 @@ final class CalculatorVC: UIViewController {
         // MARK: ANIMATION:
 
         calculatorLottie.translatesAutoresizingMaskIntoConstraints = false
-        calculatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        calculatorLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
         calculatorLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         calculatorLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
         calculatorLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true

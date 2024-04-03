@@ -12,17 +12,20 @@ final class SkydiversVC: UIViewController {
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let skydiversLottieButton = UIButton()
     private let titleLabel = UILabel()
-    private let tableView = UITableView()
+    private let skydiversTableView = UITableView()
     private let infoButton = UIButton()
     private let backButton = UIButton()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 26)
     private let vibrationOn = Vibration()
     private var arraySkydivers: [Skydiver] = []
     
+    private let segmentControl = UISegmentedControl()
+    private let newsWebView = WKWebView()
+    private let shopsWebView = WKWebView()
     private let news: String = NSLocalizedString("News", comment: "")
     private let skydivers: String = NSLocalizedString("Skydivers", comment: "")
     private let shops: String = NSLocalizedString("Shops", comment: "")
-    private var segmentControl = UISegmentedControl()
+
     
     // MARK: - LIFYCYCLE:
     
@@ -32,22 +35,24 @@ final class SkydiversVC: UIViewController {
         configureConstraints()
         configureUI()
         configureTableView()
-        requestFirebase()
+        
+        segmentControl.isHidden = true
         segmentControl.selectedSegmentIndex = 0
         segmentedControlValueChanged(segmentControl)
-        segmentControl.isHidden = true
+        newsWebView.isHidden = true
+        skydiversTableView.isHidden = false
+        shopsWebView.isHidden = true
     }
     
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(skydiversBackground, skydiversLottie, skydiversLottieButton, titleLabel, segmentControl, tableView, infoButton, backButton)
+        view.addSubviews(skydiversBackground, skydiversLottie, skydiversLottieButton, titleLabel, segmentControl, newsWebView, skydiversTableView, shopsWebView, infoButton, backButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        
         // MARK: SKYDIVERS BACKGROUND:
 
         skydiversBackground.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +76,7 @@ final class SkydiversVC: UIViewController {
         // MARK: ANIMATION SKYDIVERS LOTTIE:
         
         skydiversLottie.translatesAutoresizingMaskIntoConstraints = false
-        skydiversLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        skydiversLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -10).isActive = true
         skydiversLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         skydiversLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         
@@ -88,7 +93,7 @@ final class SkydiversVC: UIViewController {
         segmentControl.translatesAutoresizingMaskIntoConstraints = false
         segmentControl.topAnchor.constraint(equalTo: skydiversLottieButton.bottomAnchor).isActive = true
         segmentControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        segmentControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        segmentControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
         
         // MARK: TITLE LABEL:
         
@@ -98,11 +103,27 @@ final class SkydiversVC: UIViewController {
         
         // MARK: TABLE VIEW:
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        skydiversTableView.translatesAutoresizingMaskIntoConstraints = false
+        skydiversTableView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 10).isActive = true
+        skydiversTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        skydiversTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        skydiversTableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: NEWS WEB VIEW:
+        
+        newsWebView.translatesAutoresizingMaskIntoConstraints = false
+        newsWebView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        newsWebView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15).isActive = true
+        newsWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        newsWebView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        
+        // MARK: SHOPS WEB VIEW:
+        
+        shopsWebView.translatesAutoresizingMaskIntoConstraints = false
+        shopsWebView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        shopsWebView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15).isActive = true
+        shopsWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        shopsWebView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -155,23 +176,125 @@ final class SkydiversVC: UIViewController {
         
         // MARK: SEGMENT CONTROL:
 
-        segmentControl.insertSegment(withTitle: news, at: 0, animated: true)
-        segmentControl.insertSegment(withTitle: skydivers, at: 1, animated: true)
+        segmentControl.insertSegment(withTitle: skydivers, at: 0, animated: true)
+        segmentControl.insertSegment(withTitle: news, at: 1, animated: true)
         segmentControl.insertSegment(withTitle: shops, at: 2, animated: true)
         segmentControl.selectedSegmentIndex = 0
         segmentControl.backgroundColor = .colorCell
         segmentControl.selectedSegmentTintColor = .systemBlue
         segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
+        
+        // MARK: NEWS WEB VIEW:
+        
+        newsWebView.layer.masksToBounds = true
+        newsWebView.layer.cornerRadius = cornerRadius15
+        
+        // MARK: SHOPS WEB VIEW:
+        
+        shopsWebView.layer.masksToBounds = true
+        shopsWebView.layer.cornerRadius = cornerRadius15
     }
     
+    // MARK: - CONFIGURE NEWS WEB VIEW:
+    
+    private func configureNewsWebView() {
+        let urlString = "https://skydivebook.tilda.ws/news"
+        guard let url = URL(string: urlString) else {
+            let alert = UIAlertController(title: NSLocalizedString("No connection / adapty", comment: ""), message: NSLocalizedString("Message / adapty", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+                self.vibrationOn.vibrationStandart()
+                self.dismiss(animated: true)
+            }))
+            present(alert, animated: true)
+            return
+        }
+
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 10
+
+        let session = URLSession(configuration: sessionConfig)
+        let task = session.dataTask(with: url) { [weak self] _, _, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: NSLocalizedString("No connection / adapty", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+                        self?.vibrationOn.vibrationStandart()
+                        self?.dismiss(animated: true)
+                    }))
+                    self?.present(alert, animated: true)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.loadNewsWebView(with: url)
+                }
+            }
+        }
+        task.resume()
+    }
+
+    private func loadNewsWebView(with url: URL) {
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        newsWebView.load(URLRequest(url: url))
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+    }
+    
+    // MARK: - CONFIGURE SHOPS WEB VIEW:
+    
+    private func configureShopsWebView() {
+        let urlString = "https://skydivebook.tilda.ws/shops"
+        guard let url = URL(string: urlString) else {
+            let alert = UIAlertController(title: NSLocalizedString("No connection / adapty", comment: ""), message: NSLocalizedString("Message / adapty", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+                self.vibrationOn.vibrationStandart()
+                self.dismiss(animated: true)
+            }))
+            present(alert, animated: true)
+            return
+        }
+
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 10
+
+        let session = URLSession(configuration: sessionConfig)
+        let task = session.dataTask(with: url) { [weak self] _, _, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: NSLocalizedString("No connection / adapty", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+                        self?.vibrationOn.vibrationStandart()
+                        self?.dismiss(animated: true)
+                    }))
+                    self?.present(alert, animated: true)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.loadShopsWebView(with: url)
+                }
+            }
+        }
+        task.resume()
+    }
+
+    private func loadShopsWebView(with url: URL) {
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        shopsWebView.load(URLRequest(url: url))
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+    }
+
     // MARK: - CONFIGURE TABLE VIEW:
     
     private func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(SkydiversCell.self, forCellReuseIdentifier: "SkydiversCell")
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
+        skydiversTableView.dataSource = self
+        skydiversTableView.delegate = self
+        skydiversTableView.register(SkydiversCell.self, forCellReuseIdentifier: "SkydiversCell")
+        skydiversTableView.separatorStyle = .none
+        skydiversTableView.backgroundColor = .clear
     }
     
     // MARK: - NETWORK REQUEST:
@@ -196,7 +319,7 @@ final class SkydiversVC: UIViewController {
                 }
             }
             self.arraySkydivers = skydivers.sorted { Int($0.rating) ?? 0 > Int($1.rating) ?? 0 }
-            self.tableView.reloadData()
+            self.skydiversTableView.reloadData()
             self.activityIndicator.stopAnimating()
             self.activityIndicator.removeFromSuperview()
         }
@@ -240,8 +363,8 @@ final class SkydiversVC: UIViewController {
     private func updateSkydiverPhotos(skydiver: Skydiver, photos: [UIImage]) {
         if let index = arraySkydivers.firstIndex(where: { $0.id == skydiver.id }) {
             arraySkydivers[index].photos = photos
-            tableView.reloadData()
-            if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SkydiversCell {
+            skydiversTableView.reloadData()
+            if let cell = skydiversTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SkydiversCell {
                 cell.hideActivityIndicator()
             }
         }
@@ -300,11 +423,20 @@ final class SkydiversVC: UIViewController {
 
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            
+            skydiversTableView.isHidden = false
+            shopsWebView.isHidden = true
+            newsWebView.isHidden = true
+            requestFirebase()
         } else if sender.selectedSegmentIndex == 1 {
-            
+            newsWebView.isHidden = false
+            shopsWebView.isHidden = true
+            skydiversTableView.isHidden = true
+            configureNewsWebView()
         } else if sender.selectedSegmentIndex == 2 {
-            
+            newsWebView.isHidden = true
+            skydiversTableView.isHidden = true
+            shopsWebView.isHidden = false
+            configureShopsWebView()
         }
     }
 }

@@ -8,6 +8,7 @@ final class NewJumpVC: UIViewController {
 
     private let newJumpLottie = LottieAnimationView(name: "NewJump")
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
+    private let effectOneLottie = LottieAnimationView(name: "")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let oneJump: String = NSLocalizedString("One jump / cell new jump", comment: "")
@@ -42,12 +43,20 @@ final class NewJumpVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, segmentControl, firstTableView, secondTableView, newJumpLottie, confettiButton)
+        view.addSubviews(confettiLottie, effectOneLottie, segmentControl, firstTableView, secondTableView, newJumpLottie, confettiButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: EFFECT ONE LOTTIE:
+        
+        effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectOneLottie.centerXAnchor.constraint(equalTo: newJumpLottie.centerXAnchor).isActive = true
+        effectOneLottie.centerYAnchor.constraint(equalTo: newJumpLottie.centerYAnchor).isActive = true
+        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.5).isActive = true
+        
         // MARK: ANIMATION NEW JUMP LOTTIE:
 
         newJumpLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -105,6 +114,12 @@ final class NewJumpVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = true
+        
+        // MARK: EFFECT LOTTIE:
+        
+        effectOneLottie.play()
+        effectOneLottie.loopMode = .loop
+        effectOneLottie.animationSpeed = 0.2
 
         // MARK: ANIMATIONS:
 
