@@ -76,7 +76,7 @@ class AccountVC: UIViewController {
         // MARK: ACCOUNT LOTTIE:
         
         accountLottie.translatesAutoresizingMaskIntoConstraints = false
-        accountLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        accountLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -20).isActive = true
         accountLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         accountLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
@@ -95,7 +95,7 @@ class AccountVC: UIViewController {
         // MARK: STACK VIEW:
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: accountLottie.bottomAnchor, constant: 15).isActive = true
+        stackView.topAnchor.constraint(equalTo: accountLottie.bottomAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
@@ -350,9 +350,11 @@ class AccountVC: UIViewController {
 
     private func configureAccount() {
         if nickname == "" && licenseType == "" && licenseDate == "" && medicine == "" && insurance == "" && reserveCanopy == "" {
+            accountLottie.isHidden = true
             emptyAccountView.isHidden = false
             emptyAccountLabel.text = "\n\(NSLocalizedString("Edit/add account", comment: ""))"
         } else {
+            accountLottie.isHidden = false
             emptyAccountView.isHidden = true
             nicknameLabel.text = nickname.uppercased()
             licenseLabel.text = licenseType + licenseDate

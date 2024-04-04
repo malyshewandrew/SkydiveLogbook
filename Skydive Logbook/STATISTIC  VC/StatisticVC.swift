@@ -122,11 +122,6 @@ final class StatisticVC: UIViewController {
         effectTwoLottie.loopMode = .loop
         effectTwoLottie.animationSpeed = 0.1
         effectTwoLottie.transform = CGAffineTransform(scaleX: -1, y: 1)
-        
-        // MARK: TABLE VIEW:
-
-        tableView.backgroundColor = .colorBackground
-        tableView.separatorStyle = .none
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -135,6 +130,8 @@ final class StatisticVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StatisticCell.self, forCellReuseIdentifier: "CellStatistic")
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         tableView.reloadData()
     }
     

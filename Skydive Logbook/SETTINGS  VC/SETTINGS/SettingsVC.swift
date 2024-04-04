@@ -12,6 +12,8 @@ final class SettingsVC: UIViewController {
 
     private let settingsLottie = LottieAnimationView(name: "Settings")
     private let confettiLottie = LottieAnimationView(name: "SettingsConfetti")
+    private let effectOneLottie = LottieAnimationView(name: "EffectSettings")
+    private let effectTwoLottie = LottieAnimationView(name: "EffectSettings")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
@@ -36,12 +38,27 @@ final class SettingsVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, settingsLottie, confettiButton, tableView)
+        view.addSubviews(confettiLottie, effectOneLottie, effectTwoLottie, settingsLottie, confettiButton, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: EFFECT ONE LOTTIE:
+        
+        effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectOneLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
+        effectOneLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor, constant: 10).isActive = true
+        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: EFFECT TWO LOTTIE:
+        
+        effectTwoLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectTwoLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
+        effectTwoLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor, constant: 10).isActive = true
+        effectTwoLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
         // MARK: ANIMATION SETTINGS LOTTIE:
 
         settingsLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -84,7 +101,21 @@ final class SettingsVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
-
+        
+        // MARK: EFFECT ONE LOTTIE:
+        
+        effectOneLottie.play()
+        effectOneLottie.loopMode = .loop
+        effectOneLottie.animationSpeed = 0.5
+        effectOneLottie.transform = CGAffineTransform(scaleX: -1, y: -1)
+        
+        // MARK: EFFECT TWO LOTTIE:
+        
+        effectTwoLottie.play()
+        effectTwoLottie.loopMode = .loop
+        effectTwoLottie.animationSpeed = 0.5
+        effectTwoLottie.transform = CGAffineTransform(scaleX: 1, y: 1)
+        
         // MARK: ANIMATIONS:
 
         settingsLottie.play()
@@ -104,7 +135,7 @@ final class SettingsVC: UIViewController {
         tableView.delegate = self
         tableView.register(SettingsCell.self, forCellReuseIdentifier: "SettingsCell")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .colorBackground
+        tableView.backgroundColor = .clear
     }
 
     // MARK: - CONFIGURE GESTURES:

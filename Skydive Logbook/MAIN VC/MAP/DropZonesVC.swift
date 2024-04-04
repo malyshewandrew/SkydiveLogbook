@@ -235,6 +235,36 @@ final class DropZonesVC: UIViewController {
         skydiveHawaii.title = "Hawaii"
         skydiveHawaii.subtitle = "Skydive Hawaii"
         mapView.addAnnotation(skydiveHawaii)
+        
+        // MARK: GERMANY:
+        
+        let goJumpBerlin = MKPointAnnotation()
+        goJumpBerlin.coordinate = CLLocationCoordinate2D(latitude: 53.00409028648374, longitude: 13.206484198265958)
+        goJumpBerlin.title = "GoJump Berlin"
+        goJumpBerlin.subtitle = ""
+        mapView.addAnnotation(goJumpBerlin)
+        
+        // MARK: SWEDEN:
+        
+        let skydiveStockholm = MKPointAnnotation()
+        skydiveStockholm.coordinate = CLLocationCoordinate2D(latitude: 60.28603600967073, longitude: 17.42522949833224)
+        skydiveStockholm.title = "Skydive Stockholm"
+        skydiveStockholm.subtitle = "Skydive Stockholm"
+        mapView.addAnnotation(skydiveStockholm)
+        
+        // MARK: NORVAY
+        
+        let skydiveOslo = MKPointAnnotation()
+        skydiveOslo.coordinate = CLLocationCoordinate2D(latitude: 61.256814564874986, longitude: 11.671157069599577)
+        skydiveOslo.title = "skydiveOslo"
+        skydiveOslo.subtitle = "skydiveOslo"
+        mapView.addAnnotation(skydiveOslo)
+        
+        let skydiveTonsberg = MKPointAnnotation()
+        skydiveTonsberg.coordinate = CLLocationCoordinate2D(latitude: 59.2988761305857, longitude: 10.366905862083742)
+        skydiveTonsberg.title = "Skydive Tønsberg"
+        skydiveTonsberg.subtitle = "Skydive Tønsberg"
+        mapView.addAnnotation(skydiveTonsberg)
     }
     
     // MARK: - CONFIGURE WIND TUNNELS:
@@ -285,6 +315,50 @@ final class DropZonesVC: UIViewController {
         skywardBudapest.title = "Skyward"
         skywardBudapest.subtitle = "Skyward Indoor skydiving Budapest"
         mapView.addAnnotation(skywardBudapest)
+        
+        // MARK: - FRANCE:
+
+        let weembi = MKPointAnnotation()
+        weembi.coordinate = CLLocationCoordinate2D(latitude: 50.584185410592475, longitude: 3.0952959633639017)
+        weembi.title = "Weembi"
+        weembi.subtitle = "Weembi"
+        mapView.addAnnotation(weembi)
+        
+        // MARK: - BELGIUM:
+    
+        let airSpaceIndoorSkydiving = MKPointAnnotation()
+        airSpaceIndoorSkydiving.coordinate = CLLocationCoordinate2D(latitude: 50.472656203914966, longitude: 4.474358494243173)
+        airSpaceIndoorSkydiving.title = "AirSpace Indoor Skydiving"
+        airSpaceIndoorSkydiving.subtitle = "AirSpace Indoor Skydiving"
+        mapView.addAnnotation(airSpaceIndoorSkydiving)
+        
+        // MARK: - DENMARK:
+        
+        let airExperience = MKPointAnnotation()
+        airExperience.coordinate = CLLocationCoordinate2D(latitude: 55.66325283190777, longitude: 12.248159402942566)
+        airExperience.title = "Air Experience"
+        airExperience.subtitle = "Air Experience"
+        mapView.addAnnotation(airExperience)
+        
+        // MARK: - UNITED KINGDOM:
+        
+        let bodyflightBedford = MKPointAnnotation()
+        bodyflightBedford.coordinate = CLLocationCoordinate2D(latitude: 52.196034555670515, longitude: -0.4916001569759647)
+        bodyflightBedford.title = "Bodyflight Bedford"
+        bodyflightBedford.subtitle = "Bodyflight Bedford"
+        mapView.addAnnotation(bodyflightBedford)
+        
+        let iFlyMiltonKeynes = MKPointAnnotation()
+        iFlyMiltonKeynes.coordinate = CLLocationCoordinate2D(latitude: 52.04226195442022, longitude: -0.7467268510507883)
+        iFlyMiltonKeynes.title = "iFLY Milton Keynes"
+        iFlyMiltonKeynes.subtitle = "iFLY Milton Keynes"
+        mapView.addAnnotation(iFlyMiltonKeynes)
+        
+        let iflyBasingstoke = MKPointAnnotation()
+        iflyBasingstoke.coordinate = CLLocationCoordinate2D(latitude: 51.26427077100447, longitude: -1.1190587055017542)
+        iflyBasingstoke.title = "iFLY Basingstoke"
+        iflyBasingstoke.subtitle = "iFLY Basingstoke"
+        mapView.addAnnotation(iflyBasingstoke)
     }
     
     // MARK: - CONFIGURE SHOPS:
@@ -306,6 +380,12 @@ final class DropZonesVC: UIViewController {
         skydiveStoreFlorida.subtitle = "Skydive Store Inc"
         mapView.addAnnotation(skydiveStoreFlorida)
         
+        let chutingStarSkydivingGearSuperStore = MKPointAnnotation()
+        chutingStarSkydivingGearSuperStore.coordinate = CLLocationCoordinate2D(latitude: 33.979267138740425, longitude: -84.56356367308129)
+        chutingStarSkydivingGearSuperStore.title = "ChutingStar Skydiving Gear SuperStore"
+        chutingStarSkydivingGearSuperStore.subtitle = "ChutingStar Skydiving Gear SuperStore"
+        mapView.addAnnotation(chutingStarSkydivingGearSuperStore)
+        
         // MARK: - HUNGARY:
         
         let intrudairHungary = MKPointAnnotation()
@@ -321,6 +401,14 @@ final class DropZonesVC: UIViewController {
         marsCzech.title = "Mars"
         marsCzech.subtitle = "MarS a.s."
         mapView.addAnnotation(marsCzech)
+        
+        // MARK: - SPAIN:
+        
+        let skydiveShopSpain = MKPointAnnotation()
+        skydiveShopSpain.coordinate = CLLocationCoordinate2D(latitude: 37.296152234826685, longitude: -6.160095204267157)
+        skydiveShopSpain.title = "SkydiveShop"
+        skydiveShopSpain.subtitle = "SkydiveShop"
+        mapView.addAnnotation(skydiveShopSpain)
     }
     
     // MARK: - HELPERS:

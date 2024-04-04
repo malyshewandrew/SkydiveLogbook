@@ -1,0 +1,597 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "HLAVNÍ";
+"Statistic tab bar" = "STATISTIKY";
+"Add jump tab bar" = "NOVÝ SKOK";
+"System tab bar" = "SYSTÉM";
+"Settings tab bar" = "NASTAVENÍ";
+
+// MARK: - MAIN:
+
+"Save" = "Uložit";
+"Clean" = "Vyčistit";
+"Close" = "Zavřít";
+"Edit" = "Upravit";
+"Delete" = "Smazat";
+"Calculate" = "Vypočítat";
+"Update" = "Aktualizovat";
+"Settings iphone" = "Nastavení";
+
+"Ok" = "OK";
+"Yes" = "Ano";
+"No" = "Ne";
+
+"ago" = "před";
+"back" = "Zpět";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "míle";
+"feet" = "stopy";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "h.";
+"d." = "d.";
+"mon." = "měs.";
+"y." = "r.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nVítejte ve SkydiveBook!\n\nVšechny vaše parašutistické aktivity budou zobrazeny na této obrazovce\n\nUžijte si používání a bezpečné skoky!\n";
+"Delete jump?" = "Smazat skok?";
+"This action cannot be undone." = "Tuto akci nelze vrátit zpět.";
+
+"License" = "Omezení";
+"until" = "do";
+"Medicine until" = "Lékařské do";
+"Insurance until" = "Pojištění do";
+"Reserve canopy until" = "Záložní padák do";
+
+"Edit/add account" = "Pro vyplnění účtu přejděte do sekce „Nastavení“.";
+
+// MARK: - NOTES:
+
+"New note" = "Nová poznámka";
+"Delete note?" = "Smazat poznámku?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Žádné připojení";
+"No connection message / weather" = "Pro získání meteorologických dat je vyžadováno aktivní internetové připojení.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Nárazy až do";
+
+"Wind speed / weather" = "Rychlost větru";
+"Temperature / weather" = "Teplota";
+"Cloud cover / weather" = "Oblačnost";
+"Humidity / weather" = "Vlhkost";
+"Dew point / weather" = "Rosný bod";
+"Visibility / weather" = "Viditelnost";
+"Precipitation / weather" = "Srážky";
+"Pressure / weather" = "Tlak";
+"UvIndex / weather" = "UV Index";
+"It feels like / weather" = "Pocitová teplota";
+
+"Wind direction" = "Směr větru";
+"Arrow wind direction" = "Šipka ukazuje směr větru na zemi na místě, kde se nacházíte. Funguje pouze při aktivním internetovém připojení.";
+
+"Permisson label / weather" = "Nastavení iPhone -> SkydiveBook -> Poloha (udělit oprávnění)";
+"Permisson label alert / weather" = "Pro zobrazení aktuální předpovědi počasí je nutné získat povolení k určení vaší polohy. To lze provést v nastavení.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Klasifikace větru";
+"Wind weather message / alert" = "Klidný: < 0,3 m/s\nTichý: 0,3—1,5 m/s\nLehký: 1,6—3,3 m/s\nStřední: 3,4—5,4 m/s\nSilný: 5,5—7,9 m/s\nProud: 8,0—10,7 m/s\nPřímka: 10,8—13,8 m/s\nBouře: 13,9—17,1 m/s\nSilná bouře: 17,2—20,7 m/s\nVichřice: 20,8—24,4 m/s\nSilná vichřice: 24,5—28,4 m/s\nHurikán: >32,7 m/s";
+
+"Temperature weather title / alert" = "Pocitová teplota";
+"Temperature weather message / alert" = "Pocitová teplota se může lišit od skutečné teploty a odráží, jak teplotu vnímá člověk. Pocitová teplota je ovlivněna charakteristikami větru a úrovní vlhkosti.";
+
+"Cloud cover weather title / alert" = "Oblačnost";
+"Cloud cover weather message / alert" = "Oblačnost se měří jako procento. Obvykle se vyjadřuje v částech oblohy obsazených mraky.";
+
+"Humidity weather title / alert" = "Vlhkost";
+"Humidity weather message / alert" = "Relativní vlhkost nebo jednoduše vlhkost je poměr množství vlhkosti ve vzduchu k maximálnímu množství, které by mohlo být obsaženo ve vzduchu.";
+
+"Dew point weather title / alert" = "Rosný bod";
+"Dew point weather message / alert" = "Rosný bod je hodnota, ke které by teplota musela klesnout, aby se tvořila rosa. Toto je pohodlný způsob určení vlhkosti vzduchu: čím vyšší je rosolový bod, tím vlhčí se vzduch jeví. Rosný bod shodující se s aktuální teplotou znamená, že relativní vlhkost vzduchu je 100 % a může se vytvořit rosa nebo mlha.";
+
+"Visibility weather title / alert" = "Viditelnost";
+"Visibility weather message / alert" = "Viditelnost ukazuje na jakou vzdálenost od sebe jasně vidíte objekty, jako jsou budovy a kopce. Viditelnost je měřítkem průhlednosti vzduchu a nebere v úvahu množství slunečního záření nebo přítomnost překážek.";
+
+"Precipitation weather title / alert" = "Srážky";
+"Precipitation weather message / alert" = "Množství srážek je výška vrstvy vody v milimetrech, která by se tvořila na povrchu Země, pokud by byla úplně rovná. Množství srážek v milimetrech je číselně rovno hmotnosti vody, která spadla na vodorovnou plochu 1 čtverečního metru.";
+
+"Pressure weather title / alert" = "Tlak";
+"Pressure weather message / alert" = "Tabulka ukazuje odchylky od normálního tlaku ve vaší oblasti. Běžný tlak pro lidi je 760 milimetrů rtuti. Ale normální atmosférický tlak pro každého člověka závisí na oblasti, kde se nachází, a tlak oblasti závisí na nadmořské výšce místa.";
+
+"UvIndex weather title / alert" = "UV Index";
+"UvIndex weather message / alert" = "Index UV (UFI), vyvinutý Světovou zdravotnickou organizací, označuje sílu ultrafialového záření. Čím vyšší je UV index, tím nebezpečnější je být na slunci a rychleji může poškodit vaše zdraví. Sledováním UV indexu můžete rozhodnout, kdy se chránit před sluncem a kdy je lepší nevycházet ven.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Klidný";
+"Weak wind / wind speed" = "Slabý vítr";
+"Light wind / wind speed" = "Lehký vítr";
+"Quiet wind / wind speed" = "Tichý vítr";
+"Moderate wind / wind speed" = "Střední vítr";
+"Fresh wind / wind speed" = "Svěží vítr";
+"Strong wind / wind speed" = "Silný vítr";
+"Hard wind / wind speed" = "Tvrdý vítr";
+"Powerful wind / wind speed" = "Výkonný vítr";
+"Storm wind / wind speed" = "Bouřkový vítr";
+"Hard storm wind / wind speed" = "Silný bouřkový vítr";
+"Hurricane wind / wind speed" = "Hurikánový vítr";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Maximální teplota";
+"Min temperature / temperature" = "Minimální teplota";
+"Average temperature / temperature" = "Průměrná teplota";
+"Feels like temperature / temperature" = "Pocitová teplota";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Velmi suchý vzduch";
+"Dry air / humidity" = "Suchý vzduch";
+"Moderately dry air / humidity" = "Poměrně suchý vzduch";
+"Moderately humid air / humidity" = "Poměrně vlhký vzduch";
+"Very humid air / humidity" = "Velmi vlhký vzduch";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Jasno";
+"Partly Cloudy / cloud cover" = "Částečně oblačno";
+"Variable Cloudiness / cloud cover" = "Proměnlivá oblačnost";
+"Cloudy / cloud cover" = "Oblačno";
+"Overcast / cloud cover" = "Zataženo";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Relativně suchý vzduch";
+"Moderately humid air / dew point" = "Poměrně vlhký vzduch";
+"Humid air / dew point" = "Vlhký vzduch";
+"Very humid air / dew point" = "Velmi vlhký vzduch";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Vynikající";
+"Good / visibility" = "Dobrá";
+"Moderate / visibility" = "Střední";
+"Poor / visibility" = "Špatná";
+"Very Poor / visibility" = "Velmi špatná";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Velmi lehké";
+"Light / precipitation" = "Lehké";
+"Moderate / precipitation" = "Střední";
+"Heavy / precipitation" = "Těžké";
+"Very Heavy / precipitation" = "Velmi těžké";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Velmi nízký";
+"Low / pressure" = "Nízký";
+"Normal / pressure" = "Normální";
+"Hight / pressure" = "Vysoký";
+"Very hight / pressure" = "Velmi vysoký";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Nízký";
+"Moderate / uv index" = "Střední";
+"Hight / uv index" = "Vysoký";
+"Very high / uv index" = "Velmi vysoký";
+"Excessive / uv index" = "Přehnaný";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Hodnocení";
+"Nickname / skydivers" = "Přezdívka";
+"Country / skydivers" = "Země";
+"Profile / skydivers" = "Profil";
+"Profession / skydivers" = "Profese";
+"Count of jumps / skydivers" = "Počet skoků";
+"First jump / skydivers" = "První skok";
+"About rating / skydivers" = "Další informace";
+"About rating message / skydivers" = "Komunita je reklamou na sebe i pomocí projektu.\nPodrobnosti na Instagramu.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Pro zobrazení statistik musíte provést alespoň jeden skok.";
+"saving data" = "Ukládání dat";
+"saving data text" = "Pro uložení celé historie skoků se doporučuje pravidelně vytvářet zálohy v sekci „Nastavení“. \nTo je obzvláště důležité při přechodu na nové zařízení.";
+"jumps by year" = "Skoky podle roku";
+"year" = "rok";
+"Categories USPA" = "Kategorie";
+"Categories USPA List" = "\nA: 25 skoků\nČas volného pádu: 10 minut (600 s.)\n\nB: 50 skoků\nČas volného pádu: 30 minut (1800 s.)\n\nC: 200 skoků\nČas volného pádu: 60 minut (3600 s.)\n\nD: 500 skoků\nČas volného pádu: 180 minut (10800 s.)\n";
+"Maximum time" = "Maximální čas";
+"Maximum time alert" = "Byl dokončen skok s maximálním časem volného pádu";
+"Maximum height" = "Maximální výška";
+"Maximum height alert" = "Byl dokončen skok s maximální výškou útoku";
+"Average height" = "Průměrná výška";
+"Minimum height" = "Minimální výška";
+"Minimum height alert" = "Byl dokončen skok s minimální výškou útoku";
+"First jump / statistic" = "První skok byl proveden";
+"Last jump / statistic" = "Poslední skok byl proveden";
+"Max in one day" = "Maximálně za den";
+"Average height of jump" = "Průměrná výška skoku";
+"Average free fall time of jump" = "Průměrný čas volného pádu skoku";
+"Average time" = "Průměrný čas skoku";
+"Max count of jumps" = "Počet skoků";
+"Max count of jumps text" = "Byl dokončen maximální počet skoků za jeden den";
+"Jumps no found" = "Skoky nenalezeny";
+"Сount of cutaways" = "Počet odhozů";
+"Date last jump" = "Poslední skok";
+"Date first jump" = "První skok";
+"List aircrafts" = "Seznam letadel";
+"List canopies" = "Seznam padáků";
+"List locations" = "Seznam míst";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Obecné informace";
+"Total height" = "Celková výška";
+"Total time" = "Celkový čas";
+"Total jumps" = "Celkový počet skoků";
+"In this year" = "V tomto roce";
+"Category" = "Kategorie";
+
+"Average info" = "Průměrné informace";
+
+"Max. height" = "Max. výška";
+"Av. height" = "Prům. výška";
+"Min. height" = "Min. výška";
+"First jump" = "První skok";
+"Max. time" = "Max. čas";
+"Last jump" = "Poslední skok";
+"Max. in day" = "Max. za den";
+"Av. time" = "Prům. čas";
+"CutawayStatistic" = "Odhoz";
+"Count cutaway" = "Počet odhozů";
+"Aircraft" = "Letadlo";
+"Canopies" = "Padáky";
+"Locations" = "Lokace";
+"Missions" = "Mise";
+
+"Accuracy" = "Přesnost";
+"Acrobatics" = "Akrobacie";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Tvorba formace s padákem";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "Zábava";
+"Group" = "Skupina";
+"Instructor" = "Instruktor";
+"Military" = "Vojenský";
+"Para-ski" = "Para-ski";
+"Proximity" = "Proximity";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Statická linka";
+"Piloting" = "Ovládání";
+"Tandem" = "Tandem";
+"Vertical" = "Vertikální";
+"Video" = "Video";
+"Wingsuit" = "Wingsuit";
+"Formation" = "Formace";
+"Top 10:" = "Top 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Nový skok";
+"Manual / new jump" = "Pro začátek přejděte do sekce „Nastavení“ a zadejte následující údaje:\n\nLokace\nLetadla\nPadáky";
+
+// MARK: - CellNewJump:
+
+"Date" = "Datum";
+"Location" = "Lokace";
+"Aircraft" = "Letadlo";
+"Canopy" = "Padák";
+"Mission" = "Mise";
+"Height" = "Výška";
+"Time" = "Čas";
+"Cutaway" = "Odhoz";
+"Comment" = "Komentář";
+
+"One jump / cell new jump" = "Jeden skok";
+"Few jumps / cell new jump" = "Několik skoků";
+"Counts of identical jumps / cell ne jump" = "Počet identických skoků";
+
+"Date placeholder" = "dd.mm.rrrr";
+"Location placeholder" = "Dropzone";
+"Aircraft placeholder" = "Typ letadla";
+"Canopy placeholder" = "Hlavní padák";
+"Mission placeholder" = "Typ skoku";
+"Height placeholder" = "Metry";
+"Time placeholder" = "Sekundy";
+"Cutaway placeholder" = "Ne / Ano";
+"Comment placeholder" = "Volitelné";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Přidat nový systém";
+"Comment" = "Komentář";
+"No comments" = "Komentáře nebyly nalezeny";
+"Container system" = "Systém kontejneru";
+"AAD system" = "Pojistný přístroj";
+"Main canopy system" = "Hlavní padák";
+"Reserve canopy system" = "Rezervní padák";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Číslo";
+"DOM system" = "DOM";
+"Service life system" = "Životnost";
+"Valid until system" = "Platný do";
+"Counts of the jumps system" = "Počet skoků";
+"Resource system" = "Zdroj";
+"Counts of repack system" = "Počet přebalení";
+"Packed system" = "Zabaleno";
+
+"years system" = "roky";
+"jumps system" = "skoky";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Přidat systém";
+"Container alert" = "Kontejner";
+"AAD alert" = "Pojistný přístroj";
+"Main canopy alert" = "Hlavní padák";
+"Reserve canopy alert" = "Rezervní padák";
+
+"Name and model container alert" = "Název a model kontejneru";
+"Name and model AAD alert" = "Název a model pojistného zařízení";
+"Name and model main canopy alert" = "Název a model hlavního padáku. Nejprve ho musíte přidat v sekci „Nastavení“ -> „Upravit padáky“";
+"Name and model reserve canopy alert" = "Název a model rezervního padáku";
+
+"DOM alert" = "Datum výroby";
+"Serial number alert" = "Sériové číslo";
+"Warranty resource container alert" = "Záruka životnosti (obvykle výrobce uvádí 10-20 let nebo podle technického stavu)";
+"Warranty resource AAD alert" = "Záruční doba (zaručený počet let nebo počet let před běžnou údržbou)";
+"Warranty resource main canopy alert" = "Záruka životnosti v letech (obvykle výrobce udává 10-20 let nebo podle technického stavu)";
+"Warranty resource jumps main canopy alert" = "Záruční zdroj pro skoky (obvykle výrobce udává 500 skoků nebo podle technického stavu až 1000 skoků)";
+"Counts of jumps main canopy alert" = "Počet skoků (pokud byl padák nekoupen nový a již na něm byly provedeny skoky, uveďte tento počet). Pro správné výpočty je nutné uvést pouze počet skoků, které nebyly dříve zaznamenány v celkovém seznamu skoků tohoto zařízení";
+"Warranty resource reserve canopy alert" = "Záruka životnosti (obvykle výrobce udává 10-20 let nebo podle technického stavu)";
+"Counts of repack reserve canopy alert" = "Pokud byl padák nekoupen nový a již byl sbalen, uveďte tuto částku";
+"Date of pack reserve canopy alert" = "Datum balení";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Název systému";
+"Name / new system cell" = "Název";
+"Container / new system cell" = "Kontejner";
+"Name container / new system cell" = "Název kontejneru";
+
+"DOM / new system cell" = "Datum výroby";
+"Date mm.yyyy / new system cell" = "mm.rrrr";
+"Serial number / new system cell" = "Sériové číslo";
+"Warranty resource / new system cell" = "Záruční zdroj";
+"Counts of years / new system cell" = "Počet let";
+"Counts of jumps / new system cell" = "Počet skoků";
+
+"AAD / new system cell" = "Pojistný přístroj";
+"Name AAD / new system cell" = "Název pojistného zařízení";
+
+"Main canopy / new system cell" = "Hlavní padák";
+"Name main canopy / new system cell" = "Název padáku";
+"Counts of jumps main canopy / new system cell" = "Počet skoků";
+"The value of the purchase / new system cell" = "Cena nákupu";
+
+"Reserve canopy / new system cell" = "Rezervní padák";
+"Name reserve canopy / new system cell" = "Název padáku";
+"Counts of repack reserve canopy / new system cell" = "Počet přebalení";
+"Date of packing reserve canopy / new system cell" = "Datum balení";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.rrrr";
+"Count / new system cell" = "Počet";
+
+"Comment / new system cell" = "Komentář";
+"Optional / new system cell" = "Volitelné (stav šňůr apod.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Upravit účet";
+"Edit locations" = "Upravit lokace";
+"Delete location?" = "Smazat lokaci?";
+"Edit aircrafts" = "Upravit letadla";
+"Delete aircraft?" = "Smazat letadlo?";
+"Edit canopies" = "Upravit padáky";
+"Drop zones" = "Přistávací zóny";
+"Delete canopy?" = "Smazat padák?";
+"Backup copy" = "Záložní kopie";
+"Calculator loading" = "Načítání kalkulátoru";
+"Information" = "Informace";
+"Premium version" = "Prémiová verze";
+"Share the app" = "Sdílet aplikaci";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Přezdívka";
+"Name user / edit account vc" = "Jméno uživatele";
+"License / edit account vc" = "Licence";
+"Type / number / edit account vc" = "Typ / číslo";
+"Valid until / edit account vc" = "Platná do";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.rrrr";
+"Medicine / edit account vc" = "Lékařská prohlídka";
+"Insurance / edit account vc" = "Pojištění";
+"Reserve canopy / edit account vc" = "Rezervní padák";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Zadejte název přistávací zóny";
+"Enter aircraft" = "Zadejte název letadla";
+"Enter canopy" = "Zadejte název padáku";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nZáložní kopie ukládá všechna data zaznamenaná v aplikaci.\nJe doporučeno pravidelně vytvářet záložní kopii, aby nedošlo ke ztrátě zadaných dat.\n";
+"Backup / backup" = "Vytvořit zálohu";
+"Restore / backup" = "Obnovit";
+"Title / backup" = "Statistiky databáze";
+"Jumps / backup" = "Skoky";
+"Systems / backup" = "Systémy";
+"Notes / backup" = "Poznámky";
+"Aircrafts / backup" = "Letadla";
+"Canopies / backup" = "Padáky";
+"Locations / backup" = "Lokace";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Celková hmotnost";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "Čtvercový padák";
+"1-50A" = "\nTyp padáku: Student.\nKategorie: A.\nPočet skoků: 1-50 skoků.\n";
+"51-200B" = "\nTyp padáku: Přechodový.\nKategorie: B.\nPočet skoků: 51-200 skoků.\n";
+"201-500C" = "\nTyp padáku: Středně rychlý.\nKategorie: C.\nPočet skoků: 201-500 skoků.\n";
+"501-1000D1" = "\nTyp padáku: Rychlý/oválný.\nKategorie: D.\nPočet skoků: 501-1000 skoků.\n";
+"1000D2" = "\nTyp padáku: Vysokorychlostní.\nKategorie: D.\nPočet skoků: 1000+ skoků.\n";
+"1000D3" = "\nTyp padáku: Vysokorychlostní/čtyřramenný.\nKategorie: D.\nPočet skoků: 1000+ skoků.\n";
+
+// MARK: - INFO:
+
+"App version" = "O aplikaci";
+"Version / info" = "Verze";
+"Build / info" = "Build";
+"Privacy policy" = "Zásady ochrany osobních údajů";
+"Terms of use" = "Podmínky používání";
+"FAQ" = "Často kladené otázky";
+"App language / info" = "Jazyk aplikace";
+"App language text / info" = "Tato aplikace používá jazyk nastavený jako primární na vašem telefonu. Pokud váš jazyk není podporován aplikací, bude použit výchozí anglický jazyk.\n\nSeznam podporovaných jazyků:\nArabština\nAngličtina\nFrancouzština\nHindština\nŠpanělština\nItalština\nJaponština\nČínština\nNěmčina\nPortugalština\nPolština\nRuština\n\nPřeklad byl proveden pomocí umělé inteligence, takže mohou být chyby.\nPokud byste chtěli pomoci projektu a přeložit aplikaci do vašeho jazyka nebo pomoci opravit chyby, kontaktujte prosím vývojáře.";
+"Info text" = "\nSkydiveBook - není to oficiální potvrzení toho, že uživatel aplikace je profesionální skydiver.\n\nSlouží jako nepovinné doplnění k oficiálnímu padákovému průkazu nebo certifikátu skydivera v jakékoli kategorii.\n\nSkoky zaznamenané v aplikaci SkydiveBook nejsou důkazem těchto skoků a nemohou být považovány za základ pro vydání oficiálních dokumentů, certifikátů, kategorií.\n\nAplikace je navržena pro osobní použití, pohodlí při skydivingu a pokročilou analytiku.\n\nÚdaje o zatížení hlavního padáku jsou informace pro referenci a nejsou doporučením pro volbu padákového vybavení.\n\nVšechny povolení k provozu padáků musí být vydány platným instruktorem.\n\nVeškeré informace získané pomocí aplikace jsou pouze pro referenční účely: studujte mapu letiště sami a získejte aktuální údaje o povětrnostních podmínkách během skoků.\n\nJako každý software může i tato aplikace dělat chyby a být neúplná z důvodu lidského faktoru.\n\nPamatujte si, že skydiving je spojen s rizikem pro život. Nenaplnění bezpečnostních předpisů může vést k zranění a dokonce i smrti.\n";
+"Info text start alert" = "\nSkydiveBook - není to oficiální potvrzení toho, že uživatel aplikace je profesionální skydiver.\n\nSlouží jako nepovinné doplnění k oficiálnímu padákovému průkazu nebo certifikátu skydivera v jakékoli kategorii.\n\nSkoky zaznamenané v aplikaci SkydiveBook nejsou důkazem těchto skoků a nemohou být považovány za základ pro vydání oficiálních dokumentů, certifikátů, kategorií.\n\nAplikace je navržena pro osobní použití, pohodlí při skydivingu a pokročilou analytiku.\n\nÚdaje o zatížení hlavního padáku jsou informace pro referenci a nejsou doporučením pro volbu padákového vybavení.\n\nVšechny povolení k provozu padáků musí být vydány platným instruktorem.\n\nVeškeré informace získané pomocí aplikace jsou pouze pro referenční účely: studujte mapu letiště sami a získejte aktuální údaje o povětrnostních podmínkách během skoků.\n\nJako každý software může i tato aplikace dělat chyby a být neúplná z důvodu lidského faktoru.\n\nPamatujte si, že skydiving je spojen s rizikem pro život. Nenaplnění bezpečnostních předpisů může vést k zranění a dokonce i smrti.\n\nPřečetl(a) jsem si to a souhlasím.";
+"Agree" = "Souhlasím";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nVe verzi zdarma aplikace můžete uložit 50 skoků.\n\n⭐️ ⭐️ ⭐️\n\nPrémiová verze aplikace vám umožní uložit neomezený počet skoků.\n";
+"1 month" = "$9.99 / Měsíc";
+"12 months" = "$49.99 / Rok\n($4.16/měsíc)";
+"Restore purchases" = "Obnovit nákupy";
+
+"Buy status" = "Nákupy nalezly / nákupy nenalezeny";
+"Restore Successful" = "Obnovení bylo úspěšné";
+"All purchases have been successfully restored." = "Všechny nákupy byly úspěšně obnoveny.";
+"Restore Failed" = "Obnovení se nezdařilo";
+"Some purchases could not be restored. Please try again later." = "Některé nákupy se nepodařilo obnovit. Zkuste to prosím později znovu.";
+"No Purchases to Restore" = "Není žádné obnovení nákupů";
+"There are no previous purchases to restore." = "Neexistují žádné předchozí nákupy k obnovení.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Žádné připojení";
+"Message / adapty" = "K přijetí dat je vyžadováno aktivní internetové připojení.";
+
+"Alert / adapty status" = "Potřebný Premium";
+"Message / adapty status" = "Ve verzi zdarma můžete uložit pouze:\n\n50 skoků.\n10 poznámek.\n1 systém.\n\nPro odstranění všech omezení si zakupte PREMIUM v sekci „Nastavení“.";
+
+// MARK: - SYSTEM:
+
+"System" = "SYSTÉM";
+"Delete system?" = "Smazat systém?";
+"System empty message / system" = "Zatím nemáte žádné přidané padákové systémy.";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "Výsadková místa";
+"Wind tunnels / drop zones" = "Větrné tunely";
+"Shops / drop zones" = "Obchody";
+"Information / drop zones" = "Informace";
+"Message / drop zones" = "Zde budou pouze ověřená výsadková místa a větrné tunely. Vaše místo můžete přidat tím, že napíšete na Instagram.";
+"Map type" = "Typ mapy";
+"Standard / map type" = "Standardní";
+"Satellite / map type" = "Satelitní";
+"Hybrid / map type" = "Hybridní";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Úspěch";
+"Error / alert kit" = "Chyba";
+"Error counts / alert kit" = "Už nejsi ve vzduchu!";
+
+"Jump added / alert kit" = "Skok přidán";
+"Jumps added / alert kit" = "Skoky přidány";
+"Jump deleted / alert kit" = "Skok smazán";
+"Jump updated / alert kit" = "Skok aktualizován";
+
+"Note added / alert kit" = "Poznámka přidána";
+"Note deleted / alert kit" = "Poznámka smazána";
+
+"System added / alert kit" = "Systém přidán";
+"System deleted / alert kit" = "Systém smazán";
+"System updated / alert kit" = "Systém aktualizován";
+
+"Backup saved / alert kit" = "Záloha uložena";
+"Backup upload / alert kit" = "Záloha nahrána";
+
+"Location added / alert kit" = "Místo přidáno";
+"Location deleted / alert kit" = "Místo smazáno";
+
+"Aircraft added / alert kit" = "Letadlo přidáno";
+"Aircraft deleted / alert kit" = "Letadlo smazáno";
+
+"Canopy added / alert kit" = "Padák přidán";
+"Canopy deleted / alert kit" = "Padák smazán";

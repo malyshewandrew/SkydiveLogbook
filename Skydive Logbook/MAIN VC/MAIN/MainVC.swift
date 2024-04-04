@@ -303,7 +303,7 @@ final class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.register(MainCell.self, forCellReuseIdentifier: "MainCell")
         tableView.isHidden = true
-        tableView.backgroundColor = .colorBackground
+        tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
     }
 

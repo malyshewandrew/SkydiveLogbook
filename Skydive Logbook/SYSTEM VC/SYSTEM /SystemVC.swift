@@ -9,6 +9,7 @@ final class SystemVC: UIViewController {
     private let systemLottie = LottieAnimationView(name: "Parachute")
     private let startSystemLottie = LottieAnimationView(name: "Parachute")
     private let confettiLottie = LottieAnimationView(name: "SystemConfetti")
+    private let effectOneLottie = LottieAnimationView(name: "EffectSystem")
     private let startConfettiLottie = LottieAnimationView(name: "SystemConfetti")
     private let confettiButton = UIButton()
     private let startConfettiButton = UIButton()
@@ -45,13 +46,20 @@ final class SystemVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, startConfettiLottie, systemLottie, startSystemLottie, confettiButton, startConfettiButton, tableView, emptySystemView, newSystemButton)
+        view.addSubviews(confettiLottie, effectOneLottie, startConfettiLottie, systemLottie, startSystemLottie, confettiButton, startConfettiButton, tableView, emptySystemView, newSystemButton)
         emptySystemView.addSubviews(emptySystemLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: EFFECT ONE LOTTIE:
+        
+        effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
+        effectOneLottie.centerXAnchor.constraint(equalTo: systemLottie.centerXAnchor).isActive = true
+        effectOneLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor, constant: 10).isActive = true
+        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
         
         // MARK: ANIMATION SYSTEM LOTTIE:
 
@@ -141,6 +149,13 @@ final class SystemVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
+        
+        // MARK: EFFECT LOTTIE:
+        
+        effectOneLottie.play()
+        effectOneLottie.loopMode = .loop
+        effectOneLottie.animationSpeed = 0.5
+        effectOneLottie.layer.opacity = 1
 
         // MARK: ANIMATIONS:
 
@@ -180,7 +195,7 @@ final class SystemVC: UIViewController {
         tableView.dataSource = self
         tableView.register(SystemCell.self, forCellReuseIdentifier: "SystemCell")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .colorBackground
+        tableView.backgroundColor = .clear
     }
 
     // MARK: - LOAD SYSTEM FROM REALM:

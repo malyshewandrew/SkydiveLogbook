@@ -8,7 +8,7 @@ final class NewJumpVC: UIViewController {
 
     private let newJumpLottie = LottieAnimationView(name: "NewJump")
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
-    private let effectOneLottie = LottieAnimationView(name: "")
+    private let effectOneLottie = LottieAnimationView(name: "EffectNewJump")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let oneJump: String = NSLocalizedString("One jump / cell new jump", comment: "")
@@ -54,8 +54,8 @@ final class NewJumpVC: UIViewController {
         
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
         effectOneLottie.centerXAnchor.constraint(equalTo: newJumpLottie.centerXAnchor).isActive = true
-        effectOneLottie.centerYAnchor.constraint(equalTo: newJumpLottie.centerYAnchor).isActive = true
-        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.5).isActive = true
+        effectOneLottie.centerYAnchor.constraint(equalTo: newJumpLottie.centerYAnchor, constant: 10).isActive = true
+        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
         
         // MARK: ANIMATION NEW JUMP LOTTIE:
 
@@ -119,7 +119,8 @@ final class NewJumpVC: UIViewController {
         
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
-        effectOneLottie.animationSpeed = 0.2
+        effectOneLottie.animationSpeed = 0.1
+        effectOneLottie.layer.opacity = 0.5
 
         // MARK: ANIMATIONS:
 
@@ -148,13 +149,13 @@ final class NewJumpVC: UIViewController {
         firstTableView.delegate = self
         firstTableView.dataSource = self
         firstTableView.register(NewJumpCell.self, forCellReuseIdentifier: "NewJumpCell")
-        firstTableView.backgroundColor = .colorBackground
+        firstTableView.backgroundColor = .clear
         firstTableView.separatorStyle = .none
 
         secondTableView.delegate = self
         secondTableView.dataSource = self
         secondTableView.register(NewMoreJumpCell.self, forCellReuseIdentifier: "NewMoreJumpCell")
-        secondTableView.backgroundColor = .colorBackground
+        secondTableView.backgroundColor = .clear
         secondTableView.separatorStyle = .none
         secondTableView.isHidden = true
     }
@@ -211,9 +212,11 @@ final class NewJumpVC: UIViewController {
 
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
+            vibrationOn.vibrationStandart()
             firstTableView.isHidden = false
             secondTableView.isHidden = true
         } else if sender.selectedSegmentIndex == 1 {
+            vibrationOn.vibrationStandart()
             secondTableView.isHidden = false
             firstTableView.isHidden = true
         }

@@ -119,16 +119,16 @@ final class WeatherCell: UITableViewCell {
         // MARK: ICON IMAGE VIEW:
 
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        iconImageView.bottomAnchor.constraint(equalTo: windButton.topAnchor, constant: -10).isActive = true
+        iconImageView.bottomAnchor.constraint(equalTo: windButton.topAnchor, constant: -5).isActive = true
         iconImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
 
         // MARK: - WIND BUTTON:
 
         windButton.translatesAutoresizingMaskIntoConstraints = false
-        windButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 90).isActive = true
+        windButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 80).isActive = true
         windButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         windButton.bottomAnchor.constraint(equalTo: windDirectionLabel.bottomAnchor, constant: 10).isActive = true
-        windButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.55).isActive = true
+        windButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.65).isActive = true
 
         // WIND SPEED:
 
@@ -165,7 +165,7 @@ final class WeatherCell: UITableViewCell {
         temperatureButton.topAnchor.constraint(equalTo: windButton.bottomAnchor, constant: 15).isActive = true
         temperatureButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         temperatureButton.bottomAnchor.constraint(equalTo: feelTemperatureLabel.bottomAnchor, constant: 10).isActive = true
-        temperatureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.65).isActive = true
+        temperatureButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
 
         // CURRENT TEMPERATURE:
 
