@@ -1,0 +1,597 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "ANA";
+"Statistic tab bar" = "İSTATİSTİK";
+"Add jump tab bar" = "YENİ ATLAMA";
+"System tab bar" = "SİSTEM";
+"Settings tab bar" = "AYARLAR";
+
+// MARK: - MAIN:
+
+"Save" = "Kaydet";
+"Clean" = "Temizle";
+"Close" = "Kapat";
+"Edit" = "Düzenle";
+"Delete" = "Sil";
+"Calculate" = "Hesapla";
+"Update" = "Güncelle";
+"Settings iphone" = "Ayarlar";
+
+"Ok" = "Tamam";
+"Yes" = "Evet";
+"No" = "Hayır";
+
+"ago" = "önce";
+"back" = "Geri";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "mil";
+"feet" = "fit";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "dk.";
+"h." = "sa.";
+"d." = "g.";
+"mon." = "ay.";
+"y." = "y.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nSkydiveBook'a hoş geldiniz!\n\nTüm paraşütle atlama etkinlikleriniz bu ekranda görüntülenecektir\n\nKullanımınızdan keyif alın ve güvenli atlamlar yapın!\n";
+"Delete jump?" = "Atlama silinsin mi?";
+"This action cannot be undone." = "Bu işlem geri alınamaz.";
+
+"License" = "Lisans";
+"until" = "kadar";
+"Medicine until" = "Tıbbi Bakım bitiş tarihi";
+"Insurance until" = "Sigorta bitiş tarihi";
+"Reserve canopy until" = "Yedek Kanopi bitiş tarihi";
+
+"Edit/add account" = "Hesabı doldurmak için \"Ayarlar\" bölümüne gidin.";
+
+// MARK: - NOTES:
+
+"New note" = "Yeni not";
+"Delete note?" = "Notu sil?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Bağlantı yok";
+"No connection message / weather" = "Hava tahmini verilerini almak için etkin bir internet bağlantısı gereklidir.";
+
+"mm/h" = "mm/sa";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Ani rüzgar hızı";
+
+"Wind speed / weather" = "Rüzgar hızı";
+"Temperature / weather" = "Sıcaklık";
+"Cloud cover / weather" = "Bulut örtüsü";
+"Humidity / weather" = "Nem";
+"Dew point / weather" = "Çiğ noktası";
+"Visibility / weather" = "Görünürlük";
+"Precipitation / weather" = "Yağış";
+"Pressure / weather" = "Basınç";
+"UvIndex / weather" = "UV İndeksi";
+"It feels like / weather" = "Hissedilen sıcaklık";
+
+"Wind direction" = "Rüzgar yönü";
+"Arrow wind direction" = "Ok, bulunduğunuz yerde yer yakınındaki rüzgar yönünü gösterir. Yalnızca etkin bir İnternet bağlantısıyla çalışır.";
+
+"Permisson label / weather" = "Ayarlar iPhone -> SkydiveBook -> Konum (izin ver)";
+"Permisson label alert / weather" = "Mevcut hava tahminini görüntülemek için konumunuzu belirleme iznine ihtiyacınız vardır. Bunun için ayarlara gidebilirsiniz.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Rüzgar sınıflandırması";
+"Wind weather message / alert" = "Sakin: < 0.3 m/s\nDurgun: 0.3—1.5 m/s\nHafif: 1.6—3.3 m/s\nOrta: 3.4—5.4 m/s\nHafif: 5.5—7.9 m/s\nKuvvetli: 8.0—10.7 m/s\nFırtına: 10.8—13.8 m/s\nŞiddetli Fırtına: 13.9—17.1 m/s\nGüçlü Fırtına: 17.2—20.7 m/s\nFırtına: 20.8—24.4 m/s\nŞiddetli Fırtına: 24.5—28.4 m/s\nKasırga: >32.7 m/s";
+
+"Temperature weather title / alert" = "Hissedilen sıcaklık";
+"Temperature weather message / alert" = "Hissedilen sıcaklık göstergesi, sıcaklığın insanlar tarafından nasıl algılandığını yansıtan gerçek sıcaklıktan farklı olabilir. 'Hissedilen sıcaklık' göstergesi, rüzgar özellikleri ve nem seviyelerinden etkilenir.";
+
+"Cloud cover weather title / alert" = "Bulut örtüsü";
+"Cloud cover weather message / alert" = "Bulut örtüsü yüzde olarak ölçülür. Genellikle bulutlarla kaplanmış gökyüzünün bölümleri şeklinde ifade edilir.";
+
+"Humidity weather title / alert" = "Nem";
+"Humidity weather message / alert" = "Nispi nem veya kısaca nem, havadaki nem miktarının havadaki maksimum nem miktarına oranıdır.";
+
+"Dew point weather title / alert" = "Çiğ noktası";
+"Dew point weather message / alert" = "Çiğ noktası, çiğin oluşması için sıcaklığın düşmesi gereken değerdir. Bu, havanın nemini belirlemenin uygun bir yoludur: Çiğ noktası ne kadar yüksekse, hava o kadar nemli hissedilir. Çiğ noktasının mevcut sıcaklıkla aynı olması, havanın nispi neminin %100 olduğu ve çiğ veya sis oluşabileceği anlamına gelir.";
+
+"Visibility weather title / alert" = "Görünürlük";
+"Visibility weather message / alert" = "Görünürlük, kendinizden ne kadar uzakta binalar ve tepeler gibi nesneleri net bir şekilde görebileceğiniz mesafeyi gösterir. Görünürlük, hava şeffaflığının bir ölçüsüdür ve güneş ışığının miktarını veya engellerin varlığını dikkate almaz.";
+
+"Precipitation weather title / alert" = "Yağış";
+"Precipitation weather message / alert" = "Yağış miktarı, tamamen düz bir yüzeyde oluşacak olan su tabakasının yüksekliğidir. Yağış miktarı, milimetrekarelik bir yatay yüzeye düşen suyun kütlesiyle sayısal olarak eşittir.";
+
+"Pressure weather title / alert" = "Basınç";
+"Pressure weather message / alert" = "Tablo, basıncın konumunuza göre normundan sapmaları gösterir. İnsanlar için normal basınç, 760 milimetre cıva basınçtır. Ancak her bir kişinin normal atmosfer basıncı bulunduğu bölgeye bağlıdır, bölgenin basıncı ise bölgenin yüksekliğine bağlıdır.";
+
+"UvIndex weather title / alert" = "UV İndeksi";
+"UvIndex weather message / alert" = "Dünya Sağlık Örgütü tarafından geliştirilen UV indeksi (UFI), ultraviyole radyasyonun gücünü gösterir. UV indeksi ne kadar yüksekse, güneşte bulunmanın o kadar tehlikeli olduğu ve sağlığınıza o kadar hızlı zarar verebileceği anlamına gelir. UV indeksini izleyerek, güneşten korunmanın ne zaman gerektiğine ve dışarı çıkmamanın daha iyi olduğuna karar verebilirsiniz.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Sakin";
+"Weak wind / wind speed" = "Zayıf rüzgar";
+"Light wind / wind speed" = "Hafif rüzgar";
+"Quiet wind / wind speed" = "Sakin rüzgar";
+"Moderate wind / wind speed" = "Orta rüzgar";
+"Fresh wind / wind speed" = "Taze rüzgar";
+"Strong wind / wind speed" = "Güçlü rüzgar";
+"Hard wind / wind speed" = "Sert rüzgar";
+"Powerful wind / wind speed" = "Güçlü rüzgar";
+"Storm wind / wind speed" = "Fırtına";
+"Hard storm wind / wind speed" = "Şiddetli fırtına";
+"Hurricane wind / wind speed" = "Kasırga";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Maksimum sıcaklık";
+"Min temperature / temperature" = "Minimum sıcaklık";
+"Average temperature / temperature" = "Ortalama sıcaklık";
+"Feels like temperature / temperature" = "Hissedilen sıcaklık";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Çok kuru";
+"Dry air / humidity" = "Kuru";
+"Moderately dry air / humidity" = "Orta kurulu";
+"Moderately humid air / humidity" = "Orta nemli";
+"Very humid air / humidity" = "Çok nemli";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Açık";
+"Partly Cloudy / cloud cover" = "Kısmen Bulutlu";
+"Variable Cloudiness / cloud cover" = "Değişken Bulutluluk";
+"Cloudy / cloud cover" = "Bulutlu";
+"Overcast / cloud cover" = "Kapalı";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Nispeten kuru";
+"Moderately humid air / dew point" = "Orta nemli";
+"Humid air / dew point" = "Nemli";
+"Very humid air / dew point" = "Çok nemli";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Mükemmel";
+"Good / visibility" = "İyi";
+"Moderate / visibility" = "Orta";
+"Poor / visibility" = "Kötü";
+"Very Poor / visibility" = "Çok Kötü";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Çok Hafif";
+"Light / precipitation" = "Hafif";
+"Moderate / precipitation" = "Orta";
+"Heavy / precipitation" = "Ağır";
+"Very Heavy / precipitation" = "Çok Ağır";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Çok Düşük";
+"Low / pressure" = "Düşük";
+"Normal / pressure" = "Normal";
+"High / pressure" = "Yüksek";
+"Very high / pressure" = "Çok Yüksek";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Düşük";
+"Moderate / uv index" = "Orta";
+"High / uv index" = "Yüksek";
+"Very high / uv index" = "Çok Yüksek";
+"Excessive / uv index" = "Aşırı";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Puan";
+"Nickname / skydivers" = "Rumuz";
+"Country / skydivers" = "Ülke";
+"Profile / skydivers" = "Profil";
+"Profession / skydivers" = "Meslek";
+"Count of jumps / skydivers" = "Atlama Sayısı";
+"First jump / skydivers" = "İlk Atlama";
+"About rating / skydivers" = "Daha fazla bilgi";
+"About rating message / skydivers" = "Topluluk, kendini tanıtmanın yanı sıra projeye yardımcı olur.\nDetaylar Instagram'da.";
+
+// MARK: - Statistic:
+
+"no jumps" = "İstatistikleri göstermek için en az bir atlayış yapmanız gerekmektedir.";
+"saving data" = "Veri kaydediliyor";
+"saving data text" = "Tüm atlayış geçmişinizi kaydetmek için \"Ayarlar\" bölümünde periyodik yedeklemeler oluşturmanız önerilir. \nBu, yeni bir cihaza geçiş yaparken özellikle önemlidir.";
+"jumps by year" = "Yıllara göre atlayışlar";
+"year" = "yıl";
+"Categories USPA" = "Kategoriler";
+"Categories USPA List" = "\nA: 25 atlayış\nSerbest düşme süresi: 10 dakika (600s.)\n\nB: 50 atlayış\nSerbest düşme süresi: 30 dakika (1800s.)\n\nC: 200 atlayış\nSerbest düşme süresi: 60 dakika (3600s.)\n\nD: 500 atlayış\nSerbest düşme süresi: 180 dakika (10800s.)\n";
+"Maximum time" = "Maksimum süre";
+"Maximum time alert" = "Maksimum serbest düşme süresine sahip atlayış tamamlandı";
+"Maximum height" = "Maksimum yükseklik";
+"Maximum height alert" = "Bölme maksimum yüksekliğine sahip atlayış tamamlandı";
+"Average height" = "Ortalama yükseklik";
+"Minimum height" = "Minimum yükseklik";
+"Minimum height alert" = "Bölme minimum yüksekliğine sahip atlayış tamamlandı";
+"First jump / statistic" = "İlk atlayış yapıldı";
+"Last jump / statistic" = "Son atlayış yapıldı";
+"Max in one day" = "Bir günde en fazla";
+"Average height of jump" = "Atlayışın ortalama yüksekliği";
+"Average free fall time of jump" = "Atlayışın ortalama serbest düşme süresi";
+"Average time" = "Atlayışın ortalama süresi";
+"Max count of jumps" = "Atlayış sayısı";
+"Max count of jumps text" = "Bir günde yapılan maksimum atlayış sayısı tamamlandı";
+"Jumps no found" = "Atlayış bulunamadı";
+"Count of cutaways" = "Kurtarma sayısı";
+"Date last jump" = "Son atlayış";
+"Date first jump" = "İlk atlayış";
+"List aircrafts" = "Uçaklar listesi";
+"List canopies" = "Şemsiyeler listesi";
+"List locations" = "Konumlar listesi";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Genel bilgi";
+"Total height" = "Toplam yükseklik";
+"Total time" = "Toplam zaman";
+"Total jumps" = "Toplam atlayış";
+"In this year" = "Bu yıl";
+"Category" = "Kategori";
+
+"Average info" = "Ortalama bilgi";
+
+"Max. height" = "Max. yükseklik";
+"Av. height" = "Ort. yükseklik";
+"Min. height" = "Min. yükseklik";
+"First jump" = "İlk atlayış";
+"Max. time" = "Max. zaman";
+"Last jump" = "Son atlayış";
+"Max. in day" = "Günde max.";
+"Av. time" = "Ort. zaman";
+"CutawayStatistic" = "Kurtarma";
+"Count cutaway" = "Kurtarma sayısı";
+"Aircraft" = "Uçak";
+"Canopies" = "Şemsiyeler";
+"Locations" = "Konumlar";
+"Missions" = "Görevler";
+
+"Accuracy" = "Doğruluk";
+"Acrobatics" = "Akrobasi";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Şemsiye oluşturma";
+"Freefly" = "Serbest uçuş";
+"Freestyle" = "Serbest stil";
+"Fun" = "Eğlence";
+"Group" = "Grup";
+"Instructor" = "Eğitmen";
+"Military" = "Askeri";
+"Para-ski" = "Para-ski";
+"Proximity" = "Yakınlık";
+"Skysurfing" = "Göksörfçülük";
+"Static-line" = "Statik hat";
+"Piloting" = "Pilotluk";
+"Tandem" = "Tandem";
+"Vertical" = "Dikey";
+"Video" = "Video";
+"Wingsuit" = "Kanat giysi";
+"Formation" = "Formasyon";
+"Top 10:" = "En İyi 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Yeni atlayış";
+"Manual / new jump" = "Başlamak için, \"Ayarlar\" bölümüne gidin ve aşağıdaki verileri girin:\n\nKonumlar\nUçaklar\nŞemsiyeler";
+
+// MARK: - CellNewJump:
+
+"Date" = "Tarih";
+"Location" = "Konum";
+"Aircraft" = "Uçak";
+"Canopy" = "Şemsiye";
+"Mission" = "Görev";
+"Height" = "Yükseklik";
+"Time" = "Zaman";
+"Cutaway" = "Kurtarma";
+"Comment" = "Yorum";
+
+"One jump / cell new jump" = "Bir atlayış";
+"Few jumps / cell new jump" = "Birkaç atlayış";
+"Counts of identical jumps / cell ne jump" = "Benzer atlayışların sayısı";
+
+"Date placeholder" = "gg.aa.yyyy";
+"Location placeholder" = "Atlayış alanı";
+"Aircraft placeholder" = "Uçak tipi";
+"Canopy placeholder" = "Ana şemsiye";
+"Mission placeholder" = "Atlayış türü";
+"Height placeholder" = "Metre";
+"Time placeholder" = "Saniye";
+"Cutaway placeholder" = "Hayır / Evet";
+"Comment placeholder" = "İsteğe bağlı";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Yeni bir sistem ekle";
+"Comment" = "Yorum";
+"No comments" = "Yorum bulunamadı";
+"Container system" = "Konteyner";
+"AAD system" = "Sigorta cihazı";
+"Main canopy system" = "Ana şemsiye";
+"Reserve canopy system" = "Yedek şemsiye";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Numara";
+"DOM system" = "DOM";
+"Service life system" = "Servis ömrü";
+"Valid until system" = "Geçerli tarih";
+"Counts of the jumps system" = "Atlayış sayısı";
+"Resource system" = "Kaynak";
+"Counts of repack system" = "Yeniden paketleme sayısı";
+"Packed system" = "Paketli";
+
+"years system" = "yıl";
+"jumps system" = "atlayış";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Sistem ekle";
+"Container alert" = "Konteyner";
+"AAD alert" = "Sigorta cihazı";
+"Main canopy alert" = "Ana şemsiye";
+"Reserve canopy alert" = "Yedek şemsiye";
+
+"Name and model container alert" = "Konteyner adı ve modeli";
+"Name and model AAD alert" = "Sigorta cihazının adı ve modeli";
+"Name and model main canopy alert" = "Ana şemsiye adı ve modeli. Önce \"Ayarlar\" -> \"Şemsiyeleri Düzenle\" bölümünde eklemelisiniz";
+"Name and model reserve canopy alert" = "Yedek şemsiye adı ve modeli";
+
+"DOM alert" = "Üretim tarihi";
+"Serial number alert" = "Seri numarası";
+"Warranty resource container alert" = "Garanti süresi (genellikle üretici 10-20 yıl veya teknik duruma göre belirtir)";
+"Warranty resource AAD alert" = "Garanti ömrü (garantili yıl sayısı veya rutin bakımdan önceki yıl sayısı)";
+"Warranty resource main canopy alert" = "Garanti süresi yıl olarak (genellikle üretici 10-20 yıl veya teknik duruma göre belirtir)";
+"Warranty resource jumps main canopy alert" = "Atlamalar için garanti süresi (genellikle üretici 500 atlama veya teknik duruma göre 1000 atlama belirtir)";
+"Counts of jumps main canopy alert" = "Uygulama sayısı (şemsiye yeni satın alınmadıysa ve üzerinde zaten atlama yapıldıysa, bu sayıyı belirtin). Doğru hesaplama için, bu uygulamanın genel atlama listesinde daha önce kaydedilmemiş atlama sayısını belirtmek gerekir";
+"Warranty resource reserve canopy alert" = "Garanti süresi (genellikle üretici 10-20 yıl veya teknik duruma göre belirtir)";
+"Counts of repack reserve canopy alert" = "Eğer şemsiye yeni satın alınmadıysa ve daha önce stow edildiyse, bu miktarı belirtin";
+"Date of pack reserve canopy alert" = "Paketleme tarihi";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Sistem adı";
+"Name / new system cell" = "Ad";
+"Container / new system cell" = "Konteyner";
+"Name container / new system cell" = "Konteyner adı";
+
+"DOM / new system cell" = "Üretim tarihi";
+"Date mm.yyyy / new system cell" = "aa.yy";
+"Serial number / new system cell" = "Seri numarası";
+"Warranty resource / new system cell" = "Garanti kaynağı";
+"Counts of years / new system cell" = "Yıl sayısı";
+"Counts of jumps / new system cell" = "Atlayış sayısı";
+
+"AAD / new system cell" = "Sigorta cihazı";
+"Name AAD / new system cell" = "Sigorta cihazının adı";
+
+"Main canopy / new system cell" = "Ana şemsiye";
+"Name main canopy / new system cell" = "Şemsiye adı";
+"Counts of jumps main canopy / new system cell" = "Atlayış sayısı";
+"The value of the purchase / new system cell" = "Satın alma değeri";
+
+"Reserve canopy / new system cell" = "Yedek şemsiye";
+"Name reserve canopy / new system cell" = "Şemsiye adı";
+"Counts of repack reserve canopy / new system cell" = "Paketleme sayısı";
+"Date of packing reserve canopy / new system cell" = "Paketleme tarihi";
+"Date dd.mm.yyyy / new system cell" = "gg.aa.yyyy";
+"Count / new system cell" = "Sayı";
+
+"Comment / new system cell" = "Yorum";
+"Optional / new system cell" = "İsteğe bağlı (satırların durumu vb.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Hesabı düzenle";
+"Edit locations" = "Konumları düzenle";
+"Delete location?" = "Konumu sil?";
+"Edit aircrafts" = "Uçakları düzenle";
+"Delete aircraft?" = "Uçağı sil?";
+"Edit canopies" = "Şemsiyeleri düzenle";
+"Drop zones" = "İniş bölgeleri";
+"Delete canopy?" = "Şemsiyeyi sil?";
+"Backup copy" = "Yedek kopya";
+"Calculator loading" = "Hesap makinesi yükleniyor";
+"Information" = "Bilgi";
+"Premium version" = "Premium sürüm";
+"Share the app" = "Uygulamayı paylaş";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Rumuz";
+"Name user / edit account vc" = "Kullanıcı adı";
+"License / edit account vc" = "Lisans";
+"Type / number / edit account vc" = "Tür / numara";
+"Valid until / edit account vc" = "Geçerlilik tarihi";
+"Date / dd.mm.yyyy / edit account vc" = "gg.aa.yyyy";
+"Medicine / edit account vc" = "İlaç";
+"Insurance / edit account vc" = "Sigorta";
+"Reserve canopy / edit account vc" = "Yedek şemsiye";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "İniş bölgesi adı";
+"Enter aircraft" = "Uçak adı";
+"Enter canopy" = "Şemsiye adı";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nYedek kopya, uygulamada kaydedilen tüm verileri saklar.\nVerilerinizi kaybetmemek için zaman zaman bir yedek kopya oluşturmanız önerilir.\n";
+"Backup / backup" = "Yedek oluştur";
+"Restore / backup" = "Geri yükle";
+"Title / backup" = "Veritabanı istatistikleri";
+"Jumps / backup" = "Atlayışlar";
+"Systems / backup" = "Sistemler";
+"Notes / backup" = "Notlar";
+"Aircrafts / backup" = "Uçaklar";
+"Canopies / backup" = "Şemsiyeler";
+"Locations / backup" = "İniş bölgeleri";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Toplam ağırlık";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "Kare şemsiye";
+"1-50A" = "\nParaşüt türü: Öğrenci.\nKategori: A.\nAtlayış sayısı: 1-50 atlayış.\n";
+"51-200B" = "\nParaşüt türü: Geçiş.\nKategori: B.\nAtlayış sayısı: 51-200 atlayış.\n";
+"201-500C" = "\nParaşüt türü: Orta hızlı.\nKategori: C.\nAtlayış sayısı: 201-500 atlayış.\n";
+"501-1000D1" = "\nParaşüt türü: Hızlı/elips.\nKategori: D.\nAtlayış sayısı: 501-1000 atlayış.\n";
+"1000D2" = "\nParaşüt türü: Yüksek hızlı.\nKategori: D.\nAtlayış sayısı: 1000+ atlayış.\n";
+"1000D3" = "\nParaşüt türü: Yüksek hızlı/crossbraced.\nKategori: D.\nAtlayış sayısı: 1000+ atlayış.\n";
+
+// MARK: - INFO:
+
+"App version" = "Uygulama hakkında";
+"Version / info" = "Sürüm";
+"Build / info" = "Yapı";
+"Privacy policy" = "Gizlilik politikası";
+"Terms of use" = "Kullanım koşulları";
+"FAQ" = "SSS";
+"App language / info" = "Uygulama dili";
+"App language text / info" = "Bu uygulama, telefonunuzda varsayılan olarak ayarlanmış olan dil kullanır. Uygulama tarafından desteklenmeyen bir dil kullanıyorsanız, varsayılan olarak İngilizce kullanılacaktır.\n\nDesteklenen dillerin listesi:\n\nArapça\nBelarusça\nÇince\nÇekçe\nİngilizce\nFransızca\nAlmanca\nHintçe\nİtalyanca\nJaponca\nLehçe\nPortekizce\nRusça\nİspanyolca\nUkraynaca\n\nÇeviri yapay zeka kullanılarak yapıldığından hatalar olabilir.\nProjeyle ilgili olarak uygulamayı kendi dilinize çevirmek veya hataları düzeltmeye yardımcı olmak istiyorsanız, lütfen geliştiriciyle iletişime geçin.";
+"Info text" = "\nSkydiveBook - Bu uygulama, kullanıcının profesyonel bir paraşütçü olduğunu resmi olarak onaylamaz.\n\nHerhangi bir kategorideki paraşütçünün resmi paraşüt kitabı veya sertifikasının isteğe bağlı bir ek hizmeti olarak hizmet verir.\n\nSkydiveBook'ta kaydedilen atlayışlar bu atlayışların kanıtı değildir ve resmi belgeler, sertifikalar, kategorilerin verilmesi için temel olarak kabul edilemez.\n\nUygulama kişisel kullanım, paraşüt atlama kolaylığı ve gelişmiş analizler için tasarlanmıştır.\n\nAna kubbenin yüklenmesine ilişkin veriler referans bilgileridir ve paraşüt ekipmanı seçimi için tavsiye niteliğinde değildir.\n\nParaşütlerin işletilmesine ilişkin tüm izinler geçerli bir eğitmen tarafından verilmelidir.\n\nUygulama kullanılarak elde edilen tüm bilgiler yalnızca referans amaçlıdır: Havaalanı haritasını kendiniz inceleyin ve atlayışlar sırasındaki hava koşullarına ilişkin güncel verileri alın.\n\nHer yazılım gibi, bu uygulama hatalar yapabilir ve insan faktöründen dolayı mükemmel olmayabilir.\n\nParaşütle atlama, yaşam riski taşır. Güvenlik kurallarına uyulmaması yaralanmalara ve hatta ölüme neden olabilir.\n";
+"Info text start alert" = "\nSkydiveBook - Bu uygulama, kullanıcının profesyonel bir paraşütçü olduğunu resmi olarak onaylamaz.\n\nHerhangi bir kategorideki paraşütçünün resmi paraşüt kitabı veya sertifikasının isteğe bağlı bir ek hizmeti olarak hizmet verir.\n\nSkydiveBook'ta kaydedilen atlayışlar bu atlayışların kanıtı değildir ve resmi belgeler, sertifikalar, kategorilerin verilmesi için temel olarak kabul edilemez.\n\nUygulama kişisel kullanım, paraşüt atlama kolaylığı ve gelişmiş analizler için tasarlanmıştır.\n\nAna kubbenin yüklenmesine ilişkin veriler referans bilgileridir ve paraşüt ekipmanı seçimi için tavsiye niteliğinde değildir.\n\nParaşütlerin işletilmesine ilişkin tüm izinler geçerli bir eğitmen tarafından verilmelidir.\n\nUygulama kullanılarak elde edilen tüm bilgiler yalnızca referans amaçlıdır: Havaalanı haritasını kendiniz inceleyin ve atlayışlar sırasındaki hava koşullarına ilişkin güncel verileri alın.\n\nHer yazılım gibi, bu uygulama hatalar yapabilir ve insan faktöründen dolayı mükemmel olmayabilir.\n\nParaşütle atlama, yaşam riski taşır. Güvenlik kurallarına uyulmaması yaralanmalara ve hatta ölüme neden olabilir.\n\nOkudum ve kabul ediyorum.";
+"Agree" = "Kabul Et";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nUygulamanın ücretsiz sürümünde 50 atlayış kaydedebilirsiniz.\n\n⭐️ ⭐️ ⭐️\n\nUygulamanın premium sürümü sınırsız sayıda atlayış kaydetmenizi sağlar.\n";
+"1 month" = "$9.99 / Ay";
+"12 months" = "$49.99 / Yıl\n($4.16/ay)";
+"Restore purchases" = "Satın alımları geri yükle";
+
+"Buy status" = "Satın almayı bul / satın alma bulunamadı";
+"Restore Successful" = "Geri Yükleme Başarılı";
+"All purchases have been successfully restored." = "Tüm satın alımlar başarıyla geri yüklendi.";
+"Restore Failed" = "Geri Yükleme Başarısız";
+"Some purchases could not be restored. Please try again later." = "Bazı satın almalar geri yüklenemedi. Lütfen daha sonra tekrar deneyin.";
+"No Purchases to Restore" = "Geri Yüklenecek Satın Alma Yok";
+"There are no previous purchases to restore." = "Geri yüklenecek önceki satın almalar bulunmuyor.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Bağlantı yok";
+"Message / adapty" = "Veri almak için etkin bir internet bağlantısı gereklidir.";
+
+"Alert / adapty status" = "Premium Gerekiyor";
+"Message / adapty status" = "Ücretsiz sürümde yalnızca aşağıdakileri kaydedebilirsiniz:\n\n50 atlayış.\n10 not.\n1 sistem.\n\nTüm kısıtlamaları kaldırmak için, \"Ayarlar\" bölümünden PREMIUM'u satın alın.";
+
+// MARK: - SYSTEM:
+
+"System" = "SYSTEM";
+"Delete system?" = "Sistemi sil?";
+"System empty message / system" = "Henüz eklenmiş bir paraşüt sisteminiz yok.";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "Atlayış alanları";
+"Wind tunnels / drop zones" = "Rüzgar tünelleri";
+"Shops / drop zones" = "Mağazalar";
+"Information / drop zones" = "Bilgi";
+"Message / drop zones" = "Burada yalnızca doğrulanmış atlayış alanları ve rüzgar tünelleri bulunacaktır. Konumunuzu ekleyebilirsiniz, Instagram üzerinden yazarak.";
+"Map type" = "Harita türü";
+"Standard / map type" = "Standart";
+"Satellite / map type" = "Uydu";
+"Hybrid / map type" = "Hibrit";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Başarılı";
+"Error / alert kit" = "Hata";
+"Error counts / alert kit" = "Artık atlamıyorsunuz!";
+
+"Jump added / alert kit" = "Atlayış eklendi";
+"Jumps added / alert kit" = "Atlayışlar eklendi";
+"Jump deleted / alert kit" = "Atlayış silindi";
+"Jump updated / alert kit" = "Atlayış güncellendi";
+
+"Note added / alert kit" = "Not eklendi";
+"Note deleted / alert kit" = "Not silindi";
+
+"System added / alert kit" = "Sistem eklendi";
+"System deleted / alert kit" = "Sistem silindi";
+"System updated / alert kit" = "Sistem güncellendi";
+
+"Backup saved / alert kit" = "Yedekleme kaydedildi";
+"Backup upload / alert kit" = "Yedekleme yükleme";
+
+"Location added / alert kit" = "Konum eklendi";
+"Location deleted / alert kit" = "Konum silindi";
+
+"Aircraft added / alert kit" = "Uçak eklendi";
+"Aircraft deleted / alert kit" = "Uçak silindi";
+
+"Canopy added / alert kit" = "Kanopi eklendi";
+"Canopy deleted / alert kit" = "Kanopi silindi";

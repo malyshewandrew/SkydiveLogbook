@@ -239,6 +239,8 @@ final class SystemVC: UIViewController {
             emptySystemView.isHidden = false
             emptySystemLabel.isHidden = false
             
+            effectOneLottie.isHidden = true
+            
             startSystemLottie.play()
             startSystemLottie.loopMode = .autoReverse
             
@@ -266,6 +268,7 @@ final class SystemVC: UIViewController {
             emptySystemLabel.isHidden = true
             
             confettiLottie.isHidden = false
+            effectOneLottie.isHidden = false
             systemLottie.isHidden = false
             confettiButton.isHidden = false
             tableView.isHidden = false
