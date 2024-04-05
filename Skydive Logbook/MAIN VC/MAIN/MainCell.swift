@@ -111,7 +111,7 @@ final class MainCell: UITableViewCell {
     private func configureUserInterface() {
         // MARK: VIEW:
 
-        contentView.backgroundColor = .colorBackground
+        contentView.backgroundColor = .clear
         selectionStyle = .none
 
         // MARK: CELL VIEW:

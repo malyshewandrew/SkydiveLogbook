@@ -460,7 +460,7 @@ final class StatisticCell: UITableViewCell {
     private func configureUI() {
         // MARK: - CONTENT VIEW:
         
-        contentView.backgroundColor = .colorBackground
+        contentView.backgroundColor = .clear
         selectionStyle = .none
         
         // MARK: GENERAL INFO:

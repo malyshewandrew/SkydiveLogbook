@@ -44,21 +44,20 @@ final class SettingsVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        
         // MARK: EFFECT ONE LOTTIE:
-        
+
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
         effectOneLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
         effectOneLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor, constant: 10).isActive = true
         effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: EFFECT TWO LOTTIE:
-        
+
         effectTwoLottie.translatesAutoresizingMaskIntoConstraints = false
         effectTwoLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
         effectTwoLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor, constant: 10).isActive = true
         effectTwoLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: ANIMATION SETTINGS LOTTIE:
 
         settingsLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -101,21 +100,21 @@ final class SettingsVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
-        
+
         // MARK: EFFECT ONE LOTTIE:
-        
+
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
         effectOneLottie.animationSpeed = 0.5
         effectOneLottie.transform = CGAffineTransform(scaleX: -1, y: -1)
-        
+
         // MARK: EFFECT TWO LOTTIE:
-        
+
         effectTwoLottie.play()
         effectTwoLottie.loopMode = .loop
         effectTwoLottie.animationSpeed = 0.5
         effectTwoLottie.transform = CGAffineTransform(scaleX: 1, y: 1)
-        
+
         // MARK: ANIMATIONS:
 
         settingsLottie.play()
@@ -189,6 +188,8 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as? SettingsCell else { return UITableViewCell() }
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
         cell.delegate = self
         return cell
     }
@@ -266,12 +267,14 @@ extension SettingsVC: SettingsCellDelegate {
     }
 
     func tapShareButton() {
-        guard let appURL = URL(string: "https://apps.apple.com/app/skydivebook/id6478469415") else {
-            return
-        }
+        guard let appURL = URL(string: "https://apps.apple.com/app/skydivebook/id6478469415") else { return }
         UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
     }
 
+    func tapFeedbackButton() {
+        guard let feedbackURL = URL(string: "itms-apps://itunes.apple.com/app/id6478469415?action=write-review") else { return }
+        UIApplication.shared.open(feedbackURL, options: [:], completionHandler: nil)
+    }
 
     func tapInstagramButton() {
         guard let url = URL(string: "https://instagram.com/skydivebook") else { return }

@@ -271,7 +271,7 @@ final class NewJumpCell: UITableViewCell {
     private func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = .colorBackground
+        contentView.backgroundColor = .clear
         selectionStyle = .none
         
         // MARK: DATE:

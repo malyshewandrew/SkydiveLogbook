@@ -324,6 +324,8 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemCell", for: indexPath) as? SystemCell else { return UITableViewCell() }
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
         let system = arraySystemsRealm[indexPath.row]
         cell.indexPath = indexPath
         cell.configure(system)

@@ -175,6 +175,8 @@ extension StatisticVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellStatistic", for: indexPath) as? StatisticCell else { return UITableViewCell() }
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
         cell.delegate = self
         return cell
     }

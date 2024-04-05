@@ -248,6 +248,8 @@ extension NewJumpVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == firstTableView {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewJumpCell", for: indexPath) as? NewJumpCell else { return UITableViewCell() }
+            cell.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
             cell.showAlert = { [weak self] in
                 let alert = UIAlertController(title: NSLocalizedString("Add new jump / new jump", comment: "") + ":", message: "\n\(NSLocalizedString("Manual / new jump", comment: ""))", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
@@ -263,6 +265,8 @@ extension NewJumpVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if tableView == secondTableView {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewMoreJumpCell", for: indexPath) as? NewMoreJumpCell else { return UITableViewCell() }
+            cell.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
             cell.showAlert = { [weak self] in
                 let alert = UIAlertController(title: NSLocalizedString("Add new jump / new jump", comment: "") + ":", message: "\n\(NSLocalizedString("Manual / new jump", comment: ""))", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))

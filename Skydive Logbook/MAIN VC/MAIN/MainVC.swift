@@ -648,6 +648,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell else { return UITableViewCell() }
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
         let jump = arrayJumpsRealm[indexPath.row]
         cell.configure(number: String(arrayJumpsRealm.count - indexPath.row), date: jump.date, location: jump.location, aircraft: jump.aircraft, canopy: jump.canopy, mission: jump.mission?.localizedValue ?? "", height: jump.height, time: jump.time, cutaway: jump.cutaway?.localizedValue ?? "", comment: jump.comment)
         return cell

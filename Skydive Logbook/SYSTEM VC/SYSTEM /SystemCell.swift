@@ -379,7 +379,7 @@ final class SystemCell: UITableViewCell {
     private func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = .colorBackground
+        contentView.backgroundColor = .clear
         selectionStyle = .none
 
         // MARK: CONTAINER VIEW:
