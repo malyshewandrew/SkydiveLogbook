@@ -13,6 +13,9 @@ final class MainVC: UIViewController {
     private let mainLottie = LottieAnimationView(name: "Main")
     private let mainStartLottie = LottieAnimationView(name: "Main")
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
+    private let startCenterConfettiLottie = LottieAnimationView(name: "MainConfetti")
+    private let startCenterAirplaneLottie = LottieAnimationView(name: "StartPaperAirplane")
+    private let startConfettiCenterButton = UIButton()
     private let startConfettiTopLottie = LottieAnimationView(name: "StartConfettiTop")
     private let confettiButton = UIButton()
     private let accountImage = UIImageView()
@@ -35,6 +38,7 @@ final class MainVC: UIViewController {
     private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
+    private let sliderButton = UISlider()
 
     // MARK: - LIFECYCLE:
 
@@ -55,12 +59,13 @@ final class MainVC: UIViewController {
         tableView.reloadData()
         sortArray()
         arrayJumpsRealm.reverse()
+        startConfigureGestures()
     }
 
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, weatherImage, weatherButton, dropzonesImage, dropzonesButton, skydiversImage, skydiversButton, calculatorImage, calculatorButton, notesImage, notesButton, tableView, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, loadingView)
+        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, weatherImage, weatherButton, dropzonesImage, dropzonesButton, skydiversImage, skydiversButton, calculatorImage, calculatorButton, notesImage, notesButton, tableView, startCenterConfettiLottie, startCenterAirplaneLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
         loadingView.addSubview(loadingLottie)
     }
 
@@ -328,6 +333,14 @@ final class MainVC: UIViewController {
         confettiGesture.numberOfTapsRequired = 3
         confettiButton.addGestureRecognizer(confettiGesture)
     }
+    
+    private func startConfigureGestures() {
+        // MARK: THREE TAP FOR PLAY ANIMATIONS:
+
+        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(startConfettiButtonTapped))
+        confettiGesture.numberOfTapsRequired = 3
+        startConfettiCenterButton.addGestureRecognizer(confettiGesture)
+    }
 
     // MARK: - FIRST MESSAGE:
 
@@ -347,6 +360,20 @@ final class MainVC: UIViewController {
         calculatorButton.isHidden = true
         notesImage.isHidden = true
         notesButton.isHidden = true
+        
+        // MARK: START LOTTIE CENTER CONFETTI:
+        
+        startCenterConfettiLottie.translatesAutoresizingMaskIntoConstraints = false
+        startCenterConfettiLottie.centerXAnchor.constraint(equalTo: mainStartLottie.centerXAnchor).isActive = true
+        startCenterConfettiLottie.centerYAnchor.constraint(equalTo: mainStartLottie.centerYAnchor).isActive = true
+        startCenterConfettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: START LOTTIE CENTER AIRPLANE:
+        
+        startCenterAirplaneLottie.translatesAutoresizingMaskIntoConstraints = false
+        startCenterAirplaneLottie.centerXAnchor.constraint(equalTo: mainStartLottie.centerXAnchor, constant: 75).isActive = true
+        startCenterAirplaneLottie.centerYAnchor.constraint(equalTo: mainStartLottie.centerYAnchor, constant: -5).isActive = true
+        startCenterAirplaneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.6).isActive = true
 
         // MARK: ANIMATION MAIN LOTTIE:
 
@@ -385,27 +412,44 @@ final class MainVC: UIViewController {
         firstMessageLabel.adjustsFontSizeToFitWidth = true
         firstMessageLabel.text = NSLocalizedString("First Message", comment: "")
         
-        // MARK: START CONFETTI LOTTIE:
+        // MARK: START CONFETTI LOTTIE TOP:
         
         startConfettiTopLottie.translatesAutoresizingMaskIntoConstraints = false
         startConfettiTopLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         startConfettiTopLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         startConfettiTopLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         startConfettiTopLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        // MARK: START CONFETTI CENTER BUTTON:
+        
+        startConfettiCenterButton.translatesAutoresizingMaskIntoConstraints = false
+        startConfettiCenterButton.centerXAnchor.constraint(equalTo: mainStartLottie.centerXAnchor).isActive = true
+        startConfettiCenterButton.centerYAnchor.constraint(equalTo: mainStartLottie.centerYAnchor).isActive = true
+        startConfettiCenterButton.heightAnchor.constraint(equalTo: mainStartLottie.heightAnchor, multiplier: 1).isActive = true
+        startConfettiCenterButton.widthAnchor.constraint(equalTo: mainStartLottie.widthAnchor, multiplier: 1).isActive = true
 
         if arrayJumpsRealm.count == 0 {
             firstMessageView.isHidden = false
             firstMessageLabel.isHidden = false
+            startCenterConfettiLottie.isHidden = false
+            startCenterAirplaneLottie.isHidden = false
             mainStartLottie.isHidden = false
             startConfettiTopLottie.isHidden = false
+            startConfettiCenterButton.isHidden = false
             mainStartLottie.play()
             mainStartLottie.loopMode = .autoReverse
             startConfettiTopLottie.play()
             startConfettiTopLottie.loopMode = .loop
             startConfettiTopLottie.contentMode = .scaleAspectFill
             startConfettiTopLottie.animationSpeed = 0.5
+            startCenterConfettiLottie.layer.shadowRadius = 15
+            startCenterConfettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+            startCenterConfettiLottie.layer.shadowOpacity = 1
         } else {
+            startCenterConfettiLottie.isHidden = true
+            startCenterAirplaneLottie.isHidden = true
             mainStartLottie.isHidden = true
+            startConfettiCenterButton.isHidden = true
             firstMessageView.isHidden = true
             firstMessageLabel.isHidden = true
             startConfettiTopLottie.isHidden = true
@@ -460,7 +504,6 @@ final class MainVC: UIViewController {
         let agreeAction = UIAlertAction(title: NSLocalizedString("Agree", comment: ""), style: .default) { _ in
             UserDefaults.standard.set(true, forKey: "hasShownStartAlert")
         }
-        let sliderButton = UISlider()
         alert.view.addSubviews(containerView)
         containerView.addSubviews(scrollView)
         scrollView.addSubviews(messageLabel, sliderButton)
@@ -516,20 +559,21 @@ final class MainVC: UIViewController {
         }
 
         sliderButton.addAction(UIAction(handler: { _ in
-            if sliderButton.value >= 99.5, sliderButton.value <= 100.5 {
+            self.vibrationOn.vibrationLight()
+            if self.sliderButton.value >= 99.5, self.sliderButton.value <= 100.5 {
                 agreeAction.isEnabled = true
-                sliderButton.backgroundColor = .systemGreen
+                self.sliderButton.backgroundColor = .systemGreen
                 if let sliderFinishImage = UIImage(systemName: "checkmark.circle.fill", withConfiguration: self.configurationImage) {
                     let coloredSliderImage = sliderFinishImage.withTintColor(.white, renderingMode: .alwaysOriginal)
-                    sliderButton.setThumbImage(coloredSliderImage, for: .normal)
+                    self.sliderButton.setThumbImage(coloredSliderImage, for: .normal)
                 }
             } else {
                 agreeAction.isEnabled = false
-                sliderButton.backgroundColor = .systemRed
+                self.sliderButton.backgroundColor = .systemRed
                 if let sliderImage = UIImage(systemName: "arrowshape.right.circle.fill", withConfiguration: self.configurationImage) {
                     let coloredSliderImage = sliderImage.withTintColor(.white, renderingMode: .alwaysOriginal)
-                    sliderButton.setThumbImage(coloredSliderImage, for: .normal)
-                    sliderButton.setThumbImage(coloredSliderImage, for: .highlighted)
+                    self.sliderButton.setThumbImage(coloredSliderImage, for: .normal)
+                    self.sliderButton.setThumbImage(coloredSliderImage, for: .highlighted)
                 }
             }
         }), for: .valueChanged)
@@ -541,6 +585,13 @@ final class MainVC: UIViewController {
     @objc private func confettiButtonTapped() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
+    }
+    
+    @objc private func startConfettiButtonTapped() {
+        vibrationOn.vibrationSucces()
+        startCenterAirplaneLottie.play()
+        startCenterAirplaneLottie.animationSpeed = 0.7
+        startCenterConfettiLottie.play()
     }
 
     // MARK: FUNC FOR CLOSED LOADING LOTTIE:

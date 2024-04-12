@@ -331,4 +331,8 @@ extension EditLocationsVC: UITextFieldDelegate {
         let newText = text.replacingCharacters(in: range, with: string)
         return newText.count <= 20
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        vibrationOn.vibrationStandart()
+    }
 }

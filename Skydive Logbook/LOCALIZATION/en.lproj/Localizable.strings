@@ -512,6 +512,19 @@
 "1000D2" = "\nParachute type: High-speed.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n";
 "1000D3" = "\nParachute type: High-speed/crossbraced.\nCategory: D.\nNumber of jumps: 1000+ jumps.\n";
 
+"Canopy title / calculator" = "Loading the canopy";
+"Wing title / calculator" = "Flight distance in wingsuit";
+
+"Height jump / calculator" = "Height jump";
+"Height open / calculator" = "Height open";
+"Wind speed / calculator" = "Wind speed";
+"Quality / calculator" = "Quality";
+"Distance / calculator" = "Approximate flight distance in a wingsuit";
+
+"Warning / calculator" = "Warning";
+"Warning canopy message / calculator" = "This is background information. Choose an up-to-date load and a suitable parachute with your current instructor.";
+"Warning wing message / calculator" = "This is background information. The indicator of the possible flight distance is influenced by: the aerodynamics of the parachutist (position / angle of attack), the direction and strength of the wind. Make up-to-date calculations with your current instructor.";
+
 // MARK: - INFO:
 
 "App version" = "About application";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Wind tunnels";
 "Shops / drop zones" = "Shops";
 "Information / drop zones" = "Information";
-"Message / drop zones" = "Here will be only verified drop zones and wind tunnels. You can add your location by writing on Instagram.";
+"Message / drop zones" = "You can add your location by writing on Instagram.";
 "Map type" = "Map type";
 "Standard / map type" = "Standard";
 "Satellite / map type" = "Satellite";

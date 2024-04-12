@@ -56,6 +56,7 @@ final class EditJumpCell: UITableViewCell {
     
     private let dateFormatter = DateFormatter()
     weak var delegate: EditJumpCellDelegate?
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -80,8 +81,14 @@ final class EditJumpCell: UITableViewCell {
         cutawayPickerView.delegate = self
         
         dateTextField.delegate = self
+        locationTextField.delegate = self
+        aircraftTextField.delegate = self
+        canopyTextField.delegate = self
+        missionTextField.delegate = self
         heightTextField.delegate = self
         timeTextField.delegate = self
+        cutawayTextField.delegate = self
+        commentTextField.delegate = self
         
         canopyPickerView.dataSource = self
         missionPickerView.dataSource = self
@@ -758,5 +765,9 @@ extension EditJumpCell: UITextFieldDelegate {
         let allowedCharacters = CharacterSet(charactersIn: "1234567890")
         let characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        vibrationOn.vibrationStandart()
     }
 }

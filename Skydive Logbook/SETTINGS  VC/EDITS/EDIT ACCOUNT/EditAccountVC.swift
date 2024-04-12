@@ -27,6 +27,7 @@ final class EditAccountVC: UIViewController {
     private var player = AVAudioPlayer()
     private let realmManager = RealmManager()
     private let account = AccountClassRealm()
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -36,6 +37,12 @@ final class EditAccountVC: UIViewController {
         configureConstrains()
         configureUI()
         configureGestures()
+        nicknameTextField.delegate = self
+        licenseTypeTextField.delegate = self
+        licenseDateTextField.delegate = self
+        medicineTextField.delegate = self
+        insuranceTextField.delegate = self
+        reserveCanopyTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -488,5 +495,11 @@ final class EditAccountVC: UIViewController {
             style: .iOS17AppleMusic,
             haptic: .success
         )
+    }
+}
+
+extension EditAccountVC: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        vibrationOn.vibrationStandart()
     }
 }

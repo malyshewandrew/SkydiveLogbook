@@ -93,6 +93,7 @@ final class NewSystemCell: UITableViewCell {
     
     private var player = AVAudioPlayer()
     var showPaymentAlert: (() -> ())?
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -104,6 +105,28 @@ final class NewSystemCell: UITableViewCell {
         configureGestures()
         mainCanopyPickerView.delegate = self
         mainCanopyPickerView.dataSource = self
+        nameSystemTextField.delegate = self
+        containerNameTextField.delegate = self
+        containerDomTextField.delegate = self
+        containerSerialNumberTextField.delegate = self
+        containerServiceLifeYearsTextField.delegate = self
+        aadNameTextField.delegate = self
+        aadDomTextField.delegate = self
+        aadSerialNumberTextField.delegate = self
+        aadServiceLifeYearsTextField.delegate = self
+        mainCanopyNameTextField.delegate = self
+        mainCanopyDomTextField.delegate = self
+        mainCanopySerialNumberTextField.delegate = self
+        mainCanopyServiceLifeYearsTextField.delegate = self
+        mainCanopyServiceLifeJumpsTextField.delegate = self
+        mainCanopyCountJumpsTextField.delegate = self
+        reserveCanopyNameTextField.delegate = self
+        reserveCanopyDomTextField.delegate = self
+        reserveCanopySerialNumberTextField.delegate = self
+        reserveCanopyServiceLifeYearsTextField.delegate = self
+        reserveCanopyCountRepackTextField.delegate = self
+        reserveCanopyDatePackTextField.delegate = self
+        commentSystemTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -1404,5 +1427,11 @@ extension NewSystemCell: UIPickerViewDataSource {
             return arrayCanopiesRealm[row].canopy
         }
         return ""
+    }
+}
+
+extension NewSystemCell: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        vibrationOn.vibrationStandart()
     }
 }

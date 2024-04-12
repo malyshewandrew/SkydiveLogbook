@@ -11,6 +11,7 @@ let fontMediumStandard10: UIFont = .systemFont(ofSize: 10, weight: .medium, widt
 let fontThinStandard10: UIFont = .systemFont(ofSize: 10, weight: .thin, width: .standard) // main jump cell: right side
 let fontMediumStandard12: UIFont = .systemFont(ofSize: 12, weight: .medium, width: .standard)
 let fontRegularStandard12: UIFont = .systemFont(ofSize: 12, weight: .regular, width: .standard)
+let fontRegularStandard14: UIFont = .systemFont(ofSize: 14, weight: .regular, width: .standard)
 let fontThinStandard14: UIFont = .systemFont(ofSize: 14, weight: .thin, width: .standard)
 let fontMediumStandard14: UIFont = .systemFont(ofSize: 14, weight: .medium, width: .standard)
 let fontBoldStandard16: UIFont = .systemFont(ofSize: 16, weight: .bold, width: .standard)
@@ -35,10 +36,11 @@ let textAligmentCenter: NSTextAlignment = .center
 
 // MARK: - VIBRATIONS:
 
-class Vibration {
+final class Vibration {
     let vibrationNotification = UINotificationFeedbackGenerator()
     let vibrationSelectionFeedbackGenerator = UISelectionFeedbackGenerator()
-    let vibrationImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+    let vibrationSmall = UIImpactFeedbackGenerator(style: .light)
+    let vibrationMedium = UIImpactFeedbackGenerator(style: .medium)
     let vibrationImpactFeedbackGeneratorSpeed = UIImpactFeedbackGenerator(style: .rigid)
 
     func vibrationSucces() {
@@ -54,9 +56,14 @@ class Vibration {
         self.vibrationSelectionFeedbackGenerator.selectionChanged()
     }
     
+    func vibrationLight() {
+        self.vibrationSmall.prepare()
+        self.vibrationSmall.impactOccurred()
+    }
+    
     func vibrationStandart() {
-        self.vibrationImpactFeedbackGenerator.prepare()
-        self.vibrationImpactFeedbackGenerator.impactOccurred()
+        self.vibrationMedium.prepare()
+        self.vibrationMedium.impactOccurred()
     }
     
     var timer: Timer?

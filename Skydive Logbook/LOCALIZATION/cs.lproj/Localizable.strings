@@ -512,6 +512,19 @@
 "1000D2" = "\nTyp padáku: Vysokorychlostní.\nKategorie: D.\nPočet skoků: 1000+ skoků.\n";
 "1000D3" = "\nTyp padáku: Vysokorychlostní/čtyřramenný.\nKategorie: D.\nPočet skoků: 1000+ skoků.\n";
 
+"Canopy title / calculator" = "Zátěž plachty";
+"Wing title / calculator" = "Letová vzdálenost v křídle";
+
+"Height jump / calculator" = "Výška skoku";
+"Height open / calculator" = "Otevírací výška";
+"Wind speed / calculator" = "Rychlost větru";
+"Quality / calculator" = "Kvalita";
+"Distance / calculator" = "Odhadovaná letová vzdálenost v křídle";
+
+"Warning / calculator" = "Varování";
+"Warning canopy message / calculator" = "Toto jsou referenční informace. Pro určení vhodné zátěže a odpovídajícího padáku konzultujte svého aktuálního instruktora.";
+"Warning wing message / calculator" = "Toto jsou referenční informace. Aerodynamika seskokového padáka (pozice/úhel náběhu), směr a síla větru ovlivňují odhadovanou letovou vzdálenost. Provádějte přesné výpočty se svým aktuálním instruktorem."; 
+
 // MARK: - INFO:
 
 "App version" = "O aplikaci";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Větrné tunely";
 "Shops / drop zones" = "Obchody";
 "Information / drop zones" = "Informace";
-"Message / drop zones" = "Zde budou pouze ověřená výsadková místa a větrné tunely. Vaše místo můžete přidat tím, že napíšete na Instagram.";
+"Message / drop zones" = "Vaše místo můžete přidat tím, že napíšete na Instagram.";
 "Map type" = "Typ mapy";
 "Standard / map type" = "Standardní";
 "Satellite / map type" = "Satelitní";

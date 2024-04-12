@@ -512,6 +512,19 @@
 "1000D2" = "\nTipo di paracadute: Alta velocità.\nCategoria: D.\nNumero di lanci: 1000+ lanci.\n";
 "1000D3" = "\nTipo di paracadute: Alta velocità/struttura incrociata.\nCategoria: D.\nNumero di lanci: 1000+ lanci.\n";
 
+"Canopy title / calculator" = "Carico del paracadute";
+"Wing title / calculator" = "Distanza di volo in tuta alare";
+
+"Height jump / calculator" = "Altezza del salto";
+"Height open / calculator" = "Altezza di apertura";
+"Wind speed / calculator" = "Velocità del vento";
+"Quality / calculator" = "Qualità";
+"Distance / calculator" = "Distanza stimata di volo in tuta alare";
+
+"Warning / calculator" = "Avviso";
+"Warning canopy message / calculator" = "Queste sono informazioni di riferimento. Consultare il proprio istruttore attuale per determinare il carico adeguato e il paracadute appropriato.";
+"Warning wing message / calculator" = "Queste sono informazioni di riferimento. L'aerodinamica del paracadutista (posizione/angolo di attacco), la direzione e la forza del vento influenzano la distanza di volo stimata. Effettuare calcoli precisi con il proprio istruttore attuale."; 
+
 // MARK: - INFO:
 
 "App version" = "Informazioni sull'applicazione";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Tunnel del vento";
 "Shops / drop zones" = "Negozi";
 "Information / drop zones" = "Informazione";
-"Message / drop zones" = "Qui ci saranno solo zone di lancio verificate e tunnel del vento. Puoi aggiungere la tua posizione scrivendo su Instagram.";
+"Message / drop zones" = "Puoi aggiungere la tua posizione scrivendo su Instagram.";
 "Map type" = "Tipo di mappa";
 "Standard / map type" = "Standard";
 "Satellite / map type" = "Satellite";

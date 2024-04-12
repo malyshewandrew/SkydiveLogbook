@@ -512,6 +512,19 @@
 "1000D2" = "\n降落伞类型：超高速。\n等级：D。\n跳伞次数：1000+次。\n";
 "1000D3" = "\n降落伞类型：超高速/交叉撑。\n等级：D。\n跳伞次数：1000+次。\n";
 
+"Canopy title / calculator" = "伞盖负载";
+"Wing title / calculator" = "翼服飞行距离";
+
+"Height jump / calculator" = "跳跃高度";
+"Height open / calculator" = "开启高度";
+"Wind speed / calculator" = "风速";
+"Quality / calculator" = "质量";
+"Distance / calculator" = "翼服飞行估算距离";
+
+"Warning / calculator" = "警告";
+"Warning canopy message / calculator" = "这是参考信息。请与您的现任教练核实适当的载荷和适当的降落伞。";
+"Warning wing message / calculator" = "这是参考信息。跳伞员的空气动力学（姿势/攻角）、风向和风力影响飞行估算距离。请与您的现任教练进行精确计算。";
+
 // MARK: - INFO:
 
 "App version" = "关于应用程序";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "风洞";
 "Shops / drop zones" = "商店";
 "Information / drop zones" = "信息";
-"Message / drop zones" = "这里只有经过验证的跳伞区和风洞。您可以在Instagram上添加您的位置。";
+"Message / drop zones" = "您可以在Instagram上添加您的位置。";
 "Map type" = "地图类型";
 "Standard / map type" = "标准";
 "Satellite / map type" = "卫星";

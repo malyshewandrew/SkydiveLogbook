@@ -55,6 +55,7 @@ final class NewJumpCell: UITableViewCell {
     
     var showAlert: (() -> ())?
     var showPaymentAlert: (() -> ())?
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -78,15 +79,15 @@ final class NewJumpCell: UITableViewCell {
         aircraftPickerView.delegate = self
         cutawayPickerView.delegate = self
         
-        heightTextField.delegate = self
-        timeTextField.delegate = self
-        
         dateTextField.delegate = self
         locationTextField.delegate = self
         aircraftTextField.delegate = self
         canopyTextField.delegate = self
         missionTextField.delegate = self
+        heightTextField.delegate = self
+        timeTextField.delegate = self
         cutawayTextField.delegate = self
+        commentTextField.delegate = self
         
         canopyPickerView.dataSource = self
         missionPickerView.dataSource = self
@@ -837,6 +838,9 @@ extension NewJumpCell: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        vibrationOn.vibrationStandart()
+        
         if arrayCanopiesRealm.isEmpty || missionPickerViewValues.isEmpty || arrayLocationsRealm.isEmpty || arrayAircraftsRealm.isEmpty || cutawayPickerViewValues.isEmpty {
             showAlert?()
             return

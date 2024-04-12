@@ -571,7 +571,7 @@ final class JumpCell: UITableViewCell {
     }
 
     @objc private func vibrationSpeed() {
-        vibrationOn.vibrationImpactFeedbackGenerator.impactOccurred()
+        vibrationOn.vibrationMedium.impactOccurred()
     }
 
     // MARK: - SET ANIMATION FOR SHADOW:

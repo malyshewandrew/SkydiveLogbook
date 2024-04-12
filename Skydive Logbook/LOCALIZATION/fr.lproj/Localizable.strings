@@ -512,6 +512,19 @@
 "1000D2" = "\nType de parachute : Très haute vitesse.\nCatégorie : D.\nNombre de sauts : 1000+ sauts.\n";
 "1000D3" = "\nType de parachute : Très haute vitesse/à ossature rigide.\nCatégorie : D.\nNombre de sauts : 1000+ sauts.\n";
 
+"Canopy title / calculator" = "Charge de la voilure";
+"Wing title / calculator" = "Distance de vol en combinaison ailée";
+
+"Height jump / calculator" = "Hauteur de saut";
+"Height open / calculator" = "Hauteur d'ouverture";
+"Wind speed / calculator" = "Vitesse du vent";
+"Quality / calculator" = "Qualité";
+"Distance / calculator" = "Distance estimée de vol en combinaison ailée";
+
+"Warning / calculator" = "Attention";
+"Warning canopy message / calculator" = "Il s'agit d'informations de référence. Consultez votre instructeur en exercice pour déterminer la charge appropriée et le parachute approprié.";
+"Warning wing message / calculator" = "Il s'agit d'informations de référence. L'aérodynamique du parachutiste (position/angle d'attaque), la direction et la force du vent influent sur la distance de vol estimée. Effectuez des calculs précis avec votre instructeur en exercice.";
+
 // MARK: - INFO:
 
 "App version" = "À propos de l'application";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Tunnels de vent";
 "Shops / drop zones" = "Magasins";
 "Information / drop zones" = "Information";
-"Message / drop zones" = "Ici seront uniquement répertoriées les zones de saut en parachute et les souffleries vérifiées. Vous pouvez ajouter votre emplacement en écrivant sur Instagram.";
+"Message / drop zones" = "Vous pouvez ajouter votre emplacement en écrivant sur Instagram.";
 "Map type" = "Type de carte";
 "Standard / map type" = "Standard";
 "Satellite / map type" = "Satellite";

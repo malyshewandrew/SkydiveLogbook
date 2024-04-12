@@ -512,6 +512,19 @@
 "1000D2" = "\nTyp spadochronu: Wysoka prędkość.\nKategoria: D.\nLiczba skoków: 1000+ skoków.\n";
 "1000D3" = "\nTyp spadochronu: Wysoka prędkość/krzyżowy.\nKategoria: D.\nLiczba skoków: 1000+ skoków.\n";
 
+"Canopy title / calculator" = "Obciążenie płata";
+"Wing title / calculator" = "Odległość lotu w skrzydle";
+
+"Height jump / calculator" = "Wysokość skoku";
+"Height open / calculator" = "Wysokość otwarcia";
+"Wind speed / calculator" = "Prędkość wiatru";
+"Quality / calculator" = "Jakość";
+"Distance / calculator" = "Szacowana odległość lotu w skrzydle";
+
+"Warning / calculator" = "Ostrzeżenie";
+"Warning canopy message / calculator" = "To informacje referencyjne. Skonsultuj się ze swoim obecnym instruktorem, aby określić odpowiednie obciążenie i odpowiedni spadochron.";
+"Warning wing message / calculator" = "To informacje referencyjne. Aerodynamika skoczka spadochronowego (pozycja/kąt natarcia), kierunek i siła wiatru wpływają na oszacowaną odległość lotu. Wykonaj dokładne obliczenia ze swoim obecnym instruktorem.";
+
 // MARK: - INFO:
 
 "App version" = "O aplikacji";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Tunele powietrzne";
 "Shops / drop zones" = "Sklepy";
 "Information / drop zones" = "Informacje";
-"Message / drop zones" = "Tutaj znajdują się tylko sprawdzone strefy skoków i tunele aerodynamiczne. Możesz dodać swoją lokalizację, pisząc na Instagramie.";
+"Message / drop zones" = "Możesz dodać swoją lokalizację, pisząc na Instagramie.";
 "Map type" = "Typ mapy";
 "Standard / map type" = "Standardowa";
 "Satellite / map type" = "Satelitarna";

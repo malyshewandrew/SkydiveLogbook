@@ -512,6 +512,19 @@
 "1000D2" = "\nTipo de paraquedas: Alta velocidade.\nCategoria: D.\nNúmero de saltos: 1000+ saltos.\n";
 "1000D3" = "\nTipo de paraquedas: Alta velocidade/Crossbraced.\nCategoria: D.\nNúmero de saltos: 1000+ saltos.\n";
 
+"Canopy title / calculator" = "Carga do dossel";
+"Wing title / calculator" = "Distância de voo em terno de asa";
+
+"Height jump / calculator" = "Altura do salto";
+"Height open / calculator" = "Altura de abertura";
+"Wind speed / calculator" = "Velocidade do vento";
+"Quality / calculator" = "Qualidade";
+"Distance / calculator" = "Distância estimada de voo em terno de asa";
+
+"Warning / calculator" = "Aviso";
+"Warning canopy message / calculator" = "Esta é uma informação de referência. Consulte o seu instrutor em exercício para determinar a carga adequada e o pára-quedas apropriado.";
+"Warning wing message / calculator" = "Esta é uma informação de referência. A aerodinâmica do paraquedista (posição/ângulo de ataque), direção e força do vento afetam a distância de voo estimada. Faça cálculos precisos com o seu instrutor em exercício."; 
+
 // MARK: - INFO:
 
 "App version" = "Sobre o aplicativo";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Túneis de vento";
 "Shops / drop zones" = "Lojas";
 "Information / drop zones" = "Informação";
-"Message / drop zones" = "Aqui estarão apenas zonas de salto de paraquedas e túneis de vento verificados. Pode adicionar a sua localização escrevendo no Instagram.";
+"Message / drop zones" = "Pode adicionar a sua localização escrevendo no Instagram.";
 "Map type" = "Tipo de Mapa";
 "Standard / map type" = "Padrão";
 "Satellite / map type" = "Satélite";

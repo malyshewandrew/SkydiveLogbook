@@ -512,6 +512,19 @@
 "1000D2" = "\nParaşüt türü: Yüksek hızlı.\nKategori: D.\nAtlayış sayısı: 1000+ atlayış.\n";
 "1000D3" = "\nParaşüt türü: Yüksek hızlı/crossbraced.\nKategori: D.\nAtlayış sayısı: 1000+ atlayış.\n";
 
+"Canopy title / calculator" = "Kanevi yük";
+"Wing title / calculator" = "Kanat takımında uçuş mesafesi";
+
+"Height jump / calculator" = "Atlayış yüksekliği";
+"Height open / calculator" = "Açılış yüksekliği";
+"Wind speed / calculator" = "Rüzgar hızı";
+"Quality / calculator" = "Kalite";
+"Distance / calculator" = "Kanat takımında tahmini uçuş mesafesi";
+
+"Warning / calculator" = "Uyarı";
+"Warning canopy message / calculator" = "Bu referans bilgidir. Uygun yük ve uygun paraşütü belirlemek için geçerli eğitmeninizle görüşün.";
+"Warning wing message / calculator" = "Bu referans bilgidir. Paraşütçünün aerodinamiği (pozisyon / saldırı açısı), rüzgar yönü ve hızı tahmini uçuş mesafesini etkiler. Geçerli eğitmeninizle kesin hesaplamalar yapın."; 
+
 // MARK: - INFO:
 
 "App version" = "Uygulama hakkında";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Rüzgar tünelleri";
 "Shops / drop zones" = "Mağazalar";
 "Information / drop zones" = "Bilgi";
-"Message / drop zones" = "Burada yalnızca doğrulanmış atlayış alanları ve rüzgar tünelleri bulunacaktır. Konumunuzu ekleyebilirsiniz, Instagram üzerinden yazarak.";
+"Message / drop zones" = "Konumunuzu ekleyebilirsiniz, Instagram üzerinden yazarak.";
 "Map type" = "Harita türü";
 "Standard / map type" = "Standart";
 "Satellite / map type" = "Uydu";

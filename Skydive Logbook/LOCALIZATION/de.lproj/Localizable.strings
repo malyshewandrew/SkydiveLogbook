@@ -512,6 +512,19 @@
 "1000D2" = "\nFallschirmtyp: Hochgeschwindigkeit.\nKategorie: D.\nAnzahl der Sprünge: 1000+ Sprünge.\n";
 "1000D3" = "\nFallschirmtyp: Hochgeschwindigkeit/Crossbraced.\nKategorie: D.\nAnzahl der Sprünge: 1000+ Sprünge.\n";
 
+"Canopy title / calculator" = "Kanopy-Last";
+"Wing title / calculator" = "Flugstrecke im Flügelanzug";
+
+"Height jump / calculator" = "Sprunghöhe";
+"Height open / calculator" = "Öffnungshöhe";
+"Wind speed / calculator" = "Windgeschwindigkeit";
+"Quality / calculator" = "Qualität";
+"Distance / calculator" = "Geschätzte Flugstrecke im Flügelanzug";
+
+"Warning / calculator" = "Warnung";
+"Warning canopy message / calculator" = "Dies sind Referenzinformationen. Konsultieren Sie Ihren aktuellen Ausbilder, um die richtige Last und den passenden Fallschirm zu bestimmen.";
+"Warning wing message / calculator" = "Dies sind Referenzinformationen. Die Aerodynamik des Fallschirmspringers (Position/Anstellwinkel), Windrichtung und -stärke beeinflussen die geschätzte Flugstrecke. Führen Sie genaue Berechnungen mit Ihrem aktuellen Ausbilder durch."; 
+
 // MARK: - INFO:
 
 "App version" = "Über die Anwendung";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "Windkanäle";
 "Shops / drop zones" = "Läden";
 "Information / drop zones" = "Informationen";
-"Message / drop zones" = "Hier sind nur verifizierte Fallschirmsprung-Zonen und Windkanäle. Sie können Ihren Standort hinzufügen, indem Sie auf Instagram schreiben.";
+"Message / drop zones" = "Sie können Ihren Standort hinzufügen, indem Sie auf Instagram schreiben.";
 "Map type" = "Kartentyp";
 "Standard / map type" = "Standard";
 "Satellite / map type" = "Satellit";

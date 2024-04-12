@@ -512,6 +512,19 @@
 "1000D2" = "\nパラシュートの種類：ハイスピード。\nカテゴリ：D。\nジャンプ回数：1000回以上。\n";
 "1000D3" = "\nパラシュートの種類：ハイスピード/クロスブレイスド。\nカテゴリ：D。\nジャンプ回数：1000回以上。\n";
 
+"Canopy title / calculator" = "キャノピー負荷";
+"Wing title / calculator" = "ウイングスーツ飛行距離";
+
+"Height jump / calculator" = "ジャンプの高さ";
+"Height open / calculator" = "開口の高さ";
+"Wind speed / calculator" = "風速";
+"Quality / calculator" = "品質";
+"Distance / calculator" = "ウイングスーツ飛行の推定距離";
+
+"Warning / calculator" = "警告";
+"Warning canopy message / calculator" = "これは参考情報です。適切な荷重および適切なパラシュートを決定するために、現役のインストラクターと相談してください。";
+"Warning wing message / calculator" = "これは参考情報です。パラシュートジャンパーの空力学（ポジション/攻角）、風の方向および強さは推定飛行距離に影響を与えます。現役のインストラクターと正確な計算を行ってください。";
+
 // MARK: - INFO:
 
 "App version" = "アプリについて";
@@ -561,7 +574,7 @@
 "Wind tunnels / drop zones" = "ウィンドトンネル";
 "Shops / drop zones" = "ショップ";
 "Information / drop zones" = "情報";
-"Message / drop zones" = "ここには検証されたドロップゾーンと風洞のみが表示されます。Instagramで書き込むことで、自分の位置を追加できます。";
+"Message / drop zones" = "Instagramで書き込むことで、自分の位置を追加できます。";
 "Map type" = "地図タイプ";
 "Standard / map type" = "標準";
 "Satellite / map type" = "衛星";

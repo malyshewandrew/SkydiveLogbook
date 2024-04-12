@@ -93,6 +93,7 @@ final class EditSystemCell: UITableViewCell {
     private let dateFormatter = DateFormatter()
     private var player = AVAudioPlayer()
     weak var delegate: EditSystemCellDelegate?
+    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -104,6 +105,30 @@ final class EditSystemCell: UITableViewCell {
         configureGestures()
         mainCanopyPickerView.delegate = self
         mainCanopyPickerView.dataSource = self
+        mainCanopyPickerView.delegate = self
+        mainCanopyPickerView.dataSource = self
+        nameSystemTextField.delegate = self
+        containerNameTextField.delegate = self
+        containerDomTextField.delegate = self
+        containerSerialNumberTextField.delegate = self
+        containerServiceLifeYearsTextField.delegate = self
+        aadNameTextField.delegate = self
+        aadDomTextField.delegate = self
+        aadSerialNumberTextField.delegate = self
+        aadServiceLifeYearsTextField.delegate = self
+        mainCanopyNameTextField.delegate = self
+        mainCanopyDomTextField.delegate = self
+        mainCanopySerialNumberTextField.delegate = self
+        mainCanopyServiceLifeYearsTextField.delegate = self
+        mainCanopyServiceLifeJumpsTextField.delegate = self
+        mainCanopyCountJumpsTextField.delegate = self
+        reserveCanopyNameTextField.delegate = self
+        reserveCanopyDomTextField.delegate = self
+        reserveCanopySerialNumberTextField.delegate = self
+        reserveCanopyServiceLifeYearsTextField.delegate = self
+        reserveCanopyCountRepackTextField.delegate = self
+        reserveCanopyDatePackTextField.delegate = self
+        commentSystemTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -1344,5 +1369,11 @@ extension EditSystemCell: UIPickerViewDataSource {
             return arrayCanopiesRealm[row].canopy
         }
         return ""
+    }
+}
+
+extension EditSystemCell: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        vibrationOn.vibrationStandart()
     }
 }
