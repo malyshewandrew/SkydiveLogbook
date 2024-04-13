@@ -1,0 +1,611 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "PAGRINDINIS";
+"Statistic tab bar" = "STATISTIKA";
+"Add jump tab bar" = "NAUJAS ŠUOLIS";
+"System tab bar" = "SISTEMA";
+"Settings tab bar" = "NUSTATYMAI";
+
+// MARK: - MAIN:
+
+"Save" = "Išsaugoti";
+"Clean" = "Išvalyti";
+"Close" = "Uždaryti";
+"Edit" = "Redaguoti";
+"Delete" = "Ištrinti";
+"Calculate" = "Skaičiuoti";
+"Update" = "Atnaujinti";
+"Settings iphone" = "Nustatymai";
+
+"Ok" = "Gerai";
+"Yes" = "Taip";
+"No" = "Ne";
+
+"ago" = "prieš";
+"back" = "Atgal";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "mylios";
+"feet" = "pėdos";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "val.";
+"d." = "d.";
+"mon." = "mėn.";
+"y." = "m.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nSveiki atvykę į SkydiveBook!\n\nVisi jūsų parašiutininkavimo veiksmai bus rodomi šiame ekrane\n\nMėgaukitės naudojimu ir saugiais šuoliais!\n";
+"Delete jump?" = "Ištrinti šuolį?";
+"This action cannot be undone." = "Šio veiksmo negalima atšaukti.";
+
+"License" = "Licencija";
+"until" = "iki";
+"Medicine until" = "Vaistai iki";
+"Insurance until" = "Apsauga iki";
+"Reserve canopy until" = "Rezervinė šuoliuko skėtis iki";
+
+"Edit/add account" = "Norėdami užpildyti paskyrą, eikite į skyrių „Nustatymai“.";
+
+// MARK: - NOTES:
+
+"New note" = "Nauja pastaba";
+"Delete note?" = "Ištrinti pastabą?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Nėra ryšio";
+"No connection message / weather" = "Norėdami gauti oro prognozę, reikalinga aktyvi interneto ryšio prieiga.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Pūgžiai iki";
+
+"Wind speed / weather" = "Vėjo greitis";
+"Temperature / weather" = "Temperatūra";
+"Cloud cover / weather" = "Debesų padengimas";
+"Humidity / weather" = "Drėgmė";
+"Dew point / weather" = "Rasos taškas";
+"Visibility / weather" = "Matomumas";
+"Precipitation / weather" = "Krituliai";
+"Pressure / weather" = "Slėgis";
+"UvIndex / weather" = "UV indeksas";
+"It feels like / weather" = "Jaučiasi kaip";
+
+"Wind direction" = "Vėjo kryptis";
+"Arrow wind direction" = "Rodatau rodo vėjo kryptį artimoje žemėje, kur jūs esate. Tai veikia tik turint aktyvų interneto ryšį.";
+
+"Permisson label / weather" = "Nustatymai iPhone -> SkydiveBook -> Vieta (suteikti leidimą)";
+"Permisson label alert / weather" = "Norėdami rodyti dabartinę oro prognozę, turite gauti leidimą nustatyti savo buvimo vietą. Tai galima padaryti nustatymuose.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Vėjo klasifikacija";
+"Wind weather message / alert" = "Ramybė: < 0.3 m/s\nTyli: 0.3—1.5 m/s\nŠvelnus: 1.6—3.3 m/s\nVidutinis: 3.4—5.4 m/s\nŠviežas: 5.5—7.9 m/s\nStiprus: 8.0—10.7 m/s\nPrieš orą: 10.8—13.8 m/s\nAudra: 13.9—17.1 m/s\nStipri audra: 17.2—20.7 m/s\nStipri audra: 20.8—24.4 m/s\nSmurtinė audra: 24.5—28.4 m/s\nUraganas: >32.7 m/s";
+
+"Temperature weather title / alert" = "Jaučiasi kaip";
+"Temperature weather message / alert" = "Rodiklis „Jaučiasi kaip“ gali skirtis nuo faktinės temperatūros, atspindint kaip temperatūrą suvokia žmogus. „Jaučiasi kaip“ rodiklį veikia vėjo charakteristikos ir drėgmės lygiai.";
+
+"Cloud cover weather title / alert" = "Debesų padengimas";
+"Cloud cover weather message / alert" = "Debesų padengimas matuojamas procentais. Paprastai jis išreiškiamas debesų dalimis danguje.";
+
+"Humidity weather title / alert" = "Drėgmė";
+"Humidity weather message / alert" = "Reliatyvi drėgmė, arba paprasčiausiai drėgmė, yra santykis tarp oroje esančios drėgmės kiekio ir didžiausio kiekio, kurį gali talpinti oras.";
+
+"Dew point weather title / alert" = "Rasos taškas";
+"Dew point weather message / alert" = "Rasos taškas yra temperatūros vertė, kurią temperatūra turi nukristi, kad susiformuotų rasa. Tai patogus būdas nustatyti oro drėgmę: kuo didesnis rasos taškas, tuo labiau drėgna oras jaučiamas. Rasos taškas, sutampantis su esama temperatūra, reiškia, kad oro drėgmė yra 100%, ir gali susidaryti rasa ar rūkas.";
+
+"Visibility weather title / alert" = "Matomumas";
+"Visibility weather message / alert" = "Matomumas rodo, kokia atstumu nuo jūsų galite aiškiai matyti objektus, tokius kaip pastatai ir kalvos. Matomumas yra oro skaidrumo matas ir nepaiso saulės spindulių kiekio ar kliūčių buvimo.";
+
+"Precipitation weather title / alert" = "Krituliai";
+"Precipitation weather message / alert" = "Kritulių kiekis yra vandens sluoksnio aukštis milimetrais, kuris susiformuotų ant žemės paviršiaus, jei jis būtų visiškai plokščias. Kritulių kiekis milimetrais skaitmeniškai lygus vandens masei, kuri nukrito ant 1 kvadratinio metro horizontalios paviršiaus.";
+
+"Pressure weather title / alert" = "Slėgis";
+"Pressure weather message / alert" = "Lentelė rodo nuokrypius nuo slėgio normos atsižvelgiant į jūsų buvimo vietą. Paprastas slėgis žmonėms yra 760 milimetrų gyvsidabrio. Tačiau kiekvieno žmogaus norminis atmosferos slėgis priklauso nuo regiono, kuriame jis yra, ir regiono slėgis priklauso nuo vietos aukščio.";
+
+"UvIndex weather title / alert" = "UV indeksas";
+"UvIndex weather message / alert" = "UV indeksas (UFI), sukurtas Pasaulio sveikatos organizacijos, nurodo ultravioletinės spinduliuotės galią. Kuo didesnis UV indeksas, tuo pavojingesnė būti saulėje ir greičiau ji gali pakenkti jūsų sveikatai. Stebėdami UV indeksą, galite nuspręsti, kada apsisaugoti nuo saulės ir kada geriau neiti lauke.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Ramybė";
+"Weak wind / wind speed" = "Silpnas vėjas";
+"Light wind / wind speed" = "Švelnus vėjas";
+"Quiet wind / wind speed" = "Tylaus vėjo";
+"Moderate wind / wind speed" = "Vidutinio stiprumo vėjas";
+"Fresh wind / wind speed" = "Šviežias vėjas";
+"Strong wind / wind speed" = "Stiprus vėjas";
+"Hard wind / wind speed" = "Sunkus vėjas";
+"Powerful wind / wind speed" = "Galingas vėjas";
+"Storm wind / wind speed" = "Audra";
+"Hard storm wind / wind speed" = "Sunki audra";
+"Hurricane wind / wind speed" = "Uraganas";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Maksimali temperatūra";
+"Min temperature / temperature" = "Minimali temperatūra";
+"Average temperature / temperature" = "Vidutinė temperatūra";
+"Feels like temperature / temperature" = "Jaučiamasi kaip temperatūra";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Labai sausas oras";
+"Dry air / humidity" = "Sausas oras";
+"Moderately dry air / humidity" = "Vidutiniškai sausas oras";
+"Moderately humid air / humidity" = "Vidutiniškai druskingas oras";
+"Very humid air / humidity" = "Labai druskingas oras";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Giedras";
+"Partly Cloudy / cloud cover" = "Dalinai debesuota";
+"Variable Cloudiness / cloud cover" = "Kintantis debesų kiekis";
+"Cloudy / cloud cover" = "Debesuota";
+"Overcast / cloud cover" = "Apsiniaukęs";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Reliatyviai sausas oras";
+"Moderately humid air / dew point" = "Vidutiniškai druskingas oras";
+"Humid air / dew point" = "Druskingas oras";
+"Very humid air / dew point" = "Labai druskingas oras";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Puikus";
+"Good / visibility" = "Geras";
+"Moderate / visibility" = "Vidutinis";
+"Poor / visibility" = "Prastas";
+"Very Poor / visibility" = "Labai prastas";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Labai lengvas";
+"Light / precipitation" = "Lengvas";
+"Moderate / precipitation" = "Vidutinis";
+"Heavy / precipitation" = "Sunkus";
+"Very Heavy / precipitation" = "Labai sunkus";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Labai žemas";
+"Low / pressure" = "Žemas";
+"Normal / pressure" = "Normalus";
+"Hight / pressure" = "Aukštas";
+"Very hight / pressure" = "Labai aukštas";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Žemas";
+"Moderate / uv index" = "Vidutinis";
+"Hight / uv index" = "Aukštas";
+"Very high / uv index" = "Labai aukštas";
+"Excessive / uv index" = "Per didelis";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Reputacija";
+"Nickname / skydivers" = "Slapyvardis";
+"Country / skydivers" = "Šalis";
+"Profile / skydivers" = "Profilis";
+"Profession / skydivers" = "Profesija";
+"Count of jumps / skydivers" = "Šuolių skaičius";
+"First jump / skydivers" = "Pirmas šuolis";
+"About rating / skydivers" = "Daugiau informacijos";
+"About rating message / skydivers" = "Bendruomenė yra reklama sau ir pagalba projektui.\nDaugiau informacijos Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Norėdami peržiūrėti statistiką, turite atlikti bent vieną šuolį.";
+"saving data" = "Išsaugoma informacija";
+"saving data text" = "Norėdami išsaugoti visą savo šuolių istoriją, rekomenduojama periodiškai kurti atsargines kopijas skyriuje „Nustatymai“. \nTai ypač svarbu perkėlus į naują įrenginį.";
+"jumps by year" = "Šuoliai pagal metus";
+"year" = "metai";
+"Categories USPA" = "Kategorijos";
+"Categories USPA List" = "\nA: 25 šuoliai\nLaisvas kritimas: 10 min. (600s.)\n\nB: 50 šuoliai\nLaisvas kritimas: 30 min. (1800s.)\n\nC: 200 šuolių\nLaisvas kritimas: 60 min. (3600s.)\n\nD: 500 šuolių\nLaisvas kritimas: 180 min. (10800s.)\n";
+"Maximum time" = "Maksimalus laikas";
+"Maximum time alert" = "Atliktas šuolis su maksimaliu laisvo kritimo laiku";
+"Maximum height" = "Maksimalus aukštis";
+"Maximum height alert" = "Atliktas šuolis su maksimaliu skyriaus aukščiu";
+"Average height" = "Vidutinis aukštis";
+"Minimum height" = "Minimalus aukštis";
+"Minimum height alert" = "Atliktas šuolis su minimaliu skyriaus aukščiu";
+"First jump / statistic" = "Atliktas pirmas šuolis";
+"Last jump / statistic" = "Atliktas paskutinis šuolis";
+"Max in one day" = "Didžiausias vienos dienos kiekis";
+"Average height of jump" = "Vidutinis šuolio aukštis";
+"Average free fall time of jump" = "Vidutinis laisvas kritimo laikas";
+"Average time" = "Vidutinis šuolio laikas";
+"Max count of jumps" = "Maksimalus šuolių skaičius";
+"Max count of jumps text" = "Maksimalus šuolių skaičius per vieną dieną buvo atliktas";
+"Jumps no found" = "Šuolių nerasta";
+"Сount of cutaways" = "Išsikėlimų skaičius";
+"Date last jump" = "Paskutinis šuolis";
+"Date first jump" = "Pirmas šuolis";
+"List aircrafts" = "Lėktuvų sąrašas";
+"List canopies" = "Šuoliukų skėčių sąrašas";
+"List locations" = "Vietų sąrašas";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Bendra informacija";
+"Total height" = "Iš viso aukštis";
+"Total time" = "Iš viso laikas";
+"Total jumps" = "Iš viso šuoliai";
+"In this year" = "Šiais metais";
+"Category" = "Kategorija";
+
+"Average info" = "Vidutinė informacija";
+
+"Max. height" = "Maks. aukštis";
+"Av. height" = "Vid. aukštis";
+"Min. height" = "Min. aukštis";
+"First jump" = "Pirmas šuolis";
+"Max. time" = "Maks. laikas";
+"Last jump" = "Paskutinis šuolis";
+"Max. in day" = "Maks. per dieną";
+"Av. time" = "Vid. laikas";
+"CutawayStatistic" = "Išsikėlimai";
+"Count cutaway" = "Išsikėlimų skaičius";
+"Aircraft" = "Lėktuvas";
+"Canopies" = "Šuoliukai";
+"Locations" = "Vietos";
+"Missions" = "Misijos";
+
+"Accuracy" = "Tikslumas";
+"Acrobatics" = "Akrobatika";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Šuolių formavimas";
+"Freefly" = "Laisvas skridimas";
+"Freestyle" = "Freestyle";
+"Fun" = "Pramogos";
+"Group" = "Grupė";
+"Instructor" = "Instruktorius";
+"Military" = "Karinis";
+"Para-ski" = "Para-slėnis";
+"Proximity" = "Artumas";
+"Skysurfing" = "Skysurfingas";
+"Static-line" = "Statinė linija";
+"Piloting" = "Pilotavimas";
+"Tandem" = "Tandemas";
+"Vertical" = "Vertikalus";
+"Video" = "Vaizdo įrašas";
+"Wingsuit" = "Sparnas";
+"Formation" = "Formavimas";
+"Top 10:" = "Top 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Naujas šuolis";
+"Manual / new jump" = "Norėdami pradėti, eikite į skyrių „Nustatymai“ ir įveskite šiuos duomenis:\n\nVietos\nLėktuvai\nŠuoliukai";
+
+// MARK: - CellNewJump:
+
+"Date" = "Data";
+"Location" = "Vieta";
+"Aircraft" = "Lėktuvas";
+"Canopy" = "Šuoliukas";
+"Mission" = "Misija";
+"Height" = "Aukštis";
+"Time" = "Laikas";
+"Cutaway" = "Išsikėlimas";
+"Comment" = "Komentaras";
+
+"One jump / cell new jump" = "Vienas šuolis";
+"Few jumps / cell new jump" = "Kelios šuoliai";
+"Counts of identical jumps / cell ne jump" = "Identinių šuolių skaičius";
+
+"Date placeholder" = "dd.mm.rrrr";
+"Location placeholder" = "Atpirkimo zona";
+"Aircraft placeholder" = "Lėktuvo tipas";
+"Canopy placeholder" = "Pagrindinis šuoliukas";
+"Mission placeholder" = "Šuolio tipas";
+"Height placeholder" = "Metrai";
+"Time placeholder" = "Sekundės";
+"Cutaway placeholder" = "Ne / Taip";
+"Comment placeholder" = "Neprivalomas";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Pridėti naują sistemą";
+"Comment" = "Komentaras";
+"No comments" = "Komentarų nerasta";
+"Container system" = "Konteineris";
+"AAD system" = "Draudimo prietaisas";
+"Main canopy system" = "Pagrindinis šuoliukas";
+"Reserve canopy system" = "Atsarginis šuoliukas";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Numeris";
+"DOM system" = "DOM";
+"Service life system" = "Naudojimo laikas";
+"Valid until system" = "Galioja iki";
+"Counts of the jumps system" = "Šuolių skaičius";
+"Resource system" = "Ištekliai";
+"Counts of repack system" = "Pakuotų skaičius";
+"Packed system" = "Pakeltas";
+
+"years system" = "metai";
+"jumps system" = "šuoliai";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Pridėti sistemą";
+"Container alert" = "Konteineris";
+"AAD alert" = "Draudimo prietaisas";
+"Main canopy alert" = "Pagrindinis šuoliukas";
+"Reserve canopy alert" = "Atsarginis šuoliukas";
+
+"Name and model container alert" = "Konteinerio pavadinimas ir modelis";
+"Name and model AAD alert" = "Draudimo įrenginio pavadinimas ir modelis";
+"Name and model main canopy alert" = "Pagrindinio šuoliuko pavadinimas ir modelis. Pirmiausia pridėkite skyriuje „Nustatymai“ -> „Redaguoti šuoliukus“";
+"Name and model reserve canopy alert" = "Atsarginio šuoliuko pavadinimas ir modelis";
+
+"DOM alert" = "Gamintojo datos žymėjimas";
+"Serial number alert" = "Serijos numeris";
+"Warranty resource container alert" = "Garantinis tarnavimo laikas (dažniausiai gamintojas nurodo 10-20 metų arba pagal techninę būklę)";
+"Warranty resource AAD alert" = "Garantinis tarnavimo laikas (garantuotas metų skaičius arba Metų skaičius iki įprastinės priežiūros)";
+"Warranty resource main canopy alert" = "Garantinis tarnavimo laikas metais (dažniausiai gamintojas nurodo 10-20 metų arba pagal techninę būklę)";
+"Warranty resource jumps main canopy alert" = "Garantinis tarnavimo laikas šuoliams (dažniausiai gamintojas nurodo 500 šuolių, arba pagal techninę būklę iki 1000 šuolių)";
+"Counts of jumps main canopy alert" = "Šuolių skaičius (jei parašiutas nebuvo naujas ir jau atlikti šuoliai, nurodykite šį skaičių). Teisingam skaičiavimui būtina nurodyti tik tuos šuolius, kurie anksčiau nebuvo įtraukti į bendrą šuolių sąrašą šios programos";
+"Warranty resource reserve canopy alert" = "Garantinis tarnavimo laikas (dažniausiai gamintojas nurodo 10-20 metų arba pagal techninę būklę)";
+"Counts of repack reserve canopy alert" = "Jei parašiutas nebuvo naujas ir jis jau buvo supakuotas, nurodykite šį kiekį";
+"Date of pack reserve canopy alert" = "Supakavimo data";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Sistemos pavadinimas";
+"Name / new system cell" = "Pavadinimas";
+"Container / new system cell" = "Konteineris";
+"Name container / new system cell" = "Konteinerio pavadinimas";
+
+"DOM / new system cell" = "Gamintojo data";
+"Date mm.yyyy / new system cell" = "mm.mmm.";
+"Serial number / new system cell" = "Serijos numeris";
+"Warranty resource / new system cell" = "Garantinis tarnavimo laikas";
+"Counts of years / new system cell" = "Metų skaičius";
+"Counts of jumps / new system cell" = "Šuolių skaičius";
+
+"AAD / new system cell" = "Draudimo prietaisas";
+"Name AAD / new system cell" = "Draudimo įrenginio pavadinimas";
+
+"Main canopy / new system cell" = "Pagrindinis šuoliukas";
+"Name main canopy / new system cell" = "Šuoliuko pavadinimas";
+"Counts of jumps main canopy / new system cell" = "Šuolių skaičius";
+"The value of the purchase / new system cell" = "Pirkimo vertė";
+
+"Reserve canopy / new system cell" = "Atsarginis šuoliukas";
+"Name reserve canopy / new system cell" = "Šuoliuko pavadinimas";
+"Counts of repack reserve canopy / new system cell" = "Pakuotų skaičius";
+"Date of packing reserve canopy / new system cell" = "Pakuotės data";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.rrrr";
+"Count / new system cell" = "Kiekis";
+
+"Comment / new system cell" = "Komentaras";
+"Optional / new system cell" = "Neprivaloma (eilučių būklė ir t.t.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Redaguoti paskyrą";
+"Edit locations" = "Redaguoti vietas";
+"Delete location?" = "Ištrinti vietą?";
+"Edit aircrafts" = "Redaguoti orlaivius";
+"Delete aircraft?" = "Ištrinti orlaivį?";
+"Edit canopies" = "Redaguoti šuoliukus";
+"Drop zones" = "Šuolių aikštelės";
+"Delete canopy?" = "Ištrinti šuoliuką?";
+"Backup copy" = "Atsarginė kopija";
+"Calculator loading" = "Skaičiuotuvas įkeliama";
+"Information" = "Informacija";
+"Premium version" = "Premium versija";
+"Share the app" = "Bendrinti programą";
+"Feedback" = "Atsiliepimai";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Slapyvardis";
+"Name user / edit account vc" = "Vartotojo vardas";
+"License / edit account vc" = "Licencija";
+"Type / number / edit account vc" = "Tipas / numeris";
+"Valid until / edit account vc" = "Galioja iki";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.rrrr";
+"Medicine / edit account vc" = "Vaistai";
+"Insurance / edit account vc" = "Apsauga";
+"Reserve canopy / edit account vc" = "Atsarginis parašiutas";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Įveskite šuolių aikštelės pavadinimą";
+"Enter aircraft" = "Įveskite orlaivio pavadinimą";
+"Enter canopy" = "Įveskite šuoliuko pavadinimą";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nAtsarginė kopija išsaugo visus programoje įvestus duomenis.\nRekomenduojama reguliariai kurti atsarginę kopiją, kad nebūtų prarasti įvesti duomenys.\n";
+"Backup / backup" = "Sukurti atsarginę kopiją";
+"Restore / backup" = "Atkurti";
+"Title / backup" = "Duomenų bazės statistika";
+"Jumps / backup" = "Šuoliai";
+"Systems / backup" = "Sistemos";
+"Notes / backup" = "Užrašai";
+"Aircrafts / backup" = "Orlaiviai";
+"Canopies / backup" = "Šuoliukai";
+"Locations / backup" = "Vietos";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Bendras svoris";
+"kg." = "kg";
+"ft" = "kv.ft";
+"Square canopy" = "Kvadratinis parašiutas";
+"1-50A" = "\nParašiuto tipas: Studentas.\nKategorija: A.\nŠuolių skaičius: 1-50 šuolių.\n";
+"51-200B" = "\nParašiuto tipas: Perėjimas.\nKategorija: B.\nŠuolių skaičius: 51-200 šuolių.\n";
+"201-500C" = "\nParašiuto tipas: Vidutinio greičio.\nKategorija: C.\nŠuolių skaičius: 201-500 šuolių.\n";
+"501-1000D1" = "\nParašiuto tipas: Greitis/elipsinis.\nKategorija: D.\nŠuolių skaičius: 501-1000 šuolių.\n";
+"1000D2" = "\nParašiuto tipas: Aukšto greičio.\nKategorija: D.\nŠuolių skaičius: 1000+ šuolių.\n";
+"1000D3" = "\nParašiuto tipas: Aukšto greičio/kryžminis.\nKategorija: D.\nŠuolių skaičius: 1000+ šuolių.\n";
+
+"Canopy title / calculator" = "Parašiuto apkrovimas";
+"Wing title / calculator" = "Skrydžio atstumas su sparnu";
+
+"Height jump / calculator" = "Šuolio aukštis";
+"Height open / calculator" = "Atvėrimo aukštis";
+"Wind speed / calculator" = "Vėjo greitis";
+"Quality / calculator" = "Kokybė";
+"Distance / calculator" = "Apytikslis skrydžio atstumas su sparnu";
+
+"Warning / calculator" = "Įspėjimas";
+"Warning canopy message / calculator" = "Tai fono informacija. Pasirinkite naujausią apkrovą ir tinkamą parašiutą su savo dabartiniu instruktoriumi.";
+"Warning wing message / calculator" = "Tai fono informacija. Galimą skrydžio atstumą veikia: parašiuto skraidantis asmuo (pozicija / atakos kampas), vėjo kryptis ir stiprumas. Darykite naujausius skaičiavimus su savo dabartiniu instruktoriumi.";
+
+// MARK: - INFO:
+
+"App version" = "Apie programą";
+"Version / info" = "Versija";
+"Build / info" = "Sukūrimas";
+"Privacy policy" = "Privatumo politika";
+"Terms of use" = "Naudos sąlygos";
+"FAQ" = "DUK";
+"App language / info" = "Programos kalba";
+"App language text / info" = "Ši programa naudoja kalbą, kuri yra nustatyta kaip pagrindinė jūsų įrenginyje.\nPagal nutylėjimą naudojama anglų kalba.\n\nPalaikomų kalbų sąrašas:\n\nAnglų, arabų, baltarusių, indoneziečių, ispanų, italų, kinų, korėjiečių, latvių, lietuvių, vokiečių, lenkų, portugalų, rusų, tailandiečių, turkų, ukrainiečių, prancūzų, hindi, čekų, japonų\n\nJei norite padėti projektui ir išversti programą į savo kalbą arba ištaisyti klaidas, prašome susisiekti su kūrėju.";
+"Info text" = "\nSkydiveBook - tai nėra oficialus patvirtinimas, kad programėlės naudotojas yra profesionalus skraidantis dangumi.\n\nJi tarnauja kaip neprivalomas papildymas oficialiam skraidančio dangumi skydive knygos ar sertifikato bet kurios kategorijos skraidančio dangumi.\n\nSkydiveBook įrašyti šuoliai nėra šių šuolių įrodymai ir negali būti laikomi oficialių dokumentų, sertifikatų, kategorijų išdavimo pagrindu.\n\nProgramėlė yra skirta asmeniniam naudojimui, skraidymo dangumi patogumui ir išplėstinėms analizėms.\n\nDuomenys apie pagrindinės dangos apkrovimą yra nuorodinė informacija ir neturi rekomendacinio pobūdžio pasirinkti parašiutinės įrangos.\n\nVisi leidimai naudoti parašiutus turi būti išduoti galiojančio instruktoriaus.\n\nBet kokia informacija, gauta naudojantis programėle, yra grynai nuorodinės prigimties: pažvelkite į oro uosto žemėlapį patys, taip pat gaukite naujausią informaciją apie oro sąlygas per šuolius.\n\nKaip ir bet kuri programinė įranga, ši programa gali daryti klaidų ir būti ne tobulos dėl žmogaus veiksnio.\n\nAtminkite, kad skraidymas dangumi kelia pavojų gyvybei. Nesilaikant saugos taisyklių gali atsirasti sužalojimų ir netgi mirties pavojaus.\n";
+"Info text start alert" = "\nSkydiveBook - tai nėra oficialus patvirtinimas, kad programėlės naudotojas yra profesionalus skraidantis dangumi.\n\nJi tarnauja kaip neprivalomas papildymas oficialiam skraidančio dangumi skydive knygos ar sertifikato bet kurios kategorijos skraidančio dangumi.\n\nSkydiveBook įrašyti šuoliai nėra šių šuolių įrodymai ir negali būti laikomi oficialių dokumentų, sertifikatų, kategorijų išdavimo pagrindu.\n\nProgramėlė yra skirta asmeniniam naudojimui, skraidymo dangumi patogumui ir išplėstinėms analizėms.\n\nDuomenys apie pagrindinės dangos apkrovimą yra nuorodinė informacija ir neturi rekomendacinio pobūdžio pasirinkti parašiutinės įrangos.\n\nVisi leidimai naudoti parašiutus turi būti išduoti galiojančio instruktoriaus.\n\nBet kokia informacija, gauta naudojantis programėle, yra grynai nuorodinės prigimties: pažvelkite į oro uosto žemėlapį patys, taip pat gaukite naujausią informaciją apie oro sąlygas per šuolius.\n\nKaip ir bet kuri programinė įranga, ši programa gali daryti klaidų ir būti ne tobulos dėl žmogaus veiksnio.\n\nAtminkite, kad skraidymas dangumi kelia pavojų gyvybei. Nesilaikant saugos taisyklių gali atsirasti sužalojimų ir netgi mirties pavojaus.\n\nSutinku.";
+"Agree" = "Sutinku";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nNemokamos programėlės versijoje galite įrašyti 50 šuolių.\n\n⭐️ ⭐️ ⭐️\n\nPremijinė programėlės versija leidžia įrašyti neribotą kiekį šuolių.\n";
+"1 month" = "$9.99 / Mėnesį";
+"12 months" = "$49.99 / Metai\n($4.16/mėn.)";
+"Restore purchases" = "Atkurti pirkimus";
+
+"Buy status" = "Pirkimo paieška / Pirkimo neradimas";
+"Restore Successful" = "Pirkimų atkūrimas sėkmingas";
+"All purchases have been successfully restored." = "Visi pirkimai sėkmingai atkurti.";
+"Restore Failed" = "Pirkimų atkūrimas nepavyko";
+"Some purchases could not be restored. Please try again later." = "Kai kurių pirkimų atkūrimas nepavyko. Bandykite vėliau.";
+"No Purchases to Restore" = "Nėra atkurtinų pirkimų";
+"There are no previous purchases to restore." = "Nėra ankstesnių pirkimų, kuriuos būtų galima atkurti.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Nėra ryšio";
+"Message / adapty" = "Aktyvus interneto ryšys reikalingas norint gauti duomenis.";
+
+"Alert / adapty status" = "Reikalinga premija";
+"Message / adapty status" = "Nemokamoje versijoje galite įrašyti tik:\n\n50 šuolių.\n10 pastabų.\n1 sistemą.\n\nNorėdami pašalinti visas apribojimas, įsigykite PREMIUM skiltyje \"Nustatymai\".";
+
+// MARK: - SYSTEM:
+
+"System" = "SISTEMA";
+"Delete system?" = "Ištrinti sistemą?";
+"System empty message / system" = "Jūs dar neturite pridėtų parašiutų sistemų.";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "Nusileidimo zonos";
+"Wind tunnels / drop zones" = "Vėjo tuneliai";
+"Shops / drop zones" = "Parduotuvės";
+"Information / drop zones" = "Informacija";
+"Message / drop zones" = "Savo vietą galite pridėti rašydami Instagram.";
+"Map type" = "Žemėlapio tipas";
+"Standard / map type" = "Standartinis";
+"Satellite / map type" = "Satelitas";
+"Hybrid / map type" = "Hibridas";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Sėkmė";
+"Error / alert kit" = "Klaida";
+"Error counts / alert kit" = "Jūs daugiau nebesoko!";
+
+"Jump added / alert kit" = "Šuolis pridėtas";
+"Jumps added / alert kit" = "Šuoliai pridėti";
+"Jump deleted / alert kit" = "Šuolis ištrintas";
+"Jump updated / alert kit" = "Šuolis atnaujintas";
+
+"Note added / alert kit" = "Pastaba pridėta";
+"Note deleted / alert kit" = "Pastaba ištrinta";
+
+"System added / alert kit" = "Sistema pridėta";
+"System deleted / alert kit" = "Sistema ištrinta";
+"System updated / alert kit" = "Sistema atnaujinta";
+
+"Backup saved / alert kit" = "Atsarginė kopija išsaugota";
+"Backup upload / alert kit" = "Atsarginė kopija įkelta";
+
+"Location added / alert kit" = "Vieta pridėta";
+"Location deleted / alert kit" = "Vieta ištrinta";
+
+"Aircraft added / alert kit" = "Lėktuvas pridėtas";
+"Aircraft deleted / alert kit" = "Lėktuvas ištrintas";
+
+"Canopy added / alert kit" = "Parašiutas pridėtas";
+"Canopy deleted / alert kit" = "Parašiutas ištrintas";

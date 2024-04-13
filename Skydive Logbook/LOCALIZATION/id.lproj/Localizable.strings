@@ -1,0 +1,611 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "UTAMA";
+"Statistic tab bar" = "STATISTIK";
+"Add jump tab bar" = "JUMP BARU";
+"System tab bar" = "SISTEM";
+"Settings tab bar" = "PENGATURAN";
+
+// MARK: - MAIN:
+
+"Save" = "Simpan";
+"Clean" = "Bersihkan";
+"Close" = "Tutup";
+"Edit" = "Edit";
+"Delete" = "Hapus";
+"Calculate" = "Hitung";
+"Update" = "Perbarui";
+"Settings iphone" = "Pengaturan";
+
+"Ok" = "Oke";
+"Yes" = "Ya";
+"No" = "Tidak";
+
+"ago" = "yang lalu";
+"back" = "Kembali";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "mil";
+"feet" = "kaki";
+
+// MARK: - MEASURING TIME:
+
+"s." = "dtk.";
+"min." = "mnt.";
+"h." = "jam";
+"d." = "hri";
+"mon." = "bln.";
+"y." = "th.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nSelamat datang di SkydiveBook!\n\nSemua kegiatan skydiving Anda akan ditampilkan di layar ini\n\nNikmati penggunaan Anda dan lompatan yang aman!\n";
+"Delete jump?" = "Hapus lompatan?";
+"This action cannot be undone." = "Tindakan ini tidak dapat dibatalkan.";
+
+"License" = "Lisensi";
+"until" = "hingga";
+"Medicine until" = "Obat hingga";
+"Insurance until" = "Asuransi hingga";
+"Reserve canopy until" = "Kanopi cadangan hingga";
+
+"Edit/add account" = "Untuk mengisi Akun, pergi ke bagian \"Pengaturan\".";
+
+// MARK: - NOTES:
+
+"New note" = "Catatan baru";
+"Delete note?" = "Hapus catatan?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Tidak ada koneksi";
+"No connection message / weather" = "Koneksi internet aktif diperlukan untuk menerima data ramalan cuaca.";
+
+"mm/h" = "mm/jam";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/detik";
+"km" = "km";
+"Gusts up to" = "Gelombang hingga";
+
+"Wind speed / weather" = "Kecepatan angin";
+"Temperature / weather" = "Suhu";
+"Cloud cover / weather" = "Tutupan awan";
+"Humidity / weather" = "Kelembaban";
+"Dew point / weather" = "Titik embun";
+"Visibility / weather" = "Jarak pandang";
+"Precipitation / weather" = "Curah hujan";
+"Pressure / weather" = "Tekanan";
+"UvIndex / weather" = "Indeks UV";
+"It feels like / weather" = "Terasa seperti";
+
+"Wind direction" = "Arah angin";
+"Arrow wind direction" = "Panah menunjukkan arah angin di dekat tanah di tempat Anda berada. Ini hanya berfungsi dengan koneksi Internet aktif.";
+
+"Permisson label / weather" = "Pengaturan iPhone -> SkydiveBook -> Lokasi (berikan izin)";
+"Permisson label alert / weather" = "Untuk menampilkan ramalan cuaca saat ini, Anda perlu mendapatkan izin untuk menentukan lokasi Anda. Ini dapat dilakukan di pengaturan.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Klasifikasi Angin";
+"Wind weather message / alert" = "Tenang: < 0.3 m/s\nSepi: 0.3—1.5 m/s\nRingan: 1.6—3.3 m/s\nSedang: 3.4—5.4 m/s\nSegar: 5.5—7.9 m/s\nKuat: 8.0—10.7 m/s\nHampir badai: 10.8—13.8 m/s\nBadai: 13.9—17.1 m/s\nBadai Kuat: 17.2—20.7 m/s\nTopan: 20.8—24.4 m/s\nBadai Dahsyat: 24.5—28.4 m/s\nBadai: >32.7 m/s";
+
+"Temperature weather title / alert" = "Terasa seperti";
+"Temperature weather message / alert" = "Indikator «Terasa seperti» dapat berbeda dari suhu sebenarnya, mencerminkan bagaimana suhu dirasakan oleh seseorang. Indikator «Terasa seperti» dipengaruhi oleh karakteristik angin dan tingkat kelembaban.";
+
+"Cloud cover weather title / alert" = "Tutupan awan";
+"Cloud cover weather message / alert" = "Tutupan awan diukur sebagai persentase. Biasanya dinyatakan dalam bagian langit yang ditempati oleh awan.";
+
+"Humidity weather title / alert" = "Kelembaban";
+"Humidity weather message / alert" = "Kelembaban relatif, atau hanya kelembaban, adalah rasio jumlah kelembaban udara terhadap jumlah maksimum yang dapat terkandung dalam udara.";
+
+"Dew point weather title / alert" = "Titik embun";
+"Dew point weather message / alert" = "Titik embun adalah nilai di mana suhu harus turun agar embun terbentuk. Ini adalah cara yang nyaman untuk menentukan kelembaban udara: semakin tinggi titik embun, semakin lembap udara terasa. Titik embun yang bertepatan dengan suhu saat ini berarti kelembaban udara 100% dan embun atau kabut mungkin terbentuk.";
+
+"Visibility weather title / alert" = "Jarak pandang";
+"Visibility weather message / alert" = "Jarak pandang menunjukkan pada jarak berapa dari diri Anda Anda dapat melihat dengan jelas benda-benda seperti bangunan dan bukit. Jarak pandang adalah ukuran transparansi udara dan tidak memperhitungkan jumlah sinar matahari atau keberadaan rintangan.";
+
+"Precipitation weather title / alert" = "Presipitasi";
+"Precipitation weather message / alert" = "Jumlah presipitasi adalah tinggi lapisan air dalam milimeter yang akan terbentuk di permukaan bumi jika permukaannya benar-benar datar. Jumlah presipitasi dalam milimeter sama dengan massa air yang jatuh di permukaan horizontal 1 meter persegi.";
+
+"Pressure weather title / alert" = "Tekanan";
+"Pressure weather message / alert" = "Tabel menunjukkan deviasi dari norma tekanan relatif terhadap lokasi Anda. Tekanan biasa bagi manusia adalah 760 milimeter merkuri. Tetapi tekanan atmosfer normal untuk setiap orang tergantung pada wilayah di mana dia berada, dan tekanan wilayah tergantung pada ketinggian wilayah.";
+
+"UvIndex weather title / alert" = "Indeks UV";
+"UvIndex weather message / alert" = "Indeks UV (UFI), yang dikembangkan oleh Organisasi Kesehatan Dunia, menunjukkan kekuatan radiasi ultraviolet. Semakin tinggi indeks UV, semakin berbahayanya berada di bawah sinar matahari dan semakin cepat dapat membahayakan kesehatan Anda. Dengan melacak indeks UV, Anda dapat memutuskan kapan melindungi diri dari sinar matahari dan kapan lebih baik tidak keluar rumah.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Tenang";
+"Weak wind / wind speed" = "Angin lemah";
+"Light wind / wind speed" = "Angin ringan";
+"Quiet wind / wind speed" = "Angin sepi";
+"Moderate wind / wind speed" = "Angin sedang";
+"Fresh wind / wind speed" = "Angin segar";
+"Strong wind / wind speed" = "Angin kencang";
+"Hard wind / wind speed" = "Angin keras";
+"Powerful wind / wind speed" = "Angin kuat";
+"Storm wind / wind speed" = "Badai";
+"Hard storm wind / wind speed" = "Badai keras";
+"Hurricane wind / wind speed" = "Angin topan";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Suhu maks";
+"Min temperature / temperature" = "Suhu min";
+"Average temperature / temperature" = "Suhu rata-rata";
+"Feels like temperature / temperature" = "Terasa seperti suhu";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Udara sangat kering";
+"Dry air / humidity" = "Udara kering";
+"Moderately dry air / humidity" = "Udara cukup kering";
+"Moderately humid air / humidity" = "Udara cukup lembab";
+"Very humid air / humidity" = "Udara sangat lembab";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Cerah";
+"Partly Cloudy / cloud cover" = "Cerah sebagian";
+"Variable Cloudiness / cloud cover" = "Berawan";
+"Cloudy / cloud cover" = "Berawan";
+"Overcast / cloud cover" = "Cerah";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Titik embun relatif kering";
+"Moderately humid air / dew point" = "Titik embun cukup lembab";
+"Humid air / dew point" = "Udara lembab";
+"Very humid air / dew point" = "Udara sangat lembab";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Sangat baik";
+"Good / visibility" = "Baik";
+"Moderate / visibility" = "Sedang";
+"Poor / visibility" = "Buruk";
+"Very Poor / visibility" = "Sangat buruk";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Sangat ringan";
+"Light / precipitation" = "Ringan";
+"Moderate / precipitation" = "Sedang";
+"Heavy / precipitation" = "Berat";
+"Very Heavy / precipitation" = "Sangat berat";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Sangat rendah";
+"Low / pressure" = "Rendah";
+"Normal / pressure" = "Normal";
+"Hight / pressure" = "Tinggi";
+"Very hight / pressure" = "Sangat tinggi";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Rendah";
+"Moderate / uv index" = "Sedang";
+"Hight / uv index" = "Tinggi";
+"Very high / uv index" = "Sangat tinggi";
+"Excessive / uv index" = "Berlebihan";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "Reputasi";
+"Nickname / skydivers" = "Nama panggilan";
+"Country / skydivers" = "Negara";
+"Profile / skydivers" = "Profil";
+"Profession / skydivers" = "Profesi";
+"Count of jumps / skydivers" = "Jumlah lompatan";
+"First jump / skydivers" = "Lompatan pertama";
+"About rating / skydivers" = "Informasi lebih lanjut";
+"About rating message / skydivers" = "Komunitas adalah iklan bagi diri sendiri, serta bantuan kepada proyek.\nDetail di Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Untuk menampilkan statistik, Anda perlu melakukan setidaknya satu lompatan.";
+"saving data" = "Menyimpan data";
+"saving data text" = "Untuk menyimpan riwayat lompatan Anda secara lengkap, disarankan agar Anda secara berkala membuat cadangan di bagian \"Pengaturan\". \nHal ini terutama penting ketika beralih ke perangkat baru.";
+"jumps by year" = "Lompatan per tahun";
+"year" = "tahun";
+"Categories USPA" = "Kategori";
+"Categories USPA List" = "\nA: 25 lompatan\nWaktu jatuh bebas: 10 menit (600s.)\n\nB: 50 lompatan\nWaktu jatuh bebas: 30 menit (1800s.)\n\nC: 200 lompatan\nWaktu jatuh bebas: 60 menit (3600s.)\n\nD: 500 lompatan\nWaktu jatuh bebas: 180 menit (10800s.)\n";
+"Maximum time" = "Waktu maksimum";
+"Maximum time alert" = "Lompatan dengan waktu jatuh bebas maksimum telah selesai";
+"Maximum height" = "Ketinggian maksimum";
+"Maximum height alert" = "Lompatan dengan ketinggian maksimum dari kompartemen telah selesai";
+"Average height" = "Rata-rata ketinggian";
+"Minimum height" = "Ketinggian minimum";
+"Minimum height alert" = "Lompatan dengan ketinggian minimum dari kompartemen telah selesai";
+"First jump / statistic" = "Lompatan pertama dilakukan";
+"Last jump / statistic" = "Lompatan terakhir dilakukan";
+"Max in one day" = "Maksimal dalam satu hari";
+"Average height of jump" = "Rata-rata ketinggian lompatan";
+"Average free fall time of jump" = "Rata-rata waktu jatuh bebas lompatan";
+"Average time" = "Rata-rata waktu lompatan";
+"Max count of jumps" = "Jumlah lompatan";
+"Max count of jumps text" = "Jumlah maksimum lompatan dalam satu hari telah selesai";
+"Jumps no found" = "Lompatan tidak ditemukan";
+"Сount of cutaways" = "Jumlah cutaways";
+"Date last jump" = "Lompatan terakhir";
+"Date first jump" = "Lompatan pertama";
+"List aircrafts" = "Daftar pesawat";
+"List canopies" = "Daftar canopy";
+"List locations" = "Daftar lokasi";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Informasi umum";
+"Total height" = "Total ketinggian";
+"Total time" = "Total waktu";
+"Total jumps" = "Total lompatan";
+"In this year" = "Di tahun ini";
+"Category" = "Kategori";
+
+"Average info" = "Informasi rata-rata";
+
+"Max. height" = "Ketinggian maks.";
+"Av. height" = "Ketinggian rata-rata";
+"Min. height" = "Ketinggian min.";
+"First jump" = "Lompatan pertama";
+"Max. time" = "Waktu maks.";
+"Last jump" = "Lompatan terakhir";
+"Max. in day" = "Maks. dalam sehari";
+"Av. time" = "Waktu rata-rata";
+"CutawayStatistic" = "Cutaway";
+"Count cutaway" = "Jumlah cutaway";
+"Aircraft" = "Pesawat";
+"Canopies" = "Canopy";
+"Locations" = "Lokasi";
+"Missions" = "Misi";
+
+"Accuracy" = "Akurasi";
+"Acrobatics" = "Akrobatis";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "Formasi canopy";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "Seru";
+"Group" = "Grup";
+"Instructor" = "Instruktur";
+"Military" = "Militer";
+"Para-ski" = "Para-ski";
+"Proximity" = "Proximity";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Static-line";
+"Piloting" = "Pengemudi";
+"Tandem" = "Tandem";
+"Vertical" = "Vertikal";
+"Video" = "Video";
+"Wingsuit" = "Wingsuit";
+"Formation" = "Formasi";
+"Top 10:" = "Тop 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Lompatan baru";
+"Manual / new jump" = "Untuk memulai, pergi ke bagian \"Pengaturan\" dan masukkan data berikut:\n\nLokasi\nPesawat\nCanopy";
+
+// MARK: - CellNewJump:
+
+"Date" = "Tanggal";
+"Location" = "Lokasi";
+"Aircraft" = "Pesawat";
+"Canopy" = "Canopy";
+"Mission" = "Misi";
+"Height" = "Ketinggian";
+"Time" = "Waktu";
+"Cutaway" = "Cutaway";
+"Comment" = "Komentar";
+
+"One jump / cell new jump" = "Satu lompatan";
+"Few jumps / cell new jump" = "Beberapa lompatan";
+"Counts of identical jumps / cell ne jump" = "Jumlah lompatan yang identik";
+
+"Date placeholder" = "dd.mm.yyyy";
+"Location placeholder" = "Zona terjun";
+"Aircraft placeholder" = "Tipe pesawat";
+"Canopy placeholder" = "Canopy utama";
+"Mission placeholder" = "Jenis lompatan";
+"Height placeholder" = "Meter";
+"Time placeholder" = "Detik";
+"Cutaway placeholder" = "Tidak / Ya";
+"Comment placeholder" = "Opsional";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Tambahkan sistem baru";
+"Comment" = "Komentar";
+"No comments" = "Komentar tidak ditemukan";
+"Container system" = "Kontainer";
+"AAD system" = "Alat pengaman";
+"Main canopy system" = "Canopy utama";
+"Reserve canopy system" = "Canopy cadangan";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Nomor";
+"DOM system" = "DOM";
+"Service life system" = "Masa pakai";
+"Valid until system" = "Berlaku hingga";
+"Counts of the jumps system" = "Jumlah lompatan";
+"Resource system" = "Sumber";
+"Counts of repack system" = "Jumlah pengemasan ulang";
+"Packed system" = "Dikemas";
+
+"years system" = "tahun";
+"jumps system" = "lompatan";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Tambahkan sistem";
+"Container alert" = "Kontainer";
+"AAD alert" = "Alat pengaman";
+"Main canopy alert" = "Canopy utama";
+"Reserve canopy alert" = "Canopy cadangan";
+
+"Name and model container alert" = "Nama dan model kontainer";
+"Name and model AAD alert" = "Nama dan model alat pengaman";
+"Name and model main canopy alert" = "Nama dan model canopy utama. Anda harus menambahkannya terlebih dahulu di bagian \"Pengaturan\" -> \"Edit canopy\"";
+"Name and model reserve canopy alert" = "Nama dan model canopy cadangan";
+
+"DOM alert" = "Tanggal pembuatan";
+"Serial number alert" = "Nomor seri";
+"Warranty resource container alert" = "Masa garansi (biasanya pabrikan menunjukkan 10-20 tahun, atau sesuai dengan kondisi teknis)";
+"Warranty resource AAD alert" = "Masa garansi (jumlah tahun yang dijamin, atau jumlah tahun sebelum perawatan rutin)";
+"Warranty resource main canopy alert" = "Masa garansi dalam tahun (biasanya pabrikan menunjukkan 10-20 tahun, atau sesuai dengan kondisi teknis)";
+"Warranty resource jumps main canopy alert" = "Sumber garansi untuk lompatan (biasanya pabrikan menunjukkan 500 lompatan, atau sesuai dengan kondisi teknis hingga 1000 lompatan)";
+"Counts of jumps main canopy alert" = "Jumlah aplikasi (jika parasut tidak dibeli baru dan lompatan sudah dilakukan, tentukan jumlah ini). Untuk perhitungan yang benar, hanya perlu menentukan jumlah lompatan yang sebelumnya tidak tercatat dalam daftar lompatan umum dari aplikasi ini";
+"Warranty resource reserve canopy alert" = "Masa garansi (biasanya pabrikan menunjukkan 10-20 tahun, atau sesuai dengan kondisi teknis)";
+"Counts of repack reserve canopy alert" = "Jika parasut tidak dibeli baru dan sudah dilipat, tentukan jumlah ini";
+"Date of pack reserve canopy alert" = "Tanggal pengepakan";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Nama sistem";
+"Name / new system cell" = "Nama";
+"Container / new system cell" = "Kontainer";
+"Name container / new system cell" = "Nama kontainer";
+
+"DOM / new system cell" = "Tanggal pembuatan";
+"Date mm.yyyy / new system cell" = "mm.yyyy";
+"Serial number / new system cell" = "Nomor seri";
+"Warranty resource / new system cell" = "Sumber garansi";
+"Counts of years / new system cell" = "Jumlah tahun";
+"Counts of jumps / new system cell" = "Jumlah lompatan";
+
+"AAD / new system cell" = "Alat pengaman";
+"Name AAD / new system cell" = "Nama alat pengaman";
+
+"Main canopy / new system cell" = "Canopy utama";
+"Name main canopy / new system cell" = "Nama canopy";
+"Counts of jumps main canopy / new system cell" = "Jumlah lompatan";
+"The value of the purchase / new system cell" = "Nilai pembelian";
+
+"Reserve canopy / new system cell" = "Canopy cadangan";
+"Name reserve canopy / new system cell" = "Nama canopy";
+"Counts of repack reserve canopy / new system cell" = "Jumlah pengemasan ulang";
+"Date of packing reserve canopy / new system cell" = "Tanggal pengepakan";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+"Count / new system cell" = "Jumlah";
+
+"Comment / new system cell" = "Komentar";
+"Optional / new system cell" = "Opsional (kondisi dari baris, dll.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Edit akun";
+"Edit locations" = "Edit lokasi";
+"Delete location?" = "Hapus lokasi?";
+"Edit aircrafts" = "Edit pesawat";
+"Delete aircraft?" = "Hapus pesawat?";
+"Edit canopies" = "Edit canopy";
+"Drop zones" = "Zona terjun";
+"Delete canopy?" = "Hapus canopy?";
+"Backup copy" = "Salin cadangan";
+"Calculator loading" = "Pemuatan kalkulator";
+"Information" = "Informasi";
+"Premium version" = "Versi premium";
+"Share the app" = "Bagikan aplikasi";
+"Feedback" = "Umpan balik";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Nama panggilan";
+"Name user / edit account vc" = "Nama pengguna";
+"License / edit account vc" = "Lisensi";
+"Type / number / edit account vc" = "Tipe / nomor";
+"Valid until / edit account vc" = "Berlaku hingga";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "Obat";
+"Insurance / edit account vc" = "Asuransi";
+"Reserve canopy / edit account vc" = "Canopy cadangan";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Masukkan nama zona terjun";
+"Enter aircraft" = "Masukkan nama pesawat";
+"Enter canopy" = "Masukkan nama canopy";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nSalinan cadangan menyimpan semua data yang tercatat di aplikasi.\nDisarankan untuk membuat salinan cadangan dari waktu ke waktu agar tidak kehilangan data yang dimasukkan.\n";
+"Backup / backup" = "Buat cadangan";
+"Restore / backup" = "Pulihkan";
+"Title / backup" = "Statistik database";
+"Jumps / backup" = "Lompatan";
+"Systems / backup" = "Sistem";
+"Notes / backup" = "Catatan";
+"Aircrafts / backup" = "Pesawat";
+"Canopies / backup" = "Canopy";
+"Locations / backup" = "Lokasi";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Total berat";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "Canopy persegi";
+"1-50A" = "\nTipe parasut: Mahasiswa.\nKategori: A.\nJumlah lompatan: 1-50 lompatan.\n";
+"51-200B" = "\nTipe parasut: Transisi.\nKategori: B.\nJumlah lompatan: 51-200 lompatan.\n";
+"201-500C" = "\nTipe parasut: Kecepatan sedang.\nKategori: C.\nJumlah lompatan: 201-500 lompatan.\n";
+"501-1000D1" = "\nTipe parasut: Kecepatan/elliptical.\nKategori: D.\nJumlah lompatan: 501-1000 lompatan.\n";
+"1000D2" = "\nTipe parasut: Kecepatan tinggi.\nKategori: D.\nJumlah lompatan: 1000+ lompatan.\n";
+"1000D3" = "\nTipe parasut: Kecepatan tinggi/crossbraced.\nKategori: D.\nJumlah lompatan: 1000+ lompatan.\n";
+
+"Canopy title / calculator" = "Memuat canopy";
+"Wing title / calculator" = "Jarak terbang dalam wingsuit";
+
+"Height jump / calculator" = "Tinggi lompat";
+"Height open / calculator" = "Tinggi buka";
+"Wind speed / calculator" = "Kecepatan angin";
+"Quality / calculator" = "Kualitas";
+"Distance / calculator" = "Jarak terbang perkiraan dalam wingsuit";
+
+"Warning / calculator" = "Peringatan";
+"Warning canopy message / calculator" = "Ini adalah informasi latar belakang. Pilih beban yang mutakhir dan canopy yang sesuai dengan instruktur saat ini Anda.";
+"Warning wing message / calculator" = "Ini adalah informasi latar belakang. Indikator jarak terbang yang mungkin dipengaruhi oleh: aerodinamika peserta terjun payung (posisi / sudut serangan), arah dan kekuatan angin. Lakukan perhitungan yang mutakhir dengan instruktur saat ini Anda.";
+
+// MARK: - INFO:
+
+"App version" = "Tentang aplikasi";
+"Version / info" = "Versi";
+"Build / info" = "Bangun";
+"Privacy policy" = "Kebijakan privasi";
+"Terms of use" = "Syarat Penggunaan";
+"FAQ" = "FAQ";
+"App language / info" = "Bahasa aplikasi";
+"App language text / info" = "Aplikasi ini menggunakan bahasa yang diatur sebagai bahasa utama di perangkat Anda.\nBahasa Inggris digunakan secara default.\n\nDaftar bahasa yang didukung:\n\nInggris, Arab, Belarusia, Indonesia, Spanyol, Italia, Cina, Korea, Latvia, Lituania, Jerman, Polandia, Portugis, Rusia, Thai, Turki, Ukraina, Prancis, Hindi, Ceko, Jepang\n\nJika Anda ingin membantu proyek dan menerjemahkan aplikasi ke bahasa Anda atau memperbaiki kesalahan, silakan hubungi pengembang.";
+"Info text" = "\nSkydiveBook - ini bukan konfirmasi resmi bahwa pengguna aplikasi adalah seorang peskydiver profesional.\n\nIni berfungsi sebagai tambahan opsional untuk buku parasut resmi atau sertifikat peskydiver dari kategori apa pun.\n\nLompatan yang tercatat dalam SkydiveBook bukan merupakan bukti lompatan tersebut dan tidak dapat dianggap sebagai dasar untuk mengeluarkan dokumen resmi, sertifikat, kategori.\n\nAplikasi ini dirancang untuk penggunaan pribadi, kenyamanan dalam peskydiving, dan analitik yang canggih.\n\nData tentang beban kubah utama adalah informasi referensi dan tidak bersifat anjur untuk memilih peralatan parasut.\n\nSemua izin untuk pengoperasian parasut harus dikeluarkan oleh instruktur yang sah.\n\nSetiap informasi yang diperoleh dengan menggunakan aplikasi ini semata-mata untuk tujuan referensi: pelajari peta lapangan terbang sendiri, serta dapatkan data terkini tentang kondisi cuaca selama lompatan.\n\nSeperti perangkat lunak lainnya, aplikasi ini dapat melakukan kesalahan dan tidak sempurna karena faktor manusia.\n\nIngatlah bahwa peskydiving melibatkan risiko terhadap kehidupan. Pelanggaran terhadap peraturan keselamatan dapat menyebabkan cedera bahkan kematian.\n";
+"Info text start alert" = "\nSkydiveBook - ini bukan konfirmasi resmi bahwa pengguna aplikasi adalah seorang peskydiver profesional.\n\nIni berfungsi sebagai tambahan opsional untuk buku parasut resmi atau sertifikat peskydiver dari kategori apa pun.\n\nLompatan yang tercatat dalam SkydiveBook bukan merupakan bukti lompatan tersebut dan tidak dapat dianggap sebagai dasar untuk mengeluarkan dokumen resmi, sertifikat, kategori.\n\nAplikasi ini dirancang untuk penggunaan pribadi, kenyamanan dalam peskydiving, dan analitik yang canggih.\n\nData tentang beban kubah utama adalah informasi referensi dan tidak bersifat anjur untuk memilih peralatan parasut.\n\nSemua izin untuk pengoperasian parasut harus dikeluarkan oleh instruktur yang sah.\n\nSetiap informasi yang diperoleh dengan menggunakan aplikasi ini semata-mata untuk tujuan referensi: pelajari peta lapangan terbang sendiri, serta dapatkan data terkini tentang kondisi cuaca selama lompatan.\n\nSeperti perangkat lunak lainnya, aplikasi ini dapat melakukan kesalahan dan tidak sempurna karena faktor manusia.\n\nIngatlah bahwa peskydiving melibatkan risiko terhadap kehidupan. Pelanggaran terhadap peraturan keselamatan dapat menyebabkan cedera bahkan kematian.\n\nSaya sudah membacanya dan saya setuju.";
+"Agree" = "Setuju";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nDalam versi gratis aplikasi ini, Anda dapat menyimpan 50 lompatan.\n\n⭐️ ⭐️ ⭐️\n\nVersi premium dari aplikasi ini memungkinkan Anda menyimpan jumlah lompatan yang tidak terbatas.\n";
+"1 month" = "$9.99 / Bulan";
+"12 months" = "$49.99 / Tahun\n($4.16/bulan)";
+"Restore purchases" = "Pulihkan pembelian";
+
+"Buy status" = "Beli temukan / beli tidak ditemukan";
+"Restore Successful" = "Pemulihan Berhasil";
+"Semua pembelian telah berhasil dipulihkan." = "Semua pembelian telah berhasil dipulihkan.";
+"Restore Failed" = "Pemulihan Gagal";
+"Beberapa pembelian tidak dapat dipulihkan. Silakan coba lagi nanti." = "Beberapa pembelian tidak dapat dipulihkan. Silakan coba lagi nanti.";
+"No Purchases to Restore" = "Tidak Ada Pembelian untuk Dipulihkan";
+"Tidak ada pembelian sebelumnya yang dapat dipulihkan." = "Tidak ada pembelian sebelumnya yang dapat dipulihkan.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Tidak ada koneksi";
+"Pesan / adapty" = "Koneksi internet aktif diperlukan untuk menerima data.";
+
+"Alert / adapty status" = "Diperlukan Premium";
+"Pesan / adapty status" = "Dalam versi gratis, Anda hanya dapat menyimpan:\n\n50 lompatan.\n10 catatan.\n1 sistem.\n\nUntuk menghapus semua batasan, belilah PREMIUM di bagian \"Pengaturan\".";
+
+// MARK: - SYSTEM:
+
+"System" = "SISTEM";
+"Delete system?" = "Hapus sistem?";
+"System empty message / system" = "Anda belum menambahkan sistem parasut apa pun.";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "Zona terjun";
+"Wind tunnels / drop zones" = "Terowongan angin";
+"Shops / drop zones" = "Toko-toko";
+"Information / drop zones" = "Informasi";
+"Pesan / drop zones" = "Anda dapat menambahkan lokasi Anda dengan menulis di Instagram.";
+"Tipe peta" = "Tipe peta";
+"Standard / map type" = "Standar";
+"Satellite / map type" = "Satelit";
+"Hybrid / map type" = "Hibrida";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Berhasil";
+"Error / alert kit" = "Error";
+"Error counts / alert kit" = "Anda tidak lagi melakukan lompatan!";
+
+"Jump added / alert kit" = "Lompatan ditambahkan";
+"Jumps added / alert kit" = "Lompatan ditambahkan";
+"Jump deleted / alert kit" = "Lompatan dihapus";
+"Jump updated / alert kit" = "Lompatan diperbarui";
+
+"Note added / alert kit" = "Catatan ditambahkan";
+"Note deleted / alert kit" = "Catatan dihapus";
+
+"System added / alert kit" = "Sistem ditambahkan";
+"System deleted / alert kit" = "Sistem dihapus";
+"System updated / alert kit" = "Sistem diperbarui";
+
+"Backup saved / alert kit" = "Cadangan disimpan";
+"Backup upload / alert kit" = "Upload cadangan";
+
+"Location added / alert kit" = "Lokasi ditambahkan";
+"Location deleted / alert kit" = "Lokasi dihapus";
+
+"Aircraft added / alert kit" = "Pesawat ditambahkan";
+"Aircraft deleted / alert kit" = "Pesawat dihapus";
+
+"Canopy added / alert kit" = "Kanopi ditambahkan";
+"Canopy deleted / alert kit" = "Kanopi dihapus";

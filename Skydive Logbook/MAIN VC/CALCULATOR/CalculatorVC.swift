@@ -45,8 +45,8 @@ final class CalculatorVC: UIViewController {
     private let resultWingView = UIView()
     private let resultWingLabel = UILabel()
     private let cleanWingButton = UIButton()
-    private let qualityValues: [Float] = Array(stride(from: 0.1, through: 10.0, by: 0.1))
-    private let windValues: [Float] = Array(stride(from: 0.0, through: 15.0, by: 0.1))
+    private let qualityValues: [Float] = Array(stride(from: 0.0, through: 10.0, by: 0.5))
+    private let windValues: [Float] = Array(stride(from: 0.0, through: 15.0, by: 0.5))
     private let wingAlertButton = UIButton()
 
     private let scrollView = UIScrollView()
@@ -640,10 +640,20 @@ final class CalculatorVC: UIViewController {
     // MARK: MATH RESULT FOR LOAD WING:
     
     private func giveWingResult(heightJump: String, heightOpen: String, quality: String, windSpeed: String) -> String {
-        let height: Float = (Float(heightJump) ?? 0.0) - (Float(heightOpen) ?? 0.0)
-        let time: Float = (height / 50) * (Float(quality) ?? 0.0)
-        let resultFloat = height * (Float(quality) ?? 0.0) + ((Float(windSpeed) ?? 0.0) * 0.5) * time
-        let result: Int = Int(resultFloat)
+        var result: Int = 0
+        if quality == "0.0" {
+            let height: Float = (Float(heightJump) ?? 0.0) - (Float(heightOpen) ?? 0.0)
+            let time: Float = height / 50
+            let resultFloat = ((Float(windSpeed) ?? 0.0) * 0.5) * time
+            result = Int(resultFloat)
+            print("quality = 0")
+        } else {
+            let height: Float = (Float(heightJump) ?? 0.0) - (Float(heightOpen) ?? 0.0)
+            let time: Float = (height / 50) * (Float(quality) ?? 0.0)
+            let resultFloat = height * (Float(quality) ?? 0.0) + ((Float(windSpeed) ?? 0.0) * 0.5) * time
+            result = Int(resultFloat)
+            print("quality != 0")
+        }
         return String(result)
     }
 

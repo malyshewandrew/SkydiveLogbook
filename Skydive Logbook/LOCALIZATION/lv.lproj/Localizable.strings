@@ -1,0 +1,611 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "GALVENAIS";
+"Statistic tab bar" = "STATISTIKA";
+"Add jump tab bar" = "JAUNS LECIENS";
+"System tab bar" = "SISTĒMA";
+"Settings tab bar" = "IESTATĪJUMI";
+
+// MARK: - MAIN:
+
+"Save" = "Saglabāt";
+"Clean" = "Notīrīt";
+"Close" = "Aizvērt";
+"Edit" = "Rediģēt";
+"Delete" = "Dzēst";
+"Calculate" = "Aprēķināt";
+"Update" = "Atjaunināt";
+"Settings iphone" = "Iestatījumi";
+
+"Ok" = "Labi";
+"Yes" = "Jā";
+"No" = "Nē";
+
+"ago" = "iet atpakaļ";
+"back" = "Atpakaļ";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "jūdzes";
+"feet" = "pēdas";
+
+// MARK: - MEASURING TIME:
+
+"s." = "s.";
+"min." = "min.";
+"h." = "h.";
+"d." = "d.";
+"mon." = "mēn.";
+"y." = "g.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nLaipni lūdzam SkydiveBook lietotnē!\n\nVisas jūsu izšķērdēšanas darbības tiks parādītas šajā ekrānā\n\nPriecājieties par lietošanu un drošiem lēcieniem!\n";
+"Delete jump?" = "Dzēst lēcienu?";
+"This action cannot be undone." = "Šo darbību nevar atsaukt.";
+
+"License" = "Licence";
+"until" = "līdz";
+"Medicine until" = "Medicīna līdz";
+"Insurance until" = "Apdrošināšana līdz";
+"Reserve canopy until" = "Rezerves teltis līdz";
+
+"Edit/add account" = "Lai aizpildītu kontu, dodieties uz sadaļu \"Iestatījumi\".";
+
+// MARK: - NOTES:
+
+"New note" = "Jauna piezīme";
+"Delete note?" = "Dzēst piezīmi?";
+
+// MARK: - WEATHER:
+
+"No connection" = "Nav savienojuma";
+"No connection message / weather" = "Lai saņemtu laika apstākļu prognozi, nepieciešams aktīvs interneta savienojums.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "Pūš vēji līdz";
+
+"Wind speed / weather" = "Vēja ātrums";
+"Temperature / weather" = "Temperatūra";
+"Cloud cover / weather" = "Mākoņu segums";
+"Humidity / weather" = "Gaisa mitrums";
+"Dew point / weather" = "Rauga punkts";
+"Visibility / weather" = "Redzamība";
+"Precipitation / weather" = "Lietus";
+"Pressure / weather" = "Spiediens";
+"UvIndex / weather" = "UV Indekss";
+"It feels like / weather" = "Saistītā temperatūra";
+
+"Wind direction" = "Vēja virziens";
+"Arrow wind direction" = "Bultiņa norāda vēja virzienu tuvumā zemes virsmai vietā, kur jūs esat. Tas darbojas tikai ar aktīvu interneta savienojumu.";
+
+"Permisson label / weather" = "Iestatījumi iPhone -> SkydiveBook -> Atrašanās vieta (sniedziet atļauju)";
+"Permisson label alert / weather" = "Lai parādītu pašreizējo laika prognozi, jums ir nepieciešama atļauja noteikt jūsu atrašanās vietu. To var izdarīt iestatījumos.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "Vēja klasifikācija";
+"Wind weather message / alert" = "Miers: < 0.3 m/s\nKluss: 0.3—1.5 m/s\nViegls: 1.6—3.3 m/s\nVidēji stiprs: 3.4—5.4 m/s\nSvaigs: 5.5—7.9 m/s\nStiprs: 8.0—10.7 m/s\nGandrīz vētra: 10.8—13.8 m/s\nVētra: 13.9—17.1 m/s\nStipra vētra: 17.2—20.7 m/s\nVētras negaiss: 20.8—24.4 m/s\nVētras negaiss: 24.5—28.4 m/s\nViesulis: >32.7 m/s";
+
+"Temperature weather title / alert" = "Jūtama temperatūra";
+"Temperature weather message / alert" = "Rādītājs “Jūtama temperatūra” var atšķirties no faktiskās temperatūras, atspoguļojot, kā temperatūru uztver persona. “Jūtama temperatūra” rādītāju ietekmē vēja raksturlielumi un mitrums.";
+
+"Cloud cover weather title / alert" = "Mākoņu klātbūtne";
+"Cloud cover weather message / alert" = "Mākoņu klātbūtne tiek mērīta procentos. Parasti tā tiek izteikta kā mākoņu daļas no debesu seguma.";
+
+"Humidity weather title / alert" = "Mitrums";
+"Humidity weather message / alert" = "Relatīvais mitrums vai vienkārši mitrums ir attiecība starp gaisa mitruma daudzumu un maksimālo daudzumu, kas var būt gaisā.";
+
+"Dew point weather title / alert" = "Rosa punkts";
+"Dew point weather message / alert" = "Rosa punkts ir vērtība, pie kuras temperatūrai jāsamazinās, lai veidotu raudzi. Tas ir ērts veids, kā noteikt gaisa mitrumu: jo augstāks ir rosa punkts, jo mitrāk gaisa sajūtās. Rosa punkts, kas sakrīt ar pašreizējo temperatūru, nozīmē, ka gaisa relatīvais mitrums ir 100 % un var veidoties raudze vai migla.";
+
+"Visibility weather title / alert" = "Redzamība";
+"Visibility weather message / alert" = "Redzamība norāda, uz cik attāluma no sevis var skaidri redzēt objektus, piemēram, ēkas un kalnus. Redzamība ir gaisa caurspīdīguma mērs un nenorāda saules gaismas daudzumu vai šķēršļu klātbūtni.";
+
+"Precipitation weather title / alert" = "Nokrišņi";
+"Precipitation weather message / alert" = "Nokrišņu daudzums ir ūdens slāņa augstums milimetros, kas veidojas uz zemes virsmas, ja tā būtu pilnīgi plakana. Nokrišņu daudzums milimetros ir skaitliski vienāds ar ūdens masu, kas nokrita uz 1 kvadrātmetra horizontālas virsmas.";
+
+"Pressure weather title / alert" = "Spiediens";
+"Pressure weather message / alert" = "Tabulā ir parādītas atkāpes no spiediena normas attiecībā uz jūsu atrašanās vietu. Parasti cilvēkiem ir 760 milimetri živs. Bet normālais atmosfēras spiediens katram cilvēkam atkarīgs no reģiona, kurā viņš atrodas, un reģiona spiediens atkarīgs no apgabala augstuma.";
+
+"UvIndex weather title / alert" = "UV indekss";
+"UvIndex weather message / alert" = "UV indekss (UFI), ko izstrādājusi Pasaules Veselības organizācija, norāda ultravioletā starojuma spēku. Jo augstāks ir UV indekss, jo bīstamāk ir būt saulē un jo ātrāk tas var kaitēt jūsu veselībai. Sekojoši UV indeksam, varat izlemt, kad jums jāaizsargā sevi no saules un kad labāk palikt iekšā.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "Klusums";
+"Weak wind / wind speed" = "Vājš vējš";
+"Light wind / wind speed" = "Viegls vējš";
+"Quiet wind / wind speed" = "Mierīgs vējš";
+"Moderate wind / wind speed" = "Vidēji stiprs vējš";
+"Fresh wind / wind speed" = "Svaigs vējš";
+"Strong wind / wind speed" = "Stiprs vējš";
+"Hard wind / wind speed" = "Lielais vējš";
+"Powerful wind / wind speed" = "Spēcīgs vējš";
+"Storm wind / wind speed" = "Vētra";
+"Hard storm wind / wind speed" = "Spēcīga vētra";
+"Hurricane wind / wind speed" = "Hurikāns";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "Maksimālā temperatūra";
+"Min temperature / temperature" = "Minimālā temperatūra";
+"Average temperature / temperature" = "Vidējā temperatūra";
+"Feels like temperature / temperature" = "Jūtama temperatūra";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "Ļoti sauss";
+"Dry air / humidity" = "Sauss";
+"Moderately dry air / humidity" = "Vidēji sauss";
+"Moderately humid air / humidity" = "Vidēji mitrs";
+"Very humid air / humidity" = "Ļoti mitrs";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "Skaidrs";
+"Partly Cloudy / cloud cover" = "Daļēji mākoņains";
+"Variable Cloudiness / cloud cover" = "Mainīgs mākoņains";
+"Cloudy / cloud cover" = "Mākoņains";
+"Overcast / cloud cover" = "Pilnīgi mākoņains";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "Relatīvi sauss";
+"Moderately humid air / dew point" = "Vidēji mitrs";
+"Humid air / dew point" = "Mitrums";
+"Very humid air / dew point" = "Ļoti mitrs";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "Lieliska";
+"Good / visibility" = "Labā";
+"Moderate / visibility" = "Vidēja";
+"Poor / visibility" = "Sliktā";
+"Very Poor / visibility" = "Ļoti sliktā";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "Ļoti viegls";
+"Light / precipitation" = "Viegls";
+"Moderate / precipitation" = "Vidējs";
+"Heavy / precipitation" = "Smaržs";
+"Very Heavy / precipitation" = "Ļoti smaržs";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "Ļoti zems";
+"Low / pressure" = "Zems";
+"Normal / pressure" = "Normāls";
+"Hight / pressure" = "Augsts";
+"Very hight / pressure" = "Ļoti augsts";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "Zems";
+"Moderate / uv index" = "Vidējs";
+"Hight / uv index" = "Augsts";
+"Very high / uv index" = "Ļoti augsts";
+"Excessive / uv index" = "Pārmērīgs";
+
+// MARK: - Skydivers:
+
+"Rating / skydivers" = "Reputācija";
+"Nickname / skydivers" = "Lietais vārds";
+"Country / skydivers" = "Valsts";
+"Profile / skydivers" = "Profils";
+"Profession / skydivers" = "Profesija";
+"Count of jumps / skydivers" = "Lēcienus skaits";
+"First jump / skydivers" = "Pirmais lēciens";
+"About rating / skydivers" = "Vairāk informācijas";
+"About rating message / skydivers" = "Kopiena ir reklāma pašam sev, kā arī palīdzība projektam.\nDetaļas Instagram.";
+
+// MARK: - Statistic:
+
+"no jumps" = "Lai parādītu statistiku, jums ir jāveic vismaz viens lēciens.";
+"saving data" = "Datu saglabāšana";
+"saving data text" = "Lai saglabātu visu savu pilno lēcienu vēsturi, ieteicams periodiski veidot rezerves kopijas sadaļā “Iestatījumi”.\nŠis ir īpaši svarīgi, pārejot uz jaunu ierīci.";
+"jumps by year" = "Lēcieni pēc gada";
+"year" = "gads";
+"Categories USPA" = "Kategorijas";
+"Categories USPA List" = "\nA: 25 lēcieni\nBrīvo kritiena laiks: 10 minūtes (600 s.)\n\nB: 50 lēcieni\nBrīvo kritiena laiks: 30 minūtes (1800 s.)\n\nC: 200 lēcieni\nBrīvo kritiena laiks: 60 minūtes (3600 s.)\n\nD: 500 lēcieni\nBrīvo kritiena laiks: 180 minūtes (10800 s.)\n";
+"Maximum time" = "Maksimālais laiks";
+"Maximum time alert" = "Lēciens ar maksimālo brīvā kritiena laiku ir pabeigts";
+"Maximum height" = "Maksimālā augstums";
+"Maximum height alert" = "Lēciens ar maksimālo kabīnes augstumu ir pabeigts";
+"Average height" = "Vidējais augstums";
+"Minimum height" = "Minimālais augstums";
+"Minimum height alert" = "Lēciens ar minimālo kabīnes augstumu ir pabeigts";
+"First jump / statistic" = "Pirmais lēciens tika veikts";
+"Last jump / statistic" = "Pēdējais lēciens tika veikts";
+"Max in one day" = "Maksimums vienā dienā";
+"Average height of jump" = "Vidējais lēciena augstums";
+"Average free fall time of jump" = "Vidējais brīvais kritiena laiks lēcienā";
+"Average time" = "Vidējais laiks lēcienā";
+"Max count of jumps" = "Lēcienu skaits";
+"Max count of jumps text" = "Maksimālais lēcienus skaits vienā dienā tika pabeigts";
+"Jumps no found" = "Lēcieni nav atrasti";
+"Сount of cutaways" = "Lēcienus skaits ar atvērtiem rezerves izpletniem";
+"Date last jump" = "Pēdējais lēciens";
+"Date first jump" = "Pirmais lēciens";
+"List aircrafts" = "Gaisa kuģu saraksts";
+"List canopies" = "Izpletnju saraksts";
+"List locations" = "Vietu saraksts";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "Vispārēja informācija";
+"Total height" = "Kopējais augstums";
+"Total time" = "Kopējais laiks";
+"Total jumps" = "Kopējais lēcieni";
+"In this year" = "Šajā gadā";
+"Category" = "Kategorija";
+
+"Average info" = "Vidējā informācija";
+
+"Max. height" = "Maks. augstums";
+"Av. height" = "Vid. augstums";
+"Min. height" = "Min. augstums";
+"First jump" = "Pirmo lēcienu";
+"Max. time" = "Maks. laiks";
+"Last jump" = "Pēdējo lēcienu";
+"Max. in day" = "Maks. dienā";
+"Av. time" = "Vid. laiks";
+"CutawayStatistic" = "Atduram";
+"Count cutaway" = "Atduramu skaits";
+"Aircraft" = "Gaisa kuģis";
+"Canopies" = "Izpletnes";
+"Locations" = "Vietas";
+"Missions" = "Misijas";
+
+"Accuracy" = "Precizitāte";
+"Acrobatics" = "Akrobātika";
+"AFF" = "AFF";
+"Base" = "Bāze";
+"Base/Wingsuit" = "Bāze/Spārnotie";
+"Canopy formation" = "Izpletnes veidošana";
+"Freefly" = "Brīvā lidošana";
+"Freestyle" = "Freestile";
+"Fun" = "Izklaide";
+"Group" = "Grupa";
+"Instructor" = "Instruktors";
+"Military" = "Militārais";
+"Para-ski" = "Para-ski";
+"Proximity" = "Tuvums";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Statiskā līnija";
+"Piloting" = "Vadīšana";
+"Tandem" = "Tandēms";
+"Vertical" = "Vertikāls";
+"Video" = "Video";
+"Wingsuit" = "Spārnotie";
+"Formation" = "Formācija";
+"Top 10:" = "Top 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "Jauns lēciens";
+"Manual / new jump" = "Lai sāktu, dodieties uz sadaļu “Iestatījumi” un ievadiet šādas dati:\n\nVietas\nGaisa kuģi\nIzpletnes";
+
+// MARK: - CellNewJump:
+
+"Date" = "Datums";
+"Location" = "Vieta";
+"Aircraft" = "Gaisa kuģis";
+"Canopy" = "Izpletnes";
+"Mission" = "Misija";
+"Height" = "Augstums";
+"Time" = "Laiks";
+"Cutaway" = "Atdurama";
+"Comment" = "Komentārs";
+
+"One jump / cell new jump" = "Viena izpletnes";
+"Few jumps / cell new jump" = "Vairāki izpletnes";
+"Counts of identical jumps / cell ne jump" = "Identisku izpletnes skaits";
+
+"Date placeholder" = "dd.mm.gggg";
+"Location placeholder" = "Lēcieni";
+"Aircraft placeholder" = "Gaisa kuģa tips";
+"Canopy placeholder" = "Galvenā izpletne";
+"Mission placeholder" = "Lēciena veids";
+"Height placeholder" = "Metri";
+"Time placeholder" = "Sekundes";
+"Cutaway placeholder" = "Nē / Jā";
+"Comment placeholder" = "Izvēles";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "Pievienot jaunu sistēmu";
+"Comment" = "Komentārs";
+"No comments" = "Komentāri nav atrasti";
+"Container system" = "Konteiners";
+"AAD system" = "Apdrošināšanas ierīce";
+"Main canopy system" = "Galvenā izpletne";
+"Reserve canopy system" = "Rezerves izpletne";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "Numurs";
+"DOM system" = "DOM";
+"Service life system" = "Kalpošanas laiks";
+"Valid until system" = "Derīgs līdz";
+"Counts of the jumps system" = "Lēcieni skaits";
+"Resource system" = "Resurss";
+"Counts of repack system" = "Pakotņu pārkārtojumu skaits";
+"Packed system" = "Iepakots";
+
+"years system" = "gadi";
+"jumps system" = "lēcieni";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "Pievienot sistēmu";
+"Container alert" = "Konteiners";
+"AAD alert" = "Apdrošināšanas ierīce";
+"Main canopy alert" = "Galvenā izpletne";
+"Reserve canopy alert" = "Rezerves izpletne";
+
+"Name and model container alert" = "Konteinera nosaukums un modelis";
+"Name and model AAD alert" = "Apdrošināšanas ierīces nosaukums un modelis";
+"Name and model main canopy alert" = "Galvenās izpletnes nosaukums un modelis. Vispirms jāpievieno sadaļā “Iestatījumi” -> “Rediģēt izpletnes”";
+"Name and model reserve canopy alert" = "Rezerves izpletnes nosaukums un modelis";
+
+"DOM alert" = "Ražošanas datums";
+"Serial number alert" = "Serijas numurs";
+"Warranty resource container alert" = "Garantēta kalpošanas resursa dzīves ilgums (parasti ražotājs norāda 10-20 gadus vai atbilstoši tehniskajai stāvoklim)";
+"Warranty resource AAD alert" = "Garantijas laiks (garantētais gadu skaits vai gadu skaits pirms ikdienas apkopes)";
+"Warranty resource main canopy alert" = "Garantēta kalpošanas resursa dzīves ilgums gados (parasti ražotājs norāda 10-20 gadus, vai atbilstoši tehniskajam stāvoklim)";
+"Warranty resource jumps main canopy alert" = "Garantētais kalpošanas resurss lēcieniem (parasti ražotājs norāda 500 lēcienus, vai atbilstoši tehniskajam stāvoklim līdz 1000 lēcieniem)";
+"Counts of jumps main canopy alert" = "Lēcienu skaits (ja izpletni nav iegādājies jaunu un uz tā jau veikti lēcieni, norādiet šo skaitu). Pareizai aprēķināšanai ir nepieciešams norādīt tikai to lēcienu skaitu, kas iepriekš nav reģistrēti šīs izpletnes kopējā lēcienu sarakstā";
+"Warranty resource reserve canopy alert" = "Garantēta kalpošanas resursa dzīves ilgums (parasti ražotājs norāda 10-20 gadus, vai atbilstoši tehniskajam stāvoklim)";
+"Counts of repack reserve canopy alert" = "Ja izpletni nav iegādājies jaunu un tā jau ir bijusi iepakota, norādiet šo summu";
+"Date of pack reserve canopy alert" = "Iepakošanas datums";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "Sistēmas nosaukums";
+"Name / new system cell" = "Nosaukums";
+"Container / new system cell" = "Konteiners";
+"Name container / new system cell" = "Konteinera nosaukums";
+
+"DOM / new system cell" = "Ražošanas datums";
+"Date mm.yyyy / new system cell" = "mm.gggg";
+"Serial number / new system cell" = "Serijas numurs";
+"Warranty resource / new system cell" = "Garantētais resurss";
+"Counts of years / new system cell" = "Gadu skaits";
+"Counts of jumps / new system cell" = "Lēcienu skaits";
+
+"AAD / new system cell" = "Apdrošināšanas ierīce";
+"Name AAD / new system cell" = "Apdrošināšanas ierīces nosaukums un modelis";
+
+"Main canopy / new system cell" = "Galvenā izpletne";
+"Name main canopy / new system cell" = "Izpletnes nosaukums";
+"Counts of jumps main canopy / new system cell" = "Lēcienu skaits";
+"The value of the purchase / new system cell" = "Pirkuma vērtība";
+
+"Reserve canopy / new system cell" = "Rezerves izpletne";
+"Name reserve canopy / new system cell" = "Izpletnes nosaukums";
+"Counts of repack reserve canopy / new system cell" = "Pakotņu pārkārtojumu skaits";
+"Date of packing reserve canopy / new system cell" = "Pakotnes datums";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.gggg";
+"Count / new system cell" = "Skaits";
+
+"Comment / new system cell" = "Komentārs";
+"Optional / new system cell" = "Izvēles (līniju stāvoklis utt.)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "Rediģēt kontu";
+"Edit locations" = "Rediģēt vietas";
+"Delete location?" = "Dzēst vietu?";
+"Edit aircrafts" = "Rediģēt gaisa kuģus";
+"Delete aircraft?" = "Dzēst gaisa kuģi?";
+"Edit canopies" = "Rediģēt izpletnes";
+"Drop zones" = "Nolaišanās zonas";
+"Delete canopy?" = "Dzēst izpletne?";
+"Backup copy" = "Rezerves kopija";
+"Calculator loading" = "Kalkulatora ielāde";
+"Information" = "Informācija";
+"Premium version" = "Premium versija";
+"Share the app" = "Dalīties ar lietotni";
+"Feedback" = "Atsauksmes";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "Lietotājvārds";
+"Name user / edit account vc" = "Vārds";
+"License / edit account vc" = "Atļauja";
+"Type / number / edit account vc" = "Tips / numurs";
+"Valid until / edit account vc" = "Derīgs līdz";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.gggg";
+"Medicine / edit account vc" = "Medikamenti";
+"Insurance / edit account vc" = "Apdrošināšana";
+"Reserve canopy / edit account vc" = "Rezerves izpletne";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "Ievadiet vietu";
+"Enter aircraft" = "Ievadiet gaisa kuģi";
+"Enter canopy" = "Ievadiet izpletni";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nRezerves kopija saglabā visus lietotnē ievadītos datus.\nIeteicams laiku pa laikam izveidot rezerves kopiju, lai nezaudētu ievadītos datus.\n";
+"Backup / backup" = "Izveidot rezerves kopiju";
+"Restore / backup" = "Atjaunot";
+"Title / backup" = "Datu bāzes statistika";
+"Jumps / backup" = "Lēcieni";
+"Systems / backup" = "Sistēmas";
+"Notes / backup" = "Piezīmes";
+"Aircrafts / backup" = "Gaisa kuģi";
+"Canopies / backup" = "Izpletnes";
+"Locations / backup" = "Vietas";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "Kopējā masa";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "Kvadrātveida izpletne";
+"1-50A" = "\nIzpletnes tips: Studentu.\nKategorija: A.\nLēcienu skaits: 1-50 lēcieni.\n";
+"51-200B" = "\nIzpletnes tips: Pārejas.\nKategorija: B.\nLēcienu skaits: 51-200 lēcieni.\n";
+"201-500C" = "\nIzpletnes tips: Vidēja ātruma.\nKategorija: C.\nLēcienu skaits: 201-500 lēcieni.\n";
+"501-1000D1" = "\nIzpletnes tips: Ātruma/elipsoids.\nKategorija: D.\nLēcienu skaits: 501-1000 lēcieni.\n";
+"1000D2" = "\nIzpletnes tips: Augstā ātrumā.\nKategorija: D.\nLēcienu skaits: 1000+ lēcieni.\n";
+"1000D3" = "\nIzpletnes tips: Augstā ātrumā/krustojumi.\nKategorija: D.\nLēcienu skaits: 1000+ lēcieni.\n";
+
+"Canopy title / calculator" = "Izpletnes slodze";
+"Wing title / calculator" = "Lidošanas attālums ar spārniem";
+
+"Height jump / calculator" = "Lēcienu augstums";
+"Height open / calculator" = "Atvēršanas augstums";
+"Wind speed / calculator" = "Vēja ātrums";
+"Quality / calculator" = "Kvalitāte";
+"Distance / calculator" = "Aptuvenais lidojuma attālums ar spārniem";
+
+"Warning / calculator" = "Brīdinājums";
+"Warning canopy message / calculator" = "Tas ir fona informācija. Izvēlieties atbilstošu slodzi un piemērotu izpletni ar savu pašreizējo instruktoru.";
+"Warning wing message / calculator" = "Tas ir fona informācija. Iespējamā lidojuma attāluma rādītājs ietekmē: lēcēja aerodinamika (pozīcija / pieeja lecienā), vēja virziens un spēks. Veiciet aktuālus aprēķinus ar savu pašreizējo instruktoru.";
+
+// MARK: - INFO:
+
+"App version" = "Par lietotni";
+"Version / info" = "Versija";
+"Build / info" = "Izbūve";
+"Privacy policy" = "Konfidencialitātes politika";
+"Terms of use" = "Lietošanas noteikumi";
+"FAQ" = "Bieži uzdotie jautājumi";
+"App language / info" = "Lietotnes valoda";
+"App language text / info" = "Šī lietotne izmanto valodu, kas iestatīta kā galvenā jūsu ierīcē.\nPēc noklusējuma tiek izmantota angļu valoda.\n\nAtbalstīto valodu saraksts:\n\nAngļu, arābu, baltkrievu, indonēziešu, spāņu, itāļu, ķīniešu, korejiešu, latviešu, lietuviešu, vācu, poļu, portugāļu, krievu, taizemiešu, turku, ukraiņu, franču, hindi, čehu, japāņu\n\nJa vēlaties palīdzēt projektam un tulkojat lietotni savā valodā vai labojat kļūdas, lūdzu, sazinieties ar izstrādātāju.";
+"Info text" = "\nSkydiveBook - tas nav oficiāls apstiprinājums, ka lietotājs ir profesionāls paraugdziļnieks.\n\nTas kalpo kā brīvprātīga papildinājuma oficiālajai paraugdzīves grāmatai vai jebkuras kategorijas paraugdziļnieka sertifikātam.\n\nLēcieni, kas reģistrēti SkydiveBook, nav šo lēcienu pierādījums un nevar tikt uzskatīti par pamatu oficiālu dokumentu, sertifikātu, kategoriju izsniegšanai.\n\nLietojumprogramma ir paredzēta personīgai lietošanai, paraugdziļniecības ērtībām un padziļinātai analītikai.\n\nGalvenās izpletnes slodzes dati ir atsauce un nav ieteikumu raksturs, izvēloties izpletni.\n\nVisas atļaujas paraugdzīves izmantošanai jāizsniedz derīgam instruktoram.\n\nJebkura informācija, kas iegūta, izmantojot lietojumprogrammu, ir tikai atsauce: pētiet gaisa laukuma karti patstāvīgi, kā arī iegūstiet jaunākos datus par laika apstākļiem lēcienos.\n\nKā jebkurai programmatūrai, arī šai lietojumprogrammai var būt kļūdas un trūkumi cilvēka faktora dēļ.\n\nAtcerieties, ka paraugdziļniecība ir saistīta ar dzīvības risku. Drošības noteikumu neievērošana var izraisīt traumas un pat nāvi.\n";
+"Info text start alert" = "\nSkydiveBook - tas nav oficiāls apstiprinājums, ka lietotājs ir profesionāls paraugdziļnieks.\n\nTas kalpo kā brīvprātīga papildinājuma oficiālajai paraugdziļves grāmatai vai jebkuras kategorijas paraugdziļnieka sertifikātam.\n\nLēcieni, kas reģistrēti SkydiveBook, nav šo lēcienu pierādījums un nevar tikt uzskatīti par pamatu oficiālu dokumentu, sertifikātu, kategoriju izsniegšanai.\n\nLietojumprogramma ir paredzēta personīgai lietošanai, paraugdziļniecības ērtībām un padziļinātai analītikai.\n\nGalvenās izpletnes slodzes dati ir atsauce un nav ieteikumu raksturs, izvēloties izpletni.\n\nVisas atļaujas paraugdzīves izmantošanai jāizsniedz derīgam instruktoram.\n\nJebkura informācija, kas iegūta, izmantojot lietojumprogrammu, ir tikai atsauce: pētiet gaisa laukuma karti patstāvīgi, kā arī iegūstiet jaunākos datus par laika apstākļiem lēcienos.\n\nKā jebkurai programmatūrai, arī šai lietojumprogrammai var būt kļūdas un trūkumi cilvēka faktora dēļ.\n\nAtcerieties, ka paraugdziļniecība ir saistīta ar dzīvības risku. Drošības noteikumu neievērošana var izraisīt traumas un pat nāvi.\n\nEs to esmu izlasījis un piekrītu.";
+"Agree" = "Piekrītu";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nBezmaksas lietojumprogrammas versijā varat saglabāt 50 lēcienus.\n\n⭐️ ⭐️ ⭐️\n\nLietojumprogrammas Premium versija ļauj saglabāt neierobežotu skaitu lēcienus.\n";
+"1 month" = "$9.99 / Mēnesis";
+"12 months" = "$49.99 / Gads\n($4.16/mēnesī)";
+"Restore purchases" = "Atjaunot iegādes";
+
+"Buy status" = "Pirkt atrasts / nav atrasts";
+"Restore Successful" = "Atjaunošana veiksmīga";
+"Visas iepriekšējās iegādes ir veiksmīgi atjaunotas." = "Visas iepriekšējās iegādes ir veiksmīgi atjaunotas.";
+"Restore Failed" = "Atjaunošana neizdevās";
+"Dažas iepirkšanās neizdevās atjaunot. Lūdzu, mēģiniet vēlāk." = "Dažas iepirkšanās neizdevās atjaunot. Lūdzu, mēģiniet vēlāk.";
+"No Purchases to Restore" = "Nav iepirkšanās, ko atjaunot";
+"Nav iepriekšējo iegāžu, ko atjaunot." = "Nav iepriekšējo iegāžu, ko atjaunot.";
+
+// ADAPTY:
+
+"No connection / adapty" = "Nav savienojuma";
+"Message / adapty" = "Aktīvai interneta savienojumam ir nepieciešams, lai saņemtu datus.";
+
+"Alert / adapty status" = "Nepieciešams Premium";
+"Message / adapty status" = "Bezmaksas versijā jūs varat saglabāt tikai:\n\n50 lēcienus.\n10 piezīmes.\n1 sistēmu.\n\nLai noņemtu visus ierobežojumus, iegādājieties PREMIUM sadaļā \"Iestatījumi\".";
+
+// MARK: - SYSTEM:
+
+"System" = "SISTĒMA";
+"Delete system?" = "Dzēst sistēmu?";
+"System empty message / system" = "Jums vēl nav pievienota neviena izpletnes sistēma.";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "Nolaišanās zonas";
+"Wind tunnels / drop zones" = "Vēja tuneļi";
+"Shops / drop zones" = "Veikali";
+"Information / drop zones" = "Informācija";
+"Message / drop zones" = "Jūs varat pievienot savu atrašanās vietu, rakstot Instagramā.";
+"Map type" = "Kartes tips";
+"Standard / map type" = "Standarta";
+"Satellite / map type" = "Satelīts";
+"Hybrid / map type" = "Hibrīds";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "Veiksme";
+"Error / alert kit" = "Kļūda";
+"Error counts / alert kit" = "Jūs vairs neskalojat!";
+
+"Jump added / alert kit" = "Lēciens pievienots";
+"Jumps added / alert kit" = "Lēcieni pievienoti";
+"Jump deleted / alert kit" = "Lēciens dzēsts";
+"Jump updated / alert kit" = "Lēciens atjaunināts";
+
+"Note added / alert kit" = "Piezīme pievienota";
+"Note deleted / alert kit" = "Piezīme dzēsta";
+
+"System added / alert kit" = "Sistēma pievienota";
+"System deleted / alert kit" = "Sistēma dzēsta";
+"System updated / alert kit" = "Sistēma atjaunināta";
+
+"Backup saved / alert kit" = "Rezerves kopija saglabāta";
+"Backup upload / alert kit" = "Rezerves kopija augšupielādēta";
+
+"Location added / alert kit" = "Atrašanās vieta pievienota";
+"Location deleted / alert kit" = "Atrašanās vieta dzēsta";
+
+"Aircraft added / alert kit" = "Gaisa kuģis pievienots";
+"Aircraft deleted / alert kit" = "Gaisa kuģis dzēsts";
+
+"Canopy added / alert kit" = "Izpletnes pievienotas";
+"Canopy deleted / alert kit" = "Izpletnes dzēstas";

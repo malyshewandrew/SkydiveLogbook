@@ -1,0 +1,611 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "หลัก";
+"Statistic tab bar" = "สถิติ";
+"Add jump tab bar" = "กระโดดใหม่";
+"System tab bar" = "ระบบ";
+"Settings tab bar" = "การตั้งค่า";
+
+// MARK: - MAIN:
+
+"Save" = "บันทึก";
+"Clean" = "ล้าง";
+"Close" = "ปิด";
+"Edit" = "แก้ไข";
+"Delete" = "ลบ";
+"Calculate" = "คำนวณ";
+"Update" = "อัปเดต";
+"Settings iphone" = "การตั้งค่า";
+
+"Ok" = "ตกลง";
+"Yes" = "ใช่";
+"No" = "ไม่";
+
+"ago" = "ที่ผ่านมา";
+"back" = "กลับ";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "ม.";
+"km." = "กม.";
+"miles" = "ไมล์";
+"feet" = "ฟุต";
+
+// MARK: - MEASURING TIME:
+
+"s." = "วิ.";
+"min." = "นาที";
+"h." = "ชม.";
+"d." = "วัน";
+"mon." = "เดือน";
+"y." = "ปี";
+
+// MARK: - MAIN:
+
+"First Message" = "\nยินดีต้อนรับสู่ SkydiveBook!\n\nกิจกรรมการกระโดดร่วมสนุกของคุณจะแสดงบนหน้าจอนี้\n\nเพลิดเพลินกับการใช้งานและกระโดดอย่างปลอดภัย!\n";
+"Delete jump?" = "ลบการกระโดด?";
+"This action cannot be undone." = "ไม่สามารถยกเลิกการกระทำนี้ได้";
+
+"License" = "ใบอนุญาต";
+"until" = "จนถึง";
+"Medicine until" = "ยาจนถึง";
+"Insurance until" = "ประกันจนถึง";
+"Reserve canopy until" = "แผ่นคอนโทรลสำรองจนถึง";
+
+"Edit/add account" = "เพื่อเติมบัญชี โปรดไปที่ส่วน \"การตั้งค่า\".";
+
+// MARK: - NOTES:
+
+"New note" = "บันทึกใหม่";
+"Delete note?" = "ลบบันทึก?";
+
+// MARK: - WEATHER:
+
+"No connection" = "ไม่มีการเชื่อมต่อ";
+"No connection message / weather" = "ต้องมีการเชื่อมต่ออินเทอร์เน็ตที่ใช้งานอยู่เพื่อรับข้อมูลพยากรณ์อากาศ";
+
+"mm/h" = "มม./ชม.";
+"hPa" = "ฮีกะปา";
+"mm / pressure" = "มม.";
+"m/s" = "เมตร/วินาที";
+"km" = "กิโลเมตร";
+"Gusts up to" = "พายุรุนแรงสูงสุด";
+
+"Wind speed / weather" = "ความเร็วลม";
+"Temperature / weather" = "อุณหภูมิ";
+"Cloud cover / weather" = "ความคลุมเมฆ";
+"Humidity / weather" = "ความชื้น";
+"Dew point / weather" = "จุดความชื้น";
+"Visibility / weather" = "ระยะทางที่มองเห็น";
+"Precipitation / weather" = "การตกน้ำ";
+"Pressure / weather" = "ความดัน";
+"UvIndex / weather" = "ดัชนี UV";
+"It feels like / weather" = "รู้สึกเหมือน";
+
+"Wind direction" = "ทิศทางลม";
+"Arrow wind direction" = "ลูกศรแสดงทิศทางลมใกล้พื้นในสถานที่ที่คุณอยู่ มันทำงานได้เฉพาะเมื่อมีการเชื่อมต่ออินเทอร์เน็ตที่ใช้งานอยู่";
+
+"Permisson label / weather" = "การตั้งค่า iPhone -> SkydiveBook -> ตำแหน่ง (ให้สิทธิ์)";
+"Permisson label alert / weather" = "เพื่อแสดงพยากรณ์อากาศปัจจุบัน คุณต้องขออนุญาตให้ระบุตำแหน่งของคุณ สามารถทำได้ในการตั้งค่า";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "การจำแนกลม";
+"Wind weather message / alert" = "เงียบ: < 0.3 เมตร/วินาที\nนิ่ง: 0.3—1.5 เมตร/วินาที\nเบา: 1.6—3.3 เมตร/วินาที\nปานกลาง: 3.4—5.4 เมตร/วินาที\nสดชื่น: 5.5—7.9 เมตร/วินาที\nแรง: 8.0—10.7 เมตร/วินาที\nใกล้หลุมลม: 10.8—13.8 เมตร/วินาที\nหลุมลม: 13.9—17.1 เมตร/วินาที\nหลุมลมแรง: 17.2—20.7 เมตร/วินาที\nพายุ: 20.8—24.4 เมตร/วินาที\nพายุรุนแรง: 24.5—28.4 เมตร/วินาที\nปีศาจ: >32.7 เมตร/วินาที";
+
+"Temperature weather title / alert" = "รู้สึกเหมือน";
+"Temperature weather message / alert" = "ตัวบ่งชี้ «รู้สึกเหมือน» อาจแตกต่างจากอุณหภูมิจริง แสดงถึงวิธีที่คนรับรู้อุณหภูมิ ตัวบ่งชี้ «รู้สึกเหมือน» ได้รับผลกระทบจากลักษณะของลมและระดับความชื้น";
+
+"Cloud cover weather title / alert" = "ความคลุมเมฆ";
+"Cloud cover weather message / alert" = "ความคลุมเมฆถูกวัดเป็นเปอร์เซ็นต์ มักแสดงในส่วนของฟ้าที่มีเมฆครอบครอง";
+
+"Humidity weather title / alert" = "ความชื้น";
+"Humidity weather message / alert" = "ความชื้นสัมพัทธ์ หรือเรียกง่ายๆ ว่าความชื้น เป็นอัตราส่วนของปริมาณความชื้นในอากาศต่อปริมาณสูงสุดที่สามารถบรรจุได้ในอากาศ";
+
+"Dew point weather title / alert" = "จุดความชื้น";
+"Dew point weather message / alert" = "จุดความชื้นเป็นค่าที่อุณหภูมิต้องลดลงถึงเท่าใดก่อนที่จะเกิดน้ำค้าง นี่เป็นวิธีที่สะดวกในการกำหนดความชื้นของอากาศ: ค่าจุดความชื้นที่สูงขึ้น ความชื้นของอากาศจะมีความชื้นมากขึ้น จุดความชื้นที่ซึ่งสอดคล้องกับอุณหภูมิปัจจุบันหมายถึงความชื้นสัมพัทธ์ของอากาศเป็น 100% และอาจเกิดน้ำค้างหรือหมอก";
+
+"Visibility weather title / alert" = "ระยะทางที่มองเห็น";
+"Visibility weather message / alert" = "การมองเห็นแสดงถึงระยะทางจากตัวคุณเองที่คุณสามารถมองเห็นวัตถุ เช่น อาคารและเนิน เป็นเป็นวัตถุ; การมองเห็นเป็นการวัดความโปร่งใสของอากาศและไม่ได้พิจารณาปริมาณแสงและการมีอุปสรรค";
+
+"Precipitation weather title / alert" = "การตกน้ำ";
+"Precipitation weather message / alert" = "ปริมาณการตกน้ำคือความสูงของชั้นน้ำในมิลลิเมตรที่จะเกิดขึ้นบนพื้นผิวโลกหากมันเป็นราบสมบูรณ์ ปริมาณการตกน้ำในมิลลิเมตรเท่ากับมวลของน้ำที่ตกลงบนพื้นผิวแนวนอนขนาด 1 ตารางเมตร";
+
+"Pressure weather title / alert" = "ความดัน";
+"Pressure weather message / alert" = "ตารางแสดงการเบี่ยงเบนจากปกติของความดันต่อตำแหน่งของคุณ ความดันปกติสำหรับคนคือ 760 มิลลิเมตรของปรอททึก แต่ความดันบรรพบุรุษปกติของแต่ละคนขึ้นอยู่กับภูมิภาคที่เขาตั้งอยู่ และความดันของภูมิภาคขึ้นอยู่กับความสูงของพื้นที่";
+
+"UvIndex weather title / alert" = "ดัชนี UV";
+"UvIndex weather message / alert" = "ดัชนี UV (UFI) ซึ่งพัฒนาโดยองค์การอนามัยโลก แสดงถึงพลังของรังสี UV ยิ่งดัชนี UV ยิ่งเป็นอันตรายต่อการอยู่ในแสงแดดและยิ่งเร็วที่จะทำให้คุณสุขภาพเสีย โดยการติดตามดัชนี UV คุณสามารถตัดสินใจเมื่อจะป้องกันตัวเองจากแสงแดดและเมื่อเป็นที่ดีที่จะไม่ออกนอก";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "สงบ";
+"Weak wind / wind speed" = "ลมอ่อน";
+"Light wind / wind speed" = "ลมเบา";
+"Quiet wind / wind speed" = "ลมเงียบ";
+"Moderate wind / wind speed" = "ลมปานกลาง";
+"Fresh wind / wind speed" = "ลมสดชื่น";
+"Strong wind / wind speed" = "ลมแรง";
+"Hard wind / wind speed" = "ลมหนัก";
+"Powerful wind / wind speed" = "ลมมหาศาล";
+"Storm wind / wind speed" = "พายุ";
+"Hard storm wind / wind speed" = "พายุหนัก";
+"Hurricane wind / wind speed" = "พายุ";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "อุณหภูมิสูงสุด";
+"Min temperature / temperature" = "อุณหภูมิต่ำสุด";
+"Average temperature / temperature" = "อุณหภูมิเฉลี่ย";
+"Feels like temperature / temperature" = "รู้สึกเหมือนอุณหภูมิ";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "อากาศแห้งมาก";
+"Dry air / humidity" = "อากาศแห้ง";
+"Moderately dry air / humidity" = "อากาศแห้งปานกลาง";
+"Moderately humid air / humidity" = "อากาศค่อนข้างชื้น";
+"Very humid air / humidity" = "อากาศชื้นมาก";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "ใส";
+"Partly Cloudy / cloud cover" = "มีเมฆบางส่วน";
+"Variable Cloudiness / cloud cover" = "ความเมฆแปรปรวน";
+"Cloudy / cloud cover" = "มีเมฆ";
+"Overcast / cloud cover" = "เมฆมาก";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "อากาศค่อนข้างแห้ง";
+"Moderately humid air / dew point" = "อากาศค่อนข้างชื้น";
+"Humid air / dew point" = "อากาศชื้น";
+"Very humid air / dew point" = "อากาศชื้นมาก";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "ดีเยี่ยม";
+"Good / visibility" = "ดี";
+"Moderate / visibility" = "ปานกลาง";
+"Poor / visibility" = "แย่";
+"Very Poor / visibility" = "แย่มาก";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "น้อยมาก";
+"Light / precipitation" = "เบา";
+"Moderate / precipitation" = "ปานกลาง";
+"Heavy / precipitation" = "หนัก";
+"Very Heavy / precipitation" = "หนักมาก";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "ต่ำมาก";
+"Low / pressure" = "ต่ำ";
+"Normal / pressure" = "ปกติ";
+"Hight / pressure" = "สูง";
+"Very hight / pressure" = "สูงมาก";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "ต่ำ";
+"Moderate / uv index" = "ปานกลาง";
+"Hight / uv index" = "สูง";
+"Very high / uv index" = "สูงมาก";
+"Excessive / uv index" = "มากเกินไป";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "คะแนนชื่อเสียง";
+"Nickname / skydivers" = "ชื่อเล่น";
+"Country / skydivers" = "ประเทศ";
+"Profile / skydivers" = "โปรไฟล์";
+"Profession / skydivers" = "อาชีพ";
+"Count of jumps / skydivers" = "จำนวนการกระโดด";
+"First jump / skydivers" = "การกระโดดครั้งแรก";
+"About rating / skydivers" = "ข้อมูลเพิ่มเติม";
+"About rating message / skydivers" = "ชุมชนเป็นโฆษณาสำหรับตนเอง และเป็นการช่วยเหลือโปรเจค\nรายละเอียดที่อินสตาแกรม";
+
+// MARK: - Statistic:
+
+"no jumps" = "เพื่อแสดงสถิติ คุณต้องทำการกระโดดอย่างน้อยหนึ่งครั้ง";
+"saving data" = "กำลังบันทึกข้อมูล";
+"saving data text" = "เพื่อบันทึกประวัติการกระโดดของคุณทั้งหมด แนะนำให้คุณสร้างการสำรองข้อมูลเป็นระยะๆ ในส่วน \"การตั้งค่า\"\nนี่เป็นสิ่งสำคัญโดยเฉพาะเมื่อสลับไปยังอุปกรณ์ใหม่";
+"jumps by year" = "การกระโดดตามปี";
+"year" = "ปี";
+"Categories USPA" = "ประเภท";
+"Categories USPA List" = "\nA: 25 การกระโดด\nเวลาฟรีฟอลล์: 10 นาที (600 วินาที)\n\nB: 50 การกระโดด\nเวลาฟรีฟอลล์: 30 นาที (1800 วินาที)\n\nC: 200 การกระโดด\nเวลาฟรีฟอลล์: 60 นาที (3600 วินาที)\n\nD: 500 การกระโดด\nเวลาฟรีฟอลล์: 180 นาที (10800 วินาที)\n";
+"Maximum time" = "เวลาสูงสุด";
+"Maximum time alert" = "การกระโดดที่มีเวลาฟรีฟอลล์สูงสุดเสร็จสิ้นแล้ว";
+"Maximum height" = "ความสูงสูงสุด";
+"Maximum height alert" = "การกระโดดที่มีความสูงของช่องสูงสุดเสร็จสิ้นแล้ว";
+"Average height" = "ความสูงเฉลี่ย";
+"Minimum height" = "ความสูงต่ำสุด";
+"Minimum height alert" = "การกระโดดที่มีความสูงของช่องต่ำสุดเสร็จสิ้นแล้ว";
+"First jump / statistic" = "การกระโดดครั้งแรก";
+"Last jump / statistic" = "การกระโดดครั้งล่าสุด";
+"Max in one day" = "สูงสุดในหนึ่งวัน";
+"Average height of jump" = "ความสูงเฉลี่ยของการกระโดด";
+"Average free fall time of jump" = "เวลาฟรีฟอลล์เฉลี่ยของการกระโดด";
+"Average time" = "เวลาเฉลี่ยของการกระโดด";
+"Max count of jumps" = "จำนวนการกระโดดสูงสุด";
+"Max count of jumps text" = "การกระโดดจำนวนสูงสุดในหนึ่งวันเสร็จสิ้นแล้ว";
+"Jumps no found" = "ไม่พบการกระโดด";
+"Сount of cutaways" = "จำนวนการแยกเส้นคาด";
+"Date last jump" = "การกระโดดครั้งล่าสุด";
+"Date first jump" = "การกระโดดครั้งแรก";
+"List aircrafts" = "รายการเครื่องบิน";
+"List canopies" = "รายการเครื่องบิน";
+"List locations" = "รายการสถานที่";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "ข้อมูลทั่วไป";
+"Total height" = "ความสูงรวม";
+"Total time" = "เวลารวม";
+"Total jumps" = "จำนวนการกระโดดทั้งหมด";
+"In this year" = "ในปีนี้";
+"Category" = "ประเภท";
+
+"Average info" = "ข้อมูลเฉลี่ย";
+
+"Max. height" = "ความสูงสูงสุด";
+"Av. height" = "ความสูงเฉลี่ย";
+"Min. height" = "ความสูงต่ำสุด";
+"First jump" = "การกระโดดครั้งแรก";
+"Max. time" = "เวลาสูงสุด";
+"Last jump" = "การกระโดดครั้งล่าสุด";
+"Max. in day" = "สูงสุดในหนึ่งวัน";
+"Av. time" = "เวลาเฉลี่ย";
+"CutawayStatistic" = "การแยกเส้นคาด";
+"Count cutaway" = "จำนวนการแยกเส้นคาด";
+"Aircraft" = "เครื่องบิน";
+"Canopies" = "หลังคา";
+"Locations" = "สถานที่";
+"Missions" = "ภารกิจ";
+
+"Accuracy" = "ความแม่นยำ";
+"Acrobatics" = "อาครอบาติกส์";
+"AFF" = "AFF";
+"Base" = "Base";
+"Base/Wingsuit" = "Base/Wingsuit";
+"Canopy formation" = "การจัดฟอร์เมชั่น";
+"Freefly" = "Freefly";
+"Freestyle" = "Freestyle";
+"Fun" = "สนุก";
+"Group" = "กลุ่ม";
+"Instructor" = "ผู้สอน";
+"Military" = "ทหาร";
+"Para-ski" = "Para-ski";
+"Proximity" = "Proximity";
+"Skysurfing" = "Skysurfing";
+"Static-line" = "Static-line";
+"Piloting" = "การบิน";
+"Tandem" = "Tandem";
+"Vertical" = "ตำแหน่งตรง";
+"Video" = "วิดีโอ";
+"Wingsuit" = "Wingsuit";
+"Formation" = "Formation";
+"Top 10:" = "10 อันดับแรก:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "การกระโดดใหม่";
+"Manual / new jump" = "เพื่อเริ่มต้น ไปที่ส่วน \"การตั้งค่า\" และป้อนข้อมูลต่อไปนี้:\n\nสถานที่\nเครื่องบิน\nหลังคา";
+
+// MARK: - CellNewJump:
+
+"Date" = "วันที่";
+"Location" = "สถานที่";
+"Aircraft" = "เครื่องบิน";
+"Canopy" = "หลังคา";
+"Mission" = "ภารกิจ";
+"Height" = "ความสูง";
+"Time" = "เวลา";
+"Cutaway" = "การแยกเส้นคาด";
+"Comment" = "ความคิดเห็น";
+
+"One jump / cell new jump" = "การกระโดดหนึ่งครั้ง";
+"Few jumps / cell new jump" = "การกระโดดหลายครั้ง";
+"Counts of identical jumps / cell ne jump" = "จำนวนการกระโดดที่เหมือนกัน";
+
+"Date placeholder" = "dd.mm.yyyy";
+"Location placeholder" = "สถานที่กระโดด";
+"Aircraft placeholder" = "ประเภทเครื่องบิน";
+"Canopy placeholder" = "หลังคาหลัก";
+"Mission placeholder" = "ประเภทการกระโดด";
+"Height placeholder" = "เมตร";
+"Time placeholder" = "วินาที";
+"Cutaway placeholder" = "ไม่มี / ใช่";
+"Comment placeholder" = "ไม่บังคับ";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "เพิ่มระบบใหม่";
+"Comment" = "ความคิดเห็น";
+"No comments" = "ไม่พบความคิดเห็น";
+"Container system" = "ภาชนะ";
+"AAD system" = "อุปกรณ์ความปลอดภัย";
+"Main canopy system" = "หลังคาหลัก";
+"Reserve canopy system" = "หลังคาสำรอง";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "หมายเลข";
+"DOM system" = "DOM";
+"Service life system" = "อายุการใช้งาน";
+"Valid until system" = "ใช้ได้จนถึง";
+"Counts of the jumps system" = "จำนวนการกระโดด";
+"Resource system" = "ทรัพยากร";
+"Counts of repack system" = "จำนวนการบรรจุ";
+"Packed system" = "บรรจุแล้ว";
+
+"years system" = "ปี";
+"jumps system" = "การกระโดด";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "เพิ่มระบบ";
+"Container alert" = "ภาชนะ";
+"AAD alert" = "อุปกรณ์ความปลอดภัย";
+"Main canopy alert" = "หลังคาหลัก";
+"Reserve canopy alert" = "หลังคาสำรอง";
+
+"Name and model container alert" = "ชื่อและโมเดลภาชนะ";
+"Name and model AAD alert" = "ชื่อและรุ่นของอุปกรณ์ความปลอดภัย";
+"Name and model main canopy alert" = "ชื่อและโมเดลหลักของหลังคา. คุณต้องเพิ่มในส่วน \"การตั้งค่า\" -> \"แก้ไขหลังคา\" ก่อน";
+"Name and model reserve canopy alert" = "ชื่อและโมเดลหลักของหลังคาสำรอง";
+
+"DOM alert" = "วันที่ผลิต";
+"Serial number alert" = "หมายเลขซีเรียล";
+"Warranty resource container alert" = "การรับประกันอายุการใช้งาน (โดยทั่วไปผู้ผลิตระบุ 10-20 ปี หรือตามเงื่อนไขทางเทคนิค)";
+"Warranty resource AAD alert" = "อายุการรับประกัน(รับประกันจำนวนปีหรือจำนวนปีก่อนการบำรุงรักษาตามปกติ)";
+"Warranty resource main canopy alert" = "การรับประกันอายุการใช้งานโดยปี (โดยทั่วไปผู้ผลิตระบุ 10-20 ปี หรือตามเงื่อนไขทางเทคนิค)";
+"Warranty resource jumps main canopy alert" = "การรับประกันการใช้งานสำหรับการกระโดด (โดยทั่วไปผู้ผลิตระบุ 500 การกระโดด หรือตามเงื่อนไขทางเทคนิค สูงสุด 1000 การกระโดด)";
+"Counts of jumps main canopy alert" = "จำนวนการใช้งาน (หากพาราชูตไม่ได้ซื้อใหม่และมีการกระโดดไปแล้วบนมัน ระบุจำนวนนี้เท่านั้น เพื่อการคำนวณที่ถูกต้อง จำเป็นต้องระบุเฉพาะจำนวนการกระโดดที่ไม่ได้ระบุไว้ก่อนในรายการการกระโดดทั่วไปของแอปพลิเคชันนี้)";
+"Warranty resource reserve canopy alert" = "การรับประกันอายุการใช้งาน (โดยทั่วไปผู้ผลิตระบุ 10-20 ปี หรือตามเงื่อนไขทางเทคนิค)";
+"Counts of repack reserve canopy alert" = "หากพาราชูตไม่ได้ซื้อใหม่และมันได้รับการบรรจุไปแล้ว ระบุจำนวนนี้";
+"Date of pack reserve canopy alert" = "วันที่บรรจุ";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "ชื่อระบบ";
+"Name / new system cell" = "ชื่อ";
+"Container / new system cell" = "ภาชนะ";
+"Name container / new system cell" = "ชื่อภาชนะ";
+
+"DOM / new system cell" = "วันที่ผลิต";
+"Date mm.yyyy / new system cell" = "mm.yyyy";
+"Serial number / new system cell" = "หมายเลขซีเรียล";
+"Warranty resource / new system cell" = "ทรัพยากรการรับประกัน";
+"Counts of years / new system cell" = "จำนวนปี";
+"Counts of jumps / new system cell" = "จำนวนการกระโดด";
+
+"AAD / new system cell" = "อุปกรณ์ความปลอดภัย";
+"Name AAD / new system cell" = "ชื่อของอุปกรณ์ความปลอดภัย";
+
+"Main canopy / new system cell" = "หลังคาหลัก";
+"Name main canopy / new system cell" = "ชื่อหลังคา";
+"Counts of jumps main canopy / new system cell" = "จำนวนการกระโดด";
+"The value of the purchase / new system cell" = "มูลค่าการซื้อ";
+
+"Reserve canopy / new system cell" = "หลังคาสำรอง";
+"Name reserve canopy / new system cell" = "ชื่อหลังคา";
+"Counts of repack reserve canopy / new system cell" = "จำนวนการบรรจุใหม่";
+"Date of packing reserve canopy / new system cell" = "วันที่บรรจุ";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+"Count / new system cell" = "จำนวน";
+
+"Comment / new system cell" = "ความคิดเห็น";
+"Optional / new system cell" = "ตัวเลือก (สภาพของเส้นเป็นต้น)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "แก้ไขบัญชี";
+"Edit locations" = "แก้ไขสถานที่";
+"Delete location?" = "ลบสถานที่?";
+"Edit aircrafts" = "แก้ไขเครื่องบิน";
+"Delete aircraft?" = "ลบเครื่องบิน?";
+"Edit canopies" = "แก้ไขหลังคา";
+"Drop zones" = "พื้นที่ที่ร่ม";
+"Delete canopy?" = "ลบหลังคา?";
+"Backup copy" = "สำรองข้อมูล";
+"Calculator loading" = "โหลดเครื่องคิดเลข";
+"Information" = "ข้อมูล";
+"Premium version" = "เวอร์ชันพรีเมียม";
+"Share the app" = "แบ่งปันแอป";
+"Feedback" = "คำติชม";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "ชื่อเล่น";
+"Name user / edit account vc" = "ชื่อผู้ใช้";
+"License / edit account vc" = "ใบอนุญาต";
+"Type / number / edit account vc" = "ประเภท / หมายเลข";
+"Valid until / edit account vc" = "ใช้ได้จนถึง";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "ยา";
+"Insurance / edit account vc" = "ประกัน";
+"Reserve canopy / edit account vc" = "หลังคาสำรอง";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "ชื่อพื้นที่ร่ม";
+"Enter aircraft" = "ชื่อเครื่องบิน";
+"Enter canopy" = "ชื่อหลังคา";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\nการสำรองข้อมูลจะเก็บข้อมูลทั้งหมดที่บันทึกในแอปพลิเคชัน\nแนะนำให้สำรองข้อมูลเป็นระยะๆ เพื่อไม่ให้ข้อมูลที่ป้อนหายไป\n";
+"Backup / backup" = "สร้างสำรองข้อมูล";
+"Restore / backup" = "คืนค่า";
+"Title / backup" = "ฐานข้อมูลสถิติ";
+"Jumps / backup" = "การกระโดด";
+"Systems / backup" = "ระบบ";
+"Notes / backup" = "บันทึก";
+"Aircrafts / backup" = "เครื่องบิน";
+"Canopies / backup" = "หลังคา";
+"Locations / backup" = "สถานที่";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "น้ำหนักทั้งหมด";
+"kg." = "กก.";
+"ft" = "ตร.ฟุต";
+"Square canopy" = "หลังคาสแควร์";
+"1-50A" = "\nประเภทพาราชูต: นักเรียน\nหมวด: A\nจำนวนการกระโดด: 1-50 การกระโดด\n";
+"51-200B" = "\nประเภทพาราชูต: การเปลี่ยนแปลง\nหมวด: B\nจำนวนการกระโดด: 51-200 การกระโดด\n";
+"201-500C" = "\nประเภทพาราชูต: ความเร็วปานกลาง\nหมวด: C\nจำนวนการกระโดด: 201-500 การกระโดด\n";
+"501-1000D1" = "\nประเภทพาราชูต: ความเร็ว/เอลลิปติกัล\nหมวด: D\nจำนวนการกระโดด: 501-1000 การกระโดด\n";
+"1000D2" = "\nประเภทพาราชูต: ความเร็วสูง\nหมวด: D\nจำนวนการกระโดด: 1000+ การกระโดด\n";
+"1000D3" = "\nประเภทพาราชูต: ความเร็ว/ครอสเบรส\nหมวด: D\nจำนวนการกระโดด: 1000+ การกระโดด\n";
+
+"Canopy title / calculator" = "การโหลดของหลังคา";
+"Wing title / calculator" = "ระยะทางบินในชุดวิงสูท";
+
+"Height jump / calculator" = "ความสูงของการกระโดด";
+"Height open / calculator" = "ความสูงการเปิด";
+"Wind speed / calculator" = "ความเร็วลม";
+"Quality / calculator" = "คุณภาพ";
+"Distance / calculator" = "ระยะทางโดยประมาณของการบินในชุดวิงสูท";
+
+"Warning / calculator" = "คำเตือน";
+"Warning canopy message / calculator" = "นี่คือข้อมูลพื้นฐาน โปรดเลือกการโหลดที่อัพเดทและหลังคาที่เหมาะสมกับอินสตรัคเตอร์ของคุณในปัจจุบัน";
+"Warning wing message / calculator" = "นี่คือข้อมูลพื้นฐาน ตัวบ่งชี้ของระยะทางบินที่เป็นไปได้ถูกกระทบโดย: แอร์โดนามิกส์ของผู้กระโดด (ตำแหน่ง / มุมการโจมตี), ทิศทางและความแรงของลม ทำการคำนวณที่อัพเดทกับอินสตรัคเตอร์ของคุณในปัจจุบัน";
+
+// MARK: - INFO:
+
+"App version" = "เกี่ยวกับแอปพลิเคชัน";
+"Version / info" = "เวอร์ชัน";
+"Build / info" = "บิลด์";
+"Privacy policy" = "นโยบายความเป็นส่วนตัว";
+"Terms of use" = "เงื่อนไขการใช้งาน";
+"FAQ" = "คำถามที่พบบ่อย";
+"App language / info" = "ภาษาแอปพลิเคชัน";
+"App language text / info" = "แอปพลิเคชันนี้ใช้ภาษาที่ตั้งค่าเป็นภาษาหลักบนอุปกรณ์ของคุณ\nภาษาอังกฤษถูกใช้โดยค่าเริ่มต้น\n\nรายการภาษาที่รองรับ:\n\nอังกฤษ, อาหรับ, เบลารุส, อินโดนีเซีย, สเปน, อิตาลี, จีน, เกาหลี, ลัตเวีย, ลิธัวเนีย, เยอรมัน, โปแลนด์, โปรตุเกส, รัสเซีย, ไทย, ตุรกี, ยูเครน, ฝรั่งเศส, ฮินดี, เช็ก, ญี่ปุ่น\n\nหากคุณต้องการช่วยเหลือให้กับโครงการและแปลแอปเป็นภาษาของคุณหรือแก้ไขข้อผิดพลาดโปรดติดต่อผู้พัฒนา";
+"Info text" = "\nSkydiveBook - มันไม่ใช่การยืนยันอย่างเป็นทางการว่าผู้ใช้แอปพลิเคชันเป็นนักลงร่มมืออาชีพ\n\nมันทำหน้าที่เป็นส่วนเสริมที่ไม่บังคับใช้กับหนังสือร่มทางการหรือใบรับรองของนักลงร่มในทุกหมวดหมู่\n\nการกระโดดที่บันทึกใน SkydiveBook ไม่ใช่เอกสารหลักฐานของการกระโดดเหล่านี้และไม่สามารถถือเป็นหลักในการออกเอกสารทางการ ใบรับรอง หมวดหรือหมวด\n\nแอปพลิเคชันนี้ถูกออกแบบขึ้นสำหรับการใช้ส่วนบุคคล ความสะดวกในการกระโดดและการวิเคราะห์ขั้นสูง\n\nข้อมูลเกี่ยวกับการโหลดโดมหลักเป็นข้อมูลอ้างอิงและไม่มีความแน่นอนในการเลือกอุปกรณ์ร่ม\n\nใบอนุญาตทั้งหมดสำหรับการใช้งานร่มจะต้องได้รับการออกโดยอินสตรัคเตอร์ที่ถูกต้อง\n\nข้อมูลใดๆ ที่ได้รับจากการใช้แอปพลิเคชันเป็นเพียงเพื่อวัตถุประสงค์ในการอ้างอิง: ศึกษาแผนที่สนามบินด้วยตนเอง และได้รับข้อมูลล่าสุดเกี่ยวกับสภาพอากาศระหว่างการกระโดด\n\nเหมือนกับซอฟต์แวร์ใดๆ แอปพลิเคชันนี้อาจทำผิดพลาดและไม่สมบูรณ์เนื่องจากมนุษย์\n\nโปรดจำไว้ว่าการกระโดดร่มเป็นการเสี่ยงต่อชีวิต การไม่ปฏิบัติตามกฎระเบียบด้านความปลอดภัยอาจทำให้เกิดบาดเจ็บและการเสียชีวิตได้\n";
+"Info text start alert" = "\nSkydiveBook - มันไม่ใช่การยืนยันอย่างเป็นทางการว่าผู้ใช้แอปพลิเคชันเป็นนักลงร่มมืออาชีพ\n\nมันทำหน้าที่เป็นส่วนเสริมที่ไม่บังคับใช้กับหนังสือร่มทางการหรือใบรับรองของนักลงร่มในทุกหมวดหมู่\n\nการกระโดดที่บันทึกใน SkydiveBook ไม่ใช่เอกสารหลักฐานของการกระโดดเหล่านี้และไม่สามารถถือเป็นหลักในการออกเอกสารทางการ ใบรับรอง หมวดหรือหมวด\n\nแอปพลิเคชันนี้ถูกออกแบบขึ้นสำหรับการใช้ส่วนบุคคล ความสะดวกในการกระโดดและการวิเคราะห์ขั้นสูง\n\nข้อมูลเกี่ยวกับการโหลดโดมหลักเป็นข้อมูลอ้างอิงและไม่มีความแน่นอนในการเลือกอุปกรณ์ร่ม\n\nใบอนุญาตทั้งหมดสำหรับการใช้งานร่มจะต้องได้รับการออกโดยอินสตรัคเตอร์ที่ถูกต้อง\n\nข้อมูลใดๆ ที่ได้รับจากการใช้แอปพลิเคชันเป็นเพียงเพื่อวัตถุประสงค์ในการอ้างอิง: ศึกษาแผนที่สนามบินด้วยตนเอง และได้รับข้อมูลล่าสุดเกี่ยวกับสภาพอากาศระหว่างการกระโดด\n\nเหมือนกับซอฟต์แวร์ใดๆ แอปพลิเคชันนี้อาจทำผิดพลาดและไม่สมบูรณ์เนื่องจากมนุษย์\n\nจำไว้ว่าการกระโดดร่มเป็นการเสี่ยงต่อชีวิต การไม่ปฏิบัติตามกฎระเบียบด้านความปลอดภัยอาจทำให้เกิดบาดเจ็บและการเสียชีวิตได้\n\nฉันได้อ่านแล้วและยอมรับ";
+"Agree" = "ยอมรับ";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\nในเวอร์ชันฟรีของแอปพลิเคชัน คุณสามารถบันทึกการกระโดดได้ 50 ครั้ง\n\n⭐️ ⭐️ ⭐️\n\nเวอร์ชันพรีเมียมของแอปพลิเคชันช่วยให้คุณบันทึกการกระโดดได้ไม่จำกัดจำนวน\n";
+"1 month" = "$9.99 / เดือน";
+"12 months" = "$49.99 / ปี\n($4.16/เดือน)";
+"Restore purchases" = "เรียกคืนการซื้อ";
+
+"Buy status" = "ซื้อพบ / ไม่พบ";
+"Restore Successful" = "การเรียกคืนสำเร็จ";
+"All purchases have been successfully restored." = "การซื้อทั้งหมดได้รับการเรียกคืนเรียบร้อยแล้ว";
+"Restore Failed" = "การเรียกคืนล้มเหลว";
+"Some purchases could not be restored. Please try again later." = "ไม่สามารถเรียกคืนบางรายการซื้อได้ โปรดลองอีกครั้งในภายหลัง";
+"No Purchases to Restore" = "ไม่มีการซื้อที่ต้องเรียกคืน";
+"There are no previous purchases to restore." = "ไม่มีการซื้อก่อนหน้าที่ต้องเรียกคืน";
+
+// ADAPTY:
+
+"No connection / adapty" = "ไม่มีการเชื่อมต่อ";
+"Message / adapty" = "ต้องมีการเชื่อมต่ออินเทอร์เน็ตเพื่อรับข้อมูล";
+
+"Alert / adapty status" = "ต้องการพรีเมียม";
+"Message / adapty status" = "ในเวอร์ชันฟรี คุณสามารถบันทึกได้เพียง:\n\n50 ครั้ง\n10 บันทึก\n1 ระบบเท่านั้น\n\nเพื่อลบข้อจำกัดทั้งหมด ซื้อ PREMIUM ในหัวข้อ \"การตั้งค่า\"";
+
+// MARK: - SYSTEM:
+
+"System" = "ระบบ";
+"Delete system?" = "ลบระบบ?";
+"System empty message / system" = "คุณยังไม่มีระบบร่มที่เพิ่มไว้";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "โซนหล่อ";
+"Wind tunnels / drop zones" = "ร่องลม";
+"Shops / drop zones" = "ร้านค้า";
+"Information / drop zones" = "ข้อมูล";
+"Message / drop zones" = "คุณสามารถเพิ่มตำแหน่งของคุณได้โดยการเขียนใน Instagram";
+"Map type" = "ประเภทแผนที่";
+"Standard / map type" = "มาตรฐาน";
+"Satellite / map type" = "ดาวเทียม";
+"Hybrid / map type" = "ไฮบริด";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "สำเร็จ";
+"Error / alert kit" = "ข้อผิดพลาด";
+"Error counts / alert kit" = "คุณไม่ได้กระโดดอีกต่อไป!";
+
+"Jump added / alert kit" = "เพิ่มการกระโดด";
+"Jumps added / alert kit" = "การกระโดดได้รับการเพิ่ม";
+"Jump deleted / alert kit" = "การกระโดดถูกลบ";
+"Jump updated / alert kit" = "การกระโดดได้รับการอัปเดต";
+
+"Note added / alert kit" = "เพิ่มบันทึก";
+"Note deleted / alert kit" = "ลบบันทึก";
+
+"System added / alert kit" = "ระบบได้รับการเพิ่ม";
+"System deleted / alert kit" = "ระบบถูกลบ";
+"System updated / alert kit" = "ระบบได้รับการอัปเดต";
+
+"Backup saved / alert kit" = "การสำรองข้อมูลถูกบันทึก";
+"Backup upload / alert kit" = "อัปโหลดการสำรองข้อมูล";
+
+"Location added / alert kit" = "เพิ่มตำแหน่ง";
+"Location deleted / alert kit" = "ลบตำแหน่ง";
+
+"Aircraft added / alert kit" = "เพิ่มอากาศยาน";
+"Aircraft deleted / alert kit" = "ลบอากาศยาน";
+
+"Canopy added / alert kit" = "เพิ่มร่ม";
+"Canopy deleted / alert kit" = "ลบร่ม";

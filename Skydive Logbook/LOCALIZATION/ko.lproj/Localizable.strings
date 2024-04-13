@@ -1,0 +1,611 @@
+// MARK: - TAB BAR:
+
+"Main tab bar" = "메인";
+"Statistic tab bar" = "통계";
+"Add jump tab bar" = "새로운 점프";
+"System tab bar" = "시스템";
+"Settings tab bar" = "설정";
+
+// MARK: - MAIN:
+
+"Save" = "저장";
+"Clean" = "정리";
+"Close" = "닫기";
+"Edit" = "편집";
+"Delete" = "삭제";
+"Calculate" = "계산";
+"Update" = "업데이트";
+"Settings iphone" = "설정";
+
+"Ok" = "확인";
+"Yes" = "예";
+"No" = "아니요";
+
+"ago" = "전";
+"back" = "뒤로";
+
+// MARK: - MEASURING DISTANCES:
+
+"m." = "m.";
+"km." = "km.";
+"miles" = "마일";
+"feet" = "피트";
+
+// MARK: - MEASURING TIME:
+
+"s." = "초.";
+"min." = "분.";
+"h." = "시간.";
+"d." = "일.";
+"mon." = "월.";
+"y." = "년.";
+
+// MARK: - MAIN:
+
+"First Message" = "\nSkydiveBook에 오신 것을 환영합니다!\n\n여기에는 모든 스카이다이빙 활동이 표시됩니다.\n\n사용을 즐기고 안전한 점프를 즐겨주세요!\n";
+"Delete jump?" = "점프 삭제?";
+"This action cannot be undone." = "이 작업은 되돌릴 수 없습니다.";
+
+"License" = "면허";
+"until" = "까지";
+"Medicine until" = "의약품 만료일";
+"Insurance until" = "보험 만료일";
+"Reserve canopy until" = "예비 캐노피 만료일";
+
+"Edit/add account" = "계정을 추가 또는 편집하려면 \"설정\" 섹션으로 이동하세요.";
+
+// MARK: - NOTES:
+
+"New note" = "새로운 노트";
+"Delete note?" = "노트 삭제?";
+
+// MARK: - WEATHER:
+
+"No connection" = "연결 없음";
+"No connection message / weather" = "날씨 예보 데이터를 받으려면 활성 인터넷 연결이 필요합니다.";
+
+"mm/h" = "mm/h";
+"hPa" = "hPa";
+"mm / pressure" = "mm";
+"m/s" = "m/s";
+"km" = "km";
+"Gusts up to" = "돌풍 최대";
+
+"Wind speed / weather" = "풍속";
+"Temperature / weather" = "기온";
+"Cloud cover / weather" = "구름 양";
+"Humidity / weather" = "습도";
+"Dew point / weather" = "이슬점";
+"Visibility / weather" = "가시거리";
+"Precipitation / weather" = "강수량";
+"Pressure / weather" = "기압";
+"UvIndex / weather" = "자외선 지수";
+"It feels like / weather" = "체감 온도";
+
+"Wind direction" = "풍향";
+"Arrow wind direction" = "화살표는 당신이 위치한 곳의 지표면 근처 풍향을 나타냅니다. 활성 인터넷 연결이 있어야 합니다.";
+
+"Permisson label / weather" = "설정 iPhone -> SkydiveBook -> 위치 (권한 부여)";
+"Permisson label alert / weather" = "현재 날씨 예보를 표시하려면 위치를 결정하는 권한이 필요합니다. 이를 설정에서 설정할 수 있습니다.";
+
+// MARK: - WEATHER ALERTS:
+
+"Wind weather title / alert" = "풍속 분류";
+"Wind weather message / alert" = "고요: < 0.3 m/s\n잔잔한: 0.3—1.5 m/s\n가벼운: 1.6—3.3 m/s\n보통: 3.4—5.4 m/s\n신선한: 5.5—7.9 m/s\n강한: 8.0—10.7 m/s\n근해 풍: 10.8—13.8 m/s\n풍: 13.9—17.1 m/s\n강한 풍: 17.2—20.7 m/s\n폭풍: 20.8—24.4 m/s\n폭풍: 24.5—28.4 m/s\n허리케인: >32.7 m/s";
+
+"Temperature weather title / alert" = "체감 온도";
+"Temperature weather message / alert" = "체감 온도는 실제 온도와 다를 수 있으며 온도가 사람에게 느껴지는 방식을 반영합니다. 체감 온도는 풍속 특성과 습도 수준에 영향을 받습니다.";
+
+"Cloud cover weather title / alert" = "구름 양";
+"Cloud cover weather message / alert" = "구름 양은 백분율로 측정됩니다. 일반적으로 구름이 차지하는 하늘의 부분으로 표시됩니다.";
+
+"Humidity weather title / alert" = "습도";
+"Humidity weather message / alert" = "상대 습도 또는 단순히 습도는 공기 중의 수분 양과 공기가 포함 할 수있는 최대 양의 비율입니다.";
+
+"Dew point weather title / alert" = "이슬점";
+"Dew point weather message / alert" = "이슬점은 이슬이 형성되기 위해 온도가 떨어져야하는 값입니다. 공기의 습도를 결정하는 편리한 방법입니다. 이슬점이 높을수록 공기는 더 습기를 느끼게됩니다. 현재 온도와 일치하는 이슬점은 공기의 상대 습도가 100 % 인 것을 의미하며 이슬 또는 안개가 형성 될 수 있습니다.";
+
+"Visibility weather title / alert" = "가시거리";
+"Visibility weather message / alert" = "가시 거리는 자신으로부터 명확하게 볼 수있는 물체의 거리를 나타냅니다. 가시성은 공기 투명도의 측정이며 태양 광량이나 장애물의 존재를 고려하지 않습니다.";
+
+"Precipitation weather title / alert" = "강수량";
+"Precipitation weather message / alert" = "강수량은 평평한 지표면에 형성 될 때의 수평면의 물층의 높이를 밀리미터 단위로 나타냅니다. 밀리미터 단위의 강수량은 1 제곱미터의 수평면에 떨어진 물의 양과 숫자적으로 동일합니다.";
+
+"Pressure weather title / alert" = "기압";
+"Pressure weather message / alert" = "표에는 위치에 따른 기압 정상의 편차가 나와 있습니다. 사람들의 일반적인 기압은 수은의 760 밀리미터입니다. 그러나 각 지역의 일반적인 대기압은 그 지역의 고도에 따라 다르며 지역의 기압은 해당 지역의 고도에 따라 달라집니다.";
+
+"UvIndex weather title / alert" = "자외선 지수";
+"UvIndex weather message / alert" = "세계 보건 기구가 개발한 자외선 지수 (UFI)는 자외선 복사의 세기를 나타냅니다. 자외선 지수가 높을수록 태양 아래에 있을 때 더 위험하며 건강에 더해질 수 있습니다. 자외선 지수를 추적하여 태양으로부터 보호해야 할 시기를 결정하고 외출하지 말아야 할 시기를 결정할 수 있습니다.";
+
+// MARK: WIND SPEED:
+
+"Calm wind / wind speed" = "고요한 바람";
+"Weak wind / wind speed" = "약한 바람";
+"Light wind / wind speed" = "가벼운 바람";
+"Quiet wind / wind speed" = "조용한 바람";
+"Moderate wind / wind speed" = "보통 바람";
+"Fresh wind / wind speed" = "신선한 바람";
+"Strong wind / wind speed" = "강한 바람";
+"Hard wind / wind speed" = "진풍";
+"Powerful wind / wind speed" = "강풍";
+"Storm wind / wind speed" = "폭풍";
+"Hard storm wind / wind speed" = "심한 폭풍";
+"Hurricane wind / wind speed" = "허리케인";
+
+// MARK: TEMPERATURE:
+
+"Max temperature / temperature" = "최고 기온";
+"Min temperature / temperature" = "최저 기온";
+"Average temperature / temperature" = "평균 기온";
+"Feels like temperature / temperature" = "체감 온도";
+
+// MARK: HUMIDITY:
+
+"Very dry air / humidity" = "매우 건조";
+"Dry air / humidity" = "건조한";
+"Moderately dry air / humidity" = "약간 건조한";
+"Moderately humid air / humidity" = "약간 습한";
+"Very humid air / humidity" = "매우 습한";
+
+// MARK: CLOUD COVER:
+
+"Clear / cloud cover" = "맑음";
+"Partly Cloudy / cloud cover" = "구름 조금";
+"Variable Cloudiness / cloud cover" = "변화무쌍";
+"Cloudy / cloud cover" = "흐림";
+"Overcast / cloud cover" = "흐린";
+
+// MARK: DEW POINT:
+
+"Relatively dry air / dew point" = "비교적 건조한";
+"Moderately humid air / dew point" = "습기가 적당한";
+"Humid air / dew point" = "습한";
+"Very humid air / dew point" = "매우 습한";
+
+// MARK: VISIBILITY:
+
+"Excellent / visibility" = "매우 우수한";
+"Good / visibility" = "우수한";
+"Moderate / visibility" = "보통";
+"Poor / visibility" = "나쁨";
+"Very Poor / visibility" = "매우 나쁨";
+
+// MARK: PRECIPITATION:
+
+"Very Light / precipitation" = "매우 가벼운";
+"Light / precipitation" = "가벼운";
+"Moderate / precipitation" = "보통";
+"Heavy / precipitation" = "많은";
+"Very Heavy / precipitation" = "매우 많은";
+
+// MARK: PRESSURE:
+
+"Very low / pressure" = "매우 낮음";
+"Low / pressure" = "낮음";
+"Normal / pressure" = "보통";
+"Hight / pressure" = "높음";
+"Very hight / pressure" = "매우 높음";
+
+// MARK: UV INDEX:
+
+"Low / uv index" = "낮음";
+"Moderate / uv index" = "보통";
+"Hight / uv index" = "높음";
+"Very high / uv index" = "매우 높음";
+"Excessive / uv index" = "지나친";
+
+// MARK: - SKYDIVERS:
+
+"Rating / skydivers" = "평판";
+"Nickname / skydivers" = "닉네임";
+"Country / skydivers" = "국가";
+"Profile / skydivers" = "프로필";
+"Profession / skydivers" = "직업";
+"Count of jumps / skydivers" = "점프 횟수";
+"First jump / skydivers" = "첫 점프";
+"About rating / skydivers" = "추가 정보";
+"About rating message / skydivers" = "커뮤니티는 자신을 광고하고 프로젝트를 지원하는 곳입니다.\nInstagram에서 자세한 내용을 확인하세요.";
+
+// MARK: - Statistic:
+
+"no jumps" = "통계를 표시하려면 최소한 하나의 점프를 해야합니다.";
+"saving data" = "데이터 저장 중";
+"saving data text" = "완전한 점프 기록을 저장하려면 주기적으로 \"설정\" 섹션에서 백업을 만드는 것이 좋습니다. \n새 기기로 전환 할 때 특히 중요합니다.";
+"jumps by year" = "연도별 점프";
+"year" = "년";
+"Categories USPA" = "카테고리";
+"Categories USPA List" = "\nA: 25 점프\n자유 낙하 시간: 10 분 (600 초)\n\nB: 50 점프\n자유 낙하 시간: 30 분 (1800 초)\n\nC: 200 점프\n자유 낙하 시간: 60 분 (3600 초)\n\nD: 500 점프\n자유 낙하 시간: 180 분 (10800 초)\n";
+"Maximum time" = "최대 시간";
+"Maximum time alert" = "최대 자유 낙하 시간을 가진 점프가 완료되었습니다";
+"Maximum height" = "최대 고도";
+"Maximum height alert" = "구획의 최대 높이를 가진 점프가 완료되었습니다";
+"Average height" = "평균 고도";
+"Minimum height" = "최소 고도";
+"Minimum height alert" = "구획의 최소 높이를 가진 점프가 완료되었습니다";
+"First jump / statistic" = "첫 점프 완료";
+"Last jump / statistic" = "마지막 점프 완료";
+"Max in one day" = "하루 최대 횟수";
+"Average height of jump" = "점프의 평균 고도";
+"Average free fall time of jump" = "점프의 평균 자유 낙하 시간";
+"Average time" = "점프의 평균 시간";
+"Max count of jumps" = "점프 횟수";
+"Max count of jumps text" = "하루에 완료한 최대 점프 횟수";
+"Jumps no found" = "점프가 없습니다";
+"Сount of cutaways" = "컷어웨이 횟수";
+"Date last jump" = "마지막 점프 날짜";
+"Date first jump" = "첫 점프 날짜";
+"List aircrafts" = "항공기 목록";
+"List canopies" = "카노피 목록";
+"List locations" = "위치 목록";
+
+"Case 0-1" = "0 минут";
+"Case 1-150" = "1 - 2.5 минут";
+"Case 150-300" = "2.5 - 5 минут";
+"Case 300-600" = "5 - 10 минут";
+"Case 600-900" = "10 - 15 минут";
+"Case 900-1000" = "15 - 16 минут";
+"Case 1000-1200" = "16 - 20 минут";
+"Case 1200-1500" = "20 - 25 минут";
+"Case 1500-2500" = "25 - 40 минут";
+"Case 2500-3000" = "41 - 50 минут";
+"Case 3000-3500" = "50 - 58 минут";
+"Case 3500-5000" = "58 - 83 минут";
+"Case 5000-6000" = "83 - 100 минут";
+"Case 6000-8000" = "100 - 133 минут (1 час 40 минут)";
+"Case 8000-10000" = "133 - 166 минут (2 часа 46 минут)";
+"Case 10000-13000" = "166 - 216 минут (2 часа 56 минут)";
+"Case 13000-17000" = "216 - 283 минут (4 часа 43 минуты)";
+"Case 17000-20000" = "283 - 333 минут (5 часов 33 минуты)";
+"Case 20000-25000" = "333 - 416 минут (5 часов 36 минут)";
+"Case 25000-30000" = "416 - 500 минут (8 часов 20 минут)";
+"Case 35000-40000" = "500 - 666 минут (11 часов 6 минут)";
+"Case 40000-50000" = "666 - 833 минут (13 часов 53 минуты)";
+"Case 50000-100000" = "833 - 1388 минут (23 часа 8 минут)";
+"Case 100000-..." = "ваш текст для последнего кейса";
+"Case Default-Default" = "Default-Default";
+
+"Case 0-1" = "";
+"Case 1-150" = "";
+"Case 150-300" = "";
+"Case 300-600" = "";
+"Case 600-900" = "";
+"Case 900-1000" = "";
+"Case 1000-1200" = "";
+"Case 1200-1500" = "";
+"Case 1500-2500" = "";
+"Case 2500-3000" = "";
+"Case 3000-3500" = "";
+"Case 3500-5000" = "";
+"Case 5000-6000" = "";
+"Case 6000-8000" = "";
+"Case 8000-10000" = "";
+"Case 10000-13000" = "";
+"Case 13000-17000" = "";
+"Case 17000-20000" = "";
+"Case 20000-25000" = "";
+"Case 25000-30000" = "";
+"Case 35000-40000" = "";
+"Case 40000-50000" = "";
+"Case 50000-100000" = "";
+"Case 100000-..." = "";
+"Case Default-Default" = "";
+
+// MARK: - Cell Statistic:
+
+"General info" = "일반 정보";
+"Total height" = "총 고도";
+"Total time" = "총 시간";
+"Total jumps" = "총 점프 수";
+"In this year" = "올해";
+"Category" = "카테고리";
+
+"Average info" = "평균 정보";
+
+"Max. height" = "최대 고도";
+"Av. height" = "평균 고도";
+"Min. height" = "최소 고도";
+"First jump" = "첫 번째 점프";
+"Max. time" = "최대 시간";
+"Last jump" = "마지막 점프";
+"Max. in day" = "하루 최대 횟수";
+"Av. time" = "평균 시간";
+"CutawayStatistic" = "컷어웨이";
+"Count cutaway" = "컷어웨이 횟수";
+"Aircraft" = "항공기";
+"Canopies" = "카노피";
+"Locations" = "위치";
+"Missions" = "미션";
+
+"Accuracy" = "정확도";
+"Acrobatics" = "아크로바틱";
+"AFF" = "AFF";
+"Base" = "베이스";
+"Base/Wingsuit" = "베이스/윙수트";
+"Canopy formation" = "카노피 형성";
+"Freefly" = "프리플라이";
+"Freestyle" = "프리스타일";
+"Fun" = "재미";
+"Group" = "그룹";
+"Instructor" = "강사";
+"Military" = "군인";
+"Para-ski" = "파라 스키";
+"Proximity" = "근접";
+"Skysurfing" = "하늘서핑";
+"Static-line" = "스태틱 라인";
+"Piloting" = "조종";
+"Tandem" = "탄템";
+"Vertical" = "수직";
+"Video" = "비디오";
+"Wingsuit" = "윙수트";
+"Formation" = "포메이션";
+"Top 10:" = "Тop 10:";
+
+// MARK: - NewJump:
+
+"Add new jump / new jump" = "새로운 점프";
+"Manual / new jump" = "\"설정\" 섹션으로 이동하여 다음 데이터를 입력하십시오:\n\n위치\n항공기\n카노피";
+
+// MARK: - CellNewJump:
+
+"Date" = "날짜";
+"Location" = "장소";
+"Aircraft" = "항공기";
+"Canopy" = "카노피";
+"Mission" = "미션";
+"Height" = "고도";
+"Time" = "시간";
+"Cutaway" = "컷어웨이";
+"Comment" = "코멘트";
+
+"One jump / cell new jump" = "한 번의 점프";
+"Few jumps / cell new jump" = "여러 점프";
+"Counts of identical jumps / cell ne jump" = "동일한 점프 횟수";
+
+"Date placeholder" = "dd.mm.yyyy";
+"Location placeholder" = "드롭존";
+"Aircraft placeholder" = "항공기 유형";
+"Canopy placeholder" = "메인 카노피";
+"Mission placeholder" = "점프 유형";
+"Height placeholder" = "미터";
+"Time placeholder" = "초";
+"Cutaway placeholder" = "아니요 / 예";
+"Comment placeholder" = "선택사항";
+
+// MARK: - SYSTEM:
+
+"Add a new system" = "새 시스템 추가";
+"Comment" = "코멘트";
+"No comments" = "코멘트가 없습니다";
+"Container system" = "컨테이너";
+"AAD system" = "보험 장치";
+"Main canopy system" = "메인 카노피";
+"Reserve canopy system" = "예비 카노피";
+
+// MARK: - SYSTEM CELL:
+
+"Number system" = "번호";
+"DOM system" = "DOM";
+"Service life system" = "수명";
+"Valid until system" = "유효 기간";
+"Counts of the jumps system" = "점프 횟수";
+"Resource system" = "자원";
+"Counts of repack system" = "재패킹 횟수";
+"Packed system" = "패킹 완료";
+
+"years system" = "년";
+"jumps system" = "번의 점프";
+
+// MARK: - NEW SYSTEM ALERT:
+
+"Add system alert" = "시스템 추가";
+"Container alert" = "컨테이너";
+"AAD alert" = "AAD";
+"Main canopy alert" = "메인 카노피";
+"Reserve canopy alert" = "예비 카노피";
+
+"Name and model container alert" = "컨테이너 이름 및 모델";
+"Name and model AAD alert" = "보험 장치의 이름 및 모델";
+"Name and model main canopy alert" = "메인 카노피 이름 및 모델. 먼저 \"설정\" -> \"카노피 편집\" 섹션에서 추가해야합니다.";
+"Name and model reserve canopy alert" = "예비 카노피 이름 및 모델";
+
+"DOM alert" = "제조일";
+"Serial number alert" = "일련 번호";
+"Warranty resource container alert" = "보증 수명 (일반적으로 제조업체는 10-20년 또는 기술 상태에 따라 지정합니다)";
+"Warranty resource AAD alert" = "보장 생활(년의 보장된 수,또는 일상적인 정비의 앞에 년의 수)";
+"Warranty resource main canopy alert" = "보증 수명(일반적으로 제조업체는 10-20년 또는 기술상태에 따라 10-20년을 지정합니다)";
+"Warranty resource jumps main canopy alert" = "점프용 보증 자원(일반적으로 제조업체는 500점프 또는 기술상태에 따라 최대 1000점프를 지정합니다)";
+"Counts of jumps main canopy alert" = "사용 횟수(파라새일을 새로 구입하지 않고 이미 사용되었거나 새로운 것이 아니고 이미 사용되었으므로 이 숫자를 지정하십시오). 올바른 계산을 위해이 응용 프로그램의 일반 점프 목록에 이전에 기록되지 않은 점프 횟수 만 지정해야합니다";
+"Warranty resource reserve canopy alert" = "보증 수명(일반적으로 제조업체는 10-20년 또는 기술상태에 따라 10-20년을 지정합니다)";
+"Counts of repack reserve canopy alert" = "재포장 횟수(파라새일을 새로 구입하지 않고 이미 사용되었거나 새로운 것이 아니고 이미 사용되었으므로이 금액을 지정하십시오)";
+"Date of pack reserve canopy alert" = "패킹 날짜";
+
+// MARK: - NEW SYSTEM CELL:
+
+"Name system / new system cell" = "시스템 이름";
+"Name / new system cell" = "이름";
+"Container / new system cell" = "컨테이너";
+"Name container / new system cell" = "컨테이너 이름";
+
+"DOM / new system cell" = "제조일";
+"Date mm.yyyy / new system cell" = "mm.yyyy";
+"Serial number / new system cell" = "일련 번호";
+"Warranty resource / new system cell" = "보증 자원";
+"Counts of years / new system cell" = "년수";
+"Counts of jumps / new system cell" = "점프 횟수";
+
+"AAD / new system cell" = "보험 장치";
+"Name AAD / new system cell" = "보험 장치의 이름";
+
+"Main canopy / new system cell" = "메인 카노피";
+"Name main canopy / new system cell" = "카노피 이름";
+"Counts of jumps main canopy / new system cell" = "점프 횟수";
+"The value of the purchase / new system cell" = "구매 가치";
+
+"Reserve canopy / new system cell" = "예비 카노피";
+"Name reserve canopy / new system cell" = "카노피 이름";
+"Counts of repack reserve canopy / new system cell" = "재패킹 횟수";
+"Date of packing reserve canopy / new system cell" = "패킹 날짜";
+"Date dd.mm.yyyy / new system cell" = "dd.mm.yyyy";
+"Count / new system cell" = "수량";
+
+"Comment / new system cell" = "코멘트";
+"Optional / new system cell" = "선택사항 (라인 상태 등)";
+
+// MARK: - SETTINGS:
+
+"Edit account" = "계정 편집";
+"Edit locations" = "위치 편집";
+"Delete location?" = "위치 삭제?";
+"Edit aircrafts" = "항공기 편집";
+"Delete aircraft?" = "항공기 삭제?";
+"Edit canopies" = "카노피 편집";
+"Drop zones" = "드롭 존";
+"Delete canopy?" = "카노피 삭제?";
+"Backup copy" = "백업 복사";
+"Calculator loading" = "계산기 로딩";
+"Information" = "정보";
+"Premium version" = "프리미엄 버전";
+"Share the app" = "앱 공유";
+"Feedback" = "피드백";
+
+// MARK: - EDIT ACCOUNT:
+
+"Nickname / edit account vc" = "닉네임";
+"Name user / edit account vc" = "사용자 이름";
+"License / edit account vc" = "라이선스";
+"Type / number / edit account vc" = "유형 / 번호";
+"Valid until / edit account vc" = "유효 기간";
+"Date / dd.mm.yyyy / edit account vc" = "dd.mm.yyyy";
+"Medicine / edit account vc" = "의약품";
+"Insurance / edit account vc" = "보험";
+"Reserve canopy / edit account vc" = "예비 카노피";
+
+// MARK: - LOCATIONS, AIRCRAFTS, CANOPIES:
+
+"Enter location" = "드롭 존 이름 입력";
+"Enter aircraft" = "항공기 이름 입력";
+"Enter canopy" = "카노피 이름 입력";
+
+// MARK: - BACKUP:
+
+"Info / backup" = "\n백업 복사본은 응용 프로그램에 기록된 모든 데이터를 저장합니다.\n입력한 데이터를 잃지 않도록 때때로 백업 복사본을 만드는 것이 좋습니다.\n";
+"Backup / backup" = "백업 생성";
+"Restore / backup" = "복원";
+"Title / backup" = "데이터베이스 통계";
+"Jumps / backup" = "점프";
+"Systems / backup" = "시스템";
+"Notes / backup" = "메모";
+"Aircrafts / backup" = "항공기";
+"Canopies / backup" = "카노피";
+"Locations / backup" = "위치";
+
+// MARK: - CALCULATOR:
+
+"Total weight" = "총 중량";
+"kg." = "kg";
+"ft" = "ft²";
+"Square canopy" = "사각 카노피";
+"1-50A" = "\n파라새일 유형: 학생용.\n카테고리: A.\n점프 횟수: 1-50 점프.\n";
+"51-200B" = "\n파라새일 유형: 전환용.\n카테고리: B.\n점프 횟수: 51-200 점프.\n";
+"201-500C" = "\n파라새일 유형: 중간 속도.\n카테고리: C.\n점프 횟수: 201-500 점프.\n";
+"501-1000D1" = "\n파라새일 유형: 속도/타원형.\n카테고리: D.\n점프 횟수: 501-1000 점프.\n";
+"1000D2" = "\n파라새일 유형: 고속.\n카테고리: D.\n점프 횟수: 1000+ 점프.\n";
+"1000D3" = "\n파라새일 유형: 고속/크로스브레이스.\n카테고리: D.\n점프 횟수: 1000+ 점프.\n";
+
+"Canopy title / calculator" = "카노피 로딩";
+"Wing title / calculator" = "윙슈트에서의 비행 거리";
+
+"Height jump / calculator" = "점프 높이";
+"Height open / calculator" = "개방 높이";
+"Wind speed / calculator" = "바람 속도";
+"Quality / calculator" = "품질";
+"Distance / calculator" = "윙슈트에서의 대략적인 비행 거리";
+
+"Warning / calculator" = "경고";
+"Warning canopy message / calculator" = "이것은 백그라운드 정보입니다. 최신 로드와 현재 강사와 적합한 낙하산을 선택하십시오.";
+"Warning wing message / calculator" = "이것은 백그라운드 정보입니다. 가능한 비행 거리 지표는: 낙하산조종사의 공기 역학(위치 / 공격 각도), 바람의 방향 및 강도에 영향을 받습니다. 현재 강사와 최신 계산을 수행하십시오.";
+
+// MARK: - INFO:
+
+"App version" = "애플리케이션 정보";
+"Version / info" = "버전";
+"Build / info" = "빌드";
+"Privacy policy" = "개인정보 보호정책";
+"Terms of use" = "이용 약관";
+"FAQ" = "자주 묻는 질문";
+"App language / info" = "애플리케이션 언어";
+"App language text / info" = "이 응용 프로그램은 기기에 설정된 기본 언어를 사용합니다.\n기본적으로 영어 언어를 사용합니다.\n\n지원되는 언어 목록:\n\n영어, 아랍어, 벨라루스어, 인도네시아어, 스페인어, 이탈리아어, 중국어, 한국어, 라트비아어, 리투아니아어, 독일어, 폴란드어, 포르투갈어, 러시아어, 태국어, 터키어, 우크라이나어, 프랑스어, 힌디어, 체코어, 일본어\n\n프로젝트를 돕고 응용 프로그램을 귀하의 언어로 번역하거나 오류를 수정하려면 개발자에게 문의하십시오.";
+"Info text" = "\nSkydiveBook은 애플리케이션 사용자가 전문 스카이 다이버임을 공식적으로 확인하는 것은 아닙니다.\n\n이는 모든 카테고리의 스카이 다이버의 공식 낙하산 책이나 인증서에 대한 선택적인 추가로 작동합니다.\n\nSkydiveBook에 기록된 점프는 이러한 점프들의 증거가 아니며 공식 문서, 인증서, 카테고리 발급의 근거로 간주 할 수 없습니다.\n\n이 애플리케이션은 개인용 사용, 스카이 다이빙의 편의 및 고급 분석을 위해 설계되었습니다.\n\n기본 돔의 하중 데이터는 참고 정보이며 낙하산 장비를 선택하는 데 권장하는 것은 아닙니다.\n\n낙하산 조종사가 발급해야 하는 모든 낙하산 작동 허가증이 있어야 합니다.\n\n애플리케이션을 사용하여 얻은 모든 정보는 참고용입니다: 공항 지도를 직접 확인하고 점프 중 날씨 조건을 최신 상태로 유지하십시오.\n\n이 애플리케이션은 사람의 요인으로 인해 오류가 발생할 수 있으므로 모든 소프트웨어와 마찬가지로 완벽하지 않을 수 있습니다.\n\n스카이 다이빙은 생명의 위험이 따르는 활동입니다. 안전 규정을 준수하지 않으면 부상 및 사망으로 이어질 수 있습니다.\n";
+"Info text start alert" = "\nSkydiveBook은 애플리케이션 사용자가 전문 스카이 다이버임을 공식적으로 확인하는 것은 아닙니다.\n\n이는 모든 카테고리의 스카이 다이버의 공식 낙하산 책이나 인증서에 대한 선택적인 추가로 작동합니다.\n\nSkydiveBook에 기록된 점프는 이러한 점프들의 증거가 아니며 공식 문서, 인증서, 카테고리 발급의 근거로 간주 할 수 없습니다.\n\n이 애플리케이션은 개인용 사용, 스카이 다이빙의 편의 및 고급 분석을 위해 설계되었습니다.\n\n기본 돔의 하중 데이터는 참고 정보이며 낙하산 장비를 선택하는 데 권장하는 것은 아닙니다.\n\n낙하산 조종사가 발급해야 하는 모든 낙하산 작동 허가증이 있어야 합니다.\n\n애플리케이션을 사용하여 얻은 모든 정보는 참고용입니다: 공항 지도를 직접 확인하고 점프 중 날씨 조건을 최신 상태로 유지하십시오.\n\n이 애플리케이션은 사람의 요인으로 인해 오류가 발생할 수 있으므로 모든 소프트웨어와 마찬가지로 완벽하지 않을 수 있습니다.\n\n스카이 다이빙은 생명의 위험이 따르는 활동입니다. 안전 규정을 준수하지 않으면 부상 및 사망으로 이어질 수 있습니다.\n\n이것을 읽고 동의했습니다.";
+"Agree" = "동의";
+
+// MARK: - PREMIUM:
+
+"Premium info text" = "\n앱의 무료 버전에서는 50회의 점프를 저장할 수 있습니다.\n\n⭐️ ⭐️ ⭐️\n\n앱의 프리미엄 버전은 무제한으로 점프를 저장할 수 있습니다.\n";
+"1 month" = "$9.99 / 월";
+"12 months" = "$49.99 / 년\n(월당 $4.16)";
+"Restore purchases" = "구매 복원";
+
+"Buy status" = "구매 찾기 / 구매 찾지 못함";
+"Restore Successful" = "복원 성공";
+"All purchases have been successfully restored." = "모든 구매가 성공적으로 복원되었습니다.";
+"Restore Failed" = "복원 실패";
+"Some purchases could not be restored. Please try again later." = "일부 구매 항목을 복원할 수 없습니다. 나중에 다시 시도하십시오.";
+"No Purchases to Restore" = "복원할 구매 항목이 없습니다.";
+"There are no previous purchases to restore." = "이전 구매 항목을 복원할 수 없습니다.";
+
+// ADAPTY:
+
+"No connection / adapty" = "연결 없음";
+"Message / adapty" = "데이터를 받으려면 인터넷 연결이 필요합니다.";
+
+"Alert / adapty status" = "프리미엄이 필요함";
+"Message / adapty status" = "무료 버전에서는 다음만 저장할 수 있습니다:\n\n50회의 점프.\n10개의 메모.\n1개의 시스템.\n\n모든 제한을 제거하려면 \"설정\" 섹션에서 PREMIUM을 구매하십시오.";
+
+// MARK: - SYSTEM:
+
+"System" = "시스템";
+"Delete system?" = "시스템을 삭제하시겠습니까?";
+"System empty message / system" = "아직 추가한 낙하산 시스템이 없습니다.";
+
+// MARK: - DROP ZONES:
+
+"Drop zones / drop zones" = "낙하산 존";
+"Wind tunnels / drop zones" = "윈드 터널";
+"Shops / drop zones" = "상점";
+"Information / drop zones" = "정보";
+"Message / drop zones" = "Instagram에 작성하여 위치를 추가할 수 있습니다.";
+"Map type" = "지도 유형";
+"Standard / map type" = "표준";
+"Satellite / map type" = "위성";
+"Hybrid / map type" = "하이브리드";
+
+// MARK: - ALERT KIT:
+
+"Success / alert kit" = "성공";
+"Error / alert kit" = "오류";
+"Error counts / alert kit" = "더 이상 점프를 하지 않고 있습니다!";
+
+"Jump added / alert kit" = "점프가 추가되었습니다";
+"Jumps added / alert kit" = "점프가 추가되었습니다";
+"Jump deleted / alert kit" = "점프가 삭제되었습니다";
+"Jump updated / alert kit" = "점프가 업데이트되었습니다";
+
+"Note added / alert kit" = "메모가 추가되었습니다";
+"Note deleted / alert kit" = "메모가 삭제되었습니다";
+
+"System added / alert kit" = "시스템이 추가되었습니다";
+"System deleted / alert kit" = "시스템이 삭제되었습니다";
+"System updated / alert kit" = "시스템이 업데이트되었습니다";
+
+"Backup saved / alert kit" = "백업이 저장되었습니다";
+"Backup upload / alert kit" = "백업 업로드";
+
+"Location added / alert kit" = "위치가 추가되었습니다";
+"Location deleted / alert kit" = "위치가 삭제되었습니다";
+
+"Aircraft added / alert kit" = "항공기가 추가되었습니다";
+"Aircraft deleted / alert kit" = "항공기가 삭제되었습니다";
+
+"Canopy added / alert kit" = "낙하산이 추가되었습니다";
+"Canopy deleted / alert kit" = "낙하산이 삭제되었습니다";
