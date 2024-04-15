@@ -17,6 +17,8 @@ final class InfoVC: UIViewController {
     private let termsButton = UIButton()
     private let faqButton = UIButton()
     private let languagesButton = UIButton()
+    private let shareButton = UIButton()
+    private let feedbackButton = UIButton()
     private let versionButton = UIButton()
     private let vibrationOn = Vibration()
     private var buildVersion = ""
@@ -35,7 +37,7 @@ final class InfoVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(infoBackground, infoBackgroundView, titleLabel, scrollView)
-        scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, languagesButton, versionButton)
+        scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, languagesButton, shareButton, feedbackButton, versionButton)
         infoTextView.addSubviews(infoTextLabel)
     }
     
@@ -77,7 +79,7 @@ final class InfoVC: UIViewController {
         
         infoTextView.translatesAutoresizingMaskIntoConstraints = false
         infoTextView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        infoTextView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 20).isActive = true
+        infoTextView.topAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         infoTextView.heightAnchor.constraint(greaterThanOrEqualTo: infoTextLabel.heightAnchor, constant: 10).isActive = true
         infoTextView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.7).isActive = true
         
@@ -121,10 +123,26 @@ final class InfoVC: UIViewController {
         languagesButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         languagesButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
         
+        // MARK: SHARE:
+
+        shareButton.translatesAutoresizingMaskIntoConstraints = false
+        shareButton.topAnchor.constraint(equalTo: languagesButton.bottomAnchor, constant: 15).isActive = true
+        shareButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        shareButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        shareButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: FEEDBACK:
+
+        feedbackButton.translatesAutoresizingMaskIntoConstraints = false
+        feedbackButton.topAnchor.constraint(equalTo: shareButton.bottomAnchor, constant: 15).isActive = true
+        feedbackButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        feedbackButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        feedbackButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+
         // MARK: VERSION BUTTON (ALERT):
 
         versionButton.translatesAutoresizingMaskIntoConstraints = false
-        versionButton.topAnchor.constraint(equalTo: languagesButton.bottomAnchor, constant: 15).isActive = true
+        versionButton.topAnchor.constraint(equalTo: feedbackButton.bottomAnchor, constant: 15).isActive = true
         versionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         versionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         versionButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
@@ -217,6 +235,26 @@ final class InfoVC: UIViewController {
         languagesButton.titleLabel?.font = fontMediumStandard14
         languagesButton.addTarget(self, action: #selector(languagesButtonTapped), for: .touchUpInside)
         
+        // MARK: SHARE:
+
+        shareButton.setTitle(NSLocalizedString("Share the app", comment: ""), for: .normal)
+        shareButton.layer.cornerRadius = cornerRadius15
+        shareButton.backgroundColor = .colorCell
+        shareButton.titleLabel?.font = fontMediumStandard14
+        shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        shareButton.setTitleColor(.colorWhite, for: .normal)
+        shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+        
+        // MARK: FEEDBAcK:
+
+        feedbackButton.setTitle(NSLocalizedString("Feedback", comment: ""), for: .normal)
+        feedbackButton.layer.cornerRadius = cornerRadius15
+        feedbackButton.backgroundColor = .colorCell
+        feedbackButton.titleLabel?.font = fontMediumStandard14
+        feedbackButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        feedbackButton.setTitleColor(.colorWhite, for: .normal)
+        feedbackButton.addTarget(self, action: #selector(feedbackButtonTapped), for: .touchUpInside)
+        
         // MARK: VERSION BUTTON (ALERT):
 
         versionButton.setTitle(NSLocalizedString("App version", comment: ""), for: .normal)
@@ -306,6 +344,23 @@ final class InfoVC: UIViewController {
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         present(safariViewController, animated: true)
+    }
+    
+    
+    // MARK: FUNC FOR SHARE BUTTON:
+    
+    @objc private func shareButtonTapped() {
+        vibrationOn.vibrationStandart()
+        guard let appURL = URL(string: "https://apps.apple.com/app/skydivebook/id6478469415") else { return }
+        UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+    }
+    
+    // MARK: FUNC FOR FEEDBACK BUTTON:
+    
+    @objc private func feedbackButtonTapped() {
+        vibrationOn.vibrationStandart()
+        guard let feedbackURL = URL(string: "itms-apps://itunes.apple.com/app/id6478469415?action=write-review") else { return }
+        UIApplication.shared.open(feedbackURL, options: [:], completionHandler: nil)
     }
 }
 

@@ -5,6 +5,8 @@ import UIKit
 final class JumpVC: UIViewController {
     // MARK: - PROPERTIES:
 
+    private let backgroundJumpLottie = LottieAnimationView(name: "BackgroundJumpLottie")
+    private let blackView = UIView()
     private let tableView = UITableView()
     private var selectedJump: JumpClassRealm
     var jumpNumber: Int = 0
@@ -33,12 +35,21 @@ final class JumpVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(tableView)
+        view.addSubviews(backgroundJumpLottie, blackView, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: BACKGROUND JUMP LOTTIE:
+        
+        backgroundJumpLottie.translatesAutoresizingMaskIntoConstraints = false
+        backgroundJumpLottie.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundJumpLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backgroundJumpLottie.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        backgroundJumpLottie.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,6 +57,14 @@ final class JumpVC: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
+        // MARK: BLACK VIEW:
+
+        blackView.translatesAutoresizingMaskIntoConstraints = false
+        blackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        blackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        blackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        blackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -58,6 +77,18 @@ final class JumpVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = true
+        
+        // MARK: BACKGROUND JUMP LOTTIE:
+        
+        backgroundJumpLottie.play()
+        backgroundJumpLottie.loopMode = .loop
+        backgroundJumpLottie.contentMode = .scaleAspectFill
+        backgroundJumpLottie.layer.opacity = 1
+        
+        // MARK: BLACK VIEW:
+
+        blackView.backgroundColor = .black
+        blackView.layer.opacity = 0.94
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -66,7 +97,7 @@ final class JumpVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(JumpCell.self, forCellReuseIdentifier: "JumpCell")
-        tableView.backgroundColor = .colorBackground
+        tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
     }
 }
@@ -87,6 +118,8 @@ extension JumpVC: UITableViewDelegate, UITableViewDataSource {
 
         // MARK: CONFIGURE:
         cell.configure(number: String(jumpNumber), date: selectedJump.date, location: selectedJump.location, aircraft: selectedJump.aircraft, canopy: selectedJump.canopy, mission: selectedJump.mission?.localizedValue ?? "", height: selectedJump.height, time: selectedJump.time, cutaway: selectedJump.cutaway?.localizedValue ?? "", comment: selectedJump.comment)
+        
+        cell.backgroundColor = .clear
 
         // MARK: JUBILEE LOTTIE:
         cell.jubileeShow(number: jumpNumber)

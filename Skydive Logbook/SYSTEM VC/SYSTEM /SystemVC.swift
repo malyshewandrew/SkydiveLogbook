@@ -157,10 +157,15 @@ final class SystemVC: UIViewController {
         effectOneLottie.animationSpeed = 0.5
         effectOneLottie.layer.opacity = 1
 
-        // MARK: ANIMATIONS:
+        // MARK: ANIMATION SYSTEM LOTTIE:
 
         systemLottie.play()
         systemLottie.loopMode = .autoReverse
+        
+        // MARK: ANIMATION START SYSTEM LOTTIE:
+        
+        startSystemLottie.play()
+        startSystemLottie.loopMode = .autoReverse
 
         // MARK: CONFETTI LOTTIE:
 
@@ -180,6 +185,22 @@ final class SystemVC: UIViewController {
         newSystemButton.titleLabel?.font = fontMediumStandard14
         newSystemButton.setTitleColor(.colorWhite, for: .normal)
         newSystemButton.addTarget(self, action: #selector(newSystemButtonTapped), for: .touchUpInside)
+        
+        // MARK: EMPTY SYSTEM VIEW:
+        
+        emptySystemView.layer.masksToBounds = true
+        emptySystemView.layer.cornerRadius = cornerRadius15
+        emptySystemView.addBlurEffect(.systemThinMaterialDark)
+        emptySystemView.addSubview(emptySystemLabel)
+        
+        // MARK: EMPTY SYSTEM LABEL:
+        
+        emptySystemLabel.textColor = .white
+        emptySystemLabel.numberOfLines = 0
+        emptySystemLabel.textAlignment = .center
+        emptySystemLabel.font = fontMediumStandard12
+        emptySystemLabel.adjustsFontSizeToFitWidth = true
+        emptySystemLabel.text = NSLocalizedString("System empty message / system", comment: "")
         
         startConfettiLottie.isHidden = true
         startSystemLottie.isHidden = true
@@ -240,21 +261,6 @@ final class SystemVC: UIViewController {
             emptySystemLabel.isHidden = false
             
             effectOneLottie.isHidden = true
-            
-            startSystemLottie.play()
-            startSystemLottie.loopMode = .autoReverse
-            
-            emptySystemView.addBlurEffect(.systemThinMaterialDark)
-            emptySystemView.layer.masksToBounds = true
-            emptySystemView.layer.cornerRadius = cornerRadius15
-            emptySystemView.addSubview(emptySystemLabel)
-            emptySystemLabel.textColor = .white
-            emptySystemLabel.numberOfLines = 0
-            emptySystemLabel.textAlignment = .center
-            emptySystemLabel.font = fontMediumStandard12
-            emptySystemLabel.adjustsFontSizeToFitWidth = true
-            emptySystemLabel.text = NSLocalizedString("System empty message / system", comment: "")
-            
             confettiLottie.isHidden = true
             systemLottie.isHidden = true
             confettiButton.isHidden = true

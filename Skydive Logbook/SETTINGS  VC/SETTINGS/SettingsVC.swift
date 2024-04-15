@@ -266,16 +266,6 @@ extension SettingsVC: SettingsCellDelegate {
         }
     }
 
-    func tapShareButton() {
-        guard let appURL = URL(string: "https://apps.apple.com/app/skydivebook/id6478469415") else { return }
-        UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
-    }
-
-    func tapFeedbackButton() {
-        guard let feedbackURL = URL(string: "itms-apps://itunes.apple.com/app/id6478469415?action=write-review") else { return }
-        UIApplication.shared.open(feedbackURL, options: [:], completionHandler: nil)
-    }
-
     func tapInstagramButton() {
         guard let url = URL(string: "https://instagram.com/skydivebook") else { return }
         let safariViewController = SFSafariViewController(url: url)

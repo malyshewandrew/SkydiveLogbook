@@ -12,6 +12,7 @@ final class JumpCell: UITableViewCell {
     private let effectOneLottie = LottieAnimationView(name: "Effect")
     private let effectTwoLottie = LottieAnimationView(name: "Effect")
     private let circleRedLottie = LottieAnimationView(name: "CircleRed")
+    private let twoCircleJumpLottie = LottieAnimationView(name: "TwoCircleJumpLottie")
     private let jubileeLottie = LottieAnimationView(name: "Anniversary")
     private let circleButton = UIButton()
     private let dateLabel = UILabel()
@@ -53,7 +54,7 @@ final class JumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(confettiLottie, circleGreenLottie, circleRedLottie, effectOneLottie, effectTwoLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
+        contentView.addSubviews(confettiLottie, circleGreenLottie, circleRedLottie, effectOneLottie, effectTwoLottie, twoCircleJumpLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
         locationButton.addSubview(locationLabel)
         aircraftButton.addSubview(aircraftLabel)
         canopyButton.addSubview(canopyLabel)
@@ -104,6 +105,13 @@ final class JumpCell: UITableViewCell {
         effectTwoLottie.centerYAnchor.constraint(equalTo: circleGreenLottie.centerYAnchor).isActive = true
         effectTwoLottie.heightAnchor.constraint(equalTo: circleGreenLottie.heightAnchor, multiplier: 1).isActive = true
         effectTwoLottie.widthAnchor.constraint(equalTo: circleGreenLottie.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: TWO CIRCLES:
+        
+        twoCircleJumpLottie.translatesAutoresizingMaskIntoConstraints = false
+        twoCircleJumpLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
+        twoCircleJumpLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
+        twoCircleJumpLottie.widthAnchor.constraint(equalTo: circleButton.widthAnchor, multiplier: 1.080).isActive = true
 
         // MARK: CIRCLE BUTTON:
 
@@ -233,7 +241,7 @@ final class JumpCell: UITableViewCell {
     private func configureUI() {
         // MARK: VIEW:
 
-        contentView.backgroundColor = .colorBackground
+        contentView.backgroundColor = .clear
         selectionStyle = .none
 
         // MARK: ANIMATIONS:
@@ -256,6 +264,11 @@ final class JumpCell: UITableViewCell {
         effectTwoLottie.loopMode = .loop
         effectTwoLottie.animationSpeed = 0.1
         effectTwoLottie.transform = CGAffineTransform(scaleX: -1, y: 1)
+        
+        // MARK: TWO CIRCLES:
+        
+        twoCircleJumpLottie.play()
+        twoCircleJumpLottie.loopMode = .loop
 
         // MARK: NUMBER AND DATE:
 

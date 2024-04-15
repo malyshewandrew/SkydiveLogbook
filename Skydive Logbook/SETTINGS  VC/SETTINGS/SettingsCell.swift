@@ -11,8 +11,6 @@ protocol SettingsCellDelegate: AnyObject {
     func tapBackupButton()
     func tapInfoButton()
     func tapPremiumButton()
-    func tapShareButton()
-    func tapFeedbackButton()
     func tapInstagramButton()
 }
 
@@ -27,8 +25,6 @@ final class SettingsCell: UITableViewCell {
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
     private let starImage = UIImageView()
-    private let shareButton = UIButton()
-    private let feedbackButton = UIButton()
     private let instagramImageView = UIImageView()
     private let instagramButton = UIButton()
     private let infoLabel = UILabel()
@@ -52,7 +48,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, shareButton, feedbackButton, instagramImageView, infoLabel, instagramButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, instagramImageView, infoLabel, instagramButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -121,26 +117,10 @@ final class SettingsCell: UITableViewCell {
         infoButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         infoButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
         
-        // MARK: SHARE:
-
-        shareButton.translatesAutoresizingMaskIntoConstraints = false
-        shareButton.topAnchor.constraint(equalTo: infoButton.bottomAnchor, constant: 15).isActive = true
-        shareButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        shareButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
-        shareButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-        
-        // MARK: FEEDBACK:
-
-        feedbackButton.translatesAutoresizingMaskIntoConstraints = false
-        feedbackButton.topAnchor.constraint(equalTo: shareButton.bottomAnchor, constant: 15).isActive = true
-        feedbackButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        feedbackButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
-        feedbackButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-
         // MARK: INSTAGRAM IMAGE VIEW:
 
         instagramImageView.translatesAutoresizingMaskIntoConstraints = false
-        instagramImageView.topAnchor.constraint(equalTo: feedbackButton.bottomAnchor, constant: 20).isActive = true
+        instagramImageView.topAnchor.constraint(equalTo: infoButton.bottomAnchor, constant: 20).isActive = true
         instagramImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         instagramImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
         instagramImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -245,26 +225,6 @@ final class SettingsCell: UITableViewCell {
         let coloredImage = colorizeImage(image: originalImage ?? UIImage(), color: UIColor.colorDarkGray)
         instagramImageView.image = coloredImage
         instagramImageView.contentMode = .scaleAspectFit
-        
-        // MARK: SHARE:
-
-        shareButton.setTitle(NSLocalizedString("Share the app", comment: ""), for: .normal)
-        shareButton.layer.cornerRadius = cornerRadius15
-        shareButton.backgroundColor = .colorCell
-        shareButton.titleLabel?.font = fontMediumStandard14
-        shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        shareButton.setTitleColor(.colorWhite, for: .normal)
-        shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
-        
-        // MARK: FEEDBAcK:
-
-        feedbackButton.setTitle(NSLocalizedString("Feedback", comment: ""), for: .normal)
-        feedbackButton.layer.cornerRadius = cornerRadius15
-        feedbackButton.backgroundColor = .colorCell
-        feedbackButton.titleLabel?.font = fontMediumStandard14
-        feedbackButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        feedbackButton.setTitleColor(.colorWhite, for: .normal)
-        feedbackButton.addTarget(self, action: #selector(feedbackButtonTapped), for: .touchUpInside)
 
         // MARK: INSTAGRAM BUTTON:
 
@@ -327,20 +287,6 @@ final class SettingsCell: UITableViewCell {
     @objc private func premiumButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapPremiumButton()
-    }
-    
-    // MARK: FUNC FOR SHARE BUTTON:
-    
-    @objc private func shareButtonTapped() {
-        vibrationOn.vibrationStandart()
-        delegate?.tapShareButton()
-    }
-    
-    // MARK: FUNC FOR FEEDBACK BUTTON:
-    
-    @objc private func feedbackButtonTapped() {
-        vibrationOn.vibrationStandart()
-        delegate?.tapFeedbackButton()
     }
 
     // MARK: FUNC FOR INSTAGRAM BUTTON:
