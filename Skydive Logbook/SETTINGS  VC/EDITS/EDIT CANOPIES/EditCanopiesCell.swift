@@ -38,12 +38,13 @@ final class EditCanopiesCell: UITableViewCell {
         view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5).isActive = true
         view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
         view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        view.heightAnchor.constraint(equalToConstant: height40).isActive = true
 
         // MARK: LOCATION LABEL:
 
         canopyLabel.translatesAutoresizingMaskIntoConstraints = false
         canopyLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
-        canopyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
+        canopyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         canopyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
         canopyLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
     }

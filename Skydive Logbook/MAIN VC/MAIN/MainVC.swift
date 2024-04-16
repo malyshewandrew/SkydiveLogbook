@@ -744,8 +744,10 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             self.present(alertDelete, animated: true)
             completion(true)
         }
-        deleteAction.image = UIImage(systemName: "trash")
-        deleteAction.backgroundColor = .systemRed
+        if let trashImage = UIImage(systemName: "trash")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal) {
+            deleteAction.image = trashImage
+        }
+        deleteAction.backgroundColor = .colorBackground
 
         // MARK: EDIT JUMP:
 
@@ -757,8 +759,10 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(editJumpViewController, animated: true)
             completion(true)
         }
-        editAction.image = UIImage(systemName: "slider.horizontal.2.square")
-        editAction.backgroundColor = .systemBlue
+        if let editImage = UIImage(systemName: "slider.horizontal.2.square")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal) {
+            editAction.image = editImage
+        }
+        editAction.backgroundColor = .colorBackground
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         return configuration
     }

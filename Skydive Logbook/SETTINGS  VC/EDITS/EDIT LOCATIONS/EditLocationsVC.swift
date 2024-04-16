@@ -45,7 +45,7 @@ final class EditLocationsVC: UIViewController {
         // MARK: ANIMATION:
 
         locationLottie.translatesAutoresizingMaskIntoConstraints = false
-        locationLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        locationLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
         locationLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         locationLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
         locationLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
@@ -53,7 +53,7 @@ final class EditLocationsVC: UIViewController {
         // MARK: TEXT VIEW:
 
         enterTextTextField.translatesAutoresizingMaskIntoConstraints = false
-        enterTextTextField.topAnchor.constraint(equalTo: locationLottie.bottomAnchor, constant: 0).isActive = true
+        enterTextTextField.topAnchor.constraint(equalTo: locationLottie.bottomAnchor, constant: -25).isActive = true
         enterTextTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         enterTextTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         enterTextTextField.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
@@ -301,10 +301,12 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: DELETE CELL:
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            vibrationOn.vibrationStandart()
-            let deleteLocation = arrayLocationsRealm[indexPath.row]
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        vibrationOn.vibrationStandart()
+        let deleteLocation = arrayLocationsRealm[indexPath.row]
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
+            guard let self = self else { return }
+            self.vibrationOn.vibrationStandart()
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete location?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
@@ -317,8 +319,15 @@ extension EditLocationsVC: UITableViewDelegate, UITableViewDataSource {
                 self.alertKitDeleted()
             }))
             present(alertDelete, animated: true)
+            completion(true)
         }
-    }
+        if let trashImage = UIImage(systemName: "trash")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal) {
+            deleteAction.image = trashImage
+        }
+        deleteAction.backgroundColor = .colorBackground
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    } 
 }
 
 // MARK: - EXTENSION FOR TEXT FIELD DELEGATE: MAX COUNT OF CHARECTERS:

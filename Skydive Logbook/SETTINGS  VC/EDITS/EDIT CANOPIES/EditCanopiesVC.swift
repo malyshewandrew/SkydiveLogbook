@@ -45,7 +45,7 @@ final class EditCanopiesVC: UIViewController {
         // MARK: ANIMATION:
 
         canopiesLottie.translatesAutoresizingMaskIntoConstraints = false
-        canopiesLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        canopiesLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         canopiesLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         canopiesLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
         canopiesLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
@@ -300,10 +300,12 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: DELETE CELL:
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            vibrationOn.vibrationStandart()
-            let deleteCanopy = arrayCanopiesRealm[indexPath.row]
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        vibrationOn.vibrationStandart()
+        let deleteCanopy = arrayCanopiesRealm[indexPath.row]
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
+            guard let self = self else { return }
+            self.vibrationOn.vibrationStandart()
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete canopy?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
@@ -316,8 +318,15 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
                 self.alertKitDeleted()
             }))
             present(alertDelete, animated: true)
+            completion(true)
         }
-    }
+        if let trashImage = UIImage(systemName: "trash")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal) {
+            deleteAction.image = trashImage
+        }
+        deleteAction.backgroundColor = .colorBackground
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    } 
 }
 
 // MARK: - EXTENSION FOR TEXT FIELD DELEGATE: MAX COUNT OF CHARECTERS:

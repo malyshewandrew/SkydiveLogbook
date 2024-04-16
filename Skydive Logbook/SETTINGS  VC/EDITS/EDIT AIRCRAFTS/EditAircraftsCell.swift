@@ -38,12 +38,13 @@ final class EditAircraftsCell: UITableViewCell {
         view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5).isActive = true
         view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
         view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        view.heightAnchor.constraint(equalToConstant: height40).isActive = true
 
         // MARK: LOCATION LABEL:
 
         aircraftLabel.translatesAutoresizingMaskIntoConstraints = false
         aircraftLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
-        aircraftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
+        aircraftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         aircraftLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
         aircraftLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
     }
