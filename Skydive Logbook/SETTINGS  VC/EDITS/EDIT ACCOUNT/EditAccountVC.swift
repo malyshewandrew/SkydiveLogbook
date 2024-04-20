@@ -56,12 +56,12 @@ final class EditAccountVC: UIViewController {
     private func addSubviews() {
         view.addSubviews(editAccountLottie, scrollView)
         scrollView.addSubviews(nicknameButton, licenseTypeButton, licenseDateButton, medicineButton, insuranceButton, reserveCanopyButton, cleanButton, saveButton)
-        licenseTypeButton.addSubview(licenseTypeTextField)
-        licenseDateButton.addSubview(licenseDateTextField)
-        nicknameButton.addSubview(nicknameTextField)
-        medicineButton.addSubview(medicineTextField)
-        insuranceButton.addSubview(insuranceTextField)
-        reserveCanopyButton.addSubview(reserveCanopyTextField)
+        licenseTypeButton.addSubviews(licenseTypeTextField)
+        licenseDateButton.addSubviews(licenseDateTextField)
+        nicknameButton.addSubviews(nicknameTextField)
+        medicineButton.addSubviews(medicineTextField)
+        insuranceButton.addSubviews(insuranceTextField)
+        reserveCanopyButton.addSubviews(reserveCanopyTextField)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:

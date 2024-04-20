@@ -11,6 +11,7 @@ protocol SettingsCellDelegate: AnyObject {
     func tapBackupButton()
     func tapInfoButton()
     func tapPremiumButton()
+    func tapNotificationsButton()
     func tapInstagramButton()
 }
 
@@ -24,6 +25,7 @@ final class SettingsCell: UITableViewCell {
     private let backupButton = UIButton()
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
+    private let notificationsButton = UIButton()
     private let starImage = UIImageView()
     private let instagramImageView = UIImageView()
     private let instagramButton = UIButton()
@@ -48,7 +50,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, instagramImageView, infoLabel, instagramButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, notificationsButton, instagramImageView, infoLabel, instagramButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -108,6 +110,14 @@ final class SettingsCell: UITableViewCell {
         starImage.translatesAutoresizingMaskIntoConstraints = false
         starImage.centerXAnchor.constraint(equalTo: premiumButton.trailingAnchor).isActive = true
         starImage.centerYAnchor.constraint(equalTo: premiumButton.topAnchor, constant: 5).isActive = true
+        
+        // MARK: NOTIFICATIONS BUTTON:
+        
+        notificationsButton.translatesAutoresizingMaskIntoConstraints = false
+        notificationsButton.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 15).isActive = true
+        notificationsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        notificationsButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        notificationsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: ABOUT:
 
@@ -203,6 +213,16 @@ final class SettingsCell: UITableViewCell {
         infoButton.titleLabel?.font = fontMediumStandard14
         infoButton.setTitleColor(.colorWhite, for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+        
+        // MARK: NOTIFICATIONS BUTTON:
+
+        notificationsButton.setTitle(NSLocalizedString("Notifications / notifications", comment: ""), for: .normal)
+        notificationsButton.layer.cornerRadius = cornerRadius15
+        notificationsButton.backgroundColor = .colorCell
+        notificationsButton.titleLabel?.font = fontMediumStandard14
+        notificationsButton.setTitleColor(.colorWhite, for: .normal)
+        notificationsButton.addTarget(self, action: #selector(notificationsButtonTapped), for: .touchUpInside)
+        notificationsButton.isHidden = true
 
         // MARK: PREMIUM BUTTON:
 
@@ -280,6 +300,13 @@ final class SettingsCell: UITableViewCell {
     @objc private func infoButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapInfoButton()
+    }
+    
+    // MARK: FUNC FOR PREMIUM BUTTON:
+
+    @objc private func notificationsButtonTapped() {
+        vibrationOn.vibrationStandart()
+        delegate?.tapNotificationsButton()
     }
 
     // MARK: FUNC FOR PREMIUM BUTTON:

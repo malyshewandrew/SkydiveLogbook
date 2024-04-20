@@ -609,3 +609,9 @@
 
 "Canopy added / alert kit" = "Парашют добавлен";
 "Canopy deleted / alert kit" = "Парашют удален";
+
+// MARK: - NOTIFICATIONS:
+
+"Notifications / notifications" = "Уведомления";
+"Checking the admission / notifications" = "Проверка доступа";
+"Checking the admission message / notifications" = "Для отправки уведомлений проверьте допуск к отправке уведомлений в настройках приложения";

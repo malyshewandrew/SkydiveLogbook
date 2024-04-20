@@ -609,3 +609,9 @@
 
 "Canopy added / alert kit" = "Canopy added";
 "Canopy deleted / alert kit" = "Canopy deleted";
+
+// MARK: - NOTIFICATIONS:
+
+"Notifications / notifications" = "Notifications";
+"Checking the admission / notifications" = "Checking the admission";
+"Checking the admission message / notifications" = "To send notifications, check the permission to send notifications in the application settings";

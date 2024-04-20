@@ -65,9 +65,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
 
         // MARK: LOAD REALM DATA:
+        
         loadRealmData()
         
         // MARK: GET USER LOCATION:
+        
         getUserLocation()
     }
 

@@ -265,6 +265,16 @@ extension SettingsVC: SettingsCellDelegate {
             }
         }
     }
+    
+    func tapNotificationsButton() {
+        let notifications = NotificationsVS()
+        if let sheetController = notifications.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.medium()]
+        }
+        present(notifications, animated: true, completion: nil)
+    }
 
     func tapInstagramButton() {
         guard let url = URL(string: "https://instagram.com/skydivebook") else { return }

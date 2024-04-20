@@ -1,12 +1,18 @@
 import Adapty
-import UIKit
 import FirebaseCore
+import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // MARK: ADAPTY:
+        
         Adapty.activate("public_live_stgLOJHr.8tssVbeAirtHJYt1qgTE")
+        
+        // MARK: FIREBASE:
+        
         FirebaseApp.configure()
+        
         return true
     }
 

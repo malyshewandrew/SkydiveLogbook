@@ -832,9 +832,13 @@ extension NewJumpCell: UIPickerViewDataSource {
 
 extension NewJumpCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet(charactersIn: "1234567890")
-        let characterSet = CharacterSet(charactersIn: string)
-        return allowedCharacters.isSuperset(of: characterSet)
+        if textField == heightTextField || textField == timeTextField {
+            let allowedCharacters = CharacterSet(charactersIn: "1234567890")
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        } else {
+            return true
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
