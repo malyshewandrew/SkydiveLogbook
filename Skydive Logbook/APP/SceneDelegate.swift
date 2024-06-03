@@ -1,16 +1,15 @@
+import CoreLocation
 import RealmSwift
 import UIKit
-import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     var window: UIWindow?
-    
+
     private let realmManager = RealmManager()
     private let locationManager = CLLocationManager()
-    
+
     // MARK: SCENE:
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
@@ -65,11 +64,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
 
         // MARK: LOAD REALM DATA:
-        
+
         loadRealmData()
-        
+
         // MARK: GET USER LOCATION:
-        
+
         getUserLocation()
     }
 
@@ -84,14 +83,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         arrayAircraftsRealm = realmManager.localRealm.objects(AircraftClassRealm.self).map { $0 }
         arrayCanopiesRealm = realmManager.localRealm.objects(CanopyClassRealm.self).map { $0 }
     }
-    
+
     // MARK: GET USER LOCATION:
-    
+
     func getUserLocation() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
-    
+
     // MARK: - OTHERS:
 
     func sceneDidDisconnect(_ scene: UIScene) {

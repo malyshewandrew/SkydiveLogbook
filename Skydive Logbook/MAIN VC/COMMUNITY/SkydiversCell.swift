@@ -273,6 +273,7 @@ final class SkydiversCell: UITableViewCell {
         linkButton.setTitle(NSLocalizedString("Profile / skydivers", comment: ""), for: .normal)
         linkButton.titleLabel?.font = fontMediumStandard14
         linkButton.setTitleColor(.colorWhite, for: .normal)
+        linkButton.setTitleColor(.colorBackground, for: .highlighted)
         linkButton.backgroundColor = .colorGreen
         linkButton.layer.masksToBounds = true
         linkButton.layer.cornerRadius = cornerRadius15

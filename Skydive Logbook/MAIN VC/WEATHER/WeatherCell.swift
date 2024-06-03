@@ -441,6 +441,7 @@ final class WeatherCell: UITableViewCell {
         windButton.addSubviews(blurWindEffectView, windSpeedLabel, windGustLabel, windDirectionLabel, windOverlayButton)
         windButton.setTitle(NSLocalizedString("Wind speed / weather", comment: ""), for: .normal)
         windButton.setTitleColor(.white, for: .normal)
+        windButton.setTitleColor(.systemBlue, for: .highlighted)
         windButton.contentVerticalAlignment = textAligmentTop
         windButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         windButton.layer.masksToBounds = true
@@ -479,6 +480,7 @@ final class WeatherCell: UITableViewCell {
         temperatureButton.addSubviews(blurTemperatureEffectView, currentTemperatureLabel, descriptionLabel, feelTemperatureLabel, temperatureOverlayButton)
         temperatureButton.setTitle(NSLocalizedString("Temperature / weather", comment: ""), for: .normal)
         temperatureButton.setTitleColor(.white, for: .normal)
+        temperatureButton.setTitleColor(.systemBlue, for: .highlighted)
         temperatureButton.contentVerticalAlignment = textAligmentTop
         temperatureButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         temperatureButton.layer.masksToBounds = true
@@ -517,6 +519,7 @@ final class WeatherCell: UITableViewCell {
         humidityButton.addSubviews(blurHumidityEffectView, humidityLabel, humidityOverlayButton)
         humidityButton.setTitle(NSLocalizedString("Humidity / weather", comment: ""), for: .normal)
         humidityButton.setTitleColor(.white, for: .normal)
+        humidityButton.setTitleColor(.systemBlue, for: .highlighted)
         humidityButton.contentVerticalAlignment = textAligmentTop
         humidityButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         humidityButton.layer.masksToBounds = true
@@ -539,6 +542,7 @@ final class WeatherCell: UITableViewCell {
         cloudCoverButton.addSubviews(blurCloudCoverEffectView, cloudCoverLabel, cloudCoverOverlayButton)
         cloudCoverButton.setTitle(NSLocalizedString("Cloud cover / weather", comment: ""), for: .normal)
         cloudCoverButton.setTitleColor(.white, for: .normal)
+        cloudCoverButton.setTitleColor(.systemBlue, for: .highlighted)
         cloudCoverButton.contentVerticalAlignment = textAligmentTop
         cloudCoverButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         cloudCoverButton.layer.masksToBounds = true
@@ -561,6 +565,7 @@ final class WeatherCell: UITableViewCell {
         dewPointButton.addSubviews(blurDewPointEffectView, dewPointLabel, dewPointOverlayButton)
         dewPointButton.setTitle(NSLocalizedString("Dew point / weather", comment: ""), for: .normal)
         dewPointButton.setTitleColor(.white, for: .normal)
+        dewPointButton.setTitleColor(.systemBlue, for: .highlighted)
         dewPointButton.contentVerticalAlignment = textAligmentTop
         dewPointButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         dewPointButton.layer.masksToBounds = true
@@ -583,6 +588,7 @@ final class WeatherCell: UITableViewCell {
         visibilityButton.addSubviews(blurVisibilityEffectView, visibilityLabel, visibilityOverlayButton)
         visibilityButton.setTitle(NSLocalizedString("Visibility / weather", comment: ""), for: .normal)
         visibilityButton.setTitleColor(.white, for: .normal)
+        visibilityButton.setTitleColor(.systemBlue, for: .highlighted)
         visibilityButton.contentVerticalAlignment = textAligmentTop
         visibilityButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         visibilityButton.layer.masksToBounds = true
@@ -605,6 +611,7 @@ final class WeatherCell: UITableViewCell {
         pressureButton.addSubviews(blurPressureEffectView, pressureLabel, pressureOverlayButton)
         pressureButton.setTitle(NSLocalizedString("Pressure / weather", comment: ""), for: .normal)
         pressureButton.setTitleColor(.white, for: .normal)
+        pressureButton.setTitleColor(.systemBlue, for: .highlighted)
         pressureButton.contentVerticalAlignment = textAligmentTop
         pressureButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         pressureButton.layer.masksToBounds = true
@@ -627,6 +634,7 @@ final class WeatherCell: UITableViewCell {
         uvIndexButton.addSubviews(blurUvIndexEffectView, uvIndexLabel, uvIndexOverlayButton)
         uvIndexButton.setTitle(NSLocalizedString("UvIndex / weather", comment: ""), for: .normal)
         uvIndexButton.setTitleColor(.white, for: .normal)
+        uvIndexButton.setTitleColor(.systemBlue, for: .highlighted)
         uvIndexButton.contentVerticalAlignment = textAligmentTop
         uvIndexButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         uvIndexButton.layer.masksToBounds = true
@@ -649,6 +657,7 @@ final class WeatherCell: UITableViewCell {
         precipitationButton.addSubviews(blurPrecipitationEffectView, precipitationLabel, precipitationOverlayButton)
         precipitationButton.setTitle(NSLocalizedString("Precipitation / weather", comment: ""), for: .normal)
         precipitationButton.setTitleColor(.white, for: .normal)
+        precipitationButton.setTitleColor(.systemBlue, for: .highlighted)
         precipitationButton.contentVerticalAlignment = textAligmentTop
         precipitationButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         precipitationButton.layer.masksToBounds = true
@@ -710,7 +719,7 @@ final class WeatherCell: UITableViewCell {
         
         // MARK: - COMPAS IMAGE:
         
-        compasImageView.image = UIImage(named: "compas")
+        compasImageView.image = UIImage(named: "Compas")
         compasImageView.layer.opacity = 0.5
         compasImageView.isHidden = isCompasHidden
     }

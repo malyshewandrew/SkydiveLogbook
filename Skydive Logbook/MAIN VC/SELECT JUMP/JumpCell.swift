@@ -14,21 +14,21 @@ final class JumpCell: UITableViewCell {
     private let circleRedLottie = LottieAnimationView(name: "CircleRed")
     private let twoCircleJumpLottie = LottieAnimationView(name: "TwoCircleJumpLottie")
     private let jubileeLottie = LottieAnimationView(name: "Anniversary")
-    private let circleButton = UIButton()
+    private let circleButton = UIButton(type: .system)
     private let dateLabel = UILabel()
-    private let locationButton = UIButton()
+    private let locationButton = UIButton(type: .system)
     private let locationLabel = UILabel()
-    private let aircraftButton = UIButton()
+    private let aircraftButton = UIButton(type: .system)
     private let aircraftLabel = UILabel()
-    private let canopyButton = UIButton()
+    private let canopyButton = UIButton(type: .system)
     private let canopyLabel = UILabel()
-    private let missionButton = UIButton()
+    private let missionButton = UIButton(type: .system)
     private let missionLabel = UILabel()
-    private let heightButton = UIButton()
+    private let heightButton = UIButton(type: .system)
     private let heightLabel = UILabel()
-    private let timeButton = UIButton()
+    private let timeButton = UIButton(type: .system)
     private let timeLabel = UILabel()
-    private let commentButton = UIButton()
+    private let commentButton = UIButton(type: .system)
     private let commentLabel = UILabel()
     private let vibrationOn = Vibration()
     private var jubileeJumps = Set((100 ..< 10000).filter { $0 % 100 == 0 })
@@ -277,6 +277,7 @@ final class JumpCell: UITableViewCell {
         circleButton.backgroundColor = .colorCell
         circleButton.titleLabel?.font = .systemFont(ofSize: 60, weight: .bold, width: .standard)
         circleButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        circleButton.addTarget(self, action: #selector(circleButtonTapped), for: .touchUpInside)
 
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(circleButtonLongPressed(_:)))
         circleButton.addGestureRecognizer(longPressGesture)
@@ -305,6 +306,9 @@ final class JumpCell: UITableViewCell {
         locationButton.titleLabel?.font = fontMediumStandard12
         locationButton.setTitleColor(.colorLightGray, for: .normal)
         locationButton.contentVerticalAlignment = textAligmentTop
+        locationButton.addAction(UIAction(handler: { _ in
+            self.vibrationOn.vibrationStandart()
+        }), for: .touchUpInside)
 
         locationLabel.backgroundColor = .colorTabBar
         locationLabel.font = fontMediumStandard18
@@ -323,6 +327,9 @@ final class JumpCell: UITableViewCell {
         aircraftButton.titleLabel?.font = fontMediumStandard12
         aircraftButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftButton.contentVerticalAlignment = textAligmentTop
+        aircraftButton.addAction(UIAction(handler: { _ in
+            self.vibrationOn.vibrationStandart()
+        }), for: .touchUpInside)
 
         aircraftLabel.backgroundColor = .colorTabBar
         aircraftLabel.font = fontMediumStandard18
@@ -341,6 +348,9 @@ final class JumpCell: UITableViewCell {
         canopyButton.titleLabel?.font = fontMediumStandard12
         canopyButton.setTitleColor(.colorLightGray, for: .normal)
         canopyButton.contentVerticalAlignment = textAligmentTop
+        canopyButton.addAction(UIAction(handler: { _ in
+            self.vibrationOn.vibrationStandart()
+        }), for: .touchUpInside)
 
         canopyLabel.backgroundColor = .colorTabBar
         canopyLabel.font = fontMediumStandard18
@@ -359,6 +369,9 @@ final class JumpCell: UITableViewCell {
         missionButton.titleLabel?.font = fontMediumStandard12
         missionButton.setTitleColor(.colorLightGray, for: .normal)
         missionButton.contentVerticalAlignment = textAligmentTop
+        missionButton.addAction(UIAction(handler: { _ in
+            self.vibrationOn.vibrationStandart()
+        }), for: .touchUpInside)
 
         missionLabel.backgroundColor = .colorTabBar
         missionLabel.font = fontMediumStandard18
@@ -377,6 +390,9 @@ final class JumpCell: UITableViewCell {
         heightButton.titleLabel?.font = fontMediumStandard12
         heightButton.setTitleColor(.colorLightGray, for: .normal)
         heightButton.contentVerticalAlignment = textAligmentTop
+        heightButton.addAction(UIAction(handler: { _ in
+            self.vibrationOn.vibrationStandart()
+        }), for: .touchUpInside)
 
         heightLabel.backgroundColor = .colorTabBar
         heightLabel.font = fontMediumStandard18
@@ -395,6 +411,9 @@ final class JumpCell: UITableViewCell {
         timeButton.titleLabel?.font = fontMediumStandard12
         timeButton.setTitleColor(.colorLightGray, for: .normal)
         timeButton.contentVerticalAlignment = textAligmentTop
+        timeButton.addAction(UIAction(handler: { _ in
+            self.vibrationOn.vibrationStandart()
+        }), for: .touchUpInside)
 
         timeLabel.backgroundColor = .colorTabBar
         timeLabel.font = fontMediumStandard18
@@ -413,6 +432,9 @@ final class JumpCell: UITableViewCell {
         commentButton.titleLabel?.font = fontMediumStandard12
         commentButton.setTitleColor(.colorLightGray, for: .normal)
         commentButton.contentVerticalAlignment = textAligmentTop
+        commentButton.addAction(UIAction(handler: { _ in
+            self.vibrationOn.vibrationStandart()
+        }), for: .touchUpInside)
 
         commentLabel.backgroundColor = .colorTabBar
         commentLabel.font = fontMediumStandard18
@@ -476,12 +498,19 @@ final class JumpCell: UITableViewCell {
             circleButton.setTitleColor(.colorCell, for: .normal)
             circleButton.backgroundColor = .colorJubilee
             locationButton.backgroundColor = .colorJubilee
+            locationButton.setTitleColor(.colorTabBar, for: .normal)
             aircraftButton.backgroundColor = .colorJubilee
+            aircraftButton.setTitleColor(.colorTabBar, for: .normal)
             canopyButton.backgroundColor = .colorJubilee
+            canopyButton.setTitleColor(.colorTabBar, for: .normal)
             missionButton.backgroundColor = .colorJubilee
+            missionButton.setTitleColor(.colorTabBar, for: .normal)
             heightButton.backgroundColor = .colorJubilee
+            heightButton.setTitleColor(.colorTabBar, for: .normal)
             timeButton.backgroundColor = .colorJubilee
+            timeButton.setTitleColor(.colorTabBar, for: .normal)
             commentButton.backgroundColor = .colorJubilee
+            commentButton.setTitleColor(.colorTabBar, for: .normal)
         }
     }
 
@@ -586,8 +615,14 @@ final class JumpCell: UITableViewCell {
     @objc private func vibrationSpeed() {
         vibrationOn.vibrationMedium.impactOccurred()
     }
+    
+    // MARK: CIRCLE BUTTON TAPPED:
+    
+    @objc private func circleButtonTapped() {
+        vibrationOn.vibrationStandart()
+    }
 
-    // MARK: - SET ANIMATION FOR SHADOW:
+    // MARK: SET ANIMATION FOR SHADOW:
 
     private func setShadowAnimation() -> CAAnimationGroup {
         let horizontalAnimation = CAKeyframeAnimation(keyPath: "shadowOffset.width")

@@ -16,7 +16,7 @@ final class NewSystemCell: UITableViewCell {
     
     private let containerDomButton = UIButton()
     private let containerDomTextField = UITextField()
-    private let containerDomPickerView = UIDatePicker()
+    private let containerDomDatePicker = UIDatePicker()
     
     private let containerSerialNumberButton = UIButton()
     private let containerSerialNumberTextField = UITextField()
@@ -31,7 +31,7 @@ final class NewSystemCell: UITableViewCell {
     
     private let aadDomButton = UIButton()
     private let aadDomTextField = UITextField()
-    private let aadDomPickerView = UIDatePicker()
+    private let aadDomDatePicker = UIDatePicker()
     
     private let aadSerialNumberButton = UIButton()
     private let aadSerialNumberTextField = UITextField()
@@ -47,7 +47,7 @@ final class NewSystemCell: UITableViewCell {
     
     private let mainCanopyDomButton = UIButton()
     private let mainCanopyDomTextField = UITextField()
-    private let mainCanopyDomPickerView = UIDatePicker()
+    private let mainCanopyDomDatePicker = UIDatePicker()
     
     private let mainCanopySerialNumberButton = UIButton()
     private let mainCanopySerialNumberTextField = UITextField()
@@ -68,7 +68,7 @@ final class NewSystemCell: UITableViewCell {
     
     private let reserveCanopyDomButton = UIButton()
     private let reserveCanopyDomTextField = UITextField()
-    private let reserveCanopyDomPickerView = UIDatePicker()
+    private let reserveCanopyDomDatePicker = UIDatePicker()
     
     private let reserveCanopySerialNumberButton = UIButton()
     private let reserveCanopySerialNumberTextField = UITextField()
@@ -221,7 +221,7 @@ final class NewSystemCell: UITableViewCell {
         containerDomTextField.heightAnchor.constraint(equalTo: containerDomButton.heightAnchor, multiplier: 0.5).isActive = true
         containerDomTextField.widthAnchor.constraint(equalTo: containerDomButton.widthAnchor, multiplier: 1).isActive = true
         
-        containerDomPickerView.translatesAutoresizingMaskIntoConstraints = false
+        containerDomDatePicker.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: CONTAINER SERIAL NUMBER:
         
@@ -287,7 +287,7 @@ final class NewSystemCell: UITableViewCell {
         aadDomTextField.heightAnchor.constraint(equalTo: aadDomButton.heightAnchor, multiplier: 0.5).isActive = true
         aadDomTextField.widthAnchor.constraint(equalTo: aadDomButton.widthAnchor, multiplier: 1).isActive = true
         
-        aadDomPickerView.translatesAutoresizingMaskIntoConstraints = false
+        aadDomDatePicker.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: AAD SERIAL NUMBER:
         
@@ -355,7 +355,7 @@ final class NewSystemCell: UITableViewCell {
         mainCanopyDomTextField.heightAnchor.constraint(equalTo: mainCanopyDomButton.heightAnchor, multiplier: 0.5).isActive = true
         mainCanopyDomTextField.widthAnchor.constraint(equalTo: mainCanopyDomButton.widthAnchor, multiplier: 1).isActive = true
         
-        mainCanopyDomPickerView.translatesAutoresizingMaskIntoConstraints = false
+        mainCanopyDomDatePicker.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: MAIN CANOPY SERIAL NUMBER:
         
@@ -449,7 +449,7 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyDomTextField.heightAnchor.constraint(equalTo: reserveCanopyDomButton.heightAnchor, multiplier: 0.5).isActive = true
         reserveCanopyDomTextField.widthAnchor.constraint(equalTo: reserveCanopyDomButton.widthAnchor, multiplier: 1).isActive = true
         
-        reserveCanopyDomPickerView.translatesAutoresizingMaskIntoConstraints = false
+        reserveCanopyDomDatePicker.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: RESERVE CANOPY SERIAL NUMBER:
         
@@ -602,13 +602,13 @@ final class NewSystemCell: UITableViewCell {
         containerDomTextField.textAlignment = textAligmentCenter
         containerDomTextField.tintColor = .colorWhite
         containerDomTextField.layer.masksToBounds = true
-        containerDomTextField.inputView = containerDomPickerView
-        containerDomPickerView.datePickerMode = .date
-        containerDomPickerView.preferredDatePickerStyle = .wheels
-        containerDomPickerView.maximumDate = Date()
-        containerDomPickerView.backgroundColor = .colorTabBar
-        containerDomPickerView.datePickerMode = .date
-        containerDomPickerView.addTarget(self, action: #selector(containerDomPickerValueChanged), for: .valueChanged)
+        containerDomTextField.inputView = containerDomDatePicker
+        containerDomDatePicker.datePickerMode = .date
+        containerDomDatePicker.preferredDatePickerStyle = .wheels
+        containerDomDatePicker.maximumDate = Date()
+        containerDomDatePicker.backgroundColor = .colorTabBar
+        containerDomDatePicker.datePickerMode = .date
+        containerDomDatePicker.addTarget(self, action: #selector(containerDomPickerValueChanged), for: .valueChanged)
         
         // MARK: CONTAINER SERIAL NUMBER:
         
@@ -686,12 +686,12 @@ final class NewSystemCell: UITableViewCell {
         aadDomTextField.textAlignment = textAligmentCenter
         aadDomTextField.tintColor = .colorWhite
         aadDomTextField.layer.masksToBounds = true
-        aadDomTextField.inputView = aadDomPickerView
-        aadDomPickerView.datePickerMode = .date
-        aadDomPickerView.preferredDatePickerStyle = .wheels
-        aadDomPickerView.maximumDate = Date()
-        aadDomPickerView.backgroundColor = .colorTabBar
-        aadDomPickerView.addTarget(self, action: #selector(aadDomPickerValueChanged), for: .valueChanged)
+        aadDomTextField.inputView = aadDomDatePicker
+        aadDomDatePicker.datePickerMode = .date
+        aadDomDatePicker.preferredDatePickerStyle = .wheels
+        aadDomDatePicker.maximumDate = Date()
+        aadDomDatePicker.backgroundColor = .colorTabBar
+        aadDomDatePicker.addTarget(self, action: #selector(aadDomPickerValueChanged), for: .valueChanged)
         
         // MARK: AAD SERIAL NUMBER:
         
@@ -771,12 +771,12 @@ final class NewSystemCell: UITableViewCell {
         mainCanopyDomTextField.textAlignment = textAligmentCenter
         mainCanopyDomTextField.tintColor = .colorWhite
         mainCanopyDomTextField.layer.masksToBounds = true
-        mainCanopyDomTextField.inputView = mainCanopyDomPickerView
-        mainCanopyDomPickerView.datePickerMode = .date
-        mainCanopyDomPickerView.preferredDatePickerStyle = .wheels
-        mainCanopyDomPickerView.maximumDate = Date()
-        mainCanopyDomPickerView.backgroundColor = .colorTabBar
-        mainCanopyDomPickerView.addTarget(self, action: #selector(mainCanopyDomPickerValueChanged), for: .valueChanged)
+        mainCanopyDomTextField.inputView = mainCanopyDomDatePicker
+        mainCanopyDomDatePicker.datePickerMode = .date
+        mainCanopyDomDatePicker.preferredDatePickerStyle = .wheels
+        mainCanopyDomDatePicker.maximumDate = Date()
+        mainCanopyDomDatePicker.backgroundColor = .colorTabBar
+        mainCanopyDomDatePicker.addTarget(self, action: #selector(mainCanopyDomPickerValueChanged), for: .valueChanged)
         
         // MARK: MAIN CANOPY SERIAL NUMBER:
         
@@ -892,12 +892,12 @@ final class NewSystemCell: UITableViewCell {
         reserveCanopyDomTextField.textAlignment = textAligmentCenter
         reserveCanopyDomTextField.tintColor = .colorWhite
         reserveCanopyDomTextField.layer.masksToBounds = true
-        reserveCanopyDomTextField.inputView = reserveCanopyDomPickerView
-        reserveCanopyDomPickerView.datePickerMode = .date
-        reserveCanopyDomPickerView.preferredDatePickerStyle = .wheels
-        reserveCanopyDomPickerView.maximumDate = Date()
-        reserveCanopyDomPickerView.backgroundColor = .colorTabBar
-        reserveCanopyDomPickerView.addTarget(self, action: #selector(reserveCanopyDomPickerValueChanged), for: .valueChanged)
+        reserveCanopyDomTextField.inputView = reserveCanopyDomDatePicker
+        reserveCanopyDomDatePicker.datePickerMode = .date
+        reserveCanopyDomDatePicker.preferredDatePickerStyle = .wheels
+        reserveCanopyDomDatePicker.maximumDate = Date()
+        reserveCanopyDomDatePicker.backgroundColor = .colorTabBar
+        reserveCanopyDomDatePicker.addTarget(self, action: #selector(reserveCanopyDomPickerValueChanged), for: .valueChanged)
         
         // MARK: RESERVE CANOPY SERIAL NUMBER:
         
@@ -997,6 +997,7 @@ final class NewSystemCell: UITableViewCell {
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.setTitleColor(.colorWhite, for: .normal)
+        cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.titleLabel?.font = fontMediumStandard14
         
         // MARK: SAVE BUTTON:
@@ -1005,6 +1006,7 @@ final class NewSystemCell: UITableViewCell {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.titleLabel?.font = fontMediumStandard14
     }
     
@@ -1368,22 +1370,22 @@ final class NewSystemCell: UITableViewCell {
 
     private func getDateFromPickerToContainer() {
         dateFormatter.dateFormat = "MM.yyyy"
-        containerDomTextField.text = dateFormatter.string(from: containerDomPickerView.date)
+        containerDomTextField.text = dateFormatter.string(from: containerDomDatePicker.date)
     }
     
     private func getDateFromPickerToAad() {
         dateFormatter.dateFormat = "MM.yyyy"
-        aadDomTextField.text = dateFormatter.string(from: aadDomPickerView.date)
+        aadDomTextField.text = dateFormatter.string(from: aadDomDatePicker.date)
     }
     
     private func getDateFromPickerToMainCanopy() {
         dateFormatter.dateFormat = "MM.yyyy"
-        mainCanopyDomTextField.text = dateFormatter.string(from: mainCanopyDomPickerView.date)
+        mainCanopyDomTextField.text = dateFormatter.string(from: mainCanopyDomDatePicker.date)
     }
     
     private func getDateFromPickerToReserveCanopy() {
         dateFormatter.dateFormat = "MM.yyyy"
-        reserveCanopyDomTextField.text = dateFormatter.string(from: reserveCanopyDomPickerView.date)
+        reserveCanopyDomTextField.text = dateFormatter.string(from: reserveCanopyDomDatePicker.date)
     }
 }
 

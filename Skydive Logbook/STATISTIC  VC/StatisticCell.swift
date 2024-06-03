@@ -467,6 +467,7 @@ final class StatisticCell: UITableViewCell {
 
         generalInfoButton.setTitle(NSLocalizedString("General info", comment: "") + ":", for: .normal)
         generalInfoButton.setTitleColor(.colorLightGray, for: .normal)
+        generalInfoButton.setTitleColor(.systemBlue, for: .highlighted)
         generalInfoButton.titleLabel?.font = fontMediumStandard12
         generalInfoButton.contentVerticalAlignment = textAligmentTop
         generalInfoButton.backgroundColor = .colorCell
@@ -484,6 +485,7 @@ final class StatisticCell: UITableViewCell {
 
         totalJumpsButton.setTitle(NSLocalizedString("Total jumps", comment: "") + ":", for: .normal)
         totalJumpsButton.setTitleColor(.colorLightGray, for: .normal)
+        totalJumpsButton.setTitleColor(.systemBlue, for: .highlighted)
         totalJumpsButton.titleLabel?.font = fontMediumStandard12
         totalJumpsButton.contentVerticalAlignment = textAligmentTop
         totalJumpsButton.backgroundColor = .colorCell
@@ -500,6 +502,7 @@ final class StatisticCell: UITableViewCell {
 
         jumpsYearButton.setTitle(NSLocalizedString("In this year", comment: "") + ":", for: .normal)
         jumpsYearButton.setTitleColor(.colorLightGray, for: .normal)
+        jumpsYearButton.setTitleColor(.systemBlue, for: .highlighted)
         jumpsYearButton.titleLabel?.font = fontMediumStandard12
         jumpsYearButton.contentVerticalAlignment = textAligmentTop
         jumpsYearButton.backgroundColor = .colorCell
@@ -516,6 +519,7 @@ final class StatisticCell: UITableViewCell {
 
         categoryButton.setTitle(NSLocalizedString("Category", comment: "") + ":", for: .normal)
         categoryButton.setTitleColor(.colorLightGray, for: .normal)
+        categoryButton.setTitleColor(.systemBlue, for: .highlighted)
         categoryButton.titleLabel?.font = fontMediumStandard12
         categoryButton.contentVerticalAlignment = textAligmentTop
         categoryButton.backgroundColor = .colorCell
@@ -532,6 +536,7 @@ final class StatisticCell: UITableViewCell {
 
         maxHeightButton.setTitle(NSLocalizedString("Max. height", comment: "") + ":", for: .normal)
         maxHeightButton.setTitleColor(.colorLightGray, for: .normal)
+        maxHeightButton.setTitleColor(.systemBlue, for: .highlighted)
         maxHeightButton.titleLabel?.font = fontMediumStandard12
         maxHeightButton.contentVerticalAlignment = textAligmentTop
         maxHeightButton.backgroundColor = .colorCell
@@ -548,6 +553,7 @@ final class StatisticCell: UITableViewCell {
 
         averageHeightButton.setTitle(NSLocalizedString("Av. height", comment: "") + ":", for: .normal)
         averageHeightButton.setTitleColor(.colorLightGray, for: .normal)
+        averageHeightButton.setTitleColor(.systemBlue, for: .highlighted)
         averageHeightButton.titleLabel?.font = fontMediumStandard12
         averageHeightButton.contentVerticalAlignment = textAligmentTop
         averageHeightButton.backgroundColor = .colorCell
@@ -564,6 +570,7 @@ final class StatisticCell: UITableViewCell {
 
         minHeightButton.setTitle(NSLocalizedString("Min. height", comment: "") + ":", for: .normal)
         minHeightButton.setTitleColor(.colorLightGray, for: .normal)
+        minHeightButton.setTitleColor(.systemBlue, for: .highlighted)
         minHeightButton.titleLabel?.font = fontMediumStandard12
         minHeightButton.contentVerticalAlignment = textAligmentTop
         minHeightButton.backgroundColor = .colorCell
@@ -580,6 +587,7 @@ final class StatisticCell: UITableViewCell {
 
         dateFirstButton.setTitle(NSLocalizedString("First jump", comment: "") + ":", for: .normal)
         dateFirstButton.setTitleColor(.colorLightGray, for: .normal)
+        dateFirstButton.setTitleColor(.systemBlue, for: .highlighted)
         dateFirstButton.titleLabel?.font = fontMediumStandard12
         dateFirstButton.contentVerticalAlignment = textAligmentTop
         dateFirstButton.backgroundColor = .colorCell
@@ -597,6 +605,7 @@ final class StatisticCell: UITableViewCell {
 
         maxTimeButton.setTitle(NSLocalizedString("Max. time", comment: "") + ":", for: .normal)
         maxTimeButton.setTitleColor(.colorLightGray, for: .normal)
+        maxTimeButton.setTitleColor(.systemBlue, for: .highlighted)
         maxTimeButton.titleLabel?.font = fontMediumStandard12
         maxTimeButton.contentVerticalAlignment = textAligmentTop
         maxTimeButton.backgroundColor = .colorCell
@@ -613,6 +622,7 @@ final class StatisticCell: UITableViewCell {
 
         dateLastButton.setTitle(NSLocalizedString("Last jump", comment: "") + ":", for: .normal)
         dateLastButton.setTitleColor(.colorLightGray, for: .normal)
+        dateLastButton.setTitleColor(.systemBlue, for: .highlighted)
         dateLastButton.titleLabel?.font = fontMediumStandard12
         dateLastButton.contentVerticalAlignment = textAligmentTop
         dateLastButton.backgroundColor = .colorCell
@@ -630,6 +640,7 @@ final class StatisticCell: UITableViewCell {
 
         maxDayButton.setTitle(NSLocalizedString("Max. in day", comment: "") + ":", for: .normal)
         maxDayButton.setTitleColor(.colorLightGray, for: .normal)
+        maxDayButton.setTitleColor(.systemBlue, for: .highlighted)
         maxDayButton.titleLabel?.font = fontMediumStandard12
         maxDayButton.contentVerticalAlignment = textAligmentTop
         maxDayButton.backgroundColor = .colorCell
@@ -647,6 +658,7 @@ final class StatisticCell: UITableViewCell {
 
         averageTimeButton.setTitle(NSLocalizedString("Av. time", comment: "") + ":", for: .normal)
         averageTimeButton.setTitleColor(.colorLightGray, for: .normal)
+        averageTimeButton.setTitleColor(.systemBlue, for: .highlighted)
         averageTimeButton.titleLabel?.font = fontMediumStandard12
         averageTimeButton.contentVerticalAlignment = textAligmentTop
         averageTimeButton.backgroundColor = .colorCell
@@ -664,6 +676,7 @@ final class StatisticCell: UITableViewCell {
 
         countCutawayButton.setTitle(NSLocalizedString("CutawayStatistic", comment: "") + ":", for: .normal)
         countCutawayButton.setTitleColor(.colorLightGray, for: .normal)
+        countCutawayButton.setTitleColor(.systemBlue, for: .highlighted)
         countCutawayButton.titleLabel?.font = fontMediumStandard12
         countCutawayButton.contentVerticalAlignment = textAligmentTop
         countCutawayButton.backgroundColor = .colorCell
@@ -681,6 +694,7 @@ final class StatisticCell: UITableViewCell {
 
         aircraftsButton.setTitle(NSLocalizedString("Aircraft", comment: "") + ":", for: .normal)
         aircraftsButton.setTitleColor(.colorLightGray, for: .normal)
+        aircraftsButton.setTitleColor(.systemBlue, for: .highlighted)
         aircraftsButton.titleLabel?.font = fontMediumStandard12
         aircraftsButton.contentVerticalAlignment = textAligmentTop
         aircraftsButton.backgroundColor = .colorCell
@@ -697,6 +711,7 @@ final class StatisticCell: UITableViewCell {
 
         canopiesButton.setTitle(NSLocalizedString("Canopies", comment: "") + ":", for: .normal)
         canopiesButton.setTitleColor(.colorLightGray, for: .normal)
+        canopiesButton.setTitleColor(.systemBlue, for: .highlighted)
         canopiesButton.titleLabel?.font = fontMediumStandard12
         canopiesButton.contentVerticalAlignment = textAligmentTop
         canopiesButton.backgroundColor = .colorCell
@@ -713,6 +728,7 @@ final class StatisticCell: UITableViewCell {
 
         locationsButton.setTitle(NSLocalizedString("Locations", comment: "") + ":", for: .normal)
         locationsButton.setTitleColor(.colorLightGray, for: .normal)
+        locationsButton.setTitleColor(.systemBlue, for: .highlighted)
         locationsButton.titleLabel?.font = fontMediumStandard12
         locationsButton.contentVerticalAlignment = textAligmentTop
         locationsButton.backgroundColor = .colorCell
@@ -733,6 +749,7 @@ final class StatisticCell: UITableViewCell {
         // MARK: MISSIONS:
 
         missionsButton.setTitleColor(.colorLightGray, for: .normal)
+        missionsButton.setTitleColor(.systemBlue, for: .highlighted)
         missionsButton.titleLabel?.font = fontMediumStandard12
         missionsButton.contentVerticalAlignment = textAligmentTop
         missionsButton.backgroundColor = .colorCell
@@ -750,6 +767,7 @@ final class StatisticCell: UITableViewCell {
 
         topMissionsButton.setTitle(NSLocalizedString("Top 10" + ":", comment: ""), for: .normal)
         topMissionsButton.setTitleColor(.colorLightGray, for: .normal)
+        topMissionsButton.setTitleColor(.systemBlue, for: .highlighted)
         topMissionsButton.titleLabel?.font = fontMediumStandard12
         topMissionsButton.contentVerticalAlignment = textAligmentTop
         topMissionsButton.titleLabel?.textAlignment = .center

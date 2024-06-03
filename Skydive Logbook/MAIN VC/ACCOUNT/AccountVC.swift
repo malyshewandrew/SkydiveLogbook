@@ -36,7 +36,7 @@ class AccountVC: UIViewController {
         configureConstraints()
         configureUI()
         configureNickname()
-        configureLicenceType()
+        configureLicenseType()
         configureLicenseDate()
         configureMedicine()
         configureInsurance()
@@ -68,7 +68,7 @@ class AccountVC: UIViewController {
         // MARK: ACCOUNT BACKGROUND:
 
         accountBackground.translatesAutoresizingMaskIntoConstraints = false
-        accountBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        accountBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         accountBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         accountBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         accountBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -206,7 +206,7 @@ class AccountVC: UIViewController {
         nicknameLabel.font = fontBoldStandard16
         nicknameLabel.adjustsFontSizeToFitWidth = true
         
-        // MARK: LICENCE TYPE:
+        // MARK: LICENSE TYPE:
         
         licenseView.addBlurEffect(.systemThinMaterialDark)
         licenseView.layer.masksToBounds = true
@@ -277,9 +277,9 @@ class AccountVC: UIViewController {
         }
     }
     
-    // MARK: CONFIGURE LICENCE TYPE:
+    // MARK: CONFIGURE LICENSE TYPE:
 
-    private func configureLicenceType() {
+    private func configureLicenseType() {
         if arrayAccountRealm.count == 0 {
             licenseType = ""
         } else {
@@ -291,7 +291,7 @@ class AccountVC: UIViewController {
         }
     }
     
-    // MARK: CONFIGURE LICENCE DATE:
+    // MARK: CONFIGURE LICENSE DATE:
 
     private func configureLicenseDate() {
         if arrayAccountRealm.count == 0 {

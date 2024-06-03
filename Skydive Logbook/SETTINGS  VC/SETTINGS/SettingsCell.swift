@@ -40,6 +40,7 @@ final class SettingsCell: UITableViewCell {
         addSubviews()
         configureConstrains()
         configureUI()
+        startBouncingAnimation()
     }
 
     @available(*, unavailable)
@@ -167,6 +168,7 @@ final class SettingsCell: UITableViewCell {
         editAccountButton.backgroundColor = .colorCell
         editAccountButton.titleLabel?.font = fontMediumStandard14
         editAccountButton.setTitleColor(.colorWhite, for: .normal)
+        editAccountButton.setTitleColor(.systemBlue, for: .highlighted)
         editAccountButton.addTarget(self, action: #selector(editAccountButtonTapped), for: .touchUpInside)
 
         // MARK: EDIT LOCATIONS:
@@ -176,6 +178,7 @@ final class SettingsCell: UITableViewCell {
         editLocationsButton.backgroundColor = .colorCell
         editLocationsButton.titleLabel?.font = fontMediumStandard14
         editLocationsButton.setTitleColor(.colorWhite, for: .normal)
+        editLocationsButton.setTitleColor(.systemBlue, for: .highlighted)
         editLocationsButton.addTarget(self, action: #selector(editLocationsButtonTapped), for: .touchUpInside)
 
         // MARK: EDIT AIRCRAFTS:
@@ -185,6 +188,7 @@ final class SettingsCell: UITableViewCell {
         editAircraftsButton.backgroundColor = .colorCell
         editAircraftsButton.titleLabel?.font = fontMediumStandard14
         editAircraftsButton.setTitleColor(.colorWhite, for: .normal)
+        editAircraftsButton.setTitleColor(.systemBlue, for: .highlighted)
         editAircraftsButton.addTarget(self, action: #selector(editAircraftsButtonTapped), for: .touchUpInside)
 
         // MARK: EDIT CANOPIES:
@@ -194,6 +198,7 @@ final class SettingsCell: UITableViewCell {
         editCanopiesButton.backgroundColor = .colorCell
         editCanopiesButton.titleLabel?.font = fontMediumStandard14
         editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
+        editCanopiesButton.setTitleColor(.systemBlue, for: .highlighted)
         editCanopiesButton.addTarget(self, action: #selector(editCanopiesButtonTapped), for: .touchUpInside)
 
         // MARK: BACKUP BUTTON:
@@ -203,16 +208,24 @@ final class SettingsCell: UITableViewCell {
         backupButton.backgroundColor = .colorCell
         backupButton.titleLabel?.font = fontMediumStandard14
         backupButton.setTitleColor(.colorWhite, for: .normal)
+        backupButton.setTitleColor(.systemBlue, for: .highlighted)
         backupButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
+        
+        // MARK: PREMIUM BUTTON:
 
-        // MARK: ABOUT BUTTON:
+        premiumButton.setTitle(NSLocalizedString("Premium version", comment: ""), for: .normal)
+        premiumButton.layer.cornerRadius = cornerRadius15
+        premiumButton.backgroundColor = .colorCell
+        premiumButton.titleLabel?.font = fontMediumStandard14
+        premiumButton.setTitleColor(.colorWhite, for: .normal)
+        premiumButton.setTitleColor(.systemBlue, for: .highlighted)
+        premiumButton.addTarget(self, action: #selector(premiumButtonTapped), for: .touchUpInside)
 
-        infoButton.setTitle(NSLocalizedString("Information", comment: ""), for: .normal)
-        infoButton.layer.cornerRadius = cornerRadius15
-        infoButton.backgroundColor = .colorCell
-        infoButton.titleLabel?.font = fontMediumStandard14
-        infoButton.setTitleColor(.colorWhite, for: .normal)
-        infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+        // MARK: STAR:
+
+        starImage.image = UIImage(systemName: "star.fill")
+        starImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+        starImage.tintColor = .systemYellow
         
         // MARK: NOTIFICATIONS BUTTON:
 
@@ -221,23 +234,19 @@ final class SettingsCell: UITableViewCell {
         notificationsButton.backgroundColor = .colorCell
         notificationsButton.titleLabel?.font = fontMediumStandard14
         notificationsButton.setTitleColor(.colorWhite, for: .normal)
+        notificationsButton.setTitleColor(.systemBlue, for: .highlighted)
         notificationsButton.addTarget(self, action: #selector(notificationsButtonTapped), for: .touchUpInside)
         notificationsButton.isHidden = true
+        
+        // MARK: ABOUT BUTTON:
 
-        // MARK: PREMIUM BUTTON:
-
-        premiumButton.setTitle(NSLocalizedString("Premium version", comment: ""), for: .normal)
-        premiumButton.layer.cornerRadius = cornerRadius15
-        premiumButton.backgroundColor = .colorCell
-        premiumButton.titleLabel?.font = fontMediumStandard14
-        premiumButton.setTitleColor(.colorWhite, for: .normal)
-        premiumButton.addTarget(self, action: #selector(premiumButtonTapped), for: .touchUpInside)
-
-        // MARK: STAR:
-
-        starImage.image = UIImage(systemName: "star.fill")
-        starImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-        starImage.tintColor = .systemYellow
+        infoButton.setTitle(NSLocalizedString("Information", comment: ""), for: .normal)
+        infoButton.layer.cornerRadius = cornerRadius15
+        infoButton.backgroundColor = .colorCell
+        infoButton.titleLabel?.font = fontMediumStandard14
+        infoButton.setTitleColor(.colorWhite, for: .normal)
+        infoButton.setTitleColor(.systemBlue, for: .highlighted)
+        infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
 
         // MARK: INSTAGRAM IMAGE VIEW:
 
@@ -260,63 +269,63 @@ final class SettingsCell: UITableViewCell {
 
     // MARK: - HELPERS:
 
-    // MARK: FUNC FOR EDIT ACCOUNT:
+    // MARK: EDIT ACCOUNT:
 
     @objc private func editAccountButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapEditAccountButton()
     }
 
-    // MARK: FUNC FOR EDIT LOCATIONS:
+    // MARK: EDIT LOCATIONS:
 
     @objc private func editLocationsButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapEditLocationsButton()
     }
 
-    // MARK: FUNC FOR EDIT AIRCRAFTS:
+    // MARK: EDIT AIRCRAFTS:
 
     @objc private func editAircraftsButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapEditAircraftsButton()
     }
 
-    // MARK: FUNC FOR EDIT CANOPIES:
+    // MARK: EDIT CANOPIES:
 
     @objc private func editCanopiesButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapEditCanopiesButton()
     }
 
-    // MARK: FUNC FOR BACKUP:
+    // MARK: BACKUP:
 
     @objc private func backupButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapBackupButton()
     }
-
-    // MARK: FUNC FOR INFO BUTTON:
-
-    @objc private func infoButtonTapped() {
-        vibrationOn.vibrationStandart()
-        delegate?.tapInfoButton()
-    }
     
-    // MARK: FUNC FOR PREMIUM BUTTON:
-
-    @objc private func notificationsButtonTapped() {
-        vibrationOn.vibrationStandart()
-        delegate?.tapNotificationsButton()
-    }
-
-    // MARK: FUNC FOR PREMIUM BUTTON:
+    // MARK: PREMIUM BUTTON:
 
     @objc private func premiumButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapPremiumButton()
     }
 
-    // MARK: FUNC FOR INSTAGRAM BUTTON:
+    // MARK: NOTIFICATIONS BUTTON:
+
+    @objc private func notificationsButtonTapped() {
+        vibrationOn.vibrationStandart()
+        delegate?.tapNotificationsButton()
+    }
+    
+    // MARK: INFO BUTTON:
+
+    @objc private func infoButtonTapped() {
+        vibrationOn.vibrationStandart()
+        delegate?.tapInfoButton()
+    }
+
+    // MARK: INSTAGRAM BUTTON:
 
     @objc private func instagramButtonTapped() {
         vibrationOn.vibrationStandart()
@@ -330,12 +339,21 @@ final class SettingsCell: UITableViewCell {
         let context = UIGraphicsGetCurrentContext()
         color.setFill()
         let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-        context!.translateBy(x: 0, y: image.size.height)
-        context!.scaleBy(x: 1.0, y: -1.0)
-        context!.clip(to: rect, mask: image.cgImage!)
-        context!.fill(rect)
-        let coloredImage = UIGraphicsGetImageFromCurrentImageContext()!
+        guard let context = context else { return UIImage() }
+        context.translateBy(x: 0, y: image.size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        context.clip(to: rect, mask: image.cgImage!)
+        context.fill(rect)
+        guard let coloredImage = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
         UIGraphicsEndImageContext()
         return coloredImage
+    }
+    
+    // MARK: ROTATION STAR:
+    
+    private func startBouncingAnimation() {
+        UIView.animate(withDuration: 5, delay: 0, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
+            self.starImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
     }
 }

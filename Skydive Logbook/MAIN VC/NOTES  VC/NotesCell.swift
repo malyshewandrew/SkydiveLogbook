@@ -53,13 +53,17 @@ final class NotesCell: UITableViewCell {
         // MARK: CONTENT VIEW:
 
         contentView.backgroundColor = .colorTabBar
+        
+        // MARK: SELECTON STYLE:
+        
+        selectionStyle = .none
 
         // MARK: VIEW:
 
         containerView.addBlurEffect(.systemUltraThinMaterial)
         containerView.layer.masksToBounds = true
         containerView.layer.cornerRadius = 10
-        containerView.backgroundColor = .colorTabBar
+        containerView.backgroundColor = .colorBackground
         containerView.layer.cornerRadius = 10
         containerView.addSubview(noteLabel)
         

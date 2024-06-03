@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "EffectNewJump.json",
-      "idiom" : "universal"
+      "filename" : "Animation - 1715454951295.json",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.json"
     }
   ],
   "info" : {

@@ -6,8 +6,15 @@ import Lottie
 import RealmSwift
 import UIKit
 
-final class NewJumpCell: UITableViewCell {
+final class NewMoreJumpCell: UITableViewCell {
     // MARK: - PRIVATE PROPERTIES:
+    
+    private let countsButton = UIButton()
+    private let countsTextField = UITextField()
+    private let countsPickerView = UIPickerView()
+    private var countsPickerViewValues: [String] = []
+    private var countsJumps: Int = 0
+    private var alertNumber: Int = 0
     
     private let dateButton = UIButton()
     private let dateTextField = UITextField()
@@ -43,9 +50,6 @@ final class NewJumpCell: UITableViewCell {
     private var cutawayPickerViewValues: [Cutaway] = []
     private var cutawayStrings: [String] = []
     
-    private let commentButton = UIButton()
-    private let commentTextField = UITextField()
-    
     private let saveButton = UIButton()
     private let cleanButton = UIButton()
     
@@ -62,6 +66,8 @@ final class NewJumpCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        countsPickerViewValues = ["1", "2", "3", "4", "5"]
+        
         missionPickerViewValues = [.AFF, .Accuracy, .Acrobatics, .Base, .BaseWingsuit, .CanopyFormation, .Freefly, .Freestyle, .Fun, .Group, .Instructor, .Military, .ParaSki, .Proximity, .Skysurfing, .StaticLine, .Piloting, .Tandem, .Vertical, .Video, .Wingsuit, .Formation]
         missionStrings = missionPickerViewValues.map { $0.localizedValue }
         
@@ -73,12 +79,14 @@ final class NewJumpCell: UITableViewCell {
         configureUI()
         configureGestures()
         
+        countsPickerView.delegate = self
         canopyPickerView.delegate = self
         missionPickerView.delegate = self
         locationPickerView.delegate = self
         aircraftPickerView.delegate = self
         cutawayPickerView.delegate = self
         
+        countsTextField.delegate = self
         dateTextField.delegate = self
         locationTextField.delegate = self
         aircraftTextField.delegate = self
@@ -87,8 +95,8 @@ final class NewJumpCell: UITableViewCell {
         heightTextField.delegate = self
         timeTextField.delegate = self
         cutawayTextField.delegate = self
-        commentTextField.delegate = self
         
+        countsPickerView.dataSource = self
         canopyPickerView.dataSource = self
         missionPickerView.dataSource = self
         locationPickerView.dataSource = self
@@ -104,16 +112,32 @@ final class NewJumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(dateButton, dateTextField, locationButton, locationTextField, aircraftButton, aircraftTextField, canopyButton, canopyTextField, missionButton, missionTextField, heightButton, heightTextField, timeButton, timeTextField, cutawayButton, cutawayTextField, commentButton, commentTextField, saveButton, cleanButton)
+        contentView.addSubviews(countsButton, countsTextField, dateButton, dateTextField, locationButton, locationTextField, aircraftButton, aircraftTextField, canopyButton, canopyTextField, missionButton, missionTextField, heightButton, heightTextField, timeButton, timeTextField, cutawayButton, cutawayTextField, saveButton, cleanButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        // MARK: COUNTS:
+        
+        countsButton.translatesAutoresizingMaskIntoConstraints = false
+        countsButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
+        countsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        countsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        countsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
+        
+        countsTextField.translatesAutoresizingMaskIntoConstraints = false
+        countsTextField.centerXAnchor.constraint(equalTo: countsButton.centerXAnchor).isActive = true
+        countsTextField.bottomAnchor.constraint(equalTo: countsButton.bottomAnchor, constant: 0).isActive = true
+        countsTextField.heightAnchor.constraint(equalTo: countsButton.heightAnchor, multiplier: 0.6).isActive = true
+        countsTextField.widthAnchor.constraint(equalTo: countsButton.widthAnchor, multiplier: 1).isActive = true
+        
+        countsPickerView.translatesAutoresizingMaskIntoConstraints = false
+        
         // MARK: DATE:
         
         dateButton.translatesAutoresizingMaskIntoConstraints = false
-        dateButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
+        dateButton.topAnchor.constraint(equalTo: countsButton.bottomAnchor, constant: 15).isActive = true
         dateButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         dateButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
         dateButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
@@ -234,25 +258,11 @@ final class NewJumpCell: UITableViewCell {
         
         cutawayPickerView.translatesAutoresizingMaskIntoConstraints = false
         
-        // MARK: COMMENT:
-        
-        commentButton.translatesAutoresizingMaskIntoConstraints = false
-        commentButton.topAnchor.constraint(equalTo: cutawayButton.bottomAnchor, constant: 15).isActive = true
-        commentButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        commentButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
-        commentButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
-        
-        commentTextField.translatesAutoresizingMaskIntoConstraints = false
-        commentTextField.centerXAnchor.constraint(equalTo: commentButton.centerXAnchor).isActive = true
-        commentTextField.bottomAnchor.constraint(equalTo: commentButton.bottomAnchor, constant: 0).isActive = true
-        commentTextField.heightAnchor.constraint(equalTo: commentButton.heightAnchor, multiplier: 0.6).isActive = true
-        commentTextField.widthAnchor.constraint(equalTo: commentButton.widthAnchor, multiplier: 1).isActive = true
-        
         // MARK: CLEAN BUTTON:
 
         cleanButton.translatesAutoresizingMaskIntoConstraints = false
         cleanButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
-        cleanButton.topAnchor.constraint(equalTo: commentButton.bottomAnchor, constant: 15).isActive = true
+        cleanButton.topAnchor.constraint(equalTo: cutawayButton.bottomAnchor, constant: 15).isActive = true
         cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         cleanButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.34).isActive = true
         cleanButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
@@ -261,7 +271,7 @@ final class NewJumpCell: UITableViewCell {
 
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         saveButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
-        saveButton.topAnchor.constraint(equalTo: commentButton.bottomAnchor, constant: 15).isActive = true
+        saveButton.topAnchor.constraint(equalTo: cutawayButton.bottomAnchor, constant: 15).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         saveButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.34).isActive = true
         saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
@@ -272,8 +282,28 @@ final class NewJumpCell: UITableViewCell {
     private func configureUI() {
         // MARK: CONTENT VIEW:
 
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = .colorBackground
         selectionStyle = .none
+        
+        // MARK: COUNTS:
+
+        countsButton.backgroundColor = .colorCell
+        countsButton.setTitle("\(NSLocalizedString("Counts of identical jumps / cell ne jump", comment: ""))", for: .normal)
+        countsButton.setTitleColor(.colorLightGray, for: .normal)
+        countsButton.contentVerticalAlignment = textAligmentTop
+        countsButton.titleLabel?.font = fontMediumStandard12
+        countsButton.layer.cornerRadius = cornerRadius15
+        countsTextField.placeholder = NSLocalizedString("1-5", comment: "")
+        countsTextField.backgroundColor = .colorTabBar
+        countsTextField.inputView = countsPickerView
+        countsTextField.font = fontMediumStandard18
+        countsTextField.textColor = .colorWhite
+        countsTextField.layer.cornerRadius = cornerRadius15
+        countsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        countsTextField.textAlignment = textAligmentCenter
+        countsTextField.tintColor = .colorWhite
+        countsTextField.layer.masksToBounds = true
+        countsPickerView.backgroundColor = .colorTabBar
         
         // MARK: DATE:
         
@@ -439,31 +469,13 @@ final class NewJumpCell: UITableViewCell {
         cutawayTextField.layer.masksToBounds = true
         cutawayPickerView.backgroundColor = .colorTabBar
         
-        // MARK: COMMENT:
-
-        commentButton.backgroundColor = .colorCell
-        commentButton.setTitle("\(NSLocalizedString("Comment", comment: ""))", for: .normal)
-        commentButton.setTitleColor(.colorLightGray, for: .normal)
-        commentButton.contentVerticalAlignment = textAligmentTop
-        commentButton.titleLabel?.font = fontMediumStandard12
-        commentButton.layer.cornerRadius = cornerRadius15
-        commentTextField.placeholder = NSLocalizedString("Comment placeholder", comment: "")
-        commentTextField.backgroundColor = .colorTabBar
-        commentTextField.font = fontBoldStandard16
-        commentTextField.textColor = .colorWhite
-        commentTextField.textAlignment = textAligmentCenter
-        commentTextField.layer.cornerRadius = cornerRadius15
-        commentTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        commentTextField.tintColor = .colorWhite
-        commentTextField.layer.masksToBounds = true
-        commentTextField.keyboardType = .default
-        
         // MARK: CLEAN BUTTON:
 
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.setTitleColor(.colorWhite, for: .normal)
+        cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.addTarget(self, action: #selector(actionButtonCleanTap), for: .touchUpInside)
         
@@ -473,6 +485,7 @@ final class NewJumpCell: UITableViewCell {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }
@@ -510,6 +523,18 @@ final class NewJumpCell: UITableViewCell {
     // MARK: ACTION BUTTON SAVE:
 
     @objc private func actionButtonSaveTap() {
+        guard countsTextField.text != "" else {
+            showError(textField: countsTextField)
+            return
+        }
+        
+        guard let value = Int(countsTextField.text ?? "") else { return }
+        
+        guard value <= 5 else {
+            showCountsError(textField: countsTextField)
+            return
+        }
+        
         guard dateTextField.text != "" else {
             showError(textField: dateTextField)
             return
@@ -602,32 +627,41 @@ final class NewJumpCell: UITableViewCell {
     // MARK: SAVE AND ADD NEW JUMP IN ARRAYJUMP:
 
     private func saveNewJump() {
-        let newJump = JumpClassRealm()
-        newJump.date = dateTextField.text ?? ""
-        newJump.location = locationTextField.text ?? ""
-        newJump.aircraft = aircraftTextField.text ?? ""
-        newJump.canopy = canopyTextField.text ?? ""
-        if let missionString = missionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-           let mission = Mission(rawValue: missionString) ?? Mission.allCases.first(where: { $0.localizedValue == missionString })
-        {
-            newJump.mission = mission
-        } else {
-            print("Failed to convert missionString to Mission: \(missionTextField.text ?? "")")
-            return
-        }
-        newJump.height = heightTextField.text ?? ""
-        newJump.time = timeTextField.text ?? ""
-        if let cutawayString = cutawayTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-           let cutaway = Cutaway(rawValue: cutawayString) ?? Cutaway.allCases.first(where: { $0.localizedValue == cutawayString })
-        {
-            newJump.cutaway = cutaway
-        } else {
-            print("Failed to convert cutawayString to Cutaway: \(cutawayTextField.text ?? "")")
-            return
-        }
-        newJump.comment = commentTextField.text ?? ""
-        try? realmManager.localRealm.write {
-            realmManager.localRealm.add(newJump, update: .all)
+        guard let countsJumps = Int(countsTextField.text ?? "") else { return }
+        alertNumber = countsJumps
+        
+        var counter = 0
+        
+        while counter < countsJumps {
+            let newJump = JumpClassRealm()
+            newJump.date = dateTextField.text ?? ""
+            newJump.location = locationTextField.text ?? ""
+            newJump.aircraft = aircraftTextField.text ?? ""
+            newJump.canopy = canopyTextField.text ?? ""
+            if let missionString = missionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+               let mission = Mission(rawValue: missionString) ?? Mission.allCases.first(where: { $0.localizedValue == missionString })
+            {
+                newJump.mission = mission
+            } else {
+                print("Failed to convert missionString to Mission: \(missionTextField.text ?? "")")
+                return
+            }
+            newJump.height = heightTextField.text ?? ""
+            newJump.time = timeTextField.text ?? ""
+            if let cutawayString = cutawayTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+               let cutaway = Cutaway(rawValue: cutawayString) ?? Cutaway.allCases.first(where: { $0.localizedValue == cutawayString })
+            {
+                newJump.cutaway = cutaway
+            } else {
+                print("Failed to convert cutawayString to Cutaway: \(cutawayTextField.text ?? "")")
+                return
+            }
+            newJump.comment = ""
+        
+            try? realmManager.localRealm.write {
+                realmManager.localRealm.add(newJump, update: .all)
+            }
+            counter += 1
         }
     }
     
@@ -642,10 +676,23 @@ final class NewJumpCell: UITableViewCell {
         actionButtonSaveRedColor()
         alertKitError()
     }
+    
+    // MARK: SHOW ERROR FOR >5 COUNTS JUMPS:
+    
+    private func showCountsError(textField: UITextField) {
+        textField.backgroundColor = .colorRed
+        UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve) {
+            textField.backgroundColor = .colorTabBar
+        }
+        resignFirstResponders()
+        actionButtonSaveRedColor()
+        alertKitCountsError()
+    }
 
     // MARK: CLEAR ALL TEXT FIELDS:
     
     private func clearTextViews() {
+        countsTextField.text = ""
         dateTextField.text = ""
         locationTextField.text = ""
         aircraftTextField.text = ""
@@ -654,12 +701,12 @@ final class NewJumpCell: UITableViewCell {
         heightTextField.text = ""
         timeTextField.text = ""
         cutawayTextField.text = ""
-        commentTextField.text = ""
     }
     
     // MARK: CLOSE ALL TEXT FIELDS:
     
     private func resignFirstResponders() {
+        countsTextField.resignFirstResponder()
         dateTextField.resignFirstResponder()
         canopyTextField.resignFirstResponder()
         missionTextField.resignFirstResponder()
@@ -668,12 +715,12 @@ final class NewJumpCell: UITableViewCell {
         locationTextField.resignFirstResponder()
         aircraftTextField.resignFirstResponder()
         cutawayTextField.resignFirstResponder()
-        commentTextField.resignFirstResponder()
     }
     
     // MARK: RESET SELECT PICKER VIEW:
     
     private func resetSelectPickerView() {
+        countsPickerView.selectRow(0, inComponent: 0, animated: true)
         locationPickerView.selectRow(0, inComponent: 0, animated: true)
         aircraftPickerView.selectRow(0, inComponent: 0, animated: true)
         canopyPickerView.selectRow(0, inComponent: 0, animated: true)
@@ -726,7 +773,7 @@ final class NewJumpCell: UITableViewCell {
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
-            title: NSLocalizedString("Jump added / alert kit", comment: ""),
+            title: NSLocalizedString("Jumps added / alert kit", comment: "") + ": " + String(alertNumber),
             icon: .done,
             style: .iOS17AppleMusic,
             haptic: .success
@@ -738,6 +785,17 @@ final class NewJumpCell: UITableViewCell {
     private func alertKitError() {
         AlertKitAPI.present(
             title: NSLocalizedString("Error / alert kit", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
+    }
+    
+    // MARK: ALERT KIT COUNTS ERROR:
+
+    private func alertKitCountsError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error counts / alert kit", comment: ""),
             icon: .error,
             style: .iOS17AppleMusic,
             haptic: .error
@@ -758,7 +816,7 @@ final class NewJumpCell: UITableViewCell {
 
 // MARK: - EXTENSIONS FOR PICKER VIEW DELEGATE:
 
-extension NewJumpCell: UIPickerViewDelegate {
+extension NewMoreJumpCell: UIPickerViewDelegate {
     // MARK: ФУНКЦИЯ КОТОРАЯ ПРИСВАИВАЕТ ЗНАЧЕНИЕ ИЗ ПИКЕР ВЬЮ В ТЕКСТ ФИЛД:
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -778,13 +836,16 @@ extension NewJumpCell: UIPickerViewDelegate {
         } else if pickerView == cutawayPickerView {
             let selectedCutaway = cutawayPickerViewValues.sorted()[row]
             cutawayTextField.text = selectedCutaway.localizedValue
+        } else if pickerView == countsPickerView {
+            let selectedCounts = countsPickerViewValues.sorted()[row]
+            countsTextField.text = selectedCounts
         }
     }
 }
 
 // MARK: - EXTENSIONS FOR PICKER VIEW DATA SOURSE:
 
-extension NewJumpCell: UIPickerViewDataSource {
+extension NewMoreJumpCell: UIPickerViewDataSource {
     // MARK: - КОЛИЧЕСТВО КОЛОНОК В PICKER VIEW:
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -804,6 +865,8 @@ extension NewJumpCell: UIPickerViewDataSource {
             return arrayAircraftsRealm.count
         } else if pickerView == cutawayPickerView {
             return cutawayPickerViewValues.count
+        } else if pickerView == countsPickerView {
+            return countsPickerViewValues.count
         }
         return 0
     }
@@ -822,6 +885,8 @@ extension NewJumpCell: UIPickerViewDataSource {
             title = arrayAircraftsRealm[row].aircraft
         } else if pickerView == cutawayPickerView {
             title = cutawayPickerViewValues.sorted()[row].localizedValue
+        } else if pickerView == countsPickerView {
+            title = countsPickerViewValues.sorted()[row]
         }
         let attributedString = NSAttributedString(string: title, attributes: [.foregroundColor: UIColor.colorWhite])
         return attributedString
@@ -830,15 +895,11 @@ extension NewJumpCell: UIPickerViewDataSource {
 
 // MARK: - EXTENSION FOR TEXT FIELD:
 
-extension NewJumpCell: UITextFieldDelegate {
+extension NewMoreJumpCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == heightTextField || textField == timeTextField {
-            let allowedCharacters = CharacterSet(charactersIn: "1234567890")
-            let characterSet = CharacterSet(charactersIn: string)
-            return allowedCharacters.isSuperset(of: characterSet)
-        } else {
-            return true
-        }
+        let allowedCharacters = CharacterSet(charactersIn: "1234567890")
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -873,6 +934,10 @@ extension NewJumpCell: UITextFieldDelegate {
         
         if textField == cutawayTextField {
             cutawayTextField.text = cutawayPickerViewValues[0].localizedValue
+        }
+        
+        if textField == countsTextField {
+            countsTextField.text = countsPickerViewValues[0]
         }
     }
 }

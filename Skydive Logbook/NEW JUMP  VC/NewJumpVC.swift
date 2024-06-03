@@ -54,8 +54,8 @@ final class NewJumpVC: UIViewController {
         
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
         effectOneLottie.centerXAnchor.constraint(equalTo: newJumpLottie.centerXAnchor).isActive = true
-        effectOneLottie.centerYAnchor.constraint(equalTo: newJumpLottie.centerYAnchor, constant: 10).isActive = true
-        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        effectOneLottie.centerYAnchor.constraint(equalTo: newJumpLottie.centerYAnchor, constant: 0).isActive = true
+        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
         
         // MARK: ANIMATION NEW JUMP LOTTIE:
 
@@ -119,8 +119,8 @@ final class NewJumpVC: UIViewController {
         
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
-        effectOneLottie.animationSpeed = 0.1
-        effectOneLottie.layer.opacity = 0.5
+        effectOneLottie.animationSpeed = 0.2
+        effectOneLottie.layer.opacity = 0.2
 
         // MARK: ANIMATIONS:
 

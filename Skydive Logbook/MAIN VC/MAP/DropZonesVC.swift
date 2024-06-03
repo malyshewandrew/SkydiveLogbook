@@ -12,7 +12,7 @@ final class DropZonesVC: UIViewController {
     private let locationManager = CLLocationManager()
     private let currentLocationButton = UIButton()
     private let mapTypeButton = UIButton()
-    private let closeButton = UIButton()
+    private let closeButton = UIButton(type: .system)
     
     private let dropZones: String = NSLocalizedString("Drop zones / drop zones", comment: "")
     private let windTunnels: String = NSLocalizedString("Wind tunnels / drop zones", comment: "")
@@ -104,8 +104,11 @@ final class DropZonesVC: UIViewController {
         
         // MARK: BACK BUTTON:
 
-        closeButton.setTitle(NSLocalizedString("Close", comment: ""), for: .normal)
+        closeButton.setTitle("   " + NSLocalizedString("Close", comment: "") + "   ", for: .normal)
         closeButton.setTitleColor(.systemBlue, for: .normal)
+        closeButton.layer.masksToBounds = true
+        closeButton.layer.cornerRadius = cornerRadius15
+        closeButton.backgroundColor = .colorTabBar
         closeButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
         
         // MARK: INFO BUTTON:
@@ -132,7 +135,7 @@ final class DropZonesVC: UIViewController {
         segmentControl.insertSegment(withTitle: windTunnels, at: 1, animated: true)
         segmentControl.insertSegment(withTitle: shops, at: 2, animated: true)
         segmentControl.selectedSegmentIndex = 0
-        segmentControl.backgroundColor = .colorCell
+        segmentControl.backgroundColor = .colorTabBar
         segmentControl.selectedSegmentTintColor = .systemBlue
         segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
     }

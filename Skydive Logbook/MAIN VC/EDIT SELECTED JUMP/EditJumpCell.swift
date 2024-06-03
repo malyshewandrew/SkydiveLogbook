@@ -456,6 +456,7 @@ final class EditJumpCell: UITableViewCell {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }

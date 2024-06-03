@@ -16,18 +16,23 @@ final class EditAccountVC: UIViewController {
     private let licenseTypeTextField = UITextField()
     private let licenseDateButton = UIButton()
     private let licenseDateTextField = UITextField()
+    private let licenseDatePicker = UIDatePicker()
     private let medicineButton = UIButton()
     private let medicineTextField = UITextField()
+    private let medicineDatePicker = UIDatePicker()
     private let insuranceButton = UIButton()
     private let insuranceTextField = UITextField()
+    private let insuranceDatePicker = UIDatePicker()
     private let reserveCanopyButton = UIButton()
     private let reserveCanopyTextField = UITextField()
+    private let reserveCanopyDatePicker = UIDatePicker()
     private let cleanButton = UIButton()
     private let saveButton = UIButton()
     private var player = AVAudioPlayer()
     private let realmManager = RealmManager()
     private let account = AccountClassRealm()
     private let vibrationOn = Vibration()
+    private let dateFormatter = DateFormatter()
     
     // MARK: - LIFECYCLE:
 
@@ -79,7 +84,7 @@ final class EditAccountVC: UIViewController {
         // MARK: SCROLL VIEW:
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: editAccountLottie.bottomAnchor, constant: 0).isActive = true
+        scrollView.topAnchor.constraint(equalTo: editAccountLottie.bottomAnchor, constant: -10).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -126,6 +131,8 @@ final class EditAccountVC: UIViewController {
         licenseDateTextField.trailingAnchor.constraint(equalTo: licenseDateButton.trailingAnchor).isActive = true
         licenseDateTextField.heightAnchor.constraint(equalTo: licenseDateButton.heightAnchor, multiplier: 0.6).isActive = true
         
+        licenseDatePicker.translatesAutoresizingMaskIntoConstraints = false
+        
         // MARK: MEDICINE:
         
         medicineButton.translatesAutoresizingMaskIntoConstraints = false
@@ -139,6 +146,8 @@ final class EditAccountVC: UIViewController {
         medicineTextField.leadingAnchor.constraint(equalTo: medicineButton.leadingAnchor).isActive = true
         medicineTextField.trailingAnchor.constraint(equalTo: medicineButton.trailingAnchor).isActive = true
         medicineTextField.heightAnchor.constraint(equalTo: medicineButton.heightAnchor, multiplier: 0.6).isActive = true
+        
+        medicineDatePicker.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: INSURANCE:
         
@@ -154,6 +163,8 @@ final class EditAccountVC: UIViewController {
         insuranceTextField.trailingAnchor.constraint(equalTo: insuranceButton.trailingAnchor).isActive = true
         insuranceTextField.heightAnchor.constraint(equalTo: insuranceButton.heightAnchor, multiplier: 0.6).isActive = true
         
+        insuranceDatePicker.translatesAutoresizingMaskIntoConstraints = false
+        
         // MARK: RESERVE CANOPY:
         
         reserveCanopyButton.translatesAutoresizingMaskIntoConstraints = false
@@ -167,6 +178,8 @@ final class EditAccountVC: UIViewController {
         reserveCanopyTextField.leadingAnchor.constraint(equalTo: reserveCanopyButton.leadingAnchor).isActive = true
         reserveCanopyTextField.trailingAnchor.constraint(equalTo: reserveCanopyButton.trailingAnchor).isActive = true
         reserveCanopyTextField.heightAnchor.constraint(equalTo: reserveCanopyButton.heightAnchor, multiplier: 0.6).isActive = true
+        
+        reserveCanopyDatePicker.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: CLEAN BUTTON:
 
@@ -259,6 +272,11 @@ final class EditAccountVC: UIViewController {
         licenseDateTextField.textAlignment = textAligmentCenter
         licenseDateTextField.tintColor = .colorWhite
         licenseDateTextField.layer.masksToBounds = true
+        licenseDateTextField.inputView = licenseDatePicker
+        licenseDatePicker.datePickerMode = .date
+        licenseDatePicker.preferredDatePickerStyle = .wheels
+        licenseDatePicker.backgroundColor = .colorTabBar
+        licenseDatePicker.addTarget(self, action: #selector(licenseDatePickerValueChanged), for: .valueChanged)
         
         // MARK: MEDICINE:
         
@@ -277,6 +295,11 @@ final class EditAccountVC: UIViewController {
         medicineTextField.textAlignment = textAligmentCenter
         medicineTextField.tintColor = .colorWhite
         medicineTextField.layer.masksToBounds = true
+        medicineTextField.inputView = medicineDatePicker
+        medicineDatePicker.datePickerMode = .date
+        medicineDatePicker.preferredDatePickerStyle = .wheels
+        medicineDatePicker.backgroundColor = .colorTabBar
+        medicineDatePicker.addTarget(self, action: #selector(medicineDatePickerValueChanged), for: .valueChanged)
         
         // MARK: INSURANCE:
         
@@ -295,6 +318,11 @@ final class EditAccountVC: UIViewController {
         insuranceTextField.textAlignment = textAligmentCenter
         insuranceTextField.tintColor = .colorWhite
         insuranceTextField.layer.masksToBounds = true
+        insuranceTextField.inputView = insuranceDatePicker
+        insuranceDatePicker.datePickerMode = .date
+        insuranceDatePicker.preferredDatePickerStyle = .wheels
+        insuranceDatePicker.backgroundColor = .colorTabBar
+        insuranceDatePicker.addTarget(self, action: #selector(insuranceDatePickerValueChanged), for: .valueChanged)
         
         // MARK: RESERVE CANOPY:
         
@@ -313,6 +341,11 @@ final class EditAccountVC: UIViewController {
         reserveCanopyTextField.textAlignment = textAligmentCenter
         reserveCanopyTextField.tintColor = .colorWhite
         reserveCanopyTextField.layer.masksToBounds = true
+        reserveCanopyTextField.inputView = reserveCanopyDatePicker
+        reserveCanopyDatePicker.datePickerMode = .date
+        reserveCanopyDatePicker.preferredDatePickerStyle = .wheels
+        reserveCanopyDatePicker.backgroundColor = .colorTabBar
+        reserveCanopyDatePicker.addTarget(self, action: #selector(reserveCanopyDatePickerValueChanged), for: .valueChanged)
         
         // MARK: CLEAN BUTTON:
 
@@ -320,6 +353,7 @@ final class EditAccountVC: UIViewController {
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.setTitleColor(.colorWhite, for: .normal)
+        cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
         
@@ -329,6 +363,7 @@ final class EditAccountVC: UIViewController {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.addTarget(self, action: #selector(saveButtomTapped), for: .touchUpInside)
     }
@@ -383,6 +418,7 @@ final class EditAccountVC: UIViewController {
     // MARK: SAVE FUNC:
 
     private func saveNewAccount() {
+        
         let existingAccounts = realmManager.localRealm.objects(AccountClassRealm.self)
         try? realmManager.localRealm.write {
             realmManager.localRealm.delete(existingAccounts)
@@ -395,6 +431,8 @@ final class EditAccountVC: UIViewController {
             newAccount.reserveCanopy = reserveCanopyTextField.text ?? ""
             realmManager.localRealm.add(newAccount, update: .all)
         }
+
+
     }
     
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
@@ -496,7 +534,49 @@ final class EditAccountVC: UIViewController {
             haptic: .success
         )
     }
+    
+    // MARK: DATE PICKER:
+
+    @objc private func licenseDatePickerValueChanged() {
+        getDateToLicense()
+    }
+    
+    @objc private func medicineDatePickerValueChanged() {
+        getDateToMedicine()
+    }
+    
+    @objc private func insuranceDatePickerValueChanged() {
+        getDateToInsurance()
+    }
+    
+    @objc private func reserveCanopyDatePickerValueChanged() {
+        getDateToReserveCanopy()
+    }
+    
+    // MARK: DATE FORMATTER:
+
+    private func getDateToLicense() {
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        licenseDateTextField.text = dateFormatter.string(from: licenseDatePicker.date)
+    }
+    
+    private func getDateToMedicine() {
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        medicineTextField.text = dateFormatter.string(from: medicineDatePicker.date)
+    }
+    
+    private func getDateToInsurance() {
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        insuranceTextField.text = dateFormatter.string(from: insuranceDatePicker.date)
+    }
+    
+    private func getDateToReserveCanopy() {
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        reserveCanopyTextField.text = dateFormatter.string(from: reserveCanopyDatePicker.date)
+    }
 }
+
+// MARK: - EXTENSION:
 
 extension EditAccountVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {

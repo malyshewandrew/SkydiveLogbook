@@ -615,3 +615,21 @@
 "Notifications / notifications" = "Notifications";
 "Checking the admission / notifications" = "Checking the admission";
 "Checking the admission message / notifications" = "To send notifications, check the permission to send notifications in the application settings";
+
+"Access to notifications / notifications" = "Access to notifications";
+
+"Notifications / notifications" = "Notifications";
+
+"Summary of the month / notifications" = "Summary of the month";
+
+"Container resource / notifications" = "Container resource";
+"AAD resource / notifications" = "AAD resource";
+"Main canopy resource date / notifications" = "Main resource";
+"Reserve canopy resource date / notifications" = "Reserve resource";
+
+"License period / notifications" = "License period";
+"Medicine period / notifications" = "Medicine period";
+"Insurance period / notifications" = "Insurance period";
+
+"Total jumps / notifications" = "Total jumps";
+"In this month / notifications" = "In this month";

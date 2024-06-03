@@ -1,13 +1,14 @@
 import Lottie
 import NotificationCenter
 import UIKit
-import Lottie
 
 final class NotificationsVS: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
-    
-    private let notificationsBackgroundLottie = LottieAnimationView(name: "NotificationsBackgroundLottie")
-    private let notificationsLogoLottie = LottieAnimationView(name: "NotificationsLogoLottie")
+        
+    private let notificationBackgroundLottie = LottieAnimationView(name: "NotificationsBackgroundLottie")
+    private let notificationEffectLottie = LottieAnimationView(name: "EffectNewJump")
+    private let notificationLogoLottie = LottieAnimationView(name: "NotificationsLogoLottie")
+    private let notificationButton = UIButton()
     private let scrollView = UIScrollView()
     
     private let mainView = UIView()
@@ -85,29 +86,25 @@ final class NotificationsVS: UIViewController {
     private let insuranceLabel = UILabel()
     private let insuranceSwitch = UISwitch()
     
+    private let dateFormatter = DateFormatter()
     private let vibrationOn = Vibration()
     private let notificationCenter = UNUserNotificationCenter.current()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 22)
-
+    
     // MARK: - LIFECYCLE:
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendRequest()
         addSubviews()
         configureConstrains()
         configureUI()
+        checkMainSwitch()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadUserDefaults()
-    }
-
     // MARK: - ADD SUBVIEWS:
-
+    
     private func addSubviews() {
-        view.addSubviews(notificationsBackgroundLottie, notificationsLogoLottie, scrollView)
+        view.addSubviews(notificationBackgroundLottie, notificationEffectLottie, notificationLogoLottie, notificationButton, scrollView)
         
         scrollView.addSubviews(mainView, firstContentView, secondContentView, threeContentView, fourContentView)
         
@@ -131,30 +128,45 @@ final class NotificationsVS: UIViewController {
         medicineView.addSubviews(medicineImageView, medicineLabel, medicineSwitch)
         insuranceView.addSubviews(insuranceImageView, insuranceLabel, insuranceSwitch)
     }
-
+    
     // MARK: - CONFIGURE CONSTRAINS:
-
+    
     private func configureConstrains() {
+        // MARK: NOTIFICATION BACKGROUND:
         
-        // MARK: NOTIFICATIONS BACKGROUND:
-
-        notificationsBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        notificationsBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        notificationsBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        notificationsBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        notificationsBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        notificationBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+        notificationBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        notificationBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        notificationBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        notificationBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        // MARK: NOTIFICATIONS LOGO:
+        // MARK: NOTIFICATION EFFECT LOTTIE:
         
-        notificationsLogoLottie.translatesAutoresizingMaskIntoConstraints = false
-        notificationsLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
-        notificationsLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        notificationsLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        notificationEffectLottie.translatesAutoresizingMaskIntoConstraints = false
+        notificationEffectLottie.topAnchor.constraint(equalTo: notificationLogoLottie.topAnchor).isActive = true
+        notificationEffectLottie.bottomAnchor.constraint(equalTo: notificationLogoLottie.bottomAnchor).isActive = true
+        notificationEffectLottie.leadingAnchor.constraint(equalTo: notificationLogoLottie.leadingAnchor).isActive = true
+        notificationEffectLottie.trailingAnchor.constraint(equalTo: notificationLogoLottie.trailingAnchor).isActive = true
+        
+        // MARK: NOTIFICATION LOGO LOTTIE:
+        
+        notificationLogoLottie.translatesAutoresizingMaskIntoConstraints = false
+        notificationLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
+        notificationLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        notificationLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        // MARK: NOTIFICATION BUTTON:
+        
+        notificationButton.translatesAutoresizingMaskIntoConstraints = false
+        notificationButton.topAnchor.constraint(equalTo: notificationLogoLottie.topAnchor).isActive = true
+        notificationButton.bottomAnchor.constraint(equalTo: notificationLogoLottie.bottomAnchor).isActive = true
+        notificationButton.leadingAnchor.constraint(equalTo: notificationLogoLottie.leadingAnchor).isActive = true
+        notificationButton.trailingAnchor.constraint(equalTo: notificationLogoLottie.trailingAnchor).isActive = true
         
         // MARK: SCROLL VIEW:
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: notificationsLogoLottie.bottomAnchor, constant: 0).isActive = true
+        scrollView.topAnchor.constraint(equalTo: notificationLogoLottie.bottomAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -162,7 +174,7 @@ final class NotificationsVS: UIViewController {
         // MARK: MAIN:
         
         mainView.translatesAutoresizingMaskIntoConstraints = false
-        mainView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive = true
+        mainView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         mainView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mainView.heightAnchor.constraint(equalToConstant: height45).isActive = true
         mainView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
@@ -459,36 +471,47 @@ final class NotificationsVS: UIViewController {
         insuranceSwitch.centerYAnchor.constraint(equalTo: insuranceView.centerYAnchor).isActive = true
         insuranceSwitch.trailingAnchor.constraint(equalTo: insuranceView.trailingAnchor, constant: -15).isActive = true
     }
-
+    
     // MARK: - CONFIGURE UI:
-
+    
     private func configureUI() {
         // MARK: VIEW:
-
+        
         view.backgroundColor = .colorCell
         
         // MARK: NAVIAGTION CONTROLLER:
-
+        
         navigationController?.navigationBar.isHidden = false
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
         
-        // MARK: NOTIFICATIONS BACKGROUND:
-
-        notificationsBackgroundLottie.play()
-        notificationsBackgroundLottie.loopMode = .loop
-        notificationsBackgroundLottie.animationSpeed = 1
-        notificationsBackgroundLottie.contentMode = .scaleAspectFill
+        // MARK: NOTIFICATION BACKGROUND:
         
-        // MARK: NOTIFICATIONS LOGO:
+        notificationBackgroundLottie.play()
+        notificationBackgroundLottie.loopMode = .loop
+        notificationBackgroundLottie.animationSpeed = 1
+        notificationBackgroundLottie.contentMode = .scaleAspectFill
         
-        notificationsLogoLottie.play()
-        notificationsLogoLottie.loopMode = .loop
-        notificationsLogoLottie.animationSpeed = 1
+        // MARK: NOTIFICATION EFFECT LOTTIE:
+        
+        notificationEffectLottie.play()
+        notificationEffectLottie.loopMode = .loop
+        notificationEffectLottie.animationSpeed = 1
+        notificationEffectLottie.layer.opacity = 1
+        
+        // MARK: NOTIFICATION LOGO LOTTIE:
+        
+        notificationLogoLottie.play()
+        notificationLogoLottie.loopMode = .loop
+        notificationLogoLottie.animationSpeed = 1
+        
+        // MARK: NOTIFICATION BUTTON:
+        
+        notificationButton.addTarget(self, action: #selector(notificationButtonTapped), for: .touchUpInside)
         
         // MARK: SCROLL VIEW:
         
-        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height / 1.6)
         scrollView.isScrollEnabled = true
         
         // MARK: MAIN:
@@ -497,7 +520,7 @@ final class NotificationsVS: UIViewController {
         mainView.layer.masksToBounds = true
         mainView.layer.cornerRadius = cornerRadius15
         
-        mainLabel.text = "Допуск к уведомлениям"
+        mainLabel.text = NSLocalizedString("Access to notifications / notifications", comment: "")
         mainLabel.textColor = .white
         mainLabel.font = fontMediumStandard14
         mainLabel.adjustsFontSizeToFitWidth = true
@@ -509,6 +532,7 @@ final class NotificationsVS: UIViewController {
         firstContentView.backgroundColor = .colorTabBar
         firstContentView.layer.masksToBounds = true
         firstContentView.layer.cornerRadius = cornerRadius15
+        firstContentView.isHidden = true
         
         // MARK: MONTHLY:
         
@@ -519,20 +543,19 @@ final class NotificationsVS: UIViewController {
         let montlyImage = UIImage(systemName: "moon.stars.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemMint, renderingMode: .alwaysOriginal)
         monthlyImageView.image = montlyImage
         
-        monthlyLabel.text = "Сводка в конце месяца"
+        monthlyLabel.text = NSLocalizedString("Summary of the month / notifications", comment: "")
         monthlyLabel.textColor = .white
         monthlyLabel.font = fontMediumStandard14
         monthlyLabel.adjustsFontSizeToFitWidth = true
         
-        monthlySwitch.isOn = true
         monthlySwitch.addTarget(self, action: #selector(monthlySwitchValueChange(_:)), for: .valueChanged)
-        
         
         // MARK: SECOND CONTENT VIEW:
         
         secondContentView.backgroundColor = .colorTabBar
         secondContentView.layer.masksToBounds = true
         secondContentView.layer.cornerRadius = cornerRadius15
+        secondContentView.isHidden = true
         
         // MARK: CONTAINER:
         
@@ -543,7 +566,7 @@ final class NotificationsVS: UIViewController {
         let containerImage = UIImage(systemName: "backpack.fill", withConfiguration: configurationImage)?.withTintColor(.systemIndigo, renderingMode: .alwaysOriginal)
         containerImageView.image = containerImage
         
-        containerLabel.text = "Ресурс ранца"
+        containerLabel.text = NSLocalizedString("Container resource / notifications", comment: "")
         containerLabel.textColor = .white
         containerLabel.font = fontMediumStandard14
         containerLabel.adjustsFontSizeToFitWidth = true
@@ -563,7 +586,7 @@ final class NotificationsVS: UIViewController {
         let aadImage = UIImage(systemName: "circle.filled.ipad.fill", withConfiguration: configurationImage)?.withTintColor(.systemIndigo, renderingMode: .alwaysOriginal)
         aadImageView.image = aadImage
         
-        aadLabel.text = "Ресурс прибора"
+        aadLabel.text = NSLocalizedString("AAD resource / notifications", comment: "")
         aadLabel.textColor = .white
         aadLabel.font = fontMediumStandard14
         aadLabel.adjustsFontSizeToFitWidth = true
@@ -583,7 +606,7 @@ final class NotificationsVS: UIViewController {
         let mainCanopyResourse = UIImage(systemName: "circle.tophalf.filled.inverse", withConfiguration: configurationImage)?.withTintColor(.systemIndigo, renderingMode: .alwaysOriginal)
         mainCanopyResourseImageView.image = mainCanopyResourse
         
-        mainCanopyResourseLabel.text = "Ресурс основного (по дате)"
+        mainCanopyResourseLabel.text = NSLocalizedString("Main canopy resource date / notifications", comment: "")
         mainCanopyResourseLabel.textColor = .white
         mainCanopyResourseLabel.font = fontMediumStandard14
         mainCanopyResourseLabel.adjustsFontSizeToFitWidth = true
@@ -603,7 +626,7 @@ final class NotificationsVS: UIViewController {
         let reserveCanopyResourse = UIImage(systemName: "circle.tophalf.filled", withConfiguration: configurationImage)?.withTintColor(.systemIndigo, renderingMode: .alwaysOriginal)
         reserveCanopyResourseImageView.image = reserveCanopyResourse
         
-        reserveCanopyResourseLabel.text = "Ресурс запасного (по дате)"
+        reserveCanopyResourseLabel.text = NSLocalizedString("Reserve canopy resource date / notifications", comment: "")
         reserveCanopyResourseLabel.textColor = .white
         reserveCanopyResourseLabel.font = fontMediumStandard14
         reserveCanopyResourseLabel.adjustsFontSizeToFitWidth = true
@@ -615,6 +638,7 @@ final class NotificationsVS: UIViewController {
         threeContentView.backgroundColor = .colorTabBar
         threeContentView.layer.masksToBounds = true
         threeContentView.layer.cornerRadius = cornerRadius15
+        threeContentView.isHidden = true
         
         // MARK: MAIN CANOPY JUMPS:
         
@@ -632,7 +656,7 @@ final class NotificationsVS: UIViewController {
         
         mainCanopyJumpsSwitch.addTarget(self, action: #selector(mainCanopyJumpsSwitchValueChange(_:)), for: .valueChanged)
         
-        //MARK: LINE 4:
+        // MARK: LINE 4:
         
         lineFourView.backgroundColor = .colorDarkGray
         
@@ -657,6 +681,7 @@ final class NotificationsVS: UIViewController {
         fourContentView.backgroundColor = .colorTabBar
         fourContentView.layer.masksToBounds = true
         fourContentView.layer.cornerRadius = cornerRadius15
+        fourContentView.isHidden = true
         
         // MARK: LICENSE:
         
@@ -667,14 +692,14 @@ final class NotificationsVS: UIViewController {
         let license = UIImage(systemName: "doc.richtext", withConfiguration: configurationImage)?.withTintColor(.systemPurple, renderingMode: .alwaysOriginal)
         licenseImageView.image = license
         
-        licenseLabel.text = "Срок лицензии"
+        licenseLabel.text = NSLocalizedString("License period / notifications", comment: "")
         licenseLabel.textColor = .white
         licenseLabel.font = fontMediumStandard14
         licenseLabel.adjustsFontSizeToFitWidth = true
         
         licenseSwitch.addTarget(self, action: #selector(licenseSwitchValueChange(_:)), for: .valueChanged)
         
-        //MARK: LINE 5:
+        // MARK: LINE 5:
         
         lineFiveView.backgroundColor = .colorDarkGray
         
@@ -687,14 +712,14 @@ final class NotificationsVS: UIViewController {
         let medicine = UIImage(systemName: "heart.text.square.fill", withConfiguration: configurationImage)?.withTintColor(.systemPink, renderingMode: .alwaysOriginal)
         medicineImageView.image = medicine
         
-        medicineLabel.text = "Срок медицины"
+        medicineLabel.text = NSLocalizedString("Medicine period / notifications", comment: "")
         medicineLabel.textColor = .white
         medicineLabel.font = fontMediumStandard14
         medicineLabel.adjustsFontSizeToFitWidth = true
         
         medicineSwitch.addTarget(self, action: #selector(medicineSwitchValueChange(_:)), for: .valueChanged)
         
-        //MARK: LINE 6:
+        // MARK: LINE 6:
         
         lineSixView.backgroundColor = .colorDarkGray
         
@@ -707,253 +732,49 @@ final class NotificationsVS: UIViewController {
         let insurance = UIImage(systemName: "doc.text.image", withConfiguration: configurationImage)?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal)
         insuranceImageView.image = insurance
         
-        insuranceLabel.text = "Срок страховки"
+        insuranceLabel.text = NSLocalizedString("Insurance period / notifications", comment: "")
         insuranceLabel.textColor = .white
         insuranceLabel.font = fontMediumStandard14
         medicineLabel.adjustsFontSizeToFitWidth = true
         
         insuranceSwitch.addTarget(self, action: #selector(insuranceSwitchValueChange(_:)), for: .valueChanged)
     }
-
+    
     // MARK: - HELPERS:
+    
+    // MARK: CHECK MAIN SWITCH:
+    
+    private func checkMainSwitch() {
+        let statusMainSwitch = UserDefaults.standard.bool(forKey: "mainSwith")
+        if statusMainSwitch {
+            mainSwitch.isOn = true
+            mainSwitchValueChange(mainSwitch)
+            print("Проверка Main Switch при загрузке - ON")
+        } else {
+            print("Проверка Main Switch при загрузке - OFF")
+            mainSwitch.isOn = false
+            setRedMainImageView()
+        }
+    }
     
     // MARK: MAIN SWITCH ABOT REQUEST LOCAL NOTIFICATIONS:
     
-    @objc func mainSwitchValueChange(_ sender: UISwitch) {
+    @objc private func mainSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
         if sender.isOn {
-            vibrationOn.vibrationStandart()
-            checkStatusRequest()
-            UserDefaults.standard.set(true, forKey: "mainSwitch")
-            print("Уведомления будут приходить")
+            UserDefaults.standard.setValue(true, forKeyPath: "mainSwith")
+            print("Main Switch ON")
+            setImagesMainSwitch()
+            loadUserDefaults()
             firstContentView.isHidden = false
             secondContentView.isHidden = false
-            threeContentView.isHidden = true // ДОДЕЛАТЬ
-            fourContentView.isHidden = true // ДОДЕЛАТЬ
-            
-            let mainImage = UIImage(systemName: "light.beacon.min.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
-            mainImageView.image = mainImage
-            getCount()
+            threeContentView.isHidden = false
+            fourContentView.isHidden = false
         } else {
-            vibrationOn.vibrationStandart()
-            checkStatusRequest()
-            UserDefaults.standard.set(false, forKey: "mainSwitch")
-            notificationCenter.removeAllPendingNotificationRequests()
-            notificationCenter.removeAllDeliveredNotifications()
-            print("Уведомления не будут приходить и все стерты")
+            UserDefaults.standard.setValue(false, forKeyPath: "mainSwith")
+            print("Main Switch OFF")
             deleteNotifications()
-            
-            let mainImage = UIImage(systemName: "light.beacon.min.fill", withConfiguration: configurationImage)?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
-            mainImageView.image = mainImage
-        }
-    }
-    
-    // MARK: MONTHLY:
-    
-    @objc func monthlySwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeMonthlyNotification()
-            NotificationManager.instance.setMonthlyNotification(arrayJumpsRealm: arrayJumpsRealm)
-            UserDefaults.standard.set(true, forKey: "monthlySwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeMonthlyNotification()
-            UserDefaults.standard.set(false, forKey: "monthlySwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: CONTAINER:
-    
-    @objc func containerSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeContainerNotification(for: arraySystemsRealm)
-            NotificationManager.instance.setContainerNotifications(for: arraySystemsRealm)
-            UserDefaults.standard.set(true, forKey: "containerSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeContainerNotification(for: arraySystemsRealm)
-            UserDefaults.standard.set(false, forKey: "containerSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: AAD:
-    
-    @objc func aadSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeAadNotification(for: arraySystemsRealm)
-            NotificationManager.instance.setAadNotifications(for: arraySystemsRealm)
-            UserDefaults.standard.set(true, forKey: "aadSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeAadNotification(for: arraySystemsRealm)
-            UserDefaults.standard.set(false, forKey: "aadSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: MAIN CANOPY RESOURSE:
-    
-    @objc func mainCanopyResourseSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeMainCanopyResourseNotification(for: arraySystemsRealm)
-            NotificationManager.instance.setMainCanopyResourseNotifications(for: arraySystemsRealm)
-            UserDefaults.standard.set(true, forKey: "mainCanopyResourseSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeMainCanopyResourseNotification(for: arraySystemsRealm)
-            UserDefaults.standard.set(false, forKey: "mainCanopyResourseSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: RESERVE CANOPY RESOURSE:
-    
-    @objc func reserveCanopyResourseSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeReserveCanopyResourseNotification(for: arraySystemsRealm)
-            NotificationManager.instance.setReserveCanopyResourseNotifications(for: arraySystemsRealm)
-            UserDefaults.standard.set(true, forKey: "reserveCanopyResourseSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeReserveCanopyResourseNotification(for: arraySystemsRealm)
-            UserDefaults.standard.set(false, forKey: "reserveCanopyResourseSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: MAIN CANOPY JUMPS:
-    
-    @objc func mainCanopyJumpsSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            
-            UserDefaults.standard.set(true, forKey: "mainCanopyJumpsSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-
-            UserDefaults.standard.set(false, forKey: "mainCanopyJumpsSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: RESERVE CANOPY REPACK:
-    
-    @objc func reserveCanopyRepackSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            
-            
-            UserDefaults.standard.set(true, forKey: "reserveCanopyRepackSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            
-            UserDefaults.standard.set(false, forKey: "reserveCanopyRepackSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: LICENSE:
-    
-    @objc func licenseSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeLicenceNotification(for: arrayAccountRealm)
-            NotificationManager.instance.setLicenceNotifications(for: arrayAccountRealm)
-            UserDefaults.standard.set(true, forKey: "licenseSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            NotificationManager.instance.removeLicenceNotification(for: arrayAccountRealm)
-            UserDefaults.standard.set(false, forKey: "licenseSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: MEDICINE:
-    
-    @objc func medicineSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            
-            
-            UserDefaults.standard.set(true, forKey: "medicineSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            
-            UserDefaults.standard.set(false, forKey: "medicineSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: INSURANCE:
-    
-    @objc func insuranceSwitchValueChange(_ sender: UISwitch) {
-        if sender.isOn {
-            vibrationOn.vibrationStandart()
-            
-            
-            UserDefaults.standard.set(true, forKey: "insuranceSwitch")
-            getCount()
-        } else {
-            vibrationOn.vibrationStandart()
-            
-            UserDefaults.standard.set(false, forKey: "insuranceSwitch")
-            getCount()
-        }
-    }
-    
-    // MARK: - HELPERS:
-    
-    // MARK: SEND REQUEST FOR USER:
-    
-    private func sendRequest() {
-        notificationCenter.requestAuthorization(options: [.alert, .sound]) { granted, _ in
-            guard granted else { return }
-            self.notificationCenter.getNotificationSettings { settings in
-                guard settings.authorizationStatus == .authorized else { return }
-            }
-        }
-    }
-    
-    // MARK: CHECK STATUS REQUEST:
-    
-    private func checkStatusRequest() {
-        notificationCenter.getNotificationSettings { settings in
-            switch settings.authorizationStatus {
-            case .authorized:
-                print("Уведомления разрешены в настройках телефона")
-            case .denied:
-                print("Уведомления запрещены в настройках телефона")
-                DispatchQueue.main.async { [weak self] in
-                    self?.mainSwitch.isOn = false
-                    self?.deleteNotifications()
-                    self?.showAlert()
-                    let mainImage = UIImage(systemName: "light.beacon.min.fill", withConfiguration: self?.configurationImage)?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
-                    self?.mainImageView.image = mainImage
-                }
-            case .notDetermined:
-                print("Пользователь еще не принял решение")
-            case .provisional:
-                print("Уведомления разрешены в режиме 'предварительного разрешения'")
-            case .ephemeral:
-                print("Уведомления разрешены в режиме 'временнного разрешения'")
-            @unknown default:
-                print("Неизвестный статус разрешения")
-            }
+            setRedMainImageView()
         }
     }
     
@@ -963,13 +784,11 @@ final class NotificationsVS: UIViewController {
         let alert = UIAlertController(title: NSLocalizedString("Checking the admission / notifications", comment: ""), message: NSLocalizedString("Checking the admission message / notifications", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: { _ in
             self.mainSwitch.isOn = false
-            UserDefaults.standard.set(false, forKey: "mainSwitch")
-            self.notificationCenter.removeAllPendingNotificationRequests()
-            self.notificationCenter.removeAllDeliveredNotifications()
             print("Уведомления не будут приходить и все стерты через Алерт")
             if self.mainSwitch.isOn == false {
                 self.deleteNotifications()
             }
+            self.setRedMainImageView()
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Settings iphone", comment: ""), style: .default, handler: { _ in
             if let appSettings = URL(string: UIApplication.openSettingsURLString) {
@@ -980,14 +799,140 @@ final class NotificationsVS: UIViewController {
         }))
         present(alert, animated: true)
     }
+    
+    // MARK: MONTHLY:
+    
+    @objc private func monthlySwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeMonthlyNotification()
+            NotificationManager.instance.setMonthlyNotification(arrayJumpsRealm: arrayJumpsRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeMonthlyNotification()
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: CONTAINER:
+    
+    @objc private func containerSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeContainerNotification(for: arraySystemsRealm)
+            NotificationManager.instance.setContainerNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeContainerNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: AAD:
+    
+    @objc private func aadSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeAadNotification(for: arraySystemsRealm)
+            NotificationManager.instance.setAadNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeAadNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: MAIN CANOPY RESOURSE:
+    
+    @objc private func mainCanopyResourseSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeMainCanopyResourseNotification(for: arraySystemsRealm)
+            NotificationManager.instance.setMainCanopyResourseNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeMainCanopyResourseNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: RESERVE CANOPY RESOURSE:
+    
+    @objc private func reserveCanopyResourseSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeReserveCanopyResourseNotification(for: arraySystemsRealm)
+            NotificationManager.instance.setReserveCanopyResourseNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeReserveCanopyResourseNotification(for: arraySystemsRealm)
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: MAIN CANOPY JUMPS:
+    
+    @objc private func mainCanopyJumpsSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+        } else {}
+    }
+    
+    // MARK: RESERVE CANOPY REPACK:
+    
+    @objc private func reserveCanopyRepackSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+        } else {}
+    }
+    
+    // MARK: LICENSE:
+    
+    @objc private func licenseSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeLicenseNotification(for: arrayAccountRealm)
+            NotificationManager.instance.setLicenseNotification(for: arrayAccountRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeLicenseNotification(for: arrayAccountRealm)
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: MEDICINE:
+    
+    @objc private func medicineSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeMedicineNotification(for: arrayAccountRealm)
+            NotificationManager.instance.setMedicineNotification(for: arrayAccountRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeMedicineNotification(for: arrayAccountRealm)
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: INSURANCE:
+    
+    @objc private func insuranceSwitchValueChange(_ sender: UISwitch) {
+        vibrationOn.vibrationStandart()
+        if sender.isOn {
+            NotificationManager.instance.removeInsuranceNotification(for: arrayAccountRealm)
+            NotificationManager.instance.setInsuranceNotification(for: arrayAccountRealm)
+            setImagesMainSwitch()
+        } else {
+            NotificationManager.instance.removeInsuranceNotification(for: arrayAccountRealm)
+            setImagesMainSwitch()
+        }
+    }
+    
+    // MARK: - HELPERS:
         
     // MARK: LOAD USER DEFAULTS ABOUT SWITCHES:
     
     private func loadUserDefaults() {
-        let statusMainSwitch = UserDefaults.standard.bool(forKey: "mainSwitch")
-        mainSwitch.isOn = statusMainSwitch
-        mainSwitchValueChange(mainSwitch)
-        
         let statusMontlySwitch = UserDefaults.standard.bool(forKey: "monthlySwitch")
         monthlySwitch.isOn = statusMontlySwitch
         
@@ -1013,15 +958,6 @@ final class NotificationsVS: UIViewController {
         insuranceSwitch.isOn = statusInsuranceSwitch
     }
     
-    // MARK: GET COUNTS OF REQUESTS:
-    
-    private func getCount() {
-        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
-            print("Количество уведомлений: \(requests.count)")
-            print(requests)
-        }
-    }
-    
     // MARK: DELETE ALL NOTIFICATIONS:
     
     private func deleteNotifications() {
@@ -1029,36 +965,201 @@ final class NotificationsVS: UIViewController {
         secondContentView.isHidden = true
         threeContentView.isHidden = true
         fourContentView.isHidden = true
-        
+        mainSwitch.isOn = false
         monthlySwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "monthlySwitch")
-        NotificationManager.instance.removeMonthlyNotification()
-        
         containerSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "containerSwitch")
-        NotificationManager.instance.removeContainerNotification(for: arraySystemsRealm)
         aadSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "aadSwitch")
-        NotificationManager.instance.removeAadNotification(for: arraySystemsRealm)
         mainCanopyResourseSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "mainCanopyResourseSwitch")
-        NotificationManager.instance.removeMainCanopyResourseNotification(for: arraySystemsRealm)
         reserveCanopyResourseSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "reserveCanopyResourseSwitch")
-        NotificationManager.instance.removeReserveCanopyResourseNotification(for: arraySystemsRealm)
-        
         mainCanopyJumpsSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "mainCanopyJumpsSwitch")
         reserveCanopyRepackSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "reserveCanopyRepackSwitch")
-        
         licenseSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "licenseSwitch")
         medicineSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "medicineSwitch")
         insuranceSwitch.isOn = false
-        UserDefaults.standard.set(false, forKey: "insuranceSwitch")
+        print("Уведомления не будут приходить и все стерты")
+    }
+    
+    // MARK: NOTIFICATION BUTTON TAPPED:
+    
+    @objc private func notificationButtonTapped() {
+        vibrationOn.vibrationStandart()
         
-        getCount()
+        var titleCount = ""
+        var message = ""
+        
+        let value = UserDefaults.standard.bool(forKey: "monthlySwitch")
+        
+        if value {
+            let currentDate = Date()
+            let calendar = Calendar.current
+            let lastDayOfMonth = calendar.dateInterval(of: .month, for: currentDate)?.end
+            if let lastDay = lastDayOfMonth {
+                dateFormatter.dateFormat = "dd.MM"
+                message += "\n" + NSLocalizedString("Summary of the month / notifications", comment: "") + ": " + dateFormatter.string(from: lastDay - 1) + ", 20:00"
+            }
+        }
+        
+        if let value = UserDefaults.standard.object(forKey: "containerSwitch") as? Bool, value {
+            message += "\n" + NSLocalizedString("Container resource / notifications", comment: "")
+        }
+                
+        if let value = UserDefaults.standard.object(forKey: "aadSwitch") as? Bool, value {
+            message += "\n" + NSLocalizedString("AAD resource / notifications", comment: "")
+        }
+                
+        if let value = UserDefaults.standard.object(forKey: "mainCanopyResourseSwitch") as? Bool, value {
+            message += "\n" + NSLocalizedString("Main canopy resource date / notifications", comment: "")
+        }
+                
+        if let value = UserDefaults.standard.object(forKey: "reserveCanopyResourseSwitch") as? Bool, value {
+            message += "\n" + NSLocalizedString("Reserve canopy resource date / notifications", comment: "")
+        }
+        
+        if let value = UserDefaults.standard.object(forKey: "licenseSwitch") as? Bool, value {
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            let accountClasses: [AccountClassRealm] = arrayAccountRealm
+            for account in accountClasses {
+                if let licenseDate = dateFormatter.date(from: account.licenseDate) {
+                    guard let oneMonthBeforeExpiration = Calendar.current.date(byAdding: .month, value: -1, to: licenseDate) else { continue }
+                    message += "\n" + NSLocalizedString("License period / notifications", comment: "") + ": " + dateFormatter.string(from: oneMonthBeforeExpiration) + ", 20:00"
+                }
+            }
+        }
+        
+        titleCount = getCountNotification2()
+            
+        let alert = UIAlertController(title: NSLocalizedString("Notifications count / notifications", comment: "") + ": " + titleCount, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    // MARK: SET RED MAIN IMAGE VIEW:
+    
+    private func setRedMainImageView() {
+        mainImageView.image = UIImage(systemName: "minus.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+    }
+    
+    // MARK: GET COUNT NOTIFICATION 2:
+    
+    private func getCountNotification2() -> String {
+        let arraySwitches: [UISwitch] = [monthlySwitch, containerSwitch, aadSwitch, mainCanopyResourseSwitch, reserveCanopyResourseSwitch, mainCanopyJumpsSwitch, reserveCanopyRepackSwitch, licenseSwitch, medicineSwitch, insuranceSwitch]
+        
+        var total = 0
+        
+        for item in arraySwitches {
+            if item.isOn == true {
+                total += 1
+            }
+        }
+        
+        return String(total)
+    }
+    
+    // MARK: SET IMAGES MAIN SWITCH:
+    
+    private func setImagesMainSwitch() {
+        if getCountNotification2() == String(0) {
+            mainImageView.image = UIImage(systemName: "0.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(1) {
+            mainImageView.image = UIImage(systemName: "1.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(2) {
+            mainImageView.image = UIImage(systemName: "2.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(3) {
+            mainImageView.image = UIImage(systemName: "3.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(4) {
+            mainImageView.image = UIImage(systemName: "4.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(5) {
+            mainImageView.image = UIImage(systemName: "5.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(6) {
+            mainImageView.image = UIImage(systemName: "6.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(7) {
+            mainImageView.image = UIImage(systemName: "7.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(8) {
+            mainImageView.image = UIImage(systemName: "8.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(9) {
+            mainImageView.image = UIImage(systemName: "9.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(10) {
+            mainImageView.image = UIImage(systemName: "10.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(11) {
+            mainImageView.image = UIImage(systemName: "11.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(12) {
+            mainImageView.image = UIImage(systemName: "12.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(13) {
+            mainImageView.image = UIImage(systemName: "13.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(14) {
+            mainImageView.image = UIImage(systemName: "14.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(15) {
+            mainImageView.image = UIImage(systemName: "15.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(16) {
+            mainImageView.image = UIImage(systemName: "16.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(17) {
+            mainImageView.image = UIImage(systemName: "17.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(18) {
+            mainImageView.image = UIImage(systemName: "18.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(19) {
+            mainImageView.image = UIImage(systemName: "19.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(20) {
+            mainImageView.image = UIImage(systemName: "20.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(21) {
+            mainImageView.image = UIImage(systemName: "21.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(22) {
+            mainImageView.image = UIImage(systemName: "22.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(23) {
+            mainImageView.image = UIImage(systemName: "23.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(24) {
+            mainImageView.image = UIImage(systemName: "24.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(25) {
+            mainImageView.image = UIImage(systemName: "25.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(26) {
+            mainImageView.image = UIImage(systemName: "26.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(27) {
+            mainImageView.image = UIImage(systemName: "27.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(28) {
+            mainImageView.image = UIImage(systemName: "28.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(29) {
+            mainImageView.image = UIImage(systemName: "29.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(30) {
+            mainImageView.image = UIImage(systemName: "30.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(31) {
+            mainImageView.image = UIImage(systemName: "31.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(32) {
+            mainImageView.image = UIImage(systemName: "32.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(33) {
+            mainImageView.image = UIImage(systemName: "33.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(34) {
+            mainImageView.image = UIImage(systemName: "34.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(35) {
+            mainImageView.image = UIImage(systemName: "35.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(36) {
+            mainImageView.image = UIImage(systemName: "36.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(37) {
+            mainImageView.image = UIImage(systemName: "37.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(38) {
+            mainImageView.image = UIImage(systemName: "38.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(39) {
+            mainImageView.image = UIImage(systemName: "39.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(40) {
+            mainImageView.image = UIImage(systemName: "40.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(41) {
+            mainImageView.image = UIImage(systemName: "41.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(42) {
+            mainImageView.image = UIImage(systemName: "42.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(43) {
+            mainImageView.image = UIImage(systemName: "43.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(44) {
+            mainImageView.image = UIImage(systemName: "44.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(45) {
+            mainImageView.image = UIImage(systemName: "45.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(46) {
+            mainImageView.image = UIImage(systemName: "46.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(47) {
+            mainImageView.image = UIImage(systemName: "47.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(48) {
+            mainImageView.image = UIImage(systemName: "48.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(49) {
+            mainImageView.image = UIImage(systemName: "49.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        } else if getCountNotification2() == String(50) {
+            mainImageView.image = UIImage(systemName: "50.circle.fill", withConfiguration: configurationImage)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        }
     }
 }

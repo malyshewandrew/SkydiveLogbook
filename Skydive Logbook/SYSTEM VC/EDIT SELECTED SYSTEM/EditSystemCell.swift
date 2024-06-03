@@ -989,6 +989,7 @@ final class EditSystemCell: UITableViewCell {
         saveButton.backgroundColor = .colorCell
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.titleLabel?.font = fontMediumStandard14
     }
     

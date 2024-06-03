@@ -147,6 +147,7 @@ final class BackupVC: UIViewController {
 
         backupButton.setTitle(NSLocalizedString("Backup / backup", comment: ""), for: .normal)
         backupButton.setTitleColor(.colorWhite, for: .normal)
+        backupButton.setTitleColor(.colorBackground, for: .highlighted)
         backupButton.backgroundColor = .colorBlue
         backupButton.layer.cornerRadius = cornerRadius15
         backupButton.titleLabel?.font = fontMediumStandard14
@@ -159,6 +160,7 @@ final class BackupVC: UIViewController {
 
         restoreButton.setTitle(NSLocalizedString("Restore / backup", comment: ""), for: .normal)
         restoreButton.setTitleColor(.colorWhite, for: .normal)
+        restoreButton.setTitleColor(.systemBlue, for: .highlighted)
         restoreButton.backgroundColor = .colorTabBar
         restoreButton.layer.cornerRadius = cornerRadius15
         restoreButton.titleLabel?.font = fontMediumStandard14
@@ -192,7 +194,9 @@ final class BackupVC: UIViewController {
         """
     }
     
-    // MARK: - ALERT KIT SUCCESS:
+    // MARK: - HELPERS:
+    
+    // MARK: ALERT KIT SUCCESS:
 
     private func alertKitSuccess() {
         AlertKitAPI.present(
@@ -203,7 +207,7 @@ final class BackupVC: UIViewController {
         )
     }
     
-    // MARK: - ALERT KIT ERROR:
+    // MARK: ALERT KIT ERROR:
 
     private func alertKitError() {
         AlertKitAPI.present(
@@ -214,7 +218,7 @@ final class BackupVC: UIViewController {
         )
     }
     
-    // MARK: - ALERT KIT UPLOAD:
+    // MARK: ALERT KIT UPLOAD:
 
     private func alertKitUpload() {
         AlertKitAPI.present(

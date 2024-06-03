@@ -615,3 +615,21 @@
 "Notifications / notifications" = "Уведомления";
 "Checking the admission / notifications" = "Проверка доступа";
 "Checking the admission message / notifications" = "Для отправки уведомлений проверьте допуск к отправке уведомлений в настройках приложения";
+
+"Access to notifications / notifications" = "Допуск к уведомлениям";
+
+"Notifications count / notifications" = "Уведомлений";
+
+"Summary of the month / notifications" = "Сводка в конце месяца";
+
+"Container resource / notifications" = "Ресурс ранца";
+"AAD resource / notifications" = "Ресурс прибора";
+"Main canopy resource date / notifications" = "Ресурс основного";
+"Reserve canopy resource date / notifications" = "Ресурс запасного";
+
+"License period / notifications" = "Срок лицензии";
+"Medicine period / notifications" = "Срок медицины";
+"Insurance period / notifications" = "Срок страховки";
+
+"Total jumps / notifications" = "Всего прыжков";
+"In this month / notifications" = "В текущем месяце";

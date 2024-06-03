@@ -5,7 +5,7 @@ import WebKit
 import RealmSwift
 
 final class InfoVC: UIViewController {
-    // MARK: - PRIVATE PROPERTIES:
+    // MARK: - PROPERTIES:
 
     private let infoBackground = LottieAnimationView(name: "InfoBackground")
     private let infoBackgroundView = UIView()
@@ -201,6 +201,7 @@ final class InfoVC: UIViewController {
         privacyButton.setTitle(NSLocalizedString("Privacy policy", comment: ""), for: .normal)
         privacyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         privacyButton.setTitleColor(.colorWhite, for: .normal)
+        privacyButton.setTitleColor(.systemBlue, for: .highlighted)
         privacyButton.layer.cornerRadius = cornerRadius15
         privacyButton.backgroundColor = .colorCell
         privacyButton.titleLabel?.font = fontMediumStandard14
@@ -211,6 +212,7 @@ final class InfoVC: UIViewController {
         termsButton.setTitle(NSLocalizedString("Terms of use", comment: ""), for: .normal)
         termsButton.titleLabel?.adjustsFontSizeToFitWidth = true
         termsButton.setTitleColor(.colorWhite, for: .normal)
+        termsButton.setTitleColor(.systemBlue, for: .highlighted)
         termsButton.layer.cornerRadius = cornerRadius15
         termsButton.backgroundColor = .colorCell
         termsButton.titleLabel?.font = fontMediumStandard14
@@ -221,6 +223,7 @@ final class InfoVC: UIViewController {
         faqButton.setTitle(NSLocalizedString("FAQ", comment: ""), for: .normal)
         faqButton.titleLabel?.adjustsFontSizeToFitWidth = true
         faqButton.setTitleColor(.colorWhite, for: .normal)
+        faqButton.setTitleColor(.systemBlue, for: .highlighted)
         faqButton.layer.cornerRadius = cornerRadius15
         faqButton.backgroundColor = .colorCell
         faqButton.titleLabel?.font = fontMediumStandard14
@@ -230,6 +233,7 @@ final class InfoVC: UIViewController {
         
         languagesButton.setTitle(NSLocalizedString("App language / info", comment: ""), for: .normal)
         languagesButton.setTitleColor(.colorWhite, for: .normal)
+        languagesButton.setTitleColor(.systemBlue, for: .highlighted)
         languagesButton.layer.cornerRadius = cornerRadius15
         languagesButton.backgroundColor = .colorCell
         languagesButton.titleLabel?.font = fontMediumStandard14
@@ -238,27 +242,30 @@ final class InfoVC: UIViewController {
         // MARK: SHARE:
 
         shareButton.setTitle(NSLocalizedString("Share the app", comment: ""), for: .normal)
+        shareButton.setTitleColor(.colorWhite, for: .normal)
+        shareButton.setTitleColor(.systemBlue, for: .highlighted)
         shareButton.layer.cornerRadius = cornerRadius15
         shareButton.backgroundColor = .colorCell
         shareButton.titleLabel?.font = fontMediumStandard14
         shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        shareButton.setTitleColor(.colorWhite, for: .normal)
         shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
         
         // MARK: FEEDBAcK:
 
         feedbackButton.setTitle(NSLocalizedString("Feedback", comment: ""), for: .normal)
+        feedbackButton.setTitleColor(.colorWhite, for: .normal)
+        feedbackButton.setTitleColor(.systemBlue, for: .highlighted)
         feedbackButton.layer.cornerRadius = cornerRadius15
         feedbackButton.backgroundColor = .colorCell
         feedbackButton.titleLabel?.font = fontMediumStandard14
         feedbackButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        feedbackButton.setTitleColor(.colorWhite, for: .normal)
         feedbackButton.addTarget(self, action: #selector(feedbackButtonTapped), for: .touchUpInside)
         
         // MARK: VERSION BUTTON (ALERT):
 
         versionButton.setTitle(NSLocalizedString("App version", comment: ""), for: .normal)
         versionButton.setTitleColor(.colorWhite, for: .normal)
+        versionButton.setTitleColor(.systemBlue, for: .highlighted)
         versionButton.layer.cornerRadius = cornerRadius15
         versionButton.backgroundColor = .colorCell
         versionButton.titleLabel?.font = fontMediumStandard14
@@ -345,7 +352,6 @@ final class InfoVC: UIViewController {
         safariViewController.delegate = self
         present(safariViewController, animated: true)
     }
-    
     
     // MARK: FUNC FOR SHARE BUTTON:
     

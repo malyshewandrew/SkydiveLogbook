@@ -140,6 +140,7 @@ final class NotesVC: UIViewController {
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.setTitleColor(.colorWhite, for: .normal)
+        cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
@@ -149,6 +150,7 @@ final class NotesVC: UIViewController {
         saveButton.backgroundColor = .colorCell
         saveButton.titleLabel?.font = fontMediumStandard14
         saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)

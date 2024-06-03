@@ -15,8 +15,7 @@ final class SystemVC: UIViewController {
     private let startConfettiButton = UIButton()
     private let vibrationOn = Vibration()
     private let tableView = UITableView()
-    private var emptySystemView = UIView()
-    private var emptySystemLabel = UILabel()
+    private var emptySystemButton = UIButton()
     private let newSystemButton = UIButton()
     private var selectedSystem: SystemClassRealm?
     private var indexSysytem: Int = 0
@@ -46,8 +45,7 @@ final class SystemVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, effectOneLottie, startConfettiLottie, systemLottie, startSystemLottie, confettiButton, startConfettiButton, tableView, emptySystemView, newSystemButton)
-        emptySystemView.addSubviews(emptySystemLabel)
+        view.addSubviews(confettiLottie, effectOneLottie, startConfettiLottie, systemLottie, startSystemLottie, confettiButton, startConfettiButton, tableView, emptySystemButton, newSystemButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -124,16 +122,11 @@ final class SystemVC: UIViewController {
 
         // MARK: EMPTY SYSTEM:
 
-        emptySystemView.translatesAutoresizingMaskIntoConstraints = false
-        emptySystemView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emptySystemView.topAnchor.constraint(equalTo: startSystemLottie.bottomAnchor, constant: 20).isActive = true
-        emptySystemView.heightAnchor.constraint(greaterThanOrEqualTo: emptySystemLabel.heightAnchor, constant: 20).isActive = true
-        emptySystemView.widthAnchor.constraint(greaterThanOrEqualTo: emptySystemLabel.widthAnchor, constant: 20).isActive = true
-
-        emptySystemLabel.translatesAutoresizingMaskIntoConstraints = false
-        emptySystemLabel.centerXAnchor.constraint(equalTo: emptySystemView.centerXAnchor).isActive = true
-        emptySystemLabel.centerYAnchor.constraint(equalTo: emptySystemView.centerYAnchor).isActive = true
-        emptySystemLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
+        emptySystemButton.translatesAutoresizingMaskIntoConstraints = false
+        emptySystemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptySystemButton.topAnchor.constraint(equalTo: startSystemLottie.bottomAnchor, constant: 20).isActive = true
+        emptySystemButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        emptySystemButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -183,29 +176,27 @@ final class SystemVC: UIViewController {
         newSystemButton.setTitle(NSLocalizedString("Add a new system", comment: ""), for: .normal)
         newSystemButton.titleLabel?.font = fontMediumStandard14
         newSystemButton.setTitleColor(.colorWhite, for: .normal)
+        newSystemButton.setTitleColor(.systemBlue, for: .highlighted)
         newSystemButton.addTarget(self, action: #selector(newSystemButtonTapped), for: .touchUpInside)
 
         // MARK: EMPTY SYSTEM VIEW:
 
-        emptySystemView.layer.masksToBounds = true
-        emptySystemView.layer.cornerRadius = cornerRadius15
-        emptySystemView.addBlurEffect(.systemThinMaterialDark)
-        emptySystemView.addSubview(emptySystemLabel)
-
-        // MARK: EMPTY SYSTEM LABEL:
-
-        emptySystemLabel.textColor = .white
-        emptySystemLabel.numberOfLines = 0
-        emptySystemLabel.textAlignment = .center
-        emptySystemLabel.font = fontMediumStandard12
-        emptySystemLabel.adjustsFontSizeToFitWidth = true
-        emptySystemLabel.text = NSLocalizedString("System empty message / system", comment: "")
+        emptySystemButton.backgroundColor = .colorCell
+        emptySystemButton.setTitle(NSLocalizedString("System empty message / system", comment: ""), for: .normal)
+        emptySystemButton.setTitleColor(.colorWhite, for: .normal)
+        emptySystemButton.setTitleColor(.systemBlue, for: .highlighted)
+        emptySystemButton.titleLabel?.font = fontMediumStandard12
+        emptySystemButton.titleLabel?.numberOfLines = 0
+        emptySystemButton.titleLabel?.textAlignment = .center
+        emptySystemButton.layer.cornerRadius = cornerRadius15
+        emptySystemButton.layer.shadowRadius = 75
+        emptySystemButton.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        emptySystemButton.layer.shadowOpacity = 0.5
 
         startConfettiLottie.isHidden = true
         startSystemLottie.isHidden = true
         startConfettiButton.isHidden = true
-        emptySystemView.isHidden = true
-        emptySystemLabel.isHidden = true
+        emptySystemButton.isHidden = true
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -255,8 +246,7 @@ final class SystemVC: UIViewController {
             startConfettiLottie.isHidden = false
             startSystemLottie.isHidden = false
             startConfettiButton.isHidden = false
-            emptySystemView.isHidden = false
-            emptySystemLabel.isHidden = false
+            emptySystemButton.isHidden = false
 
             effectOneLottie.isHidden = true
             confettiLottie.isHidden = true
@@ -268,8 +258,7 @@ final class SystemVC: UIViewController {
             startConfettiLottie.isHidden = true
             startSystemLottie.isHidden = true
             startConfettiButton.isHidden = true
-            emptySystemView.isHidden = true
-            emptySystemLabel.isHidden = true
+            emptySystemButton.isHidden = true
 
             confettiLottie.isHidden = false
             effectOneLottie.isHidden = false

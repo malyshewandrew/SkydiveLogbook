@@ -58,14 +58,6 @@ final class EditLocationsVC: UIViewController {
         enterTextTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         enterTextTextField.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
 
-        // MARK: SAVE BUTTON:
-
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
-        saveButton.topAnchor.constraint(equalTo: enterTextTextField.bottomAnchor, constant: 15).isActive = true
-        saveButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 5).isActive = true
-        saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.24).isActive = true
-
         // MARK: CLEAN BUTTON:
 
         cleanButton.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +65,14 @@ final class EditLocationsVC: UIViewController {
         cleanButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -5).isActive = true
         cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         cleanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.24).isActive = true
+        
+        // MARK: SAVE BUTTON:
+
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.topAnchor.constraint(equalTo: enterTextTextField.bottomAnchor, constant: 15).isActive = true
+        saveButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 5).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.24).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -107,23 +107,25 @@ final class EditLocationsVC: UIViewController {
         enterTextTextField.textAlignment = textAligmentCenter
         enterTextTextField.placeholder = NSLocalizedString("Enter location", comment: "")
 
-        // MARK: SAVE BUTTON:
-
-        saveButton.backgroundColor = .colorCell
-        saveButton.titleLabel?.font = fontMediumStandard14
-        saveButton.setTitleColor(.colorWhite, for: .normal)
-        saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
-        saveButton.layer.cornerRadius = cornerRadius15
-        saveButton.addTarget(self, action: #selector(tapSave), for: .touchUpInside)
-
         // MARK: CLEAN BUTTON:
 
         cleanButton.backgroundColor = .colorTabBar
         cleanButton.titleLabel?.font = fontMediumStandard14
         cleanButton.setTitleColor(.colorWhite, for: .normal)
+        cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
+        
+        // MARK: SAVE BUTTON:
+
+        saveButton.backgroundColor = .colorCell
+        saveButton.titleLabel?.font = fontMediumStandard14
+        saveButton.setTitleColor(.colorWhite, for: .normal)
+        saveButton.setTitleColor(.systemBlue, for: .highlighted)
+        saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        saveButton.layer.cornerRadius = cornerRadius15
+        saveButton.addTarget(self, action: #selector(tapSave), for: .touchUpInside)
     }
 
     // MARK: - CONFIGURE TABLE VIEW

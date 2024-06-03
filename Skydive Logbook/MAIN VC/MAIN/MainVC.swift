@@ -10,35 +10,31 @@ final class MainVC: UIViewController {
 
     private let loadingView = UIView()
     private let loadingLottie = LottieAnimationView(name: "Loading")
+    private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
     private let mainLottie = LottieAnimationView(name: "Main")
     private let mainStartLottie = LottieAnimationView(name: "Main")
     private let confettiLottie = LottieAnimationView(name: "MainConfetti")
     private let startCenterConfettiLottie = LottieAnimationView(name: "MainConfetti")
-    private let startCenterAirplaneLottie = LottieAnimationView(name: "StartPaperAirplane")
     private let startConfettiCenterButton = UIButton()
     private let startConfettiTopLottie = LottieAnimationView(name: "StartConfettiTop")
+    
     private let confettiButton = UIButton()
-    private let accountImage = UIImageView()
     private let accountButton = UIButton()
-    private let weatherImage = UIImageView()
     private let weatherButton = UIButton()
-    private let dropzonesImage = UIImageView()
-    private let dropzonesButton = UIButton()
-    private let skydiversImage = UIImageView()
-    private let skydiversButton = UIButton()
-    private let calculatorImage = UIImageView()
+    private let mapsButton = UIButton()
+    private let communityButton = UIButton()
     private let calculatorButton = UIButton()
-    private let notesImage = UIImageView()
     private let notesButton = UIButton()
     private let tableView = UITableView()
     private let firstMessageView = UIView()
     private let firstMessageLabel = UILabel()
+    private let sliderButton = UISlider()
+
     private let dateFormatter = DateFormatter()
     private let vibrationOn = Vibration()
     private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
-    private let sliderButton = UISlider()
 
     // MARK: - LIFECYCLE:
 
@@ -65,7 +61,7 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainLottie, confettiLottie, confettiButton, accountImage, accountButton, weatherImage, weatherButton, dropzonesImage, dropzonesButton, skydiversImage, skydiversButton, calculatorImage, calculatorButton, notesImage, notesButton, tableView, startCenterConfettiLottie, startCenterAirplaneLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
+        view.addSubviews(mainShadowLottie, mainLottie, confettiLottie, confettiButton, accountButton, weatherButton, mapsButton, communityButton, calculatorButton, notesButton, tableView, startCenterConfettiLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
         loadingView.addSubview(loadingLottie)
     }
 
@@ -87,6 +83,13 @@ final class MainVC: UIViewController {
         loadingLottie.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor).isActive = true
         loadingLottie.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
         loadingLottie.trailingAnchor.constraint(equalTo: loadingView.trailingAnchor).isActive = true
+        
+        // MARK: MAIN SHADOW LOTTIE:
+        
+        mainShadowLottie.translatesAutoresizingMaskIntoConstraints = false
+        mainShadowLottie.centerXAnchor.constraint(equalTo: mainLottie.centerXAnchor).isActive = true
+        mainShadowLottie.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 10).isActive = true
+        mainShadowLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
 
         // MARK: ANIMATION MAIN LOTTIE:
 
@@ -111,89 +114,41 @@ final class MainVC: UIViewController {
         confettiButton.heightAnchor.constraint(equalToConstant: 75).isActive = true
         confettiButton.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
-        // MARK: ACCOUNT IMAGE:
-
-        accountImage.translatesAutoresizingMaskIntoConstraints = false
-        accountImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
-        accountImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 17).isActive = true
-
         // MARK: ACCOUNT BUTTON:
 
         accountButton.translatesAutoresizingMaskIntoConstraints = false
-        accountButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        accountButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
         accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 17).isActive = true
-        accountButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        accountButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-
-        // MARK: WEATHER IMAGE:
-
-        weatherImage.translatesAutoresizingMaskIntoConstraints = false
-        weatherImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
-        weatherImage.leadingAnchor.constraint(equalTo: accountImage.trailingAnchor, constant: 17).isActive = true
 
         // MARK: WEATHER BUTTON:
 
         weatherButton.translatesAutoresizingMaskIntoConstraints = false
-        weatherButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
-        weatherButton.leadingAnchor.constraint(equalTo: accountImage.trailingAnchor, constant: 17).isActive = true
-        weatherButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        weatherButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        weatherButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
+        weatherButton.leadingAnchor.constraint(equalTo: accountButton.trailingAnchor, constant: 17).isActive = true
 
-        // MARK: DROPZONES IMAGE:
+        // MARK: MAPS BUTTON:
 
-        dropzonesImage.translatesAutoresizingMaskIntoConstraints = false
-        dropzonesImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
-        dropzonesImage.leadingAnchor.constraint(equalTo: weatherImage.trailingAnchor, constant: 17).isActive = true
+        mapsButton.translatesAutoresizingMaskIntoConstraints = false
+        mapsButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
+        mapsButton.leadingAnchor.constraint(equalTo: weatherButton.trailingAnchor, constant: 17).isActive = true
 
-        // MARK: DROPZONES BUTTON:
+        // MARK: COMMUNITY:
 
-        dropzonesButton.translatesAutoresizingMaskIntoConstraints = false
-        dropzonesButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
-        dropzonesButton.leadingAnchor.constraint(equalTo: weatherImage.trailingAnchor, constant: 17).isActive = true
-        dropzonesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        dropzonesButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        communityButton.translatesAutoresizingMaskIntoConstraints = false
+        communityButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
+        communityButton.trailingAnchor.constraint(equalTo: calculatorButton.leadingAnchor, constant: -17).isActive = true
 
-        // MARK: SKYDIVERS IMAGE:
-
-        skydiversImage.translatesAutoresizingMaskIntoConstraints = false
-        skydiversImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
-        skydiversImage.trailingAnchor.constraint(equalTo: calculatorImage.leadingAnchor, constant: -17).isActive = true
-
-        // MARK: SKYDIVERS BUTTON:
-
-        skydiversButton.translatesAutoresizingMaskIntoConstraints = false
-        skydiversButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
-        skydiversButton.trailingAnchor.constraint(equalTo: calculatorImage.leadingAnchor, constant: -17).isActive = true
-        skydiversButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        skydiversButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-
-        // MARK: CALCULATOR IMAGE:
-
-        calculatorImage.translatesAutoresizingMaskIntoConstraints = false
-        calculatorImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
-        calculatorImage.trailingAnchor.constraint(equalTo: notesImage.leadingAnchor, constant: -17).isActive = true
-
-        // MARK: CALCULATOR BUTTON:
+        // MARK: CALCULATOR:
 
         calculatorButton.translatesAutoresizingMaskIntoConstraints = false
-        calculatorButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
-        calculatorButton.trailingAnchor.constraint(equalTo: notesImage.leadingAnchor, constant: -17).isActive = true
-        calculatorButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        calculatorButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        calculatorButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
+        calculatorButton.trailingAnchor.constraint(equalTo: notesButton.leadingAnchor, constant: -17).isActive = true
 
-        // MARK: NOTES IMAGE:
-
-        notesImage.translatesAutoresizingMaskIntoConstraints = false
-        notesImage.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -15).isActive = true
-        notesImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -17).isActive = true
-
-        // MARK: NOTES BUTTON:
+        // MARK: NOTES:
 
         notesButton.translatesAutoresizingMaskIntoConstraints = false
-        notesButton.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -5).isActive = true
+        notesButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
         notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -17).isActive = true
-        notesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        notesButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -226,11 +181,25 @@ final class MainVC: UIViewController {
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
+        
+        // MARK: MAIN SHADOW LOTTIE:
+        
+        mainShadowLottie.play()
+        mainShadowLottie.loopMode = .loop
+        mainShadowLottie.layer.opacity = 0.2
+        mainShadowLottie.animationSpeed = 0.2
 
         // MARK: MAIN LOTTIE:
 
         mainLottie.play()
         mainLottie.loopMode = .autoReverse
+        
+        // MARK: CONFETTI BUTTON:
+        
+        confettiButton.layer.masksToBounds = true
+        confettiButton.layer.shadowRadius = 25
+        confettiButton.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        confettiButton.layer.shadowOpacity = 1
 
         // MARK: VIEW:
 
@@ -246,58 +215,44 @@ final class MainVC: UIViewController {
 
         tabBarController?.tabBar.isHidden = true
 
-        // MARK: ACCOUNT IMAGE:
+        // MARK: ACCOUNT:
 
-        accountImage.image = UIImage(systemName: "person.crop.circle.fill", withConfiguration: configurationImage)
-        accountImage.tintColor = .colorDarkGray
-
-        // MARK: ACCOUNT BUTTON:
-
+        accountButton.setImage(UIImage(systemName: "person.crop.circle.fill", withConfiguration: configurationImage), for: .normal)
+        accountButton.tintColor = .colorDarkGray
         accountButton.addTarget(self, action: #selector(accountButtonTapped), for: .touchUpInside)
 
-        // MARK: WEATHER IMAGE:
+        // MARK: WEATHER:
 
-        weatherImage.image = UIImage(systemName: "sun.max.circle.fill", withConfiguration: configurationImage)
-        weatherImage.tintColor = .colorDarkGray
-
-        // MARK: WEATHER BUTTON:
-
+        weatherButton.setImage(UIImage(systemName: "sun.max.circle.fill", withConfiguration: configurationImage), for: .normal)
+        weatherButton.tintColor = .colorDarkGray
         weatherButton.addTarget(self, action: #selector(weatherButtonTapped), for: .touchUpInside)
 
-        // MARK: DROPZONES IMAGE:
+        // MARK: MAPS:
+        
+        mapsButton.setImage(UIImage(systemName: "mappin.and.ellipse.circle.fill", withConfiguration: configurationImage), for: .normal)
+        mapsButton.tintColor = .colorDarkGray
+        mapsButton.addTarget(self, action: #selector(dropzonesButtonTapped), for: .touchUpInside)
+        
+        // MARK: CONFETTI BUTTON:
+        
+        confettiButton.addTarget(self, action: #selector(confettiButtonTapped), for: .touchUpInside)
 
-        dropzonesImage.image = UIImage(systemName: "mappin.and.ellipse.circle.fill", withConfiguration: configurationImage)
-        dropzonesImage.tintColor = .colorDarkGray
+        // MARK: COMMUNITY:
 
-        // MARK: DROPZONES BUTTON:
+        communityButton.setImage(UIImage(systemName: "person.2.circle.fill", withConfiguration: configurationImage), for: .normal)
+        communityButton.tintColor = .colorDarkGray
+        communityButton.addTarget(self, action: #selector(skydiversButtonTapped), for: .touchUpInside)
 
-        dropzonesButton.addTarget(self, action: #selector(dropzonesButtonTapped), for: .touchUpInside)
+        // MARK: CALCULATORS:
 
-        // MARK: SKYDIVERS IMAGE:
-
-        skydiversImage.image = UIImage(systemName: "person.2.circle.fill", withConfiguration: configurationImage)
-        skydiversImage.tintColor = .colorDarkGray
-
-        // MARK: SKYDIVERS BUTTON:
-
-        skydiversButton.addTarget(self, action: #selector(skydiversButtonTapped), for: .touchUpInside)
-
-        // MARK: CALCULATOR IMAGE:
-
-        calculatorImage.image = UIImage(systemName: "divide.circle.fill", withConfiguration: configurationImage)
-        calculatorImage.tintColor = .colorDarkGray
-
-        // MARK: CALCULATOR BUTTON:
-
+        calculatorButton.setImage(UIImage(systemName: "divide.circle.fill", withConfiguration: configurationImage), for: .normal)
+        calculatorButton.tintColor = .colorDarkGray
         calculatorButton.addTarget(self, action: #selector(calculatorButtonTapped), for: .touchUpInside)
 
-        // MARK: NOTES IMAGE:
+        // MARK: NOTES:
 
-        notesImage.image = UIImage(systemName: "book.circle.fill", withConfiguration: configurationImage)
-        notesImage.tintColor = .colorDarkGray
-
-        // MARK: NOTES BUTTON:
-
+        notesButton.setImage(UIImage(systemName: "book.circle.fill", withConfiguration: configurationImage), for: .normal)
+        notesButton.tintColor = .colorDarkGray
         notesButton.addTarget(self, action: #selector(notesButtonTapped), for: .touchUpInside)
     }
 
@@ -329,8 +284,7 @@ final class MainVC: UIViewController {
     private func configureGestures() {
         // MARK: THREE TAP FOR PLAY ANIMATIONS:
 
-        let confettiGesture = UITapGestureRecognizer(target: self, action: #selector(confettiButtonTapped))
-        confettiGesture.numberOfTapsRequired = 3
+        let confettiGesture = UILongPressGestureRecognizer(target: self, action: #selector(confettiButtonLongPress))
         confettiButton.addGestureRecognizer(confettiGesture)
     }
     
@@ -345,20 +299,15 @@ final class MainVC: UIViewController {
     // MARK: - FIRST MESSAGE:
 
     private func firstMessage() {
+        mainShadowLottie.isHidden = true
         mainLottie.isHidden = true
         confettiLottie.isHidden = true
         confettiButton.isHidden = true
-        accountImage.isHidden = true
         accountButton.isHidden = true
-        weatherImage.isHidden = true
         weatherButton.isHidden = true
-        dropzonesImage.isHidden = true
-        dropzonesButton.isHidden = true
-        skydiversImage.isHidden = true
-        skydiversButton.isHidden = true
-        calculatorImage.isHidden = true
+        mapsButton.isHidden = true
+        communityButton.isHidden = true
         calculatorButton.isHidden = true
-        notesImage.isHidden = true
         notesButton.isHidden = true
         
         // MARK: START LOTTIE CENTER CONFETTI:
@@ -367,13 +316,6 @@ final class MainVC: UIViewController {
         startCenterConfettiLottie.centerXAnchor.constraint(equalTo: mainStartLottie.centerXAnchor).isActive = true
         startCenterConfettiLottie.centerYAnchor.constraint(equalTo: mainStartLottie.centerYAnchor).isActive = true
         startCenterConfettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
-        // MARK: START LOTTIE CENTER AIRPLANE:
-        
-        startCenterAirplaneLottie.translatesAutoresizingMaskIntoConstraints = false
-        startCenterAirplaneLottie.centerXAnchor.constraint(equalTo: mainStartLottie.centerXAnchor, constant: 75).isActive = true
-        startCenterAirplaneLottie.centerYAnchor.constraint(equalTo: mainStartLottie.centerYAnchor, constant: -5).isActive = true
-        startCenterAirplaneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.6).isActive = true
 
         // MARK: ANIMATION MAIN LOTTIE:
 
@@ -389,7 +331,7 @@ final class MainVC: UIViewController {
         firstMessageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         firstMessageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         firstMessageView.heightAnchor.constraint(greaterThanOrEqualTo: firstMessageLabel.heightAnchor, constant: 10).isActive = true
-        firstMessageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
+        firstMessageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         firstMessageView.backgroundColor = .colorCell
         firstMessageView.layer.cornerRadius = cornerRadius15
@@ -432,7 +374,6 @@ final class MainVC: UIViewController {
             firstMessageView.isHidden = false
             firstMessageLabel.isHidden = false
             startCenterConfettiLottie.isHidden = false
-            startCenterAirplaneLottie.isHidden = false
             mainStartLottie.isHidden = false
             startConfettiTopLottie.isHidden = false
             startConfettiCenterButton.isHidden = false
@@ -447,27 +388,21 @@ final class MainVC: UIViewController {
             startCenterConfettiLottie.layer.shadowOpacity = 1
         } else {
             startCenterConfettiLottie.isHidden = true
-            startCenterAirplaneLottie.isHidden = true
             mainStartLottie.isHidden = true
             startConfettiCenterButton.isHidden = true
             firstMessageView.isHidden = true
             firstMessageLabel.isHidden = true
             startConfettiTopLottie.isHidden = true
 
+            mainShadowLottie.isHidden = false
             mainLottie.isHidden = false
             confettiLottie.isHidden = false
             confettiButton.isHidden = false
-            accountImage.isHidden = false
             accountButton.isHidden = false
-            weatherImage.isHidden = false
             weatherButton.isHidden = false
-            dropzonesImage.isHidden = false
-            dropzonesButton.isHidden = false
-            skydiversImage.isHidden = false
-            skydiversButton.isHidden = false
-            calculatorImage.isHidden = false
+            mapsButton.isHidden = false
+            communityButton.isHidden = false
             calculatorButton.isHidden = false
-            notesImage.isHidden = false
             notesButton.isHidden = false
         }
     }
@@ -582,15 +517,13 @@ final class MainVC: UIViewController {
 
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
 
-    @objc private func confettiButtonTapped() {
+    @objc private func confettiButtonLongPress() {
         vibrationOn.vibrationSucces()
         confettiLottie.play()
     }
-    
+        
     @objc private func startConfettiButtonTapped() {
         vibrationOn.vibrationSucces()
-        startCenterAirplaneLottie.play()
-        startCenterAirplaneLottie.animationSpeed = 0.7
         startCenterConfettiLottie.play()
     }
 
@@ -648,6 +581,19 @@ final class MainVC: UIViewController {
         vibrationOn.vibrationStandart()
         let dropzones = DropZonesVC()
         present(dropzones, animated: true)
+    }
+    
+    // MARK: TRANSITION ON PARAMETERS VIEW CONTROLLER:
+    
+    @objc private func confettiButtonTapped() {
+        self.vibrationOn.vibrationStandart()
+        let parametersVC = ParametersVC()
+        if let sheetController = parametersVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.preferredCornerRadius = 100
+            sheetController.detents = [.large()]
+        }
+        self.present(parametersVC, animated: true)
     }
 
     // MARK: TRANSITION ON SKYDIVERS VIEW CONTROLLER:

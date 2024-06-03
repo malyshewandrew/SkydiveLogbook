@@ -79,6 +79,7 @@ final class PremiumVC: UIViewController {
         internetButton.layer.cornerRadius = cornerRadius15
         internetButton.setTitle(NSLocalizedString("No connection / adapty", comment: ""), for: .normal)
         internetButton.setTitleColor(.colorWhite, for: .normal)
+        internetButton.setTitleColor(.systemBlue, for: .highlighted)
         internetButton.backgroundColor = .colorTabBar
         internetButton.titleLabel?.font = fontMediumStandard14
         internetButton.addTarget(self, action: #selector(internetButtonTapped), for: .touchUpInside)

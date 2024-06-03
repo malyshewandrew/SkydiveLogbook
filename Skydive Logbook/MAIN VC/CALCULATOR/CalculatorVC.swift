@@ -646,13 +646,11 @@ final class CalculatorVC: UIViewController {
             let time: Float = height / 50
             let resultFloat = ((Float(windSpeed) ?? 0.0) * 0.5) * time
             result = Int(resultFloat)
-            print("quality = 0")
         } else {
             let height: Float = (Float(heightJump) ?? 0.0) - (Float(heightOpen) ?? 0.0)
             let time: Float = (height / 50) * (Float(quality) ?? 0.0)
             let resultFloat = height * (Float(quality) ?? 0.0) + ((Float(windSpeed) ?? 0.0) * 0.5) * time
             result = Int(resultFloat)
-            print("quality != 0")
         }
         return String(result)
     }
