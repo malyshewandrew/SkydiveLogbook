@@ -48,3 +48,14 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
 }
+
+extension UIView {
+    func applyGradient(colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}

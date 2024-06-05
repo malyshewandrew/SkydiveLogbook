@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "InfoBackground.json",
-      "idiom" : "universal"
+      "filename" : "AltimeterBackgroundLottie.json",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.json"
     }
   ],
   "info" : {

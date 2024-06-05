@@ -10,6 +10,7 @@ final class MainVC: UIViewController {
 
     private let loadingView = UIView()
     private let loadingLottie = LottieAnimationView(name: "Loading")
+    private let helloLottie = LottieAnimationView(name: "Hello")
     private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
     private let mainLottie = LottieAnimationView(name: "Main")
     private let mainStartLottie = LottieAnimationView(name: "Main")
@@ -62,7 +63,7 @@ final class MainVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(mainShadowLottie, mainLottie, confettiLottie, confettiButton, accountButton, weatherButton, mapsButton, communityButton, calculatorButton, notesButton, tableView, startCenterConfettiLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
-        loadingView.addSubview(loadingLottie)
+        loadingView.addSubviews(helloLottie, loadingLottie)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -79,10 +80,18 @@ final class MainVC: UIViewController {
         // MARK: LOADING LOTTIE:
 
         loadingLottie.translatesAutoresizingMaskIntoConstraints = false
-        loadingLottie.topAnchor.constraint(equalTo: loadingView.topAnchor).isActive = true
+        loadingLottie.topAnchor.constraint(equalTo: loadingView.topAnchor, constant: -150).isActive = true
         loadingLottie.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor).isActive = true
         loadingLottie.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
         loadingLottie.trailingAnchor.constraint(equalTo: loadingView.trailingAnchor).isActive = true
+        
+        // MARK: HELLO LOTTIE:
+        
+        helloLottie.translatesAutoresizingMaskIntoConstraints = false
+        helloLottie.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
+        helloLottie.topAnchor.constraint(equalTo: loadingLottie.centerYAnchor, constant: 100).isActive = true
+        helloLottie.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 1).isActive = true
+        helloLottie.heightAnchor.constraint(equalTo: helloLottie.widthAnchor, multiplier: 0.5).isActive = true
         
         // MARK: MAIN SHADOW LOTTIE:
         
@@ -174,7 +183,14 @@ final class MainVC: UIViewController {
         loadingLottie.layer.shadowRadius = 100
         loadingLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         loadingLottie.layer.shadowOpacity = 0.5
-        perform(#selector(hideAnimation), with: nil, afterDelay: 2)
+        
+        // MARK: HELLO LOTTIE:
+        
+        helloLottie.play()
+        helloLottie.loopMode = .playOnce
+        helloLottie.contentMode = .scaleAspectFit
+        
+        perform(#selector(hideAnimation), with: nil, afterDelay: 4)
 
         // MARK: CONFETTI LOTTIE:
 
@@ -188,6 +204,9 @@ final class MainVC: UIViewController {
         mainShadowLottie.loopMode = .loop
         mainShadowLottie.layer.opacity = 0.2
         mainShadowLottie.animationSpeed = 0.2
+        mainShadowLottie.layer.shadowRadius = 5
+        mainShadowLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        mainShadowLottie.layer.shadowOpacity = 1
 
         // MARK: MAIN LOTTIE:
 
@@ -539,6 +558,7 @@ final class MainVC: UIViewController {
             self.loadingView.removeFromSuperview()
         })
         loadingLottie.removeFromSuperview()
+        helloLottie.removeFromSuperview()
     }
     
     // MARK: ALERT KIT SUCCESS:

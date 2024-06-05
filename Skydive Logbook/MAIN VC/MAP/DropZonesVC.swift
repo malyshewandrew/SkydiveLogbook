@@ -138,6 +138,10 @@ final class DropZonesVC: UIViewController {
         segmentControl.backgroundColor = .colorTabBar
         segmentControl.selectedSegmentTintColor = .systemBlue
         segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
+        let normalTextAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.white]
+        segmentControl.setTitleTextAttributes(normalTextAttributes, for: .normal)
+        let selectedTextAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.white]
+        segmentControl.setTitleTextAttributes(selectedTextAttributes, for: .selected)
     }
     
     // MARK: GET USER LOCATION:

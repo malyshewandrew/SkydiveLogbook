@@ -141,6 +141,10 @@ final class NewJumpVC: UIViewController {
         segmentControl.backgroundColor = .colorCell
         segmentControl.selectedSegmentTintColor = .systemBlue
         segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
+        let normalTextAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.white]
+        segmentControl.setTitleTextAttributes(normalTextAttributes, for: .normal)
+        let selectedTextAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.white]
+        segmentControl.setTitleTextAttributes(selectedTextAttributes, for: .selected)
     }
 
     // MARK: - CONFIGURE TABLE VIEW:

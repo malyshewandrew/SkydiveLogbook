@@ -115,6 +115,9 @@ final class StatisticVC: UIViewController {
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
         effectOneLottie.animationSpeed = 0.2
+        effectOneLottie.layer.shadowRadius = 15
+        effectOneLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        effectOneLottie.layer.shadowOpacity = 1
         
         // MARK: EFFECT TWO LOTTIE:
         
@@ -122,6 +125,9 @@ final class StatisticVC: UIViewController {
         effectTwoLottie.loopMode = .loop
         effectTwoLottie.animationSpeed = 0.1
         effectTwoLottie.transform = CGAffineTransform(scaleX: -1, y: 1)
+        effectTwoLottie.layer.shadowRadius = 10
+        effectTwoLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        effectTwoLottie.layer.shadowOpacity = 1
     }
 
     // MARK: - CONFIGURE TABLE VIEW:

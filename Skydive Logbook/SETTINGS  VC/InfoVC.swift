@@ -9,10 +9,9 @@ final class InfoVC: UIViewController {
 
     private let infoBackground = LottieAnimationView(name: "InfoBackground")
     private let infoBackgroundView = UIView()
-    private let titleLabel = UILabel()
+    private let appleButtonLottie = LottieAnimationView(name: "Apple")
+    private let appleButton = UIButton()
     private let scrollView = UIScrollView()
-    private let infoTextView = UIView()
-    private let infoTextLabel = UILabel()
     private let privacyButton = UIButton()
     private let termsButton = UIButton()
     private let faqButton = UIButton()
@@ -36,9 +35,8 @@ final class InfoVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(infoBackground, infoBackgroundView, titleLabel, scrollView)
-        scrollView.addSubviews(infoTextView, privacyButton, termsButton, faqButton, languagesButton, shareButton, feedbackButton, versionButton)
-        infoTextView.addSubviews(infoTextLabel)
+        view.addSubviews(infoBackground, infoBackgroundView, appleButtonLottie, appleButton, scrollView)
+        scrollView.addSubviews(privacyButton, termsButton, faqButton, languagesButton, shareButton, feedbackButton, versionButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -48,7 +46,7 @@ final class InfoVC: UIViewController {
         // MARK: INFO BACKGROUND:
 
         infoBackground.translatesAutoresizingMaskIntoConstraints = false
-        infoBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: -5).isActive = true
+        infoBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         infoBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         infoBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         infoBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -61,43 +59,37 @@ final class InfoVC: UIViewController {
         infoBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         infoBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        // MARK: TITLE LABEL:
+        // MARK: APPLE BUTTON LOTTIE:
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        appleButtonLottie.translatesAutoresizingMaskIntoConstraints = false
+        appleButtonLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
+        appleButtonLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        appleButtonLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
+        appleButtonLottie.heightAnchor.constraint(equalToConstant: 125).isActive = true
+        
+        // MARK: APPLE BUTTON:
+        
+        appleButton.translatesAutoresizingMaskIntoConstraints = false
+        appleButton.topAnchor.constraint(equalTo: appleButtonLottie.topAnchor).isActive = true
+        appleButton.bottomAnchor.constraint(equalTo: appleButtonLottie.bottomAnchor).isActive = true
+        appleButton.leadingAnchor.constraint(equalTo: appleButtonLottie.leadingAnchor).isActive = true
+        appleButton.trailingAnchor.constraint(equalTo: appleButtonLottie.trailingAnchor).isActive = true
         
         // MARK: SCROLL VIEW:
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        scrollView.topAnchor.constraint(equalTo: appleButton.bottomAnchor, constant: 25).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        // MARK: INFO TEXT VIEW:
-        
-        infoTextView.translatesAutoresizingMaskIntoConstraints = false
-        infoTextView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        infoTextView.topAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        infoTextView.heightAnchor.constraint(greaterThanOrEqualTo: infoTextLabel.heightAnchor, constant: 10).isActive = true
-        infoTextView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.7).isActive = true
-        
-        // MARK: INFO TEXT LABEL:
-
-        infoTextLabel.translatesAutoresizingMaskIntoConstraints = false
-        infoTextLabel.centerXAnchor.constraint(equalTo: infoTextView.centerXAnchor).isActive = true
-        infoTextLabel.centerYAnchor.constraint(equalTo: infoTextView.centerYAnchor).isActive = true
-        infoTextLabel.leadingAnchor.constraint(equalTo: infoTextView.leadingAnchor, constant: 10).isActive = true
-        infoTextLabel.trailingAnchor.constraint(equalTo: infoTextView.trailingAnchor, constant: -10).isActive = true
-        
         // MARK: PRIVACY BUTTON:
 
         privacyButton.translatesAutoresizingMaskIntoConstraints = false
-        privacyButton.topAnchor.constraint(equalTo: infoTextLabel.bottomAnchor, constant: 30).isActive = true
+        privacyButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         privacyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         privacyButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        privacyButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
+        privacyButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         // MARK: TERMS BUTTON:
 
@@ -105,7 +97,7 @@ final class InfoVC: UIViewController {
         termsButton.topAnchor.constraint(equalTo: privacyButton.bottomAnchor, constant: 15).isActive = true
         termsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         termsButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        termsButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
+        termsButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         // MARK: FAQ BUTTON:
 
@@ -113,7 +105,7 @@ final class InfoVC: UIViewController {
         faqButton.topAnchor.constraint(equalTo: termsButton.bottomAnchor, constant: 15).isActive = true
         faqButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         faqButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        faqButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
+        faqButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         // MARK: LANGUAGES BUTTON (ALERT):
         
@@ -121,7 +113,7 @@ final class InfoVC: UIViewController {
         languagesButton.topAnchor.constraint(equalTo: faqButton.bottomAnchor, constant: 15).isActive = true
         languagesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         languagesButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        languagesButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
+        languagesButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         // MARK: SHARE:
 
@@ -145,7 +137,7 @@ final class InfoVC: UIViewController {
         versionButton.topAnchor.constraint(equalTo: feedbackButton.bottomAnchor, constant: 15).isActive = true
         versionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         versionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        versionButton.widthAnchor.constraint(equalTo: infoTextView.widthAnchor, multiplier: 1).isActive = true
+        versionButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
     }
     
     // MARK: - CONFIGURE UI:
@@ -171,30 +163,22 @@ final class InfoVC: UIViewController {
         infoBackgroundView.backgroundColor = .black
         infoBackgroundView.layer.opacity = 0.5
         
-        // MARK: TITLE LABEL:
+        // MARK: APPLE BUTTON LOTTIE:
         
-        titleLabel.text = "SKYDIVE BOOK"
-        titleLabel.textColor = .colorWhite
-        titleLabel.textAlignment = .center
-        titleLabel.font = fontMediumStandard18
+        appleButtonLottie.play()
+        appleButtonLottie.loopMode = .playOnce
+        appleButtonLottie.animationSpeed = 1
+        appleButtonLottie.contentMode = .scaleAspectFill
+        
+        // MARK: APPLE BUTTON:
+        
+        appleButton.backgroundColor = .clear
+        appleButton.addTarget(self, action: #selector(appleButtonTapped), for: .touchUpInside)
         
         // MARK: SCROLL VIEW:
         
         scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
         scrollView.isScrollEnabled = true
-        
-        // MARK: INFO TEXT VIEW:
-
-        infoTextView.backgroundColor = .colorCell
-        infoTextView.layer.cornerRadius = cornerRadius15
-        
-        // MARK: INFO TEXT LABEL:
-
-        infoTextLabel.textColor = .colorWhite
-        infoTextLabel.font = fontRegularStandard8
-        infoTextLabel.numberOfLines = 0
-        infoTextLabel.adjustsFontSizeToFitWidth = true
-        infoTextLabel.text = NSLocalizedString("Info text", comment: "")
         
         // MARK: PRIVACY BUTTON:
         
@@ -320,6 +304,14 @@ final class InfoVC: UIViewController {
         imageView.layer.shadowColor = UIColor.colorWhite.cgColor
         imageView.layer.shadowOpacity = 1
 
+        present(alert, animated: true)
+    }
+    
+    // MARK: APPLE BUTTON TAPPED:
+    
+    @objc private func appleButtonTapped() {
+        let alert = UIAlertController(title: "Skydive Book", message: NSLocalizedString("Info text", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
         present(alert, animated: true)
     }
     

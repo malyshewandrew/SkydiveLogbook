@@ -67,14 +67,14 @@ final class UvIndexVC: UIViewController {
         // MARK: UVINDEX LOGO:
 
         uvIndexLogoLottie.translatesAutoresizingMaskIntoConstraints = false
-        uvIndexLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        uvIndexLogoLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         uvIndexLogoLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        uvIndexLogoLottie.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        uvIndexLogoLottie.heightAnchor.constraint(equalToConstant: 125).isActive = true
         
         // MARK: UVINDEX VIEW FOR TABLE VIEW:
 
         uvIndexListView.translatesAutoresizingMaskIntoConstraints = false
-        uvIndexListView.topAnchor.constraint(equalTo: uvIndexLogoLottie.bottomAnchor, constant: 5).isActive = true
+        uvIndexListView.topAnchor.constraint(equalTo: uvIndexLogoLottie.bottomAnchor).isActive = true
         uvIndexListView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         uvIndexListView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         uvIndexListView.bottomAnchor.constraint(equalTo: uvIndexInfoView.topAnchor, constant: -15).isActive = true

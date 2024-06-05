@@ -33,6 +33,7 @@ final class SettingsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false
     }
 
     // MARK: - ADD SUBVIEWS:
@@ -274,6 +275,11 @@ extension SettingsVC: SettingsCellDelegate {
             sheetController.detents = [.medium()]
         }
         present(notifications, animated: true, completion: nil)
+    }
+    
+    func tapGameButton() {
+        let game = GameVC()
+        navigationController?.pushViewController(game, animated: true)
     }
 
     func tapInstagramButton() {

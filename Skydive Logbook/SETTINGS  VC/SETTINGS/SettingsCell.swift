@@ -12,6 +12,7 @@ protocol SettingsCellDelegate: AnyObject {
     func tapInfoButton()
     func tapPremiumButton()
     func tapNotificationsButton()
+    func tapGameButton()
     func tapInstagramButton()
 }
 
@@ -26,6 +27,7 @@ final class SettingsCell: UITableViewCell {
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
     private let notificationsButton = UIButton()
+    private let gameButton = UIButton()
     private let starImage = UIImageView()
     private let instagramImageView = UIImageView()
     private let instagramButton = UIButton()
@@ -51,7 +53,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, notificationsButton, instagramImageView, infoLabel, instagramButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, notificationsButton, gameButton, instagramImageView, infoLabel, instagramButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -119,6 +121,14 @@ final class SettingsCell: UITableViewCell {
         notificationsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         notificationsButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         notificationsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: GAME BUTTON:
+        
+        gameButton.translatesAutoresizingMaskIntoConstraints = false
+        gameButton.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 15).isActive = true
+        gameButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        gameButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        gameButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: ABOUT:
 
@@ -238,6 +248,17 @@ final class SettingsCell: UITableViewCell {
         notificationsButton.addTarget(self, action: #selector(notificationsButtonTapped), for: .touchUpInside)
         notificationsButton.isHidden = true
         
+        // MARK: GAME BUTTON:
+        
+        gameButton.setTitle(NSLocalizedString("Game", comment: ""), for: .normal)
+        gameButton.layer.cornerRadius = cornerRadius15
+        gameButton.backgroundColor = .colorCell
+        gameButton.titleLabel?.font = fontMediumStandard14
+        gameButton.setTitleColor(.colorWhite, for: .normal)
+        gameButton.setTitleColor(.systemBlue, for: .highlighted)
+        gameButton.addTarget(self, action: #selector(gameButtonTapped), for: .touchUpInside)
+        gameButton.isHidden = true
+        
         // MARK: ABOUT BUTTON:
 
         infoButton.setTitle(NSLocalizedString("Information", comment: ""), for: .normal)
@@ -260,8 +281,9 @@ final class SettingsCell: UITableViewCell {
         instagramButton.addTarget(self, action: #selector(instagramButtonTapped), for: .touchUpInside)
 
         // MARK: INFO LABEL:
-
-        infoLabel.text = "2023-2024, SkydiveBook iOS Application"
+        
+        let currentYear = Calendar.current.component(.year, from: Date())
+        infoLabel.text = "2023-\(currentYear), SkydiveBook iOS Application"
         infoLabel.textColor = .colorDarkGray
         infoLabel.font = fontRegularStandard8
         infoLabel.textAlignment = .center
@@ -316,6 +338,13 @@ final class SettingsCell: UITableViewCell {
     @objc private func notificationsButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapNotificationsButton()
+    }
+    
+    // MARK: GAME BUTTON:
+
+    @objc private func gameButtonTapped() {
+        vibrationOn.vibrationStandart()
+        delegate?.tapGameButton()
     }
     
     // MARK: INFO BUTTON:

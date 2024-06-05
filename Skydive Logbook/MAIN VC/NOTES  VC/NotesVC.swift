@@ -370,11 +370,35 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: DELETE CELL:
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            vibrationOn.vibrationStandart()
-            let deleteNote = arrayNotesRealm[indexPath.row]
-            let alertDelete = UIAlertController(title: NSLocalizedString("Delete note?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            vibrationOn.vibrationStandart()
+//            let deleteNote = arrayNotesRealm[indexPath.row]
+//            let alertDelete = UIAlertController(title: NSLocalizedString("Delete note?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
+//            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
+//            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
+//                try? self.realmManager.localRealm.write {
+//                    self.realmManager.localRealm.delete(deleteNote)
+//                }
+//                self.loadNotes()
+//                tableView.reloadData()
+//                self.alertKitDeleted()
+//            }))
+//            present(alertDelete, animated: true)
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        vibrationOn.vibrationStandart()
+        let deleteNote = arrayNotesRealm[indexPath.row]
+        let deleteAction = UIContextualAction(style: .normal, title: nil) { [weak self] _, _, completion in
+            guard let self = self else { return }
+            self.vibrationOn.vibrationStandart()
+            let alertDelete = UIAlertController(
+                title: NSLocalizedString("Delete note?", comment: ""),
+                message: NSLocalizedString("This action cannot be undone.", comment: ""),
+                preferredStyle: .alert
+            )
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
                 try? self.realmManager.localRealm.write {
@@ -384,7 +408,21 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
                 tableView.reloadData()
                 self.alertKitDeleted()
             }))
-            present(alertDelete, animated: true)
+            self.present(alertDelete, animated: true)
+            completion(true)
         }
+        if let trashImage = UIImage(systemName: "trash")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal) {
+            deleteAction.image = trashImage
+        }
+        let cellRect = tableView.rectForRow(at: indexPath)
+        let cellHeight = cellRect.height
+        let actionWidth = cellRect.width
+        let size = CGSize(width: actionWidth / 5.5, height: cellHeight)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let roundedImage = renderer.image { ctx in }
+        deleteAction.backgroundColor = UIColor(patternImage: roundedImage)
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
     }
 }
