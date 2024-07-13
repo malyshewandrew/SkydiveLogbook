@@ -155,8 +155,9 @@ final class InfoVC: UIViewController {
         
         infoBackground.play()
         infoBackground.loopMode = .loop
-        infoBackground.animationSpeed = 0.3
+        infoBackground.animationSpeed = 1
         infoBackground.contentMode = .scaleAspectFill
+        infoBackground.isHidden = true
         
         // MARK: INFO BACKGROUND VIEW:
         

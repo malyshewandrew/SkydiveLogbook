@@ -56,7 +56,7 @@ final class SkydiversVC: UIViewController {
         // MARK: SKYDIVERS BACKGROUND:
 
         skydiversBackground.translatesAutoresizingMaskIntoConstraints = false
-        skydiversBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        skydiversBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: -75).isActive = true
         skydiversBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         skydiversBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         skydiversBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

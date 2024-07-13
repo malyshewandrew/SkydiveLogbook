@@ -369,24 +369,6 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     // MARK: DELETE CELL:
-
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            vibrationOn.vibrationStandart()
-//            let deleteNote = arrayNotesRealm[indexPath.row]
-//            let alertDelete = UIAlertController(title: NSLocalizedString("Delete note?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
-//            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
-//            alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
-//                try? self.realmManager.localRealm.write {
-//                    self.realmManager.localRealm.delete(deleteNote)
-//                }
-//                self.loadNotes()
-//                tableView.reloadData()
-//                self.alertKitDeleted()
-//            }))
-//            present(alertDelete, animated: true)
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         vibrationOn.vibrationStandart()
