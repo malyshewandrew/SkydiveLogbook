@@ -20,6 +20,7 @@ final class SystemVC: UIViewController {
     private var selectedSystem: SystemClassRealm?
     private var indexSysytem: Int = 0
     private let realmManager = RealmManager()
+    private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
 
     // MARK: - LIFECYCLE:
 
@@ -109,7 +110,7 @@ final class SystemVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: systemLottie.bottomAnchor, constant: 0).isActive = true
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: newSystemButton.topAnchor, constant: -10).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: NEW SYSTEM:
@@ -117,8 +118,6 @@ final class SystemVC: UIViewController {
         newSystemButton.translatesAutoresizingMaskIntoConstraints = false
         newSystemButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         newSystemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        newSystemButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
-        newSystemButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: EMPTY SYSTEM:
 
@@ -171,12 +170,8 @@ final class SystemVC: UIViewController {
 
         // MARK: NEW SYSTEM:
 
-        newSystemButton.backgroundColor = .colorCell
-        newSystemButton.layer.cornerRadius = cornerRadius15
-        newSystemButton.setTitle(NSLocalizedString("Add a new system", comment: ""), for: .normal)
-        newSystemButton.titleLabel?.font = fontMediumStandard14
-        newSystemButton.setTitleColor(.colorWhite, for: .normal)
-        newSystemButton.setTitleColor(.systemBlue, for: .highlighted)
+        newSystemButton.setImage(UIImage(systemName: "plus.circle", withConfiguration: configurationImage), for: .normal)
+        newSystemButton.tintColor = .colorWhite
         newSystemButton.addTarget(self, action: #selector(newSystemButtonTapped), for: .touchUpInside)
 
         // MARK: EMPTY SYSTEM VIEW:

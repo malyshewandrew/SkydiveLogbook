@@ -7,6 +7,7 @@ import WeatherKit
 
 protocol StatisticCellDelegate: AnyObject {
     func tapGeneralInfoButton()
+    func tapGeneralInfoVCButton()
     func tapTotalButton()
     func tapYearButton()
     func tapCategoryButton()
@@ -1354,8 +1355,8 @@ final class StatisticCell: UITableViewCell {
     // MARK: - FUNCTIONS DELEGATES:
     
     @objc private func generalInfoButtonTapped() {
-        vibrationOn.vibrationStandart()
-        delegate?.tapGeneralInfoButton()
+//        delegate?.tapGeneralInfoButton()
+        delegate?.tapGeneralInfoVCButton()
     }
     
     @objc private func totalButtonTapped() {

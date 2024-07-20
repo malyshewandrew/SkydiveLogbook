@@ -178,7 +178,7 @@ final class ParametersVC: UIViewController {
         
         altitudeLabel.textColor = .white
         altitudeLabel.textAlignment = .center
-        altitudeLabel.font = fontRegulartandard72
+        altitudeLabel.font = fontRegularStandard72
         altitudeLabel.layer.shadowRadius = 25
         altitudeLabel.layer.shadowColor = UIColor.colorLightBlue.cgColor
         altitudeLabel.layer.shadowOpacity = 1
@@ -201,7 +201,7 @@ final class ParametersVC: UIViewController {
         
         degreesLabel.textColor = .white
         degreesLabel.textAlignment = .center
-        degreesLabel.font = fontRegulartandard50
+        degreesLabel.font = fontRegularStandard50
         degreesLabel.layer.shadowRadius = 25
         degreesLabel.layer.shadowColor = UIColor.colorLightBlue.cgColor
         degreesLabel.layer.shadowOpacity = 1
@@ -220,7 +220,7 @@ final class ParametersVC: UIViewController {
         
         speedLabel.textColor = .white
         speedLabel.textAlignment = .center
-        speedLabel.font = fontRegulartandard72
+        speedLabel.font = fontRegularStandard72
         speedLabel.layer.shadowRadius = 25
         speedLabel.layer.shadowColor = UIColor.colorLightBlue.cgColor
         speedLabel.layer.shadowOpacity = 1

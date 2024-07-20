@@ -1,6 +1,6 @@
 import Lottie
-import UIKit
 import RealmSwift
+import UIKit
 
 final class StatisticVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -14,6 +14,7 @@ final class StatisticVC: UIViewController {
     private let tableView = UITableView()
     private let dateFormatter = DateFormatter()
     private let realmManager = RealmManager()
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
 
     // MARK: - LIFECYCLE:
 
@@ -31,7 +32,7 @@ final class StatisticVC: UIViewController {
         loadJumps()
         tableView.reloadData()
     }
-
+    
     // MARK: - ADD SUBVIEWS::
 
     private func addSubviews() {
@@ -55,16 +56,16 @@ final class StatisticVC: UIViewController {
         confettiLottie.centerXAnchor.constraint(equalTo: statisticLottie.centerXAnchor).isActive = true
         confettiLottie.centerYAnchor.constraint(equalTo: statisticLottie.centerYAnchor).isActive = true
         confettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: EFFECT ONE LOTTIE:
-        
+
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
         effectOneLottie.centerXAnchor.constraint(equalTo: confettiLottie.centerXAnchor).isActive = true
         effectOneLottie.centerYAnchor.constraint(equalTo: confettiLottie.centerYAnchor).isActive = true
         effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: EFFECT TWO LOTTIE:
-        
+
         effectTwoLottie.translatesAutoresizingMaskIntoConstraints = false
         effectTwoLottie.centerXAnchor.constraint(equalTo: confettiLottie.centerXAnchor).isActive = true
         effectTwoLottie.centerYAnchor.constraint(equalTo: confettiLottie.centerYAnchor).isActive = true
@@ -109,18 +110,18 @@ final class StatisticVC: UIViewController {
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
-        
+
         // MARK: EFFECT ONE LOTTIE:
-        
+
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
         effectOneLottie.animationSpeed = 0.2
         effectOneLottie.layer.shadowRadius = 15
         effectOneLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         effectOneLottie.layer.shadowOpacity = 1
-        
+
         // MARK: EFFECT TWO LOTTIE:
-        
+
         effectTwoLottie.play()
         effectTwoLottie.loopMode = .loop
         effectTwoLottie.animationSpeed = 0.1
@@ -140,11 +141,11 @@ final class StatisticVC: UIViewController {
         tableView.separatorStyle = .none
         tableView.reloadData()
     }
-    
+
     // MARK: - LOAD JUMPS FROM REALM:
-    
+
     private func loadJumps() {
-        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map({ $0 })
+        arrayJumpsRealm = realmManager.localRealm.objects(JumpClassRealm.self).map { $0 }
     }
 
     // MARK: - CONFIGURE GESTURES:
@@ -191,6 +192,123 @@ extension StatisticVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - EXTENSION FOR DELEGATES:
 
 extension StatisticVC: StatisticCellDelegate {
+    // MARK: GENERAL INFO VC:
+
+    func tapGeneralInfoVCButton() {
+        vibrationOn.vibrationStandart()
+        
+        tableView.layer.opacity = 0.0
+        tabBarController?.tabBar.layer.opacity = 0.0
+        effectOneLottie.layer.opacity = 0.0
+        effectTwoLottie.layer.opacity = 0.0
+        statisticLottie.layer.opacity = 0.0
+        confettiLottie.layer.opacity = 0.0
+        
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            var sumHeight = 0
+            for jump in arrayJumpsRealm {
+                sumHeight += Int(jump.height) ?? 0
+            }
+
+            let kilometers = sumHeight / 1000
+
+            var heightMessage = ""
+            switch sumHeight {
+            case 0...1000:
+                heightMessage = ""
+            case 1000...4500:
+                heightMessage = ""
+            case 4500...11000:
+                heightMessage = ""
+            case 11000...30000:
+                heightMessage = ""
+            case 30000...345000:
+                heightMessage = ""
+            case 45000...60000:
+                heightMessage = ""
+            case 60000...75000:
+                heightMessage = ""
+            case 75000...105000:
+                heightMessage = ""
+            case 105000...150000:
+                heightMessage = ""
+            case 150000...195000:
+                heightMessage = ""
+            case 195000...255000:
+                heightMessage = ""
+            case 255000...300000:
+                heightMessage = ""
+            case 300000...360000:
+                heightMessage = ""
+            case 360000...450000:
+                heightMessage = ""
+            case 450000...900000:
+                heightMessage = ""
+            case 900000...1500000:
+                heightMessage = ""
+            case 1500000...2250000:
+                heightMessage = ""
+            case 2250000...3000000:
+                heightMessage = ""
+            case 3000000...4500000:
+                heightMessage = ""
+            case 4500000...6000000:
+                heightMessage = ""
+            case 6000000...9000000:
+                heightMessage = ""
+            case 9000000...12000000:
+                heightMessage = ""
+            case 12000000...18000000:
+                heightMessage = ""
+            case 18000000...21000000:
+                heightMessage = ""
+            case 21000000...30000000:
+                heightMessage = ""
+            case 30000000...:
+                heightMessage = ""
+            default:
+                heightMessage = "none"
+            }
+
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.removeFromSuperview()
+
+            if arrayJumpsRealm.count == 0 {
+                let alert = UIAlertController(title: NSLocalizedString("General info", comment: "") + ":",
+                                              message: "\n" + NSLocalizedString("no jumps", comment: ""),
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
+                self.present(alert, animated: true)
+            } else {
+                let generalInfoVC = GeneralInfoVC()
+                if let sheetController = generalInfoVC.sheetPresentationController {
+                    sheetController.prefersGrabberVisible = true
+                    sheetController.preferredCornerRadius = cornerRadius15
+                    sheetController.detents = [.large()]
+                }
+
+                generalInfoVC.heightpPosition = CGFloat(sumHeight / 1000)
+                generalInfoVC.heightLabel.text = """
+                \(kilometers)
+                \(heightMessage)
+                """
+                self.present(generalInfoVC, animated: true)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.tableView.layer.opacity = 1.0
+                self.tabBarController?.tabBar.layer.opacity = 1.0
+                self.effectOneLottie.layer.opacity = 1.0
+                self.effectTwoLottie.layer.opacity = 1.0
+                self.statisticLottie.layer.opacity = 1.0
+                self.confettiLottie.layer.opacity = 1.0
+            }
+        }
+    }
+
     // MARK: GENERAL INFO:
 
     func tapGeneralInfoButton() {
@@ -257,6 +375,7 @@ extension StatisticVC: StatisticCellDelegate {
         for jump in arrayJumpsRealm {
             sumHeight += Int(jump.height) ?? 0
         }
+
         var heightMessage = ""
         switch sumHeight {
         case 0...1:
@@ -454,7 +573,7 @@ extension StatisticVC: StatisticCellDelegate {
         var heightMin = ""
         var time = ""
         var cutaway = ""
-        
+
         for jump in arrayJumpsRealm {
             if let height = Int(jump.height), height < minJumpHeight {
                 minJumpHeight = height
@@ -486,7 +605,6 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE FIRST:
 
     func tapDateFirstButton() {
-        
         var date = ""
         var location = ""
         var aircraft = ""
@@ -495,7 +613,7 @@ extension StatisticVC: StatisticCellDelegate {
         var heightMin = ""
         var time = ""
         var cutaway = ""
-        
+
         if arrayJumpsRealm.count == 0 {
             let alert = UIAlertController(title: NSLocalizedString("Date first jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
@@ -514,9 +632,9 @@ extension StatisticVC: StatisticCellDelegate {
                 guard let year = dayMonthYearPassed.year,
                       let month = dayMonthYearPassed.month,
                       let day = dayMonthYearPassed.day else { return }
-                
+
                 guard let jump = arrayJumpsRealm.first else { return }
-                
+
                 date = NSLocalizedString("Date", comment: "") + ": " + jump.date
                 location = NSLocalizedString("Location", comment: "") + ": " + jump.location
                 aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
@@ -586,7 +704,6 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: DATE LAST:
 
     func tapDateLastButton() {
-        
         var date = ""
         var location = ""
         var aircraft = ""
@@ -595,7 +712,7 @@ extension StatisticVC: StatisticCellDelegate {
         var heightMin = ""
         var time = ""
         var cutaway = ""
-        
+
         if arrayJumpsRealm.count == 0 {
             let alert = UIAlertController(title: NSLocalizedString("Date last jump", comment: "") + ":",
                                           message: "\n" + NSLocalizedString("no jumps", comment: ""),
@@ -613,9 +730,9 @@ extension StatisticVC: StatisticCellDelegate {
                 guard let year = dayMonthYearPassed.year,
                       let month = dayMonthYearPassed.month,
                       let day = dayMonthYearPassed.day else { return }
-                
+
                 guard let jump = arrayJumpsRealm.last else { return }
-                
+
                 date = NSLocalizedString("Date", comment: "") + ": " + jump.date
                 location = NSLocalizedString("Location", comment: "") + ": " + jump.location
                 aircraft = NSLocalizedString("Aircraft", comment: "") + ": " + jump.aircraft
@@ -624,7 +741,7 @@ extension StatisticVC: StatisticCellDelegate {
                 heightMin = NSLocalizedString("Height", comment: "") + ": " + jump.height + " " + NSLocalizedString("m.", comment: "")
                 time = NSLocalizedString("Time", comment: "") + ": " + jump.time + " " + NSLocalizedString("s.", comment: "")
                 cutaway = NSLocalizedString("Cutaway", comment: "") + ": " + (jump.cutaway?.localizedValue ?? "")
-                
+
                 var message = ""
                 if arrayJumpsRealm.count == 0 {
                     message = "\n" + NSLocalizedString("no jumps", comment: "")

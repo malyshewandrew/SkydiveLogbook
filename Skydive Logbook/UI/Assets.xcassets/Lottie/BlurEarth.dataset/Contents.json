@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "BlurEarth.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
