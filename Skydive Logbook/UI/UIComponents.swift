@@ -19,7 +19,7 @@ let fontMediumStandard18: UIFont = .systemFont(ofSize: 18, weight: .bold, width:
 let fontBoldStandard30: UIFont = .systemFont(ofSize: 30, weight: .bold, width: .standard)
 let fontRegularStandard50: UIFont = .systemFont(ofSize: 50, weight: .regular, width: .standard)
 let fontRegularStandard72: UIFont = .systemFont(ofSize: 72, weight: .thin, width: .standard)
-let fontBlacktSandard100: UIFont = .systemFont(ofSize: 100, weight: .black, width: .standard)
+let fontBlackSandard100: UIFont = .systemFont(ofSize: 100, weight: .black, width: .standard)
 
 // MARK: - CORNER RADIUS:
 

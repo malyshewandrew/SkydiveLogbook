@@ -273,6 +273,65 @@ extension StatisticVC: StatisticCellDelegate {
             default:
                 heightMessage = "none"
             }
+            
+            var sumTime = 0
+            for jump in arrayJumpsRealm {
+                sumTime += Int(jump.time) ?? 0
+            }
+
+            var timeMessage = ""
+            switch sumTime {
+            case 0...1:
+                timeMessage = NSLocalizedString("Case 0-1", comment: "")
+            case 1...150:
+                timeMessage = NSLocalizedString("Case 1-150", comment: "")
+            case 150...300:
+                timeMessage = NSLocalizedString("Case 150-300", comment: "")
+            case 300...600:
+                timeMessage = NSLocalizedString("Case 300-600", comment: "")
+            case 600...900:
+                timeMessage = NSLocalizedString("Case 600-900", comment: "")
+            case 900...1000:
+                timeMessage = NSLocalizedString("Case 900-1000", comment: "")
+            case 1000...1200:
+                timeMessage = NSLocalizedString("Case 1000-1200", comment: "")
+            case 1200...1500:
+                timeMessage = NSLocalizedString("Case 1200-1500", comment: "")
+            case 1500...2500:
+                timeMessage = NSLocalizedString("Case 1500-2500", comment: "")
+            case 2500...3000:
+                timeMessage = NSLocalizedString("Case 2500-3000", comment: "")
+            case 3000...3500:
+                timeMessage = NSLocalizedString("Case 3000-3500", comment: "")
+            case 3500...5000:
+                timeMessage = NSLocalizedString("Case 3500-5000", comment: "")
+            case 5000...6000:
+                timeMessage = NSLocalizedString("Case 5000-6000", comment: "")
+            case 6000...8000:
+                timeMessage = NSLocalizedString("Case 6000-8000", comment: "")
+            case 8000...10000:
+                timeMessage = NSLocalizedString("Case 8000-10000", comment: "")
+            case 10000...13000:
+                timeMessage = NSLocalizedString("Case 10000-13000", comment: "")
+            case 13000...17000:
+                timeMessage = NSLocalizedString("Case 13000-17000", comment: "")
+            case 17000...20000:
+                timeMessage = NSLocalizedString("Case 17000-20000", comment: "")
+            case 20000...25000:
+                timeMessage = NSLocalizedString("Case 20000-25000", comment: "")
+            case 25000...30000:
+                timeMessage = NSLocalizedString("Case 25000-30000", comment: "")
+            case 35000...40000:
+                timeMessage = NSLocalizedString("Case 35000-40000", comment: "")
+            case 40000...50000:
+                timeMessage = NSLocalizedString("Case 40000-50000", comment: "")
+            case 50000...100000:
+                timeMessage = NSLocalizedString("Case 50000-100000", comment: "")
+            case 100000...:
+                timeMessage = NSLocalizedString("Case 100000-...", comment: "")
+            default:
+                timeMessage = NSLocalizedString("Case Default-Default", comment: "")
+            }
 
             self.activityIndicator.stopAnimating()
             self.activityIndicator.removeFromSuperview()
@@ -295,6 +354,10 @@ extension StatisticVC: StatisticCellDelegate {
                 generalInfoVC.heightLabel.text = """
                 \(kilometers)
                 \(heightMessage)
+                """
+                generalInfoVC.timeLabel.text = """
+                \(sumTime)
+                \(timeMessage)
                 """
                 self.present(generalInfoVC, animated: true)
             }

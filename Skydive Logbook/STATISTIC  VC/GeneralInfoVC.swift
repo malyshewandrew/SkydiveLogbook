@@ -24,6 +24,7 @@ final class GeneralInfoVC: UIViewController {
     private var heightEarthLottie: CGFloat = 0.0
     var heightpPosition: CGFloat = 0.0
     var heightLabel = UILabel()
+    var timeLabel = UILabel()
     private let vibration = Vibration()
     
     // MARK: - LIFYCYCLE:
@@ -54,7 +55,7 @@ final class GeneralInfoVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(backgroundGeneralInfoLottie, blurEarthLottie, effectEarthLottie, earthLottie, earthButton, lineEarthView, earthLabel, flyView, flyLabel, amazonLiew, amazonLabel, moonView, moonLabel, zeroView, zeroLabel, positionView, positionLabel, heightLabel)
+        view.addSubviews(backgroundGeneralInfoLottie, blurEarthLottie, effectEarthLottie, earthLottie, earthButton, lineEarthView, earthLabel, flyView, flyLabel, amazonLiew, amazonLabel, moonView, moonLabel, zeroView, zeroLabel, positionView, positionLabel, heightLabel, timeLabel)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -98,9 +99,13 @@ final class GeneralInfoVC: UIViewController {
         
         // HEIGHT LABEL:
         heightLabel.translatesAutoresizingMaskIntoConstraints = false
-        heightLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        heightLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
-        heightLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
+        heightLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+        heightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        // TIME LABEL:
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        timeLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15).isActive = true
         
         // LINE EARTH VIEW:
         lineEarthView.translatesAutoresizingMaskIntoConstraints = false
@@ -208,9 +213,17 @@ final class GeneralInfoVC: UIViewController {
         heightLabel.textColor = .colorWhite
         heightLabel.textAlignment = .center
         heightLabel.numberOfLines = 1
-        heightLabel.font = fontBlacktSandard100
+        heightLabel.font = fontBoldStandard30
         heightLabel.layer.opacity = 0.5
         heightLabel.adjustsFontSizeToFitWidth = true
+        
+        // MARK: TIME LABEL:
+        timeLabel.textColor = .colorWhite
+        timeLabel.textAlignment = .center
+        timeLabel.numberOfLines = 1
+        timeLabel.font = fontBoldStandard30
+        timeLabel.layer.opacity = 0.5
+        timeLabel.adjustsFontSizeToFitWidth = true
         
         // LINE EARTH VIEW:
         lineEarthView.backgroundColor = .colorLineEarth
@@ -231,7 +244,7 @@ final class GeneralInfoVC: UIViewController {
         // FLY LABEL:
         flyLabel.textColor = .colorWhite
         flyLabel.font = fontThinStandard10
-        flyLabel.text = NSLocalizedString("San-Francisco - Sydney", comment: "")
+        flyLabel.text = NSLocalizedString("NASA ships", comment: "")
         flyLabel.adjustsFontSizeToFitWidth = true
         
         // AMAZON VIEW:
@@ -240,7 +253,7 @@ final class GeneralInfoVC: UIViewController {
         // AMAZON LABEL:
         amazonLabel.textColor = .colorWhite
         amazonLabel.font = fontThinStandard10
-        amazonLabel.text = NSLocalizedString("The Amazon river", comment: "")
+        amazonLabel.text = NSLocalizedString("Height of the Mars", comment: "")
         amazonLabel.adjustsFontSizeToFitWidth = true
         
         // MOON VIEW:

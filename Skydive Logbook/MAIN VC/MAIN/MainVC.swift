@@ -35,6 +35,8 @@ final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
 
     private let loadingView = UIView()
+    private let loadingBackgroundLottie = LottieAnimationView(name: "LoadingBackgroundLottie")
+    private let loadingEffectLottie = LottieAnimationView(name: "LoadingEffectLottie")
     private let loadingLottie = LottieAnimationView(name: "Loading")
     private let helloLottie = LottieAnimationView(name: "Hello")
     private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
@@ -89,7 +91,7 @@ final class MainVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(mainShadowLottie, mainLottie, confettiLottie, confettiButton, accountButton, weatherButton, calculatorButton, notesButton, tableView, startCenterConfettiLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
-        loadingView.addSubviews(helloLottie, loadingLottie)
+        loadingView.addSubviews(loadingBackgroundLottie, loadingEffectLottie, helloLottie, loadingLottie)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -102,6 +104,22 @@ final class MainVC: UIViewController {
         loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        // MARK: LOADNING BACKGROUND:
+        
+        loadingBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+        loadingBackgroundLottie.topAnchor.constraint(equalTo: loadingView.topAnchor).isActive = true
+        loadingBackgroundLottie.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor).isActive = true
+        loadingBackgroundLottie.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
+        loadingBackgroundLottie.trailingAnchor.constraint(equalTo: loadingView.trailingAnchor).isActive = true
+        
+        // MARK: LOADNING EFFECT:
+        
+        loadingEffectLottie.translatesAutoresizingMaskIntoConstraints = false
+        loadingEffectLottie.centerXAnchor.constraint(equalTo: loadingLottie.centerXAnchor).isActive = true
+        loadingEffectLottie.centerYAnchor.constraint(equalTo: loadingLottie.centerYAnchor).isActive = true
+        loadingEffectLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
+        loadingEffectLottie.heightAnchor.constraint(equalTo: loadingEffectLottie.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: LOADING LOTTIE:
 
@@ -200,6 +218,20 @@ final class MainVC: UIViewController {
         // MARK: LOADING VIEW:
 
         loadingView.backgroundColor = .colorBackground
+        
+        // MARK: LOADNING BACKGROUND:
+        
+        loadingBackgroundLottie.play()
+        loadingBackgroundLottie.loopMode = .loop
+        loadingBackgroundLottie.contentMode = .scaleAspectFill
+        loadingBackgroundLottie.layer.opacity = 0.1
+        
+        // MARK: LOADNING EFFECT:
+        
+        loadingEffectLottie.play()
+        loadingEffectLottie.loopMode = .playOnce
+        loadingEffectLottie.contentMode = .scaleAspectFill
+        loadingEffectLottie.layer.opacity = 0.5
 
         // MARK: LOADING LOTTIE:
 

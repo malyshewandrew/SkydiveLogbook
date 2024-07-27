@@ -825,16 +825,6 @@ final class StatisticCell: UITableViewCell {
     
     // MARK: - HELPERS:
     
-    // MARK: MISSION VIEW BUTTON TAPPED:
-    
-    @objc private func missionViewButtonTapped() {
-        vibrationOn.vibrationStandart()
-        isFlippedMissionsView = !isFlippedMissionsView
-        let fromView = isFlippedMissionsView ? missionsOneView : missionsTwoView
-        let toView = isFlippedMissionsView ? missionsTwoView : missionsOneView
-        UIView.transition(from: fromView, to: toView, duration: 1, options: [.curveEaseOut, .transitionFlipFromLeft, .showHideTransitionViews])
-    }
-    
     // MARK: GENERAL INFO:
     
     private func setGeneralInfo() {
@@ -1322,6 +1312,16 @@ final class StatisticCell: UITableViewCell {
         \(NSLocalizedString("Wingsuit", comment: "")): \(arrayJumpsWingsuit.count)
         \(NSLocalizedString("Formation", comment: "")): \(arrayJumpsFormation.count)
         """
+    }
+    
+    // MARK: MISSION VIEW BUTTON TAPPED:
+    
+    @objc private func missionViewButtonTapped() {
+        vibrationOn.vibrationStandart()
+        isFlippedMissionsView = !isFlippedMissionsView
+        let fromView = isFlippedMissionsView ? missionsOneView : missionsTwoView
+        let toView = isFlippedMissionsView ? missionsTwoView : missionsOneView
+        UIView.transition(from: fromView, to: toView, duration: 1, options: [.curveEaseOut, .transitionFlipFromLeft, .showHideTransitionViews])
     }
         
     // MARK: RELOAD DATA:
