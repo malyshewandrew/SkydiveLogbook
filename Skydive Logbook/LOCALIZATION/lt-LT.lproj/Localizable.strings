@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Parašiutas pridėtas";
 "Canopy deleted / alert kit" = "Parašiutas ištrintas";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Parašiutininkai";
+"Community / partners" = "Partneriai";
+"Community / name" = "Vardas";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Spausdinti žurnalą";
+"Create document / print" = "Sukurti dokumentą";
+"Title document / print" = "Ištrauka iš „SkydiveBook“ iOS programos";
+"No name entered / print" = "Vardas neįvestas";
+"Description text / print" = "\nSkydiveBook - tai nėra oficialus patvirtinimas, kad programėlės naudotojas yra profesionalus parašiutininkas.\n\nTai yra neprivalomas papildymas prie oficialios parašiutininko knygos arba bet kurios kategorijos parašiutininko pažymėjimo.\n\n„SkydiveBook“ užfiksuoti šuoliai nėra šių šuolių įrodymas ir negali būti laikomi pagrindu oficialiems dokumentams, pažymėjimams, kategorijoms išduoti.\n\nProgramėlė sukurta asmeniniam naudojimui, šuolių su parašiutu patogumui ir išplėstinei analizei.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Žemės aukštis";
+"NASA ships" = "NASA laivai";
+"Height of the Mars" = "Marso aukštis";
+"Height of the Moon" = "Mėnulio aukštis";
+"Ground of the Earth" = "Žemės paviršius";
+"Your position" = "Tavo pozicija";

@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Kanopi ditambahkan";
 "Canopy deleted / alert kit" = "Kanopi dihapus";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Penerjun payung";
+"Community / partners" = "Mitra";
+"Community / name" = "Nama";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Cetak buku catatan";
+"Create document / print" = "Buat dokumen";
+"Title document / print" = "Ekstrak dari aplikasi iOS 'SkydiveBook'";
+"No name entered / print" = "Nama tidak dimasukkan";
+"Description text / print" = "\nSkydiveBook - ini bukan konfirmasi resmi bahwa pengguna aplikasi adalah penerjun payung profesional.\n\nIni berfungsi sebagai tambahan opsional pada buku catatan resmi atau sertifikat penerjun payung dari kategori mana pun.\n\nLompatan yang dicatat di SkydiveBook bukan bukti dari lompatan ini dan tidak dapat dianggap sebagai dasar untuk menerbitkan dokumen resmi, sertifikat, kategori.\n\nAplikasi ini dirancang untuk penggunaan pribadi, kenyamanan penerjunan payung, dan analisis lanjutan.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Ketinggian Bumi";
+"NASA ships" = "Kapal NASA";
+"Height of the Mars" = "Ketinggian Mars";
+"Height of the Moon" = "Ketinggian Bulan";
+"Ground of the Earth" = "Permukaan Bumi";
+"Your position" = "Posisi Anda";

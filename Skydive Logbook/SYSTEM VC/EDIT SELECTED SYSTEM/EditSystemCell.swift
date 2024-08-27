@@ -259,7 +259,7 @@ final class EditSystemCell: UITableViewCell {
         lineOneView.topAnchor.constraint(equalTo: containerServiceLifeYearsButton.bottomAnchor, constant: 10).isActive = true
         lineOneView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         lineOneView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        lineOneView.widthAnchor.constraint(equalTo: nameSystemButton.widthAnchor, multiplier: 0.9).isActive = true
+        lineOneView.widthAnchor.constraint(equalTo: nameSystemButton.widthAnchor, multiplier: 0.25).isActive = true
         
         // MARK: AAD NAME:
         
@@ -325,7 +325,7 @@ final class EditSystemCell: UITableViewCell {
         lineTwoView.topAnchor.constraint(equalTo: aadServiceLifeYearsButton.bottomAnchor, constant: 10).isActive = true
         lineTwoView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         lineTwoView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        lineTwoView.widthAnchor.constraint(equalTo: nameSystemButton.widthAnchor, multiplier: 0.9).isActive = true
+        lineTwoView.widthAnchor.constraint(equalTo: nameSystemButton.widthAnchor, multiplier: 0.25).isActive = true
         
         // MARK: MAIN CANOPY NAME:
         
@@ -421,7 +421,7 @@ final class EditSystemCell: UITableViewCell {
         lineThreeView.topAnchor.constraint(equalTo: mainCanopyCountJumpsButton.bottomAnchor, constant: 10).isActive = true
         lineThreeView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         lineThreeView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        lineThreeView.widthAnchor.constraint(equalTo: nameSystemButton.widthAnchor, multiplier: 0.9).isActive = true
+        lineThreeView.widthAnchor.constraint(equalTo: nameSystemButton.widthAnchor, multiplier: 0.25).isActive = true
         
         // MARK: RESERVE CANOPY NAME:
         

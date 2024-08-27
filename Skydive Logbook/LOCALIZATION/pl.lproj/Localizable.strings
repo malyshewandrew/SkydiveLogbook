@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Spadochron dodany";
 "Canopy deleted / alert kit" = "Spadochron usunięty";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Skoczkowie spadochronowi";
+"Community / partners" = "Partnerzy";
+"Community / name" = "Imię";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Drukuj dziennik";
+"Create document / print" = "Utwórz dokument";
+"Title document / print" = "Wyciąg z aplikacji iOS 'SkydiveBook'";
+"No name entered / print" = "Nie wprowadzono imienia";
+"Description text / print" = "\nSkydiveBook - to nie jest oficjalne potwierdzenie, że użytkownik aplikacji jest profesjonalnym skoczkiem spadochronowym.\n\nSłuży jako opcjonalne uzupełnienie oficjalnej książki skoków lub certyfikatu skoczka spadochronowego dowolnej kategorii.\n\nSkoki zarejestrowane w SkydiveBook nie są dowodem tych skoków i nie mogą być traktowane jako podstawa do wydania oficjalnych dokumentów, certyfikatów, kategorii.\n\nAplikacja została zaprojektowana do użytku osobistego, wygody skoków spadochronowych i zaawansowanej analizy.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Wysokość Ziemi";
+"NASA ships" = "Statki NASA";
+"Height of the Mars" = "Wysokość Marsa";
+"Height of the Moon" = "Wysokość Księżyca";
+"Ground of the Earth" = "Powierzchnia Ziemi";
+"Your position" = "Twoja pozycja";

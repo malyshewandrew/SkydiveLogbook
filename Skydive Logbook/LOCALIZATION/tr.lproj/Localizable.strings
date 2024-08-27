@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Kanopi eklendi";
 "Canopy deleted / alert kit" = "Kanopi silindi";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Paraşütçüler";
+"Community / partners" = "Ortaklar";
+"Community / name" = "Ad";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Günlük basımı";
+"Create document / print" = "Belge oluştur";
+"Title document / print" = "iOS Uygulaması 'SkydiveBook' tan alıntı";
+"No name entered / print" = "İsim girilmedi";
+"Description text / print" = "\nSkydiveBook - bu, uygulama kullanıcısının profesyonel bir paraşütçü olduğunun resmi bir onayı değildir.\n\nBu, resmi paraşüt defteri veya herhangi bir kategoriye ait paraşütçü sertifikasına isteğe bağlı bir ek olarak hizmet eder.\n\nSkydiveBook'da kaydedilen atlayışlar bu atlayışların kanıtı değildir ve resmi belgeler, sertifikalar, kategoriler düzenlemek için bir temel olarak kabul edilemez.\n\nUygulama kişisel kullanım, paraşütçülüğün kolaylığı ve gelişmiş analiz için tasarlanmıştır.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Dünyanın Yüksekliği";
+"NASA ships" = "NASA gemileri";
+"Height of the Mars" = "Mars'ın Yüksekliği";
+"Height of the Moon" = "Ay'ın Yüksekliği";
+"Ground of the Earth" = "Dünyanın Yüzeyi";
+"Your position" = "Senin konumun";

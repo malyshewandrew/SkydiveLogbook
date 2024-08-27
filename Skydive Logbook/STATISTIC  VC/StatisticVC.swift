@@ -352,11 +352,11 @@ extension StatisticVC: StatisticCellDelegate {
 
                 generalInfoVC.heightpPosition = CGFloat(sumHeight / 1000)
                 generalInfoVC.heightLabel.text = """
-                \(kilometers)
+                \(kilometers) \(NSLocalizedString("km.", comment: ""))
                 \(heightMessage)
                 """
                 generalInfoVC.timeLabel.text = """
-                \(sumTime)
+                \(sumTime) \(NSLocalizedString("s.", comment: ""))
                 \(timeMessage)
                 """
                 self.present(generalInfoVC, animated: true)

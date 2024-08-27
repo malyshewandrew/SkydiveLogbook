@@ -12,7 +12,7 @@ final class CollectionViewCell: UICollectionViewCell {
 
         // MARK: IMAGE VIEW:
 
-        addSubview(imageView)
+        addSubviews(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true

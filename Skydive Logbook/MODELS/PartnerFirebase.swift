@@ -1,8 +1,11 @@
-//
-//  PartnerFirebase.swift
-//  Skydive Logbook
-//
-//  Created by MALYSHEW ANDREW on 29.07.24.
-//
+import UIKit
 
-import Foundation
+struct Partner {
+    let nickname: String
+    let countryFlag: String
+    let countryName: String
+    let description: String
+    let link: String
+    var photos: [UIImage]
+    let id: String
+}

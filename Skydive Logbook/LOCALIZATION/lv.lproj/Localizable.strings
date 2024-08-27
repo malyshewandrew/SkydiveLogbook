@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Izpletnes pievienotas";
 "Canopy deleted / alert kit" = "Izpletnes dzēstas";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Izpletņlēcēji";
+"Community / partners" = "Partneri";
+"Community / name" = "Vārds";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Drukāt žurnālu";
+"Create document / print" = "Izveidot dokumentu";
+"Title document / print" = "Izraksts no iOS lietotnes 'SkydiveBook'";
+"No name entered / print" = "Nav ievadīts vārds";
+"Description text / print" = "\nSkydiveBook - tas nav oficiāls apstiprinājums, ka lietotājs ir profesionāls izpletņlēcējs.\n\nTas kalpo kā papildinājums oficiālajai izpletņlēcēja grāmatai vai jebkuras kategorijas izpletņlēcēja sertifikātam.\n\n„SkydiveBook“ reģistrētie lēcieni nav šo lēcienu pierādījums un nevar tikt uzskatīti par pamatu oficiālu dokumentu, sertifikātu vai kategoriju izdošanai.\n\nLietotne ir izveidota personiskai lietošanai, izpletņlēciena ērtībai un paplašinātai analīzei.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Zemes augstums";
+"NASA ships" = "NASA kuģi";
+"Height of the Mars" = "Marsa augstums";
+"Height of the Moon" = "Mēness augstums";
+"Ground of the Earth" = "Zemes virsma";
+"Your position" = "Jūsu pozīcija";

@@ -101,11 +101,13 @@ final class GeneralInfoVC: UIViewController {
         heightLabel.translatesAutoresizingMaskIntoConstraints = false
         heightLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
         heightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        heightLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
         
         // TIME LABEL:
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         timeLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15).isActive = true
+        timeLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
         
         // LINE EARTH VIEW:
         lineEarthView.translatesAutoresizingMaskIntoConstraints = false

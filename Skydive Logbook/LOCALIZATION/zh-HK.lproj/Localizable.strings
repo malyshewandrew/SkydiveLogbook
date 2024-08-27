@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "天篷已添加";
 "Canopy deleted / alert kit" = "天篷已删除";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "跳伞者";
+"Community / partners" = "合作伙伴";
+"Community / name" = "名字";
+
+// MARK: - PRINT:
+
+"Print / settings" = "打印日志";
+"Create document / print" = "创建文档";
+"Title document / print" = "从iOS应用程序'SkydiveBook'中提取";
+"No name entered / print" = "未输入名称";
+"Description text / print" = "\nSkydiveBook - 这不是用户是专业跳伞者的官方确认。\n\n它是官方跳伞书或任何类别的跳伞证书的可选补充。\n\nSkydiveBook中记录的跳跃不能作为这些跳跃的证据，不能被视为颁发官方文件、证书、类别的依据。\n\n该应用程序设计用于个人使用，跳伞的方便性和高级分析。" ;
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "地球的高度";
+"NASA ships" = "NASA飞船";
+"Height of the Mars" = "火星的高度";
+"Height of the Moon" = "月球的高度";
+"Ground of the Earth" = "地球的地面";
+"Your position" = "你的位置";

@@ -35,7 +35,6 @@ final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
 
     private let loadingView = UIView()
-    private let loadingBackgroundLottie = LottieAnimationView(name: "LoadingBackgroundLottie")
     private let loadingEffectLottie = LottieAnimationView(name: "LoadingEffectLottie")
     private let loadingLottie = LottieAnimationView(name: "Loading")
     private let helloLottie = LottieAnimationView(name: "Hello")
@@ -50,8 +49,8 @@ final class MainVC: UIViewController {
     private let confettiButton = UIButton()
     private let accountButton = UIButton()
     private let weatherButton = UIButton()
-//    private let mapsButton = UIButton()
-//    private let communityButton = UIButton()
+    private let mapsButton = UIButton()
+    private let communityButton = UIButton()
     private let calculatorButton = UIButton()
     private let notesButton = UIButton()
     private let tableView = UITableView()
@@ -90,8 +89,8 @@ final class MainVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(mainShadowLottie, mainLottie, confettiLottie, confettiButton, accountButton, weatherButton, calculatorButton, notesButton, tableView, startCenterConfettiLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
-        loadingView.addSubviews(loadingBackgroundLottie, loadingEffectLottie, helloLottie, loadingLottie)
+        view.addSubviews(mainShadowLottie, mainLottie, confettiLottie, confettiButton, accountButton, weatherButton, mapsButton, communityButton, calculatorButton, notesButton, tableView, startCenterConfettiLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
+        loadingView.addSubviews(loadingEffectLottie, helloLottie, loadingLottie)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -105,14 +104,6 @@ final class MainVC: UIViewController {
         loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        // MARK: LOADNING BACKGROUND:
-        
-        loadingBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        loadingBackgroundLottie.topAnchor.constraint(equalTo: loadingView.topAnchor).isActive = true
-        loadingBackgroundLottie.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor).isActive = true
-        loadingBackgroundLottie.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
-        loadingBackgroundLottie.trailingAnchor.constraint(equalTo: loadingView.trailingAnchor).isActive = true
-        
         // MARK: LOADNING EFFECT:
         
         loadingEffectLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -124,17 +115,17 @@ final class MainVC: UIViewController {
         // MARK: LOADING LOTTIE:
 
         loadingLottie.translatesAutoresizingMaskIntoConstraints = false
-        loadingLottie.topAnchor.constraint(equalTo: loadingView.topAnchor, constant: -150).isActive = true
-        loadingLottie.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor).isActive = true
-        loadingLottie.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
-        loadingLottie.trailingAnchor.constraint(equalTo: loadingView.trailingAnchor).isActive = true
+        loadingLottie.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
+        loadingLottie.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
+        loadingLottie.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 0.4).isActive = true
+        loadingLottie.heightAnchor.constraint(equalTo: loadingLottie.widthAnchor, multiplier: 1).isActive = true
         
         // MARK: HELLO LOTTIE:
         
         helloLottie.translatesAutoresizingMaskIntoConstraints = false
         helloLottie.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
-        helloLottie.topAnchor.constraint(equalTo: loadingLottie.centerYAnchor, constant: 100).isActive = true
-        helloLottie.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 1).isActive = true
+        helloLottie.topAnchor.constraint(equalTo: loadingLottie.centerYAnchor, constant: 35).isActive = true
+        helloLottie.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 0.6).isActive = true
         helloLottie.heightAnchor.constraint(equalTo: helloLottie.widthAnchor, multiplier: 0.5).isActive = true
         
         // MARK: MAIN SHADOW LOTTIE:
@@ -171,37 +162,37 @@ final class MainVC: UIViewController {
 
         accountButton.translatesAutoresizingMaskIntoConstraints = false
         accountButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
-        accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35).isActive = true
+        accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 17).isActive = true
 
         // MARK: WEATHER BUTTON:
 
         weatherButton.translatesAutoresizingMaskIntoConstraints = false
         weatherButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
-        weatherButton.leadingAnchor.constraint(equalTo: accountButton.trailingAnchor, constant: 25).isActive = true
+        weatherButton.leadingAnchor.constraint(equalTo: accountButton.trailingAnchor, constant: 17).isActive = true
 
-//        // MARK: MAPS BUTTON:
-//
-//        mapsButton.translatesAutoresizingMaskIntoConstraints = false
-//        mapsButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
-//        mapsButton.leadingAnchor.constraint(equalTo: weatherButton.trailingAnchor, constant: 17).isActive = true
-//
-//        // MARK: COMMUNITY:
-//
-//        communityButton.translatesAutoresizingMaskIntoConstraints = false
-//        communityButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
-//        communityButton.trailingAnchor.constraint(equalTo: calculatorButton.leadingAnchor, constant: -17).isActive = true
+        // MARK: MAPS BUTTON:
+
+        mapsButton.translatesAutoresizingMaskIntoConstraints = false
+        mapsButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
+        mapsButton.leadingAnchor.constraint(equalTo: weatherButton.trailingAnchor, constant: 17).isActive = true
+
+        // MARK: COMMUNITY:
+
+        communityButton.translatesAutoresizingMaskIntoConstraints = false
+        communityButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
+        communityButton.trailingAnchor.constraint(equalTo: calculatorButton.leadingAnchor, constant: -17).isActive = true
 
         // MARK: CALCULATOR:
 
         calculatorButton.translatesAutoresizingMaskIntoConstraints = false
         calculatorButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
-        calculatorButton.trailingAnchor.constraint(equalTo: notesButton.leadingAnchor, constant: -25).isActive = true
+        calculatorButton.trailingAnchor.constraint(equalTo: notesButton.leadingAnchor, constant: -17).isActive = true
 
         // MARK: NOTES:
 
         notesButton.translatesAutoresizingMaskIntoConstraints = false
         notesButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
-        notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35).isActive = true
+        notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -17).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -218,29 +209,19 @@ final class MainVC: UIViewController {
         // MARK: LOADING VIEW:
 
         loadingView.backgroundColor = .colorBackground
-        
-        // MARK: LOADNING BACKGROUND:
-        
-        loadingBackgroundLottie.play()
-        loadingBackgroundLottie.loopMode = .loop
-        loadingBackgroundLottie.contentMode = .scaleAspectFill
-        loadingBackgroundLottie.layer.opacity = 0.1
-        
+                
         // MARK: LOADNING EFFECT:
         
         loadingEffectLottie.play()
         loadingEffectLottie.loopMode = .playOnce
         loadingEffectLottie.contentMode = .scaleAspectFill
-        loadingEffectLottie.layer.opacity = 0.5
+        loadingEffectLottie.layer.opacity = 0.0
 
         // MARK: LOADING LOTTIE:
 
         loadingLottie.play()
         loadingLottie.loopMode = .loop
-        loadingLottie.contentMode = .center
-        loadingLottie.layer.shadowRadius = 100
-        loadingLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        loadingLottie.layer.shadowOpacity = 0.5
+        loadingLottie.contentMode = .scaleAspectFill
         
         // MARK: HELLO LOTTIE:
         
@@ -304,21 +285,21 @@ final class MainVC: UIViewController {
         weatherButton.tintColor = .colorDarkGray
         weatherButton.addTarget(self, action: #selector(weatherButtonTapped), for: .touchUpInside)
 
-//        // MARK: MAPS:
-//        
-//        mapsButton.setImage(UIImage(systemName: "mappin.and.ellipse.circle.fill", withConfiguration: configurationImage), for: .normal)
-//        mapsButton.tintColor = .colorDarkGray
-//        mapsButton.addTarget(self, action: #selector(dropzonesButtonTapped), for: .touchUpInside)
+        // MARK: MAPS:
+        
+        mapsButton.setImage(UIImage(systemName: "mappin.and.ellipse.circle.fill", withConfiguration: configurationImage), for: .normal)
+        mapsButton.tintColor = .colorDarkGray
+        mapsButton.addTarget(self, action: #selector(dropzonesButtonTapped), for: .touchUpInside)
         
         // MARK: CONFETTI BUTTON:
         
         confettiButton.addTarget(self, action: #selector(confettiButtonTapped), for: .touchUpInside)
 
-//        // MARK: COMMUNITY:
-//
-//        communityButton.setImage(UIImage(systemName: "person.2.circle.fill", withConfiguration: configurationImage), for: .normal)
-//        communityButton.tintColor = .colorDarkGray
-//        communityButton.addTarget(self, action: #selector(skydiversButtonTapped), for: .touchUpInside)
+        // MARK: COMMUNITY:
+
+        communityButton.setImage(UIImage(systemName: "person.2.circle.fill", withConfiguration: configurationImage), for: .normal)
+        communityButton.tintColor = .colorDarkGray
+        communityButton.addTarget(self, action: #selector(skydiversButtonTapped), for: .touchUpInside)
 
         // MARK: CALCULATORS:
 
@@ -382,8 +363,8 @@ final class MainVC: UIViewController {
         confettiButton.isHidden = true
         accountButton.isHidden = true
         weatherButton.isHidden = true
-//        mapsButton.isHidden = true
-//        communityButton.isHidden = true
+        mapsButton.isHidden = true
+        communityButton.isHidden = true
         calculatorButton.isHidden = true
         notesButton.isHidden = true
         
@@ -477,8 +458,8 @@ final class MainVC: UIViewController {
             confettiButton.isHidden = false
             accountButton.isHidden = false
             weatherButton.isHidden = false
-//            mapsButton.isHidden = false
-//            communityButton.isHidden = false
+            mapsButton.isHidden = false
+            communityButton.isHidden = false
             calculatorButton.isHidden = false
             notesButton.isHidden = false
         }

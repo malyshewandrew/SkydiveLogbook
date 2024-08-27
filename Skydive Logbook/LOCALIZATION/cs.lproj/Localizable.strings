@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Padák přidán";
 "Canopy deleted / alert kit" = "Padák smazán";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Parašutisté";
+"Community / partners" = "Partneři";
+"Community / name" = "Jméno";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Tisk deníku";
+"Create document / print" = "Vytvořit dokument";
+"Title document / print" = "Výpis z aplikace iOS 'SkydiveBook'";
+"No name entered / print" = "Jméno nebylo zadáno";
+"Description text / print" = "\nSkydiveBook - to není oficiální potvrzení, že uživatel aplikace je profesionální parašutista.\n\nSlouží jako volitelný doplněk k oficiální parašutistické knize nebo certifikátu parašutisty jakékoliv kategorie.\n\nSkoky zaznamenané v SkydiveBook nejsou důkazem těchto skoků a nemohou být považovány za základ pro vydání oficiálních dokumentů, certifikátů, kategorií.\n\nAplikace je určena pro osobní použití, pohodlí při parašutismu a pokročilou analytiku.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Výška Země";
+"NASA ships" = "Lodě NASA";
+"Height of the Mars" = "Výška Marsu";
+"Height of the Moon" = "Výška Měsíce";
+"Ground of the Earth" = "Povrch Země";
+"Your position" = "Vaše pozice";

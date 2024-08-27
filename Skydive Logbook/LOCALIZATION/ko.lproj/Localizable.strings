@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "낙하산이 추가되었습니다";
 "Canopy deleted / alert kit" = "낙하산이 삭제되었습니다";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "스카이다이버";
+"Community / partners" = "파트너";
+"Community / name" = "이름";
+
+// MARK: - PRINT:
+
+"Print / settings" = "로그북 인쇄";
+"Create document / print" = "문서 생성";
+"Title document / print" = "iOS 앱 'SkydiveBook'에서 추출";
+"No name entered / print" = "이름이 입력되지 않았습니다";
+"Description text / print" = "\nSkydiveBook - 이것은 앱 사용자가 전문 스카이다이버임을 공식적으로 확인한 것이 아닙니다.\n\n이것은 공식 스카이다이버 로그북 또는 특정 카테고리의 스카이다이버 인증서에 대한 선택적 추가 기능으로 제공됩니다.\n\nSkydiveBook에 기록된 점프는 이러한 점프의 증거가 아니며 공식 문서, 인증서, 카테고리를 발급하기 위한 근거로 간주될 수 없습니다.\n\n이 앱은 개인적인 용도, 스카이다이빙의 편의성 및 고급 분석을 위해 설계되었습니다.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "지구의 높이";
+"NASA ships" = "NASA 우주선";
+"Height of the Mars" = "화성의 높이";
+"Height of the Moon" = "달의 높이";
+"Ground of the Earth" = "지구 표면";
+"Your position" = "당신의 위치";

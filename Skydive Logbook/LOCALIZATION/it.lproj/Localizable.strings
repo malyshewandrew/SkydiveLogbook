@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Capote aggiunta";
 "Canopy deleted / alert kit" = "Capote eliminata";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Paracadutisti";
+"Community / partners" = "Partner";
+"Community / name" = "Nome";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Stampa registro";
+"Create document / print" = "Crea documento";
+"Title document / print" = "Estratto dall'app iOS 'SkydiveBook'";
+"No name entered / print" = "Nessun nome inserito";
+"Description text / print" = "\nSkydiveBook - non è una conferma ufficiale che l'utente dell'applicazione sia un paracadutista professionista.\n\nServe come aggiunta opzionale al libro ufficiale del paracadutismo o al certificato di paracadutista di qualsiasi categoria.\n\nI salti registrati in SkydiveBook non sono una prova di questi salti e non possono essere considerati come base per l'emissione di documenti ufficiali, certificati, categorie.\n\nL'app è progettata per l'uso personale, la comodità del paracadutismo e l'analisi avanzata.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Altezza della Terra";
+"NASA ships" = "Navi della NASA";
+"Height of the Mars" = "Altezza di Marte";
+"Height of the Moon" = "Altezza della Luna";
+"Ground of the Earth" = "Suolo della Terra";
+"Your position" = "La tua posizione";

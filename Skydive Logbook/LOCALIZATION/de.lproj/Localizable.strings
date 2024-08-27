@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Fallschirm hinzugefügt";
 "Canopy deleted / alert kit" = "Fallschirm gelöscht";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Fallschirmspringer";
+"Community / partners" = "Partner";
+"Community / name" = "Name";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Logbuch drucken";
+"Create document / print" = "Dokument erstellen";
+"Title document / print" = "Auszug aus der iOS App 'SkydiveBook'";
+"No name entered / print" = "Kein Name eingegeben";
+"Description text / print" = "\nSkydiveBook - es ist keine offizielle Bestätigung, dass der Benutzer der Anwendung ein professioneller Fallschirmspringer ist.\n\nEs dient als optionales Ergänzung zum offiziellen Fallschirmspringerbuch oder Zertifikat eines Fallschirmspringers jeder Kategorie.\n\nDie in SkydiveBook aufgezeichneten Sprünge sind kein Beweis für diese Sprünge und können nicht als Grundlage für die Ausstellung offizieller Dokumente, Zertifikate, Kategorien betrachtet werden.\n\nDie Anwendung ist für den persönlichen Gebrauch, die Bequemlichkeit des Fallschirmspringens und erweiterte Analysen konzipiert.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Höhe der Erde";
+"NASA ships" = "NASA-Schiffe";
+"Height of the Mars" = "Höhe des Mars";
+"Height of the Moon" = "Höhe des Mondes";
+"Ground of the Earth" = "Boden der Erde";
+"Your position" = "Deine Position";

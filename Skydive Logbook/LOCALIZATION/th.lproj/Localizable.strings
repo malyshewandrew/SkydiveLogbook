@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "เพิ่มร่ม";
 "Canopy deleted / alert kit" = "ลบร่ม";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "นักกระโดดร่ม";
+"Community / partners" = "พันธมิตร";
+"Community / name" = "ชื่อ";
+
+// MARK: - PRINT:
+
+"Print / settings" = "พิมพ์สมุดบันทึก";
+"Create document / print" = "สร้างเอกสาร";
+"Title document / print" = "ข้อความจากแอป iOS 'SkydiveBook'";
+"No name entered / print" = "ไม่ได้ป้อนชื่อ";
+"Description text / print" = "\nSkydiveBook - ไม่ใช่การยืนยันอย่างเป็นทางการว่าผู้ใช้แอปเป็นนักกระโดดร่มมืออาชีพ\n\nมันทำหน้าที่เป็นส่วนเสริมตามความต้องการสำหรับสมุดบันทึกอย่างเป็นทางการหรือใบรับรองนักกระโดดร่มของหมวดหมู่ใด ๆ\n\nการกระโดดที่บันทึกใน SkydiveBook ไม่ได้เป็นหลักฐานของการกระโดดเหล่านี้ และไม่สามารถถือเป็นหลักฐานในการออกเอกสารอย่างเป็นทางการ ใบรับรอง หมวดหมู่\n\nแอปนี้ออกแบบมาเพื่อการใช้งานส่วนตัว ความสะดวกสบายในการกระโดดร่ม และการวิเคราะห์ขั้นสูง";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "ความสูงของโลก";
+"NASA ships" = "ยานอวกาศของนาซ่า";
+"Height of the Mars" = "ความสูงของดาวอังคาร";
+"Height of the Moon" = "ความสูงของดวงจันทร์";
+"Ground of the Earth" = "พื้นผิวโลก";
+"Your position" = "ตำแหน่งของคุณ";

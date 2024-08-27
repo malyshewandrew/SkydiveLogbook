@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "कैनोपी जोड़ी गई";
 "Canopy deleted / alert kit" = "कैनोपी हटा दी गई";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "स्काईडाइवर्स";
+"Community / partners" = "सहयोगी";
+"Community / name" = "नाम";
+
+// MARK: - PRINT:
+
+"Print / settings" = "लॉगबुक प्रिंट करें";
+"Create document / print" = "दस्तावेज़ बनाएं";
+"Title document / print" = "iOS ऐप 'SkydiveBook' से अंश";
+"No name entered / print" = "कोई नाम नहीं दर्ज किया गया";
+"Description text / print" = "\nSkydiveBook - यह पुष्टि नहीं करता है कि ऐप का उपयोगकर्ता एक पेशेवर स्काईडाइवर है।\n\nयह आधिकारिक स्काईडाइव बुक या किसी भी श्रेणी के स्काईडाइवर के प्रमाण पत्र के लिए एक वैकल्पिक जोड़ है।\n\nSkydiveBook में दर्ज कूद को इन कूद का प्रमाण नहीं माना जा सकता है और न ही आधिकारिक दस्तावेज़ों, प्रमाण पत्रों, श्रेणियों को जारी करने के आधार के रूप में लिया जा सकता है।\n\nयह ऐप व्यक्तिगत उपयोग के लिए डिज़ाइन किया गया है, स्काईडाइविंग की सुविधा और उन्नत विश्लेषण के लिए।";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "पृथ्वी की ऊंचाई";
+"NASA ships" = "NASA के जहाज";
+"Height of the Mars" = "मंगल की ऊंचाई";
+"Height of the Moon" = "चंद्रमा की ऊंचाई";
+"Ground of the Earth" = "पृथ्वी की सतह";
+"Your position" = "आपकी स्थिति";

@@ -17,8 +17,6 @@ final class SkydiversCell: UITableViewCell {
     private let activityIndicator = UIActivityIndicatorView(style: .medium)
     private var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let layout = UICollectionViewFlowLayout()
-    private let ratingLabel = UILabel()
-    private let ratingValueLabel = UILabel()
     private let nicknameLabel = UILabel()
     private let nicknameValueLabel = UILabel()
     private let countryFlagLabel = UILabel()
@@ -26,7 +24,6 @@ final class SkydiversCell: UITableViewCell {
     private let countryValueLabel = UILabel()
     private let professionLabel = UILabel()
     private let countJumpsValueLabel = UILabel()
-    private let dateFirstJumpLabel = UILabel()
     private let linkButton = UIButton()
     private var photos = [UIImage]()
     private var link: String = ""
@@ -55,7 +52,7 @@ final class SkydiversCell: UITableViewCell {
 
     private func addSubviews() {
         contentView.addSubviews(containerView)
-        containerView.addSubviews(firstPlaceLottie, secondPlaceLottie, thirdPlaceLottie, ratingLabel, ratingValueLabel, nicknameLabel, nicknameValueLabel, countryFlagLabel, countryLabel, countryValueLabel, collectionView, professionLabel, countJumpsValueLabel, dateFirstJumpLabel, linkButton)
+        containerView.addSubviews(firstPlaceLottie, secondPlaceLottie, thirdPlaceLottie, nicknameLabel, nicknameValueLabel, countryFlagLabel, countryLabel, countryValueLabel, collectionView, professionLabel, countJumpsValueLabel, linkButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -89,46 +86,34 @@ final class SkydiversCell: UITableViewCell {
         thirdPlaceLottie.heightAnchor.constraint(equalToConstant: 50).isActive = true
         thirdPlaceLottie.widthAnchor.constraint(equalToConstant: 50).isActive = true
 
-        // MARK: RATING LABEL:
-
-        ratingLabel.translatesAutoresizingMaskIntoConstraints = false
-        ratingLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 3).isActive = true
-        ratingLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-
-        // MARK: RATING VALUE LABEL:
-
-        ratingValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        ratingValueLabel.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: -3).isActive = true
-        ratingValueLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-
         // MARK: NICKNAME LABEL:
 
         nicknameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nicknameLabel.bottomAnchor.constraint(equalTo: nicknameValueLabel.topAnchor, constant: 0).isActive = true
+        nicknameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5).isActive = true
         nicknameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15).isActive = true
 
         // MARK: NICKNAME VALUE LABEL:
 
         nicknameValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        nicknameValueLabel.topAnchor.constraint(equalTo: ratingValueLabel.bottomAnchor, constant: 5).isActive = true
+        nicknameValueLabel.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor).isActive = true
         nicknameValueLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15).isActive = true
 
         // MARK: COUNTRY LABEL:
 
         countryLabel.translatesAutoresizingMaskIntoConstraints = false
-        countryLabel.bottomAnchor.constraint(equalTo: countryValueLabel.topAnchor, constant: 0).isActive = true
+        countryLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5).isActive = true
         countryLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15).isActive = true
 
         // MARK: COUNTRY VALUE LABEL:
 
         countryValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        countryValueLabel.topAnchor.constraint(equalTo: ratingValueLabel.bottomAnchor, constant: 5).isActive = true
+        countryValueLabel.topAnchor.constraint(equalTo: countryLabel.bottomAnchor).isActive = true
         countryValueLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15).isActive = true
 
         // MARK: COUNTRY FLAG IMAGE:
 
         countryFlagLabel.translatesAutoresizingMaskIntoConstraints = false
-        countryFlagLabel.topAnchor.constraint(equalTo: ratingValueLabel.bottomAnchor, constant: 5).isActive = true
+        countryFlagLabel.centerYAnchor.constraint(equalTo: countryValueLabel.centerYAnchor).isActive = true
         countryFlagLabel.trailingAnchor.constraint(equalTo: countryValueLabel.leadingAnchor, constant: -2).isActive = true
         countryFlagLabel.heightAnchor.constraint(equalTo: countryValueLabel.heightAnchor, multiplier: 1).isActive = true
 
@@ -152,18 +137,11 @@ final class SkydiversCell: UITableViewCell {
         countJumpsValueLabel.topAnchor.constraint(equalTo: professionLabel.bottomAnchor, constant: 0).isActive = true
         countJumpsValueLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15).isActive = true
 
-        // MARK: DATE FIRST JUMP LABEL:
-
-        dateFirstJumpLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateFirstJumpLabel.topAnchor.constraint(equalTo: countJumpsValueLabel.bottomAnchor, constant: 0).isActive = true
-        dateFirstJumpLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15).isActive = true
-
         // MARK: LINK BUTTON:
 
         linkButton.translatesAutoresizingMaskIntoConstraints = false
         linkButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10).isActive = true
         linkButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15).isActive = true
-        linkButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         linkButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         linkButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15).isActive = true
     }
@@ -174,6 +152,7 @@ final class SkydiversCell: UITableViewCell {
         // MARK: CONTENT VIEW:
 
         contentView.backgroundColor = .clear
+        selectionStyle = .none
 
         // MARK: CONTAINER VIEW:
 
@@ -193,20 +172,6 @@ final class SkydiversCell: UITableViewCell {
         thirdPlaceLottie.loopMode = .playOnce
         thirdPlaceLottie.animationSpeed = 0.6
         thirdPlaceLottie.isHidden = true
-
-        // MARK: RATING LABEL:
-
-        ratingLabel.text = NSLocalizedString("Rating / skydivers", comment: "") + ":"
-        ratingLabel.textAlignment = .center
-        ratingLabel.font = fontMediumStandard12
-        ratingLabel.textColor = .colorLightGray
-
-        // MARK: RATING VALUE LABEL:
-
-        ratingValueLabel.textColor = .colorWhite
-        ratingValueLabel.textAlignment = .center
-        ratingValueLabel.font = fontBoldStandard30
-        ratingValueLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: NICKNAME LABEL:
 
@@ -254,13 +219,6 @@ final class SkydiversCell: UITableViewCell {
         countJumpsValueLabel.font = fontRegularStandard12
         countJumpsValueLabel.adjustsFontSizeToFitWidth = true
 
-        // MARK: DATE FIRST JUMP LABEL:
-
-        dateFirstJumpLabel.textColor = .colorWhite
-        dateFirstJumpLabel.textAlignment = .left
-        dateFirstJumpLabel.font = fontRegularStandard12
-        dateFirstJumpLabel.adjustsFontSizeToFitWidth = true
-
         // MARK: PROFESSION LABEL:
 
         professionLabel.textColor = .colorWhite
@@ -294,13 +252,11 @@ final class SkydiversCell: UITableViewCell {
     // MARK: CONFIGURE MODEL:
 
     func configureModel(skydiver: Skydiver) {
-        ratingValueLabel.text = String(skydiver.rating)
         nicknameValueLabel.text = skydiver.nickname.uppercased()
         countryValueLabel.text = skydiver.countryName.uppercased()
         countryFlagLabel.text = skydiver.countryFlag
         professionLabel.text = NSLocalizedString("Profession / skydivers", comment: "") + ": " + skydiver.profession
         countJumpsValueLabel.text = NSLocalizedString("Count of jumps / skydivers", comment: "") + ": " + skydiver.countJumps
-        dateFirstJumpLabel.text = NSLocalizedString("First jump / skydivers", comment: "") + ": " + skydiver.firstJump
         link = skydiver.link
     }
 
@@ -330,11 +286,8 @@ final class SkydiversCell: UITableViewCell {
             nicknameValueLabel.textColor = .white
             countryLabel.textColor = .black
             countryValueLabel.textColor = .white
-            ratingLabel.textColor = .black
-            ratingValueLabel.textColor = .white
             professionLabel.textColor = .white
             countJumpsValueLabel.textColor = .white
-            dateFirstJumpLabel.textColor = .white
             linkButton.setTitleColor(.white, for: .normal)
         } else if index.row == 1 {
             containerView.backgroundColor = #colorLiteral(red: 0.5784137249, green: 0.6185954809, blue: 0.6074234843, alpha: 1)
@@ -343,11 +296,8 @@ final class SkydiversCell: UITableViewCell {
             nicknameValueLabel.textColor = .white
             countryLabel.textColor = .black
             countryValueLabel.textColor = .white
-            ratingLabel.textColor = .black
-            ratingValueLabel.textColor = .white
             professionLabel.textColor = .white
             countJumpsValueLabel.textColor = .white
-            dateFirstJumpLabel.textColor = .white
             linkButton.setTitleColor(.white, for: .normal)
         } else if index.row == 2 {
             containerView.backgroundColor = #colorLiteral(red: 0.7442381978, green: 0.3936595917, blue: 0.2051987648, alpha: 1)
@@ -356,20 +306,15 @@ final class SkydiversCell: UITableViewCell {
             nicknameValueLabel.textColor = .white
             countryLabel.textColor = .black
             countryValueLabel.textColor = .white
-            ratingLabel.textColor = .black
-            ratingValueLabel.textColor = .white
             professionLabel.textColor = .white
             countJumpsValueLabel.textColor = .white
-            dateFirstJumpLabel.textColor = .white
             linkButton.setTitleColor(.white, for: .normal)
         } else {
             containerView.backgroundColor = .colorCell
             nicknameValueLabel.textColor = .colorWhite
             countryValueLabel.textColor = .colorWhite
-            ratingValueLabel.textColor = .colorWhite
             professionLabel.textColor = .colorWhite
             countJumpsValueLabel.textColor = .colorWhite
-            dateFirstJumpLabel.textColor = .colorWhite
             linkButton.setTitleColor(.white, for: .normal)
         }
     }

@@ -610,3 +610,26 @@
 
 "Canopy added / alert kit" = "キャノピーが追加されました";
 "Canopy deleted / alert kit" = "キャノピーが削除されました";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "スカイダイバー";
+"Community / partners" = "パートナー";
+"Community / name" = "名前";
+
+// MARK: - PRINT:
+
+"Print / settings" = "ログブックを印刷";
+"Create document / print" = "ドキュメントを作成";
+"Title document / print" = "iOSアプリ 'SkydiveBook' からの抜粋";
+"No name entered / print" = "名前が入力されていません";
+"Description text / print" = "\nSkydiveBook - ユーザーがプロのスカイダイバーであることを確認する公式な証明ではありません。\n\nこれは、公式のパラシュートブックや任意のカテゴリーのスカイダイバーの証明書へのオプションの追加として機能します。\n\nSkydiveBook に記録されたジャンプは、これらのジャンプの証拠ではなく、公式文書、証明書、カテゴリーを発行するための基礎とは見なされません。\n\nこのアプリは個人的な使用、スカイダイビングの利便性、および高度な分析を目的としています。";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "地球の高さ";
+"NASA ships" = "NASAの船";
+"Height of the Mars" = "火星の高さ";
+"Height of the Moon" = "月の高さ";
+"Ground of the Earth" = "地球の地面";
+"Your position" = "あなたの位置";

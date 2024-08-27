@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "تمت إضافة المظلة";
 "Canopy deleted / alert kit" = "تم حذف المظلة";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "القافزون بالمظلات";
+"Community / partners" = "الشركاء";
+"Community / name" = "الاسم";
+
+// MARK: - PRINT:
+
+"Print / settings" = "طباعة سجل القفزات";
+"Create document / print" = "إنشاء وثيقة";
+"Title document / print" = "مقتطف من تطبيق iOS 'SkydiveBook'";
+"No name entered / print" = "لم يتم إدخال اسم";
+"Description text / print" = "\nSkydiveBook - لا يعد تأكيدًا رسميًا على أن مستخدم التطبيق هو قافز محترف بالمظلات.\n\nيعد إضافة اختيارية إلى الكتاب الرسمي للقفز بالمظلات أو شهادة القافز لأي فئة.\n\nلا تعتبر القفزات المسجلة في SkydiveBook دليلاً على هذه القفزات ولا يمكن اعتبارها أساسًا لإصدار وثائق رسمية أو شهادات أو فئات.\n\nتم تصميم التطبيق للاستخدام الشخصي، وراحة القفز بالمظلات، والتحليلات المتقدمة.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "ارتفاع الأرض";
+"NASA ships" = "سفن ناسا";
+"Height of the Mars" = "ارتفاع المريخ";
+"Height of the Moon" = "ارتفاع القمر";
+"Ground of the Earth" = "أرضية الأرض";
+"Your position" = "موقعك";

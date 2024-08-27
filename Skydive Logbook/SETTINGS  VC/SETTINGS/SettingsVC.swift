@@ -6,6 +6,7 @@ import RealmSwift
 import SafariServices
 import UIKit
 import WebKit
+import PDFKit
 
 final class SettingsVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -16,6 +17,7 @@ final class SettingsVC: UIViewController {
     private let effectTwoLottie = LottieAnimationView(name: "EffectSettings")
     private let confettiButton = UIButton()
     private let vibrationOn = Vibration()
+    private let realmManager = RealmManager()
     private let tableView = UITableView()
     private let activityIndicator = UIActivityIndicatorView(style: .large)
 
@@ -196,39 +198,177 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - EXTENSION:
+// MARK: - EXTENSIONS:
 
 extension SettingsVC: SettingsCellDelegate {
+    
+    // MARK: - TAP EDIT ACCOUNT BUTTON:
+    
     func tapEditAccountButton() {
         let editAccount = EditAccountVC()
         navigationController?.pushViewController(editAccount, animated: true)
     }
+    
+    // MARK: - TAP EDIT LOCATIONS BUTTON:
 
     func tapEditLocationsButton() {
         let editLocations = EditLocationsVC()
         navigationController?.pushViewController(editLocations, animated: true)
     }
+    
+    // MARK: - TAP EDIT AIRCRAFTS BUTTON:
 
     func tapEditAircraftsButton() {
         let editAircrafts = EditAircraftsVC()
         navigationController?.pushViewController(editAircrafts, animated: true)
     }
+    
+    // MARK: - TAP EDIT CANOPIES BUTTON:
 
     func tapEditCanopiesButton() {
         let editCanopies = EditCanopiesVC()
         navigationController?.pushViewController(editCanopies, animated: true)
     }
+    
+    // MARK: - TAP BACKUP BUTTON:
 
     func tapBackupButton() {
         let backup = BackupVC()
         navigationController?.pushViewController(backup, animated: true)
     }
+    
+    // MARK: - TAP PRINT BUTTON:
+    
+    func tapPrintButton() {
+        vibrationOn.vibrationStandart()
+        _ = PDFDocument()
+        let jumps = realmManager.localRealm.objects(JumpClassRealm.self)
+        let skydiver = realmManager.localRealm.objects(AccountClassRealm.self)
+        
+        let pdfMetaData = [
+            kCGPDFContextCreator: "SkydiveBook",
+            kCGPDFContextAuthor: "LogBook Print",
+            kCGPDFContextTitle: "Jumps Report"
+        ]
+        let format = UIGraphicsPDFRendererFormat()
+        format.documentInfo = pdfMetaData as [String: Any]
+
+        let pageWidth = 8.5 * 72.0
+        let pageHeight = 11 * 72.0
+        let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+        
+        let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+        let data = renderer.pdfData { context in
+            context.beginPage()
+            var currentY: CGFloat = 20
+            
+            let title = createTitle(for: skydiver)
+            draw(text: title.text, at: title.rect, with: title.attributes, currentY: &currentY, in: context, pageRect: pageRect)
+            
+            let description = NSLocalizedString("Description text / print", comment: "")
+            let descriptionAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.boldSystemFont(ofSize: 6),
+                .foregroundColor: UIColor.black
+            ]
+            let descriptionRect = CGRect(x: 65, y: currentY, width: pageRect.width/1.4, height: 70)
+            description.draw(in: descriptionRect, withAttributes: descriptionAttributes)
+            currentY += 60
+            
+            drawJumpDetails(for: jumps, currentY: &currentY, in: context, pageRect: pageRect)
+            
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            let formattedDate = dateFormatter.string(from: date)
+            
+            let footer = NSLocalizedString("Date", comment: "") + ": \(formattedDate)           _________________________________"
+            let footerAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: 12),
+                .foregroundColor: UIColor.black
+            ]
+            let footerSize = footer.size(withAttributes: footerAttributes)
+            let footerRect = CGRect(x: (50) / 2, y: pageRect.height - footerSize.height - 20, width: footerSize.width, height: footerSize.height)
+            footer.draw(in: footerRect, withAttributes: footerAttributes)
+        }
+        
+        saveAndPresentPDF(data: data)
+    }
+
+    private func createTitle(for skydiver: Results<AccountClassRealm>) -> (text: String, rect: CGRect, attributes: [NSAttributedString.Key: Any]) {
+        let nicknameValue = skydiver.first?.nickname ?? ""
+        let title = "\(NSLocalizedString("Title document / print", comment: ""))\n\(nicknameValue)"
+        let titleAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.boldSystemFont(ofSize: 14),
+            .foregroundColor: UIColor.black
+        ]
+        let titleSize = title.size(withAttributes: titleAttributes)
+        let titleRect = CGRect(x: (8.5 * 72.0 - titleSize.width - 50) / 2, y: 20, width: titleSize.width, height: titleSize.height)
+        return (title, titleRect, titleAttributes)
+    }
+
+    private func drawJumpDetails(for jumps: Results<JumpClassRealm>, currentY: inout CGFloat, in context: UIGraphicsPDFRendererContext, pageRect: CGRect) {
+        var number = 1
+        for jump in jumps {
+            let missionValue = jump.mission?.localizedValue ?? "-"
+            let cutawayValue = jump.cutaway?.localizedValue ?? ""
+            
+            let text = """
+            №: \(number). \(NSLocalizedString("Date", comment: "")): \(jump.date). \(NSLocalizedString("Location", comment: "")): \(jump.location). \(NSLocalizedString("Aircraft", comment: "")): \(jump.aircraft). \(NSLocalizedString("Canopy", comment: "")): \(jump.canopy).
+            \(NSLocalizedString("Mission", comment: "")): \(missionValue). \(NSLocalizedString("Height", comment: "")): \(jump.height). \(NSLocalizedString("Time", comment: "")): \(jump.time). \(NSLocalizedString("Cutaway", comment: "")): \(cutawayValue)
+            """
+            number += 1
+            let textRect = CGRect(x: 50, y: currentY + 15, width: pageRect.width - 40, height: 50)
+            text.draw(in: textRect, withAttributes: nil)
+            currentY += 45
+            if currentY + 50 > pageRect.height {
+                context.beginPage()
+                currentY = 20
+            }
+        }
+    }
+
+    private func draw(text: String, at rect: CGRect, with attributes: [NSAttributedString.Key: Any], currentY: inout CGFloat, in context: UIGraphicsPDFRendererContext, pageRect: CGRect) {
+        text.draw(in: rect, withAttributes: attributes)
+        currentY += rect.height + 20
+    }
+
+    private func saveAndPresentPDF(data: Data) {
+        let pdfURL = getDocumentsDirectory().appendingPathComponent("JumpsReport.pdf")
+        do {
+            activityIndicator.center = view.center
+            activityIndicator.startAnimating()
+            view.addSubview(activityIndicator)
+            try data.write(to: pdfURL)
+            let activityViewController = UIActivityViewController(activityItems: [pdfURL], applicationActivities: nil)
+            activityViewController.completionWithItemsHandler = { _, completed, _, _ in
+                if completed {
+                    self.alertKitSuccess()
+                } else {
+                    self.alertKitError()
+                }
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.removeFromSuperview()
+            }
+            present(activityViewController, animated: true, completion: nil)
+        } catch {
+            alertKitError()
+            print("Could not save PDF file: \(error.localizedDescription)")
+        }
+    }
+
+    private func getDocumentsDirectory() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+    
+    // MARK: - TAP INFO BUTTON:
 
     func tapInfoButton() {
         let info = InfoVC()
         navigationController?.pushViewController(info, animated: true)
     }
 
+    // MARK: - TAP PREMIUM BUTTON:
+    
     func tapPremiumButton() {
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
@@ -267,6 +407,8 @@ extension SettingsVC: SettingsCellDelegate {
         }
     }
     
+    // MARK: - TAP NOTIFICATIONS BUTTON:
+    
     func tapNotificationsButton() {
         let notifications = NotificationsVS()
         if let sheetController = notifications.sheetPresentationController {
@@ -277,11 +419,15 @@ extension SettingsVC: SettingsCellDelegate {
         present(notifications, animated: true, completion: nil)
     }
     
+    // MARK: - TAP GAME BUTTON:
+    
     func tapGameButton() {
         let game = GameVC()
         navigationController?.pushViewController(game, animated: true)
     }
 
+    // MARK: - TAP INSTAGRAM BUTTON:
+    
     func tapInstagramButton() {
         guard let url = URL(string: "https://instagram.com/skydivebook") else { return }
         let safariViewController = SFSafariViewController(url: url)

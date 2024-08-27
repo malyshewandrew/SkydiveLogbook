@@ -609,3 +609,26 @@
 
 "Canopy added / alert kit" = "Парашут доданий";
 "Canopy deleted / alert kit" = "Парашут видалений";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Парашутисти";
+"Community / partners" = "Партнери";
+"Community / name" = "Ім'я";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Друк журналу";
+"Create document / print" = "Створити документ";
+"Title document / print" = "Витяг з iOS-додатка 'SkydiveBook'";
+"No name entered / print" = "Ім'я не введено";
+"Description text / print" = "\nSkydiveBook - це не є офіційним підтвердженням того, що користувач програми є професійним парашутистом.\n\nЦе є додатковою опцією до офіційної парашутної книжки або сертифікату парашутиста будь-якої категорії.\n\nЗаписи про стрибки в SkydiveBook не є доказом цих стрибків і не можуть розглядатися як підстава для видачі офіційних документів, сертифікатів, категорій.\n\nДодаток призначений для особистого використання, зручності стрибків з парашутом та розширеної аналітики.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Висота Землі";
+"NASA ships" = "Кораблі NASA";
+"Height of the Mars" = "Висота Марса";
+"Height of the Moon" = "Висота Місяця";
+"Ground of the Earth" = "Поверхня Землі";
+"Your position" = "Ваша позиція";

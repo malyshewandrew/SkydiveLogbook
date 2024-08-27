@@ -9,6 +9,7 @@ protocol SettingsCellDelegate: AnyObject {
     func tapEditCanopiesButton()
     func tapEditAccountButton()
     func tapBackupButton()
+    func tapPrintButton()
     func tapInfoButton()
     func tapPremiumButton()
     func tapNotificationsButton()
@@ -24,6 +25,7 @@ final class SettingsCell: UITableViewCell {
     private let editAircraftsButton = UIButton()
     private let editCanopiesButton = UIButton()
     private let backupButton = UIButton()
+    private let printButton = UIButton()
     private let infoButton = UIButton()
     private let premiumButton = UIButton()
     private let notificationsButton = UIButton()
@@ -53,7 +55,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, infoButton, premiumButton, notificationsButton, gameButton, instagramImageView, infoLabel, instagramButton)
+        contentView.addSubviews(editAccountButton, editLocationsButton, editAircraftsButton, editCanopiesButton, backupButton, printButton, infoButton, premiumButton, notificationsButton, gameButton, instagramImageView, infoLabel, instagramButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -95,15 +97,23 @@ final class SettingsCell: UITableViewCell {
         // MARK: BACKUP BUTTON:
 
         backupButton.translatesAutoresizingMaskIntoConstraints = false
-        backupButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 45).isActive = true
+        backupButton.topAnchor.constraint(equalTo: editCanopiesButton.bottomAnchor, constant: 35).isActive = true
         backupButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         backupButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         backupButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: PRINT BUTTON:
+        
+        printButton.translatesAutoresizingMaskIntoConstraints = false
+        printButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 15).isActive = true
+        printButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        printButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        printButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: PREMIUM BUTTON:
         
         premiumButton.translatesAutoresizingMaskIntoConstraints = false
-        premiumButton.topAnchor.constraint(equalTo: backupButton.bottomAnchor, constant: 45).isActive = true
+        premiumButton.topAnchor.constraint(equalTo: printButton.bottomAnchor, constant: 35).isActive = true
         premiumButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         premiumButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         premiumButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -221,6 +231,16 @@ final class SettingsCell: UITableViewCell {
         backupButton.setTitleColor(.systemBlue, for: .highlighted)
         backupButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
         
+        // MARK: PRINT BUTTON:
+        
+        printButton.setTitle(NSLocalizedString("Print / settings", comment: ""), for: .normal)
+        printButton.layer.cornerRadius = cornerRadius15
+        printButton.backgroundColor = .colorCell
+        printButton.titleLabel?.font = fontMediumStandard14
+        printButton.setTitleColor(.colorWhite, for: .normal)
+        printButton.setTitleColor(.systemBlue, for: .highlighted)
+        printButton.addTarget(self, action: #selector(printButtonTapped), for: .touchUpInside)
+        
         // MARK: PREMIUM BUTTON:
 
         premiumButton.setTitle(NSLocalizedString("Premium version", comment: ""), for: .normal)
@@ -324,6 +344,13 @@ final class SettingsCell: UITableViewCell {
     @objc private func backupButtonTapped() {
         vibrationOn.vibrationStandart()
         delegate?.tapBackupButton()
+    }
+    
+    // MARK: PRINT:
+
+    @objc private func printButtonTapped() {
+        vibrationOn.vibrationStandart()
+        delegate?.tapPrintButton()
     }
     
     // MARK: PREMIUM BUTTON:

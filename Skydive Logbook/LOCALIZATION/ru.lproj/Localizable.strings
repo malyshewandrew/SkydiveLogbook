@@ -633,3 +633,26 @@
 
 "Total jumps / notifications" = "Всего прыжков";
 "In this month / notifications" = "В текущем месяце";
+
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Парашютисты";
+"Community / partners" = "Партнеры";
+"Community / name" = "Название";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Распечатать книжку";
+"Create document / print" = "Создать документ";
+"Title document / print" = "Выписка из iOS приложения 'SkydiveBook'";
+"No name entered / print" = "Имя не указано";
+"Description text / print" = "\nSkydiveBook - не является официальным подтверждением того, что пользователь приложения профессиональный парашютист.\n\nСлужит опциональным дополнением к официальной парашютной книжке или сертификату парашютиста любой категории.\n\nПрыжки, записанные в SkydiveBook, не являются доказательством совершения данных прыжков и не могут расцениваться как основание для выдачи официальных документов, сертификатов, категорий.\n\nПриложение предназначено для личного использования, удобства ведения парашютных прыжков и расширенной аналитики.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Высота Земли";
+"NASA ships" = "Корабли NASA";
+"Height of the Mars" = "Высота Марса";
+"Height of the Moon" = "Высота Луны";
+"Ground of the Earth" = "Поверхность Земли";
+"Your position" = "Ваша позиция";
