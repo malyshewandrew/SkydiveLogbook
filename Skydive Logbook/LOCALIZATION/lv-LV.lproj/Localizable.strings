@@ -632,3 +632,7 @@
 "Height of the Moon" = "Mēness augstums";
 "Ground of the Earth" = "Zemes virsma";
 "Your position" = "Jūsu pozīcija";
+
+// MARK: - OTHERS:
+
+"Send mail" = "Sūtīt e-pastu";

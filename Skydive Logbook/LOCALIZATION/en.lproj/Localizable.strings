@@ -610,6 +610,33 @@
 "Canopy added / alert kit" = "Canopy added";
 "Canopy deleted / alert kit" = "Canopy deleted";
 
+// MARK: - COMMUNITY:
+
+"Community / skydivers" = "Skydivers";
+"Community / partners" = "Partners";
+"Community / name" = "Name";
+
+// MARK: - PRINT:
+
+"Print / settings" = "Print logbook";
+"Create document / print" = "Create document";
+"Title document / print" = "Extract from the iOS App 'SkydiveBook'";
+"No name entered / print" = "No name entered";
+"Description text / print" = "\nSkydiveBook - it is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the SkydiveBook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.";
+
+// MARK: - STATISTIC:
+
+"Height of the Earth" = "Height of the Earth";
+"NASA ships" = "NASA ships";
+"Height of the Mars" = "Height of the Mars";
+"Height of the Moon" = "Height of the Moon";
+"Ground of the Earth" = "Ground of the Earth";
+"Your position" = "Your position";
+
+// MARK: - OTHERS:
+
+"Send mail" = "Send mail";
+
 // MARK: - NOTIFICATIONS:
 
 "Notifications / notifications" = "Notifications";
@@ -633,26 +660,3 @@
 
 "Total jumps / notifications" = "Total jumps";
 "In this month / notifications" = "In this month";
-
-// MARK: - COMMUNITY:
-
-"Community / skydivers" = "Skydivers";
-"Community / partners" = "Partners";
-"Community / name" = "Name";
-
-// MARK: - PRINT:
-
-"Print / settings" = "Print logbook";
-"Create document / print" = "Create document";
-"Title document / print" = "Extract from the iOS App 'SkydiveBook'";
-"No name entered / print" = "No name entered";
-"Description text / print" = "\nSkydiveBook - it is not an official confirmation that the user of the application is a professional skydiver.\n\nIt serves as an optional addition to the official parachute book or certificate of a skydiver of any category.\n\nThe jumps recorded in the SkydiveBook are not evidence of these jumps and cannot be regarded as a basis for issuing official documents, certificates, categories.\n\nThe application is designed for personal use, convenience of skydiving and advanced analytics.";
-
-// MARK: - STATISTIC:
-
-"Height of the Earth" = "Height of the Earth";
-"NASA ships" = "NASA ships";
-"Height of the Mars" = "Height of the Mars";
-"Height of the Moon" = "Height of the Moon";
-"Ground of the Earth" = "Ground of the Earth";
-"Your position" = "Your position";

@@ -632,3 +632,7 @@
 "Height of the Moon" = "Altura de la Luna";
 "Ground of the Earth" = "Suelo de la Tierra";
 "Your position" = "Tu posición";
+
+// MARK: - OTHERS:
+
+"Send mail" = "Enviar correo";

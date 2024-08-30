@@ -632,3 +632,7 @@
 "Height of the Moon" = "ارتفاع القمر";
 "Ground of the Earth" = "أرضية الأرض";
 "Your position" = "موقعك";
+
+// MARK: - OTHERS:
+
+"Send mail" = "إرسال بريد";

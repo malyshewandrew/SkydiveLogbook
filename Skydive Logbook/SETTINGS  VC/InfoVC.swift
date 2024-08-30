@@ -10,15 +10,16 @@ final class InfoVC: UIViewController {
     private let infoBackground = LottieAnimationView(name: "InfoBackground")
     private let infoBackgroundView = UIView()
     private let appleButtonLottie = LottieAnimationView(name: "Apple")
-    private let appleButton = UIButton()
+    private let appleButton = UIButton(type: .system)
     private let scrollView = UIScrollView()
-    private let privacyButton = UIButton()
-    private let termsButton = UIButton()
-    private let faqButton = UIButton()
-    private let languagesButton = UIButton()
-    private let shareButton = UIButton()
-    private let feedbackButton = UIButton()
-    private let versionButton = UIButton()
+    private let privacyButton = UIButton(type: .system)
+    private let termsButton = UIButton(type: .system)
+    private let faqButton = UIButton(type: .system)
+    private let languagesButton = UIButton(type: .system)
+    private let shareButton = UIButton(type: .system)
+    private let feedbackButton = UIButton(type: .system)
+    private let mailButton = UIButton(type: .system)
+    private let versionButton = UIButton(type: .system)
     private let vibrationOn = Vibration()
     private var buildVersion = ""
     private var appVersion = ""
@@ -36,7 +37,7 @@ final class InfoVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(infoBackground, infoBackgroundView, appleButtonLottie, appleButton, scrollView)
-        scrollView.addSubviews(privacyButton, termsButton, faqButton, languagesButton, shareButton, feedbackButton, versionButton)
+        scrollView.addSubviews(privacyButton, termsButton, faqButton, languagesButton, shareButton, feedbackButton, mailButton, versionButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -130,11 +131,19 @@ final class InfoVC: UIViewController {
         feedbackButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         feedbackButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         feedbackButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: MAIL:
+        
+        mailButton.translatesAutoresizingMaskIntoConstraints = false
+        mailButton.topAnchor.constraint(equalTo: feedbackButton.bottomAnchor, constant: 15).isActive = true
+        mailButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mailButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        mailButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: VERSION BUTTON (ALERT):
 
         versionButton.translatesAutoresizingMaskIntoConstraints = false
-        versionButton.topAnchor.constraint(equalTo: feedbackButton.bottomAnchor, constant: 15).isActive = true
+        versionButton.topAnchor.constraint(equalTo: mailButton.bottomAnchor, constant: 15).isActive = true
         versionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         versionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         versionButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -245,6 +254,17 @@ final class InfoVC: UIViewController {
         feedbackButton.titleLabel?.font = fontMediumStandard14
         feedbackButton.titleLabel?.adjustsFontSizeToFitWidth = true
         feedbackButton.addTarget(self, action: #selector(feedbackButtonTapped), for: .touchUpInside)
+        
+        // MARK: MAIL:
+        
+        mailButton.setTitle(NSLocalizedString("Send mail", comment: ""), for: .normal)
+        mailButton.setTitleColor(.colorWhite, for: .normal)
+        mailButton.setTitleColor(.systemBlue, for: .highlighted)
+        mailButton.layer.cornerRadius = cornerRadius15
+        mailButton.backgroundColor = .colorCell
+        mailButton.titleLabel?.font = fontMediumStandard14
+        mailButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        mailButton.addTarget(self, action: #selector(mailButtonTapped), for: .touchUpInside)
         
         // MARK: VERSION BUTTON (ALERT):
 
@@ -360,6 +380,16 @@ final class InfoVC: UIViewController {
         vibrationOn.vibrationStandart()
         guard let feedbackURL = URL(string: "itms-apps://itunes.apple.com/app/id6478469415?action=write-review") else { return }
         UIApplication.shared.open(feedbackURL, options: [:], completionHandler: nil)
+    }
+    
+    // MARK: FUNC FOR MAIL BUTTON:
+    
+    @objc private func mailButtonTapped() {
+        vibrationOn.vibrationStandart()
+        let email = "malyshewdeveloper@protonmail.com"
+        if let url = URL(string: "mailto:\(email)") {
+            UIApplication.shared.open(url)
+        }
     }
 }
 

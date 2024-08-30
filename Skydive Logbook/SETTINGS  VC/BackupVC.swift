@@ -186,11 +186,12 @@ final class BackupVC: UIViewController {
         \(NSLocalizedString("Title / backup", comment: "")):
         
         \(NSLocalizedString("Jumps / backup", comment: "")): \((arrayJumpsRealm.count))
+        \(NSLocalizedString("CutawayStatistic", comment: "")): \(setCountCutaway())
         \(NSLocalizedString("Systems / backup", comment: "")): \((arraySystemsRealm.count))
-        \(NSLocalizedString("Notes / backup", comment: "")): \((arrayNotesRealm.count))
         \(NSLocalizedString("Aircrafts / backup", comment: "")): \((arrayAircraftsRealm.count))
         \(NSLocalizedString("Canopies / backup", comment: "")): \((arrayCanopiesRealm.count))
         \(NSLocalizedString("Locations / backup", comment: "")): \((arrayLocationsRealm.count))
+        \(NSLocalizedString("Notes / backup", comment: "")): \((arrayNotesRealm.count))
         """
     }
     
@@ -205,6 +206,18 @@ final class BackupVC: UIViewController {
             style: .iOS17AppleMusic,
             haptic: .success
         )
+    }
+    
+    // MARK: COUNT CUTAWAY:
+    
+    private func setCountCutaway() -> String {
+        var countCutaway = 0
+        for jump in arrayJumpsRealm {
+            if jump.cutaway?.localizedValue == NSLocalizedString("Yes", comment: "") {
+                countCutaway += 1
+            }
+        }
+        return String(countCutaway)
     }
     
     // MARK: ALERT KIT ERROR:

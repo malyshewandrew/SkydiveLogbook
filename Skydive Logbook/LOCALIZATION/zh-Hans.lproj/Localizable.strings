@@ -632,3 +632,7 @@
 "Height of the Moon" = "月球的高度";
 "Ground of the Earth" = "地球的地面";
 "Your position" = "你的位置";
+
+// MARK: - OTHERS:
+
+"Send mail" = "发送邮件";

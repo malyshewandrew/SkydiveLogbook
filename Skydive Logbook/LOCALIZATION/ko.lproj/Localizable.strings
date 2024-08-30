@@ -632,3 +632,7 @@
 "Height of the Moon" = "달의 높이";
 "Ground of the Earth" = "지구 표면";
 "Your position" = "당신의 위치";
+
+// MARK: - OTHERS:
+
+"Send mail" = "메일 보내기";

@@ -6,6 +6,7 @@ final class MainCell: UITableViewCell {
 
     private let containerView = UIView()
     private let numberLabel = UILabel()
+    private let statusImageView = UIImageView()
     private let dateLabel = UILabel()
     private let locationLabel = UILabel()
     private let aircraftLabel = UILabel()
@@ -15,7 +16,7 @@ final class MainCell: UITableViewCell {
     private let timeLabel = UILabel()
     private let cutawayLabel = UILabel()
     private let commentLabel = UILabel()
-    private let cellButton = UIButton()
+    private let cellButton = UIButton(type: .system)
     var cellTapped: (() -> ())?
 
     // MARK: - LIFECYCLE:
@@ -35,7 +36,7 @@ final class MainCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(containerView, numberLabel, dateLabel, locationLabel, aircraftLabel, canopyLabel, missionLabel, heightLabel, timeLabel, cutawayLabel, commentLabel, cellButton)
+        contentView.addSubviews(containerView, numberLabel, statusImageView, dateLabel, locationLabel, aircraftLabel, canopyLabel, missionLabel, heightLabel, timeLabel, cutawayLabel, commentLabel, cellButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -52,9 +53,15 @@ final class MainCell: UITableViewCell {
         // MARK: NUMBER LABEL:
 
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
+        numberLabel.bottomAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 0).isActive = true
         numberLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8).isActive = true
-        numberLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         numberLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        // MARK: STATUS VIEW:
+        
+        statusImageView.translatesAutoresizingMaskIntoConstraints = false
+        statusImageView.topAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 0).isActive = true
+        statusImageView.centerXAnchor.constraint(equalTo: numberLabel.centerXAnchor, constant: 0).isActive = true
         
         // MARK: CANOPY LABEL:
 
@@ -192,6 +199,14 @@ final class MainCell: UITableViewCell {
         timeLabel.text = time
         cutawayLabel.text = cutaway
         commentLabel.text = comment
+        
+        if cutaway == NSLocalizedString("No", comment: "") {
+            statusImageView.image = UIImage(systemName: "checkmark.seal.fill")
+            statusImageView.tintColor = .colorGreen
+        } else {
+            statusImageView.image = UIImage(systemName: "exclamationmark.circle.fill")
+            statusImageView.tintColor = .colorRed
+        }
     }
     
     // MARK: ACTION FOR CLOSURE:
