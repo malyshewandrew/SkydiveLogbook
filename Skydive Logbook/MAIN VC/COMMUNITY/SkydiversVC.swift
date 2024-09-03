@@ -14,7 +14,7 @@ final class SkydiversVC: UIViewController {
     private let titleLabel = UILabel()
     private let skydiversTableView = UITableView()
     private let partnersTableView = UITableView()
-    private let infoButton = UIButton()
+    private let addButton = UIButton()
     private let backButton = UIButton()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 26)
     private let vibrationOn = Vibration()
@@ -22,7 +22,7 @@ final class SkydiversVC: UIViewController {
     private var arrayPartners: [Partner] = []
     private let segmentControl = UISegmentedControl()
     private let skydivers: String = NSLocalizedString("Community / skydivers", comment: "")
-    private let partners: String = NSLocalizedString("Community / partners", comment: "")
+    private let partners: String = NSLocalizedString("Business / community", comment: "")
 
     // MARK: - LIFYCYCLE:
     
@@ -39,7 +39,7 @@ final class SkydiversVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(skydiversBackground, skydiversLottie, skydiversLottieButton, titleLabel, segmentControl, skydiversTableView, partnersTableView, infoButton, backButton)
+        view.addSubviews(skydiversBackground, skydiversLottie, skydiversLottieButton, titleLabel, segmentControl, skydiversTableView, partnersTableView, addButton, backButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
@@ -59,11 +59,11 @@ final class SkydiversVC: UIViewController {
         backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
         backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         
-        // MARK: INFO BUTTON:
+        // MARK: ADD BUTTON:
         
-        infoButton.translatesAutoresizingMaskIntoConstraints = false
-        infoButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
-        infoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
+        addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
         
         // MARK: ANIMATION SKYDIVERS LOTTIE:
         
@@ -133,15 +133,15 @@ final class SkydiversVC: UIViewController {
         
         // MARK: BACK BUTTON:
 
-        let backImage = UIImage(systemName: "xmark.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorDarkGray, renderingMode: .alwaysOriginal)
+        let backImage = UIImage(systemName: "xmark.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorWhite, renderingMode: .alwaysOriginal)
         backButton.setImage(backImage, for: .normal)
         backButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
         
         // MARK: INFO BUTTON:
         
-        let infoImage = UIImage(systemName: "info.circle.fill", withConfiguration: configurationImage)?.withTintColor(.colorDarkGray, renderingMode: .alwaysOriginal)
-        infoButton.setImage(infoImage, for: .normal)
-        infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+        let infoImage = UIImage(systemName: "plus.circle", withConfiguration: configurationImage)?.withTintColor(.colorWhite, renderingMode: .alwaysOriginal)
+        addButton.setImage(infoImage, for: .normal)
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         
         // MARK: ANIMATIONS:
         
@@ -357,16 +357,18 @@ final class SkydiversVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: INFO BUTTON:
+    // MARK: ADD BUTTON:
     
-    @objc private func infoButtonTapped() {
+    @objc private func addButtonTapped() {
         vibrationOn.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("About rating / skydivers", comment: ""), message: NSLocalizedString("About rating message / skydivers", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Instagram", comment: ""), style: .default, handler: { _ in
             self.tapInstagramButton()
         }))
-        present(alert, animated: true)
+//        present(alert, animated: true)
+        let addSkydiverViewController = AddSkydiverViewController()
+        present(addSkydiverViewController, animated: true)
     }
     
     // MARK: TRANSITION ON INSTAGRAM:

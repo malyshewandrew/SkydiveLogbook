@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "发送邮件";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "商业";
+"Nickname / community" = "昵称 / 名称";
+"Country / community" = "国家";
+"Country choose / community" = "从列表中选择";
+"Count of jumps / community" = "跳跃次数";
+"Count of jumps placeholder / community" = "跳跃次数";
+"Profession / community" = "职业 / 描述";
+"Link / community" = "社交网络链接";
+"5 photos / community" = "5张照片";
+"Clean / community" = "清除";
+"Send / community" = "发送";
+"Success / community" = "您的申请已提交并正在审核中。请等待发布。";
+"Error / community" = "发送错误。请联系开发者。";
+"Error photolibruary title / community" = "注意！";
+"Error photolibruary message / community" = "为了正常运行，您需要在设备设置中选择Skydive Book应用程序，授予照片库访问权限。";
+"Error adapty / adapty status" = "在免费版本中，您无法发布您的帐户。要取消所有限制，请在“设置”中购买PREMIUM。";

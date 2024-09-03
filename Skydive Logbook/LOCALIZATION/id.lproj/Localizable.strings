@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "Kirim email";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "Bisnis";
+"Nickname / community" = "Nama panggilan / Nama";
+"Country / community" = "Negara";
+"Country choose / community" = "Pilih dari daftar";
+"Count of jumps / community" = "Jumlah lompatan";
+"Count of jumps placeholder / community" = "Jumlah lompatan";
+"Profession / community" = "Profesi / Deskripsi";
+"Link / community" = "Tautan ke jejaring sosial";
+"5 photos / community" = "5 foto";
+"Clean / community" = "Bersihkan";
+"Send / community" = "Kirim";
+"Success / community" = "Permohonan Anda telah dikirim dan sedang dalam peninjauan. Harap tunggu publikasi.";
+"Error / community" = "Kesalahan pengiriman. Hubungi pengembang.";
+"Error photolibruary title / community" = "Perhatian!";
+"Error photolibruary message / community" = "Untuk berfungsi dengan benar, Anda harus memberikan akses ke perpustakaan foto di pengaturan perangkat dengan memilih aplikasi Skydive Book.";
+"Error adapty / adapty status" = "Dalam versi gratis, Anda tidak dapat mempublikasikan akun Anda. Untuk menghapus semua batasan, beli PREMIUM di bagian \"Pengaturan\".";

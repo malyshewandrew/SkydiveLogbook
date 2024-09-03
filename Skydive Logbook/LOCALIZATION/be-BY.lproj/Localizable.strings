@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "Адправіць ліст";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "Бізнес";
+"Nickname / community" = "Мянушка / Назва";
+"Country / community" = "Краіна";
+"Country choose / community" = "Абярыце са спісу";
+"Count of jumps / community" = "Колькасць скачкоў";
+"Count of jumps placeholder / community" = "Колькасць скачкоў";
+"Profession / community" = "Прафесія / Апісанне";
+"Link / community" = "Спасылка на сац. сетку";
+"5 photos / community" = "5 фотаздымкаў";
+"Clean / community" = "Ачысціць";
+"Send / community" = "Адправіць";
+"Success / community" = "Ваша заяўка адпраўлена і знаходзіцца на разглядзе. Чакайце публікацыі.";
+"Error / community" = "Памылка адпраўкі. Звяжыцеся з распрацоўшчыкам.";
+"Error photolibruary title / community" = "Увага!";
+"Error photolibruary message / community" = "Для карэктнай працы вам неабходна прадаставіць доступ да фотабібліятэкі ў наладах прылады, выбраўшы дадатак Skydive Book.";
+"Error adapty / adapty status" = "У бясплатнай версіі нельга публікаваць свой акаўнт. Каб зняць усе абмежаванні - купіце PREMIUM у раздзеле \"Налады\".";

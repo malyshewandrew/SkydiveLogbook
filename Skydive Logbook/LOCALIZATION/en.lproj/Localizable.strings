@@ -637,6 +637,25 @@
 
 "Send mail" = "Send mail";
 
+// MARK: - COMMUNITY:
+
+"Business / community" = "Business";
+"Nickname / community" = "Nickname / Name";
+"Country / community" = "Country";
+"Country choose / community" = "Choose from the list";
+"Count of jumps / community" = "Count of jumps";
+"Count of jumps placeholder / community" = "Count of jumps";
+"Profession / community" = "Profession / Description";
+"Link / community" = "Link to social network";
+"5 photos / community" = "5 photos";
+"Clean / community" = "Clear";
+"Send / community" = "Send";
+"Success / community" = "Your request has been sent and is under review. Please wait for publication.";
+"Error / community" = "Sending error. Contact the developer.";
+"Error photolibruary title / community" = "Attention!";
+"Error photolibruary message / community" = "For the app to work properly, you need to grant access to the photo library in the device settings by selecting the Skydive Book app.";
+"Error adapty / adapty status" = "In the free version, you cannot publish your profile. To remove all restrictions, purchase PREMIUM in the 'Settings' section.";
+
 // MARK: - NOTIFICATIONS:
 
 "Notifications / notifications" = "Notifications";

@@ -4,39 +4,18 @@ import AVFoundation
 import Lottie
 import RealmSwift
 import UIKit
-
-/*
- // MARK: ACCOUNT BUTTON:
-
- accountButton.translatesAutoresizingMaskIntoConstraints = false
- accountButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
- accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 17).isActive = true
-
- // MARK: WEATHER BUTTON:
-
- weatherButton.translatesAutoresizingMaskIntoConstraints = false
- weatherButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
- weatherButton.leadingAnchor.constraint(equalTo: accountButton.trailingAnchor, constant: 17).isActive = true
- 
- // MARK: CALCULATOR:
-
- calculatorButton.translatesAutoresizingMaskIntoConstraints = false
- calculatorButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
- calculatorButton.trailingAnchor.constraint(equalTo: notesButton.leadingAnchor, constant: -17).isActive = true
-
- // MARK: NOTES:
-
- notesButton.translatesAutoresizingMaskIntoConstraints = false
- notesButton.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 5).isActive = true
- notesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -17).isActive = true
- */
+import AVFoundation
 
 final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
 
     private let loadingView = UIView()
+    private let loadingInfoLabel = UILabel()
     private let loadingEffectLottie = LottieAnimationView(name: "LoadingEffectLottie")
     private let loadingLottie = LottieAnimationView(name: "Loading")
+    private var player: AVPlayer?
+    private var playerLayer: AVPlayerLayer?
+    
     private let helloLottie = LottieAnimationView(name: "Hello")
     private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
     private let mainLottie = LottieAnimationView(name: "Main")
@@ -73,6 +52,7 @@ final class MainVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
+        startVideo()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +70,7 @@ final class MainVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(mainShadowLottie, mainLottie, confettiLottie, confettiButton, accountButton, weatherButton, mapsButton, communityButton, calculatorButton, notesButton, tableView, startCenterConfettiLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
-        loadingView.addSubviews(loadingEffectLottie, helloLottie, loadingLottie)
+        loadingView.addSubviews(loadingInfoLabel, loadingEffectLottie, helloLottie, loadingLottie)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -104,6 +84,13 @@ final class MainVC: UIViewController {
         loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
+        // MARK: LOADING INFO LABEL:
+
+        loadingInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        loadingInfoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loadingInfoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        loadingInfoLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
+        
         // MARK: LOADNING EFFECT:
         
         loadingEffectLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -116,7 +103,7 @@ final class MainVC: UIViewController {
 
         loadingLottie.translatesAutoresizingMaskIntoConstraints = false
         loadingLottie.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
-        loadingLottie.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
+        loadingLottie.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor, constant: -20).isActive = true
         loadingLottie.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 0.4).isActive = true
         loadingLottie.heightAnchor.constraint(equalTo: loadingLottie.widthAnchor, multiplier: 1).isActive = true
         
@@ -209,6 +196,15 @@ final class MainVC: UIViewController {
         // MARK: LOADING VIEW:
 
         loadingView.backgroundColor = .colorBackground
+        
+        // MARK: INFO LABEL:
+        
+        let currentYear = Calendar.current.component(.year, from: Date())
+        loadingInfoLabel.numberOfLines = 0
+        loadingInfoLabel.text = "Skydive Book iOS Application \n 2023-\(currentYear)"
+        loadingInfoLabel.textColor = .colorWhite
+        loadingInfoLabel.font = fontRegularStandard8
+        loadingInfoLabel.textAlignment = .center
                 
         // MARK: LOADNING EFFECT:
         
@@ -688,6 +684,41 @@ final class MainVC: UIViewController {
             sheetController.detents = [.medium()]
         }
         present(notesViewController, animated: true, completion: nil)
+    }
+    
+    // START VIDEO:
+    private func startVideo() {
+        guard let videoURL = Bundle.main.url(forResource: "Video", withExtension: "mp4") else { return }
+        let player = AVPlayer(url: videoURL)
+        self.player = player
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        loadingView.layer.insertSublayer(playerLayer, at: 0)
+        self.playerLayer = playerLayer
+        player.currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+        player.play()
+    }
+    
+    // REPEAT VIDEO:
+    @objc private func playerDidFinishPlaying() {
+        player?.seek(to: .zero)
+        player?.pause()
+        playerLayer?.removeFromSuperlayer()
+    }
+    
+    // OBSERVER:
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "status", let playerItem = object as? AVPlayerItem {
+            if playerItem.status == .readyToPlay {
+            } else if playerItem.status == .failed {}
+        }
+    }
+
+    deinit {
+        player?.currentItem?.removeObserver(self, forKeyPath: "status")
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
     }
 }
 

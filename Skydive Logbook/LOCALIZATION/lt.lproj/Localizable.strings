@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "Siųsti laišką";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "Verslas";
+"Nickname / community" = "Slapyvardis / Pavadinimas";
+"Country / community" = "Šalis";
+"Country choose / community" = "Pasirinkite iš sąrašo";
+"Count of jumps / community" = "Šuolių skaičius";
+"Count of jumps placeholder / community" = "Šuolių skaičius";
+"Profession / community" = "Profesija / Aprašymas";
+"Link / community" = "Nuoroda į socialinį tinklą";
+"5 photos / community" = "5 nuotraukos";
+"Clean / community" = "Išvalyti";
+"Send / community" = "Siųsti";
+"Success / community" = "Jūsų prašymas išsiųstas ir šiuo metu yra peržiūrimas. Laukite paskelbimo.";
+"Error / community" = "Siuntimo klaida. Kreipkitės į kūrėją.";
+"Error photolibruary title / community" = "Dėmesio!";
+"Error photolibruary message / community" = "Kad programa veiktų tinkamai, turite suteikti prieigą prie nuotraukų bibliotekos įrenginio nustatymuose pasirinkę programą Skydive Book.";
+"Error adapty / adapty status" = "Nemokamoje versijoje negalima publikuoti savo paskyros. Norėdami pašalinti visus apribojimus, įsigykite PREMIUM skiltyje „Nustatymai“.";

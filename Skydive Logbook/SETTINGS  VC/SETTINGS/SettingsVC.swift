@@ -180,6 +180,33 @@ final class SettingsVC: UIViewController {
             haptic: .error
         )
     }
+    
+    // MARK: SEND TELEGRAM MESSAGE:
+    
+    func sendTelegramMessage(message: String) {
+        let botToken = "7264425174:AAGOBEeZrrYhQSwrWPcwMURy90kfW65UlSg"
+        let chatID = "298098804,"
+        
+        let messageText = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://api.telegram.org/bot\(botToken)/sendMessage?chat_id=\(chatID)&text=\(messageText)"
+        
+        guard let url = URL(string: urlString) else {
+            print("Неверный URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Ошибка при отправке сообщения в Telegram: \(error.localizedDescription)")
+                return
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 // MARK: - EXTENSION:
@@ -490,6 +517,7 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
         alertKitSuccess()
+        sendTelegramMessage(message: "Новая покупка: \(product.vendorProductId.description)")
         print("Finished purchase for product: \(product)")
         print("Purchased info: \(purchasedInfo)")
     }

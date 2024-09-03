@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "إرسال بريد";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "عمل";
+"Nickname / community" = "لقب / اسم";
+"Country / community" = "دولة";
+"Country choose / community" = "اختر من القائمة";
+"Count of jumps / community" = "عدد القفزات";
+"Count of jumps placeholder / community" = "عدد القفزات";
+"Profession / community" = "المهنة / الوصف";
+"Link / community" = "رابط الشبكة الاجتماعية";
+"5 photos / community" = "5 صور";
+"Clean / community" = "مسح";
+"Send / community" = "إرسال";
+"Success / community" = "تم إرسال طلبك وهو قيد المراجعة. يرجى انتظار النشر.";
+"Error / community" = "خطأ في الإرسال. يرجى الاتصال بالمطور.";
+"Error photolibruary title / community" = "تحذير!";
+"Error photolibruary message / community" = "للتشغيل الصحيح، يجب عليك منح الوصول إلى مكتبة الصور في إعدادات الجهاز عن طريق اختيار تطبيق Skydive Book.";
+"Error adapty / adapty status" = "لا يمكنك نشر حسابك في النسخة المجانية. لإزالة جميع القيود، قم بشراء PREMIUM في قسم \"الإعدادات\".";

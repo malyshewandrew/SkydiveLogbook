@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "E-posta gönder";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "İş";
+"Nickname / community" = "Takma ad / İsim";
+"Country / community" = "Ülke";
+"Country choose / community" = "Listeden seçin";
+"Count of jumps / community" = "Atlayış sayısı";
+"Count of jumps placeholder / community" = "Atlayış sayısı";
+"Profession / community" = "Meslek / Açıklama";
+"Link / community" = "Sosyal ağ bağlantısı";
+"5 photos / community" = "5 fotoğraf";
+"Clean / community" = "Temizle";
+"Send / community" = "Gönder";
+"Success / community" = "Başvurunuz gönderildi ve inceleniyor. Yayınlanmasını bekleyin.";
+"Error / community" = "Gönderme hatası. Geliştiriciyle iletişime geçin.";
+"Error photolibruary title / community" = "Dikkat!";
+"Error photolibruary message / community" = "Doğru çalışması için cihaz ayarlarında Skydive Book uygulamasını seçerek fotoğraf kütüphanesine erişim izni vermeniz gerekir.";
+"Error adapty / adapty status" = "Ücretsiz sürümde hesabınızı yayımlayamazsınız. Tüm kısıtlamaları kaldırmak için \"Ayarlar\" bölümünde PREMIUM satın alın.";

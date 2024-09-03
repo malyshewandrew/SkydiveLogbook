@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "Enviar correo";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "Negocio";
+"Nickname / community" = "Apodo / Nombre";
+"Country / community" = "País";
+"Country choose / community" = "Elija de la lista";
+"Count of jumps / community" = "Cantidad de saltos";
+"Count of jumps placeholder / community" = "Cantidad de saltos";
+"Profession / community" = "Profesión / Descripción";
+"Link / community" = "Enlace a la red social";
+"5 photos / community" = "5 fotos";
+"Clean / community" = "Limpiar";
+"Send / community" = "Enviar";
+"Success / community" = "Su solicitud ha sido enviada y está bajo revisión. Espere la publicación.";
+"Error / community" = "Error al enviar. Contacte con el desarrollador.";
+"Error photolibruary title / community" = "¡Atención!";
+"Error photolibruary message / community" = "Para un funcionamiento correcto, debe otorgar acceso a la fototeca en la configuración del dispositivo seleccionando la aplicación Skydive Book.";
+"Error adapty / adapty status" = "No puede publicar su cuenta en la versión gratuita. Para eliminar todas las restricciones, compre PREMIUM en la sección \"Configuración\".";

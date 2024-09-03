@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "Sūtīt e-pastu";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "Bizness";
+"Nickname / community" = "Segvārds / Nosaukums";
+"Country / community" = "Valsts";
+"Country choose / community" = "Izvēlieties no saraksta";
+"Count of jumps / community" = "Lēcienu skaits";
+"Count of jumps placeholder / community" = "Lēcienu skaits";
+"Profession / community" = "Profesija / Apraksts";
+"Link / community" = "Saite uz sociālo tīklu";
+"5 photos / community" = "5 fotogrāfijas";
+"Clean / community" = "Notīrīt";
+"Send / community" = "Nosūtīt";
+"Success / community" = "Jūsu pieteikums ir nosūtīts un tiek pārskatīts. Lūdzu, gaidiet publicēšanu.";
+"Error / community" = "Sūtīšanas kļūda. Sazinieties ar izstrādātāju.";
+"Error photolibruary title / community" = "Uzmanību!";
+"Error photolibruary message / community" = "Lai lietotne darbotos pareizi, ierīces iestatījumos jāpiešķir piekļuve fotoattēlu bibliotēkai, atlasot lietotni Skydive Book.";
+"Error adapty / adapty status" = "Bezmaksas versijā jūs nevarat publicēt savu kontu. Lai noņemtu visus ierobežojumus, iegādājieties PREMIUM sadaļā \"Iestatījumi\".";

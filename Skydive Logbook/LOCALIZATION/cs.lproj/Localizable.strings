@@ -636,3 +636,22 @@
 // MARK: - OTHERS:
 
 "Send mail" = "Odeslat e-mail";
+
+// MARK: - COMMUNITY:
+
+"Business / community" = "Podnikání";
+"Nickname / community" = "Přezdívka / Název";
+"Country / community" = "Země";
+"Country choose / community" = "Vyberte ze seznamu";
+"Count of jumps / community" = "Počet skoků";
+"Count of jumps placeholder / community" = "Počet skoků";
+"Profession / community" = "Profese / Popis";
+"Link / community" = "Odkaz na sociální síť";
+"5 photos / community" = "5 fotografií";
+"Clean / community" = "Vyčistit";
+"Send / community" = "Odeslat";
+"Success / community" = "Vaše žádost byla odeslána a je v procesu kontroly. Čekejte na publikaci.";
+"Error / community" = "Chyba odesílání. Kontaktujte vývojáře.";
+"Error photolibruary title / community" = "Pozor!";
+"Error photolibruary message / community" = "Pro správnou funkci musíte udělit přístup do fotoknihovny v nastavení zařízení výběrem aplikace Skydive Book.";
+"Error adapty / adapty status" = "Ve verzi zdarma nelze publikovat svůj účet. Pro odstranění všech omezení si zakupte PREMIUM v sekci \"Nastavení\".";
