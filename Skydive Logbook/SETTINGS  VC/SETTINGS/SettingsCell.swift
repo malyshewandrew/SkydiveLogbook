@@ -1,5 +1,6 @@
 import RealmSwift
 import UIKit
+import Adapty
 
 // MARK: - PROTOCOL:
 
@@ -252,10 +253,22 @@ final class SettingsCell: UITableViewCell {
         premiumButton.addTarget(self, action: #selector(premiumButtonTapped), for: .touchUpInside)
 
         // MARK: STAR:
-
+    
         starImage.image = UIImage(systemName: "star.fill")
         starImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         starImage.tintColor = .systemYellow
+        starImage.isHidden = true
+        
+        Adapty.getProfile { [weak self] result in
+            guard let self = self else { return }
+            if let profile = try? result.get(),
+               profile.accessLevels["premium"]?.isActive ?? false
+            {
+                starImage.isHidden = true
+            } else {
+                starImage.isHidden = false
+            }
+        }
         
         // MARK: NOTIFICATIONS BUTTON:
 

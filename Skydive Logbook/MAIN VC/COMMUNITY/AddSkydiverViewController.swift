@@ -2,18 +2,19 @@ import Adapty
 import AlertKit
 import AudioToolbox
 import AVFoundation
+import CountryPickerView
 import Firebase
 import FirebaseStorage
 import Photos
 import PhotosUI
 import UIKit
-import CountryPickerView
+import Network
 
 final class AddSkydiverViewController: UIViewController {
     // MARK: - PROPERTIES:
     
     private let backgroundImage = UIImageView()
-    private let arrayBackgroundImages: [UIImage] = [UIImage(resource: .backgroundSkydiversOne), UIImage(resource: .backgroundSkydiversTwo)]
+    private let arrayBackgroundImages: [UIImage] = [UIImage(resource: .backgroundSkydiversOne), UIImage(resource: .backgroundSkydiversTwo), UIImage(resource: .backgroundSkydiversThree)]
     private let scrollView = UIScrollView()
     
     private let nicknameButton = UIButton()
@@ -101,7 +102,6 @@ final class AddSkydiverViewController: UIViewController {
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        
         // MARK: BACKGROUND IMAGE:
         
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
@@ -245,7 +245,7 @@ final class AddSkydiverViewController: UIViewController {
         
         // MARK: BACKGROUND IMAGE:
         
-        backgroundImage.image = arrayBackgroundImages[Int.random(in: 0...1)]
+        backgroundImage.image = arrayBackgroundImages[Int.random(in: 0 ... 1)]
         backgroundImage.contentMode = .scaleAspectFill
         
         // MARK: NICKNAME:
@@ -434,38 +434,38 @@ final class AddSkydiverViewController: UIViewController {
         
         guard nicknameTextField.text != "" else {
             showError(textField: nicknameTextField)
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
             return
         }
         guard countryTextField.text != "" else {
             showError(textField: countryTextField)
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
             return
         }
         guard countOfJumpsTextField.text != "" else {
             showError(textField: countOfJumpsTextField)
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
             return
         }
         guard professionTextField.text != "" else {
             showError(textField: professionTextField)
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
             return
         }
         guard linkTextField.text != "" else {
             showError(textField: linkTextField)
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
             return
         }
         guard selectedImages.count == 5 else {
             showErrorButton(button: photosButton)
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
             return
         }
         
@@ -488,24 +488,69 @@ final class AddSkydiverViewController: UIViewController {
         }
     }
     
+    // MARK: CHECK INTERNET CONNECTION:
+    
+    private func checkInternetConnection(completion: @escaping (Bool) -> Void) {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                completion(true)
+            } else {
+                completion(false)
+            }
+            monitor.cancel()
+        }
+        
+        monitor.start(queue: queue)
+    }
+    
     // MARK: UPLOAD DATA TO FIREBASE:
     
     func uploadDataToFirebase() {
-        let ref = Database.database().reference()
-        ref.child("SkydiversForCheck/\(nicknameTextField.text ?? "")").childByAutoId().setValue([
-            "Nickname": nicknameTextField.text ?? "",
-            "Country": countryTextField.text ?? "",
-            "Counts of jumps": countOfJumpsTextField.text ?? "",
-            "Profession": professionTextField.text ?? "",
-            "Link": linkTextField.text ?? ""
-        ]) { [weak self] error, _ in
+        checkInternetConnection { [weak self] isConnected in
             guard let self = self else { return }
-            if error != nil {
-                self.showAlertWithMessage(title: NSLocalizedString("Error / alert kit", comment: ""), message: NSLocalizedString("Error / community", comment: ""))
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.removeFromSuperview()
-            } else {
-                self.uploadImagesToFirebase()
+            if !isConnected {
+                DispatchQueue.main.async {
+                    self.showAlertWithMessage(
+                        title: NSLocalizedString("Error / alert kit", comment: ""),
+                        message: NSLocalizedString("Message / adapty", comment: ""))
+                    self.alertKitError()
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.removeFromSuperview()
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                let nickname = self.nicknameTextField.text ?? ""
+                let country = self.countryTextField.text ?? ""
+                let countOfJumps = self.countOfJumpsTextField.text ?? ""
+                let profession = self.professionTextField.text ?? ""
+                let link = self.linkTextField.text ?? ""
+                
+                let ref = Database.database().reference()
+                ref.child("SkydiversForCheck/\(nickname)").childByAutoId().setValue([
+                    "Nickname": nickname,
+                    "Country": country,
+                    "Counts of jumps": countOfJumps,
+                    "Profession": profession,
+                    "Link": link
+                ]) { [weak self] error, _ in
+                    guard let self = self else { return }
+                    if error != nil {
+                        DispatchQueue.main.async {
+                            self.showAlertWithMessage(
+                                title: NSLocalizedString("Error / alert kit", comment: ""),
+                                message: NSLocalizedString("Error / community", comment: ""))
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.removeFromSuperview()
+                        }
+                    } else {
+                        self.uploadImagesToFirebase()
+                    }
+                }
             }
         }
     }
@@ -526,7 +571,7 @@ final class AddSkydiverViewController: UIViewController {
             let imageData = image.jpegData(compressionQuality: 0.8)
             let imageRef = storageRef.child("SkydiversForCheck/\(nickname)/\(nickname)\(index).jpg")
 
-            let uploadTask = imageRef.putData(imageData!, metadata: nil) { metadata, error in
+            let uploadTask = imageRef.putData(imageData!, metadata: nil) { _, error in
                 if error != nil {
                     self.activityIndicator.stopAnimating()
                     self.activityIndicator.removeFromSuperview()
@@ -762,7 +807,7 @@ final class AddSkydiverViewController: UIViewController {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { _, _, error in
             if let error = error {
                 print("Ошибка при отправке сообщения в Telegram: \(error.localizedDescription)")
                 return

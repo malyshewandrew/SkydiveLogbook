@@ -366,7 +366,6 @@ final class SkydiversVC: UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("Instagram", comment: ""), style: .default, handler: { _ in
             self.tapInstagramButton()
         }))
-//        present(alert, animated: true)
         let addSkydiverViewController = AddSkydiverViewController()
         present(addSkydiverViewController, animated: true)
     }

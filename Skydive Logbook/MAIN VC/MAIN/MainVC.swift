@@ -15,6 +15,7 @@ final class MainVC: UIViewController {
     private let loadingLottie = LottieAnimationView(name: "Loading")
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
+    private let arrayVideos: [String] = ["VideoOne", "VideoTwo", "VideoThree"]
     
     private let helloLottie = LottieAnimationView(name: "Hello")
     private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
@@ -688,7 +689,7 @@ final class MainVC: UIViewController {
     
     // START VIDEO:
     private func startVideo() {
-        guard let videoURL = Bundle.main.url(forResource: "Video", withExtension: "mp4") else { return }
+        guard let videoURL = Bundle.main.url(forResource: arrayVideos[Int.random(in: 0...2)], withExtension: "mp4") else { return }
         let player = AVPlayer(url: videoURL)
         self.player = player
         let playerLayer = AVPlayerLayer(player: player)
