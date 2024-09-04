@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "Perhatian!";
 "Error photolibruary message / community" = "Untuk berfungsi dengan benar, Anda harus memberikan akses ke perpustakaan foto di pengaturan perangkat dengan memilih aplikasi Skydive Book.";
 "Error adapty / adapty status" = "Dalam versi gratis, Anda tidak dapat mempublikasikan akun Anda. Untuk menghapus semua batasan, beli PREMIUM di bagian \"Pengaturan\".";
+
+// MARK: - MAP:
+
+"Info map / map view" = "Untuk menunjukkan titik kustom di peta, tekan lama pada tempat yang dipilih dan isi formulir.";
+"Create point / map view" = "Buat titik di peta";
+"Create point description / map view" = "Isi formulir";
+"Name of point / map view" = "Nama lokasi";
+"Description of point / map view" = "Deskripsi lokasi";

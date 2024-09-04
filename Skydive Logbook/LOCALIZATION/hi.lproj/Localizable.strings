@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "ध्यान!";
 "Error photolibruary message / community" = "सही ढंग से काम करने के लिए, आपको Skydive Book ऐप का चयन करके डिवाइस सेटिंग्स में फोटो लाइब्रेरी तक पहुँच प्रदान करना होगा।";
 "Error adapty / adapty status" = "नि:शुल्क संस्करण में आप अपना खाता प्रकाशित नहीं कर सकते। सभी प्रतिबंधों को हटाने के लिए, कृपया \"सेटिंग्स\" अनुभाग में PREMIUM खरीदें।";
+
+// MARK: - MAP:
+
+"Info map / map view" = "नक्शे पर एक अनुकूलित बिंदु इंगित करने के लिए, चयनित स्थान पर लंबा दबाएं और फॉर्म भरें।";
+"Create point / map view" = "नक्शे पर बिंदु बनाएं";
+"Create point description / map view" = "फॉर्म भरें";
+"Name of point / map view" = "स्थान का नाम";
+"Description of point / map view" = "स्थान का विवरण";

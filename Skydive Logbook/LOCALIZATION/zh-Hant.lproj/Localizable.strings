@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "注意！";
 "Error photolibruary message / community" = "为了正常运行，您需要在设备设置中选择Skydive Book应用程序，授予照片库访问权限。";
 "Error adapty / adapty status" = "在免费版本中，您无法发布您的帐户。要取消所有限制，请在“设置”中购买PREMIUM。";
+
+// MARK: - MAP:
+
+"Info map / map view" = "要在地图上标注自定义点，请在选定位置长按并填写表格。";
+"Create point / map view" = "在地图上创建一个点";
+"Create point description / map view" = "填写表格";
+"Name of point / map view" = "位置名称";
+"Description of point / map view" = "位置描述";

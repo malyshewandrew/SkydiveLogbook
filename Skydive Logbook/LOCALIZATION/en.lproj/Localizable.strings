@@ -656,6 +656,14 @@
 "Error photolibruary message / community" = "For the app to work properly, you need to grant access to the photo library in the device settings by selecting the Skydive Book app.";
 "Error adapty / adapty status" = "In the free version, you cannot publish your profile. To remove all restrictions, purchase PREMIUM in the 'Settings' section.";
 
+// MARK: - MAP:
+
+"Info map / map view" = "To specify your own point on the map, make a long press on the map and fill out the form.";
+"Create point / map view" = "Create point on the map";
+"Create point description / map view" = "Fill the fields";
+"Name of point / map view" = "Name of point";
+"Description of point / map view" = "Description of point";
+
 // MARK: - NOTIFICATIONS:
 
 "Notifications / notifications" = "Notifications";

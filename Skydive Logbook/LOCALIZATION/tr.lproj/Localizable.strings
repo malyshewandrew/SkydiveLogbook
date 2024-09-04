@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "Dikkat!";
 "Error photolibruary message / community" = "Doğru çalışması için cihaz ayarlarında Skydive Book uygulamasını seçerek fotoğraf kütüphanesine erişim izni vermeniz gerekir.";
 "Error adapty / adapty status" = "Ücretsiz sürümde hesabınızı yayımlayamazsınız. Tüm kısıtlamaları kaldırmak için \"Ayarlar\" bölümünde PREMIUM satın alın.";
+
+// MARK: - MAP:
+
+"Info map / map view" = "Haritada özel bir nokta belirtmek için seçilen yere uzun basın ve formu doldurun.";
+"Create point / map view" = "Haritada bir nokta oluştur";
+"Create point description / map view" = "Formu doldurun";
+"Name of point / map view" = "Konum adı";
+"Description of point / map view" = "Konum açıklaması";

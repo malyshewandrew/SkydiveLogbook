@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "주의!";
 "Error photolibruary message / community" = "정상적인 작동을 위해서는 기기 설정에서 Skydive Book 앱을 선택하여 사진 라이브러리에 대한 액세스를 허용해야 합니다.";
 "Error adapty / adapty status" = "무료 버전에서는 계정을 게시할 수 없습니다. 모든 제한을 해제하려면 \"설정\" 섹션에서 PREMIUM을 구매하십시오.";
+
+// MARK: - MAP:
+
+"Info map / map view" = "지도에 사용자 정의 지점을 표시하려면 선택한 위치를 길게 누르고 양식을 작성하십시오.";
+"Create point / map view" = "지도에 포인트 생성";
+"Create point description / map view" = "양식을 작성하십시오";
+"Name of point / map view" = "위치 이름";
+"Description of point / map view" = "위치 설명";

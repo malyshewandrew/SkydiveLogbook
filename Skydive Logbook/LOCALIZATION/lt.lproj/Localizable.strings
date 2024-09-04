@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "Dėmesio!";
 "Error photolibruary message / community" = "Kad programa veiktų tinkamai, turite suteikti prieigą prie nuotraukų bibliotekos įrenginio nustatymuose pasirinkę programą Skydive Book.";
 "Error adapty / adapty status" = "Nemokamoje versijoje negalima publikuoti savo paskyros. Norėdami pašalinti visus apribojimus, įsigykite PREMIUM skiltyje „Nustatymai“.";
+
+// MARK: - MAP:
+
+"Info map / map view" = "Norėdami nurodyti pasirinktą tašką žemėlapyje, ilgai paspauskite pasirinktoje vietoje ir užpildykite formą.";
+"Create point / map view" = "Sukurti tašką žemėlapyje";
+"Create point description / map view" = "Užpildykite formą";
+"Name of point / map view" = "Vietos pavadinimas";
+"Description of point / map view" = "Vietos aprašymas";

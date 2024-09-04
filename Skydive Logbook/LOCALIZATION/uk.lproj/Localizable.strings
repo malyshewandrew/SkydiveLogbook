@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "Увага!";
 "Error photolibruary message / community" = "Для коректної роботи необхідно надати доступ до фотобібліотеки в налаштуваннях пристрою, вибравши додаток Skydive Book.";
 "Error adapty / adapty status" = "У безкоштовній версії не можна публікувати свій акаунт. Щоб зняти всі обмеження - придбайте PREMIUM у розділі \"Налаштування\".";
+
+// MARK: - MAP:
+
+"Info map / map view" = "Щоб вказати власну точку на карті, затисніть вибране місце і заповніть форму.";
+"Create point / map view" = "Створити точку на карті";
+"Create point description / map view" = "Заповніть форму";
+"Name of point / map view" = "Назва місця";
+"Description of point / map view" = "Опис місця";

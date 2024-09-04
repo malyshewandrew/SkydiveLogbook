@@ -14,7 +14,7 @@ final class AddSkydiverViewController: UIViewController {
     // MARK: - PROPERTIES:
     
     private let backgroundImage = UIImageView()
-    private let arrayBackgroundImages: [UIImage] = [UIImage(resource: .backgroundSkydiversOne), UIImage(resource: .backgroundSkydiversTwo), UIImage(resource: .backgroundSkydiversThree)]
+    private let arrayBackgroundImages: [UIImage] = [UIImage(resource: .backgroundSkydiversOne), UIImage(resource: .backgroundSkydiversTwo), UIImage(resource: .backgroundSkydiversThree), UIImage(resource: .backgroundSkydiversFour)]
     private let scrollView = UIScrollView()
     
     private let nicknameButton = UIButton()
@@ -245,7 +245,7 @@ final class AddSkydiverViewController: UIViewController {
         
         // MARK: BACKGROUND IMAGE:
         
-        backgroundImage.image = arrayBackgroundImages[Int.random(in: 0 ... 1)]
+        backgroundImage.image = arrayBackgroundImages[Int.random(in: 0...3)]
         backgroundImage.contentMode = .scaleAspectFill
         
         // MARK: NICKNAME:

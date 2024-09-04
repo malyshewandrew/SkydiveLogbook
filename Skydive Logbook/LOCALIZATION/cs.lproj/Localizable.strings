@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "Pozor!";
 "Error photolibruary message / community" = "Pro správnou funkci musíte udělit přístup do fotoknihovny v nastavení zařízení výběrem aplikace Skydive Book.";
 "Error adapty / adapty status" = "Ve verzi zdarma nelze publikovat svůj účet. Pro odstranění všech omezení si zakupte PREMIUM v sekci \"Nastavení\".";
+
+// MARK: - MAP:
+
+"Info map / map view" = "Chcete-li na mapě označit vlastní bod, podržte vybrané místo a vyplňte formulář.";
+"Create point / map view" = "Vytvořit bod na mapě";
+"Create point description / map view" = "Vyplňte formulář";
+"Name of point / map view" = "Název místa";
+"Description of point / map view" = "Popis místa";

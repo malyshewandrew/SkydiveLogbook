@@ -655,3 +655,11 @@
 "Error photolibruary title / community" = "Uzmanību!";
 "Error photolibruary message / community" = "Lai lietotne darbotos pareizi, ierīces iestatījumos jāpiešķir piekļuve fotoattēlu bibliotēkai, atlasot lietotni Skydive Book.";
 "Error adapty / adapty status" = "Bezmaksas versijā jūs nevarat publicēt savu kontu. Lai noņemtu visus ierobežojumus, iegādājieties PREMIUM sadaļā \"Iestatījumi\".";
+
+// MARK: - MAP:
+
+"Info map / map view" = "Lai norādītu pielāgotu punktu kartē, turiet nospiestu izvēlēto vietu un aizpildiet veidlapu.";
+"Create point / map view" = "Izveidot punktu kartē";
+"Create point description / map view" = "Aizpildiet veidlapu";
+"Name of point / map view" = "Vietas nosaukums";
+"Description of point / map view" = "Vietas apraksts";

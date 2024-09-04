@@ -655,3 +655,12 @@
 "Error photolibruary title / community" = "Uwaga!";
 "Error photolibruary message / community" = "Aby aplikacja działała poprawnie, musisz udzielić dostępu do biblioteki zdjęć w ustawieniach urządzenia, wybierając aplikację Skydive Book.";
 "Error adapty / adapty status" = "W wersji darmowej nie możesz opublikować swojego konta. Aby usunąć wszystkie ograniczenia, kup PREMIUM w sekcji „Ustawienia”.";
+
+// MARK: - MAP:
+
+// Polish
+"Info map / map view" = "Aby wskazać własny punkt na mapie, naciśnij i przytrzymaj wybrane miejsce, a następnie wypełnij formularz.";
+"Create point / map view" = "Utwórz punkt na mapie";
+"Create point description / map view" = "Wypełnij formularz";
+"Name of point / map view" = "Nazwa lokalizacji";
+"Description of point / map view" = "Opis lokalizacji";

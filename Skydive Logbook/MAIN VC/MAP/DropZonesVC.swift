@@ -1,4 +1,6 @@
+import AlertKit
 import MapKit
+import Network
 import SafariServices
 import UIKit
 import WebKit
@@ -25,6 +27,7 @@ final class DropZonesVC: UIViewController {
         configureUI()
         getUserLocation()
         configureDropZonesPoints()
+        configureGestures()
     }
     
     // MARK: - ADD SUBVIEWS:
@@ -133,9 +136,18 @@ final class DropZonesVC: UIViewController {
 //        mapView.addAnnotation(lipki)
     }
     
+    // MARK: - CONFIGURE GESTURES:
+
+    private func configureGestures() {
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(tapMapAction))
+        longPressGesture.minimumPressDuration = 0.5
+        mapView.addGestureRecognizer(longPressGesture)
+    }
+    
     // MARK: - HELPERS:
     
     // MARK: MAP TYPE BUTTON ACTION:
+
     @objc private func mapTypeButtonTapped() {
         let alertController = UIAlertController(title: NSLocalizedString("Map type", comment: ""), message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: NSLocalizedString("Standard / map type", comment: ""), style: .default) { _ in
@@ -154,7 +166,7 @@ final class DropZonesVC: UIViewController {
     // MARK: BACK BUTTON:
     
     @objc private func backupButtonTapped() {
-        self.vibrationOn.vibrationStandart()
+        vibrationOn.vibrationStandart()
         dismiss(animated: true, completion: nil)
     }
     
@@ -173,21 +185,132 @@ final class DropZonesVC: UIViewController {
     
     @objc private func infoButtonTapped() {
         vibrationOn.vibrationStandart()
-        let alert = UIAlertController(title: NSLocalizedString("Information / drop zones", comment: ""), message: NSLocalizedString("Message / drop zones", comment: ""), preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Information / drop zones", comment: ""), message: NSLocalizedString("Info map / map view", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Instagram", comment: ""), style: .default, handler: { _ in
-            self.tapInstagramButton()
-        }))
         present(alert, animated: true)
     }
     
-    // MARK: TRANSITION ON INSTAGRAM:
+    // MARK: FUNC FOR ADD NEW POINT:
+
+    @objc func tapMapAction(recognizer: UITapGestureRecognizer) {
+        let touch = recognizer.location(in: mapView)
+        let coord = mapView.convert(touch, toCoordinateFrom: mapView)
+
+        let alert = UIAlertController(title: NSLocalizedString("Create point / map view", comment: ""), message: NSLocalizedString("Create point description / map view", comment: ""), preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = NSLocalizedString("Name of point / map view", comment: "")
+        }
+        alert.addTextField { textFieldDescription in
+            textFieldDescription.placeholder = NSLocalizedString("Description of point / map view", comment: "")
+        }
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Send / community", comment: ""), style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
+            checkInternetConnection { [weak self] isConnected in
+                guard let self = self else { return }
+                
+                if !isConnected {
+                    DispatchQueue.main.async {
+                        self.showAlertWithMessage(
+                            title: NSLocalizedString("Error / alert kit", comment: ""),
+                            message: NSLocalizedString("Message / adapty", comment: "")
+                        )
+                        self.alertKitError()
+                    }
+                    return
+                }
+            }
+            guard let textField = alert.textFields?.first, let name = textField.text, !name.isEmpty, let textFieldDescription = alert.textFields?.last, let subTitle = textFieldDescription.text, !subTitle.isEmpty else {
+                return
+            }
+            let point = MKPointAnnotation()
+            point.coordinate = coord
+            point.title = name
+            point.subtitle = subTitle
+            sendTelegramMessage(message: "Добавлена новая локация.\nНазвание: \(name)\nОписание: \(subTitle).\nКоординаты: \(coord.latitude), \(coord.longitude)")
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
     
-    private func tapInstagramButton() {
-        guard let url = URL(string: "https://instagram.com/skydivebook") else { return }
-        let safariViewController = SFSafariViewController(url: url)
-        safariViewController.delegate = self
-        present(safariViewController, animated: true)
+    // MARK: CHECK INTERNET CONNECTION:
+    
+    private func checkInternetConnection(completion: @escaping (Bool) -> Void) {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                completion(true)
+            } else {
+                completion(false)
+            }
+            monitor.cancel()
+        }
+        monitor.start(queue: queue)
+    }
+    
+    // MARK: SEND TELEGRAM MESSAGE:
+    
+    func sendTelegramMessage(message: String) {
+        let botToken = "7264425174:AAGOBEeZrrYhQSwrWPcwMURy90kfW65UlSg"
+        let chatID = "298098804,"
+        
+        let messageText = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://api.telegram.org/bot\(botToken)/sendMessage?chat_id=\(chatID)&text=\(messageText)"
+        
+        guard let url = URL(string: urlString) else {
+            print("Неверный URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { [weak self] _, _, error in
+            guard let self = self else { return }
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Ошибка при отправке сообщения в Telegram: \(error.localizedDescription)")
+                    self.alertKitError()
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                self.showAlertWithMessage(title: NSLocalizedString("Success / alert kit", comment: ""), message: NSLocalizedString("Success / community", comment: ""))
+                self.alertKitSuccess()
+            }
+        }
+        task.resume()
+    }
+    
+    // MARK: SHOW ALERT WITH MESSAGE:
+
+    private func showAlertWithMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // MARK: ALERT KIT SUCCESS:
+
+    private func alertKitSuccess() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Success / alert kit", comment: ""),
+            icon: .done,
+            style: .iOS17AppleMusic,
+            haptic: .success
+        )
+    }
+    
+    // MARK: ALERT KIT ERROR:
+
+    private func alertKitError() {
+        AlertKitAPI.present(
+            title: NSLocalizedString("Error / alert kit", comment: ""),
+            icon: .error,
+            style: .iOS17AppleMusic,
+            haptic: .error
+        )
     }
 }
 
@@ -199,4 +322,6 @@ extension DropZonesVC: SFSafariViewControllerDelegate {
     }
 }
 
-extension DropZonesVC: CLLocationManagerDelegate {}
+extension DropZonesVC: CLLocationManagerDelegate {
+    
+}
