@@ -758,6 +758,9 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COSTUM SWIPE RIGHT (DELETE AND EDIT):
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        vibrationOn.vibrationStandart()
+        
         // MARK: DELETE JUMP:
 
         vibrationOn.vibrationStandart()
@@ -801,6 +804,52 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         }
         editAction.backgroundColor = .colorBackground
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return configuration
+    }
+    
+    // MARK: COSTUM SWIPE LEFT (SHARE WITH JUMP:
+
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        vibrationOn.vibrationStandart()
+        let shareAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
+            guard let self = self else { return }
+            vibrationOn.vibrationStandart()
+            let jump = arrayJumpsRealm[indexPath.row]
+            let missionValue = jump.mission?.localizedValue ?? "-"
+            let cutawayValue = jump.cutaway?.localizedValue ?? ""
+            let jumpNumber = arrayJumpsRealm.count - indexPath.row
+            
+            let skydiver = realmManager.localRealm.objects(AccountClassRealm.self)
+            let nicknameValue = skydiver.first?.nickname ?? ""
+            
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            let formattedDate = dateFormatter.string(from: date)
+            
+            let text = """
+            # \(jumpNumber)/\(arrayJumpsRealm.count):
+            \(NSLocalizedString("Date", comment: "")): \(jump.date).
+            \(NSLocalizedString("Location", comment: "")): \(jump.location).
+            \(NSLocalizedString("Aircraft", comment: "")): \(jump.aircraft).
+            \(NSLocalizedString("Canopy", comment: "")): \(jump.canopy).
+            \(NSLocalizedString("Mission", comment: "")): \(missionValue).
+            \(NSLocalizedString("Height", comment: "")): \(jump.height).
+            \(NSLocalizedString("Time", comment: "")): \(jump.time).
+            \(NSLocalizedString("Cutaway", comment: "")): \(cutawayValue).
+            
+            Skydive Book iOS Application, \(formattedDate).
+            \(nicknameValue)
+            """
+            let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+            present(activityViewController, animated: true)
+            completion(true)
+        }
+        if let editImage = UIImage(systemName: "square.and.arrow.up")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal) {
+            shareAction.image = editImage
+        }
+        shareAction.backgroundColor = .colorBackground
+        let configuration = UISwipeActionsConfiguration(actions: [shareAction])
         return configuration
     }
 }

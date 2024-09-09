@@ -412,6 +412,7 @@ final class EditAccountVC: UIViewController {
             self.actionButtonSaveGreenColor()
             self.playSoundSucces()
             self.alertKitSuccess()
+            self.loadAccount()
         }
     }
     
@@ -431,8 +432,6 @@ final class EditAccountVC: UIViewController {
             newAccount.reserveCanopy = reserveCanopyTextField.text ?? ""
             realmManager.localRealm.add(newAccount, update: .all)
         }
-
-
     }
     
     // MARK: ACTION FOR TAP ON CLEAN BUTTON:
