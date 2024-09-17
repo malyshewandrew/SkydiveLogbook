@@ -408,11 +408,7 @@ extension SettingsVC: SettingsCellDelegate {
                         AdaptyUI.getViewConfiguration(forPaywall: paywall, locale: "en") { result in
                             switch result {
                             case let .success(viewConfiguration):
-                                let visualPaywall = AdaptyUI.paywallController(
-                                    for: paywall,
-                                    viewConfiguration: viewConfiguration,
-                                    delegate: self
-                                )
+                                let visualPaywall = AdaptyUI.paywallController(for: paywall, viewConfiguration: viewConfiguration, delegate: self)
                                 self.present(visualPaywall, animated: true)
                                 self.activityIndicator.stopAnimating()
                                 self.activityIndicator.removeFromSuperview()
