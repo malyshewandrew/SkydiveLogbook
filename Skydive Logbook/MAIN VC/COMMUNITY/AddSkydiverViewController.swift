@@ -5,10 +5,10 @@ import AVFoundation
 import CountryPickerView
 import Firebase
 import FirebaseStorage
+import Network
 import Photos
 import PhotosUI
 import UIKit
-import Network
 
 final class AddSkydiverViewController: UIViewController {
     // MARK: - PROPERTIES:
@@ -32,6 +32,7 @@ final class AddSkydiverViewController: UIViewController {
     
     private let linkButton = UIButton()
     private let linkTextField = UITextField()
+    private let urlPrefix = "http://"
     
     private let photosButton = UIButton(type: .system)
     
@@ -245,7 +246,7 @@ final class AddSkydiverViewController: UIViewController {
         
         // MARK: BACKGROUND IMAGE:
         
-        backgroundImage.image = arrayBackgroundImages[Int.random(in: 0...3)]
+        backgroundImage.image = arrayBackgroundImages[Int.random(in: 0 ... 3)]
         backgroundImage.contentMode = .scaleAspectFill
         
         // MARK: NICKNAME:
@@ -346,6 +347,8 @@ final class AddSkydiverViewController: UIViewController {
         linkTextField.tintColor = .colorWhite
         linkTextField.layer.masksToBounds = true
         linkTextField.keyboardType = .URL
+        linkTextField.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
+        linkTextField.addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
         
         // MARK: PHOTOS BUTTON:
         
@@ -388,6 +391,22 @@ final class AddSkydiverViewController: UIViewController {
     }
     
     // MARK: - HELPERS:
+    
+    // MARK: EDIT DID BEGIN LINK TEXT FIELD:
+    
+    @objc func editingDidBegin(_ textField: UITextField) {
+        if textField.text?.isEmpty ?? true {
+            textField.text = urlPrefix
+        }
+    }
+
+    // MARK: EDITING DID END LINK TEXT FIELD:
+    
+    @objc func editingDidEnd(_ textField: UITextField) {
+        if textField.text == urlPrefix {
+            textField.text = ""
+        }
+    }
     
     // MARK: SEND REQUES:
     
@@ -515,7 +534,8 @@ final class AddSkydiverViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.showAlertWithMessage(
                         title: NSLocalizedString("Error / alert kit", comment: ""),
-                        message: NSLocalizedString("Message / adapty", comment: ""))
+                        message: NSLocalizedString("Message / adapty", comment: "")
+                    )
                     self.alertKitError()
                     self.activityIndicator.stopAnimating()
                     self.activityIndicator.removeFromSuperview()
@@ -543,7 +563,8 @@ final class AddSkydiverViewController: UIViewController {
                         DispatchQueue.main.async {
                             self.showAlertWithMessage(
                                 title: NSLocalizedString("Error / alert kit", comment: ""),
-                                message: NSLocalizedString("Error / community", comment: ""))
+                                message: NSLocalizedString("Error / community", comment: "")
+                            )
                             self.activityIndicator.stopAnimating()
                             self.activityIndicator.removeFromSuperview()
                         }
@@ -820,7 +841,18 @@ final class AddSkydiverViewController: UIViewController {
 
 // MARK: - EXTENSIONS:
 
-extension AddSkydiverViewController: UITextFieldDelegate {}
+extension AddSkydiverViewController: UITextFieldDelegate {
+    // MARK: EDIT LINK TEXT FIELD:
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+            
+        if range.location < urlPrefix.count {
+            return false
+        }
+        return true
+    }
+}
 
 extension AddSkydiverViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
