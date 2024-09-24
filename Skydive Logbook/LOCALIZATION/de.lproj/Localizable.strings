@@ -560,7 +560,7 @@
 "Message / adapty" = "Für den Empfang von Daten ist eine aktive Internetverbindung erforderlich.";
 
 "Alert / adapty status" = "Premium erforderlich";
-"Message / adapty status" = "In der kostenlosen Version können Sie nur speichern:\n\n50 Sprünge.\n10 Notizen.\n1 System.\n\nUm alle Einschränkungen zu entfernen, kaufen Sie PREMIUM im Abschnitt \"Einstellungen\".";
+"Message / adapty status" = "In der kostenlosen Version können Sie nur speichern:\n\n25 Sprünge.\n10 Notizen.\n1 System.\n\nUm alle Einschränkungen zu entfernen, kaufen Sie PREMIUM im Abschnitt \"Einstellungen\".";
 
 // MARK: - SYSTEM:
 

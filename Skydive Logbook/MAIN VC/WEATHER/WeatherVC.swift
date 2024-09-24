@@ -36,7 +36,6 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     private var minTemperature: String = ""
     private var averageTemperature: String = ""
     private let activityIndicator = UIActivityIndicatorView(style: .large)
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
     
@@ -401,7 +400,7 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
                     self?.activityIndicator.stopAnimating()
                     self?.activityIndicator.removeFromSuperview()
-                    self?.vibrationOn.vibrationStandart()
+                    VibrationManager.instance.vibrationStandart()
                     self?.dismiss(animated: true)
                 }))
                 self?.present(alert, animated: true)

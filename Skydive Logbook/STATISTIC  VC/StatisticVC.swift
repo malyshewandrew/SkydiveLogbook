@@ -10,7 +10,6 @@ final class StatisticVC: UIViewController {
     private let statisticLottie = LottieAnimationView(name: "Statistic")
     private let confettiLottie = LottieAnimationView(name: "StatisticConfetti")
     private let confettiButton = UIButton()
-    private let vibrationOn = Vibration()
     private let tableView = UITableView()
     private let dateFormatter = DateFormatter()
     private let realmManager = RealmManager()
@@ -163,7 +162,7 @@ final class StatisticVC: UIViewController {
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func confettiButtonTapped() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         confettiLottie.play()
         confettiLottie.animationSpeed = 0.7
     }
@@ -195,7 +194,7 @@ extension StatisticVC: StatisticCellDelegate {
     // MARK: GENERAL INFO VC:
 
     func tapGeneralInfoVCButton() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         
         tableView.layer.opacity = 0.0
         tabBarController?.tabBar.layer.opacity = 0.0

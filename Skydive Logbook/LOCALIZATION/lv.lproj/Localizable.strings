@@ -560,7 +560,7 @@
 "Message / adapty" = "Aktīvai interneta savienojumam ir nepieciešams, lai saņemtu datus.";
 
 "Alert / adapty status" = "Nepieciešams Premium";
-"Message / adapty status" = "Bezmaksas versijā jūs varat saglabāt tikai:\n\n50 lēcienus.\n10 piezīmes.\n1 sistēmu.\n\nLai noņemtu visus ierobežojumus, iegādājieties PREMIUM sadaļā \"Iestatījumi\".";
+"Message / adapty status" = "Bezmaksas versijā jūs varat saglabāt tikai:\n\n25 lēcienus.\n10 piezīmes.\n1 sistēmu.\n\nLai noņemtu visus ierobežojumus, iegādājieties PREMIUM sadaļā \"Iestatījumi\".";
 
 // MARK: - SYSTEM:
 

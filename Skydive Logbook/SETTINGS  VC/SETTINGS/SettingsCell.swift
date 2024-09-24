@@ -35,7 +35,6 @@ final class SettingsCell: UITableViewCell {
     private let instagramImageView = UIImageView()
     private let instagramButton = UIButton()
     private let infoLabel = UILabel()
-    private let vibrationOn = Vibration()
     weak var delegate: SettingsCellDelegate?
 
     // MARK: - LIFECYCLE:
@@ -187,7 +186,7 @@ final class SettingsCell: UITableViewCell {
         editAccountButton.setTitle(NSLocalizedString("Edit account", comment: ""), for: .normal)
         editAccountButton.layer.cornerRadius = cornerRadius15
         editAccountButton.backgroundColor = .colorCell
-        editAccountButton.titleLabel?.font = fontMediumStandard14
+        editAccountButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         editAccountButton.setTitleColor(.colorWhite, for: .normal)
         editAccountButton.setTitleColor(.systemBlue, for: .highlighted)
         editAccountButton.addTarget(self, action: #selector(editAccountButtonTapped), for: .touchUpInside)
@@ -197,7 +196,7 @@ final class SettingsCell: UITableViewCell {
         editLocationsButton.setTitle(NSLocalizedString("Edit locations", comment: ""), for: .normal)
         editLocationsButton.layer.cornerRadius = cornerRadius15
         editLocationsButton.backgroundColor = .colorCell
-        editLocationsButton.titleLabel?.font = fontMediumStandard14
+        editLocationsButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         editLocationsButton.setTitleColor(.colorWhite, for: .normal)
         editLocationsButton.setTitleColor(.systemBlue, for: .highlighted)
         editLocationsButton.addTarget(self, action: #selector(editLocationsButtonTapped), for: .touchUpInside)
@@ -207,7 +206,7 @@ final class SettingsCell: UITableViewCell {
         editAircraftsButton.setTitle(NSLocalizedString("Edit aircrafts", comment: ""), for: .normal)
         editAircraftsButton.layer.cornerRadius = cornerRadius15
         editAircraftsButton.backgroundColor = .colorCell
-        editAircraftsButton.titleLabel?.font = fontMediumStandard14
+        editAircraftsButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         editAircraftsButton.setTitleColor(.colorWhite, for: .normal)
         editAircraftsButton.setTitleColor(.systemBlue, for: .highlighted)
         editAircraftsButton.addTarget(self, action: #selector(editAircraftsButtonTapped), for: .touchUpInside)
@@ -217,7 +216,7 @@ final class SettingsCell: UITableViewCell {
         editCanopiesButton.setTitle(NSLocalizedString("Edit canopies", comment: ""), for: .normal)
         editCanopiesButton.layer.cornerRadius = cornerRadius15
         editCanopiesButton.backgroundColor = .colorCell
-        editCanopiesButton.titleLabel?.font = fontMediumStandard14
+        editCanopiesButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         editCanopiesButton.setTitleColor(.colorWhite, for: .normal)
         editCanopiesButton.setTitleColor(.systemBlue, for: .highlighted)
         editCanopiesButton.addTarget(self, action: #selector(editCanopiesButtonTapped), for: .touchUpInside)
@@ -227,7 +226,7 @@ final class SettingsCell: UITableViewCell {
         backupButton.setTitle(NSLocalizedString("Backup copy", comment: ""), for: .normal)
         backupButton.layer.cornerRadius = cornerRadius15
         backupButton.backgroundColor = .colorCell
-        backupButton.titleLabel?.font = fontMediumStandard14
+        backupButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         backupButton.setTitleColor(.colorWhite, for: .normal)
         backupButton.setTitleColor(.systemBlue, for: .highlighted)
         backupButton.addTarget(self, action: #selector(backupButtonTapped), for: .touchUpInside)
@@ -237,7 +236,7 @@ final class SettingsCell: UITableViewCell {
         printButton.setTitle(NSLocalizedString("Print / settings", comment: ""), for: .normal)
         printButton.layer.cornerRadius = cornerRadius15
         printButton.backgroundColor = .colorCell
-        printButton.titleLabel?.font = fontMediumStandard14
+        printButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         printButton.setTitleColor(.colorWhite, for: .normal)
         printButton.setTitleColor(.systemBlue, for: .highlighted)
         printButton.addTarget(self, action: #selector(printButtonTapped), for: .touchUpInside)
@@ -247,7 +246,7 @@ final class SettingsCell: UITableViewCell {
         premiumButton.setTitle(NSLocalizedString("Premium version", comment: ""), for: .normal)
         premiumButton.layer.cornerRadius = cornerRadius15
         premiumButton.backgroundColor = .colorCell
-        premiumButton.titleLabel?.font = fontMediumStandard14
+        premiumButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         premiumButton.setTitleColor(.colorWhite, for: .normal)
         premiumButton.setTitleColor(.systemBlue, for: .highlighted)
         premiumButton.addTarget(self, action: #selector(premiumButtonTapped), for: .touchUpInside)
@@ -275,7 +274,7 @@ final class SettingsCell: UITableViewCell {
         notificationsButton.setTitle(NSLocalizedString("Notifications / notifications", comment: ""), for: .normal)
         notificationsButton.layer.cornerRadius = cornerRadius15
         notificationsButton.backgroundColor = .colorCell
-        notificationsButton.titleLabel?.font = fontMediumStandard14
+        notificationsButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         notificationsButton.setTitleColor(.colorWhite, for: .normal)
         notificationsButton.setTitleColor(.systemBlue, for: .highlighted)
         notificationsButton.addTarget(self, action: #selector(notificationsButtonTapped), for: .touchUpInside)
@@ -286,7 +285,7 @@ final class SettingsCell: UITableViewCell {
         gameButton.setTitle(NSLocalizedString("Game", comment: ""), for: .normal)
         gameButton.layer.cornerRadius = cornerRadius15
         gameButton.backgroundColor = .colorCell
-        gameButton.titleLabel?.font = fontMediumStandard14
+        gameButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         gameButton.setTitleColor(.colorWhite, for: .normal)
         gameButton.setTitleColor(.systemBlue, for: .highlighted)
         gameButton.addTarget(self, action: #selector(gameButtonTapped), for: .touchUpInside)
@@ -297,7 +296,7 @@ final class SettingsCell: UITableViewCell {
         infoButton.setTitle(NSLocalizedString("Information", comment: ""), for: .normal)
         infoButton.layer.cornerRadius = cornerRadius15
         infoButton.backgroundColor = .colorCell
-        infoButton.titleLabel?.font = fontMediumStandard14
+        infoButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         infoButton.setTitleColor(.colorWhite, for: .normal)
         infoButton.setTitleColor(.systemBlue, for: .highlighted)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
@@ -318,7 +317,7 @@ final class SettingsCell: UITableViewCell {
         let currentYear = Calendar.current.component(.year, from: Date())
         infoLabel.text = "2023-\(currentYear), SkydiveBook iOS Application"
         infoLabel.textColor = .colorDarkGray
-        infoLabel.font = fontRegularStandard8
+        infoLabel.font = AppFont.regular(size: 8).uiFont
         infoLabel.textAlignment = .center
     }
 
@@ -327,77 +326,77 @@ final class SettingsCell: UITableViewCell {
     // MARK: EDIT ACCOUNT:
 
     @objc private func editAccountButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapEditAccountButton()
     }
 
     // MARK: EDIT LOCATIONS:
 
     @objc private func editLocationsButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapEditLocationsButton()
     }
 
     // MARK: EDIT AIRCRAFTS:
 
     @objc private func editAircraftsButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapEditAircraftsButton()
     }
 
     // MARK: EDIT CANOPIES:
 
     @objc private func editCanopiesButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapEditCanopiesButton()
     }
 
     // MARK: BACKUP:
 
     @objc private func backupButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapBackupButton()
     }
     
     // MARK: PRINT:
 
     @objc private func printButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapPrintButton()
     }
     
     // MARK: PREMIUM BUTTON:
 
     @objc private func premiumButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapPremiumButton()
     }
 
     // MARK: NOTIFICATIONS BUTTON:
 
     @objc private func notificationsButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapNotificationsButton()
     }
     
     // MARK: GAME BUTTON:
 
     @objc private func gameButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapGameButton()
     }
     
     // MARK: INFO BUTTON:
 
     @objc private func infoButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapInfoButton()
     }
 
     // MARK: INSTAGRAM BUTTON:
 
     @objc private func instagramButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapInstagramButton()
     }
 

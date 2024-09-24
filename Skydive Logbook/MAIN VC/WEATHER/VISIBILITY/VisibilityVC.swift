@@ -31,7 +31,6 @@ final class VisibilityVC: UIViewController {
     private let tableView = UITableView()
     private let visibilityInfoView = UIView()
     private let visibilityInfoLabel = UILabel()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -154,7 +153,7 @@ final class VisibilityVC: UIViewController {
         // MARK: VISIBILITY LABEL:
         
         visibilityInfoLabel.textColor = .white
-        visibilityInfoLabel.font = fontMediumStandard14
+        visibilityInfoLabel.font = AppFont.medium(size: 14).uiFont
         visibilityInfoLabel.numberOfLines = 0
         visibilityInfoLabel.adjustsFontSizeToFitWidth = true
         visibilityInfoLabel.textAlignment = .center
@@ -184,6 +183,6 @@ extension VisibilityVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

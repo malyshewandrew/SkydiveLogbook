@@ -23,7 +23,6 @@ final class ParametersVC: UIViewController {
     
     private let locationManager = CLLocationManager()
     private var headingManager: CLLocationManager?
-    private let vibration = Vibration()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 60)
     
     private let dateFormatter = DateFormatter()
@@ -169,7 +168,7 @@ final class ParametersVC: UIViewController {
         
         updateDate.textColor = .systemGreen
         updateDate.textAlignment = .center
-        updateDate.font = fontThinStandard10
+        updateDate.font = AppFont.thin(size: 10).uiFont
         updateDate.layer.shadowRadius = 25
         updateDate.layer.shadowColor = UIColor.colorLightBlue.cgColor
         updateDate.layer.shadowOpacity = 1
@@ -178,7 +177,7 @@ final class ParametersVC: UIViewController {
         
         altitudeLabel.textColor = .white
         altitudeLabel.textAlignment = .center
-        altitudeLabel.font = fontRegularStandard72
+        altitudeLabel.font = AppFont.regular(size: 72).uiFont
         altitudeLabel.layer.shadowRadius = 25
         altitudeLabel.layer.shadowColor = UIColor.colorLightBlue.cgColor
         altitudeLabel.layer.shadowOpacity = 1
@@ -201,7 +200,7 @@ final class ParametersVC: UIViewController {
         
         degreesLabel.textColor = .white
         degreesLabel.textAlignment = .center
-        degreesLabel.font = fontRegularStandard50
+        degreesLabel.font = AppFont.regular(size: 50).uiFont
         degreesLabel.layer.shadowRadius = 25
         degreesLabel.layer.shadowColor = UIColor.colorLightBlue.cgColor
         degreesLabel.layer.shadowOpacity = 1
@@ -220,7 +219,7 @@ final class ParametersVC: UIViewController {
         
         speedLabel.textColor = .white
         speedLabel.textAlignment = .center
-        speedLabel.font = fontRegularStandard72
+        speedLabel.font = AppFont.regular(size: 72).uiFont
         speedLabel.layer.shadowRadius = 25
         speedLabel.layer.shadowColor = UIColor.colorLightBlue.cgColor
         speedLabel.layer.shadowOpacity = 1
@@ -250,7 +249,7 @@ final class ParametersVC: UIViewController {
     // MARK: ALTITUDE BUTTON TAPPED:
     
     @objc private func altitudeButtonTapped() {
-        vibration.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         changeAltitudeButton()
         let currentDate = Date()
         dateFormatter.dateFormat = "dd.MM.yyyy / HH:mm:ss"
@@ -397,7 +396,7 @@ extension ParametersVC: CLLocationManagerDelegate {
             self?.compasImageView.transform = CGAffineTransform(rotationAngle: -headingRadians)
         }
         degreesLabel.text = String(format: " %.0f°", normalizedHeading)
-        vibration.vibrationLight()
+        VibrationManager.instance.vibrationLight()
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

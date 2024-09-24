@@ -56,7 +56,6 @@ final class EditJumpCell: UITableViewCell {
     
     private let dateFormatter = DateFormatter()
     weak var delegate: EditJumpCellDelegate?
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -273,12 +272,12 @@ final class EditJumpCell: UITableViewCell {
         dateButton.setTitle("\(NSLocalizedString("Date", comment: ""))*", for: .normal)
         dateButton.setTitleColor(.colorLightGray, for: .normal)
         dateButton.contentVerticalAlignment = textAligmentTop
-        dateButton.titleLabel?.font = fontMediumStandard12
+        dateButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         dateButton.layer.cornerRadius = cornerRadius15
         dateTextField.placeholder = NSLocalizedString("Date placeholder", comment: "")
         dateTextField.backgroundColor = .colorTabBar
         dateTextField.inputView = datePickerView
-        dateTextField.font = fontMediumStandard18
+        dateTextField.font = AppFont.medium(size: 18).uiFont
         dateTextField.textColor = .colorWhite
         dateTextField.layer.cornerRadius = cornerRadius15
         dateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -297,12 +296,12 @@ final class EditJumpCell: UITableViewCell {
         locationButton.setTitle("\(NSLocalizedString("Location", comment: ""))*", for: .normal)
         locationButton.setTitleColor(.colorLightGray, for: .normal)
         locationButton.contentVerticalAlignment = textAligmentTop
-        locationButton.titleLabel?.font = fontMediumStandard12
+        locationButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         locationButton.layer.cornerRadius = cornerRadius15
         locationTextField.placeholder = NSLocalizedString("Location placeholder", comment: "")
         locationTextField.backgroundColor = .colorTabBar
         locationTextField.inputView = locationPickerView
-        locationTextField.font = fontMediumStandard18
+        locationTextField.font = AppFont.medium(size: 18).uiFont
         locationTextField.textColor = .colorWhite
         locationTextField.layer.cornerRadius = cornerRadius15
         locationTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -317,12 +316,12 @@ final class EditJumpCell: UITableViewCell {
         aircraftButton.setTitle("\(NSLocalizedString("Aircraft", comment: ""))*", for: .normal)
         aircraftButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftButton.contentVerticalAlignment = textAligmentTop
-        aircraftButton.titleLabel?.font = fontMediumStandard12
+        aircraftButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         aircraftButton.layer.cornerRadius = cornerRadius15
         aircraftTextField.placeholder = NSLocalizedString("Aircraft placeholder", comment: "")
         aircraftTextField.backgroundColor = .colorTabBar
         aircraftTextField.inputView = aircraftPickerView
-        aircraftTextField.font = fontMediumStandard18
+        aircraftTextField.font = AppFont.medium(size: 18).uiFont
         aircraftTextField.textColor = .colorWhite
         aircraftTextField.layer.cornerRadius = cornerRadius15
         aircraftTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -337,12 +336,12 @@ final class EditJumpCell: UITableViewCell {
         canopyButton.setTitle("\(NSLocalizedString("Canopy", comment: ""))*", for: .normal)
         canopyButton.setTitleColor(.colorLightGray, for: .normal)
         canopyButton.contentVerticalAlignment = textAligmentTop
-        canopyButton.titleLabel?.font = fontMediumStandard12
+        canopyButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         canopyButton.layer.cornerRadius = cornerRadius15
         canopyTextField.placeholder = NSLocalizedString("Canopy placeholder", comment: "")
         canopyTextField.backgroundColor = .colorTabBar
         canopyTextField.inputView = canopyPickerView
-        canopyTextField.font = fontMediumStandard18
+        canopyTextField.font = AppFont.medium(size: 18).uiFont
         canopyTextField.textColor = .colorWhite
         canopyTextField.layer.cornerRadius = cornerRadius15
         canopyTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -357,12 +356,12 @@ final class EditJumpCell: UITableViewCell {
         missionButton.setTitle("\(NSLocalizedString("Mission", comment: ""))*", for: .normal)
         missionButton.setTitleColor(.colorLightGray, for: .normal)
         missionButton.contentVerticalAlignment = textAligmentTop
-        missionButton.titleLabel?.font = fontMediumStandard12
+        missionButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         missionButton.layer.cornerRadius = cornerRadius15
         missionTextField.placeholder = NSLocalizedString("Mission placeholder", comment: "")
         missionTextField.backgroundColor = .colorTabBar
         missionTextField.inputView = missionPickerView
-        missionTextField.font = fontMediumStandard18
+        missionTextField.font = AppFont.medium(size: 18).uiFont
         missionTextField.textColor = .colorWhite
         missionTextField.layer.cornerRadius = cornerRadius15
         missionTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -377,11 +376,11 @@ final class EditJumpCell: UITableViewCell {
         heightButton.setTitle("\(NSLocalizedString("Height", comment: ""))*", for: .normal)
         heightButton.setTitleColor(.colorLightGray, for: .normal)
         heightButton.contentVerticalAlignment = textAligmentTop
-        heightButton.titleLabel?.font = fontMediumStandard12
+        heightButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         heightButton.layer.cornerRadius = cornerRadius15
         heightTextField.placeholder = NSLocalizedString("Height placeholder", comment: "")
         heightTextField.backgroundColor = .colorTabBar
-        heightTextField.font = fontMediumStandard18
+        heightTextField.font = AppFont.medium(size: 18).uiFont
         heightTextField.textColor = .colorWhite
         heightTextField.layer.cornerRadius = cornerRadius15
         heightTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -397,11 +396,11 @@ final class EditJumpCell: UITableViewCell {
         timeButton.setTitle("\(NSLocalizedString("Time", comment: ""))*", for: .normal)
         timeButton.setTitleColor(.colorLightGray, for: .normal)
         timeButton.contentVerticalAlignment = textAligmentTop
-        timeButton.titleLabel?.font = fontMediumStandard12
+        timeButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         timeButton.layer.cornerRadius = cornerRadius15
         timeTextField.placeholder = NSLocalizedString("Time placeholder", comment: "")
         timeTextField.backgroundColor = .colorTabBar
-        timeTextField.font = fontMediumStandard18
+        timeTextField.font = AppFont.medium(size: 18).uiFont
         timeTextField.textColor = .colorWhite
         timeTextField.layer.cornerRadius = cornerRadius15
         timeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -417,12 +416,12 @@ final class EditJumpCell: UITableViewCell {
         cutawayButton.setTitle("\(NSLocalizedString("Cutaway", comment: ""))*", for: .normal)
         cutawayButton.setTitleColor(.colorLightGray, for: .normal)
         cutawayButton.contentVerticalAlignment = textAligmentTop
-        cutawayButton.titleLabel?.font = fontMediumStandard12
+        cutawayButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         cutawayButton.layer.cornerRadius = cornerRadius15
         cutawayTextField.placeholder = NSLocalizedString("Cutaway placeholder", comment: "")
         cutawayTextField.backgroundColor = .colorTabBar
         cutawayTextField.inputView = cutawayPickerView
-        cutawayTextField.font = fontMediumStandard18
+        cutawayTextField.font = AppFont.medium(size: 18).uiFont
         cutawayTextField.textColor = .colorWhite
         cutawayTextField.layer.cornerRadius = cornerRadius15
         cutawayTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -437,11 +436,11 @@ final class EditJumpCell: UITableViewCell {
         commentButton.setTitle("\(NSLocalizedString("Comment", comment: ""))", for: .normal)
         commentButton.setTitleColor(.colorLightGray, for: .normal)
         commentButton.contentVerticalAlignment = textAligmentTop
-        commentButton.titleLabel?.font = fontMediumStandard12
+        commentButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         commentButton.layer.cornerRadius = cornerRadius15
         commentTextField.placeholder = NSLocalizedString("Comment placeholder", comment: "")
         commentTextField.backgroundColor = .colorTabBar
-        commentTextField.font = fontBoldStandard16
+        commentTextField.font = AppFont.bold(size: 16).uiFont
         commentTextField.textColor = .colorWhite
         commentTextField.textAlignment = textAligmentCenter
         commentTextField.layer.cornerRadius = cornerRadius15
@@ -457,7 +456,7 @@ final class EditJumpCell: UITableViewCell {
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitleColor(.systemBlue, for: .highlighted)
-        saveButton.titleLabel?.font = fontMediumStandard14
+        saveButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }
     
@@ -773,6 +772,6 @@ extension EditJumpCell: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

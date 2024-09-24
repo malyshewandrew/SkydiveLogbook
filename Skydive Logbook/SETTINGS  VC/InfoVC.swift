@@ -20,7 +20,6 @@ final class InfoVC: UIViewController {
     private let feedbackButton = UIButton(type: .system)
     private let mailButton = UIButton(type: .system)
     private let versionButton = UIButton(type: .system)
-    private let vibrationOn = Vibration()
     private var buildVersion = ""
     private var appVersion = ""
     
@@ -198,7 +197,7 @@ final class InfoVC: UIViewController {
         privacyButton.setTitleColor(.systemBlue, for: .highlighted)
         privacyButton.layer.cornerRadius = cornerRadius15
         privacyButton.backgroundColor = .colorCell
-        privacyButton.titleLabel?.font = fontMediumStandard14
+        privacyButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         privacyButton.addTarget(self, action: #selector(privacyButtonTapped), for: .touchUpInside)
         
         // MARK: TERMS BUTTON:
@@ -209,7 +208,7 @@ final class InfoVC: UIViewController {
         termsButton.setTitleColor(.systemBlue, for: .highlighted)
         termsButton.layer.cornerRadius = cornerRadius15
         termsButton.backgroundColor = .colorCell
-        termsButton.titleLabel?.font = fontMediumStandard14
+        termsButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         termsButton.addTarget(self, action: #selector(termsButtonTapped), for: .touchUpInside)
         
         // MARK: FAQ BUTTON:
@@ -220,7 +219,7 @@ final class InfoVC: UIViewController {
         faqButton.setTitleColor(.systemBlue, for: .highlighted)
         faqButton.layer.cornerRadius = cornerRadius15
         faqButton.backgroundColor = .colorCell
-        faqButton.titleLabel?.font = fontMediumStandard14
+        faqButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         faqButton.addTarget(self, action: #selector(faqButtonTapped), for: .touchUpInside)
         
         // MARK: LANGUAGES BUTTON (ALERT):
@@ -230,7 +229,7 @@ final class InfoVC: UIViewController {
         languagesButton.setTitleColor(.systemBlue, for: .highlighted)
         languagesButton.layer.cornerRadius = cornerRadius15
         languagesButton.backgroundColor = .colorCell
-        languagesButton.titleLabel?.font = fontMediumStandard14
+        languagesButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         languagesButton.addTarget(self, action: #selector(languagesButtonTapped), for: .touchUpInside)
         
         // MARK: SHARE:
@@ -240,7 +239,7 @@ final class InfoVC: UIViewController {
         shareButton.setTitleColor(.systemBlue, for: .highlighted)
         shareButton.layer.cornerRadius = cornerRadius15
         shareButton.backgroundColor = .colorCell
-        shareButton.titleLabel?.font = fontMediumStandard14
+        shareButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         shareButton.titleLabel?.adjustsFontSizeToFitWidth = true
         shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
         
@@ -251,7 +250,7 @@ final class InfoVC: UIViewController {
         feedbackButton.setTitleColor(.systemBlue, for: .highlighted)
         feedbackButton.layer.cornerRadius = cornerRadius15
         feedbackButton.backgroundColor = .colorCell
-        feedbackButton.titleLabel?.font = fontMediumStandard14
+        feedbackButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         feedbackButton.titleLabel?.adjustsFontSizeToFitWidth = true
         feedbackButton.addTarget(self, action: #selector(feedbackButtonTapped), for: .touchUpInside)
         
@@ -262,7 +261,7 @@ final class InfoVC: UIViewController {
         mailButton.setTitleColor(.systemBlue, for: .highlighted)
         mailButton.layer.cornerRadius = cornerRadius15
         mailButton.backgroundColor = .colorCell
-        mailButton.titleLabel?.font = fontMediumStandard14
+        mailButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         mailButton.titleLabel?.adjustsFontSizeToFitWidth = true
         mailButton.addTarget(self, action: #selector(mailButtonTapped), for: .touchUpInside)
         
@@ -273,7 +272,7 @@ final class InfoVC: UIViewController {
         versionButton.setTitleColor(.systemBlue, for: .highlighted)
         versionButton.layer.cornerRadius = cornerRadius15
         versionButton.backgroundColor = .colorCell
-        versionButton.titleLabel?.font = fontMediumStandard14
+        versionButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         versionButton.addTarget(self, action: #selector(versionButtonTapped), for: .touchUpInside)
     }
     
@@ -282,7 +281,7 @@ final class InfoVC: UIViewController {
     // MARK: FUNC FOR LANGUAGES BUTTON (ALERT):
 
     @objc private func languagesButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("App language / info", comment: ""), message: NSLocalizedString("App language text / info", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
@@ -291,7 +290,7 @@ final class InfoVC: UIViewController {
     // MARK: FUNC FOR VERSION BUTTON (ALERT):
 
     @objc private func versionButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if let infoDictionary = Bundle.main.infoDictionary {
             if let buildVersion = infoDictionary["CFBundleVersion"] as? String {
                 self.buildVersion = buildVersion
@@ -339,7 +338,7 @@ final class InfoVC: UIViewController {
     // MARK: OPEN SAFARI PRIVACY:
     
     @objc private func privacyButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let url = URL(string: "https://skydivebook.tilda.ws/privacysecurity") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
@@ -349,7 +348,7 @@ final class InfoVC: UIViewController {
     // MARK: OPEN SAFARI TERMS:
     
     @objc private func termsButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let url = URL(string: "https://skydivebook.tilda.ws/termsofuse") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
@@ -359,7 +358,7 @@ final class InfoVC: UIViewController {
     // MARK: OPEN SAFARI FAQ:
     
     @objc private func faqButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let url = URL(string: "https://skydivebook.tilda.ws/faq") else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
@@ -369,7 +368,7 @@ final class InfoVC: UIViewController {
     // MARK: FUNC FOR SHARE BUTTON:
     
     @objc private func shareButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let appURL = URL(string: "https://apps.apple.com/app/skydivebook/id6478469415") else { return }
         UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
     }
@@ -377,7 +376,7 @@ final class InfoVC: UIViewController {
     // MARK: FUNC FOR FEEDBACK BUTTON:
     
     @objc private func feedbackButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let feedbackURL = URL(string: "itms-apps://itunes.apple.com/app/id6478469415?action=write-review") else { return }
         UIApplication.shared.open(feedbackURL, options: [:], completionHandler: nil)
     }
@@ -385,7 +384,7 @@ final class InfoVC: UIViewController {
     // MARK: FUNC FOR MAIL BUTTON:
     
     @objc private func mailButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let email = "malyshewdeveloper@protonmail.com"
         if let url = URL(string: "mailto:\(email)") {
             UIApplication.shared.open(url)

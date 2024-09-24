@@ -9,7 +9,6 @@ final class NewSystemVC: UIViewController {
     private let newSystemLottie = LottieAnimationView(name: "NewParachute")
     private let tableView = UITableView()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFECYCLE:
 
@@ -122,7 +121,7 @@ final class NewSystemVC: UIViewController {
     // MARK: - MANUAL ALERT:
 
     @objc private func manualButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Add system alert", comment: "") + ":", message: """
         \n\(NSLocalizedString("Container alert", comment: "")):\n
         1. \(NSLocalizedString("Name and model container alert", comment: ""))

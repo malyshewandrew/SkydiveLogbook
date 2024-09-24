@@ -560,7 +560,7 @@
 "Message / adapty" = "Aktyvus interneto ryšys reikalingas norint gauti duomenis.";
 
 "Alert / adapty status" = "Reikalinga premija";
-"Message / adapty status" = "Nemokamoje versijoje galite įrašyti tik:\n\n50 šuolių.\n10 pastabų.\n1 sistemą.\n\nNorėdami pašalinti visas apribojimas, įsigykite PREMIUM skiltyje \"Nustatymai\".";
+"Message / adapty status" = "Nemokamoje versijoje galite įrašyti tik:\n\n25 šuolių.\n10 pastabų.\n1 sistemą.\n\nNorėdami pašalinti visas apribojimas, įsigykite PREMIUM skiltyje \"Nustatymai\".";
 
 // MARK: - SYSTEM:
 

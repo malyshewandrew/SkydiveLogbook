@@ -74,12 +74,12 @@ final class PrecipitationCell: UITableViewCell {
         // MARK: NAME:
         
         nameLabel.textColor = .white
-        nameLabel.font = fontMediumStandard14
+        nameLabel.font = AppFont.medium(size: 14).uiFont
         
         // MARK: VALUE
         
         valueLabel.textColor = .white
-        valueLabel.font = fontMediumStandard14
+        valueLabel.font = AppFont.medium(size: 14).uiFont
     }
     
     // MARK: - HELPERS:

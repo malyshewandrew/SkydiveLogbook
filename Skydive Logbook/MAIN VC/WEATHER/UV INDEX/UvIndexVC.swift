@@ -31,7 +31,6 @@ final class UvIndexVC: UIViewController {
     private let tableView = UITableView()
     private let uvIndexInfoView = UIView()
     private let uvIndexInfoLabel = UILabel()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -153,7 +152,7 @@ final class UvIndexVC: UIViewController {
         // MARK: UVINDEX LABEL:
         
         uvIndexInfoLabel.textColor = .white
-        uvIndexInfoLabel.font = fontMediumStandard14
+        uvIndexInfoLabel.font = AppFont.medium(size: 14).uiFont
         uvIndexInfoLabel.numberOfLines = 0
         uvIndexInfoLabel.adjustsFontSizeToFitWidth = true
         uvIndexInfoLabel.textAlignment = .center
@@ -183,6 +182,6 @@ extension UvIndexVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

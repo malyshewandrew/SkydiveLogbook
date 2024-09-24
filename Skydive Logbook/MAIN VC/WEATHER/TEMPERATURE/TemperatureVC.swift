@@ -25,7 +25,6 @@ final class TemperatureVC: UIViewController {
     var minTemperature: String = ""
     var averageTemperature: String = ""
     var feelTemperature: String = ""
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -147,7 +146,7 @@ final class TemperatureVC: UIViewController {
         // MARK: TEMPERATURE LABEL:
         
         temperatureInfoLabel.textColor = .white
-        temperatureInfoLabel.font = fontMediumStandard14
+        temperatureInfoLabel.font = AppFont.medium(size: 14).uiFont
         temperatureInfoLabel.numberOfLines = 0
         temperatureInfoLabel.adjustsFontSizeToFitWidth = true
         temperatureInfoLabel.textAlignment = .center
@@ -191,6 +190,6 @@ extension TemperatureVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

@@ -177,34 +177,34 @@ final class SkydiversCell: UITableViewCell {
 
         nicknameLabel.text = NSLocalizedString("Nickname / skydivers", comment: "") + ":"
         nicknameLabel.textAlignment = .center
-        nicknameLabel.font = fontMediumStandard12
+        nicknameLabel.font = AppFont.medium(size: 12).uiFont
         nicknameLabel.textColor = .colorLightGray
 
         // MARK: NICKNAME VALUE LABEL:
 
         nicknameValueLabel.textColor = .colorWhite
         nicknameValueLabel.textAlignment = .left
-        nicknameValueLabel.font = fontBoldStandard16
+        nicknameValueLabel.font = AppFont.bold(size: 16).uiFont
         nicknameValueLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: COUNTRY LABEL:
 
         countryLabel.text = NSLocalizedString("Country / skydivers", comment: "") + ":"
         countryLabel.textAlignment = .center
-        countryLabel.font = fontMediumStandard12
+        countryLabel.font = AppFont.medium(size: 12).uiFont
         countryLabel.textColor = .colorLightGray
 
         // MARK: COUNTRY VALUE LABEL:
 
         countryValueLabel.textColor = .colorWhite
         countryValueLabel.textAlignment = .right
-        countryValueLabel.font = fontBoldStandard16
+        countryValueLabel.font = AppFont.bold(size: 16).uiFont
         countryValueLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: COUNTRY FLAG LABEL:
 
         countryFlagLabel.textAlignment = .left
-        countryFlagLabel.font = fontBoldStandard16
+        countryFlagLabel.font = AppFont.bold(size: 16).uiFont
         countryFlagLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: COLLECTION VIEW:
@@ -216,20 +216,20 @@ final class SkydiversCell: UITableViewCell {
 
         countJumpsValueLabel.textColor = .colorWhite
         countJumpsValueLabel.textAlignment = .left
-        countJumpsValueLabel.font = fontRegularStandard12
+        countJumpsValueLabel.font = AppFont.regular(size: 12).uiFont
         countJumpsValueLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: PROFESSION LABEL:
 
         professionLabel.textColor = .colorWhite
         professionLabel.textAlignment = .left
-        professionLabel.font = fontRegularStandard12
+        professionLabel.font = AppFont.regular(size: 12).uiFont
         professionLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: LINK BUTTON:
 
         linkButton.setTitle(NSLocalizedString("Profile / skydivers", comment: ""), for: .normal)
-        linkButton.titleLabel?.font = fontMediumStandard14
+        linkButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         linkButton.setTitleColor(.colorWhite, for: .normal)
         linkButton.setTitleColor(.colorBackground, for: .highlighted)
         linkButton.backgroundColor = .colorGreen

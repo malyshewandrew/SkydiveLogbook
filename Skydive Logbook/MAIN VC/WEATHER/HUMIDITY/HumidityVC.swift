@@ -31,7 +31,6 @@ final class HumidityVC: UIViewController {
     private let tableView = UITableView()
     private let humidityInfoView = UIView()
     private let humidityInfoLabel = UILabel()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -153,7 +152,7 @@ final class HumidityVC: UIViewController {
         // MARK: HUMIDITY INFO LABEL:
         
         humidityInfoLabel.textColor = .white
-        humidityInfoLabel.font = fontMediumStandard14
+        humidityInfoLabel.font = AppFont.medium(size: 14).uiFont
         humidityInfoLabel.numberOfLines = 0
         humidityInfoLabel.adjustsFontSizeToFitWidth = true
         humidityInfoLabel.textAlignment = .center
@@ -183,6 +182,6 @@ extension HumidityVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

@@ -560,7 +560,7 @@
 "Message / adapty" = "Uma conexão ativa com a internet é necessária para receber dados.";
 
 "Alert / adapty status" = "Premium necessário";
-"Message / adapty status" = "Na versão gratuita, você só pode salvar:\n\n50 saltos.\n10 notas.\n1 sistema.\n\nPara remover todas as restrições, compre o PREMIUM na seção \"Configurações\".";
+"Message / adapty status" = "Na versão gratuita, você só pode salvar:\n\n25 saltos.\n10 notas.\n1 sistema.\n\nPara remover todas as restrições, compre o PREMIUM na seção \"Configurações\".";
 
 // MARK: - SYSTEM:
 

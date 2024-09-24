@@ -15,7 +15,7 @@ final class MainVC: UIViewController {
     private let loadingLottie = LottieAnimationView(name: "Loading")
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
-    private let arrayVideos: [String] = ["VideoOne", "VideoTwo", "VideoThree", "VideoFour"]
+    private let arrayVideos: [String] = ["VideoOne", "VideoTwo", "VideoThree"]
     
     private let helloLottie = LottieAnimationView(name: "Hello")
     private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
@@ -203,7 +203,7 @@ final class MainVC: UIViewController {
         loadingInfoLabel.numberOfLines = 0
         loadingInfoLabel.text = "Skydive Book iOS Application \n 2023-\(currentYear)"
         loadingInfoLabel.textColor = .colorWhite
-        loadingInfoLabel.font = fontRegularStandard8
+        loadingInfoLabel.font = AppFont.regular(size: 8).uiFont
         loadingInfoLabel.textAlignment = .center
                 
         // MARK: LOADNING EFFECT:
@@ -402,7 +402,7 @@ final class MainVC: UIViewController {
         firstMessageLabel.trailingAnchor.constraint(equalTo: firstMessageView.trailingAnchor, constant: -10).isActive = true
 
         firstMessageLabel.textColor = .colorWhite
-        firstMessageLabel.font = fontRegularStandard12
+        firstMessageLabel.font = AppFont.regular(size: 12).uiFont
         firstMessageLabel.numberOfLines = 0
         firstMessageLabel.textAlignment = .center
         firstMessageLabel.adjustsFontSizeToFitWidth = true
@@ -523,7 +523,7 @@ final class MainVC: UIViewController {
         messageLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         messageLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         messageLabel.text = NSLocalizedString("Info text start alert", comment: "")
-        messageLabel.font = fontRegularStandard8
+        messageLabel.font = AppFont.regular(size: 8).uiFont
         messageLabel.textAlignment = .center
         messageLabel.textColor = .colorStartAlert
         messageLabel.numberOfLines = 0

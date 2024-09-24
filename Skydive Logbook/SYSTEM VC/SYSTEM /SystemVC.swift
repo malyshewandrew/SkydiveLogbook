@@ -13,7 +13,6 @@ final class SystemVC: UIViewController {
     private let startConfettiLottie = LottieAnimationView(name: "SystemConfetti")
     private let confettiButton = UIButton()
     private let startConfettiButton = UIButton()
-    private let vibrationOn = Vibration()
     private let tableView = UITableView()
     private var emptySystemButton = UIButton()
     private let newSystemButton = UIButton()
@@ -180,7 +179,7 @@ final class SystemVC: UIViewController {
         emptySystemButton.setTitle(NSLocalizedString("System empty message / system", comment: ""), for: .normal)
         emptySystemButton.setTitleColor(.colorWhite, for: .normal)
         emptySystemButton.setTitleColor(.systemBlue, for: .highlighted)
-        emptySystemButton.titleLabel?.font = fontMediumStandard12
+        emptySystemButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         emptySystemButton.titleLabel?.numberOfLines = 0
         emptySystemButton.titleLabel?.textAlignment = .center
         emptySystemButton.layer.cornerRadius = cornerRadius15
@@ -269,12 +268,12 @@ final class SystemVC: UIViewController {
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func playConfetti() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         confettiLottie.play()
     }
 
     @objc private func startPlayConfetti() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         startConfettiLottie.play()
     }
 
@@ -292,7 +291,7 @@ final class SystemVC: UIViewController {
     // MARK: TRANSITION ON NEW SYSTEM VC:
 
     @objc private func newSystemButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let navigationController = navigationController else { return }
         let newSystemVC = NewSystemVC()
         navigationController.pushViewController(newSystemVC, animated: true)
@@ -333,11 +332,11 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: DELETE CELL:
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let deleteSystem = arraySystemsRealm[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete system?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
@@ -347,7 +346,7 @@ extension SystemVC: UITableViewDelegate, UITableViewDataSource {
                 self.loadSystem()
                 self.startSystems()
                 tableView.reloadData()
-                self.vibrationOn.vibrationSucces()
+                VibrationManager.instance.vibrationSucces()
                 self.alertKitSuccess()
             }))
             present(alertDelete, animated: true)

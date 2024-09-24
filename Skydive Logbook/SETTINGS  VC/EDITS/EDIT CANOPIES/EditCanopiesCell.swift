@@ -65,7 +65,7 @@ final class EditCanopiesCell: UITableViewCell {
 
         canopyLabel.textColor = .colorWhite
         canopyLabel.numberOfLines = 1
-        canopyLabel.font = fontBoldStandard16
+        canopyLabel.font = AppFont.bold(size: 16).uiFont
         canopyLabel.textAlignment = .left
     }
 

@@ -286,7 +286,7 @@ final class JumpCell: UITableViewCell {
         }
 
         dateLabel.backgroundColor = .colorTabBar
-        dateLabel.font = fontMediumStandard12
+        dateLabel.font = AppFont.medium(size: 12).uiFont
         dateLabel.textColor = .colorWhite
         dateLabel.layer.cornerRadius = 20
         dateLabel.textAlignment = textAligmentCenter
@@ -302,7 +302,7 @@ final class JumpCell: UITableViewCell {
         locationButton.backgroundColor = .colorCell
         locationButton.layer.cornerRadius = cornerRadius15
         locationButton.setTitle(NSLocalizedString("Location", comment: "") + ":", for: .normal)
-        locationButton.titleLabel?.font = fontMediumStandard12
+        locationButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         locationButton.setTitleColor(.colorLightGray, for: .normal)
         locationButton.contentVerticalAlignment = textAligmentTop
         locationButton.addAction(UIAction(handler: { _ in
@@ -310,7 +310,7 @@ final class JumpCell: UITableViewCell {
         }), for: .touchUpInside)
 
         locationLabel.backgroundColor = .colorTabBar
-        locationLabel.font = fontMediumStandard18
+        locationLabel.font = AppFont.medium(size: 18).uiFont
         locationLabel.textColor = .colorWhite
         locationLabel.textAlignment = textAligmentCenter
         locationLabel.layer.masksToBounds = true
@@ -323,7 +323,7 @@ final class JumpCell: UITableViewCell {
         aircraftButton.backgroundColor = .colorCell
         aircraftButton.layer.cornerRadius = cornerRadius15
         aircraftButton.setTitle(NSLocalizedString("Aircraft", comment: "") + ":", for: .normal)
-        aircraftButton.titleLabel?.font = fontMediumStandard12
+        aircraftButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         aircraftButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftButton.contentVerticalAlignment = textAligmentTop
         aircraftButton.addAction(UIAction(handler: { _ in
@@ -331,7 +331,7 @@ final class JumpCell: UITableViewCell {
         }), for: .touchUpInside)
 
         aircraftLabel.backgroundColor = .colorTabBar
-        aircraftLabel.font = fontMediumStandard18
+        aircraftLabel.font = AppFont.medium(size: 18).uiFont
         aircraftLabel.textColor = .colorWhite
         aircraftLabel.textAlignment = textAligmentCenter
         aircraftLabel.layer.masksToBounds = true
@@ -344,7 +344,7 @@ final class JumpCell: UITableViewCell {
         canopyButton.backgroundColor = .colorCell
         canopyButton.layer.cornerRadius = cornerRadius15
         canopyButton.setTitle(NSLocalizedString("Canopy", comment: "") + ":", for: .normal)
-        canopyButton.titleLabel?.font = fontMediumStandard12
+        canopyButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         canopyButton.setTitleColor(.colorLightGray, for: .normal)
         canopyButton.contentVerticalAlignment = textAligmentTop
         canopyButton.addAction(UIAction(handler: { _ in
@@ -352,7 +352,7 @@ final class JumpCell: UITableViewCell {
         }), for: .touchUpInside)
 
         canopyLabel.backgroundColor = .colorTabBar
-        canopyLabel.font = fontMediumStandard18
+        canopyLabel.font = AppFont.medium(size: 18).uiFont
         canopyLabel.textColor = .colorWhite
         canopyLabel.textAlignment = textAligmentCenter
         canopyLabel.layer.masksToBounds = true
@@ -365,7 +365,7 @@ final class JumpCell: UITableViewCell {
         missionButton.backgroundColor = .colorCell
         missionButton.layer.cornerRadius = cornerRadius15
         missionButton.setTitle(NSLocalizedString("Mission", comment: "") + ":", for: .normal)
-        missionButton.titleLabel?.font = fontMediumStandard12
+        missionButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         missionButton.setTitleColor(.colorLightGray, for: .normal)
         missionButton.contentVerticalAlignment = textAligmentTop
         missionButton.addAction(UIAction(handler: { _ in
@@ -373,7 +373,7 @@ final class JumpCell: UITableViewCell {
         }), for: .touchUpInside)
 
         missionLabel.backgroundColor = .colorTabBar
-        missionLabel.font = fontMediumStandard18
+        missionLabel.font = AppFont.medium(size: 18).uiFont
         missionLabel.textColor = .colorWhite
         missionLabel.textAlignment = textAligmentCenter
         missionLabel.layer.masksToBounds = true
@@ -386,7 +386,7 @@ final class JumpCell: UITableViewCell {
         heightButton.backgroundColor = .colorCell
         heightButton.layer.cornerRadius = cornerRadius15
         heightButton.setTitle(NSLocalizedString("Height", comment: "") + ":", for: .normal)
-        heightButton.titleLabel?.font = fontMediumStandard12
+        heightButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         heightButton.setTitleColor(.colorLightGray, for: .normal)
         heightButton.contentVerticalAlignment = textAligmentTop
         heightButton.addAction(UIAction(handler: { _ in
@@ -394,7 +394,7 @@ final class JumpCell: UITableViewCell {
         }), for: .touchUpInside)
 
         heightLabel.backgroundColor = .colorTabBar
-        heightLabel.font = fontMediumStandard18
+        heightLabel.font = AppFont.medium(size: 18).uiFont
         heightLabel.textColor = .colorWhite
         heightLabel.textAlignment = textAligmentCenter
         heightLabel.layer.masksToBounds = true
@@ -407,7 +407,7 @@ final class JumpCell: UITableViewCell {
         timeButton.backgroundColor = .colorCell
         timeButton.layer.cornerRadius = cornerRadius15
         timeButton.setTitle(NSLocalizedString("Time", comment: "") + ":", for: .normal)
-        timeButton.titleLabel?.font = fontMediumStandard12
+        timeButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         timeButton.setTitleColor(.colorLightGray, for: .normal)
         timeButton.contentVerticalAlignment = textAligmentTop
         timeButton.addAction(UIAction(handler: { _ in
@@ -415,7 +415,7 @@ final class JumpCell: UITableViewCell {
         }), for: .touchUpInside)
 
         timeLabel.backgroundColor = .colorTabBar
-        timeLabel.font = fontMediumStandard18
+        timeLabel.font = AppFont.medium(size: 18).uiFont
         timeLabel.textColor = .colorWhite
         timeLabel.textAlignment = textAligmentCenter
         timeLabel.layer.masksToBounds = true
@@ -428,7 +428,7 @@ final class JumpCell: UITableViewCell {
         commentButton.backgroundColor = .colorCell
         commentButton.layer.cornerRadius = cornerRadius15
         commentButton.setTitle(NSLocalizedString("Comment", comment: "") + ":", for: .normal)
-        commentButton.titleLabel?.font = fontMediumStandard12
+        commentButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         commentButton.setTitleColor(.colorLightGray, for: .normal)
         commentButton.contentVerticalAlignment = textAligmentTop
         commentButton.addAction(UIAction(handler: { _ in
@@ -436,7 +436,7 @@ final class JumpCell: UITableViewCell {
         }), for: .touchUpInside)
 
         commentLabel.backgroundColor = .colorTabBar
-        commentLabel.font = fontMediumStandard18
+        commentLabel.font = AppFont.medium(size: 18).uiFont
         commentLabel.textColor = .colorWhite
         commentLabel.textAlignment = textAligmentCenter
         commentLabel.layer.masksToBounds = true

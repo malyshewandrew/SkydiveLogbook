@@ -9,7 +9,6 @@ final class PaywallVC: UIViewController {
     // MARK: - PROPERTIES:
 
     private let activityIndicator = UIActivityIndicatorView(style: .large)
-    private let vibrationOn = Vibration()
 
     // MARK: - LIFYCYCLE:
 
@@ -148,7 +147,7 @@ extension PaywallVC: AdaptyPaywallControllerDelegate {
         case let .openURL(url: url):
             dismiss(animated: true) { [weak self] in
                 guard let self = self else { return }
-                self.vibrationOn.vibrationStandart()
+                VibrationManager.instance.vibrationStandart()
                 let safariViewController = SFSafariViewController(url: url)
                 safariViewController.delegate = self
                 self.present(safariViewController, animated: true)
@@ -159,14 +158,14 @@ extension PaywallVC: AdaptyPaywallControllerDelegate {
     // MARK: - Вызывается при выборе продукта в контроллере оплаты:
 
     func paywallController(_ controller: AdaptyPaywallController, didSelectProduct product: AdaptyPaywallProduct) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         print("Selected product: \(product)")
     }
 
     // MARK: - Вызывается при начале процесса покупки определенного продукта:
 
     func paywallController(_ controller: AdaptyPaywallController, didStartPurchase product: AdaptyPaywallProduct) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)
@@ -206,7 +205,7 @@ extension PaywallVC: AdaptyPaywallControllerDelegate {
     // MARK: - Вызывается при начале восстановления ранее совершенных покупок:
 
     func paywallControllerDidStartRestore(_ controller: AdaptyPaywallController) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)

@@ -36,7 +36,6 @@ final class WindVC: UIViewController {
     private let windLogoLottie = LottieAnimationView(name: "WeatherWind")
     private let windListView = UIView()
     private let tableView = UITableView()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -148,6 +147,6 @@ extension WindVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

@@ -16,7 +16,6 @@ final class BackupVC: UIViewController {
     private let countsView = UIView()
     private let countsLabel = UILabel()
     private let realmManager = RealmManager()
-    private let vibrationOn = Vibration()
     private let activityIndicator = UIActivityIndicatorView(style: .large)
 
     // MARK: - LIFECYCLE:
@@ -150,7 +149,7 @@ final class BackupVC: UIViewController {
         backupButton.setTitleColor(.colorBackground, for: .highlighted)
         backupButton.backgroundColor = .colorBlue
         backupButton.layer.cornerRadius = cornerRadius15
-        backupButton.titleLabel?.font = fontMediumStandard14
+        backupButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         backupButton.titleLabel?.numberOfLines = 0
         backupButton.titleLabel?.textAlignment = .center
         backupButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -163,7 +162,7 @@ final class BackupVC: UIViewController {
         restoreButton.setTitleColor(.systemBlue, for: .highlighted)
         restoreButton.backgroundColor = .colorTabBar
         restoreButton.layer.cornerRadius = cornerRadius15
-        restoreButton.titleLabel?.font = fontMediumStandard14
+        restoreButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         restoreButton.titleLabel?.numberOfLines = 0
         restoreButton.titleLabel?.textAlignment = .center
         restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -245,7 +244,7 @@ final class BackupVC: UIViewController {
     // MARK: - BACKUP AND RESTORE METHODS:
 
     @objc private func createBackup() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         do {
             self.activityIndicator.center = view.center
             self.activityIndicator.startAnimating()
@@ -289,7 +288,7 @@ final class BackupVC: UIViewController {
     }
 
     @objc private func restoreBackup() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         self.activityIndicator.center = view.center
         self.activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)

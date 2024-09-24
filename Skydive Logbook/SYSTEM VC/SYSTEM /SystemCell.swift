@@ -51,7 +51,6 @@ final class SystemCell: UITableViewCell {
     
     var indexPath: IndexPath?
     var tapEditButton: (() -> ())?
-    private let vibrationOn = Vibration()
     weak var delegate: SystemCellDelegate?
     
     // MARK: - PROPERTIES FOR ANIMATIONS CONTENT VIEW:
@@ -404,7 +403,7 @@ final class SystemCell: UITableViewCell {
         // MARK: SYSTEM NAME:
         
         systemNameLabel.textColor = .colorWhite
-        systemNameLabel.font = fontMediumStandard18
+        systemNameLabel.font = AppFont.medium(size: 18).uiFont
         systemNameLabel.textAlignment = .center
         systemNameLabel.adjustsFontSizeToFitWidth = true
         
@@ -412,14 +411,14 @@ final class SystemCell: UITableViewCell {
         
         containerLabel.text = "\(NSLocalizedString("Container system", comment: "")): ".uppercased()
         containerLabel.textColor = .colorLightGray
-        containerLabel.font = fontBoldStandard10
+        containerLabel.font = AppFont.bold(size: 10).uiFont
         containerLabel.textAlignment = .left
         containerLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: CONTAINER NAME:
 
         containerNameLabel.textColor = .colorWhite
-        containerNameLabel.font = fontMediumStandard18
+        containerNameLabel.font = AppFont.medium(size: 18).uiFont
         containerNameLabel.textAlignment = .left
         containerNameLabel.numberOfLines = 0
         containerNameLabel.adjustsFontSizeToFitWidth = true
@@ -427,41 +426,41 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER SERIAL NUMBER:
 
         containerSerialNumberLabel.textColor = .colorWhite
-        containerSerialNumberLabel.font = fontRegularStandard12
+        containerSerialNumberLabel.font = AppFont.regular(size: 12).uiFont
         containerSerialNumberLabel.textAlignment = .left
         containerSerialNumberLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: CONTAINER DOM:
 
         containerDomLabel.textColor = .colorWhite
-        containerDomLabel.font = fontRegularStandard12
+        containerDomLabel.font = AppFont.regular(size: 12).uiFont
         containerDomLabel.textAlignment = .left
         containerDomLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: CONTAINER SERVICE LIFE YEARS:
         
         containerServiceLifeYearsLabel.textColor = .colorWhite
-        containerServiceLifeYearsLabel.font = fontRegularStandard12
+        containerServiceLifeYearsLabel.font = AppFont.regular(size: 12).uiFont
         containerServiceLifeYearsLabel.textAlignment = .left
         
         // MARK: CONTAINER EXPIRATION DATE:
         
         containerExpirationDateLabel.textColor = .colorWhite
-        containerExpirationDateLabel.font = fontRegularStandard12
+        containerExpirationDateLabel.font = AppFont.regular(size: 12).uiFont
         containerExpirationDateLabel.textAlignment = .left
         
         // MARK: AAD LABEL:
         
         aadLabel.text = "\(NSLocalizedString("AAD system", comment: "")): ".uppercased()
         aadLabel.textColor = .colorLightGray
-        aadLabel.font = fontBoldStandard10
+        aadLabel.font = AppFont.bold(size: 10).uiFont
         aadLabel.textAlignment = .right
         aadLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: AAD NAME:
 
         aadNameLabel.textColor = .colorWhite
-        aadNameLabel.font = fontMediumStandard18
+        aadNameLabel.font = AppFont.medium(size: 18).uiFont
         aadNameLabel.textAlignment = .right
         aadNameLabel.numberOfLines = 0
         aadNameLabel.adjustsFontSizeToFitWidth = true
@@ -469,28 +468,28 @@ final class SystemCell: UITableViewCell {
         // MARK: AAD SERIAL NUMBER:
         
         aadSerialNumberLabel.textColor = .colorWhite
-        aadSerialNumberLabel.font = fontRegularStandard12
+        aadSerialNumberLabel.font = AppFont.regular(size: 12).uiFont
         aadSerialNumberLabel.textAlignment = .right
         aadSerialNumberLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: AAD DOM:
 
         aadDomLabel.textColor = .colorWhite
-        aadDomLabel.font = fontRegularStandard12
+        aadDomLabel.font = AppFont.regular(size: 12).uiFont
         aadDomLabel.textAlignment = .right
         aadDomLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: AAD EXPIRATION DATE:
         
         aadExpirationDateLabel.textColor = .colorWhite
-        aadExpirationDateLabel.font = fontRegularStandard12
+        aadExpirationDateLabel.font = AppFont.regular(size: 12).uiFont
         aadExpirationDateLabel.textAlignment = .right
         aadExpirationDateLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: AAD SERVICE LIFE YEARS:
         
         aadServiceLifeYearsLabel.textColor = .colorWhite
-        aadServiceLifeYearsLabel.font = fontRegularStandard12
+        aadServiceLifeYearsLabel.font = AppFont.regular(size: 12).uiFont
         aadServiceLifeYearsLabel.textAlignment = .right
         aadServiceLifeYearsLabel.adjustsFontSizeToFitWidth = true
         
@@ -498,14 +497,14 @@ final class SystemCell: UITableViewCell {
         
         mainCanopyLabel.text = "\(NSLocalizedString("Main canopy system", comment: "")): ".uppercased()
         mainCanopyLabel.textColor = .colorLightGray
-        mainCanopyLabel.font = fontBoldStandard10
+        mainCanopyLabel.font = AppFont.bold(size: 10).uiFont
         mainCanopyLabel.textAlignment = .left
         mainCanopyLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAIN CANOPY NAME:
 
         mainCanopyNameLabel.textColor = .colorWhite
-        mainCanopyNameLabel.font = fontMediumStandard18
+        mainCanopyNameLabel.font = AppFont.medium(size: 18).uiFont
         mainCanopyNameLabel.textAlignment = .left
         mainCanopyNameLabel.numberOfLines = 0
         mainCanopyNameLabel.adjustsFontSizeToFitWidth = true
@@ -513,49 +512,49 @@ final class SystemCell: UITableViewCell {
         // MARK: MAIN CANOPY SERIAL NUMBER:
         
         mainCanopySerialNumberLabel.textColor = .colorWhite
-        mainCanopySerialNumberLabel.font = fontRegularStandard12
+        mainCanopySerialNumberLabel.font = AppFont.regular(size: 12).uiFont
         mainCanopySerialNumberLabel.textAlignment = .left
         mainCanopySerialNumberLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAIN CANOPY DOM:
 
         mainCanopyDomLabel.textColor = .colorWhite
-        mainCanopyDomLabel.font = fontRegularStandard12
+        mainCanopyDomLabel.font = AppFont.regular(size: 12).uiFont
         mainCanopyDomLabel.textAlignment = .left
         mainCanopyDomLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAIN CANOPY EXPIRATION DATE:
         
         mainCanopyExpirationDateLabel.textColor = .colorWhite
-        mainCanopyExpirationDateLabel.font = fontRegularStandard12
+        mainCanopyExpirationDateLabel.font = AppFont.regular(size: 12).uiFont
         mainCanopyExpirationDateLabel.textAlignment = .left
         mainCanopyExpirationDateLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAIN CANOPY SERVICE LIFE YEARS:
         
         mainCanopyServiceLifeYearsLabel.textColor = .colorWhite
-        mainCanopyServiceLifeYearsLabel.font = fontRegularStandard12
+        mainCanopyServiceLifeYearsLabel.font = AppFont.regular(size: 12).uiFont
         mainCanopyServiceLifeYearsLabel.textAlignment = .left
         mainCanopyServiceLifeYearsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAIN CANOPY SERVICE LIFE JUMPS:
         
         mainCanopyServiceLifeJumpsLabel.textColor = .colorWhite
-        mainCanopyServiceLifeJumpsLabel.font = fontRegularStandard12
+        mainCanopyServiceLifeJumpsLabel.font = AppFont.regular(size: 12).uiFont
         mainCanopyServiceLifeJumpsLabel.textAlignment = .left
         mainCanopyServiceLifeJumpsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAIN CANOPY COUNT JUMP:
 
         mainCanopyCountJumpsLabel.textColor = .colorWhite
-        mainCanopyCountJumpsLabel.font = fontRegularStandard12
+        mainCanopyCountJumpsLabel.font = AppFont.regular(size: 12).uiFont
         mainCanopyCountJumpsLabel.textAlignment = .left
         mainCanopyCountJumpsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MAIN CANOPY REMAINED COUNT
         
         mainCanopyRemainedCountLabel.textColor = .colorWhite
-        mainCanopyRemainedCountLabel.font = fontRegularStandard12
+        mainCanopyRemainedCountLabel.font = AppFont.regular(size: 12).uiFont
         mainCanopyRemainedCountLabel.textAlignment = .left
         mainCanopyRemainedCountLabel.adjustsFontSizeToFitWidth = true
         
@@ -563,14 +562,14 @@ final class SystemCell: UITableViewCell {
         
         reserveCanopyLabel.text = "\(NSLocalizedString("Reserve canopy system", comment: "")): ".uppercased()
         reserveCanopyLabel.textColor = .colorLightGray
-        reserveCanopyLabel.font = fontBoldStandard10
+        reserveCanopyLabel.font = AppFont.bold(size: 10).uiFont
         reserveCanopyLabel.textAlignment = .right
         reserveCanopyLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY NAME:
 
         reserveCanopyNameLabel.textColor = .colorWhite
-        reserveCanopyNameLabel.font = fontMediumStandard18
+        reserveCanopyNameLabel.font = AppFont.medium(size: 18).uiFont
         reserveCanopyNameLabel.textAlignment = .right
         reserveCanopyNameLabel.numberOfLines = 0
         reserveCanopyNameLabel.adjustsFontSizeToFitWidth = true
@@ -578,42 +577,42 @@ final class SystemCell: UITableViewCell {
         // MARK: RESERVE CANOPY SERIAL NUMBER:
         
         reserveCanopySerialNumberLabel.textColor = .colorWhite
-        reserveCanopySerialNumberLabel.font = fontRegularStandard12
+        reserveCanopySerialNumberLabel.font = AppFont.regular(size: 12).uiFont
         reserveCanopySerialNumberLabel.textAlignment = .right
         reserveCanopySerialNumberLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY DOM:
 
         reserveCanopyDomLabel.textColor = .colorWhite
-        reserveCanopyDomLabel.font = fontRegularStandard12
+        reserveCanopyDomLabel.font = AppFont.regular(size: 12).uiFont
         reserveCanopyDomLabel.textAlignment = .right
         reserveCanopyDomLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY EXPIRATION DATE:
         
         reserveCanopyExpirationDateLabel.textColor = .colorWhite
-        reserveCanopyExpirationDateLabel.font = fontRegularStandard12
+        reserveCanopyExpirationDateLabel.font = AppFont.regular(size: 12).uiFont
         reserveCanopyExpirationDateLabel.textAlignment = .right
         reserveCanopyExpirationDateLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY SERVICE LIFE YEARS:
         
         reserveCanopyServiceLifeYearsLabel.textColor = .colorWhite
-        reserveCanopyServiceLifeYearsLabel.font = fontRegularStandard12
+        reserveCanopyServiceLifeYearsLabel.font = AppFont.regular(size: 12).uiFont
         reserveCanopyServiceLifeYearsLabel.textAlignment = .right
         reserveCanopyServiceLifeYearsLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY COUNT REPACK:
 
         reserveCanopyCountRepackLabel.textColor = .colorWhite
-        reserveCanopyCountRepackLabel.font = fontRegularStandard12
+        reserveCanopyCountRepackLabel.font = AppFont.regular(size: 12).uiFont
         reserveCanopyCountRepackLabel.textAlignment = .right
         reserveCanopyCountRepackLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY DATE PACK:
         
         reserveCanopyDatePackLabel.textColor = .colorWhite
-        reserveCanopyDatePackLabel.font = fontRegularStandard12
+        reserveCanopyDatePackLabel.font = AppFont.regular(size: 12).uiFont
         reserveCanopyDatePackLabel.textAlignment = .right
         reserveCanopyDatePackLabel.adjustsFontSizeToFitWidth = true
         
@@ -757,14 +756,14 @@ final class SystemCell: UITableViewCell {
     // MARK: CLOSURE FOR EDIT BUTTON:
 
     @objc private func editButtonTapped() {
-        self.vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         tapEditButton?()
     }
     
     // MARK: DELEGATE FOR COMMENT BUTTON:
 
     @objc private func commentButtonTapped() {
-        self.vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let indexPath = indexPath else { return }
         delegate?.tapCommentButton(indexPath)
     }
@@ -774,10 +773,10 @@ final class SystemCell: UITableViewCell {
     @objc private func nViewTapped() {
         if isAnimating {
             stopAnimations()
-            vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         } else {
             call()
-            vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }
         isAnimating = !isAnimating
     }

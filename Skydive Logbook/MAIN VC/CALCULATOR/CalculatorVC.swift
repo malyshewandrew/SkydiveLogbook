@@ -9,7 +9,6 @@ final class CalculatorVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
 
     private var player = AVAudioPlayer()
-    private let vibrationOn = Vibration()
 
     private let calculatorGradientLottie = LottieAnimationView(name: "CalculatorGradient")
     private let calculatorBlackView = UIView()
@@ -346,7 +345,7 @@ final class CalculatorVC: UIViewController {
             
             canopyTitleLabel.isHidden = true
             canopyTitleLabel.textColor = .colorWhite
-            canopyTitleLabel.font = fontThinStandard10
+            canopyTitleLabel.font = AppFont.thin(size: 10).uiFont
             canopyTitleLabel.text = NSLocalizedString("Canopy title / calculator", comment: "")
 
             // MARK: ANIMATION:
@@ -362,7 +361,7 @@ final class CalculatorVC: UIViewController {
 
             weightCanopyTextField.placeholder = "\(NSLocalizedString("Total weight", comment: "")) (\(NSLocalizedString("kg.", comment: "")))*"
             weightCanopyTextField.backgroundColor = .colorTabBar
-            weightCanopyTextField.font = fontMediumStandard14
+            weightCanopyTextField.font = AppFont.medium(size: 14).uiFont
             weightCanopyTextField.textColor = .colorWhite
             weightCanopyTextField.layer.cornerRadius = cornerRadius15
             weightCanopyTextField.textAlignment = textAligmentCenter
@@ -374,7 +373,7 @@ final class CalculatorVC: UIViewController {
 
             sizeCanopyTextField.placeholder = "\(NSLocalizedString("Square canopy", comment: "")) (\(NSLocalizedString("ft", comment: "")))*"
             sizeCanopyTextField.backgroundColor = .colorTabBar
-            sizeCanopyTextField.font = fontMediumStandard14
+            sizeCanopyTextField.font = AppFont.medium(size: 14).uiFont
             sizeCanopyTextField.textColor = .colorWhite
             sizeCanopyTextField.layer.cornerRadius = cornerRadius15
             sizeCanopyTextField.textAlignment = textAligmentCenter
@@ -388,7 +387,7 @@ final class CalculatorVC: UIViewController {
             cleanCanopyButton.backgroundColor = .colorTabBar
             cleanCanopyButton.layer.cornerRadius = cornerRadius15
             cleanCanopyButton.setTitleColor(.colorWhite, for: .normal)
-            cleanCanopyButton.titleLabel?.font = fontMediumStandard14
+            cleanCanopyButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
             cleanCanopyButton.addTarget(self, action: #selector(actionButtonCleanCanopyTap), for: .touchUpInside)
 
             // MARK: SAVE BUTTON:
@@ -397,7 +396,7 @@ final class CalculatorVC: UIViewController {
             resultCanopyButton.backgroundColor = .colorCell
             resultCanopyButton.layer.cornerRadius = cornerRadius15
             resultCanopyButton.setTitleColor(.colorWhite, for: .normal)
-            resultCanopyButton.titleLabel?.font = fontMediumStandard14
+            resultCanopyButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
             resultCanopyButton.addTarget(self, action: #selector(actionButtonCanopySaveTap), for: .touchUpInside)
 
             // MARK: RESULT:
@@ -407,7 +406,7 @@ final class CalculatorVC: UIViewController {
             resultCanopyLabel.layer.masksToBounds = true
             resultCanopyLabel.layer.cornerRadius = cornerRadius15
             resultCanopyLabel.textAlignment = .center
-            resultCanopyLabel.font = fontBoldStandard16
+            resultCanopyLabel.font = AppFont.bold(size: 16).uiFont
             resultCanopyLabel.isHidden = true
 
             // MARK: INFO VIEW:
@@ -420,7 +419,7 @@ final class CalculatorVC: UIViewController {
 
             resultCanopyTextLabel.textAlignment = .left
             resultCanopyTextLabel.numberOfLines = 0
-            resultCanopyTextLabel.font = fontRegularStandard10
+            resultCanopyTextLabel.font = AppFont.regular(size: 10).uiFont
             resultCanopyTextLabel.textColor = .colorWhite
             
         } else if position == 1 {
@@ -530,7 +529,7 @@ final class CalculatorVC: UIViewController {
             
             wingTitleLabel.isHidden = true
             wingTitleLabel.textColor = .colorWhite
-            wingTitleLabel.font = fontThinStandard10
+            wingTitleLabel.font = AppFont.thin(size: 10).uiFont
             wingTitleLabel.text = NSLocalizedString("Wing title / calculator", comment: "")
             
             // MARK: ANIMATION:
@@ -547,7 +546,7 @@ final class CalculatorVC: UIViewController {
 
             heightJumpTextField.placeholder = "\(NSLocalizedString("Height jump / calculator", comment: "")) (\(NSLocalizedString("m.", comment: "")))*"
             heightJumpTextField.backgroundColor = .colorTabBar
-            heightJumpTextField.font = fontMediumStandard14
+            heightJumpTextField.font = AppFont.medium(size: 14).uiFont
             heightJumpTextField.textColor = .colorWhite
             heightJumpTextField.layer.cornerRadius = cornerRadius15
             heightJumpTextField.textAlignment = textAligmentCenter
@@ -559,7 +558,7 @@ final class CalculatorVC: UIViewController {
 
             heightOpenTextField.placeholder = "\(NSLocalizedString("Height open / calculator", comment: "")) (\(NSLocalizedString("m.", comment: "")))*"
             heightOpenTextField.backgroundColor = .colorTabBar
-            heightOpenTextField.font = fontMediumStandard14
+            heightOpenTextField.font = AppFont.medium(size: 14).uiFont
             heightOpenTextField.textColor = .colorWhite
             heightOpenTextField.layer.cornerRadius = cornerRadius15
             heightOpenTextField.textAlignment = textAligmentCenter
@@ -571,7 +570,7 @@ final class CalculatorVC: UIViewController {
 
             windSpeedTextField.placeholder = "\(NSLocalizedString("Wind speed / calculator", comment: ""))*"
             windSpeedTextField.backgroundColor = .colorTabBar
-            windSpeedTextField.font = fontMediumStandard14
+            windSpeedTextField.font = AppFont.medium(size: 14).uiFont
             windSpeedTextField.textColor = .colorWhite
             windSpeedTextField.layer.cornerRadius = cornerRadius15
             windSpeedTextField.textAlignment = textAligmentCenter
@@ -584,7 +583,7 @@ final class CalculatorVC: UIViewController {
 
             qualityTextField.placeholder = "\(NSLocalizedString("Quality / calculator", comment: ""))*"
             qualityTextField.backgroundColor = .colorTabBar
-            qualityTextField.font = fontMediumStandard14
+            qualityTextField.font = AppFont.medium(size: 14).uiFont
             qualityTextField.textColor = .colorWhite
             qualityTextField.layer.cornerRadius = cornerRadius15
             qualityTextField.textAlignment = textAligmentCenter
@@ -599,7 +598,7 @@ final class CalculatorVC: UIViewController {
             cleanWingButton.backgroundColor = .colorTabBar
             cleanWingButton.layer.cornerRadius = cornerRadius15
             cleanWingButton.setTitleColor(.colorWhite, for: .normal)
-            cleanWingButton.titleLabel?.font = fontMediumStandard14
+            cleanWingButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
             cleanWingButton.addTarget(self, action: #selector(actionButtonCleanWingTap), for: .touchUpInside)
 
             // MARK: SAVE BUTTON:
@@ -608,7 +607,7 @@ final class CalculatorVC: UIViewController {
             resultWingButton.backgroundColor = .colorCell
             resultWingButton.layer.cornerRadius = cornerRadius15
             resultWingButton.setTitleColor(.colorWhite, for: .normal)
-            resultWingButton.titleLabel?.font = fontMediumStandard14
+            resultWingButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
             resultWingButton.addTarget(self, action: #selector(actionButtonWingSaveTap), for: .touchUpInside)
             
             // MARK: RESULT:
@@ -623,7 +622,7 @@ final class CalculatorVC: UIViewController {
             resultWingLabel.layer.masksToBounds = true
             resultWingLabel.layer.cornerRadius = cornerRadius15
             resultWingLabel.textAlignment = .center
-            resultWingLabel.font = fontRegularStandard14
+            resultWingLabel.font = AppFont.regular(size: 14).uiFont
             resultWingLabel.isHidden = true
             resultWingLabel.numberOfLines = 0
 
@@ -976,7 +975,7 @@ final class CalculatorVC: UIViewController {
     // MARK: ALERT FOR CANOPY:
     
     @objc private func canopyAlertButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Warning / calculator", comment: ""), message: NSLocalizedString("Warning canopy message / calculator", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))
         present(alert, animated: true)
@@ -985,7 +984,7 @@ final class CalculatorVC: UIViewController {
     // MARK: ALERT FOR WING:
     
     @objc private func wingAlertButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Warning / calculator", comment: ""), message: NSLocalizedString("Warning wing message / calculator", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))
         present(alert, animated: true)
@@ -1001,7 +1000,7 @@ extension CalculatorVC: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }
 
@@ -1061,7 +1060,7 @@ extension CalculatorVC: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if textField == windSpeedTextField {
             windSpeedTextField.text = String(windValues[0])
         } else if textField == qualityTextField {

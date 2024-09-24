@@ -10,7 +10,6 @@ final class PremiumVC: UIViewController {
     private let premiumSettingsLottie = LottieAnimationView(name: "PremiumSettings")
     private let imageView = UIImageView()
     private let internetButton = UIButton()
-    private let vibrationOn = Vibration()
 
     // MARK: - LIFECYCLE:
 
@@ -81,7 +80,7 @@ final class PremiumVC: UIViewController {
         internetButton.setTitleColor(.colorWhite, for: .normal)
         internetButton.setTitleColor(.systemBlue, for: .highlighted)
         internetButton.backgroundColor = .colorTabBar
-        internetButton.titleLabel?.font = fontMediumStandard14
+        internetButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         internetButton.addTarget(self, action: #selector(internetButtonTapped), for: .touchUpInside)
 
         // MARK: ANIMATION:

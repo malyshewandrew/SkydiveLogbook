@@ -31,7 +31,6 @@ final class CloudCoverVC: UIViewController {
     private let tableView = UITableView()
     private let cloudCoverInfoView = UIView()
     private let cloudCoverInfoLabel = UILabel()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -153,7 +152,7 @@ final class CloudCoverVC: UIViewController {
         // MARK: HUMIDITY LABEL:
         
         cloudCoverInfoLabel.textColor = .white
-        cloudCoverInfoLabel.font = fontMediumStandard14
+        cloudCoverInfoLabel.font = AppFont.medium(size: 14).uiFont
         cloudCoverInfoLabel.numberOfLines = 0
         cloudCoverInfoLabel.adjustsFontSizeToFitWidth = true
         cloudCoverInfoLabel.textAlignment = .center
@@ -183,6 +182,6 @@ extension CloudCoverVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

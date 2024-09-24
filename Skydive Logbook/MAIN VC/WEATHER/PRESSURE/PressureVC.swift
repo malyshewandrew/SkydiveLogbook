@@ -31,7 +31,6 @@ final class PressureVC: UIViewController {
     private let tableView = UITableView()
     private let pressureInfoView = UIView()
     private let pressureInfoLabel = UILabel()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -154,7 +153,7 @@ final class PressureVC: UIViewController {
         // MARK: PRESSURE LABEL:
         
         pressureInfoLabel.textColor = .white
-        pressureInfoLabel.font = fontMediumStandard14
+        pressureInfoLabel.font = AppFont.medium(size: 14).uiFont
         pressureInfoLabel.numberOfLines = 0
         pressureInfoLabel.adjustsFontSizeToFitWidth = true
         pressureInfoLabel.textAlignment = .center
@@ -184,6 +183,6 @@ extension PressureVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

@@ -30,7 +30,6 @@ final class DewPointVC: UIViewController {
     private let tableView = UITableView()
     private let dewPointInfoView = UIView()
     private let dewPointInfoLabel = UILabel()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -153,7 +152,7 @@ final class DewPointVC: UIViewController {
         // MARK: DEW POINT LABEL:
         
         dewPointInfoLabel.textColor = .white
-        dewPointInfoLabel.font = fontMediumStandard14
+        dewPointInfoLabel.font = AppFont.medium(size: 14).uiFont
         dewPointInfoLabel.numberOfLines = 0
         dewPointInfoLabel.adjustsFontSizeToFitWidth = true
         dewPointInfoLabel.textAlignment = .center
@@ -183,6 +182,6 @@ extension DewPointVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

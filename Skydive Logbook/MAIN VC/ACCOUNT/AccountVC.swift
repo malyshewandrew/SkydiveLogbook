@@ -184,7 +184,7 @@ class AccountVC: UIViewController {
         emptyAccountLabel.textColor = .white
         emptyAccountLabel.numberOfLines = 0
         emptyAccountLabel.textAlignment = .center
-        emptyAccountLabel.font = fontMediumStandard12
+        emptyAccountLabel.font = AppFont.medium(size: 12).uiFont
         emptyAccountLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: STACK VIEW:
@@ -203,7 +203,7 @@ class AccountVC: UIViewController {
         nicknameView.addSubview(nicknameLabel)
         nicknameLabel.textColor = .white
         nicknameLabel.textAlignment = .center
-        nicknameLabel.font = fontBoldStandard16
+        nicknameLabel.font = AppFont.bold(size: 16).uiFont
         nicknameLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: LICENSE TYPE:
@@ -215,7 +215,7 @@ class AccountVC: UIViewController {
         licenseView.addSubview(licenseLabel)
         licenseLabel.textColor = .white
         licenseLabel.textAlignment = .center
-        licenseLabel.font = fontMediumStandard14
+        licenseLabel.font = AppFont.medium(size: 14).uiFont
         licenseLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: MEDICINE:
@@ -227,7 +227,7 @@ class AccountVC: UIViewController {
         medicineView.addSubview(medicineLabel)
         medicineLabel.textColor = .white
         medicineLabel.textAlignment = .center
-        medicineLabel.font = fontMediumStandard14
+        medicineLabel.font = AppFont.medium(size: 14).uiFont
         medicineLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: INSURANCE:
@@ -239,7 +239,7 @@ class AccountVC: UIViewController {
         insuranceView.addSubview(insuranceLabel)
         insuranceLabel.textColor = .white
         insuranceLabel.textAlignment = .center
-        insuranceLabel.font = fontMediumStandard14
+        insuranceLabel.font = AppFont.medium(size: 14).uiFont
         insuranceLabel.adjustsFontSizeToFitWidth = true
         
         // MARK: RESERVE CANOPY:
@@ -251,7 +251,7 @@ class AccountVC: UIViewController {
         reserveCanopyView.addSubview(reserveCanopyLabel)
         reserveCanopyLabel.textColor = .white
         reserveCanopyLabel.textAlignment = .center
-        reserveCanopyLabel.font = fontMediumStandard14
+        reserveCanopyLabel.font = AppFont.medium(size: 14).uiFont
         reserveCanopyLabel.adjustsFontSizeToFitWidth = true
     }
     

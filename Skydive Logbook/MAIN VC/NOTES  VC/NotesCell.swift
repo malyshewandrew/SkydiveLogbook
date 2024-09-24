@@ -71,7 +71,7 @@ final class NotesCell: UITableViewCell {
 
         noteLabel.textColor = .colorWhite
         noteLabel.numberOfLines = 0
-        noteLabel.font = fontBoldStandard16
+        noteLabel.font = AppFont.bold(size: 16).uiFont
         noteLabel.textAlignment = .left
         noteLabel.lineBreakMode = .byWordWrapping
     }

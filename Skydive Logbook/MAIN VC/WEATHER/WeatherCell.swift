@@ -59,7 +59,6 @@ final class WeatherCell: UITableViewCell {
     private let visibilityLabel = UILabel()
     private let visibilityOverlayButton = UIButton()
 
-    private let vibrationOn = Vibration()
     private let mapView = MKMapView()
     private let permissionLabel = UILabel()
     private let locationManager = CLLocationManager()
@@ -459,7 +458,7 @@ final class WeatherCell: UITableViewCell {
         // WIND GUST:
 
         windGustLabel.textColor = .white
-        windGustLabel.font = fontMediumStandard14
+        windGustLabel.font = AppFont.medium(size: 14).uiFont
         windGustLabel.numberOfLines = 0
         windGustLabel.textAlignment = .center
         windGustLabel.adjustsFontSizeToFitWidth = true
@@ -467,7 +466,7 @@ final class WeatherCell: UITableViewCell {
         // WIND DIRECTION:
 
         windDirectionLabel.textColor = .white
-        windDirectionLabel.font = fontMediumStandard14
+        windDirectionLabel.font = AppFont.medium(size: 14).uiFont
         windDirectionLabel.numberOfLines = 0
         windDirectionLabel.textAlignment = .center
         windDirectionLabel.adjustsFontSizeToFitWidth = true
@@ -498,7 +497,7 @@ final class WeatherCell: UITableViewCell {
         // DESCRIPTION LABEL:
 
         descriptionLabel.textColor = .white
-        descriptionLabel.font = fontMediumStandard14
+        descriptionLabel.font = AppFont.medium(size: 14).uiFont
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         descriptionLabel.adjustsFontSizeToFitWidth = true
@@ -506,7 +505,7 @@ final class WeatherCell: UITableViewCell {
         // FEEL TEMPERATURE:
 
         feelTemperatureLabel.textColor = .white
-        feelTemperatureLabel.font = fontMediumStandard14
+        feelTemperatureLabel.font = AppFont.medium(size: 14).uiFont
         feelTemperatureLabel.numberOfLines = 0
         feelTemperatureLabel.textAlignment = .center
         feelTemperatureLabel.adjustsFontSizeToFitWidth = true
@@ -684,7 +683,7 @@ final class WeatherCell: UITableViewCell {
         // MARK: - PERMISSION LABEL:
         
         permissionLabel.textColor = .colorWhite
-        permissionLabel.font = fontRegularStandard10
+        permissionLabel.font = AppFont.regular(size: 10).uiFont
         permissionLabel.text = NSLocalizedString("Permisson label / weather", comment: "")
         permissionLabel.adjustsFontSizeToFitWidth = true
 
@@ -696,7 +695,7 @@ final class WeatherCell: UITableViewCell {
         // MARK: - ARROW LABEL:
 
         arrowLabel.textColor = .colorWhite
-        arrowLabel.font = fontMediumStandard9
+        arrowLabel.font = AppFont.medium(size: 9).uiFont
 
         // MARK: - INFO BUTTON:
 
@@ -739,7 +738,7 @@ final class WeatherCell: UITableViewCell {
     // MARK: BUTTON CURRENT LOCATION:
 
     @objc private func currentLocationButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let cordinate = locationManager.location?.coordinate else { return }
         let coordinateRegion = MKCoordinateRegion(center: cordinate,
                                                   latitudinalMeters: 250,
@@ -750,7 +749,7 @@ final class WeatherCell: UITableViewCell {
     // MARK: COMPAS BUTTON:
 
     @objc private func compasButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if isCompasHidden {
             compasImageView.isHidden = false
         } else {
@@ -762,70 +761,70 @@ final class WeatherCell: UITableViewCell {
     // MARK: INFO BUTTON:
 
     @objc private func windInfoButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapWindInfoButton()
     }
 
     // MARK: WIND BUTTON TAPPED:
 
     @objc private func windOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapWindOverlayButton()
     }
 
     // MARK: TEMPERATURE BUTTON TAPPED:
 
     @objc private func temperatureOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.taptemperatureOverlayButton()
     }
 
     // MARK: HUMIDITY BUTTON TAPPED:
 
     @objc private func humidityOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapHumidityOverlayButton()
     }
 
     // MARK: CLOUD COVER BUTTON TAPPED:
 
     @objc private func cloudCoverOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapCloudCoverOverlayButton()
     }
 
     // MARK: DEW POINT BUTTON TAPPED:
 
     @objc private func dewPointOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapDewPointOverlayButton()
     }
 
     // MARK: VISIBILITY BUTTON TAPPED:
 
     @objc private func visibilityOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapVisibilityOverlayButton()
     }
 
     // MARK: PRESSURE BUTTON TAPPED:
 
     @objc private func pressureOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapPressureOverlayButton()
     }
 
     // MARK: UV INDEX BUTTON TAPPED:
 
     @objc private func uvIndexOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapUvIndexOverlayButton()
     }
 
     // MARK: PRECIPITATION BUTTON TAPPED:
 
     @objc private func precipitationOverlayButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         delegate?.tapPrecipitationOverlayButton()
     }
     

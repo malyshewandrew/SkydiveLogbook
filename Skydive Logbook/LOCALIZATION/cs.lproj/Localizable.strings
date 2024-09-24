@@ -560,7 +560,7 @@
 "Message / adapty" = "K přijetí dat je vyžadováno aktivní internetové připojení.";
 
 "Alert / adapty status" = "Potřebný Premium";
-"Message / adapty status" = "Ve verzi zdarma můžete uložit pouze:\n\n50 skoků.\n10 poznámek.\n1 systém.\n\nPro odstranění všech omezení si zakupte PREMIUM v sekci „Nastavení“.";
+"Message / adapty status" = "Ve verzi zdarma můžete uložit pouze:\n\n25 skoků.\n10 poznámek.\n1 systém.\n\nPro odstranění všech omezení si zakupte PREMIUM v sekci „Nastavení“.";
 
 // MARK: - SYSTEM:
 

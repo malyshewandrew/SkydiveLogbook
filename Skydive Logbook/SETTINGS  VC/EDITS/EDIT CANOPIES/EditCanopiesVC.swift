@@ -7,7 +7,6 @@ import AlertKit
 final class EditCanopiesVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let vibrationOn = Vibration()
     private let canopiesLottie = LottieAnimationView(name: "Canopies")
     private let enterTextTextField = UITextField()
     private let saveButton = UIButton()
@@ -110,7 +109,7 @@ final class EditCanopiesVC: UIViewController {
         // MARK: CLEAN BUTTON:
 
         cleanButton.backgroundColor = .colorTabBar
-        cleanButton.titleLabel?.font = fontMediumStandard14
+        cleanButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
@@ -120,7 +119,7 @@ final class EditCanopiesVC: UIViewController {
         // MARK: SAVE BUTTON:
 
         saveButton.backgroundColor = .colorCell
-        saveButton.titleLabel?.font = fontMediumStandard14
+        saveButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
@@ -303,11 +302,11 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: DELETE CELL:
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let deleteCanopy = arrayCanopiesRealm[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete canopy?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
@@ -315,7 +314,7 @@ extension EditCanopiesVC: UITableViewDelegate, UITableViewDataSource {
                     self.realmManager.localRealm.delete(deleteCanopy)
                 }
                 self.loadCanopies()
-                self.vibrationOn.vibrationSucces()
+                VibrationManager.instance.vibrationSucces()
                 tableView.reloadData()
                 self.alertKitDeleted()
             }))
@@ -343,6 +342,6 @@ extension EditCanopiesVC: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

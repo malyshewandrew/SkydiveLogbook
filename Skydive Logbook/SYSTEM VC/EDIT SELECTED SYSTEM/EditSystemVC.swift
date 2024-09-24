@@ -10,7 +10,6 @@ final class EditSystemVC: UIViewController {
     private let tableView = UITableView()
     private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
-    private let vibrationOn = Vibration()
     var indexPath: Int = 0
 
     // MARK: - LIFECYCLE:
@@ -126,7 +125,7 @@ final class EditSystemVC: UIViewController {
     // MARK: MANUAL ALERT:
 
     @objc private func manualButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Add system alert", comment: "") + ":", message: """
         \n\(NSLocalizedString("Container alert", comment: "")):\n
         1. \(NSLocalizedString("Name and model container alert", comment: ""))

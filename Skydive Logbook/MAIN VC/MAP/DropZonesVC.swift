@@ -10,7 +10,6 @@ final class DropZonesVC: UIViewController {
     
     private let mapView = MKMapView()
     private let infoButton = UIButton()
-    private let vibrationOn = Vibration()
     private let locationManager = CLLocationManager()
     private let currentLocationButton = UIButton()
     private let mapTypeButton = UIButton()
@@ -166,14 +165,14 @@ final class DropZonesVC: UIViewController {
     // MARK: BACK BUTTON:
     
     @objc private func backupButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         dismiss(animated: true, completion: nil)
     }
     
     // MARK: FUNC FOR CURRENT LOCATION:
 
     @objc private func currentLocationButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let cordinate = locationManager.location?.coordinate else { return }
         let coordinateRegion = MKCoordinateRegion(center: cordinate,
                                                   latitudinalMeters: 250,
@@ -184,7 +183,7 @@ final class DropZonesVC: UIViewController {
     // MARK: INFO BUTTON:
     
     @objc private func infoButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("Information / drop zones", comment: ""), message: NSLocalizedString("Info map / map view", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)

@@ -7,7 +7,6 @@ final class EditJumpVC: UIViewController {
     private let newJumpLottie = LottieAnimationView(name: "EditJump")
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
     private let confettiButton = UIButton()
-    private let vibrationOn = Vibration()
     private let tableView = UITableView()
     private let realmManager = RealmManager()
     var indexPath: Int = 0
@@ -152,7 +151,7 @@ final class EditJumpVC: UIViewController {
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func confettiButtonTapped() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         confettiLottie.play()
     }
 

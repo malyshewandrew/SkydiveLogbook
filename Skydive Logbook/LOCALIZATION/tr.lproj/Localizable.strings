@@ -560,7 +560,7 @@
 "Message / adapty" = "Veri almak için etkin bir internet bağlantısı gereklidir.";
 
 "Alert / adapty status" = "Premium Gerekiyor";
-"Message / adapty status" = "Ücretsiz sürümde yalnızca aşağıdakileri kaydedebilirsiniz:\n\n50 atlayış.\n10 not.\n1 sistem.\n\nTüm kısıtlamaları kaldırmak için, \"Ayarlar\" bölümünden PREMIUM'u satın alın.";
+"Message / adapty status" = "Ücretsiz sürümde yalnızca aşağıdakileri kaydedebilirsiniz:\n\n25 atlayış.\n10 not.\n1 sistem.\n\nTüm kısıtlamaları kaldırmak için, \"Ayarlar\" bölümünden PREMIUM'u satın alın.";
 
 // MARK: - SYSTEM:
 

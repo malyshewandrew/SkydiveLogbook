@@ -17,7 +17,6 @@ final class SkydiversVC: UIViewController {
     private let addButton = UIButton()
     private let backButton = UIButton()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 26)
-    private let vibrationOn = Vibration()
     private var arraySkydivers: [Skydiver] = []
     private var arrayPartners: [Partner] = []
     private let segmentControl = UISegmentedControl()
@@ -157,7 +156,7 @@ final class SkydiversVC: UIViewController {
         titleLabel.text = "SKYDIVE COMMUNITY"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .colorWhite
-        titleLabel.font = fontMediumStandard18
+        titleLabel.font = AppFont.medium(size: 18).uiFont
         
         // MARK: SEGMENT CONTROL:
         
@@ -336,7 +335,7 @@ final class SkydiversVC: UIViewController {
     private func showError() {
         let alert = UIAlertController(title: NSLocalizedString("No connection / adapty", comment: ""), message: NSLocalizedString("Message / adapty", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             self.dismiss(animated: true)
         }))
         present(alert, animated: true)
@@ -345,7 +344,7 @@ final class SkydiversVC: UIViewController {
     // MARK: SKYDIVERS LOTTIE BUTTON TAPPED:
     
     @objc private func skydiversLottieButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         skydiversLottie.play()
         skydiversLottie.loopMode = .playOnce
     }
@@ -353,14 +352,14 @@ final class SkydiversVC: UIViewController {
     // MARK: BACK BUTTON:
     
     @objc private func backupButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         dismiss(animated: true, completion: nil)
     }
     
     // MARK: ADD BUTTON:
     
     @objc private func addButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let alert = UIAlertController(title: NSLocalizedString("About rating / skydivers", comment: ""), message: NSLocalizedString("About rating message / skydivers", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Instagram", comment: ""), style: .default, handler: { _ in
@@ -448,7 +447,7 @@ extension SkydiversVC: SFSafariViewControllerDelegate {
 
 extension SkydiversVC: SkydiversCellDelegate, PartnersCellDelegate {
     func tapLinkButton(link: String) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         guard let url = URL(string: link) else { return }
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self

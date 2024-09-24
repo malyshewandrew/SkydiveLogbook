@@ -13,8 +13,6 @@ import UIKit
 final class AddSkydiverViewController: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let backgroundImage = UIImageView()
-    private let arrayBackgroundImages: [UIImage] = [UIImage(resource: .backgroundSkydiversOne), UIImage(resource: .backgroundSkydiversTwo), UIImage(resource: .backgroundSkydiversThree), UIImage(resource: .backgroundSkydiversFour)]
     private let scrollView = UIScrollView()
     
     private let nicknameButton = UIButton()
@@ -95,20 +93,13 @@ final class AddSkydiverViewController: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(backgroundImage, scrollView)
+        view.addSubviews(scrollView)
         scrollView.addSubviews(nicknameButton, nicknameTextField, countryButton, countryTextField, countOfJumpsButton, countOfJumpsTextField, professionButton, professionTextField, linkButton, linkTextField, photosButton, collectionView, progressView, cleanButton, sendButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        // MARK: BACKGROUND IMAGE:
-        
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImage.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         // MARK: SCROLL VIEW:
         
@@ -243,22 +234,17 @@ final class AddSkydiverViewController: UIViewController {
         scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height * 1.2)
         scrollView.isScrollEnabled = true
         
-        // MARK: BACKGROUND IMAGE:
-        
-        backgroundImage.image = arrayBackgroundImages[Int.random(in: 0 ... 3)]
-        backgroundImage.contentMode = .scaleAspectFill
-        
         // MARK: NICKNAME:
 
         nicknameButton.backgroundColor = .colorCell
         nicknameButton.setTitle("\(NSLocalizedString("Nickname / community", comment: ""))*", for: .normal)
         nicknameButton.setTitleColor(.colorLightGray, for: .normal)
         nicknameButton.contentVerticalAlignment = textAligmentTop
-        nicknameButton.titleLabel?.font = fontMediumStandard12
+        nicknameButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         nicknameButton.layer.cornerRadius = cornerRadius15
         nicknameTextField.placeholder = NSLocalizedString("Nickname / community", comment: "")
         nicknameTextField.backgroundColor = .colorTabBar
-        nicknameTextField.font = fontMediumStandard18
+        nicknameTextField.font = AppFont.medium(size: 18).uiFont
         nicknameTextField.textColor = .colorWhite
         nicknameTextField.layer.cornerRadius = cornerRadius15
         nicknameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -272,11 +258,11 @@ final class AddSkydiverViewController: UIViewController {
         countryButton.setTitle("\(NSLocalizedString("Country / community", comment: ""))*", for: .normal)
         countryButton.setTitleColor(.colorLightGray, for: .normal)
         countryButton.contentVerticalAlignment = textAligmentTop
-        countryButton.titleLabel?.font = fontMediumStandard12
+        countryButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         countryButton.layer.cornerRadius = cornerRadius15
         countryTextField.placeholder = NSLocalizedString("Country choose / community", comment: "")
         countryTextField.backgroundColor = .colorTabBar
-        countryTextField.font = fontMediumStandard18
+        countryTextField.font = AppFont.medium(size: 18).uiFont
         countryTextField.textColor = .colorWhite
         countryTextField.layer.cornerRadius = cornerRadius15
         countryTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -287,7 +273,7 @@ final class AddSkydiverViewController: UIViewController {
         countryPickerView.showCountryCodeInView = false
         countryPickerView.showCountryNameInView = true
         countryPickerView.showPhoneCodeInView = false
-        countryPickerView.font = fontBoldStandard24
+        countryPickerView.font = AppFont.bold(size: 24).uiFont
         countryPickerView.textColor = .colorWhite
         
         // MARK: COUNT JUMPS:
@@ -296,11 +282,11 @@ final class AddSkydiverViewController: UIViewController {
         countOfJumpsButton.setTitle("\(NSLocalizedString("Count of jumps / community", comment: ""))*", for: .normal)
         countOfJumpsButton.setTitleColor(.colorLightGray, for: .normal)
         countOfJumpsButton.contentVerticalAlignment = textAligmentTop
-        countOfJumpsButton.titleLabel?.font = fontMediumStandard12
+        countOfJumpsButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         countOfJumpsButton.layer.cornerRadius = cornerRadius15
         countOfJumpsTextField.placeholder = NSLocalizedString("Count of jumps placeholder / community", comment: "")
         countOfJumpsTextField.backgroundColor = .colorTabBar
-        countOfJumpsTextField.font = fontMediumStandard18
+        countOfJumpsTextField.font = AppFont.medium(size: 18).uiFont
         countOfJumpsTextField.textColor = .colorWhite
         countOfJumpsTextField.layer.cornerRadius = cornerRadius15
         countOfJumpsTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -316,11 +302,11 @@ final class AddSkydiverViewController: UIViewController {
         professionButton.setTitle("\(NSLocalizedString("Profession / community", comment: ""))*", for: .normal)
         professionButton.setTitleColor(.colorLightGray, for: .normal)
         professionButton.contentVerticalAlignment = textAligmentTop
-        professionButton.titleLabel?.font = fontMediumStandard12
+        professionButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         professionButton.layer.cornerRadius = cornerRadius15
         professionTextField.placeholder = NSLocalizedString("Profession / community", comment: "")
         professionTextField.backgroundColor = .colorTabBar
-        professionTextField.font = fontMediumStandard18
+        professionTextField.font = AppFont.medium(size: 18).uiFont
         professionTextField.textColor = .colorWhite
         professionTextField.layer.cornerRadius = cornerRadius15
         professionTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -334,11 +320,11 @@ final class AddSkydiverViewController: UIViewController {
         linkButton.setTitle("\(NSLocalizedString("Link / community", comment: ""))*", for: .normal)
         linkButton.setTitleColor(.colorLightGray, for: .normal)
         linkButton.contentVerticalAlignment = textAligmentTop
-        linkButton.titleLabel?.font = fontMediumStandard12
+        linkButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         linkButton.layer.cornerRadius = cornerRadius15
         linkTextField.placeholder = "Instagram / YouTube"
         linkTextField.backgroundColor = .colorTabBar
-        linkTextField.font = fontMediumStandard18
+        linkTextField.font = AppFont.medium(size: 18).uiFont
         linkTextField.textColor = .colorWhite
         linkTextField.layer.cornerRadius = cornerRadius15
         linkTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -355,7 +341,7 @@ final class AddSkydiverViewController: UIViewController {
         photosButton.backgroundColor = .colorCell
         photosButton.setTitleColor(.colorLightGray, for: .normal)
         photosButton.setTitleColor(.systemBlue, for: .highlighted)
-        photosButton.titleLabel?.font = fontMediumStandard12
+        photosButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         photosButton.layer.cornerRadius = cornerRadius15
         photosButton.addTarget(self, action: #selector(photosButtonTapped), for: .touchUpInside)
                 
@@ -366,7 +352,7 @@ final class AddSkydiverViewController: UIViewController {
         cleanButton.layer.cornerRadius = cornerRadius15
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitleColor(.systemBlue, for: .highlighted)
-        cleanButton.titleLabel?.font = fontMediumStandard14
+        cleanButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         cleanButton.addTarget(self, action: #selector(cleanButtonTapped), for: .touchUpInside)
         
         // MARK: SEND BUTTON:
@@ -376,7 +362,7 @@ final class AddSkydiverViewController: UIViewController {
         sendButton.layer.cornerRadius = cornerRadius15
         sendButton.setTitleColor(.colorWhite, for: .normal)
         sendButton.setTitleColor(.systemBlue, for: .highlighted)
-        sendButton.titleLabel?.font = fontMediumStandard14
+        sendButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         sendButton.addTarget(self, action: #selector(sendButtonTapped), for: .touchUpInside)
     }
     

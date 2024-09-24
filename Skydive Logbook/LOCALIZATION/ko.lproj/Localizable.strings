@@ -560,7 +560,7 @@
 "Message / adapty" = "데이터를 받으려면 인터넷 연결이 필요합니다.";
 
 "Alert / adapty status" = "프리미엄이 필요함";
-"Message / adapty status" = "무료 버전에서는 다음만 저장할 수 있습니다:\n\n50회의 점프.\n10개의 메모.\n1개의 시스템.\n\n모든 제한을 제거하려면 \"설정\" 섹션에서 PREMIUM을 구매하십시오.";
+"Message / adapty status" = "무료 버전에서는 다음만 저장할 수 있습니다:\n\n25회의 점프.\n10개의 메모.\n1개의 시스템.\n\n모든 제한을 제거하려면 \"설정\" 섹션에서 PREMIUM을 구매하십시오.";
 
 // MARK: - SYSTEM:
 

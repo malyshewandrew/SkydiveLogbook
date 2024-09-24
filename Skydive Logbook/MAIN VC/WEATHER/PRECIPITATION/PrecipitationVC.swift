@@ -31,7 +31,6 @@ final class PrecipitationVC: UIViewController {
     private let tableView = UITableView()
     private let precipitationInfoView = UIView()
     private let precipitationInfoLabel = UILabel()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -154,7 +153,7 @@ final class PrecipitationVC: UIViewController {
         // MARK: PRECIPITATION LABEL:
         
         precipitationInfoLabel.textColor = .white
-        precipitationInfoLabel.font = fontMediumStandard14
+        precipitationInfoLabel.font = AppFont.medium(size: 14).uiFont
         precipitationInfoLabel.numberOfLines = 0
         precipitationInfoLabel.adjustsFontSizeToFitWidth = true
         precipitationInfoLabel.textAlignment = .center
@@ -184,6 +183,6 @@ extension PrecipitationVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: SELECTED CELL:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

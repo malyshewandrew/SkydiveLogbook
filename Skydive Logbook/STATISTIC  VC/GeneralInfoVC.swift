@@ -25,7 +25,6 @@ final class GeneralInfoVC: UIViewController {
     var heightpPosition: CGFloat = 0.0
     var heightLabel = UILabel()
     var timeLabel = UILabel()
-    private let vibration = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -215,7 +214,7 @@ final class GeneralInfoVC: UIViewController {
         heightLabel.textColor = .colorWhite
         heightLabel.textAlignment = .center
         heightLabel.numberOfLines = 1
-        heightLabel.font = fontBoldStandard30
+        heightLabel.font = AppFont.bold(size: 30).uiFont
         heightLabel.layer.opacity = 0.5
         heightLabel.adjustsFontSizeToFitWidth = true
         
@@ -223,7 +222,7 @@ final class GeneralInfoVC: UIViewController {
         timeLabel.textColor = .colorWhite
         timeLabel.textAlignment = .center
         timeLabel.numberOfLines = 1
-        timeLabel.font = fontBoldStandard30
+        timeLabel.font = AppFont.bold(size: 30).uiFont
         timeLabel.layer.opacity = 0.5
         timeLabel.adjustsFontSizeToFitWidth = true
         
@@ -232,7 +231,7 @@ final class GeneralInfoVC: UIViewController {
         
         // EARTH LABEL:
         earthLabel.textColor = .colorWhite
-        earthLabel.font = fontThinStandard10
+        earthLabel.font = AppFont.thin(size: 10).uiFont
         earthLabel.text = NSLocalizedString("Height of the Earth", comment: "")
         earthLabel.adjustsFontSizeToFitWidth = true
         
@@ -245,7 +244,7 @@ final class GeneralInfoVC: UIViewController {
         
         // FLY LABEL:
         flyLabel.textColor = .colorWhite
-        flyLabel.font = fontThinStandard10
+        flyLabel.font = AppFont.thin(size: 10).uiFont
         flyLabel.text = NSLocalizedString("NASA ships", comment: "")
         flyLabel.adjustsFontSizeToFitWidth = true
         
@@ -254,7 +253,7 @@ final class GeneralInfoVC: UIViewController {
         
         // AMAZON LABEL:
         amazonLabel.textColor = .colorWhite
-        amazonLabel.font = fontThinStandard10
+        amazonLabel.font = AppFont.thin(size: 10).uiFont
         amazonLabel.text = NSLocalizedString("Height of the Mars", comment: "")
         amazonLabel.adjustsFontSizeToFitWidth = true
         
@@ -263,7 +262,7 @@ final class GeneralInfoVC: UIViewController {
         
         // MOON LABEL:
         moonLabel.textColor = .colorWhite
-        moonLabel.font = fontThinStandard10
+        moonLabel.font = AppFont.thin(size: 10).uiFont
         moonLabel.text = NSLocalizedString("Height of the Moon", comment: "")
         moonLabel.adjustsFontSizeToFitWidth = true
         
@@ -272,13 +271,13 @@ final class GeneralInfoVC: UIViewController {
         
         // ZERO LABEL:
         zeroLabel.textColor = .colorWhite
-        zeroLabel.font = fontThinStandard10
+        zeroLabel.font = AppFont.thin(size: 10).uiFont
         zeroLabel.text = NSLocalizedString("Ground of the Earth", comment: "")
         zeroLabel.adjustsFontSizeToFitWidth = true
         
         // POSITION LABEL:
         positionLabel.textColor = .colorWhite
-        positionLabel.font = fontThinStandard10
+        positionLabel.font = AppFont.thin(size: 10).uiFont
         positionLabel.text = NSLocalizedString("Your position", comment: "")
         positionLabel.adjustsFontSizeToFitWidth = true
     }
@@ -287,7 +286,7 @@ final class GeneralInfoVC: UIViewController {
     
     // EARTH BUTTON:
     @objc private func earthButtonTapped() {
-        vibration.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         positionView.layer.opacity = 0.0
         positionLabel.layer.opacity = 0.0
         blurEarthLottie.layer.opacity = 1.0

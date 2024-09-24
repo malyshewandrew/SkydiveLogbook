@@ -198,21 +198,21 @@ final class PartnersCell: UITableViewCell {
 
         countJumpsValueLabel.textColor = .colorWhite
         countJumpsValueLabel.textAlignment = .left
-        countJumpsValueLabel.font = fontRegularStandard12
+        countJumpsValueLabel.font = AppFont.regular(size: 12).uiFont
         countJumpsValueLabel.adjustsFontSizeToFitWidth = true
 
         // MARK: DESCRIPTION LABEL:
 
         descriptionLabel.textColor = .colorWhite
         descriptionLabel.textAlignment = .left
-        descriptionLabel.font = fontRegularStandard12
+        descriptionLabel.font = AppFont.regular(size: 12).uiFont
         descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.numberOfLines = 0
 
         // MARK: LINK BUTTON:
 
         linkButton.setTitle(NSLocalizedString("Profile / skydivers", comment: ""), for: .normal)
-        linkButton.titleLabel?.font = fontMediumStandard14
+        linkButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         linkButton.setTitleColor(.colorWhite, for: .normal)
         linkButton.setTitleColor(.colorBackground, for: .highlighted)
         linkButton.backgroundColor = .colorGreen

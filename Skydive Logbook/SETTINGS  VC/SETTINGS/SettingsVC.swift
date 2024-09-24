@@ -16,7 +16,6 @@ final class SettingsVC: UIViewController {
     private let effectOneLottie = LottieAnimationView(name: "EffectSettings")
     private let effectTwoLottie = LottieAnimationView(name: "EffectSettings")
     private let confettiButton = UIButton()
-    private let vibrationOn = Vibration()
     private let realmManager = RealmManager()
     private let tableView = UITableView()
     private let activityIndicator = UIActivityIndicatorView(style: .large)
@@ -155,7 +154,7 @@ final class SettingsVC: UIViewController {
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func confettiButtonTapped() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         confettiLottie.play()
     }
 
@@ -267,7 +266,7 @@ extension SettingsVC: SettingsCellDelegate {
     // MARK: - TAP PRINT BUTTON:
     
     func tapPrintButton() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         _ = PDFDocument()
         let jumps = realmManager.localRealm.objects(JumpClassRealm.self)
         let skydiver = realmManager.localRealm.objects(AccountClassRealm.self)
@@ -486,7 +485,7 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
         case let .openURL(url: url):
             dismiss(animated: true) { [weak self] in
                 guard let self = self else { return }
-                self.vibrationOn.vibrationStandart()
+                VibrationManager.instance.vibrationStandart()
                 let safariViewController = SFSafariViewController(url: url)
                 safariViewController.delegate = self
                 self.present(safariViewController, animated: true)
@@ -497,14 +496,14 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
     // MARK: - Вызывается при выборе продукта в контроллере оплаты:
 
     func paywallController(_ controller: AdaptyPaywallController, didSelectProduct product: AdaptyPaywallProduct) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         print("Selected product: \(product)")
     }
 
     // MARK: - Вызывается при начале процесса покупки определенного продукта:
 
     func paywallController(_ controller: AdaptyPaywallController, didStartPurchase product: AdaptyPaywallProduct) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)
@@ -544,7 +543,7 @@ extension SettingsVC: AdaptyPaywallControllerDelegate {
     // MARK: - Вызывается при начале восстановления ранее совершенных покупок:
 
     func paywallControllerDidStartRestore(_ controller: AdaptyPaywallController) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)

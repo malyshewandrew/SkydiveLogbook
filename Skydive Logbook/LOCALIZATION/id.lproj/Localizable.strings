@@ -560,7 +560,7 @@
 "Pesan / adapty" = "Koneksi internet aktif diperlukan untuk menerima data.";
 
 "Alert / adapty status" = "Diperlukan Premium";
-"Pesan / adapty status" = "Dalam versi gratis, Anda hanya dapat menyimpan:\n\n50 lompatan.\n10 catatan.\n1 sistem.\n\nUntuk menghapus semua batasan, belilah PREMIUM di bagian \"Pengaturan\".";
+"Pesan / adapty status" = "Dalam versi gratis, Anda hanya dapat menyimpan:\n\n25 lompatan.\n10 catatan.\n1 sistem.\n\nUntuk menghapus semua batasan, belilah PREMIUM di bagian \"Pengaturan\".";
 
 // MARK: - SYSTEM:
 

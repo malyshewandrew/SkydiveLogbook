@@ -10,7 +10,6 @@ final class NewJumpVC: UIViewController {
     private let confettiLottie = LottieAnimationView(name: "NewJumpConfetti")
     private let effectOneLottie = LottieAnimationView(name: "EffectNewJump")
     private let confettiButton = UIButton()
-    private let vibrationOn = Vibration()
     private let oneJump: String = NSLocalizedString("One jump / cell new jump", comment: "")
     private let moreJumps: String = NSLocalizedString("Few jumps / cell new jump", comment: "")
     private var segmentControl = UISegmentedControl()
@@ -216,11 +215,11 @@ final class NewJumpVC: UIViewController {
 
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             firstTableView.isHidden = false
             secondTableView.isHidden = true
         } else if sender.selectedSegmentIndex == 1 {
-            vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             secondTableView.isHidden = false
             firstTableView.isHidden = true
         }
@@ -229,7 +228,7 @@ final class NewJumpVC: UIViewController {
     // MARK: FUNC FOR CONFETTI + VIBRATION:
 
     @objc private func confettiTapped() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         confettiLottie.play()
     }
 }

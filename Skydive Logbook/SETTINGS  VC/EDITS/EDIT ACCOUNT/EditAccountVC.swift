@@ -31,7 +31,6 @@ final class EditAccountVC: UIViewController {
     private var player = AVAudioPlayer()
     private let realmManager = RealmManager()
     private let account = AccountClassRealm()
-    private let vibrationOn = Vibration()
     private let dateFormatter = DateFormatter()
     
     // MARK: - LIFECYCLE:
@@ -225,11 +224,11 @@ final class EditAccountVC: UIViewController {
         nicknameButton.backgroundColor = .colorCell
         nicknameButton.setTitleColor(.colorLightGray, for: .normal)
         nicknameButton.contentVerticalAlignment = textAligmentTop
-        nicknameButton.titleLabel?.font = fontMediumStandard12
+        nicknameButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         nicknameButton.layer.cornerRadius = cornerRadius15
         nicknameTextField.placeholder = NSLocalizedString("Name user / edit account vc", comment: "")
         nicknameTextField.backgroundColor = .colorTabBar
-        nicknameTextField.font = fontMediumStandard18
+        nicknameTextField.font = AppFont.medium(size: 18).uiFont
         nicknameTextField.textColor = .colorWhite
         nicknameTextField.layer.cornerRadius = cornerRadius15
         nicknameTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -243,11 +242,11 @@ final class EditAccountVC: UIViewController {
         licenseTypeButton.backgroundColor = .colorCell
         licenseTypeButton.setTitleColor(.colorLightGray, for: .normal)
         licenseTypeButton.contentVerticalAlignment = textAligmentTop
-        licenseTypeButton.titleLabel?.font = fontMediumStandard12
+        licenseTypeButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         licenseTypeButton.layer.cornerRadius = cornerRadius15
         licenseTypeTextField.placeholder = NSLocalizedString("Type / number / edit account vc", comment: "")
         licenseTypeTextField.backgroundColor = .colorTabBar
-        licenseTypeTextField.font = fontMediumStandard18
+        licenseTypeTextField.font = AppFont.medium(size: 18).uiFont
         licenseTypeTextField.textColor = .colorWhite
         licenseTypeTextField.layer.cornerRadius = cornerRadius15
         licenseTypeTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -261,11 +260,11 @@ final class EditAccountVC: UIViewController {
         licenseDateButton.backgroundColor = .colorCell
         licenseDateButton.setTitleColor(.colorLightGray, for: .normal)
         licenseDateButton.contentVerticalAlignment = textAligmentTop
-        licenseDateButton.titleLabel?.font = fontMediumStandard12
+        licenseDateButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         licenseDateButton.layer.cornerRadius = cornerRadius15
         licenseDateTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         licenseDateTextField.backgroundColor = .colorTabBar
-        licenseDateTextField.font = fontMediumStandard18
+        licenseDateTextField.font = AppFont.medium(size: 18).uiFont
         licenseDateTextField.textColor = .colorWhite
         licenseDateTextField.layer.cornerRadius = cornerRadius15
         licenseDateTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -284,11 +283,11 @@ final class EditAccountVC: UIViewController {
         medicineButton.backgroundColor = .colorCell
         medicineButton.setTitleColor(.colorLightGray, for: .normal)
         medicineButton.contentVerticalAlignment = textAligmentTop
-        medicineButton.titleLabel?.font = fontMediumStandard12
+        medicineButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         medicineButton.layer.cornerRadius = cornerRadius15
         medicineTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         medicineTextField.backgroundColor = .colorTabBar
-        medicineTextField.font = fontMediumStandard18
+        medicineTextField.font = AppFont.medium(size: 18).uiFont
         medicineTextField.textColor = .colorWhite
         medicineTextField.layer.cornerRadius = cornerRadius15
         medicineTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -307,11 +306,11 @@ final class EditAccountVC: UIViewController {
         insuranceButton.backgroundColor = .colorCell
         insuranceButton.setTitleColor(.colorLightGray, for: .normal)
         insuranceButton.contentVerticalAlignment = textAligmentTop
-        insuranceButton.titleLabel?.font = fontMediumStandard12
+        insuranceButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         insuranceButton.layer.cornerRadius = cornerRadius15
         insuranceTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         insuranceTextField.backgroundColor = .colorTabBar
-        insuranceTextField.font = fontMediumStandard18
+        insuranceTextField.font = AppFont.medium(size: 18).uiFont
         insuranceTextField.textColor = .colorWhite
         insuranceTextField.layer.cornerRadius = cornerRadius15
         insuranceTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -330,11 +329,11 @@ final class EditAccountVC: UIViewController {
         reserveCanopyButton.backgroundColor = .colorCell
         reserveCanopyButton.setTitleColor(.colorLightGray, for: .normal)
         reserveCanopyButton.contentVerticalAlignment = textAligmentTop
-        reserveCanopyButton.titleLabel?.font = fontMediumStandard12
+        reserveCanopyButton.titleLabel?.font = AppFont.medium(size: 12).uiFont
         reserveCanopyButton.layer.cornerRadius = cornerRadius15
         reserveCanopyTextField.placeholder = NSLocalizedString("Date / dd.mm.yyyy / edit account vc", comment: "")
         reserveCanopyTextField.backgroundColor = .colorTabBar
-        reserveCanopyTextField.font = fontMediumStandard18
+        reserveCanopyTextField.font = AppFont.medium(size: 18).uiFont
         reserveCanopyTextField.textColor = .colorWhite
         reserveCanopyTextField.layer.cornerRadius = cornerRadius15
         reserveCanopyTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -351,7 +350,7 @@ final class EditAccountVC: UIViewController {
 
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
         cleanButton.backgroundColor = .colorTabBar
-        cleanButton.titleLabel?.font = fontMediumStandard14
+        cleanButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.layer.cornerRadius = cornerRadius15
@@ -364,7 +363,7 @@ final class EditAccountVC: UIViewController {
         saveButton.layer.cornerRadius = cornerRadius15
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitleColor(.systemBlue, for: .highlighted)
-        saveButton.titleLabel?.font = fontMediumStandard14
+        saveButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         saveButton.addTarget(self, action: #selector(saveButtomTapped), for: .touchUpInside)
     }
     
@@ -579,6 +578,6 @@ final class EditAccountVC: UIViewController {
 
 extension EditAccountVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 }

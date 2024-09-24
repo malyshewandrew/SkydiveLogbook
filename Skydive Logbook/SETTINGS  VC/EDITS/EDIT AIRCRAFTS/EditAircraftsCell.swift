@@ -65,7 +65,7 @@ final class EditAircraftsCell: UITableViewCell {
 
         aircraftLabel.textColor = .colorWhite
         aircraftLabel.numberOfLines = 1
-        aircraftLabel.font = fontBoldStandard16
+        aircraftLabel.font = AppFont.bold(size: 16).uiFont
         aircraftLabel.textAlignment = .left
     }
 

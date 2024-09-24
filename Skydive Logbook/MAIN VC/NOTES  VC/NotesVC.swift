@@ -11,7 +11,6 @@ final class NotesVC: UIViewController {
     private let notesLottie = LottieAnimationView(name: "Notes")
     private let notesBackground = LottieAnimationView(name: "NotesBackground")
     private let confettiButton = UIButton()
-    private let vibrationOn = Vibration()
     private let noteButton = UIButton()
     private let noteTextView = UITextView()
     private let saveButton = UIButton()
@@ -124,7 +123,7 @@ final class NotesVC: UIViewController {
         noteButton.setTitle("\(NSLocalizedString("New note", comment: "") + ":")", for: .normal)
         noteButton.setTitleColor(.colorLightGray, for: .normal)
         noteButton.contentVerticalAlignment = textAligmentTop
-        noteButton.titleLabel?.font = fontMediumStandard14
+        noteButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         noteButton.layer.cornerRadius = 30
 
         // MARK: TEXT VIEW:
@@ -132,13 +131,13 @@ final class NotesVC: UIViewController {
         noteTextView.backgroundColor = .colorTabBar
         noteTextView.layer.cornerRadius = cornerRadius15
         noteTextView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        noteTextView.font = fontMediumStandard14
+        noteTextView.font = AppFont.medium(size: 14).uiFont
         noteTextView.textColor = .colorWhite
 
         // MARK: CLEAN BUTTON:
 
         cleanButton.backgroundColor = .colorTabBar
-        cleanButton.titleLabel?.font = fontMediumStandard14
+        cleanButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         cleanButton.setTitleColor(.colorWhite, for: .normal)
         cleanButton.setTitleColor(.systemBlue, for: .highlighted)
         cleanButton.setTitle(NSLocalizedString("Clean", comment: ""), for: .normal)
@@ -148,7 +147,7 @@ final class NotesVC: UIViewController {
         // MARK: SAVE BUTTON:
 
         saveButton.backgroundColor = .colorCell
-        saveButton.titleLabel?.font = fontMediumStandard14
+        saveButton.titleLabel?.font = AppFont.medium(size: 14).uiFont
         saveButton.setTitleColor(.colorWhite, for: .normal)
         saveButton.setTitleColor(.systemBlue, for: .highlighted)
         saveButton.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
@@ -371,11 +370,11 @@ extension NotesVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: DELETE CELL:
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let deleteNote = arrayNotesRealm[indexPath.row]
         let deleteAction = UIContextualAction(style: .normal, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             let alertDelete = UIAlertController(
                 title: NSLocalizedString("Delete note?", comment: ""),
                 message: NSLocalizedString("This action cannot be undone.", comment: ""),

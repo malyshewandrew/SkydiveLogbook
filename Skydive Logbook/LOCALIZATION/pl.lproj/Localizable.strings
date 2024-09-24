@@ -560,7 +560,7 @@
 "Message / adapty" = "Do odbierania danych wymagane jest aktywne połączenie internetowe.";
 
 "Alert / adapty status" = "Wymagana wersja Premium";
-"Message / adapty status" = "W wersji darmowej możesz zapisać tylko:\n\n50 skoków.\n10 notatek.\n1 system.\n\nAby usunąć wszystkie ograniczenia, kup PREMIUM w sekcji „Ustawienia”.";
+"Message / adapty status" = "W wersji darmowej możesz zapisać tylko:\n\n25 skoków.\n10 notatek.\n1 system.\n\nAby usunąć wszystkie ograniczenia, kup PREMIUM w sekcji „Ustawienia”.";
 
 // MARK: - SYSTEM:
 

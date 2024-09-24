@@ -560,7 +560,7 @@
 "Message / adapty" = "需要保持网络连接才能接收数据。";
 
 "Alert / adapty status" = "需要高级版";
-"Message / adapty status" = "在免费版本中，您只能保存：\n\n50次跳伞记录。\n10条注释。\n1个系统。\n\n要移除所有限制，请在“设置”部分购买高级版。";
+"Message / adapty status" = "在免费版本中，您只能保存：\n\n25次跳伞记录。\n10条注释。\n1个系统。\n\n要移除所有限制，请在“设置”部分购买高级版。";
 
 // MARK: - SYSTEM:
 

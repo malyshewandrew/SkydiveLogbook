@@ -117,72 +117,71 @@ final class MainCell: UITableViewCell {
 
     private func configureUserInterface() {
         // MARK: VIEW:
-
+        
         contentView.backgroundColor = .clear
         selectionStyle = .none
-
+        
         // MARK: CELL VIEW:
-
+        
         containerView.backgroundColor = .colorCell
         containerView.layer.cornerRadius = cornerRadius15
-
+        
         // MARK: NUMBER LABEL:
-
+        
         numberLabel.textColor = .colorDarkGray
-        numberLabel.font = fontMediumStandard18
+        numberLabel.font = AppFont.medium(size: 18).uiFont
         numberLabel.numberOfLines = 1
         numberLabel.textAlignment = .left
         numberLabel.adjustsFontSizeToFitWidth = true
-
+        
         // MARK: CANOPY LABEL:
-
+        
         canopyLabel.textColor = .colorWhite
-        canopyLabel.font = fontMediumStandard18
+        canopyLabel.font = AppFont.medium(size: 18).uiFont
         canopyLabel.numberOfLines = 1
         canopyLabel.textAlignment = .center
         canopyLabel.adjustsFontSizeToFitWidth = true
-
+        
         // MARK: MISSION LABEL:
-
+        
         missionLabel.textColor = .colorDarkGray
-        missionLabel.font = fontMediumStandard14
+        missionLabel.font = AppFont.medium(size: 14).uiFont
         missionLabel.numberOfLines = 1
         missionLabel.textAlignment = .center
         missionLabel.adjustsFontSizeToFitWidth = true
-
+        
         // MARK: DATE LABEL:
-
+        
         dateLabel.textColor = .colorWhite
-        dateLabel.font = fontThinStandard10
+        dateLabel.font = AppFont.thin(size: 10).uiFont
         dateLabel.numberOfLines = 1
         dateLabel.textAlignment = .right
         dateLabel.adjustsFontSizeToFitWidth = true
-
+        
         // MARK: LOCATION LABEL:
-
+        
         locationLabel.textColor = .colorWhite
-        locationLabel.font = fontThinStandard10
+        locationLabel.font = AppFont.thin(size: 10).uiFont
         locationLabel.numberOfLines = 1
         locationLabel.textAlignment = .right
         locationLabel.adjustsFontSizeToFitWidth = true
-
+        
         // MARK: AIRCRAFT LABEL:
-
+        
         aircraftLabel.textColor = .colorWhite
-        aircraftLabel.font = fontThinStandard10
+        aircraftLabel.font = AppFont.thin(size: 10).uiFont
         aircraftLabel.numberOfLines = 1
         aircraftLabel.textAlignment = .right
         aircraftLabel.adjustsFontSizeToFitWidth = true
-
+        
         // MARK: HEIGHT LABEL:
-
+        
         heightLabel.textColor = .colorWhite
-        heightLabel.font = fontThinStandard10
+        heightLabel.font = AppFont.thin(size: 10).uiFont
         heightLabel.numberOfLines = 1
         heightLabel.textAlignment = .right
         heightLabel.adjustsFontSizeToFitWidth = true
     }
-
     
     // MARK: - HELPERS:
     

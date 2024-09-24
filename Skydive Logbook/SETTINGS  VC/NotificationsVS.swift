@@ -87,7 +87,6 @@ final class NotificationsVS: UIViewController {
     private let insuranceSwitch = UISwitch()
     
     private let dateFormatter = DateFormatter()
-    private let vibrationOn = Vibration()
     private let notificationCenter = UNUserNotificationCenter.current()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 22)
     
@@ -522,7 +521,7 @@ final class NotificationsVS: UIViewController {
         
         mainLabel.text = NSLocalizedString("Access to notifications / notifications", comment: "")
         mainLabel.textColor = .white
-        mainLabel.font = fontMediumStandard14
+        mainLabel.font = AppFont.medium(size: 14).uiFont
         mainLabel.adjustsFontSizeToFitWidth = true
         
         mainSwitch.addTarget(self, action: #selector(mainSwitchValueChange(_:)), for: .valueChanged)
@@ -545,7 +544,7 @@ final class NotificationsVS: UIViewController {
         
         monthlyLabel.text = NSLocalizedString("Summary of the month / notifications", comment: "")
         monthlyLabel.textColor = .white
-        monthlyLabel.font = fontMediumStandard14
+        monthlyLabel.font = AppFont.medium(size: 14).uiFont
         monthlyLabel.adjustsFontSizeToFitWidth = true
         
         monthlySwitch.addTarget(self, action: #selector(monthlySwitchValueChange(_:)), for: .valueChanged)
@@ -568,7 +567,7 @@ final class NotificationsVS: UIViewController {
         
         containerLabel.text = NSLocalizedString("Container resource / notifications", comment: "")
         containerLabel.textColor = .white
-        containerLabel.font = fontMediumStandard14
+        containerLabel.font = AppFont.medium(size: 14).uiFont
         containerLabel.adjustsFontSizeToFitWidth = true
         
         containerSwitch.addTarget(self, action: #selector(containerSwitchValueChange(_:)), for: .valueChanged)
@@ -588,7 +587,7 @@ final class NotificationsVS: UIViewController {
         
         aadLabel.text = NSLocalizedString("AAD resource / notifications", comment: "")
         aadLabel.textColor = .white
-        aadLabel.font = fontMediumStandard14
+        aadLabel.font = AppFont.medium(size: 14).uiFont
         aadLabel.adjustsFontSizeToFitWidth = true
         
         aadSwitch.addTarget(self, action: #selector(aadSwitchValueChange(_:)), for: .valueChanged)
@@ -608,7 +607,7 @@ final class NotificationsVS: UIViewController {
         
         mainCanopyResourseLabel.text = NSLocalizedString("Main canopy resource date / notifications", comment: "")
         mainCanopyResourseLabel.textColor = .white
-        mainCanopyResourseLabel.font = fontMediumStandard14
+        mainCanopyResourseLabel.font = AppFont.medium(size: 14).uiFont
         mainCanopyResourseLabel.adjustsFontSizeToFitWidth = true
         
         mainCanopyResourseSwitch.addTarget(self, action: #selector(mainCanopyResourseSwitchValueChange(_:)), for: .valueChanged)
@@ -628,7 +627,7 @@ final class NotificationsVS: UIViewController {
         
         reserveCanopyResourseLabel.text = NSLocalizedString("Reserve canopy resource date / notifications", comment: "")
         reserveCanopyResourseLabel.textColor = .white
-        reserveCanopyResourseLabel.font = fontMediumStandard14
+        reserveCanopyResourseLabel.font = AppFont.medium(size: 14).uiFont
         reserveCanopyResourseLabel.adjustsFontSizeToFitWidth = true
         
         reserveCanopyResourseSwitch.addTarget(self, action: #selector(reserveCanopyResourseSwitchValueChange(_:)), for: .valueChanged)
@@ -651,7 +650,7 @@ final class NotificationsVS: UIViewController {
         
         mainCanopyJumpsLabel.text = "Основной (по прыжкам)"
         mainCanopyJumpsLabel.textColor = .white
-        mainCanopyJumpsLabel.font = fontMediumStandard14
+        mainCanopyJumpsLabel.font = AppFont.medium(size: 14).uiFont
         mainCanopyJumpsLabel.adjustsFontSizeToFitWidth = true
         
         mainCanopyJumpsSwitch.addTarget(self, action: #selector(mainCanopyJumpsSwitchValueChange(_:)), for: .valueChanged)
@@ -671,7 +670,7 @@ final class NotificationsVS: UIViewController {
         
         reserveCanopyRepackLabel.text = "Запасной (по переукладкам)"
         reserveCanopyRepackLabel.textColor = .white
-        reserveCanopyRepackLabel.font = fontMediumStandard14
+        reserveCanopyRepackLabel.font = AppFont.medium(size: 14).uiFont
         reserveCanopyRepackLabel.adjustsFontSizeToFitWidth = true
         
         reserveCanopyRepackSwitch.addTarget(self, action: #selector(reserveCanopyRepackSwitchValueChange(_:)), for: .valueChanged)
@@ -694,7 +693,7 @@ final class NotificationsVS: UIViewController {
         
         licenseLabel.text = NSLocalizedString("License period / notifications", comment: "")
         licenseLabel.textColor = .white
-        licenseLabel.font = fontMediumStandard14
+        licenseLabel.font = AppFont.medium(size: 14).uiFont
         licenseLabel.adjustsFontSizeToFitWidth = true
         
         licenseSwitch.addTarget(self, action: #selector(licenseSwitchValueChange(_:)), for: .valueChanged)
@@ -714,7 +713,7 @@ final class NotificationsVS: UIViewController {
         
         medicineLabel.text = NSLocalizedString("Medicine period / notifications", comment: "")
         medicineLabel.textColor = .white
-        medicineLabel.font = fontMediumStandard14
+        medicineLabel.font = AppFont.medium(size: 14).uiFont
         medicineLabel.adjustsFontSizeToFitWidth = true
         
         medicineSwitch.addTarget(self, action: #selector(medicineSwitchValueChange(_:)), for: .valueChanged)
@@ -734,7 +733,7 @@ final class NotificationsVS: UIViewController {
         
         insuranceLabel.text = NSLocalizedString("Insurance period / notifications", comment: "")
         insuranceLabel.textColor = .white
-        insuranceLabel.font = fontMediumStandard14
+        insuranceLabel.font = AppFont.medium(size: 14).uiFont
         medicineLabel.adjustsFontSizeToFitWidth = true
         
         insuranceSwitch.addTarget(self, action: #selector(insuranceSwitchValueChange(_:)), for: .valueChanged)
@@ -760,7 +759,7 @@ final class NotificationsVS: UIViewController {
     // MARK: MAIN SWITCH ABOT REQUEST LOCAL NOTIFICATIONS:
     
     @objc private func mainSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             UserDefaults.standard.setValue(true, forKeyPath: "mainSwith")
             print("Main Switch ON")
@@ -803,7 +802,7 @@ final class NotificationsVS: UIViewController {
     // MARK: MONTHLY:
     
     @objc private func monthlySwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeMonthlyNotification()
             NotificationManager.instance.setMonthlyNotification(arrayJumpsRealm: arrayJumpsRealm)
@@ -817,7 +816,7 @@ final class NotificationsVS: UIViewController {
     // MARK: CONTAINER:
     
     @objc private func containerSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeContainerNotification(for: arraySystemsRealm)
             NotificationManager.instance.setContainerNotification(for: arraySystemsRealm)
@@ -831,7 +830,7 @@ final class NotificationsVS: UIViewController {
     // MARK: AAD:
     
     @objc private func aadSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeAadNotification(for: arraySystemsRealm)
             NotificationManager.instance.setAadNotification(for: arraySystemsRealm)
@@ -845,7 +844,7 @@ final class NotificationsVS: UIViewController {
     // MARK: MAIN CANOPY RESOURSE:
     
     @objc private func mainCanopyResourseSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeMainCanopyResourseNotification(for: arraySystemsRealm)
             NotificationManager.instance.setMainCanopyResourseNotification(for: arraySystemsRealm)
@@ -859,7 +858,7 @@ final class NotificationsVS: UIViewController {
     // MARK: RESERVE CANOPY RESOURSE:
     
     @objc private func reserveCanopyResourseSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeReserveCanopyResourseNotification(for: arraySystemsRealm)
             NotificationManager.instance.setReserveCanopyResourseNotification(for: arraySystemsRealm)
@@ -873,7 +872,7 @@ final class NotificationsVS: UIViewController {
     // MARK: MAIN CANOPY JUMPS:
     
     @objc private func mainCanopyJumpsSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
         } else {}
     }
@@ -881,7 +880,7 @@ final class NotificationsVS: UIViewController {
     // MARK: RESERVE CANOPY REPACK:
     
     @objc private func reserveCanopyRepackSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
         } else {}
     }
@@ -889,7 +888,7 @@ final class NotificationsVS: UIViewController {
     // MARK: LICENSE:
     
     @objc private func licenseSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeLicenseNotification(for: arrayAccountRealm)
             NotificationManager.instance.setLicenseNotification(for: arrayAccountRealm)
@@ -903,7 +902,7 @@ final class NotificationsVS: UIViewController {
     // MARK: MEDICINE:
     
     @objc private func medicineSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeMedicineNotification(for: arrayAccountRealm)
             NotificationManager.instance.setMedicineNotification(for: arrayAccountRealm)
@@ -917,7 +916,7 @@ final class NotificationsVS: UIViewController {
     // MARK: INSURANCE:
     
     @objc private func insuranceSwitchValueChange(_ sender: UISwitch) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         if sender.isOn {
             NotificationManager.instance.removeInsuranceNotification(for: arrayAccountRealm)
             NotificationManager.instance.setInsuranceNotification(for: arrayAccountRealm)
@@ -982,7 +981,7 @@ final class NotificationsVS: UIViewController {
     // MARK: NOTIFICATION BUTTON TAPPED:
     
     @objc private func notificationButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         
         var titleCount = ""
         var message = ""
