@@ -6,8 +6,6 @@ import UIKit
 final class TabBarController: UITabBarController, UITabBarControllerDelegate {
     // MARK: PRIVATE PROPERTIES:
 
-    private let vibrationOn = Vibration()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,15 +18,15 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
         if let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController) {
             switch selectedIndex {
             case 0:
-                vibrationOn.vibrationStandart()
+                VibrationManager.instance.vibrationStandart()
             case 1:
-                vibrationOn.vibrationStandart()
+                VibrationManager.instance.vibrationStandart()
             case 2:
-                vibrationOn.vibrationStandart()
+                VibrationManager.instance.vibrationStandart()
             case 3:
-                vibrationOn.vibrationStandart()
+                VibrationManager.instance.vibrationStandart()
             case 4:
-                vibrationOn.vibrationStandart()
+                VibrationManager.instance.vibrationStandart()
             default:
                 break
             }

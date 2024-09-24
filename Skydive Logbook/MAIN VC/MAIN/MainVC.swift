@@ -39,7 +39,6 @@ final class MainVC: UIViewController {
     private let sliderButton = UISlider()
 
     private let dateFormatter = DateFormatter()
-    private let vibrationOn = Vibration()
     private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
@@ -549,7 +548,7 @@ final class MainVC: UIViewController {
         }
 
         sliderButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationLight()
+            VibrationManager.instance.vibrationLight()
             if self.sliderButton.value >= 99.5, self.sliderButton.value <= 100.5 {
                 agreeAction.isEnabled = true
                 self.sliderButton.backgroundColor = .systemGreen
@@ -573,12 +572,12 @@ final class MainVC: UIViewController {
     // MARK: FUNC FOR PLAY CONFETTI + VIBRATION:
 
     @objc private func confettiButtonLongPress() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         confettiLottie.play()
     }
         
     @objc private func startConfettiButtonTapped() {
-        vibrationOn.vibrationSucces()
+        VibrationManager.instance.vibrationSucces()
         startCenterConfettiLottie.play()
     }
 
@@ -613,7 +612,7 @@ final class MainVC: UIViewController {
     // MARK: TRANSITION ON ACCOUNT VIEW CONTROLLER:
 
     @objc private func accountButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let accountVC = AccountVC()
         if let sheetController = accountVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -626,7 +625,7 @@ final class MainVC: UIViewController {
     // MARK: TRANSITION ON WEATHER VIEW CONTROLLER:
 
     @objc private func weatherButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let weatherViewController = WeatherVC()
         present(weatherViewController, animated: true)
     }
@@ -634,7 +633,7 @@ final class MainVC: UIViewController {
     // MARK: TRANSITION ON DROPZONES VIEW CONTROLLER:
 
     @objc private func dropzonesButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let dropzones = DropZonesVC()
         present(dropzones, animated: true)
     }
@@ -642,7 +641,7 @@ final class MainVC: UIViewController {
     // MARK: TRANSITION ON PARAMETERS VIEW CONTROLLER:
     
     @objc private func confettiButtonTapped() {
-        self.vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let parametersVC = ParametersVC()
         if let sheetController = parametersVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -655,7 +654,7 @@ final class MainVC: UIViewController {
     // MARK: TRANSITION ON SKYDIVERS VIEW CONTROLLER:
 
     @objc private func skydiversButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let skydivers = SkydiversVC()
         skydivers.isModalInPresentation = true
         present(skydivers, animated: true)
@@ -664,7 +663,7 @@ final class MainVC: UIViewController {
     // MARK: TRANSITION ON CALCULATOR VIEW CONTROLLER:
 
     @objc private func calculatorButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let calculatorViewController = CalculatorVC()
         if let sheetController = calculatorViewController.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -677,7 +676,7 @@ final class MainVC: UIViewController {
     // MARK: TRANSITION ON NOTES VIEW CONTROLLER:
 
     @objc private func notesButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let notesViewController = NotesVC()
         if let sheetController = notesViewController.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
@@ -746,7 +745,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: TRANSSITION ON SELECTED JUMP:
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let jump = arrayJumpsRealm[indexPath.row]
         let jumpViewController = JumpVC(selectedJump: jump)
         selectedJump = jump
@@ -759,15 +758,14 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         
         // MARK: DELETE JUMP:
 
-        vibrationOn.vibrationStandart()
         let deleteJump = arrayJumpsRealm[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             let alertDelete = UIAlertController(title: NSLocalizedString("Delete jump?", comment: ""), message: NSLocalizedString("This action cannot be undone.", comment: ""), preferredStyle: .alert)
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
             alertDelete.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive, handler: { _ in
@@ -793,7 +791,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
         let editAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             let editJumpViewController = EditJumpVC()
             editJumpViewController.indexPath = indexPath.row
             self.navigationController?.pushViewController(editJumpViewController, animated: true)
@@ -810,10 +808,10 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COSTUM SWIPE LEFT (SHARE WITH JUMP:
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         let shareAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
-            vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
             let jump = arrayJumpsRealm[indexPath.row]
             let missionValue = jump.mission?.localizedValue ?? "-"
             let cutawayValue = jump.cutaway?.localizedValue ?? ""

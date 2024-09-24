@@ -30,7 +30,6 @@ final class JumpCell: UITableViewCell {
     private let timeLabel = UILabel()
     private let commentButton = UIButton(type: .system)
     private let commentLabel = UILabel()
-    private let vibrationOn = Vibration()
     private var jubileeJumps = Set((100 ..< 10000).filter { $0 % 100 == 0 })
     private var isCutaway: Bool?
     private var isVibrating = false
@@ -307,7 +306,7 @@ final class JumpCell: UITableViewCell {
         locationButton.setTitleColor(.colorLightGray, for: .normal)
         locationButton.contentVerticalAlignment = textAligmentTop
         locationButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }), for: .touchUpInside)
 
         locationLabel.backgroundColor = .colorTabBar
@@ -328,7 +327,7 @@ final class JumpCell: UITableViewCell {
         aircraftButton.setTitleColor(.colorLightGray, for: .normal)
         aircraftButton.contentVerticalAlignment = textAligmentTop
         aircraftButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }), for: .touchUpInside)
 
         aircraftLabel.backgroundColor = .colorTabBar
@@ -349,7 +348,7 @@ final class JumpCell: UITableViewCell {
         canopyButton.setTitleColor(.colorLightGray, for: .normal)
         canopyButton.contentVerticalAlignment = textAligmentTop
         canopyButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }), for: .touchUpInside)
 
         canopyLabel.backgroundColor = .colorTabBar
@@ -370,7 +369,7 @@ final class JumpCell: UITableViewCell {
         missionButton.setTitleColor(.colorLightGray, for: .normal)
         missionButton.contentVerticalAlignment = textAligmentTop
         missionButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }), for: .touchUpInside)
 
         missionLabel.backgroundColor = .colorTabBar
@@ -391,7 +390,7 @@ final class JumpCell: UITableViewCell {
         heightButton.setTitleColor(.colorLightGray, for: .normal)
         heightButton.contentVerticalAlignment = textAligmentTop
         heightButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }), for: .touchUpInside)
 
         heightLabel.backgroundColor = .colorTabBar
@@ -412,7 +411,7 @@ final class JumpCell: UITableViewCell {
         timeButton.setTitleColor(.colorLightGray, for: .normal)
         timeButton.contentVerticalAlignment = textAligmentTop
         timeButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }), for: .touchUpInside)
 
         timeLabel.backgroundColor = .colorTabBar
@@ -433,7 +432,7 @@ final class JumpCell: UITableViewCell {
         commentButton.setTitleColor(.colorLightGray, for: .normal)
         commentButton.contentVerticalAlignment = textAligmentTop
         commentButton.addAction(UIAction(handler: { _ in
-            self.vibrationOn.vibrationStandart()
+            VibrationManager.instance.vibrationStandart()
         }), for: .touchUpInside)
 
         commentLabel.backgroundColor = .colorTabBar
@@ -543,38 +542,45 @@ final class JumpCell: UITableViewCell {
     }
 
     @objc private func circleAnimationButtonTapped() {
-        if isCutaway == true {
-            confettiLottie.play()
-            confettiLottie.layer.shadowRadius = 10
-            confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
-            confettiLottie.layer.shadowOpacity = 1
-            circleRedLottie.isHidden = false
-            circleRedLottie.play()
-            circleRedLottie.loopMode = .playOnce
-            circleRedLottie.animationSpeed = 0.7
-            vibrationOn.vibrationSucces()
-            UIView.animate(withDuration: 2.0, animations: {
-                self.circleRedLottie.alpha = 1.0
-            }) { _ in
-                UIView.animate(withDuration: 2.0) {
-                    self.circleRedLottie.alpha = 0.0
-                }
-            }
+        
+        let lastPlayDate = UserDefaults.standard.object(forKey: "lastConfettiPlayDate") as? Date
+        let currentDate = Date()
+        
+        if let lastPlayDate = lastPlayDate, Calendar.current.isDate(currentDate, inSameDayAs: lastPlayDate) {
+            print("Confetti animation has already been played today.")
         } else {
+            UserDefaults.standard.set(currentDate, forKey: "lastConfettiPlayDate")
+            
             confettiLottie.play()
             confettiLottie.layer.shadowRadius = 10
             confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
             confettiLottie.layer.shadowOpacity = 1
-            circleGreenLottie.isHidden = false
-            circleGreenLottie.play()
-            circleGreenLottie.loopMode = .playOnce
-            circleGreenLottie.animationSpeed = 0.5
-            vibrationOn.vibrationSucces()
-            UIView.animate(withDuration: 2.0, animations: {
-                self.circleGreenLottie.alpha = 1.0
-            }) { _ in
-                UIView.animate(withDuration: 2.0) {
-                    self.circleGreenLottie.alpha = 0.0
+            
+            if isCutaway == true {
+                circleRedLottie.isHidden = false
+                circleRedLottie.play()
+                circleRedLottie.loopMode = .playOnce
+                circleRedLottie.animationSpeed = 0.7
+                VibrationManager.instance.vibrationSucces()
+                UIView.animate(withDuration: 2.0, animations: {
+                    self.circleRedLottie.alpha = 1.0
+                }) { _ in
+                    UIView.animate(withDuration: 2.0) {
+                        self.circleRedLottie.alpha = 0.0
+                    }
+                }
+            } else {
+                circleGreenLottie.isHidden = false
+                circleGreenLottie.play()
+                circleGreenLottie.loopMode = .playOnce
+                circleGreenLottie.animationSpeed = 0.5
+                VibrationManager.instance.vibrationSucces()
+                UIView.animate(withDuration: 2.0, animations: {
+                    self.circleGreenLottie.alpha = 1.0
+                }) { _ in
+                    UIView.animate(withDuration: 2.0) {
+                        self.circleGreenLottie.alpha = 0.0
+                    }
                 }
             }
         }
@@ -613,13 +619,13 @@ final class JumpCell: UITableViewCell {
     }
 
     @objc private func vibrationSpeed() {
-        vibrationOn.vibrationMedium.impactOccurred()
+        VibrationManager.instance.vibrationMedium.impactOccurred()
     }
     
     // MARK: CIRCLE BUTTON TAPPED:
     
     @objc private func circleButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
     }
 
     // MARK: SET ANIMATION FOR SHADOW:

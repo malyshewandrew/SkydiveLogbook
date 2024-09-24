@@ -75,7 +75,6 @@ final class AddSkydiverViewController: UIViewController {
     private var nickName: String = ""
     
     private var player = AVAudioPlayer()
-    private let vibrationOn = Vibration()
     
     // MARK: - LIFYCYCLE:
     
@@ -446,7 +445,7 @@ final class AddSkydiverViewController: UIViewController {
     // MARK: SEND BUTTON TAPPED:
     
     @objc private func sendButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)
@@ -650,7 +649,7 @@ final class AddSkydiverViewController: UIViewController {
     // MARK: CLEAN BUTTON TAPPED:
     
     @objc private func cleanButtonTapped() {
-        vibrationOn.vibrationStandart()
+        VibrationManager.instance.vibrationStandart()
         selectedImages.removeAll()
         collectionView.reloadData()
         actionButtonCleanChangeColor()
@@ -845,10 +844,11 @@ extension AddSkydiverViewController: UITextFieldDelegate {
     // MARK: EDIT LINK TEXT FIELD:
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentText = textField.text ?? ""
-            
-        if range.location < urlPrefix.count {
-            return false
+        if textField == linkTextField {
+            _ = textField.text ?? ""
+            if range.location < urlPrefix.count {
+                return false
+            }
         }
         return true
     }
