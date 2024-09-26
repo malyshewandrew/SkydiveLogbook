@@ -10,12 +10,10 @@ final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
 
     private let loadingView = UIView()
+    private let loadingBackgroundLottie = LottieAnimationView(name: "LoadingBackgroundLottie")
     private let loadingInfoLabel = UILabel()
     private let loadingEffectLottie = LottieAnimationView(name: "LoadingEffectLottie")
     private let loadingLottie = LottieAnimationView(name: "Loading")
-    private var player: AVPlayer?
-    private var playerLayer: AVPlayerLayer?
-    private let arrayVideos: [String] = ["VideoOne", "VideoTwo", "VideoThree"]
     
     private let helloLottie = LottieAnimationView(name: "Hello")
     private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
@@ -52,7 +50,6 @@ final class MainVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
-        startVideo()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +67,7 @@ final class MainVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(mainShadowLottie, mainLottie, confettiLottie, confettiButton, accountButton, weatherButton, mapsButton, communityButton, calculatorButton, notesButton, tableView, startCenterConfettiLottie, startConfettiTopLottie, firstMessageView, firstMessageLabel, mainStartLottie, startConfettiCenterButton, loadingView)
-        loadingView.addSubviews(loadingInfoLabel, loadingEffectLottie, helloLottie, loadingLottie)
+        loadingView.addSubviews(loadingBackgroundLottie, loadingInfoLabel, loadingEffectLottie, helloLottie, loadingLottie)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -83,6 +80,14 @@ final class MainVC: UIViewController {
         loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        // MARK: LOADING BACKGROUND LOTTIE:
+        
+        loadingBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
+        loadingBackgroundLottie.topAnchor.constraint(equalTo: loadingView.topAnchor).isActive = true
+        loadingBackgroundLottie.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor).isActive = true
+        loadingBackgroundLottie.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
+        loadingBackgroundLottie.trailingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
         
         // MARK: LOADING INFO LABEL:
 
@@ -196,6 +201,12 @@ final class MainVC: UIViewController {
         // MARK: LOADING VIEW:
 
         loadingView.backgroundColor = .colorBackground
+        
+        // MARK: LOADING BACKGROUND LOTTIE:
+        
+        loadingBackgroundLottie.loopMode = .loop
+        loadingBackgroundLottie.contentMode = .scaleAspectFill
+        loadingBackgroundLottie.play()
         
         // MARK: INFO LABEL:
         
@@ -685,41 +696,6 @@ final class MainVC: UIViewController {
         }
         present(notesViewController, animated: true, completion: nil)
     }
-    
-    // START VIDEO:
-    private func startVideo() {
-        guard let videoURL = Bundle.main.url(forResource: arrayVideos[Int.random(in: 0...3)], withExtension: "mp4") else { return }
-        let player = AVPlayer(url: videoURL)
-        self.player = player
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        loadingView.layer.insertSublayer(playerLayer, at: 0)
-        self.playerLayer = playerLayer
-        player.currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-        player.play()
-    }
-    
-    // REPEAT VIDEO:
-    @objc private func playerDidFinishPlaying() {
-        player?.seek(to: .zero)
-        player?.pause()
-        playerLayer?.removeFromSuperlayer()
-    }
-    
-    // OBSERVER:
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "status", let playerItem = object as? AVPlayerItem {
-            if playerItem.status == .readyToPlay {
-            } else if playerItem.status == .failed {}
-        }
-    }
-
-    deinit {
-        player?.currentItem?.removeObserver(self, forKeyPath: "status")
-        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
-    }
 }
 
 // MARK: - EXTENSION FOR TABLE VIEW:
@@ -835,6 +811,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             \(NSLocalizedString("Height", comment: "")): \(jump.height).
             \(NSLocalizedString("Time", comment: "")): \(jump.time).
             \(NSLocalizedString("Cutaway", comment: "")): \(cutawayValue).
+            \(NSLocalizedString("Comment", comment: "")): \(jump.comment).
             
             Skydive Book iOS Application, \(formattedDate).
             \(nicknameValue)
