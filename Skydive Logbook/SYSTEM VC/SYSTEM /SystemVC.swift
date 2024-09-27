@@ -107,7 +107,7 @@ final class SystemVC: UIViewController {
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: systemLottie.bottomAnchor, constant: 0).isActive = true
+        tableView.topAnchor.constraint(equalTo: systemLottie.bottomAnchor, constant: 5).isActive = true
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true

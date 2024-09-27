@@ -103,8 +103,8 @@ final class SystemCell: UITableViewCell {
 
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         
         // MARK: COMMENT BUTTON:
@@ -390,14 +390,14 @@ final class SystemCell: UITableViewCell {
 
         let configurationComment = UIImage.SymbolConfiguration(pointSize: 20)
         commentImage.image = UIImage(systemName: "note.text", withConfiguration: configurationComment)
-        commentImage.tintColor = .colorBlue
+        commentImage.tintColor = .colorLightBlue
         commentButton.addTarget(self, action: #selector(commentButtonTapped), for: .touchUpInside)
         
         // MARK: EDIT BUTTON:
 
         let configurationEdit = UIImage.SymbolConfiguration(pointSize: 20)
         editImage.image = UIImage(systemName: "slider.horizontal.3", withConfiguration: configurationEdit)
-        editImage.tintColor = .colorBlue
+        editImage.tintColor = .colorLightBlue
         editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
         
         // MARK: SYSTEM NAME:
@@ -410,7 +410,7 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER LABEL:
         
         containerLabel.text = "\(NSLocalizedString("Container system", comment: "")): ".uppercased()
-        containerLabel.textColor = .colorLightGray
+        containerLabel.textColor = .colorBlue
         containerLabel.font = AppFont.bold(size: 10).uiFont
         containerLabel.textAlignment = .left
         containerLabel.adjustsFontSizeToFitWidth = true
@@ -452,7 +452,7 @@ final class SystemCell: UITableViewCell {
         // MARK: AAD LABEL:
         
         aadLabel.text = "\(NSLocalizedString("AAD system", comment: "")): ".uppercased()
-        aadLabel.textColor = .colorLightGray
+        aadLabel.textColor = .colorBlue
         aadLabel.font = AppFont.bold(size: 10).uiFont
         aadLabel.textAlignment = .right
         aadLabel.adjustsFontSizeToFitWidth = true
@@ -496,7 +496,7 @@ final class SystemCell: UITableViewCell {
         // MARK: MAIN CANOPY LABEL:
         
         mainCanopyLabel.text = "\(NSLocalizedString("Main canopy system", comment: "")): ".uppercased()
-        mainCanopyLabel.textColor = .colorLightGray
+        mainCanopyLabel.textColor = .colorBlue
         mainCanopyLabel.font = AppFont.bold(size: 10).uiFont
         mainCanopyLabel.textAlignment = .left
         mainCanopyLabel.adjustsFontSizeToFitWidth = true
@@ -561,7 +561,7 @@ final class SystemCell: UITableViewCell {
         // MARK: RESERVE CANOPY LABEL:
         
         reserveCanopyLabel.text = "\(NSLocalizedString("Reserve canopy system", comment: "")): ".uppercased()
-        reserveCanopyLabel.textColor = .colorLightGray
+        reserveCanopyLabel.textColor = .colorBlue
         reserveCanopyLabel.font = AppFont.bold(size: 10).uiFont
         reserveCanopyLabel.textAlignment = .right
         reserveCanopyLabel.adjustsFontSizeToFitWidth = true
