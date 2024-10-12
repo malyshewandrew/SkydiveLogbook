@@ -25,7 +25,7 @@ final class GeneralInfoVC: UIViewController {
     var heightpPosition: CGFloat = 0.0
     var heightLabel = UILabel()
     var timeLabel = UILabel()
-    
+        
     // MARK: - LIFYCYCLE:
     
     override func viewDidLoad() {

@@ -4,7 +4,6 @@ import AVFoundation
 import Lottie
 import RealmSwift
 import UIKit
-import AVFoundation
 
 final class MainVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -14,7 +13,7 @@ final class MainVC: UIViewController {
     private let loadingInfoLabel = UILabel()
     private let loadingEffectLottie = LottieAnimationView(name: "LoadingEffectLottie")
     private let loadingLottie = LottieAnimationView(name: "Loading")
-    
+
     private let helloLottie = LottieAnimationView(name: "Hello")
     private let mainShadowLottie = LottieAnimationView(name: "MainShadowLottie")
     private let mainLottie = LottieAnimationView(name: "Main")
@@ -23,7 +22,7 @@ final class MainVC: UIViewController {
     private let startCenterConfettiLottie = LottieAnimationView(name: "MainConfetti")
     private let startConfettiCenterButton = UIButton()
     private let startConfettiTopLottie = LottieAnimationView(name: "StartConfettiTop")
-    
+
     private let confettiButton = UIButton()
     private let accountButton = UIButton()
     private let weatherButton = UIButton()
@@ -40,11 +39,13 @@ final class MainVC: UIViewController {
     private var selectedJump: JumpClassRealm?
     private let realmManager = RealmManager()
     private let configurationImage = UIImage.SymbolConfiguration(pointSize: 30)
+    private var vibrationTimer: Timer?
 
     // MARK: - LIFECYCLE:
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        startVibrationTimer()
         addSubviews()
         configureConstrains()
         configureUI()
@@ -80,24 +81,24 @@ final class MainVC: UIViewController {
         loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
+
         // MARK: LOADING BACKGROUND LOTTIE:
-        
+
         loadingBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
         loadingBackgroundLottie.topAnchor.constraint(equalTo: loadingView.topAnchor).isActive = true
         loadingBackgroundLottie.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor).isActive = true
         loadingBackgroundLottie.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
         loadingBackgroundLottie.trailingAnchor.constraint(equalTo: loadingView.leadingAnchor).isActive = true
-        
+
         // MARK: LOADING INFO LABEL:
 
         loadingInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         loadingInfoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loadingInfoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         loadingInfoLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
-        
+
         // MARK: LOADNING EFFECT:
-        
+
         loadingEffectLottie.translatesAutoresizingMaskIntoConstraints = false
         loadingEffectLottie.centerXAnchor.constraint(equalTo: loadingLottie.centerXAnchor).isActive = true
         loadingEffectLottie.centerYAnchor.constraint(equalTo: loadingLottie.centerYAnchor).isActive = true
@@ -111,17 +112,17 @@ final class MainVC: UIViewController {
         loadingLottie.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor, constant: -20).isActive = true
         loadingLottie.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 0.4).isActive = true
         loadingLottie.heightAnchor.constraint(equalTo: loadingLottie.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: HELLO LOTTIE:
-        
+
         helloLottie.translatesAutoresizingMaskIntoConstraints = false
         helloLottie.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
         helloLottie.topAnchor.constraint(equalTo: loadingLottie.centerYAnchor, constant: 35).isActive = true
         helloLottie.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 0.6).isActive = true
         helloLottie.heightAnchor.constraint(equalTo: helloLottie.widthAnchor, multiplier: 0.5).isActive = true
-        
+
         // MARK: MAIN SHADOW LOTTIE:
-        
+
         mainShadowLottie.translatesAutoresizingMaskIntoConstraints = false
         mainShadowLottie.centerXAnchor.constraint(equalTo: mainLottie.centerXAnchor).isActive = true
         mainShadowLottie.centerYAnchor.constraint(equalTo: mainLottie.centerYAnchor, constant: 10).isActive = true
@@ -201,24 +202,24 @@ final class MainVC: UIViewController {
         // MARK: LOADING VIEW:
 
         loadingView.backgroundColor = .colorBackground
-        
+
         // MARK: LOADING BACKGROUND LOTTIE:
-        
+
         loadingBackgroundLottie.loopMode = .loop
         loadingBackgroundLottie.contentMode = .scaleAspectFill
         loadingBackgroundLottie.play()
-        
+
         // MARK: INFO LABEL:
-        
+
         let currentYear = Calendar.current.component(.year, from: Date())
         loadingInfoLabel.numberOfLines = 0
         loadingInfoLabel.text = "Skydive Book iOS Application \n 2023-\(currentYear)"
         loadingInfoLabel.textColor = .colorWhite
         loadingInfoLabel.font = AppFont.regular(size: 8).uiFont
         loadingInfoLabel.textAlignment = .center
-                
+
         // MARK: LOADNING EFFECT:
-        
+
         loadingEffectLottie.play()
         loadingEffectLottie.loopMode = .playOnce
         loadingEffectLottie.contentMode = .scaleAspectFill
@@ -229,13 +230,13 @@ final class MainVC: UIViewController {
         loadingLottie.play()
         loadingLottie.loopMode = .loop
         loadingLottie.contentMode = .scaleAspectFill
-        
+
         // MARK: HELLO LOTTIE:
-        
+
         helloLottie.play()
         helloLottie.loopMode = .playOnce
         helloLottie.contentMode = .scaleAspectFit
-        
+
         perform(#selector(hideAnimation), with: nil, afterDelay: 4)
 
         // MARK: CONFETTI LOTTIE:
@@ -243,9 +244,9 @@ final class MainVC: UIViewController {
         confettiLottie.layer.shadowRadius = 15
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
-        
+
         // MARK: MAIN SHADOW LOTTIE:
-        
+
         mainShadowLottie.play()
         mainShadowLottie.loopMode = .loop
         mainShadowLottie.layer.opacity = 0.2
@@ -258,9 +259,9 @@ final class MainVC: UIViewController {
 
         mainLottie.play()
         mainLottie.loopMode = .autoReverse
-        
+
         // MARK: CONFETTI BUTTON:
-        
+
         confettiButton.layer.masksToBounds = true
         confettiButton.layer.shadowRadius = 25
         confettiButton.layer.shadowColor = UIColor.colorLightBlue.cgColor
@@ -293,13 +294,13 @@ final class MainVC: UIViewController {
         weatherButton.addTarget(self, action: #selector(weatherButtonTapped), for: .touchUpInside)
 
         // MARK: MAPS:
-        
+
         mapsButton.setImage(UIImage(systemName: "mappin.and.ellipse.circle.fill", withConfiguration: configurationImage), for: .normal)
         mapsButton.tintColor = .colorDarkGray
         mapsButton.addTarget(self, action: #selector(dropzonesButtonTapped), for: .touchUpInside)
-        
+
         // MARK: CONFETTI BUTTON:
-        
+
         confettiButton.addTarget(self, action: #selector(confettiButtonTapped), for: .touchUpInside)
 
         // MARK: COMMUNITY:
@@ -352,7 +353,7 @@ final class MainVC: UIViewController {
         let confettiGesture = UILongPressGestureRecognizer(target: self, action: #selector(confettiButtonLongPress))
         confettiButton.addGestureRecognizer(confettiGesture)
     }
-    
+
     private func startConfigureGestures() {
         // MARK: THREE TAP FOR PLAY ANIMATIONS:
 
@@ -374,9 +375,9 @@ final class MainVC: UIViewController {
         communityButton.isHidden = true
         calculatorButton.isHidden = true
         notesButton.isHidden = true
-        
+
         // MARK: START LOTTIE CENTER CONFETTI:
-        
+
         startCenterConfettiLottie.translatesAutoresizingMaskIntoConstraints = false
         startCenterConfettiLottie.centerXAnchor.constraint(equalTo: mainStartLottie.centerXAnchor).isActive = true
         startCenterConfettiLottie.centerYAnchor.constraint(equalTo: mainStartLottie.centerYAnchor).isActive = true
@@ -418,17 +419,17 @@ final class MainVC: UIViewController {
         firstMessageLabel.textAlignment = .center
         firstMessageLabel.adjustsFontSizeToFitWidth = true
         firstMessageLabel.text = NSLocalizedString("First Message", comment: "")
-        
+
         // MARK: START CONFETTI LOTTIE TOP:
-        
+
         startConfettiTopLottie.translatesAutoresizingMaskIntoConstraints = false
         startConfettiTopLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         startConfettiTopLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         startConfettiTopLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         startConfettiTopLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
+
         // MARK: START CONFETTI CENTER BUTTON:
-        
+
         startConfettiCenterButton.translatesAutoresizingMaskIntoConstraints = false
         startConfettiCenterButton.centerXAnchor.constraint(equalTo: mainStartLottie.centerXAnchor).isActive = true
         startConfettiCenterButton.centerYAnchor.constraint(equalTo: mainStartLottie.centerYAnchor).isActive = true
@@ -458,7 +459,6 @@ final class MainVC: UIViewController {
             firstMessageView.isHidden = true
             firstMessageLabel.isHidden = true
             startConfettiTopLottie.isHidden = true
-
             mainShadowLottie.isHidden = false
             mainLottie.isHidden = false
             confettiLottie.isHidden = false
@@ -538,7 +538,7 @@ final class MainVC: UIViewController {
         messageLabel.textAlignment = .center
         messageLabel.textColor = .colorStartAlert
         messageLabel.numberOfLines = 0
-        
+
         sliderButton.translatesAutoresizingMaskIntoConstraints = false
         sliderButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 10).isActive = true
         sliderButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
@@ -586,7 +586,7 @@ final class MainVC: UIViewController {
         VibrationManager.instance.vibrationSucces()
         confettiLottie.play()
     }
-        
+
     @objc private func startConfettiButtonTapped() {
         VibrationManager.instance.vibrationSucces()
         startCenterConfettiLottie.play()
@@ -595,6 +595,7 @@ final class MainVC: UIViewController {
     // MARK: FUNC FOR CLOSED LOADING LOTTIE:
 
     @objc private func hideAnimation() {
+        stopVibrationTimer()
         tableView.isHidden = false
         tabBarController?.tabBar.isHidden = false
         checkAgree()
@@ -606,7 +607,7 @@ final class MainVC: UIViewController {
         loadingLottie.removeFromSuperview()
         helloLottie.removeFromSuperview()
     }
-    
+
     // MARK: ALERT KIT SUCCESS:
 
     private func alertKitSuccess() {
@@ -617,9 +618,9 @@ final class MainVC: UIViewController {
             haptic: .success
         )
     }
-    
+
     // MARK: - TRANSITIONS:
-    
+
     // MARK: TRANSITION ON ACCOUNT VIEW CONTROLLER:
 
     @objc private func accountButtonTapped() {
@@ -648,9 +649,9 @@ final class MainVC: UIViewController {
         let dropzones = DropZonesVC()
         present(dropzones, animated: true)
     }
-    
+
     // MARK: TRANSITION ON PARAMETERS VIEW CONTROLLER:
-    
+
     @objc private func confettiButtonTapped() {
         VibrationManager.instance.vibrationStandart()
         let parametersVC = ParametersVC()
@@ -659,7 +660,7 @@ final class MainVC: UIViewController {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.large()]
         }
-        self.present(parametersVC, animated: true)
+        present(parametersVC, animated: true)
     }
 
     // MARK: TRANSITION ON SKYDIVERS VIEW CONTROLLER:
@@ -695,6 +696,27 @@ final class MainVC: UIViewController {
             sheetController.detents = [.medium()]
         }
         present(notesViewController, animated: true, completion: nil)
+    }
+
+    // MARK: START VIBRATION TIMER:
+
+    func startVibrationTimer() {
+        if vibrationTimer == nil {
+            vibrationTimer = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true) { _ in
+                VibrationManager.instance.vibrationLight()
+                print("Run Vibro!")
+            }
+        }
+    }
+
+    // MARK: STOP VIBRATION TIMER:
+
+    func stopVibrationTimer() {
+        if let timer = vibrationTimer {
+            timer.invalidate()
+            vibrationTimer = nil
+            print("Kill Vibro!")
+        }
     }
 }
 
@@ -733,9 +755,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: COSTUM SWIPE RIGHT (DELETE AND EDIT):
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
         VibrationManager.instance.vibrationStandart()
-        
+
         // MARK: DELETE JUMP:
 
         let deleteJump = arrayJumpsRealm[indexPath.row]
@@ -780,7 +801,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         return configuration
     }
-    
+
     // MARK: COSTUM SWIPE LEFT (SHARE WITH JUMP:
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -792,15 +813,15 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             let missionValue = jump.mission?.localizedValue ?? "-"
             let cutawayValue = jump.cutaway?.localizedValue ?? ""
             let jumpNumber = arrayJumpsRealm.count - indexPath.row
-            
+
             let skydiver = realmManager.localRealm.objects(AccountClassRealm.self)
             let nicknameValue = skydiver.first?.nickname ?? ""
-            
+
             let date = Date()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
             let formattedDate = dateFormatter.string(from: date)
-            
+
             let text = """
             # \(jumpNumber)/\(arrayJumpsRealm.count):
             \(NSLocalizedString("Date", comment: "")): \(jump.date).
@@ -812,7 +833,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             \(NSLocalizedString("Time", comment: "")): \(jump.time).
             \(NSLocalizedString("Cutaway", comment: "")): \(cutawayValue).
             \(NSLocalizedString("Comment", comment: "")): \(jump.comment).
-            
+
             Skydive Book iOS Application, \(formattedDate).
             \(nicknameValue)
             """

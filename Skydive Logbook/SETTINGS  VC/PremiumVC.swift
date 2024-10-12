@@ -1,6 +1,5 @@
 import Adapty
 import Lottie
-import RealmSwift
 import StoreKit
 import UIKit
 

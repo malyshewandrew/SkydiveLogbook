@@ -2,7 +2,6 @@ import AlertKit
 import AudioToolbox
 import AVFoundation
 import Lottie
-import RealmSwift
 import UIKit
 
 final class CalculatorVC: UIViewController {
