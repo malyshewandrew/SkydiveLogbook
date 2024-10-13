@@ -191,7 +191,7 @@ final class DropZonesVC: UIViewController {
     
     // MARK: FUNC FOR ADD NEW POINT:
 
-    @objc func tapMapAction(recognizer: UITapGestureRecognizer) {
+    @objc private func tapMapAction(recognizer: UITapGestureRecognizer) {
         let touch = recognizer.location(in: mapView)
         let coord = mapView.convert(touch, toCoordinateFrom: mapView)
 

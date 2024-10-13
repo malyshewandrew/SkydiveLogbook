@@ -4,6 +4,7 @@ import AVFoundation
 import Lottie
 import RealmSwift
 import UIKit
+import Network
 
 final class NotesVC: UIViewController {
     // MARK: - PRIVATE PROPERTIES:
@@ -18,6 +19,7 @@ final class NotesVC: UIViewController {
     private let tableView = UITableView()
     private var player = AVAudioPlayer()
     private let realmManager = RealmManager()
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
 
     // MARK: - LIFECYCLE:
 
@@ -299,7 +301,24 @@ final class NotesVC: UIViewController {
 
     private func showPaymentAlert() {
         let alert = UIAlertController(title: NSLocalizedString("Alert / adapty status", comment: ""), message: "\n\(NSLocalizedString("Message / adapty status", comment: ""))", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
+            checkInternetConnection { [weak self] isConnected in
+                guard let self = self else { return }
+                if !isConnected {
+                    DispatchQueue.main.async {
+                        let premiumViewController = PremiumVC()
+                        self.present(premiumViewController, animated: true)
+                        self.alertKitError()
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    let paywallViewController = PaywallVC()
+                    self.present(paywallViewController, animated: true)
+                }
+            }
+        }))
         present(alert, animated: true)
     }
 
@@ -345,6 +364,32 @@ final class NotesVC: UIViewController {
             style: .iOS17AppleMusic,
             haptic: .success
         )
+    }
+    
+    // MARK: SHOW ALERT WITH MESSAGE:
+
+    private func showAlertWithMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // MARK: CHECK INTERNET CONNECTION:
+    
+    private func checkInternetConnection(completion: @escaping (Bool) -> Void) {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                completion(true)
+            } else {
+                completion(false)
+            }
+            monitor.cancel()
+        }
+        
+        monitor.start(queue: queue)
     }
 }
 

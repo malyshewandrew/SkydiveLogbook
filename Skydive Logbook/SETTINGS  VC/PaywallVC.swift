@@ -17,6 +17,7 @@ final class PaywallVC: UIViewController {
         addSubviews()
         configureConstraints()
         configureUI()
+        showPaywall()
     }
 
     // MARK: - ADD SUBVIEWS:

@@ -1,6 +1,7 @@
 import Lottie
 import UIKit
 import RealmSwift
+import Network
 
 final class NewSystemVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -118,7 +119,7 @@ final class NewSystemVC: UIViewController {
         }
     }
     
-    // MARK: - MANUAL ALERT:
+    // MARK: MANUAL ALERT:
 
     @objc private func manualButtonTapped() {
         VibrationManager.instance.vibrationStandart()
@@ -151,6 +152,24 @@ final class NewSystemVC: UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         present(alert, animated: true)
     }
+    
+    // MARK: CHECK INTERNET CONNECTION:
+    
+    private func checkInternetConnection(completion: @escaping (Bool) -> Void) {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                completion(true)
+            } else {
+                completion(false)
+            }
+            monitor.cancel()
+        }
+        
+        monitor.start(queue: queue)
+    }
 }
 
 // MARK: - EXTENSION:
@@ -169,7 +188,23 @@ extension NewSystemVC: UITableViewDelegate, UITableViewDataSource {
         cell.showPaymentAlert = { [weak self] in
             guard let self = self else { return }
             let alert = UIAlertController(title: NSLocalizedString("Alert / adapty status", comment: ""), message: "\n\(NSLocalizedString("Message / adapty status", comment: ""))", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { [weak self] _ in
+                guard let self = self else { return }
+                checkInternetConnection { [weak self] isConnected in
+                    guard let self = self else { return }
+                    if !isConnected {
+                        DispatchQueue.main.async {
+                            let premiumViewController = PremiumVC()
+                            self.present(premiumViewController, animated: true)
+                        }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        let paywallViewController = PaywallVC()
+                        self.present(paywallViewController, animated: true)
+                    }
+                }
+            }))
             self.present(alert, animated: true)
         }
         return cell

@@ -704,7 +704,6 @@ final class MainVC: UIViewController {
         if vibrationTimer == nil {
             vibrationTimer = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true) { _ in
                 VibrationManager.instance.vibrationLight()
-                print("Run Vibro!")
             }
         }
     }
@@ -715,7 +714,6 @@ final class MainVC: UIViewController {
         if let timer = vibrationTimer {
             timer.invalidate()
             vibrationTimer = nil
-            print("Kill Vibro!")
         }
     }
 }
