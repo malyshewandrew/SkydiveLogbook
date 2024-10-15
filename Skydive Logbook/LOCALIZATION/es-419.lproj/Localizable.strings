@@ -663,3 +663,6 @@
 "Create point description / map view" = "Completa el formulario";
 "Name of point / map view" = "Nombre de la ubicación";
 "Description of point / map view" = "Descripción de la ubicación";
+
+"Weather from apple" = "Datos proporcionados por el Servicio";
+"Add new system alert / system" = "Para agregar un sistema de paracaídas, debe agregar al menos un paracaídas principal en la sección de Configuración.";

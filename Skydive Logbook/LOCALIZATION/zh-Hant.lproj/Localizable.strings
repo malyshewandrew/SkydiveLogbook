@@ -663,3 +663,6 @@
 "Create point description / map view" = "填写表格";
 "Name of point / map view" = "位置名称";
 "Description of point / map view" = "位置描述";
+
+"Weather from apple" = "数据由服务提供";
+"Add new system alert / system" = "要添加降落伞系统，您需要在“设置”部分中至少添加一个主降落伞。";

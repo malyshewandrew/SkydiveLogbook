@@ -663,3 +663,6 @@
 "Create point description / map view" = "Aizpildiet veidlapu";
 "Name of point / map view" = "Vietas nosaukums";
 "Description of point / map view" = "Vietas apraksts";
+
+"Weather from apple" = "Pakalpojuma sniegtie dati";
+"Add new system alert / system" = "Lai pievienotu izpletņa sistēmu, jums sadaļā „Iestatījumi” jāpievieno vismaz viens galvenais izpletnis.";

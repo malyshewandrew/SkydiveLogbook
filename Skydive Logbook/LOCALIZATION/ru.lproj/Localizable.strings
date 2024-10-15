@@ -687,3 +687,6 @@
 
 "Total jumps / notifications" = "Всего прыжков";
 "In this month / notifications" = "В текущем месяце";
+
+"Weather from apple" = "Данные предоставлены сервисом";
+"Add new system alert / system" = "Чтобы добавить парашютную систему вам необходимо добавить хотя бы один основной парашют в разделе Настройки";

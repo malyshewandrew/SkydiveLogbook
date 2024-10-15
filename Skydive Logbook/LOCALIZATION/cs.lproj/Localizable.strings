@@ -663,3 +663,6 @@
 "Create point description / map view" = "Vyplňte formulář";
 "Name of point / map view" = "Název místa";
 "Description of point / map view" = "Popis místa";
+
+"Weather from apple" = "Údaje poskytnuté službou";
+"Add new system alert / system" = "Chcete-li přidat systém padáku, musíte v sekci Nastavení přidat alespoň jeden hlavní padák.";

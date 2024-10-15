@@ -1,5 +1,6 @@
 import CoreLocation
 import Lottie
+import SafariServices
 import UIKit
 import WeatherKit
 
@@ -360,9 +361,9 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
     // MARK: GET WEATHER:
     
     private func getWeather(location: CLLocation) {
-        self.activityIndicator.center = view.center
-        self.activityIndicator.startAnimating()
-        self.view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
         Task { [weak self] in
             do {
                 let result = try await self?.service.weather(for: location)
@@ -422,7 +423,7 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
             }))
-            self.present(alert, animated: true)
+            present(alert, animated: true)
         case .notDetermined:
             let alert = UIAlertController(title: NSLocalizedString("Error / alert kit", comment: ""), message: NSLocalizedString("Permisson label alert / weather", comment: ""), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .cancel, handler: nil))
@@ -431,12 +432,11 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                     UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                 }
             }))
-            self.present(alert, animated: true)
+            present(alert, animated: true)
         default:
             break
         }
     }
-    
 }
 
 // MARK: - EXTENSION:
@@ -464,6 +464,7 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - EXTENSION:
 
 extension WeatherVC: WeatherCellDelegate {
+    
     // MARK: - WIND:
 
     func tapWindOverlayButton() {
@@ -473,7 +474,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(windVC, animated: true)
+        present(windVC, animated: true)
     }
         
     // MARK: - TEMPERATURE:
@@ -489,7 +490,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(temperatureVC, animated: true)
+        present(temperatureVC, animated: true)
     }
         
     // MARK: - HUMIDITY:
@@ -501,7 +502,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(humidityVC, animated: true)
+        present(humidityVC, animated: true)
     }
         
     // MARK: - CLOUD COVER:
@@ -513,7 +514,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(cloudCoverVC, animated: true)
+        present(cloudCoverVC, animated: true)
     }
         
     // MARK: - DEW POINT:
@@ -525,7 +526,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(dewPointVC, animated: true)
+        present(dewPointVC, animated: true)
     }
         
     // MARK: - VISIBILITY:
@@ -537,7 +538,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(visibilityVC, animated: true)
+        present(visibilityVC, animated: true)
     }
         
     // MARK: - PRECIPITATION:
@@ -549,7 +550,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(precipitationVC, animated: true)
+        present(precipitationVC, animated: true)
     }
         
     // MARK: - PRESSURE:
@@ -561,7 +562,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(pressureVC, animated: true)
+        present(pressureVC, animated: true)
     }
         
     // MARK: - UV INDEX:
@@ -573,7 +574,7 @@ extension WeatherVC: WeatherCellDelegate {
             sheetController.preferredCornerRadius = 100
             sheetController.detents = [.medium()]
         }
-        self.present(uvIndexVC, animated: true)
+        present(uvIndexVC, animated: true)
     }
         
     // MARK: - WIND INFO BUTTON:
@@ -581,6 +582,22 @@ extension WeatherVC: WeatherCellDelegate {
     func tapWindInfoButton() {
         let alert = UIAlertController(title: NSLocalizedString("Wind direction", comment: ""), message: NSLocalizedString("Arrow wind direction", comment: ""), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
-        self.present(alert, animated: true)
+        present(alert, animated: true)
+    }
+    
+    // MARK: - APPLE WEATHER BUTTON:
+    func tapAppleWeatherButton() {
+        guard let url = URL(string: "https://developer.apple.com/weatherkit/data-source-attribution/") else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.delegate = self
+        present(safariViewController, animated: true)
+    }
+}
+
+// MARK: - EXTENSION FOR SAFARI:
+
+extension WeatherVC: SFSafariViewControllerDelegate {
+    func safariViewControllerWillOpenInBrowser(_ controller: SFSafariViewController) {
+        print("Open in Safari app")
     }
 }

@@ -663,3 +663,6 @@
 "Create point description / map view" = "フォームに入力する";
 "Name of point / map view" = "場所の名前";
 "Description of point / map view" = "場所の説明";
+
+"Weather from apple" = "データはサービスによって提供されます";
+"Add new system alert / system" = "パラシュートシステムを追加するには、設定セクションに少なくとも1つのメインパラシュートを追加する必要があります。";

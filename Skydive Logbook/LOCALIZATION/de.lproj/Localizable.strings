@@ -663,3 +663,6 @@
 "Create point description / map view" = "Das Formular ausfüllen";
 "Name of point / map view" = "Name des Standorts";
 "Description of point / map view" = "Beschreibung des Standorts";
+
+"Weather from apple" = "Die Daten werden vom Service bereitgestellt";
+"Add new system alert / system" = "Um ein Fallschirmsystem hinzuzufügen, müssen Sie im Abschnitt „Einstellungen“ mindestens einen Hauptfallschirm hinzufügen.";

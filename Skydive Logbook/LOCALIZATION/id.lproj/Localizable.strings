@@ -663,3 +663,6 @@
 "Create point description / map view" = "Isi formulir";
 "Name of point / map view" = "Nama lokasi";
 "Description of point / map view" = "Deskripsi lokasi";
+
+"Weather from apple" = "Data disediakan oleh layanan";
+"Add new system alert / system" = "Untuk menambahkan sistem parasut, Anda perlu menambahkan setidaknya satu parasut utama di bagian Pengaturan.";

@@ -663,3 +663,6 @@
 "Create point description / map view" = "املأ النموذج";
 "Name of point / map view" = "اسم الموقع";
 "Description of point / map view" = "وصف الموقع";
+
+"Weather from apple" = "يتم توفير البيانات من قبل الخدمة";
+"Add new system alert / system" = "لإضافة نظام المظلة، يجب عليك إضافة مظلة رئيسية واحدة على الأقل في قسم الإعدادات.";

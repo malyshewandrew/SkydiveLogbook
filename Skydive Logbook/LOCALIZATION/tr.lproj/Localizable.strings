@@ -663,3 +663,6 @@
 "Create point description / map view" = "Formu doldurun";
 "Name of point / map view" = "Konum adı";
 "Description of point / map view" = "Konum açıklaması";
+
+"Weather from apple" = "Veriler hizmet tarafından sağlanmaktadır";
+"Add new system alert / system" = "Bir paraşüt sistemi eklemek için, Ayarlar bölümünde en az bir ana paraşüt eklemeniz gerekir.";

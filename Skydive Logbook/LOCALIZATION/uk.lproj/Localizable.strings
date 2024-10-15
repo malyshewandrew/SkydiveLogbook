@@ -663,3 +663,6 @@
 "Create point description / map view" = "Заповніть форму";
 "Name of point / map view" = "Назва місця";
 "Description of point / map view" = "Опис місця";
+
+"Weather from apple" = "Дані надані сервісом";
+"Add new system alert / system" = "Щоб додати систему парашутів, вам потрібно додати хоча б один основний парашут у розділі Налаштування.";

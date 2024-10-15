@@ -663,3 +663,6 @@
 "Create point description / map view" = "양식을 작성하십시오";
 "Name of point / map view" = "위치 이름";
 "Description of point / map view" = "위치 설명";
+
+"Weather from apple" = "데이터는 서비스에 의해 제공됩니다";
+"Add new system alert / system" = "낙하산 시스템을 추가하려면 설정 섹션에서 최소한 하나의 메인 낙하산을 추가해야 합니다.";

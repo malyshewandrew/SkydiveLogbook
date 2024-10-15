@@ -12,6 +12,7 @@ protocol WeatherCellDelegate: AnyObject {
     func tapPressureOverlayButton()
     func tapUvIndexOverlayButton()
     func tapVisibilityOverlayButton()
+    func tapAppleWeatherButton()
 }
 
 final class WeatherCell: UITableViewCell {
@@ -74,6 +75,9 @@ final class WeatherCell: UITableViewCell {
     private let blurEffect = UIBlurEffect(style: .systemThinMaterialDark)
     private let mapConfigurator = MKHybridMapConfiguration(elevationStyle: .realistic)
     
+    private let appleWeatherLabel = UILabel()
+    private let appleWeatherButton = UIButton()
+    
     weak var delegate: WeatherCellDelegate?
 
     // MARK: - LIFECYCLE:
@@ -98,7 +102,7 @@ final class WeatherCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubvies() {
-        contentView.addSubviews(windButton, temperatureButton, cloudCoverButton, humidityButton, dewPointButton, precipitationButton, visibilityButton, pressureButton, uvIndexButton, iconImageView, mapView)
+        contentView.addSubviews(windButton, temperatureButton, cloudCoverButton, humidityButton, dewPointButton, precipitationButton, visibilityButton, pressureButton, uvIndexButton, iconImageView, mapView, appleWeatherLabel, appleWeatherButton)
         windButton.addSubviews(windSpeedLabel, windGustLabel, windDirectionLabel, windOverlayButton)
         temperatureButton.addSubviews(currentTemperatureLabel, descriptionLabel, feelTemperatureLabel, temperatureOverlayButton)
         cloudCoverButton.addSubviews(cloudCoverLabel, cloudCoverOverlayButton)
@@ -366,9 +370,9 @@ final class WeatherCell: UITableViewCell {
         // MARK: - MAP VIEW:
 
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.topAnchor.constraint(equalTo: pressureButton.bottomAnchor, constant: 15).isActive = true
+        mapView.topAnchor.constraint(equalTo: appleWeatherButton.bottomAnchor).isActive = true
+        mapView.heightAnchor.constraint(equalTo: mapView.widthAnchor, multiplier: 0.8).isActive = true
         mapView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
-        mapView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
         mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
@@ -417,6 +421,20 @@ final class WeatherCell: UITableViewCell {
         compasImageView.centerYAnchor.constraint(equalTo: mapView.centerYAnchor).isActive = true
         compasImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         compasImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        
+        // MARK: APPLE WEATHER LABEL:
+        
+        appleWeatherLabel.translatesAutoresizingMaskIntoConstraints = false
+        appleWeatherLabel.topAnchor.constraint(equalTo: pressureButton.bottomAnchor).isActive = true
+        appleWeatherLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        
+        // MARK: APPLE WEATHER BUTTON:
+        
+        appleWeatherButton.translatesAutoresizingMaskIntoConstraints = false
+        appleWeatherButton.topAnchor.constraint(equalTo: appleWeatherLabel.topAnchor).isActive = true
+        appleWeatherButton.bottomAnchor.constraint(equalTo: appleWeatherLabel.bottomAnchor).isActive = true
+        appleWeatherButton.leadingAnchor.constraint(equalTo: appleWeatherLabel.leadingAnchor).isActive = true
+        appleWeatherButton.trailingAnchor.constraint(equalTo: appleWeatherLabel.trailingAnchor).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -721,6 +739,19 @@ final class WeatherCell: UITableViewCell {
         compasImageView.image = UIImage(named: "Compas")
         compasImageView.layer.opacity = 0.5
         compasImageView.isHidden = isCompasHidden
+        
+        // MARK: - APPLE WEATHER LABEL:
+        
+        let text = NSLocalizedString("Weather from apple", comment: "") + "  Weather"
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: text.count))
+        appleWeatherLabel.textColor = .white
+        appleWeatherLabel.font = AppFont.medium(size: 12).uiFont
+        appleWeatherLabel.attributedText = attributedString
+        
+        // MARK: APPLE WEATHER BUTTON:
+        
+        appleWeatherButton.addTarget(self, action: #selector(appleWeatherButtonTapped), for: .touchUpInside)
     }
 
     // MARK: - HELPERS:
@@ -841,6 +872,13 @@ final class WeatherCell: UITableViewCell {
         default:
             break
         }
+    }
+    
+    // MARK: APPLE WEATHER LABEL TAPPED:
+
+    @objc func appleWeatherButtonTapped() {
+        VibrationManager.instance.vibrationStandart()
+        delegate?.tapAppleWeatherButton()
     }
 
     // MARK: - CONFIGURE MODEL:

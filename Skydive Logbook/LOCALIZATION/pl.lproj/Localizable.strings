@@ -658,9 +658,11 @@
 
 // MARK: - MAP:
 
-// Polish
 "Info map / map view" = "Aby wskazać własny punkt na mapie, naciśnij i przytrzymaj wybrane miejsce, a następnie wypełnij formularz.";
 "Create point / map view" = "Utwórz punkt na mapie";
 "Create point description / map view" = "Wypełnij formularz";
 "Name of point / map view" = "Nazwa lokalizacji";
 "Description of point / map view" = "Opis lokalizacji";
+
+"Weather from apple" = "Dane dostarczone przez serwis";
+"Add new system alert / system" = "Aby dodać system spadochronowy, musisz dodać co najmniej jeden główny spadochron w sekcji Ustawienia.";

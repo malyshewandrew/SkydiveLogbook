@@ -292,6 +292,14 @@ final class SystemVC: UIViewController {
 
     @objc private func newSystemButtonTapped() {
         VibrationManager.instance.vibrationStandart()
+        
+        if arrayCanopiesRealm.isEmpty {
+            let alert = UIAlertController(title: NSLocalizedString("Error / alert kit", comment: "") + ":", message: "\n\(NSLocalizedString("Add new system alert / system", comment: ""))", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
+            present(alert, animated: true)
+            return
+        }
+        
         guard let navigationController = navigationController else { return }
         let newSystemVC = NewSystemVC()
         navigationController.pushViewController(newSystemVC, animated: true)

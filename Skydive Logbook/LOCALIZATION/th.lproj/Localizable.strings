@@ -663,3 +663,6 @@
 "Create point description / map view" = "กรอกแบบฟอร์ม";
 "Name of point / map view" = "ชื่อสถานที่";
 "Description of point / map view" = "คำอธิบายสถานที่";
+
+"Weather from apple" = "ข้อมูลที่ให้บริการโดยบริการ";
+"Add new system alert / system" = "ในการเพิ่มระบบร่มชูชีพ คุณต้องเพิ่มร่มชูชีพหลักอย่างน้อยหนึ่งอันในส่วนการตั้งค่า.";

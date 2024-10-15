@@ -663,3 +663,6 @@
 "Create point description / map view" = "Užpildykite formą";
 "Name of point / map view" = "Vietos pavadinimas";
 "Description of point / map view" = "Vietos aprašymas";
+
+"Weather from apple" = "Duomenys teikiami paslaugos";
+"Add new system alert / system" = "Norėdami pridėti parašiuto sistemą, turite pridėti bent vieną pagrindinį parašiutą skyriuje „Nustatymai“.";

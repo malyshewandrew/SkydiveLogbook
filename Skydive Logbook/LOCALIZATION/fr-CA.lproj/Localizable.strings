@@ -663,3 +663,6 @@
 "Create point description / map view" = "Remplissez le formulaire";
 "Name of point / map view" = "Nom de l'emplacement";
 "Description of point / map view" = "Description de l'emplacement";
+
+"Weather from apple" = "Données fournies par le service";
+"Add new system alert / system" = "Pour ajouter un système de parachute, vous devez ajouter au moins un parachute principal dans la section Paramètres.";
