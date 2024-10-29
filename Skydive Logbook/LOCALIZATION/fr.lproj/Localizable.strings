@@ -669,3 +669,6 @@
 
 "First add text / first add" = "Ajoutez d'abord un emplacement, un avion et un parachute.";
 "Second add text / first add" = "Vous pouvez ajouter d'autres données et les modifier dans la section Paramètres.";
+
+"Account" = "Compte";
+"Edit data / settings" = "Modifier les données / paramètres";
