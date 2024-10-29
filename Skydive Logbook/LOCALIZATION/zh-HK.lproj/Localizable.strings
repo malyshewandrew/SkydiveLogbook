@@ -666,3 +666,6 @@
 
 "Weather from apple" = "数据由服务提供";
 "Add new system alert / system" = "要添加降落伞系统，您需要在“设置”部分中至少添加一个主降落伞。";
+
+"First add text / first add" = "首先添加一个位置、飞机和降落伞。";
+"Second add text / first add" = "你可以在设置中添加其他数据并进行编辑。";

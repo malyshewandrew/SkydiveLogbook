@@ -1,0 +1,77 @@
+import UIKit
+import RealmSwift
+
+final class EditAircraftsCell: UITableViewCell {
+    // MARK: - PROPERTIES:
+
+    private let view = UIView()
+    private let aircraftLabel = UILabel()
+    
+    // MARK: - LIFECYCLE:
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubviews()
+        configureConstrains()
+        configureUI()
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - ADD SUBVIEWS:
+
+    private func addSubviews() {
+        contentView.addSubviews(view)
+        view.addSubview(aircraftLabel)
+    }
+
+    // MARK: - CONFIGURE CONSTRAINS:
+
+    private func configureConstrains() {
+        // MARK: VIEW:
+
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5).isActive = true
+        view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5).isActive = true
+        view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        view.heightAnchor.constraint(equalToConstant: height40).isActive = true
+
+        // MARK: LOCATION LABEL:
+
+        aircraftLabel.translatesAutoresizingMaskIntoConstraints = false
+        aircraftLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
+        aircraftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
+        aircraftLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
+        aircraftLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
+    }
+
+    // MARK: - CONFIGURE UI:
+
+    private func configureUI() {
+        // MARK: CONTENT VIEW:
+
+        contentView.backgroundColor = .colorBackground
+
+        // MARK: VIEW:
+
+        view.backgroundColor = .colorTabBar
+        view.layer.cornerRadius = cornerRadius15
+
+        // MARK: LOCATION LABEL:
+
+        aircraftLabel.textColor = .colorWhite
+        aircraftLabel.numberOfLines = 1
+        aircraftLabel.font = FontManager.bold(size: 16).uiFont
+        aircraftLabel.textAlignment = .left
+    }
+
+    // MARK: - CONFIGURE MODEL:
+
+    func configure(text: String) {
+        aircraftLabel.text = text
+    }
+}

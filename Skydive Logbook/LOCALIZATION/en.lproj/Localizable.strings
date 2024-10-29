@@ -690,3 +690,9 @@
 
 "Weather from apple" = "The data is provided by the service";
 "Add new system alert / system" = "To add a parachute system, you need to add at least one main canopy in the Settings section.";
+
+"First add text / first add" = "To start using it, you need to add at least one location, an aircraft and a canopy.\n\n";
+"Second add text / first add" = "You can add other data and edit it in the Settings section.";
+
+"Account" = "Account";
+"Edit data / settings" = "Edit data";

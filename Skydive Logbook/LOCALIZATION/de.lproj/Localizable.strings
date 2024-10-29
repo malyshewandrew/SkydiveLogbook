@@ -666,3 +666,6 @@
 
 "Weather from apple" = "Die Daten werden vom Service bereitgestellt";
 "Add new system alert / system" = "Um ein Fallschirmsystem hinzuzufügen, müssen Sie im Abschnitt „Einstellungen“ mindestens einen Hauptfallschirm hinzufügen.";
+
+"First add text / first add" = "Zuerst musst du einen Ort, ein Flugzeug und einen Fallschirm hinzufügen.";
+"Second add text / first add" = "Weitere Daten können im Bereich Einstellungen hinzugefügt und bearbeitet werden.";

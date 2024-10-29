@@ -666,3 +666,6 @@
 
 "Weather from apple" = "Dane dostarczone przez serwis";
 "Add new system alert / system" = "Aby dodać system spadochronowy, musisz dodać co najmniej jeden główny spadochron w sekcji Ustawienia.";
+
+"First add text / first add" = "Najpierw dodaj lokalizację, samolot i spadochron.";
+"Second add text / first add" = "Możesz dodać inne dane i edytować je w sekcji Ustawienia.";

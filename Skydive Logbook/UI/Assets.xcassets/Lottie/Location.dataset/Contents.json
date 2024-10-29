@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "Location.json",
-      "idiom" : "universal"
+      "filename" : "Radar-4-3_clean.json",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.json"
     }
   ],
   "info" : {

@@ -666,3 +666,6 @@
 
 "Weather from apple" = "Données fournies par le service";
 "Add new system alert / system" = "Pour ajouter un système de parachute, vous devez ajouter au moins un parachute principal dans la section Paramètres.";
+
+"First add text / first add" = "Ajoutez d'abord un emplacement, un avion et un parachute.";
+"Second add text / first add" = "Vous pouvez ajouter d'autres données et les modifier dans la section Paramètres.";

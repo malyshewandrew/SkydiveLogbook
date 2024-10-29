@@ -666,3 +666,6 @@
 
 "Weather from apple" = "Dados fornecidos pelo serviço";
 "Add new system alert / system" = "Para adicionar um sistema de paraquedas, você precisa adicionar pelo menos um paraquedas principal na seção Configurações.";
+
+"First add text / first add" = "Primeiro, adicione uma localização, aeronave e paraquedas.";
+"Second add text / first add" = "Você pode adicionar outros dados e editá-los na seção Configurações.";

@@ -666,3 +666,6 @@
 
 "Weather from apple" = "Veriler hizmet tarafından sağlanmaktadır";
 "Add new system alert / system" = "Bir paraşüt sistemi eklemek için, Ayarlar bölümünde en az bir ana paraşüt eklemeniz gerekir.";
+
+"First add text / first add" = "Öncelikle bir konum, uçak ve paraşüt ekleyin.";
+"Second add text / first add" = "Diğer verileri ekleyebilir ve Ayarlar bölümünde düzenleyebilirsiniz.";

@@ -666,3 +666,6 @@
 
 "Weather from apple" = "Údaje poskytnuté službou";
 "Add new system alert / system" = "Chcete-li přidat systém padáku, musíte v sekci Nastavení přidat alespoň jeden hlavní padák.";
+
+"First add text / first add" = "Nejprve přidejte lokalitu, letadlo a padák.";
+"Second add text / first add" = "Další data můžete přidat a upravit v sekci Nastavení.";

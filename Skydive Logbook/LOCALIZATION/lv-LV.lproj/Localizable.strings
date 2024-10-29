@@ -666,3 +666,6 @@
 
 "Weather from apple" = "Pakalpojuma sniegtie dati";
 "Add new system alert / system" = "Lai pievienotu izpletņa sistēmu, jums sadaļā „Iestatījumi” jāpievieno vismaz viens galvenais izpletnis.";
+
+"First add text / first add" = "Vispirms pievienojiet vietu, lidmašīnu un izpletni.";
+"Second add text / first add" = "Citus datus var pievienot un rediģēt sadaļā Iestatījumi.";
