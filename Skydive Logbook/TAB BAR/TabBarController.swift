@@ -6,50 +6,66 @@ import UIKit
 final class TabBarController: UITabBarController, UITabBarControllerDelegate {
     // MARK: PRIVATE PROPERTIES:
 
+    private let mainViewController = MainVC()
+    private let statisticViewController = StatisticVC()
+    private let addNewJumpViewController = NewJumpVC()
+    private let systemViewController = SystemVC()
+    private let settingsViewController = SettingsVC()
+
+    // MARK: - LIFECYCLE:
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         delegate = self
-        
-        // MARK: TAB BAR ITEMS:
+        configureItems()
+        configureNavigation()
+        configureUI()
+    }
 
-        let mainViewController = MainVC()
-        mainViewController.title = NSLocalizedString("Main tab bar", comment: "")
-        mainViewController.tabBarItem.image = UIImage(systemName: "house.fill")
+    // MARK: - CONFIGURE ITEMS:
 
-        let statisticViewController = StatisticVC()
-        statisticViewController.title = NSLocalizedString("Statistic tab bar", comment: "")
-        statisticViewController.tabBarItem.image = UIImage(systemName: "list.bullet.clipboard.fill")
+    private func configureItems() {
+        setupTabBarItemSettings(viewController: mainViewController, title: "Main tab bar", image: "house.fill")
+        setupTabBarItemSettings(viewController: statisticViewController, title: "Statistic tab bar", image: "list.bullet.clipboard.fill")
+        setupTabBarItemSettings(viewController: addNewJumpViewController, title: "Add jump tab bar", image: "plus.rectangle.portrait.fill")
+        setupTabBarItemSettings(viewController: systemViewController, title: "System tab bar", image: "backpack.fill")
+        setupTabBarItemSettings(viewController: settingsViewController, title: "Settings tab bar", image: "gearshape.fill")
+    }
 
-        let addNewJumpViewController = NewJumpVC()
-        addNewJumpViewController.title = NSLocalizedString("Add jump tab bar", comment: "")
-        addNewJumpViewController.tabBarItem.image = UIImage(systemName: "plus.rectangle.portrait.fill")
+    // MARK: - CONFIGURE NAVIGATION:
 
-        let systemViewController = SystemVC()
-        systemViewController.title = NSLocalizedString("System tab bar", comment: "")
-        systemViewController.tabBarItem.image = UIImage(systemName: "backpack.fill")
-
-        let settingsViewController = SettingsVC()
-        settingsViewController.title = NSLocalizedString("Settings tab bar", comment: "")
-        settingsViewController.tabBarItem.image = UIImage(systemName: "gearshape.fill")
-
-        // MARK: NAVIGATION BAR ITEMS:
-
+    private func configureNavigation() {
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
         let statisticNavigationController = UINavigationController(rootViewController: statisticViewController)
         let addNewJumpNavigationController = UINavigationController(rootViewController: addNewJumpViewController)
         let systemNavigationController = UINavigationController(rootViewController: systemViewController)
         let settingsNavigationController = UINavigationController(rootViewController: settingsViewController)
 
-        // MARK: TAB BAR UI CONFIGURATE:
-
         setViewControllers([mainNavigationController, statisticNavigationController, addNewJumpNavigationController, systemNavigationController, settingsNavigationController], animated: true)
+    }
+
+    // MARK: - CONFIGURE TAB BAR UI:
+
+    private func configureUI() {
         tabBar.backgroundColor = .colorTabBar
         tabBar.unselectedItemTintColor = .colorTabBarUnselected
         tabBar.tintColor = .colorTabBarSelected
         tabBar.layer.cornerRadius = 10
     }
 
+    // MARK: - HELPERS:
+
+    // MARK: SETUP SETTINGS FOR TAB BAR ITEMS:
+
+    private func setupTabBarItemSettings(viewController: UIViewController, title: String, image: String) {
+        viewController.tabBarItem.title = NSLocalizedString(title, comment: "")
+        viewController.tabBarItem.image = UIImage(systemName: image)
+    }
+}
+
+// MARK: - EXTENSIONS:
+
+extension TabBarController {
     // MARK: FUNC FOR ACTION WHERE TAP ON ITEM:
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

@@ -5,7 +5,7 @@ import UIKit
 final class JumpVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let backgroundJumpLottie = LottieAnimationView(name: "BackgroundJumpLottie")
+    private let backgroundJumpLottie = LottieAnimationView(name: "EmptyFlowersLottie")
     private let blackView = UIView()
     private let tableView = UITableView()
     private var selectedJump: JumpClassRealm
@@ -43,12 +43,10 @@ final class JumpVC: UIViewController {
     private func configureConstrains() {
         
         // MARK: BACKGROUND JUMP LOTTIE:
-        
+                
         backgroundJumpLottie.translatesAutoresizingMaskIntoConstraints = false
-        backgroundJumpLottie.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundJumpLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        backgroundJumpLottie.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        backgroundJumpLottie.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        backgroundJumpLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backgroundJumpLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         
         // MARK: TABLE VIEW:
 
@@ -82,13 +80,13 @@ final class JumpVC: UIViewController {
         
         backgroundJumpLottie.play()
         backgroundJumpLottie.loopMode = .loop
+        backgroundJumpLottie.animationSpeed = 0.3
         backgroundJumpLottie.contentMode = .scaleAspectFill
-        backgroundJumpLottie.layer.opacity = 1
         
         // MARK: BLACK VIEW:
 
         blackView.backgroundColor = .black
-        blackView.layer.opacity = 0.94
+        blackView.layer.opacity = 0.5
     }
 
     // MARK: - CONFIGURE TABLE VIEW:

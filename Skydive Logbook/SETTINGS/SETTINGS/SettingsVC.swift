@@ -15,6 +15,8 @@ final class SettingsVC: UIViewController {
     private let confettiLottie = LottieAnimationView(name: "SettingsConfetti")
     private let effectOneLottie = LottieAnimationView(name: "EffectSettings")
     private let effectTwoLottie = LottieAnimationView(name: "EffectSettings")
+    private let backgroundFlowersLottie = LottieAnimationView(name: "EmptyFlowersLottie")
+    private let blackView = UIView()
     private let confettiButton = UIButton()
     private let realmManager = RealmManager()
     private let tableView = UITableView()
@@ -40,12 +42,27 @@ final class SettingsVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, effectOneLottie, effectTwoLottie, settingsLottie, confettiButton, tableView)
+        view.addSubviews(backgroundFlowersLottie, blackView, confettiLottie, effectOneLottie, effectTwoLottie, settingsLottie, confettiButton, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: BACKGROUND FLOWERS LOTTIE:
+        
+        backgroundFlowersLottie.translatesAutoresizingMaskIntoConstraints = false
+        backgroundFlowersLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backgroundFlowersLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: BLACK VIEW:
+
+        blackView.translatesAutoresizingMaskIntoConstraints = false
+        blackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        blackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        blackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        blackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
         // MARK: EFFECT ONE LOTTIE:
 
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -102,6 +119,18 @@ final class SettingsVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
+        
+        // MARK: BACKGROUND FLOWERS LOTTIE:
+        
+        backgroundFlowersLottie.play()
+        backgroundFlowersLottie.loopMode = .loop
+        backgroundFlowersLottie.animationSpeed = 0.3
+        backgroundFlowersLottie.contentMode = .scaleAspectFill
+        
+        // MARK: BLACK VIEW:
+
+        blackView.backgroundColor = .black
+        blackView.layer.opacity = 0.5
 
         // MARK: EFFECT ONE LOTTIE:
 

@@ -244,7 +244,7 @@ final class SettingsCell: UITableViewCell {
         // MARK: INSTAGRAM IMAGE VIEW:
 
         let originalImage = UIImage(named: "InstagramLogo")
-        let coloredImage = colorizeImage(image: originalImage ?? UIImage(), color: UIColor.colorDarkGray)
+        let coloredImage = colorizeImage(image: originalImage ?? UIImage(), color: UIColor.white)
         instagramImageView.image = coloredImage
         instagramImageView.contentMode = .scaleAspectFit
 
@@ -256,7 +256,7 @@ final class SettingsCell: UITableViewCell {
         
         let currentYear = Calendar.current.component(.year, from: Date())
         infoLabel.text = "2023-\(currentYear), SkydiveBook iOS Application"
-        infoLabel.textColor = .colorDarkGray
+        infoLabel.textColor = .white
         infoLabel.font = FontManager.regular(size: 8).uiFont
         infoLabel.textAlignment = .center
     }

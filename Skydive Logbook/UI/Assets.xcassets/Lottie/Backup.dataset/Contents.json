@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "Backup.json",
-      "idiom" : "universal"
+      "filename" : "protection-shield-2_clean.json",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.json"
     }
   ],
   "info" : {

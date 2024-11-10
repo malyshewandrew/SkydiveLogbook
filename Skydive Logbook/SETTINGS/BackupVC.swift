@@ -44,15 +44,15 @@ final class BackupVC: UIViewController {
         backupBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backupBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backupBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        backupBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backupBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100).isActive = true
         
         // MARK: ANIMATION:
 
         backupLottie.translatesAutoresizingMaskIntoConstraints = false
         backupLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backupLottie.bottomAnchor.constraint(equalTo: infoLabel.topAnchor, constant: 27).isActive = true
-        backupLottie.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        backupLottie.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        backupLottie.bottomAnchor.constraint(equalTo: infoLabel.topAnchor, constant: -25).isActive = true
+        backupLottie.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        backupLottie.widthAnchor.constraint(equalToConstant: 75).isActive = true
 
         // MARK: INFO LABEL:
 
@@ -120,7 +120,7 @@ final class BackupVC: UIViewController {
         
         backupBackground.play()
         backupBackground.loopMode = .loop
-        backupBackground.animationSpeed = 0.1
+        backupBackground.animationSpeed = 0.3
         backupBackground.contentMode = .scaleAspectFill
 
         // MARK: ANIMATION:

@@ -7,16 +7,19 @@ import ShimmerSwift
 final class SystemVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let systemLottie = LottieAnimationView(name: "Parachute")
-    private let startSystemLottie = LottieAnimationView(name: "Parachute")
+    private let backgroundFlowersLottie = LottieAnimationView(name: "EmptyFlowersLottie")
+    private let blackView = UIView()
+    private let systemLottie = LottieAnimationView(name: "EmptySystem")
     private let confettiLottie = LottieAnimationView(name: "SystemConfetti")
     private let effectOneLottie = LottieAnimationView(name: "EffectSystem")
-    private let startConfettiLottie = LottieAnimationView(name: "SystemConfetti")
+    private let emptyConfettiLottie = LottieAnimationView(name: "SystemConfetti")
     private let confettiButton = UIButton()
-    private let startConfettiButton = UIButton()
+    private let emptyConfettiButton = UIButton()
     private let tableView = UITableView()
+    private let emptySystemLottie = LottieAnimationView(name: "EmptySystem")
     private var emptySystemButton = UIButton()
     private let emptySystemShimmer = ShimmeringView()
+    private let emptyNewSystemButton = UIButton()
     private let newSystemButton = UIButton()
     private var selectedSystem: SystemClassRealm?
     private var indexSysytem: Int = 0
@@ -47,12 +50,27 @@ final class SystemVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(confettiLottie, effectOneLottie, startConfettiLottie, systemLottie, startSystemLottie, confettiButton, startConfettiButton, tableView, emptySystemButton, emptySystemShimmer, newSystemButton)
+        view.addSubviews(backgroundFlowersLottie, blackView, confettiLottie, effectOneLottie, emptyConfettiLottie, systemLottie, emptySystemLottie, confettiButton, emptyConfettiButton, tableView, emptySystemButton, emptyNewSystemButton, emptySystemShimmer, newSystemButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
+        
+        // MARK: BACKGROUND FLOWERS LOTTIE:
+        
+        backgroundFlowersLottie.translatesAutoresizingMaskIntoConstraints = false
+        backgroundFlowersLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backgroundFlowersLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        
+        // MARK: BLACK VIEW:
+
+        blackView.translatesAutoresizingMaskIntoConstraints = false
+        blackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        blackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        blackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        blackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
         // MARK: EFFECT ONE LOTTIE:
 
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -70,11 +88,11 @@ final class SystemVC: UIViewController {
 
         // MARK: START ANIMATION SYSTEM LOTTIE:
 
-        startSystemLottie.translatesAutoresizingMaskIntoConstraints = false
-        startSystemLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        startSystemLottie.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
-        startSystemLottie.heightAnchor.constraint(equalToConstant: 125).isActive = true
-        startSystemLottie.widthAnchor.constraint(equalToConstant: 125).isActive = true
+        emptySystemLottie.translatesAutoresizingMaskIntoConstraints = false
+        emptySystemLottie.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptySystemLottie.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+        emptySystemLottie.heightAnchor.constraint(equalToConstant: 125).isActive = true
+        emptySystemLottie.widthAnchor.constraint(equalToConstant: 125).isActive = true
 
         // MARK: ANIMATION LOTTIE CONFETTI:
 
@@ -85,10 +103,10 @@ final class SystemVC: UIViewController {
 
         // MARK: START ANIMATION LOTTIE CONFETTI:
 
-        startConfettiLottie.translatesAutoresizingMaskIntoConstraints = false
-        startConfettiLottie.centerXAnchor.constraint(equalTo: startSystemLottie.centerXAnchor).isActive = true
-        startConfettiLottie.centerYAnchor.constraint(equalTo: startSystemLottie.centerYAnchor, constant: -10).isActive = true
-        startConfettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        emptyConfettiLottie.translatesAutoresizingMaskIntoConstraints = false
+        emptyConfettiLottie.centerXAnchor.constraint(equalTo: emptySystemLottie.centerXAnchor).isActive = true
+        emptyConfettiLottie.centerYAnchor.constraint(equalTo: emptySystemLottie.centerYAnchor, constant: -10).isActive = true
+        emptyConfettiLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
@@ -100,11 +118,11 @@ final class SystemVC: UIViewController {
 
         // MARK: START BUTTON FOR ANIMATION LOTTIE CONFETTI:
 
-        startConfettiButton.translatesAutoresizingMaskIntoConstraints = false
-        startConfettiButton.centerXAnchor.constraint(equalTo: startSystemLottie.centerXAnchor).isActive = true
-        startConfettiButton.centerYAnchor.constraint(equalTo: startSystemLottie.centerYAnchor).isActive = true
-        startConfettiButton.heightAnchor.constraint(equalTo: startSystemLottie.heightAnchor, multiplier: 1).isActive = true
-        startConfettiButton.widthAnchor.constraint(equalTo: startSystemLottie.widthAnchor, multiplier: 1).isActive = true
+        emptyConfettiButton.translatesAutoresizingMaskIntoConstraints = false
+        emptyConfettiButton.centerXAnchor.constraint(equalTo: emptySystemLottie.centerXAnchor).isActive = true
+        emptyConfettiButton.centerYAnchor.constraint(equalTo: emptySystemLottie.centerYAnchor).isActive = true
+        emptyConfettiButton.heightAnchor.constraint(equalTo: emptySystemLottie.heightAnchor, multiplier: 1).isActive = true
+        emptyConfettiButton.widthAnchor.constraint(equalTo: emptySystemLottie.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: TABLE VIEW:
 
@@ -120,13 +138,19 @@ final class SystemVC: UIViewController {
         newSystemButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         newSystemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
-        // MARK: EMPTY SYSTEM:
+        // MARK: EMPTY SYSTEM BUTTON:
 
         emptySystemButton.translatesAutoresizingMaskIntoConstraints = false
         emptySystemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emptySystemButton.topAnchor.constraint(equalTo: startSystemLottie.bottomAnchor, constant: 20).isActive = true
+        emptySystemButton.topAnchor.constraint(equalTo: emptySystemLottie.bottomAnchor, constant: 20).isActive = true
         emptySystemButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         emptySystemButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: EMPTY NEW SYSTEM BUTTON:
+        
+        emptyNewSystemButton.translatesAutoresizingMaskIntoConstraints = false
+        emptyNewSystemButton.topAnchor.constraint(equalTo: emptySystemButton.bottomAnchor, constant: 15).isActive = true
+        emptyNewSystemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
     // MARK: - CONFIGURE UI:
@@ -141,6 +165,19 @@ final class SystemVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
+        
+        // MARK: BACKGROUND FLOWERS LOTTIE:
+        
+        backgroundFlowersLottie.play()
+        backgroundFlowersLottie.loopMode = .loop
+        backgroundFlowersLottie.animationSpeed = 0.3
+        backgroundFlowersLottie.contentMode = .scaleAspectFill
+        backgroundFlowersLottie.isHidden = true
+        
+        // MARK: BLACK VIEW:
+
+        blackView.backgroundColor = .black
+        blackView.layer.opacity = 0.5
 
         // MARK: EFFECT LOTTIE:
 
@@ -156,8 +193,8 @@ final class SystemVC: UIViewController {
 
         // MARK: ANIMATION START SYSTEM LOTTIE:
 
-        startSystemLottie.play()
-        startSystemLottie.loopMode = .autoReverse
+        emptySystemLottie.play()
+        emptySystemLottie.loopMode = .autoReverse
 
         // MARK: CONFETTI LOTTIE:
 
@@ -165,9 +202,9 @@ final class SystemVC: UIViewController {
         confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
         confettiLottie.layer.shadowOpacity = 1
 
-        startConfettiLottie.layer.shadowRadius = 15
-        startConfettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
-        startConfettiLottie.layer.shadowOpacity = 1
+        emptyConfettiLottie.layer.shadowRadius = 15
+        emptyConfettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
+        emptyConfettiLottie.layer.shadowOpacity = 1
 
         // MARK: NEW SYSTEM:
 
@@ -189,11 +226,19 @@ final class SystemVC: UIViewController {
         emptySystemButton.layer.shadowColor = UIColor.colorLightBlue.cgColor
         emptySystemButton.layer.shadowOpacity = 0.5
         ShimmerManager.instance.addShimmerEffect(shimmerView: emptySystemShimmer, toView: emptySystemButton, speed: 75)
+        
+        // MARK: EMPTY NEW SYSTEM BUTTON:
+        
+        emptyNewSystemButton.setImage(UIImage(systemName: "plus.circle", withConfiguration: configurationImage), for: .normal)
+        emptyNewSystemButton.tintColor = .colorWhite
+        emptyNewSystemButton.addTarget(self, action: #selector(newSystemButtonTapped), for: .touchUpInside)
 
-        startConfettiLottie.isHidden = true
-        startSystemLottie.isHidden = true
-        startConfettiButton.isHidden = true
+        emptyConfettiLottie.isHidden = true
+        emptySystemLottie.isHidden = true
+        emptyConfettiButton.isHidden = true
         emptySystemButton.isHidden = true
+        emptyNewSystemButton.isHidden = true
+        newSystemButton.isHidden = true
     }
 
     // MARK: - CONFIGURE TABLE VIEW:
@@ -233,29 +278,37 @@ final class SystemVC: UIViewController {
 
         let startConfettiGesture = UITapGestureRecognizer(target: self, action: #selector(startPlayConfetti))
         startConfettiGesture.numberOfTapsRequired = 1
-        startConfettiButton.addGestureRecognizer(startConfettiGesture)
+        emptyConfettiButton.addGestureRecognizer(startConfettiGesture)
     }
 
     // MARK: CONFIGURE SYSTEMS:
 
     private func startSystems() {
         if arraySystemsRealm.count == 0 {
-            startConfettiLottie.isHidden = false
-            startSystemLottie.isHidden = false
-            startConfettiButton.isHidden = false
+            backgroundFlowersLottie.isHidden = false
+            blackView.isHidden = false
+            
+            emptyConfettiLottie.isHidden = false
+            emptySystemLottie.isHidden = false
+            emptyConfettiButton.isHidden = false
             emptySystemButton.isHidden = false
+            emptyNewSystemButton.isHidden = false
+            newSystemButton.isHidden = true
 
             effectOneLottie.isHidden = true
             confettiLottie.isHidden = true
             systemLottie.isHidden = true
             confettiButton.isHidden = true
             tableView.isHidden = true
-            newSystemButton.isHidden = false
         } else {
-            startConfettiLottie.isHidden = true
-            startSystemLottie.isHidden = true
-            startConfettiButton.isHidden = true
+            backgroundFlowersLottie.isHidden = true
+            blackView.isHidden = true
+            
+            emptyConfettiLottie.isHidden = true
+            emptySystemLottie.isHidden = true
+            emptyConfettiButton.isHidden = true
             emptySystemButton.isHidden = true
+            emptyNewSystemButton.isHidden = true
 
             confettiLottie.isHidden = false
             effectOneLottie.isHidden = false
@@ -277,7 +330,7 @@ final class SystemVC: UIViewController {
 
     @objc private func startPlayConfetti() {
         VibrationManager.instance.vibrationSucces()
-        startConfettiLottie.play()
+        emptyConfettiLottie.play()
     }
 
     // MARK: ALERT KIT SUCCESS:
