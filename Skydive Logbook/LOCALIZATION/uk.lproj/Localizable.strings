@@ -672,3 +672,15 @@
 
 "Account" = "Акаунт";
 "Edit data / settings" = "Редагувати дані / налаштування";
+
+"Select photo / share" = "Вибрати фото";
+"Create a story with a jump / share" = "Створити історію зі стрибком";
+"Create a story with jump data and share it on social media / share" = "Створіть історію з даними про стрибок для соціальних мереж";
+"  Select photo / share" = "  Вибрати фото";
+"  Save photo / share" = "  Зберегти фото";
+"Get access in settings / share" = "Дозвольте доступ у налаштуваннях";
+"Failed to save image / share" = "Помилка збереження зображення";
+"Image saved successfully / share" = "Зображення успішно збережено";
+"No photos selected / share" = "Фото не вибрано";
+"Share with jump / share" = "Поділитися стрибком";
+"Create a stories / share" = "Створити історію";

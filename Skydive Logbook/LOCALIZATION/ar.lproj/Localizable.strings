@@ -672,3 +672,15 @@
 
 "Account" = "حساب";
 "Edit data / settings" = "تعديل البيانات / الإعدادات";
+
+"Select photo / share" = "اختر صورة";
+"Create a story with a jump / share" = "أنشئ قصة مع قفزة";
+"Create a story with jump data and share it on social media / share" = "أنشئ قصة ببيانات القفزة وشاركها على وسائل التواصل الاجتماعي";
+"  Select photo / share" = "  اختر صورة";
+"  Save photo / share" = "  احفظ الصورة";
+"Get access in settings / share" = "اسمح بالوصول في الإعدادات";
+"Failed to save image / share" = "فشل في حفظ الصورة";
+"Image saved successfully / share" = "تم حفظ الصورة بنجاح";
+"No photos selected / share" = "لم يتم اختيار أي صور";
+"Share with jump / share" = "شارك القفزة";
+"Create a stories / share" = "أنشئ قصة";

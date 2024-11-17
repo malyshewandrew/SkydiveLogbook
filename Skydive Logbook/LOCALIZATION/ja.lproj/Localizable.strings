@@ -672,3 +672,15 @@
 
 "Account" = "アカウント";
 "Edit data / settings" = "データ / 設定を編集";
+
+"Select photo / share" = "写真を選択";
+"Create a story with a jump / share" = "ジャンプのストーリーを作成";
+"Create a story with jump data and share it on social media / share" = "ジャンプデータを使ってストーリーを作成し、SNSで共有";
+"  Select photo / share" = "  写真を選択";
+"  Save photo / share" = "  写真を保存";
+"Get access in settings / share" = "設定でアクセスを許可";
+"Failed to save image / share" = "画像の保存に失敗しました";
+"Image saved successfully / share" = "画像が正常に保存されました";
+"No photos selected / share" = "写真が選択されていません";
+"Share with jump / share" = "ジャンプを共有";
+"Create a stories / share" = "ストーリーを作成";

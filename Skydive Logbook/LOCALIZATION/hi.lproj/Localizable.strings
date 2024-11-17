@@ -672,3 +672,15 @@
 
 "Account" = "खाता";
 "Edit data / settings" = "डेटा / सेटिंग्स संपादित करें";
+
+"Select photo / share" = "फोटो चुनें";
+"Create a story with a jump / share" = "एक कूद के साथ कहानी बनाएं";
+"Create a story with jump data and share it on social media / share" = "कूद डेटा के साथ कहानी बनाएं और इसे सोशल मीडिया पर साझा करें";
+"  Select photo / share" = "  फोटो चुनें";
+"  Save photo / share" = "  फोटो सहेजें";
+"Get access in settings / share" = "सेटिंग्स में एक्सेस दें";
+"Failed to save image / share" = "छवि सहेजने में विफल";
+"Image saved successfully / share" = "छवि सफलतापूर्वक सहेजी गई";
+"No photos selected / share" = "कोई फोटो नहीं चुना गया";
+"Share with jump / share" = "कूद के साथ साझा करें";
+"Create a stories / share" = "कहानी बनाएं";

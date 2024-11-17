@@ -948,6 +948,9 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         VibrationManager.instance.vibrationStandart()
+        
+        // MARK: SHARE ACTION:
+        
         let shareAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
             VibrationManager.instance.vibrationStandart()
@@ -987,7 +990,28 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             shareAction.image = editImage
         }
         shareAction.backgroundColor = .colorBackground
-        let configuration = UISwipeActionsConfiguration(actions: [shareAction])
+        
+        // MARK: CREATE STORIES:
+
+        let createStoriesAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
+            guard let self = self else { return }
+            VibrationManager.instance.vibrationStandart()
+            let shareVC = ShareVC()
+            if let sheetController = shareVC.sheetPresentationController {
+                sheetController.prefersGrabberVisible = true
+                sheetController.detents = [.large()]
+            }
+            let jump = arrayJumpsRealm[indexPath.row]
+            shareVC.configure(number: String(arrayJumpsRealm.count - indexPath.row), date: jump.date, location: jump.location, aircraft: jump.aircraft, canopy: jump.canopy, misson: jump.mission?.localizedValue ?? "", height: jump.height, time: jump.time)
+            present(shareVC, animated: true, completion: nil)
+            completion(true)
+        }
+        if let editImage = UIImage(systemName: "photo.on.rectangle.angled")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal) {
+            createStoriesAction.image = editImage
+        }
+        createStoriesAction.backgroundColor = .colorBackground
+        
+        let configuration = UISwipeActionsConfiguration(actions: [createStoriesAction, shareAction])
         return configuration
     }
 }

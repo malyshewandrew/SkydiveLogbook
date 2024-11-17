@@ -672,3 +672,15 @@
 
 "Account" = "บัญชี";
 "Edit data / settings" = "แก้ไขข้อมูล / การตั้งค่า";
+
+"Select photo / share" = "เลือกภาพถ่าย";
+"Create a story with a jump / share" = "สร้างเรื่องราวด้วยการกระโดด";
+"Create a story with jump data and share it on social media / share" = "สร้างเรื่องราวพร้อมข้อมูลการกระโดดและแชร์บนโซเชียลมีเดีย";
+"  Select photo / share" = "  เลือกภาพถ่าย";
+"  Save photo / share" = "  บันทึกภาพถ่าย";
+"Get access in settings / share" = "อนุญาตการเข้าถึงในตั้งค่า";
+"Failed to save image / share" = "บันทึกภาพไม่สำเร็จ";
+"Image saved successfully / share" = "บันทึกภาพสำเร็จ";
+"No photos selected / share" = "ไม่มีภาพถ่ายที่เลือก";
+"Share with jump / share" = "แชร์การกระโดด";
+"Create a stories / share" = "สร้างเรื่องราว";

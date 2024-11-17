@@ -672,3 +672,15 @@
 
 "Account" = "Paskyra";
 "Edit data / settings" = "Redaguoti duomenis / nustatymus";
+
+"Select photo / share" = "Pasirinkite nuotrauką";
+"Create a story with a jump / share" = "Sukurkite istoriją su šuoliu";
+"Create a story with jump data and share it on social media / share" = "Sukurkite istoriją su šuolio duomenimis ir pasidalinkite socialiniuose tinkluose";
+"  Select photo / share" = "  Pasirinkite nuotrauką";
+"  Save photo / share" = "  Išsaugoti nuotrauką";
+"Get access in settings / share" = "Suteikite prieigą nustatymuose";
+"Failed to save image / share" = "Nepavyko išsaugoti nuotraukos";
+"Image saved successfully / share" = "Nuotrauka sėkmingai išsaugota";
+"No photos selected / share" = "Nuotrauka nepasirinkta";
+"Share with jump / share" = "Dalintis šuoliu";
+"Create a stories / share" = "Sukurti istoriją";

@@ -672,3 +672,15 @@
 
 "Account" = "Účet";
 "Edit data / settings" = "Upravit data / nastavení";
+
+"Select photo / share" = "Vybrat fotografii";
+"Create a story with a jump / share" = "Vytvořit příběh se skokem";
+"Create a story with jump data and share it on social media / share" = "Vytvořte příběh s údaji o skoku a sdílejte ho na sociálních sítích";
+"  Select photo / share" = "  Vybrat fotografii";
+"  Save photo / share" = "  Uložit fotografii";
+"Get access in settings / share" = "Povolit přístup v nastavení";
+"Failed to save image / share" = "Nepodařilo se uložit obrázek";
+"Image saved successfully / share" = "Obrázek byl úspěšně uložen";
+"No photos selected / share" = "Nebyly vybrány žádné fotografie";
+"Share with jump / share" = "Sdílet se skokem";
+"Create a stories / share" = "Vytvořit příběh";

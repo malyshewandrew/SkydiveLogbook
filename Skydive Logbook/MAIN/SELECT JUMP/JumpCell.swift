@@ -4,6 +4,10 @@ import Lottie
 import RealmSwift
 import UIKit
 
+protocol JumpCellDelegate: AnyObject {
+    func transitionToShare()
+}
+
 final class JumpCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
@@ -30,11 +34,14 @@ final class JumpCell: UITableViewCell {
     private let timeLabel = UILabel()
     private let commentButton = UIButton(type: .system)
     private let commentLabel = UILabel()
+    private let shareButton = UIButton(type: .system)
+    private let shareLabel = UILabel()
     private var jubileeJumps = Set((100 ..< 10000).filter { $0 % 100 == 0 })
     private var isCutaway: Bool?
     private var isVibrating = false
     private var vibrationTimer: Timer?
     private var isAnimating = false
+    var delegate: JumpCellDelegate?
 
     // MARK: - LIFECYCLE:
 
@@ -53,7 +60,7 @@ final class JumpCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(confettiLottie, circleGreenLottie, circleRedLottie, effectOneLottie, effectTwoLottie, twoCircleJumpLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, jubileeLottie)
+        contentView.addSubviews(confettiLottie, circleGreenLottie, circleRedLottie, effectOneLottie, effectTwoLottie, twoCircleJumpLottie, circleButton, dateLabel, locationButton, aircraftButton, canopyButton, missionButton, heightButton, timeButton, commentButton, shareButton, jubileeLottie)
         locationButton.addSubview(locationLabel)
         aircraftButton.addSubview(aircraftLabel)
         canopyButton.addSubview(canopyLabel)
@@ -61,6 +68,7 @@ final class JumpCell: UITableViewCell {
         heightButton.addSubviews(heightLabel)
         timeButton.addSubview(timeLabel)
         commentButton.addSubview(commentLabel)
+        shareButton.addSubview(shareLabel)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -88,25 +96,25 @@ final class JumpCell: UITableViewCell {
         circleRedLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor, constant: 5).isActive = true
         circleRedLottie.heightAnchor.constraint(equalToConstant: 550).isActive = true
         circleRedLottie.widthAnchor.constraint(equalToConstant: 550).isActive = true
-        
+
         // MARK: EFFECT ONE LOTTIE:
-        
+
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
         effectOneLottie.centerXAnchor.constraint(equalTo: circleGreenLottie.centerXAnchor).isActive = true
         effectOneLottie.centerYAnchor.constraint(equalTo: circleGreenLottie.centerYAnchor).isActive = true
         effectOneLottie.heightAnchor.constraint(equalTo: circleGreenLottie.heightAnchor, multiplier: 1).isActive = true
         effectOneLottie.widthAnchor.constraint(equalTo: circleGreenLottie.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: EFFECT TWO LOTTIE:
-        
+
         effectTwoLottie.translatesAutoresizingMaskIntoConstraints = false
         effectTwoLottie.centerXAnchor.constraint(equalTo: circleGreenLottie.centerXAnchor).isActive = true
         effectTwoLottie.centerYAnchor.constraint(equalTo: circleGreenLottie.centerYAnchor).isActive = true
         effectTwoLottie.heightAnchor.constraint(equalTo: circleGreenLottie.heightAnchor, multiplier: 1).isActive = true
         effectTwoLottie.widthAnchor.constraint(equalTo: circleGreenLottie.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: TWO CIRCLES:
-        
+
         twoCircleJumpLottie.translatesAutoresizingMaskIntoConstraints = false
         twoCircleJumpLottie.centerXAnchor.constraint(equalTo: circleButton.centerXAnchor).isActive = true
         twoCircleJumpLottie.centerYAnchor.constraint(equalTo: circleButton.centerYAnchor).isActive = true
@@ -250,22 +258,22 @@ final class JumpCell: UITableViewCell {
 
         circleRedLottie.isHidden = true
         circleRedLottie.alpha = 0.0
-        
+
         // MARK: EFFECT ONE LOTTIE:
-        
+
         effectOneLottie.play()
         effectOneLottie.loopMode = .loop
         effectOneLottie.animationSpeed = 0.2
-        
+
         // MARK: EFFECT TWO LOTTIE:
-        
+
         effectTwoLottie.play()
         effectTwoLottie.loopMode = .loop
         effectTwoLottie.animationSpeed = 0.1
         effectTwoLottie.transform = CGAffineTransform(scaleX: -1, y: 1)
-        
+
         // MARK: TWO CIRCLES:
-        
+
         twoCircleJumpLottie.play()
         twoCircleJumpLottie.loopMode = .loop
 
@@ -443,6 +451,26 @@ final class JumpCell: UITableViewCell {
         commentLabel.layer.cornerRadius = cornerRadius15 - 1
         commentLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         commentLabel.adjustsFontSizeToFitWidth = true
+
+        // MARK: SHARE BUTTON:
+
+        shareButton.backgroundColor = .colorCell
+        shareButton.layer.cornerRadius = cornerRadius15
+        shareButton.setTitle(NSLocalizedString("Share with jump / share", comment: ""), for: .normal)
+        shareButton.titleLabel?.font = FontManager.medium(size: 12).uiFont
+        shareButton.setTitleColor(.colorLightGray, for: .normal)
+        shareButton.contentVerticalAlignment = textAligmentTop
+        shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+
+        shareLabel.text = NSLocalizedString("Create a stories / share", comment: "")
+        shareLabel.backgroundColor = .colorTabBar
+        shareLabel.font = FontManager.medium(size: 18).uiFont
+        shareLabel.textColor = .colorWhite
+        shareLabel.textAlignment = textAligmentCenter
+        shareLabel.layer.masksToBounds = true
+        shareLabel.layer.cornerRadius = cornerRadius15 - 1
+        shareLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        shareLabel.adjustsFontSizeToFitWidth = true
     }
 
     // MARK: - HELPERS:
@@ -461,9 +489,38 @@ final class JumpCell: UITableViewCell {
         commentLabel.text = comment
         if commentLabel.text == "" {
             commentButton.isHidden = true
-            heightButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+            shareButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+            
+            // MARK: SHARE BUTTON:
+
+            shareButton.translatesAutoresizingMaskIntoConstraints = false
+            shareButton.topAnchor.constraint(equalTo: heightButton.bottomAnchor, constant: 15).isActive = true
+            shareButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+            shareButton.heightAnchor.constraint(equalToConstant: height65).isActive = true
+            shareButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+
+            shareLabel.translatesAutoresizingMaskIntoConstraints = false
+            shareLabel.leadingAnchor.constraint(equalTo: shareButton.leadingAnchor).isActive = true
+            shareLabel.bottomAnchor.constraint(equalTo: shareButton.bottomAnchor, constant: 0).isActive = true
+            shareLabel.heightAnchor.constraint(equalTo: shareButton.heightAnchor, multiplier: 0.6).isActive = true
+            shareLabel.widthAnchor.constraint(equalTo: shareButton.widthAnchor, multiplier: 1).isActive = true
+            
         } else {
-            commentButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+            shareButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+            
+            // MARK: SHARE BUTTON:
+
+            shareButton.translatesAutoresizingMaskIntoConstraints = false
+            shareButton.topAnchor.constraint(equalTo: commentButton.bottomAnchor, constant: 15).isActive = true
+            shareButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+            shareButton.heightAnchor.constraint(equalToConstant: height65).isActive = true
+            shareButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+
+            shareLabel.translatesAutoresizingMaskIntoConstraints = false
+            shareLabel.leadingAnchor.constraint(equalTo: shareButton.leadingAnchor).isActive = true
+            shareLabel.bottomAnchor.constraint(equalTo: shareButton.bottomAnchor, constant: 0).isActive = true
+            shareLabel.heightAnchor.constraint(equalTo: shareButton.heightAnchor, multiplier: 0.6).isActive = true
+            shareLabel.widthAnchor.constraint(equalTo: shareButton.widthAnchor, multiplier: 1).isActive = true
         }
 
         // MARK: COLOR FOR CIRCLE (GREEN / RED):
@@ -542,20 +599,19 @@ final class JumpCell: UITableViewCell {
     }
 
     @objc private func circleAnimationButtonTapped() {
-        
         let lastPlayDate = UserDefaults.standard.object(forKey: "lastConfettiPlayDate") as? Date
         let currentDate = Date()
-        
+
         if let lastPlayDate = lastPlayDate, Calendar.current.isDate(currentDate, inSameDayAs: lastPlayDate) {
             print("Confetti animation has already been played today.")
         } else {
             UserDefaults.standard.set(currentDate, forKey: "lastConfettiPlayDate")
-            
+
             confettiLottie.play()
             confettiLottie.layer.shadowRadius = 10
             confettiLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor
             confettiLottie.layer.shadowOpacity = 1
-            
+
             if isCutaway == true {
                 circleRedLottie.isHidden = false
                 circleRedLottie.play()
@@ -621,9 +677,9 @@ final class JumpCell: UITableViewCell {
     @objc private func vibrationSpeed() {
         VibrationManager.instance.vibrationMedium.impactOccurred()
     }
-    
+
     // MARK: CIRCLE BUTTON TAPPED:
-    
+
     @objc private func circleButtonTapped() {
         VibrationManager.instance.vibrationStandart()
     }
@@ -645,5 +701,12 @@ final class JumpCell: UITableViewCell {
         groupAnimation.autoreverses = true
         groupAnimation.repeatCount = .infinity
         return groupAnimation
+    }
+
+    // SHARE BUTTON TAPPED:
+
+    @objc private func shareButtonTapped() {
+        VibrationManager.instance.vibrationStandart()
+        delegate?.transitionToShare()
     }
 }

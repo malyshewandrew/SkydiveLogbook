@@ -41,13 +41,12 @@ final class JumpVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        
         // MARK: BACKGROUND JUMP LOTTIE:
-                
+
         backgroundJumpLottie.translatesAutoresizingMaskIntoConstraints = false
         backgroundJumpLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backgroundJumpLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: TABLE VIEW:
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +54,7 @@ final class JumpVC: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        
+
         // MARK: BLACK VIEW:
 
         blackView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,14 +74,14 @@ final class JumpVC: UIViewController {
         // MARK: NAVIGATION CONTROLLER:
 
         navigationController?.navigationBar.isHidden = true
-        
+
         // MARK: BACKGROUND JUMP LOTTIE:
-        
+
         backgroundJumpLottie.play()
         backgroundJumpLottie.loopMode = .loop
         backgroundJumpLottie.animationSpeed = 0.3
         backgroundJumpLottie.contentMode = .scaleAspectFill
-        
+
         // MARK: BLACK VIEW:
 
         blackView.backgroundColor = .black
@@ -115,12 +114,27 @@ extension JumpVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JumpCell", for: indexPath) as? JumpCell else { return UITableViewCell() }
 
         // MARK: CONFIGURE:
+
         cell.configure(number: String(jumpNumber), date: selectedJump.date, location: selectedJump.location, aircraft: selectedJump.aircraft, canopy: selectedJump.canopy, mission: selectedJump.mission?.localizedValue ?? "", height: selectedJump.height, time: selectedJump.time, cutaway: selectedJump.cutaway?.localizedValue ?? "", comment: selectedJump.comment)
-        
+
         cell.backgroundColor = .clear
+        cell.delegate = self
 
         // MARK: JUBILEE LOTTIE:
+
         cell.jubileeShow(number: jumpNumber)
         return cell
+    }
+}
+
+extension JumpVC: JumpCellDelegate {
+    func transitionToShare() {
+        let shareVC = ShareVC()
+        if let sheetController = shareVC.sheetPresentationController {
+            sheetController.prefersGrabberVisible = true
+            sheetController.detents = [.large()]
+        }
+        shareVC.configure(number: String(jumpNumber), date: selectedJump.date, location: selectedJump.location, aircraft: selectedJump.aircraft, canopy: selectedJump.canopy, misson: selectedJump.mission?.localizedValue ?? "", height: selectedJump.height, time: selectedJump.time)
+        present(shareVC, animated: true, completion: nil)
     }
 }

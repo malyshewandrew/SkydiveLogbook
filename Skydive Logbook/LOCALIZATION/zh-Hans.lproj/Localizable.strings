@@ -672,3 +672,15 @@
 
 "Account" = "账户";
 "Edit data / settings" = "编辑数据 / 设置";
+
+"Select photo / share" = "选择照片";
+"Create a story with a jump / share" = "创建一个跳跃故事";
+"Create a story with jump data and share it on social media / share" = "创建带有跳跃数据的故事并分享至社交媒体";
+"  Select photo / share" = "  选择照片";
+"  Save photo / share" = "  保存照片";
+"Get access in settings / share" = "请在设置中允许访问";
+"Failed to save image / share" = "保存图像失败";
+"Image saved successfully / share" = "图像已成功保存";
+"No photos selected / share" = "未选择照片";
+"Share with jump / share" = "分享跳跃";
+"Create a stories / share" = "创建故事";

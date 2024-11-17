@@ -672,3 +672,15 @@
 
 "Account" = "Konto";
 "Edit data / settings" = "Daten / Einstellungen bearbeiten";
+
+"Select photo / share" = "Foto auswählen";
+"Create a story with a jump / share" = "Erstelle eine Geschichte mit einem Sprung";
+"Create a story with jump data and share it on social media / share" = "Erstelle eine Geschichte mit Sprungdaten und teile sie in sozialen Medien";
+"  Select photo / share" = "  Foto auswählen";
+"  Save photo / share" = "  Foto speichern";
+"Get access in settings / share" = "Zugriff in den Einstellungen erlauben";
+"Failed to save image / share" = "Bild konnte nicht gespeichert werden";
+"Image saved successfully / share" = "Bild erfolgreich gespeichert";
+"No photos selected / share" = "Keine Fotos ausgewählt";
+"Share with jump / share" = "Mit Sprung teilen";
+"Create a stories / share" = "Eine Geschichte erstellen";

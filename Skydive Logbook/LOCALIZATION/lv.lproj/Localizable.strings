@@ -672,3 +672,15 @@
 
 "Account" = "Konts";
 "Edit data / settings" = "Rediģēt datus / iestatījumus";
+
+"Select photo / share" = "Izvēlieties fotoattēlu";
+"Create a story with a jump / share" = "Izveidojiet stāstu ar lēcienu";
+"Create a story with jump data and share it on social media / share" = "Izveidojiet stāstu ar lēciena datiem un dalieties ar to sociālajos tīklos";
+"  Select photo / share" = "  Izvēlieties fotoattēlu";
+"  Save photo / share" = "  Saglabāt fotoattēlu";
+"Get access in settings / share" = "Atļaut piekļuvi iestatījumos";
+"Failed to save image / share" = "Neizdevās saglabāt attēlu";
+"Image saved successfully / share" = "Attēls veiksmīgi saglabāts";
+"No photos selected / share" = "Nav izvēlēts fotoattēls";
+"Share with jump / share" = "Dalīties ar lēcienu";
+"Create a stories / share" = "Izveidot stāstu";

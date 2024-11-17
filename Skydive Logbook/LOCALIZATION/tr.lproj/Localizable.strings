@@ -672,3 +672,15 @@
 
 "Account" = "Hesap";
 "Edit data / settings" = "Verileri / ayarları düzenle";
+
+"Select photo / share" = "Fotoğraf seç";
+"Create a story with a jump / share" = "Bir atlayışla hikaye oluştur";
+"Create a story with jump data and share it on social media / share" = "Atlama verileriyle bir hikaye oluştur ve sosyal medyada paylaş";
+"  Select photo / share" = "  Fotoğraf seç";
+"  Save photo / share" = "  Fotoğrafı kaydet";
+"Get access in settings / share" = "Ayarlar bölümünde erişime izin verin";
+"Failed to save image / share" = "Görüntü kaydedilemedi";
+"Image saved successfully / share" = "Görüntü başarıyla kaydedildi";
+"No photos selected / share" = "Fotoğraf seçilmedi";
+"Share with jump / share" = "Atlayışı paylaş";
+"Create a stories / share" = "Bir hikaye oluştur";

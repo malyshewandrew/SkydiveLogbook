@@ -117,7 +117,7 @@ final class CalculatorVC: UIViewController {
 
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
         pageControl.heightAnchor.constraint(equalToConstant: height40).isActive = true
         pageControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
     }

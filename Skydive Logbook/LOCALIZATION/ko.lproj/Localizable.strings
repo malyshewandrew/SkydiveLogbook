@@ -672,3 +672,15 @@
 
 "Account" = "계정";
 "Edit data / settings" = "데이터 / 설정 편집";
+
+"Select photo / share" = "사진 선택";
+"Create a story with a jump / share" = "점프와 함께 이야기를 만드세요";
+"Create a story with jump data and share it on social media / share" = "점프 데이터를 포함한 이야기를 만들어 소셜 미디어에 공유하세요";
+"  Select photo / share" = "  사진 선택";
+"  Save photo / share" = "  사진 저장";
+"Get access in settings / share" = "설정에서 접근을 허용하세요";
+"Failed to save image / share" = "이미지를 저장하지 못했습니다";
+"Image saved successfully / share" = "이미지가 성공적으로 저장되었습니다";
+"No photos selected / share" = "선택된 사진이 없습니다";
+"Share with jump / share" = "점프와 공유";
+"Create a stories / share" = "이야기 만들기";

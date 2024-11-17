@@ -696,3 +696,15 @@
 
 "Account" = "Аккаунт";
 "Edit data / settings" = "Редактировать данные";
+
+"Select photo / share" = "ВЫБРАТЬ ФОТО";
+"Create a story with a jump / share" = "СОЗДАЙ ИСТОРИЮ ПРЫЖКА";
+"Create a story with jump data and share it on social media / share" = "Создай историю с данными о прыжке для социальных сетей";
+"  Select photo / share" = "  Выбрать фото";
+"  Save photo / share" = "  Сохранить фото";
+"Get access in settings / share" = "Разрешите доступ в настройках";
+"Failed to save image / share" = "Ошибка сохранения";
+"Image saved successfully / share" = "Сохранено в фотоплёнку";
+"No photos selected / share" = "Фотография не выбрана";
+"Share with jump / share" = "Поделиться прыжком";
+"Create a stories / share" = "Создать историю";
