@@ -302,7 +302,8 @@ final class InfoVC: UIViewController {
         let buildMessage = NSLocalizedString("Build / info", comment: "") + ": " + buildVersion
         let imageView = UIImageView(image: UIImage(named: "AppIconVersion"))
         let versionSettingsLottie = LottieAnimationView(name: "VersionSettingsLottie")
-        let alert = UIAlertController(title: "SkydiveBook™", message: "\n\n\n\(versionMessage). \(buildMessage)\n© Malyshew Andrew\nApp Store, 2023-2024", preferredStyle: .alert)
+        let currentYear = Calendar.current.component(.year, from: Date())
+        let alert = UIAlertController(title: "SkydiveBook™", message: "\n\n\n\(versionMessage). \(buildMessage)\n© Malyshew Andrew\nApp Store, 2023-\(currentYear)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
         alert.view.addSubviews(versionSettingsLottie, imageView)
         

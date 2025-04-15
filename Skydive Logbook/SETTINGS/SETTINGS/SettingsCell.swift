@@ -255,7 +255,7 @@ final class SettingsCell: UITableViewCell {
         // MARK: INFO LABEL:
         
         let currentYear = Calendar.current.component(.year, from: Date())
-        infoLabel.text = "2023-\(currentYear), SkydiveBook iOS Application"
+        infoLabel.text = "2023-\(currentYear), Skydive Book iOS Application"
         infoLabel.textColor = .white
         infoLabel.font = FontManager.regular(size: 8).uiFont
         infoLabel.textAlignment = .center

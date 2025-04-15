@@ -90,6 +90,7 @@ final class LoadViewController: UIViewController {
         // MARK: INFO LABEL:
 
         let currentYear = Calendar.current.component(.year, from: Date())
+        print(currentYear)
         loadingInfoLabel.numberOfLines = 0
         loadingInfoLabel.text = "Skydive Book iOS Application \n 2023-\(currentYear)"
         loadingInfoLabel.textColor = .colorWhite
