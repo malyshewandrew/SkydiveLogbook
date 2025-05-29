@@ -84,6 +84,7 @@ final class StatisticCell: UITableViewCell {
     private let contentViewTwoView = UIView()
     
     weak var delegate: StatisticCellDelegate?
+    var onTap: (() -> ())?
     
     // MARK: - LIFECYCLE:
 
@@ -845,16 +846,24 @@ final class StatisticCell: UITableViewCell {
         let kilometers = sumHeight / 1000
         let meters = sumHeight % 1000
         
-        generalInfoLabel.text = """
-        \(NSLocalizedString("Total height", comment: "")): \(sumHeight) \(NSLocalizedString("m.", comment: "")) (\(kilometers) \(NSLocalizedString("km.", comment: "")) \(meters) \(NSLocalizedString("m.", comment: "")))
-        \(NSLocalizedString("Total time", comment: "")): \(sumTime) \(NSLocalizedString("s.", comment: "")) (\(days) \(NSLocalizedString("d.", comment: "")) \(daysRemainder) \(NSLocalizedString("h.", comment: "")) \(hoursRemainder) \(NSLocalizedString("min.", comment: "")) \(seconds) \(NSLocalizedString("s.", comment: "")))
-        """
+        if arrayJumpsRealm.isEmpty {
+            generalInfoLabel.text = "-"
+        } else {
+            generalInfoLabel.text = """
+            \(NSLocalizedString("Total height", comment: "")): \(sumHeight) \(NSLocalizedString("m.", comment: "")) (\(kilometers) \(NSLocalizedString("km.", comment: "")) \(meters) \(NSLocalizedString("m.", comment: "")))
+            \(NSLocalizedString("Total time", comment: "")): \(sumTime) \(NSLocalizedString("s.", comment: "")) (\(days) \(NSLocalizedString("d.", comment: "")) \(daysRemainder) \(NSLocalizedString("h.", comment: "")) \(hoursRemainder) \(NSLocalizedString("min.", comment: "")) \(seconds) \(NSLocalizedString("s.", comment: "")))
+            """
+        }
     }
     
     // MARK: TOTAL JUMPS:
 
     private func setTotalJumps() {
-        totalJumpsLabel.text = String(arrayJumpsRealm.count)
+        if arrayJumpsRealm.isEmpty {
+            totalJumpsLabel.text = "-"
+        } else {
+            totalJumpsLabel.text = String(arrayJumpsRealm.count)
+        }
     }
     
     // MARK: JUMPS YEAR:
@@ -871,8 +880,16 @@ final class StatisticCell: UITableViewCell {
             }
             return count + 1
         }
-
-        jumpsYearLabel.text = "\(jumpsThisYearCount)"
+        
+        if arrayJumpsRealm.isEmpty {
+            jumpsYearLabel.text = "-"
+        } else {
+            if jumpsThisYearCount == 0 {
+                jumpsYearLabel.text = "0"
+            } else {
+                jumpsYearLabel.text = "\(jumpsThisYearCount)"
+            }
+        }
     }
     
     // MARK: CATEGORY:
@@ -917,7 +934,7 @@ final class StatisticCell: UITableViewCell {
         } else if categoryCount == "D" && categoryTime == "D" {
             categoryLabel.text = "D"
         } else {
-            categoryLabel.text = "0"
+            categoryLabel.text = "-"
         }
     }
     
@@ -930,8 +947,12 @@ final class StatisticCell: UITableViewCell {
                 maxHeight = jumpHeight
             }
         }
-
-        maxHeightLabel.text = String(maxHeight)
+       
+        if maxHeight == 0 {
+            maxHeightLabel.text = "-"
+        } else {
+            maxHeightLabel.text = String(maxHeight)
+        }
     }
     
     // MARK: AVERAGE HEIGHT:
@@ -943,7 +964,7 @@ final class StatisticCell: UITableViewCell {
         }
         
         if arrayJumpsRealm.count == 0 {
-            averageHeightLabel.text = "0"
+            averageHeightLabel.text = "-"
         } else {
             let averageHeight = sumAverageHeight / arrayJumpsRealm.count
             averageHeightLabel.text = "\(averageHeight)"
@@ -963,7 +984,7 @@ final class StatisticCell: UITableViewCell {
         if arrayJumpsRealm.count != 0 {
             minHeightLabel.text = String(minHeight)
         } else {
-            minHeightLabel.text = "0"
+            minHeightLabel.text = "-"
         }
     }
     
@@ -977,8 +998,7 @@ final class StatisticCell: UITableViewCell {
             }
             return false
         }
-        
-        dateFirstLabel.text = arrayJumpsRealm.first?.date ?? "0"
+        dateFirstLabel.text = arrayJumpsRealm.first?.date ?? "-"
     }
     
     // MARK: MAX TIME:
@@ -991,7 +1011,11 @@ final class StatisticCell: UITableViewCell {
             }
         }
         
-        maxTimeLabel.text = String(maxTime)
+        if maxTime == 0 {
+            maxTimeLabel.text = "-"
+        } else {
+            maxTimeLabel.text = String(maxTime)
+        }
     }
     
     // MARK: DATE LAST:
@@ -1004,8 +1028,7 @@ final class StatisticCell: UITableViewCell {
             }
             return false
         }
-        
-        dateLastLabel.text = arrayJumpsRealm.last?.date ?? "0"
+        dateLastLabel.text = arrayJumpsRealm.last?.date ?? "-"
     }
     
     // MARK: MAX DAY:
@@ -1025,7 +1048,7 @@ final class StatisticCell: UITableViewCell {
             let numberOfJumps = maxDay.value
             maxDayLabel.text = "\(numberOfJumps)"
         } else {
-            maxDayLabel.text = "0"
+            maxDayLabel.text = "-"
         }
     }
     
@@ -1038,7 +1061,7 @@ final class StatisticCell: UITableViewCell {
         }
         
         if arrayJumpsRealm.count == 0 {
-            averageTimeLabel.text = "0"
+            averageTimeLabel.text = "-"
         } else {
             let averageTime = sumAverageTime / arrayJumpsRealm.count
             averageTimeLabel.text = "\(averageTime)"
@@ -1055,7 +1078,15 @@ final class StatisticCell: UITableViewCell {
             }
         }
         
-        countCutawayLabel.text = String(countCutaway)
+        if arrayJumpsRealm.isEmpty {
+            countCutawayLabel.text = "-"
+        } else {
+            if countCutaway == 0 {
+                countCutawayLabel.text = "0"
+            } else {
+                countCutawayLabel.text = String(countCutaway)
+            }
+        }
     }
     
     // MARK: AIRCRAFTS:
@@ -1066,7 +1097,11 @@ final class StatisticCell: UITableViewCell {
             setAircrafts.insert(canopy.aircraft)
         }
         
-        aircraftsLabel.text = String(setAircrafts.count)
+        if setAircrafts.count == 0 {
+            aircraftsLabel.text = "-"
+        } else {
+            aircraftsLabel.text = String(setAircrafts.count)
+        }
     }
     
     // MARK: CANOPIES:
@@ -1077,7 +1112,11 @@ final class StatisticCell: UITableViewCell {
             setCanopies.insert(canopy.canopy)
         }
         
-        canopiesLabel.text = String(setCanopies.count)
+        if setCanopies.count == 0 {
+            canopiesLabel.text = "-"
+        } else {
+            canopiesLabel.text = String(setCanopies.count)
+        }
     }
     
     // MARK: LOCATIONS:
@@ -1088,7 +1127,11 @@ final class StatisticCell: UITableViewCell {
             setLocations.insert(canopy.location)
         }
         
-        locationsLabel.text = String(setLocations.count)
+        if setLocations.count == 0 {
+            locationsLabel.text = "-"
+        } else {
+            locationsLabel.text = String(setLocations.count)
+        }
     }
     
     // MARK: MISSIONS ONE:
@@ -1171,19 +1214,23 @@ final class StatisticCell: UITableViewCell {
             }
         }
 
-        missionsOneLabel.text = """
-        \(arrayJumpsAccuracy.count): \(NSLocalizedString("Accuracy", comment: ""))
-        \(arrayJumpsAcrobatic.count): \(NSLocalizedString("Acrobatics", comment: ""))
-        \(arrayJumpsAff.count): \(NSLocalizedString("AFF", comment: ""))
-        \(arrayJumpsBase.count): \(NSLocalizedString("Base", comment: ""))
-        \(arrayJumpsBaseWingsuit.count): \(NSLocalizedString("Base/Wingsuit", comment: ""))
-        \(arrayJumpsCanopyFormation.count): \(NSLocalizedString("Canopy formation", comment: ""))
-        \(arrayJumpsFreeFly.count): \(NSLocalizedString("Freefly", comment: ""))
-        \(arrayJumpsFreeStyle.count): \(NSLocalizedString("Freestyle", comment: ""))
-        \(arrayJumpsFun.count): \(NSLocalizedString("Fun", comment: ""))
-        \(arrayJumpsGroup.count): \(NSLocalizedString("Group", comment: ""))
-        \(arrayJumpsInstructor.count): \(NSLocalizedString("Instructor", comment: ""))
-        """
+        if arrayJumpsRealm.isEmpty {
+            missionsOneLabel.text = ""
+        } else {
+            missionsOneLabel.text = """
+            \(arrayJumpsAccuracy.count): \(NSLocalizedString("Accuracy", comment: ""))
+            \(arrayJumpsAcrobatic.count): \(NSLocalizedString("Acrobatics", comment: ""))
+            \(arrayJumpsAff.count): \(NSLocalizedString("AFF", comment: ""))
+            \(arrayJumpsBase.count): \(NSLocalizedString("Base", comment: ""))
+            \(arrayJumpsBaseWingsuit.count): \(NSLocalizedString("Base/Wingsuit", comment: ""))
+            \(arrayJumpsCanopyFormation.count): \(NSLocalizedString("Canopy formation", comment: ""))
+            \(arrayJumpsFreeFly.count): \(NSLocalizedString("Freefly", comment: ""))
+            \(arrayJumpsFreeStyle.count): \(NSLocalizedString("Freestyle", comment: ""))
+            \(arrayJumpsFun.count): \(NSLocalizedString("Fun", comment: ""))
+            \(arrayJumpsGroup.count): \(NSLocalizedString("Group", comment: ""))
+            \(arrayJumpsInstructor.count): \(NSLocalizedString("Instructor", comment: ""))
+            """
+        }
     }
     
     // MARK: TOP MISSIONS:
@@ -1211,10 +1258,14 @@ final class StatisticCell: UITableViewCell {
             maxMissionsText += "\(mission): \(count)\n"
         }
         
-        if missionCounts.count == 0 {
-            topMissionsLabel.text = ""
+        if arrayJumpsRealm.isEmpty {
+            topMissionsLabel.text = "-"
         } else {
-            topMissionsLabel.text = maxMissionsText
+            if missionCounts.count == 0 {
+                topMissionsLabel.text = ""
+            } else {
+                topMissionsLabel.text = maxMissionsText
+            }
         }
     }
 
@@ -1298,29 +1349,37 @@ final class StatisticCell: UITableViewCell {
             }
         }
         
-        missionsTwoLabel.text = """
-        \(NSLocalizedString("Military", comment: "")): \(arrayJumpsParachuting.count)
-        \(NSLocalizedString("Para-ski", comment: "")): \(arrayJumpsParaSki.count)
-        \(NSLocalizedString("Proximity", comment: "")): \(arrayJumpsProximity.count)
-        \(NSLocalizedString("Skysurfing", comment: "")): \(arrayJumpsSkySurfing.count)
-        \(NSLocalizedString("Static-line", comment: "")): \(arrayJumpsStaticLine.count)
-        \(NSLocalizedString("Piloting", comment: "")): \(arrayJumpsSwoop.count)
-        \(NSLocalizedString("Tandem", comment: "")): \(arrayJumpsTandem.count)
-        \(NSLocalizedString("Vertical", comment: "")): \(arrayJumpsVerticalAcro.count)
-        \(NSLocalizedString("Video", comment: "")): \(arrayJumpsVideo.count)
-        \(NSLocalizedString("Wingsuit", comment: "")): \(arrayJumpsWingsuit.count)
-        \(NSLocalizedString("Formation", comment: "")): \(arrayJumpsFormation.count)
-        """
+        if arrayJumpsRealm.isEmpty {
+            missionsTwoLabel.text = ""
+        } else {
+            missionsTwoLabel.text = """
+            \(NSLocalizedString("Military", comment: "")): \(arrayJumpsParachuting.count)
+            \(NSLocalizedString("Para-ski", comment: "")): \(arrayJumpsParaSki.count)
+            \(NSLocalizedString("Proximity", comment: "")): \(arrayJumpsProximity.count)
+            \(NSLocalizedString("Skysurfing", comment: "")): \(arrayJumpsSkySurfing.count)
+            \(NSLocalizedString("Static-line", comment: "")): \(arrayJumpsStaticLine.count)
+            \(NSLocalizedString("Piloting", comment: "")): \(arrayJumpsSwoop.count)
+            \(NSLocalizedString("Tandem", comment: "")): \(arrayJumpsTandem.count)
+            \(NSLocalizedString("Vertical", comment: "")): \(arrayJumpsVerticalAcro.count)
+            \(NSLocalizedString("Video", comment: "")): \(arrayJumpsVideo.count)
+            \(NSLocalizedString("Wingsuit", comment: "")): \(arrayJumpsWingsuit.count)
+            \(NSLocalizedString("Formation", comment: "")): \(arrayJumpsFormation.count)
+            """
+        }
     }
     
     // MARK: MISSION VIEW BUTTON TAPPED:
     
     @objc private func missionViewButtonTapped() {
         VibrationManager.instance.vibrationStandart()
-        isFlippedMissionsView = !isFlippedMissionsView
-        let fromView = isFlippedMissionsView ? missionsOneView : missionsTwoView
-        let toView = isFlippedMissionsView ? missionsTwoView : missionsOneView
-        UIView.transition(from: fromView, to: toView, duration: 1, options: [.curveEaseOut, .transitionFlipFromLeft, .showHideTransitionViews])
+        if arrayJumpsRealm.isEmpty {
+            onTap?()
+        } else {
+            isFlippedMissionsView = !isFlippedMissionsView
+            let fromView = isFlippedMissionsView ? missionsOneView : missionsTwoView
+            let toView = isFlippedMissionsView ? missionsTwoView : missionsOneView
+            UIView.transition(from: fromView, to: toView, duration: 1, options: [.curveEaseOut, .transitionFlipFromLeft, .showHideTransitionViews])
+        }
     }
         
     // MARK: RELOAD DATA:

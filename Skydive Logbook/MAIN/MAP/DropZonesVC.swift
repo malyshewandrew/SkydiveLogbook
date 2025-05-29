@@ -133,6 +133,12 @@ final class DropZonesVC: UIViewController {
 //        lipki.title = "Lipki"
 //        lipki.subtitle = "Skydive Minsk"
 //        mapView.addAnnotation(lipki)
+        
+        let lipki = MKPointAnnotation()
+        lipki.coordinate = CLLocationCoordinate2D(latitude: 43.09191968242566, longitude: 1.6987702383680363)
+        lipki.title = "ZMT PMS"
+        lipki.subtitle = "Pamier"
+        mapView.addAnnotation(lipki)
     }
     
     // MARK: - CONFIGURE GESTURES:
@@ -321,6 +327,4 @@ extension DropZonesVC: SFSafariViewControllerDelegate {
     }
 }
 
-extension DropZonesVC: CLLocationManagerDelegate {
-    
-}
+extension DropZonesVC: CLLocationManagerDelegate {}

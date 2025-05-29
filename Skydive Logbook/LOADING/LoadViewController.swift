@@ -21,7 +21,7 @@ final class LoadViewController: UIViewController {
         addSubviews()
         configureConstraints()
         configureUI()
-        perform(#selector(hideAnimation), with: nil, afterDelay: 2.5)
+        perform(#selector(hideAnimation), with: nil, afterDelay: 1.5)
     }
 
     // MARK: - ADD SUBVIEWS:

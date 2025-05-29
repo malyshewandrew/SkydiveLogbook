@@ -184,6 +184,13 @@ extension StatisticVC: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .clear
         cell.contentView.backgroundColor = .clear
         cell.delegate = self
+        cell.onTap = {
+            let alert = UIAlertController(title: NSLocalizedString("General info", comment: "") + ":",
+                                          message: "\n" + NSLocalizedString("no jumps", comment: ""),
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default))
+            self.present(alert, animated: true)
+        }
         return cell
     }
 }
