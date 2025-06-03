@@ -19,6 +19,7 @@ final class EditVC: UIViewController {
         configureUI()
         segmentControl.selectedSegmentIndex = 0
         segmentedControlValueChanged(segmentControl)
+        tabBarController?.tabBar.isHidden = true
     }
     
     // MARK: - ADD SUBVIEWS:

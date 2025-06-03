@@ -102,9 +102,9 @@ final class SystemCell: UITableViewCell {
         // MARK: CONTAINER VIEW:
 
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         
         // MARK: COMMENT BUTTON:

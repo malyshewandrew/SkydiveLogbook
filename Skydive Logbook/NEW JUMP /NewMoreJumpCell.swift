@@ -122,7 +122,7 @@ final class NewMoreJumpCell: UITableViewCell {
         countsButton.translatesAutoresizingMaskIntoConstraints = false
         countsButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         countsButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        countsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        countsButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         countsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
         
         countsTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -138,7 +138,7 @@ final class NewMoreJumpCell: UITableViewCell {
         dateButton.translatesAutoresizingMaskIntoConstraints = false
         dateButton.topAnchor.constraint(equalTo: countsButton.bottomAnchor, constant: 15).isActive = true
         dateButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        dateButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        dateButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         dateButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
 
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -154,7 +154,7 @@ final class NewMoreJumpCell: UITableViewCell {
         locationButton.translatesAutoresizingMaskIntoConstraints = false
         locationButton.topAnchor.constraint(equalTo: dateButton.bottomAnchor, constant: 15).isActive = true
         locationButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        locationButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        locationButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         locationButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
         
         locationTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -170,7 +170,7 @@ final class NewMoreJumpCell: UITableViewCell {
         aircraftButton.translatesAutoresizingMaskIntoConstraints = false
         aircraftButton.topAnchor.constraint(equalTo: locationButton.bottomAnchor, constant: 15).isActive = true
         aircraftButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        aircraftButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        aircraftButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         aircraftButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
         
         aircraftTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -186,7 +186,7 @@ final class NewMoreJumpCell: UITableViewCell {
         canopyButton.translatesAutoresizingMaskIntoConstraints = false
         canopyButton.topAnchor.constraint(equalTo: aircraftButton.bottomAnchor, constant: 15).isActive = true
         canopyButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        canopyButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        canopyButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         canopyButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
         
         canopyTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -202,7 +202,7 @@ final class NewMoreJumpCell: UITableViewCell {
         missionButton.translatesAutoresizingMaskIntoConstraints = false
         missionButton.topAnchor.constraint(equalTo: canopyButton.bottomAnchor, constant: 15).isActive = true
         missionButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        missionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        missionButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         missionButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
         
         missionTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -217,8 +217,8 @@ final class NewMoreJumpCell: UITableViewCell {
         
         heightButton.translatesAutoresizingMaskIntoConstraints = false
         heightButton.topAnchor.constraint(equalTo: missionButton.bottomAnchor, constant: 15).isActive = true
-        heightButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -8).isActive = true
-        heightButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.33).isActive = true
+        heightButton.leadingAnchor.constraint(equalTo: missionButton.leadingAnchor).isActive = true
+        heightButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
         heightButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
         
         heightTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -231,10 +231,10 @@ final class NewMoreJumpCell: UITableViewCell {
         
         timeButton.translatesAutoresizingMaskIntoConstraints = false
         timeButton.topAnchor.constraint(equalTo: missionButton.bottomAnchor, constant: 15).isActive = true
-        timeButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 8).isActive = true
-        timeButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.33).isActive = true
+        timeButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
+        timeButton.trailingAnchor.constraint(equalTo: missionButton.trailingAnchor).isActive = true
         timeButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
-
+        
         timeTextField.translatesAutoresizingMaskIntoConstraints = false
         timeTextField.centerXAnchor.constraint(equalTo: timeButton.centerXAnchor).isActive = true
         timeTextField.bottomAnchor.constraint(equalTo: timeButton.bottomAnchor, constant: 0).isActive = true
@@ -246,7 +246,7 @@ final class NewMoreJumpCell: UITableViewCell {
         cutawayButton.translatesAutoresizingMaskIntoConstraints = false
         cutawayButton.topAnchor.constraint(equalTo: heightButton.bottomAnchor, constant: 15).isActive = true
         cutawayButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        cutawayButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        cutawayButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         cutawayButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.6).isActive = true
 
         cutawayTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -260,19 +260,19 @@ final class NewMoreJumpCell: UITableViewCell {
         // MARK: CLEAN BUTTON:
 
         cleanButton.translatesAutoresizingMaskIntoConstraints = false
-        cleanButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
         cleanButton.topAnchor.constraint(equalTo: cutawayButton.bottomAnchor, constant: 15).isActive = true
         cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        cleanButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.34).isActive = true
+        cleanButton.leadingAnchor.constraint(equalTo: cutawayButton.leadingAnchor).isActive = true
+        cleanButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -5).isActive = true
         cleanButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         
         // MARK: SAVE BUTTON:
 
         saveButton.translatesAutoresizingMaskIntoConstraints = false
-        saveButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
         saveButton.topAnchor.constraint(equalTo: cutawayButton.bottomAnchor, constant: 15).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        saveButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.34).isActive = true
+        saveButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 5).isActive = true
+        saveButton.trailingAnchor.constraint(equalTo: cutawayButton.trailingAnchor).isActive = true
         saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
     }
     

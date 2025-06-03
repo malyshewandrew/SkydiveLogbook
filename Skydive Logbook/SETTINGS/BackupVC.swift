@@ -25,6 +25,7 @@ final class BackupVC: UIViewController {
         addSubviews()
         configureConstraints()
         configureUI()
+        tabBarController?.tabBar.isHidden = true
     }
 
     // MARK: - ADD SUBVIEWS:

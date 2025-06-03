@@ -29,6 +29,7 @@ final class InfoVC: UIViewController {
         addSubviews()
         configureConstrains()
         configureUI()
+        tabBarController?.tabBar.isHidden = true
     }
 
     // MARK: - ADD SUBVIEWS:
