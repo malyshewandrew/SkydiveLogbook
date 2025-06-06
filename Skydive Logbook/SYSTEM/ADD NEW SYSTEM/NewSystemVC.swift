@@ -19,6 +19,7 @@ final class NewSystemVC: UIViewController {
         configureConstrains()
         configureUI()
         configureTableView()
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

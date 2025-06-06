@@ -20,6 +20,7 @@ final class EditJumpVC: UIViewController {
         configureUI()
         configureTableView()
         configureGestures()
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

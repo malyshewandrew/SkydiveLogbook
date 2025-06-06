@@ -186,7 +186,8 @@ final class EditSystemCell: UITableViewCell {
         nameSystemButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         nameSystemButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         nameSystemButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.2).isActive = true
-        nameSystemButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.86).isActive = true
+        nameSystemButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        nameSystemButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
 
         nameSystemTextField.translatesAutoresizingMaskIntoConstraints = false
         nameSystemTextField.bottomAnchor.constraint(equalTo: nameSystemButton.bottomAnchor, constant: 0).isActive = true
@@ -198,7 +199,7 @@ final class EditSystemCell: UITableViewCell {
         
         containerNameButton.translatesAutoresizingMaskIntoConstraints = false
         containerNameButton.topAnchor.constraint(equalTo: nameSystemButton.bottomAnchor, constant: 15).isActive = true
-        containerNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        containerNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         containerNameButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         containerNameButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -212,7 +213,7 @@ final class EditSystemCell: UITableViewCell {
         
         containerDomButton.translatesAutoresizingMaskIntoConstraints = false
         containerDomButton.topAnchor.constraint(equalTo: nameSystemButton.bottomAnchor, constant: 15).isActive = true
-        containerDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        containerDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         containerDomButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         containerDomButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -228,7 +229,7 @@ final class EditSystemCell: UITableViewCell {
         
         containerSerialNumberButton.translatesAutoresizingMaskIntoConstraints = false
         containerSerialNumberButton.topAnchor.constraint(equalTo: containerNameButton.bottomAnchor, constant: 5).isActive = true
-        containerSerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        containerSerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         containerSerialNumberButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         containerSerialNumberButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -243,7 +244,7 @@ final class EditSystemCell: UITableViewCell {
         containerServiceLifeYearsButton.translatesAutoresizingMaskIntoConstraints = false
         containerServiceLifeYearsButton.topAnchor.constraint(equalTo: containerDomButton.bottomAnchor, constant: 5).isActive = true
         containerServiceLifeYearsButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
-        containerServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        containerServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         containerServiceLifeYearsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
         containerServiceLifeYearsTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -264,7 +265,7 @@ final class EditSystemCell: UITableViewCell {
         
         aadNameButton.translatesAutoresizingMaskIntoConstraints = false
         aadNameButton.topAnchor.constraint(equalTo: lineOneView.bottomAnchor, constant: 10).isActive = true
-        aadNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        aadNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         aadNameButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         aadNameButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -278,7 +279,7 @@ final class EditSystemCell: UITableViewCell {
         
         aadDomButton.translatesAutoresizingMaskIntoConstraints = false
         aadDomButton.topAnchor.constraint(equalTo: containerSerialNumberButton.bottomAnchor, constant: 20).isActive = true
-        aadDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        aadDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         aadDomButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         aadDomButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -294,7 +295,7 @@ final class EditSystemCell: UITableViewCell {
         
         aadSerialNumberButton.translatesAutoresizingMaskIntoConstraints = false
         aadSerialNumberButton.topAnchor.constraint(equalTo: aadNameButton.bottomAnchor, constant: 5).isActive = true
-        aadSerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        aadSerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         aadSerialNumberButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         aadSerialNumberButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -308,7 +309,7 @@ final class EditSystemCell: UITableViewCell {
         
         aadServiceLifeYearsButton.translatesAutoresizingMaskIntoConstraints = false
         aadServiceLifeYearsButton.topAnchor.constraint(equalTo: aadDomButton.bottomAnchor, constant: 5).isActive = true
-        aadServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        aadServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         aadServiceLifeYearsButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         aadServiceLifeYearsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -330,7 +331,7 @@ final class EditSystemCell: UITableViewCell {
         
         mainCanopyNameButton.translatesAutoresizingMaskIntoConstraints = false
         mainCanopyNameButton.topAnchor.constraint(equalTo: lineTwoView.bottomAnchor, constant: 10).isActive = true
-        mainCanopyNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        mainCanopyNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         mainCanopyNameButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         mainCanopyNameButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -346,7 +347,7 @@ final class EditSystemCell: UITableViewCell {
         
         mainCanopyDomButton.translatesAutoresizingMaskIntoConstraints = false
         mainCanopyDomButton.topAnchor.constraint(equalTo: aadSerialNumberButton.bottomAnchor, constant: 20).isActive = true
-        mainCanopyDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        mainCanopyDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         mainCanopyDomButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         mainCanopyDomButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -362,7 +363,7 @@ final class EditSystemCell: UITableViewCell {
         
         mainCanopySerialNumberButton.translatesAutoresizingMaskIntoConstraints = false
         mainCanopySerialNumberButton.topAnchor.constraint(equalTo: mainCanopyNameButton.bottomAnchor, constant: 5).isActive = true
-        mainCanopySerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        mainCanopySerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         mainCanopySerialNumberButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         mainCanopySerialNumberButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -376,7 +377,7 @@ final class EditSystemCell: UITableViewCell {
         
         mainCanopyServiceLifeYearsButton.translatesAutoresizingMaskIntoConstraints = false
         mainCanopyServiceLifeYearsButton.topAnchor.constraint(equalTo: mainCanopyNameButton.bottomAnchor, constant: 5).isActive = true
-        mainCanopyServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        mainCanopyServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         mainCanopyServiceLifeYearsButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         mainCanopyServiceLifeYearsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -390,7 +391,7 @@ final class EditSystemCell: UITableViewCell {
         
         mainCanopyServiceLifeJumpsButton.translatesAutoresizingMaskIntoConstraints = false
         mainCanopyServiceLifeJumpsButton.topAnchor.constraint(equalTo: mainCanopySerialNumberButton.bottomAnchor, constant: 5).isActive = true
-        mainCanopyServiceLifeJumpsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        mainCanopyServiceLifeJumpsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         mainCanopyServiceLifeJumpsButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         mainCanopyServiceLifeJumpsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -404,7 +405,7 @@ final class EditSystemCell: UITableViewCell {
         
         mainCanopyCountJumpsButton.translatesAutoresizingMaskIntoConstraints = false
         mainCanopyCountJumpsButton.topAnchor.constraint(equalTo: mainCanopyServiceLifeYearsButton.bottomAnchor, constant: 5).isActive = true
-        mainCanopyCountJumpsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        mainCanopyCountJumpsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         mainCanopyCountJumpsButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         mainCanopyCountJumpsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -426,7 +427,7 @@ final class EditSystemCell: UITableViewCell {
         
         reserveCanopyNameButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyNameButton.topAnchor.constraint(equalTo: lineThreeView.bottomAnchor, constant: 10).isActive = true
-        reserveCanopyNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        reserveCanopyNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         reserveCanopyNameButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         reserveCanopyNameButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -440,7 +441,7 @@ final class EditSystemCell: UITableViewCell {
         
         reserveCanopyDomButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyDomButton.topAnchor.constraint(equalTo: mainCanopyServiceLifeJumpsButton.bottomAnchor, constant: 20).isActive = true
-        reserveCanopyDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        reserveCanopyDomButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         reserveCanopyDomButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         reserveCanopyDomButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -456,7 +457,7 @@ final class EditSystemCell: UITableViewCell {
         
         reserveCanopySerialNumberButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopySerialNumberButton.topAnchor.constraint(equalTo: reserveCanopyNameButton.bottomAnchor, constant: 5).isActive = true
-        reserveCanopySerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        reserveCanopySerialNumberButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         reserveCanopySerialNumberButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         reserveCanopySerialNumberButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -470,7 +471,7 @@ final class EditSystemCell: UITableViewCell {
         
         reserveCanopyServiceLifeYearsButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyServiceLifeYearsButton.topAnchor.constraint(equalTo: reserveCanopyNameButton.bottomAnchor, constant: 5).isActive = true
-        reserveCanopyServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        reserveCanopyServiceLifeYearsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         reserveCanopyServiceLifeYearsButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         reserveCanopyServiceLifeYearsButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -484,7 +485,7 @@ final class EditSystemCell: UITableViewCell {
 
         reserveCanopyCountRepackButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyCountRepackButton.topAnchor.constraint(equalTo: reserveCanopySerialNumberButton.bottomAnchor, constant: 5).isActive = true
-        reserveCanopyCountRepackButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30).isActive = true
+        reserveCanopyCountRepackButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         reserveCanopyCountRepackButton.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -15).isActive = true
         reserveCanopyCountRepackButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -498,7 +499,7 @@ final class EditSystemCell: UITableViewCell {
 
         reserveCanopyDatePackButton.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyDatePackButton.topAnchor.constraint(equalTo: reserveCanopySerialNumberButton.bottomAnchor, constant: 5).isActive = true
-        reserveCanopyDatePackButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
+        reserveCanopyDatePackButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         reserveCanopyDatePackButton.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 15).isActive = true
         reserveCanopyDatePackButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1).isActive = true
         
@@ -513,7 +514,8 @@ final class EditSystemCell: UITableViewCell {
         commentSystemButton.topAnchor.constraint(equalTo: reserveCanopyDatePackButton.bottomAnchor, constant: 15).isActive = true
         commentSystemButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         commentSystemButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor, multiplier: 1.2).isActive = true
-        commentSystemButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.86).isActive = true
+        commentSystemButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        commentSystemButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
 
         commentSystemTextField.translatesAutoresizingMaskIntoConstraints = false
         commentSystemTextField.bottomAnchor.constraint(equalTo: commentSystemButton.bottomAnchor, constant: 0).isActive = true
@@ -527,7 +529,7 @@ final class EditSystemCell: UITableViewCell {
         saveButton.topAnchor.constraint(equalTo: commentSystemButton.bottomAnchor, constant: 15).isActive = true
         saveButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        saveButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.34).isActive = true
+        saveButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         saveButton.addTarget(self, action: #selector(actionButtonSaveTap), for: .touchUpInside)
     }

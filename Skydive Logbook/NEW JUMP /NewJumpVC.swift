@@ -85,7 +85,8 @@ final class NewJumpVC: UIViewController {
         segmentControl.translatesAutoresizingMaskIntoConstraints = false
         segmentControl.topAnchor.constraint(equalTo: newJumpLottie.bottomAnchor, constant: 5).isActive = true
         segmentControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        segmentControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
 
         // MARK: TABLE VIEW:
 
