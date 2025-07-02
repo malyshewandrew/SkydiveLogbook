@@ -113,7 +113,8 @@ final class EditAccountVC: UIViewController {
         nicknameButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 5).isActive = true
         nicknameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nicknameButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        nicknameButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        nicknameButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        nicknameButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         
         nicknameTextField.translatesAutoresizingMaskIntoConstraints = false
         nicknameTextField.bottomAnchor.constraint(equalTo: nicknameButton.bottomAnchor).isActive = true
@@ -127,7 +128,7 @@ final class EditAccountVC: UIViewController {
         licenseTypeButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
         licenseTypeButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -8).isActive = true
         licenseTypeButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        licenseTypeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
+        licenseTypeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         
         licenseTypeTextField.translatesAutoresizingMaskIntoConstraints = false
         licenseTypeTextField.bottomAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor).isActive = true
@@ -141,7 +142,7 @@ final class EditAccountVC: UIViewController {
         licenseDateButton.topAnchor.constraint(equalTo: nicknameButton.bottomAnchor, constant: 15).isActive = true
         licenseDateButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 8).isActive = true
         licenseDateButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        licenseDateButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.33).isActive = true
+        licenseDateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         
         licenseDateTextField.translatesAutoresizingMaskIntoConstraints = false
         licenseDateTextField.bottomAnchor.constraint(equalTo: licenseDateButton.bottomAnchor).isActive = true
@@ -157,7 +158,8 @@ final class EditAccountVC: UIViewController {
         medicineButton.topAnchor.constraint(equalTo: licenseTypeButton.bottomAnchor, constant: 15).isActive = true
         medicineButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         medicineButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        medicineButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        medicineButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        medicineButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         
         medicineTextField.translatesAutoresizingMaskIntoConstraints = false
         medicineTextField.bottomAnchor.constraint(equalTo: medicineButton.bottomAnchor).isActive = true
@@ -173,7 +175,8 @@ final class EditAccountVC: UIViewController {
         insuranceButton.topAnchor.constraint(equalTo: medicineButton.bottomAnchor, constant: 15).isActive = true
         insuranceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         insuranceButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        insuranceButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        insuranceButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        insuranceButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         
         insuranceTextField.translatesAutoresizingMaskIntoConstraints = false
         insuranceTextField.bottomAnchor.constraint(equalTo: insuranceButton.bottomAnchor).isActive = true
@@ -189,7 +192,8 @@ final class EditAccountVC: UIViewController {
         reserveCanopyButton.topAnchor.constraint(equalTo: insuranceButton.bottomAnchor, constant: 15).isActive = true
         reserveCanopyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         reserveCanopyButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        reserveCanopyButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        reserveCanopyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        reserveCanopyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         
         reserveCanopyTextField.translatesAutoresizingMaskIntoConstraints = false
         reserveCanopyTextField.bottomAnchor.constraint(equalTo: reserveCanopyButton.bottomAnchor).isActive = true
@@ -205,7 +209,7 @@ final class EditAccountVC: UIViewController {
         cleanButton.topAnchor.constraint(equalTo: reserveCanopyTextField.bottomAnchor, constant: 15).isActive = true
         cleanButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -5).isActive = true
         cleanButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        cleanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.34).isActive = true
+        cleanButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         
         // MARK: SAVE BUTTOM:
         
@@ -213,7 +217,7 @@ final class EditAccountVC: UIViewController {
         saveButton.topAnchor.constraint(equalTo: reserveCanopyTextField.bottomAnchor, constant: 15).isActive = true
         saveButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 5).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.34).isActive = true
+        saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
     }
     
     // MARK: - CONFIGURE UI:

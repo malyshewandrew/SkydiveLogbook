@@ -684,3 +684,9 @@
 "No photos selected / share" = "Keine Fotos ausgewählt";
 "Share with jump / share" = "Mit Sprung teilen";
 "Create a stories / share" = "Eine Geschichte erstellen";
+
+"Promo title / settings" = "Aktionscode";
+"Promo message / settings" = "Du kannst einen Aktionscode erhalten, um die App kostenlos zu nutzen.\nWende dich dazu an den Entwickler.";
+"Promo no / settings" = "Schließen";
+"Promo yes / settings" = "Code eingeben";
+"Promo email / settings" = "E-Mail senden";

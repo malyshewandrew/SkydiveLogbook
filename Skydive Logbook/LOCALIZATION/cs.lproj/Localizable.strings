@@ -684,3 +684,9 @@
 "No photos selected / share" = "Nebyly vybrány žádné fotografie";
 "Share with jump / share" = "Sdílet se skokem";
 "Create a stories / share" = "Vytvořit příběh";
+
+"Promo title / settings" = "Promo kód";
+"Promo message / settings" = "Můžete získat promo kód pro bezplatné používání aplikace.\nPro získání kontaktujte vývojáře.";
+"Promo no / settings" = "Zavřít";
+"Promo yes / settings" = "Zadat kód";
+"Promo email / settings" = "Odeslat e-mail";

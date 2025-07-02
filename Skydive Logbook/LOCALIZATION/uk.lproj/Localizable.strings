@@ -684,3 +684,9 @@
 "No photos selected / share" = "Фото не вибрано";
 "Share with jump / share" = "Поділитися стрибком";
 "Create a stories / share" = "Створити історію";
+
+"Promo title / settings" = "Промокод";
+"Promo message / settings" = "Ви можете отримати промокод для безкоштовного використання застосунку.\nЩоб отримати промокод, зверніться до розробника.";
+"Promo no / settings" = "Закрити";
+"Promo yes / settings" = "Ввести промокод";
+"Promo email / settings" = "Надіслати листа";

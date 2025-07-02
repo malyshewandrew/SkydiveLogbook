@@ -684,3 +684,9 @@
 "No photos selected / share" = "لم يتم اختيار أي صور";
 "Share with jump / share" = "شارك القفزة";
 "Create a stories / share" = "أنشئ قصة";
+
+"Promo title / settings" = "رمز ترويجي";
+"Promo message / settings" = "يمكنك الحصول على رمز ترويجي لاستخدام التطبيق مجانًا.\nللحصول على الرمز، يرجى التواصل مع المطور.";
+"Promo no / settings" = "إغلاق";
+"Promo yes / settings" = "إدخال الرمز";
+"Promo email / settings" = "إرسال بريد إلكتروني";

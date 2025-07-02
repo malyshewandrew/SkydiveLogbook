@@ -10,6 +10,7 @@ protocol SettingsCellDelegate: AnyObject {
     func tapPrintButton()
     func tapInfoButton()
     func tapPremiumButton()
+    func tapPromoButton()
     func tapNotificationsButton()
     func tapGameButton()
     func tapInstagramButton()
@@ -18,16 +19,17 @@ protocol SettingsCellDelegate: AnyObject {
 final class SettingsCell: UITableViewCell {
     // MARK: - PROPERTIES:
 
-    private let editDataButton = UIButton()
-    private let backupButton = UIButton()
-    private let printButton = UIButton()
-    private let infoButton = UIButton()
-    private let premiumButton = UIButton()
+    private let editDataButton = UIButton(type: .system)
+    private let backupButton = UIButton(type: .system)
+    private let printButton = UIButton(type: .system)
+    private let infoButton = UIButton(type: .system)
+    private let premiumButton = UIButton(type: .system)
+    private let promoButton = UIButton(type: .system)
     private let notificationsButton = UIButton()
-    private let gameButton = UIButton()
+    private let gameButton = UIButton(type: .system)
     private let starImage = UIImageView()
     private let instagramImageView = UIImageView()
-    private let instagramButton = UIButton()
+    private let instagramButton = UIButton(type: .system)
     private let infoLabel = UILabel()
     weak var delegate: SettingsCellDelegate?
 
@@ -49,7 +51,7 @@ final class SettingsCell: UITableViewCell {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        contentView.addSubviews(editDataButton, backupButton, printButton, infoButton, premiumButton, notificationsButton, gameButton, instagramImageView, infoLabel, instagramButton)
+        contentView.addSubviews(editDataButton, backupButton, printButton, infoButton, premiumButton, promoButton, notificationsButton, gameButton, instagramImageView, infoLabel, instagramButton)
         premiumButton.addSubview(starImage)
     }
 
@@ -94,6 +96,14 @@ final class SettingsCell: UITableViewCell {
         starImage.centerXAnchor.constraint(equalTo: premiumButton.trailingAnchor).isActive = true
         starImage.centerYAnchor.constraint(equalTo: premiumButton.topAnchor, constant: 5).isActive = true
         
+        // MARK: PROMO BUTTON:
+        
+        promoButton.translatesAutoresizingMaskIntoConstraints = false
+        promoButton.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 15).isActive = true
+        promoButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        promoButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
+        promoButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        
         // MARK: NOTIFICATIONS BUTTON:
         
         notificationsButton.translatesAutoresizingMaskIntoConstraints = false
@@ -113,7 +123,7 @@ final class SettingsCell: UITableViewCell {
         // MARK: ABOUT:
 
         infoButton.translatesAutoresizingMaskIntoConstraints = false
-        infoButton.topAnchor.constraint(equalTo: premiumButton.bottomAnchor, constant: 15).isActive = true
+        infoButton.topAnchor.constraint(equalTo: promoButton.bottomAnchor, constant: 15).isActive = true
         infoButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         infoButton.heightAnchor.constraint(equalToConstant: height45).isActive = true
         infoButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
@@ -209,6 +219,16 @@ final class SettingsCell: UITableViewCell {
             }
         }
         
+        // MARK: PROMO BUTTON:
+        
+        promoButton.setTitle(NSLocalizedString("Promo title / settings", comment: ""), for: .normal)
+        promoButton.layer.cornerRadius = cornerRadius15
+        promoButton.backgroundColor = .colorCell
+        promoButton.titleLabel?.font = FontManager.medium(size: 14).uiFont
+        promoButton.setTitleColor(.colorWhite, for: .normal)
+        promoButton.setTitleColor(.systemBlue, for: .highlighted)
+        promoButton.addTarget(self, action: #selector(promoButtonTapped), for: .touchUpInside)
+        
         // MARK: NOTIFICATIONS BUTTON:
 
         notificationsButton.setTitle(NSLocalizedString("Notifications / notifications", comment: ""), for: .normal)
@@ -289,6 +309,13 @@ final class SettingsCell: UITableViewCell {
     @objc private func premiumButtonTapped() {
         VibrationManager.instance.vibrationStandart()
         delegate?.tapPremiumButton()
+    }
+    
+    // MARK: PROMO BUTTON:
+
+    @objc private func promoButtonTapped() {
+        VibrationManager.instance.vibrationStandart()
+        delegate?.tapPromoButton()
     }
 
     // MARK: NOTIFICATIONS BUTTON:

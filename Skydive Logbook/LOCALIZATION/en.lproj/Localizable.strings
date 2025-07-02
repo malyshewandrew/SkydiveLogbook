@@ -708,3 +708,9 @@
 "No photos selected / share" = "No photos selected";
 "Share with jump / share" = "Share with jump";
 "Create a stories / share" = "Create a stories";
+
+"Promo title / settings" = "Promo Code";
+"Promo message / settings" = "You can get a promo code for free use of the app.\nTo get a promo code, contact the developer.";
+"Promo no / settings" = "Close";
+"Promo yes / settings" = "Enter Promo Code";
+"Promo email / settings" = "Send Email";

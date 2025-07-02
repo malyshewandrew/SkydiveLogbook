@@ -684,3 +684,9 @@
 "No photos selected / share" = "Fotoğraf seçilmedi";
 "Share with jump / share" = "Atlayışı paylaş";
 "Create a stories / share" = "Bir hikaye oluştur";
+
+"Promo title / settings" = "Promosyon kodu";
+"Promo message / settings" = "Uygulamayı ücretsiz kullanmak için bir promosyon kodu alabilirsiniz.\nKod almak için geliştiriciyle iletişime geçin.";
+"Promo no / settings" = "Kapat";
+"Promo yes / settings" = "Kodu gir";
+"Promo email / settings" = "E-posta gönder";

@@ -684,3 +684,9 @@
 "No photos selected / share" = "未选择照片";
 "Share with jump / share" = "分享跳跃";
 "Create a stories / share" = "创建故事";
+
+"Promo title / settings" = "优惠码";
+"Promo message / settings" = "您可以获取一个优惠码以免费使用此应用。\n请联系开发者以获取优惠码。";
+"Promo no / settings" = "关闭";
+"Promo yes / settings" = "输入优惠码";
+"Promo email / settings" = "发送邮件";

@@ -331,6 +331,25 @@ extension SettingsVC: SettingsCellDelegate {
         }
     }
     
+    // MARK: - TAP PROMO BUTTON:
+    
+    func tapPromoButton() {
+        let alert = UIAlertController(title: NSLocalizedString("Promo title / settings", comment: ""), message: NSLocalizedString("Promo message / settings", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo yes / settings", comment: ""), style: .default, handler: { _ in
+            if let url = URL(string: "https://apps.apple.com/redeem?ctx=offercodes&id=6478469415") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo email / settings", comment: ""), style: .default, handler: { _ in
+            let email = "malyshewdeveloper@protonmail.com"
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo no / settings", comment: ""), style: .destructive, handler: nil))
+        present(alert, animated: true)
+    }
+    
     // MARK: - TAP NOTIFICATIONS BUTTON:
     
     func tapNotificationsButton() {

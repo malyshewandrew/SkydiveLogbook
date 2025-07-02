@@ -684,3 +684,9 @@
 "No photos selected / share" = "선택된 사진이 없습니다";
 "Share with jump / share" = "점프와 공유";
 "Create a stories / share" = "이야기 만들기";
+
+"Promo title / settings" = "프로모션 코드";
+"Promo message / settings" = "앱을 무료로 사용하려면 프로모션 코드를 받을 수 있습니다.\n코드를 받으려면 개발자에게 문의하세요.";
+"Promo no / settings" = "닫기";
+"Promo yes / settings" = "코드 입력";
+"Promo email / settings" = "이메일 보내기";

@@ -684,3 +684,9 @@
 "No photos selected / share" = "写真が選択されていません";
 "Share with jump / share" = "ジャンプを共有";
 "Create a stories / share" = "ストーリーを作成";
+
+"Promo title / settings" = "プロモコード";
+"Promo message / settings" = "アプリを無料で使用するためのプロモコードを取得できます。\n取得するには開発者に連絡してください。";
+"Promo no / settings" = "閉じる";
+"Promo yes / settings" = "コードを入力";
+"Promo email / settings" = "メールを送信";

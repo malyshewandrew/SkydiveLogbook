@@ -354,6 +354,7 @@ final class ShareVC: UIViewController {
     @objc private func saveButtonTapped() {
         VibrationManager.instance.vibrationStandart()
         UIImageWriteToSavedPhotosAlbum(imageView.image ?? UIImage(), self, #selector(imageSaveCompleted(_:didFinishSavingWithError:contextInfo:)), nil)
+        dismiss(animated: true)
     }
     
     // MARK: APPLY EFFECT:

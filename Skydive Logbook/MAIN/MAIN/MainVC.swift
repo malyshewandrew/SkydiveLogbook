@@ -449,7 +449,7 @@ final class MainVC: UIViewController {
 
         mainShadowLottie.play()
         mainShadowLottie.loopMode = .loop
-        mainShadowLottie.layer.opacity = 0.2
+        mainShadowLottie.layer.opacity = 0.0
         mainShadowLottie.animationSpeed = 0.2
         mainShadowLottie.layer.shadowRadius = 5
         mainShadowLottie.layer.shadowColor = UIColor.colorLightBlue.cgColor

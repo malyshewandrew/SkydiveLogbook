@@ -684,3 +684,9 @@
 "No photos selected / share" = "ไม่มีภาพถ่ายที่เลือก";
 "Share with jump / share" = "แชร์การกระโดด";
 "Create a stories / share" = "สร้างเรื่องราว";
+
+"Promo title / settings" = "รหัสโปรโมชั่น";
+"Promo message / settings" = "คุณสามารถรับรหัสโปรโมชั่นเพื่อใช้แอปได้ฟรี\nโปรดติดต่อผู้พัฒนาเพื่อขอรับรหัส";
+"Promo no / settings" = "ปิด";
+"Promo yes / settings" = "ใส่รหัส";
+"Promo email / settings" = "ส่งอีเมล";
