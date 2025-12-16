@@ -13,11 +13,12 @@ final class InfoVC: UIViewController {
     private let scrollView = UIScrollView()
     private let privacyButton = UIButton(type: .system)
     private let termsButton = UIButton(type: .system)
-    private let faqButton = UIButton(type: .system)
     private let languagesButton = UIButton(type: .system)
     private let shareButton = UIButton(type: .system)
     private let feedbackButton = UIButton(type: .system)
     private let mailButton = UIButton(type: .system)
+    private let promoButton = UIButton(type: .system)
+    private let applicationsButton = UIButton(type: .system)
     private let versionButton = UIButton(type: .system)
     private var buildVersion = ""
     private var appVersion = ""
@@ -36,7 +37,7 @@ final class InfoVC: UIViewController {
 
     private func addSubviews() {
         view.addSubviews(infoBackground, infoBackgroundView, appleButtonLottie, appleButton, scrollView)
-        scrollView.addSubviews(privacyButton, termsButton, faqButton, languagesButton, shareButton, feedbackButton, mailButton, versionButton)
+        scrollView.addSubviews(privacyButton, termsButton, languagesButton, shareButton, feedbackButton, mailButton, promoButton, applicationsButton, versionButton)
     }
     
     // MARK: - CONFIGURE CONSTRAINS:
@@ -99,18 +100,10 @@ final class InfoVC: UIViewController {
         termsButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         termsButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
-        // MARK: FAQ BUTTON:
-
-        faqButton.translatesAutoresizingMaskIntoConstraints = false
-        faqButton.topAnchor.constraint(equalTo: termsButton.bottomAnchor, constant: 15).isActive = true
-        faqButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        faqButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
-        faqButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
-        
         // MARK: LANGUAGES BUTTON (ALERT):
         
         languagesButton.translatesAutoresizingMaskIntoConstraints = false
-        languagesButton.topAnchor.constraint(equalTo: faqButton.bottomAnchor, constant: 15).isActive = true
+        languagesButton.topAnchor.constraint(equalTo: termsButton.bottomAnchor, constant: 15).isActive = true
         languagesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         languagesButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         languagesButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -138,11 +131,27 @@ final class InfoVC: UIViewController {
         mailButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mailButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         mailButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: PROMO BUTTON:
+        
+        promoButton.translatesAutoresizingMaskIntoConstraints = false
+        promoButton.topAnchor.constraint(equalTo: mailButton.bottomAnchor, constant: 15).isActive = true
+        promoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        promoButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        promoButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        
+        // MARK: APPLICATIONS BUTTON:
+        
+        applicationsButton.translatesAutoresizingMaskIntoConstraints = false
+        applicationsButton.topAnchor.constraint(equalTo: promoButton.bottomAnchor, constant: 15).isActive = true
+        applicationsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        applicationsButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
+        applicationsButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         // MARK: VERSION BUTTON (ALERT):
 
         versionButton.translatesAutoresizingMaskIntoConstraints = false
-        versionButton.topAnchor.constraint(equalTo: mailButton.bottomAnchor, constant: 15).isActive = true
+        versionButton.topAnchor.constraint(equalTo: applicationsButton.bottomAnchor, constant: 15).isActive = true
         versionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         versionButton.heightAnchor.constraint(equalToConstant: height40).isActive = true
         versionButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -211,17 +220,6 @@ final class InfoVC: UIViewController {
         termsButton.titleLabel?.font = FontManager.medium(size: 14).uiFont
         termsButton.addTarget(self, action: #selector(termsButtonTapped), for: .touchUpInside)
         
-        // MARK: FAQ BUTTON:
-
-        faqButton.setTitle(NSLocalizedString("FAQ", comment: ""), for: .normal)
-        faqButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        faqButton.setTitleColor(.colorWhite, for: .normal)
-        faqButton.setTitleColor(.systemBlue, for: .highlighted)
-        faqButton.layer.cornerRadius = cornerRadius15
-        faqButton.backgroundColor = .colorCell
-        faqButton.titleLabel?.font = FontManager.medium(size: 14).uiFont
-        faqButton.addTarget(self, action: #selector(faqButtonTapped), for: .touchUpInside)
-        
         // MARK: LANGUAGES BUTTON (ALERT):
         
         languagesButton.setTitle(NSLocalizedString("App language / info", comment: ""), for: .normal)
@@ -264,6 +262,26 @@ final class InfoVC: UIViewController {
         mailButton.titleLabel?.font = FontManager.medium(size: 14).uiFont
         mailButton.titleLabel?.adjustsFontSizeToFitWidth = true
         mailButton.addTarget(self, action: #selector(mailButtonTapped), for: .touchUpInside)
+        
+        // MARK: PROMO BUTTON:
+        
+        promoButton.setTitle(NSLocalizedString("Promo title / settings", comment: ""), for: .normal)
+        promoButton.layer.cornerRadius = cornerRadius15
+        promoButton.backgroundColor = .colorCell
+        promoButton.titleLabel?.font = FontManager.medium(size: 14).uiFont
+        promoButton.setTitleColor(.colorWhite, for: .normal)
+        promoButton.setTitleColor(.systemBlue, for: .highlighted)
+        promoButton.addTarget(self, action: #selector(promoButtonTapped), for: .touchUpInside)
+        
+        // MARK: APPLICATIONS BUTTON:
+        
+        applicationsButton.setTitle(NSLocalizedString("Title / applications", comment: ""), for: .normal)
+        applicationsButton.layer.cornerRadius = cornerRadius15
+        applicationsButton.backgroundColor = .colorCell
+        applicationsButton.titleLabel?.font = FontManager.medium(size: 14).uiFont
+        applicationsButton.setTitleColor(.colorWhite, for: .normal)
+        applicationsButton.setTitleColor(.systemBlue, for: .highlighted)
+        applicationsButton.addTarget(self, action: #selector(applicationsButtonTapped), for: .touchUpInside)
         
         // MARK: VERSION BUTTON (ALERT):
 
@@ -357,16 +375,6 @@ final class InfoVC: UIViewController {
         present(safariViewController, animated: true)
     }
     
-    // MARK: OPEN SAFARI FAQ:
-    
-    @objc private func faqButtonTapped() {
-        VibrationManager.instance.vibrationStandart()
-        guard let url = URL(string: "https://skydivebook.tilda.ws/faq") else { return }
-        let safariViewController = SFSafariViewController(url: url)
-        safariViewController.delegate = self
-        present(safariViewController, animated: true)
-    }
-    
     // MARK: FUNC FOR SHARE BUTTON:
     
     @objc private func shareButtonTapped() {
@@ -391,6 +399,36 @@ final class InfoVC: UIViewController {
         if let url = URL(string: "mailto:\(email)") {
             UIApplication.shared.open(url)
         }
+    }
+    
+    // MARK: PROMO BUTTON:
+
+    @objc private func promoButtonTapped() {
+        VibrationManager.instance.vibrationStandart()
+        let alert = UIAlertController(title: NSLocalizedString("Promo title / settings", comment: ""), message: NSLocalizedString("Promo message / settings", comment: ""), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo yes / settings", comment: ""), style: .default, handler: { _ in
+            if let url = URL(string: "https://apps.apple.com/redeem?ctx=offercodes&id=6478469415") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo email / settings", comment: ""), style: .default, handler: { _ in
+            let email = "malyshewdeveloper@protonmail.com"
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo no / settings", comment: ""), style: .destructive, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // MARK: APPLICATIONS BUTTON:
+    @objc private func applicationsButtonTapped() {
+        VibrationManager.instance.vibrationStandart()
+        let applicationViewControoler = ApplicationsViewController()
+        applicationViewControoler.modalTransitionStyle = .crossDissolve
+        applicationViewControoler.modalPresentationStyle = .pageSheet
+        applicationViewControoler.sheetPresentationController?.prefersGrabberVisible = true
+        present(applicationViewControoler, animated: true)
     }
 }
 

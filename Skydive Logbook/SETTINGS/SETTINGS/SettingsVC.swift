@@ -2,11 +2,11 @@ import Adapty
 import AdaptyUI
 import AlertKit
 import Lottie
+import PDFKit
 import RealmSwift
 import SafariServices
 import UIKit
 import WebKit
-import PDFKit
 
 final class SettingsVC: UIViewController {
     // MARK: - PROPERTIES:
@@ -48,13 +48,12 @@ final class SettingsVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        
         // MARK: BACKGROUND FLOWERS LOTTIE:
-        
+
         backgroundFlowersLottie.translatesAutoresizingMaskIntoConstraints = false
         backgroundFlowersLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backgroundFlowersLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        
+
         // MARK: BLACK VIEW:
 
         blackView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +61,7 @@ final class SettingsVC: UIViewController {
         blackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         blackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         blackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        
+
         // MARK: EFFECT ONE LOTTIE:
 
         effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
@@ -119,14 +118,14 @@ final class SettingsVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationItem.backButtonTitle = NSLocalizedString("back", comment: "")
         navigationItem.title = ""
-        
+
         // MARK: BACKGROUND FLOWERS LOTTIE:
-        
+
         backgroundFlowersLottie.play()
         backgroundFlowersLottie.loopMode = .loop
         backgroundFlowersLottie.animationSpeed = 0.3
         backgroundFlowersLottie.contentMode = .scaleAspectFill
-        
+
         // MARK: BLACK VIEW:
 
         blackView.backgroundColor = .black
@@ -208,31 +207,31 @@ final class SettingsVC: UIViewController {
             haptic: .error
         )
     }
-    
+
     // MARK: SEND TELEGRAM MESSAGE:
-    
+
     func sendTelegramMessage(message: String) {
         let botToken = "7264425174:AAGOBEeZrrYhQSwrWPcwMURy90kfW65UlSg"
         let chatID = "298098804,"
-        
+
         let messageText = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let urlString = "https://api.telegram.org/bot\(botToken)/sendMessage?chat_id=\(chatID)&text=\(messageText)"
-        
+
         guard let url = URL(string: urlString) else {
             print("Неверный URL")
             return
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+
+        let task = URLSession.shared.dataTask(with: request) { _, _, error in
             if let error = error {
                 print("Ошибка при отправке сообщения в Telegram: \(error.localizedDescription)")
                 return
             }
         }
-        
+
         task.resume()
     }
 }
@@ -256,23 +255,22 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - EXTENSIONS:
 
 extension SettingsVC: SettingsCellDelegate {
-    
     // MARK: - TAP EDIT ACCOUNT BUTTON:
-    
+
     func tapEditDataButton() {
         let editVC = EditVC()
         navigationController?.pushViewController(editVC, animated: true)
     }
-    
+
     // MARK: - TAP BACKUP BUTTON:
 
     func tapBackupButton() {
         let backup = BackupVC()
         navigationController?.pushViewController(backup, animated: true)
     }
-    
+
     // MARK: - TAP PRINT BUTTON:
-    
+
     func tapPrintButton() {
         VibrationManager.instance.vibrationStandart()
         let printVC = PrintVC()
@@ -283,7 +281,7 @@ extension SettingsVC: SettingsCellDelegate {
         }
         present(printVC, animated: true)
     }
-    
+
     // MARK: - TAP INFO BUTTON:
 
     func tapInfoButton() {
@@ -292,7 +290,7 @@ extension SettingsVC: SettingsCellDelegate {
     }
 
     // MARK: - TAP PREMIUM BUTTON:
-    
+
     func tapPremiumButton() {
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
@@ -305,11 +303,7 @@ extension SettingsVC: SettingsCellDelegate {
                         AdaptyUI.getViewConfiguration(forPaywall: paywall, locale: "en") { result in
                             switch result {
                             case let .success(viewConfiguration):
-                                let visualPaywall = AdaptyUI.paywallController(
-                                    for: paywall,
-                                    viewConfiguration: viewConfiguration,
-                                    delegate: self
-                                )
+                                let visualPaywall = AdaptyUI.paywallController(for: paywall, viewConfiguration: viewConfiguration, delegate: self)
                                 self.present(visualPaywall, animated: true)
                                 self.activityIndicator.stopAnimating()
                                 self.activityIndicator.removeFromSuperview()
@@ -330,28 +324,9 @@ extension SettingsVC: SettingsCellDelegate {
             }
         }
     }
-    
-    // MARK: - TAP PROMO BUTTON:
-    
-    func tapPromoButton() {
-        let alert = UIAlertController(title: NSLocalizedString("Promo title / settings", comment: ""), message: NSLocalizedString("Promo message / settings", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo yes / settings", comment: ""), style: .default, handler: { _ in
-            if let url = URL(string: "https://apps.apple.com/redeem?ctx=offercodes&id=6478469415") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo email / settings", comment: ""), style: .default, handler: { _ in
-            let email = "malyshewdeveloper@protonmail.com"
-            if let url = URL(string: "mailto:\(email)") {
-                UIApplication.shared.open(url)
-            }
-        }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Promo no / settings", comment: ""), style: .destructive, handler: nil))
-        present(alert, animated: true)
-    }
-    
+
     // MARK: - TAP NOTIFICATIONS BUTTON:
-    
+
     func tapNotificationsButton() {
         let notifications = NotificationsVS()
         if let sheetController = notifications.sheetPresentationController {
@@ -361,16 +336,16 @@ extension SettingsVC: SettingsCellDelegate {
         }
         present(notifications, animated: true, completion: nil)
     }
-    
+
     // MARK: - TAP GAME BUTTON:
-    
+
     func tapGameButton() {
         let game = GameVC()
         navigationController?.pushViewController(game, animated: true)
     }
 
     // MARK: - TAP INSTAGRAM BUTTON:
-    
+
     func tapInstagramButton() {
         guard let url = URL(string: "https://instagram.com/skydivebook") else { return }
         let safariViewController = SFSafariViewController(url: url)
