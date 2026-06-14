@@ -199,13 +199,14 @@ final class SettingsCell: UITableViewCell {
         starImage.isHidden = true
         
         Adapty.getProfile { [weak self] result in
-            guard let self = self else { return }
-            if let profile = try? result.get(),
-               profile.accessLevels["premium"]?.isActive ?? false
-            {
-                starImage.isHidden = true
-            } else {
-                starImage.isHidden = false
+            guard let self else { return }
+
+            let isPremium = (try? result.get())?
+                .accessLevels["premium"]?
+                .isActive ?? false
+
+            Task { @MainActor in
+                self.starImage.isHidden = isPremium
             }
         }
         

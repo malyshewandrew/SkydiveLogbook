@@ -182,25 +182,29 @@ final class NotesVC: UIViewController {
 
     private func checkPaymentStatus() {
         Adapty.getProfile { result in
-            if let profile = try? result.get(),
-               profile.accessLevels["premium"]?.isActive ?? false
-            {
-                self.saveNewNote()
-                DispatchQueue.main.async {
+            Task { @MainActor in
+                if let profile = try? result.get(),
+                   profile.accessLevels["premium"]?.isActive ?? false
+                {
+                    self.saveNewNote()
+
                     self.actionButtonSaveGreenColor()
                     self.noteTextView.resignFirstResponder()
                     self.noteTextView.text = ""
                     self.playSoundSucces()
                     self.alertKitSuccess()
+
+                    print("SAVE OK: I'm Premium!")
+                } else {
+                    self.noteTextView.text = ""
+                    self.noteTextView.resignFirstResponder()
+
+                    self.alertKitError()
+                    self.actionButtonSaveRedColor()
+                    self.showPaymentAlert()
+
+                    print("NOT SAVE: I'm NOT Premium!")
                 }
-                print("SAVE OK: I'm Premium!")
-            } else {
-                self.noteTextView.text = ""
-                self.noteTextView.resignFirstResponder()
-                self.alertKitError()
-                self.actionButtonSaveRedColor()
-                self.showPaymentAlert()
-                print("NOT SAVE: I'm NOT Premium!")
             }
         }
     }

@@ -46,24 +46,18 @@ final class PaywallVC: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case let .success(paywall):
-                    if paywall.hasViewConfiguration {
-                        AdaptyUI.getViewConfiguration(forPaywall: paywall, locale: "en") { result in
-                            switch result {
-                            case let .success(viewConfiguration):
-                                let visualPaywall = AdaptyUI.paywallController(for: paywall, viewConfiguration: viewConfiguration, delegate: self)
-                                self.present(visualPaywall, animated: true)
-                                self.activityIndicator.stopAnimating()
-                                self.activityIndicator.removeFromSuperview()
-                            case let .failure(error):
-                                let premium = PremiumVC()
-                                self.navigationController?.pushViewController(premium, animated: true)
-                                self.activityIndicator.stopAnimating()
-                                self.activityIndicator.removeFromSuperview()
-                                print(error)
-                            }
+                    Task { @MainActor in
+                        do {
+                            let configuration = try await AdaptyUI.getPaywallConfiguration(forPaywall: paywall)
+                            let controller = try AdaptyUI.paywallController(with: configuration, delegate: self)
+                            self.present(controller, animated: true)
+                        } catch {
+                            print(error)
+                            let premium = PremiumVC()
+                            self.navigationController?.pushViewController(premium, animated: true)
                         }
-                    } else {
-                        print("messageError")
+                        self.activityIndicator.stopAnimating()
+                        self.activityIndicator.removeFromSuperview()
                     }
                 case let .failure(error):
                     print(error)
@@ -145,20 +139,17 @@ extension PaywallVC: AdaptyPaywallControllerDelegate {
             dismiss(animated: true)
         case let .custom(id):
             print(id)
-        case let .openURL(url: url):
+        case .openURL(url: _):
             dismiss(animated: true) { [weak self] in
-                guard let self = self else { return }
+                guard self != nil else { return }
                 VibrationManager.instance.vibrationStandart()
-                let safariViewController = SFSafariViewController(url: url)
-                safariViewController.delegate = self
-                self.present(safariViewController, animated: true)
             }
         }
     }
 
     // MARK: - Вызывается при выборе продукта в контроллере оплаты:
 
-    func paywallController(_ controller: AdaptyPaywallController, didSelectProduct product: AdaptyPaywallProduct) {
+    private func paywallController(_ controller: AdaptyPaywallController, didSelectProduct product: AdaptyPaywallProduct) {
         VibrationManager.instance.vibrationStandart()
         print("Selected product: \(product)")
     }
@@ -175,13 +166,13 @@ extension PaywallVC: AdaptyPaywallControllerDelegate {
 
     // MARK: - Вызывается при завершении процесса покупки продукта. Включает информацию о совершенной покупке (purchasedInfo*):
 
-    func paywallController(_ controller: AdaptyPaywallController, didFinishPurchase product: AdaptyPaywallProduct, purchasedInfo: AdaptyPurchasedInfo) {
+    func paywallController(_ controller: AdaptyPaywallController, didFinishPurchase product: AdaptyPaywallProduct, purchaseResult: AdaptyPurchaseResult) {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
         alertKitSuccess()
-        sendTelegramMessage(message: "Новая покупка: \(product.vendorProductId.description)")
+        sendTelegramMessage(message: "Новая покупка: \(product.vendorProductId)")
         print("Finished purchase for product: \(product)")
-        print("Purchased info: \(purchasedInfo)")
+        print("Purchase result: \(purchaseResult)")
     }
 
     // MARK: - Вызывается при ошибке во время покупки продукта:
@@ -218,26 +209,58 @@ extension PaywallVC: AdaptyPaywallControllerDelegate {
     func paywallController(_ controller: AdaptyPaywallController, didFinishRestoreWith profile: AdaptyProfile) {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
+
         print("Finished restoring purchases with profile: \(profile)")
-        Adapty.getProfile { result in
-            if let profile = try? result.get(),
-               profile.accessLevels["premium"]?.isActive ?? false
-            {
-                self.dismiss(animated: true)
-                let alert = UIAlertController(title: NSLocalizedString("Success / alert kit", comment: ""), message: NSLocalizedString("Restore Successful", comment: ""), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: nil))
-                self.present(alert, animated: true)
-                self.alertKitSuccess()
-                print("SAVE OK: I'm Premium!")
-            } else {
-                self.dismiss(animated: true)
-                let alert = UIAlertController(title: NSLocalizedString("Error / alert kit", comment: ""), message: NSLocalizedString("No Purchases to Restore", comment: ""), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default, handler: { _ in
+
+        Adapty.getProfile { [weak self] result in
+            guard let self else { return }
+
+            let isPremium = (try? result.get())?
+                .accessLevels["premium"]?
+                .isActive ?? false
+
+            Task { @MainActor in
+                if isPremium {
                     self.dismiss(animated: true)
-                }))
-                self.present(alert, animated: true)
-                self.alertKitError()
-                print("NOT SAVE: I'm NOT Premium!")
+
+                    let alert = UIAlertController(
+                        title: NSLocalizedString("Success / alert kit", comment: ""),
+                        message: NSLocalizedString("Restore Successful", comment: ""),
+                        preferredStyle: .alert
+                    )
+
+                    alert.addAction(
+                        UIAlertAction(
+                            title: NSLocalizedString("Close", comment: ""),
+                            style: .default
+                        )
+                    )
+
+                    self.present(alert, animated: true)
+                    self.alertKitSuccess()
+
+                    print("SAVE OK: I'm Premium!")
+                } else {
+                    self.dismiss(animated: true)
+
+                    let alert = UIAlertController(
+                        title: NSLocalizedString("Error / alert kit", comment: ""),
+                        message: NSLocalizedString("No Purchases to Restore", comment: ""),
+                        preferredStyle: .alert
+                    )
+
+                    alert.addAction(
+                        UIAlertAction(
+                            title: NSLocalizedString("Close", comment: ""),
+                            style: .default
+                        )
+                    )
+
+                    self.present(alert, animated: true)
+                    self.alertKitError()
+
+                    print("NOT SAVE: I'm NOT Premium!")
+                }
             }
         }
     }
@@ -254,7 +277,7 @@ extension PaywallVC: AdaptyPaywallControllerDelegate {
 
     // MARK: - Вызывается при ошибке отображения контроллера оплаты:
 
-    func paywallController(_ controller: AdaptyPaywallController, didFailRenderingWith error: AdaptyError) {
+    private func paywallController(_ controller: AdaptyPaywallController, didFailRenderingWith error: AdaptyError) {
         alertKitError()
         print("Failed to render paywall")
         print("Error: \(error)")

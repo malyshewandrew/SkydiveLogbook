@@ -1,4 +1,5 @@
 import Adapty
+import AdaptyUI
 import FirebaseCore
 import OneSignalFramework
 import UIKit
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // ADAPTY:
         Adapty.activate("public_live_stgLOJHr.8tssVbeAirtHJYt1qgTE")
+        AdaptyUI.activate()
         
         // FIREBASE:
         FirebaseApp.configure()

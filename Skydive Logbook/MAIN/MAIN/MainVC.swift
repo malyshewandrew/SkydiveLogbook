@@ -619,7 +619,7 @@ final class MainVC: UIViewController {
             emptyJumpsView.isHidden = false
             emptySkydiverLottie.isHidden = false
             emptySkydiverButton.isHidden = false
-            emptyFlowersLottie.isHidden = false
+            emptyFlowersLottie.isHidden = true
         } else {
             tableView.isHidden = false
             emptyConfettiLottie.isHidden = true

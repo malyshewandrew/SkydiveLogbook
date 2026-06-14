@@ -77,6 +77,7 @@ final class JumpVC: UIViewController {
 
         // MARK: BACKGROUND JUMP LOTTIE:
 
+        backgroundJumpLottie.isHidden = true
         backgroundJumpLottie.play()
         backgroundJumpLottie.loopMode = .loop
         backgroundJumpLottie.animationSpeed = 0.3

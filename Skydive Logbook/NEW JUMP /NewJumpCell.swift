@@ -564,11 +564,12 @@ final class NewJumpCell: UITableViewCell {
 
     private func checkPaymentStatus() {
         Adapty.getProfile { result in
-            if let profile = try? result.get(),
-               profile.accessLevels["premium"]?.isActive ?? false
-            {
-                self.saveNewJump()
-                DispatchQueue.main.async {
+            Task { @MainActor in
+                if let profile = try? result.get(),
+                   profile.accessLevels["premium"]?.isActive ?? false
+                {
+                    self.saveNewJump()
+
                     self.actionButtonSaveGreenColor()
                     self.playSoundSucces()
                     self.resignFirstResponders()
@@ -576,16 +577,18 @@ final class NewJumpCell: UITableViewCell {
                     self.alertKitSuccess()
                     self.resetSelectPickerView()
                     self.loadJumps()
+
+                    print("SAVE OK: I'm Premium!")
+                } else {
+                    self.actionButtonSaveRedColor()
+                    self.showPaymentAlert?()
+                    self.clearTextViews()
+                    self.resignFirstResponders()
+                    self.resetSelectPickerView()
+                    self.alertKitError()
+
+                    print("NOT SAVE: I'm NOT Premium!")
                 }
-                print("SAVE OK: I'm Premium!")
-            } else {
-                self.actionButtonSaveRedColor()
-                self.showPaymentAlert?()
-                self.clearTextViews()
-                self.resignFirstResponders()
-                self.resetSelectPickerView()
-                self.alertKitError()
-                print("NOT SAVE: I'm NOT Premium!")
             }
         }
     }

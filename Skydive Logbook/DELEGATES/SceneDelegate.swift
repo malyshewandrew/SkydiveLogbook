@@ -1,6 +1,7 @@
 import CoreLocation
 import RealmSwift
 import UIKit
+import Adapty
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?

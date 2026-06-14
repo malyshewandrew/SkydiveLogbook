@@ -169,11 +169,11 @@ final class SystemVC: UIViewController {
         
         // MARK: BACKGROUND FLOWERS LOTTIE:
         
+        backgroundFlowersLottie.isHidden = true
         backgroundFlowersLottie.play()
         backgroundFlowersLottie.loopMode = .loop
         backgroundFlowersLottie.animationSpeed = 0.3
         backgroundFlowersLottie.contentMode = .scaleAspectFill
-        backgroundFlowersLottie.isHidden = true
         
         // MARK: BLACK VIEW:
 
@@ -286,7 +286,7 @@ final class SystemVC: UIViewController {
 
     private func startSystems() {
         if arraySystemsRealm.count == 0 {
-            backgroundFlowersLottie.isHidden = false
+            backgroundFlowersLottie.isHidden = true
             blackView.isHidden = false
             
             emptyConfettiLottie.isHidden = false

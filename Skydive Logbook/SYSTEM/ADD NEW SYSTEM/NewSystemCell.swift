@@ -1131,27 +1131,33 @@ final class NewSystemCell: UITableViewCell {
 
     private func checkPaymentStatus() {
         Adapty.getProfile { [weak self] result in
-            guard let self = self else { return }
-            if let profile = try? result.get(),
-               profile.accessLevels["premium"]?.isActive ?? false
-            {
-                self.saveNewSystem()
-                DispatchQueue.main.async {
+            guard let self else { return }
+
+            let isPremium = (try? result.get())?
+                .accessLevels["premium"]?
+                .isActive ?? false
+
+            Task { @MainActor in
+                if isPremium {
+                    self.saveNewSystem()
+
                     self.actionButtonSaveGreenColor()
                     self.playSoundSucces()
                     self.resignFirstResponders()
                     self.clearTextViews()
                     self.alertKitSuccess()
                     self.loadSystem()
+
+                    print("SAVE OK: I'm Premium!")
+                } else {
+                    self.actionButtonSaveRedColor()
+                    self.clearTextViews()
+                    self.resignFirstResponders()
+                    self.alertKitError()
+                    self.showPaymentAlert?()
+
+                    print("NOT SAVE: I'm NOT Premium!")
                 }
-                print("SAVE OK: I'm Premium!")
-            } else {
-                self.actionButtonSaveRedColor()
-                self.clearTextViews()
-                self.resignFirstResponders()
-                self.alertKitError()
-                self.showPaymentAlert?()
-                print("NOT SAVE: I'm NOT Premium!")
             }
         }
     }

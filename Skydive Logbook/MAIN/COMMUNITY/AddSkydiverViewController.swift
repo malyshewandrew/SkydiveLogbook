@@ -474,20 +474,27 @@ final class AddSkydiverViewController: UIViewController {
         }
         
         Adapty.getProfile { result in
-            if let profile = try? result.get(),
-               profile.accessLevels["premium"]?.isActive ?? false
-            {
-                self.uploadDataToFirebase()
-            } else {
-                self.actionButtonSaveRedColor()
-                self.showPaymentAlert(message: NSLocalizedString("Error adapty / adapty status", comment: ""))
-                self.clearTextViews()
-                self.resignFirstResponders()
-                self.alertKitError()
-                self.selectedImages.removeAll()
-                self.collectionView.reloadData()
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.removeFromSuperview()
+            Task { @MainActor in
+                if let profile = try? result.get(),
+                   profile.accessLevels["premium"]?.isActive ?? false
+                {
+                    self.uploadDataToFirebase()
+                } else {
+                    self.actionButtonSaveRedColor()
+                    self.showPaymentAlert(
+                        message: NSLocalizedString(
+                            "Error adapty / adapty status",
+                            comment: ""
+                        )
+                    )
+                    self.clearTextViews()
+                    self.resignFirstResponders()
+                    self.alertKitError()
+                    self.selectedImages.removeAll()
+                    self.collectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.removeFromSuperview()
+                }
             }
         }
     }
