@@ -13,8 +13,6 @@ final class SettingsVC: UIViewController {
 
     private let settingsLottie = LottieAnimationView(name: "Settings")
     private let confettiLottie = LottieAnimationView(name: "SettingsConfetti")
-    private let effectOneLottie = LottieAnimationView(name: "EffectSettings")
-    private let effectTwoLottie = LottieAnimationView(name: "EffectSettings")
     private let backgroundFlowersLottie = LottieAnimationView(name: "EmptyFlowersLottie")
     private let blackView = UIView()
     private let confettiButton = UIButton()
@@ -42,7 +40,7 @@ final class SettingsVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(backgroundFlowersLottie, blackView, confettiLottie, effectOneLottie, effectTwoLottie, settingsLottie, confettiButton, tableView)
+        view.addSubviews(backgroundFlowersLottie, blackView, confettiLottie, settingsLottie, confettiButton, tableView)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -61,20 +59,6 @@ final class SettingsVC: UIViewController {
         blackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         blackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         blackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-
-        // MARK: EFFECT ONE LOTTIE:
-
-        effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
-        effectOneLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
-        effectOneLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor, constant: 10).isActive = true
-        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-
-        // MARK: EFFECT TWO LOTTIE:
-
-        effectTwoLottie.translatesAutoresizingMaskIntoConstraints = false
-        effectTwoLottie.centerXAnchor.constraint(equalTo: settingsLottie.centerXAnchor).isActive = true
-        effectTwoLottie.centerYAnchor.constraint(equalTo: settingsLottie.centerYAnchor, constant: 10).isActive = true
-        effectTwoLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: ANIMATION SETTINGS LOTTIE:
 
@@ -131,20 +115,6 @@ final class SettingsVC: UIViewController {
 
         blackView.backgroundColor = .black
         blackView.layer.opacity = 0.5
-
-        // MARK: EFFECT ONE LOTTIE:
-
-        effectOneLottie.play()
-        effectOneLottie.loopMode = .loop
-        effectOneLottie.animationSpeed = 0.5
-        effectOneLottie.transform = CGAffineTransform(scaleX: -1, y: -1)
-
-        // MARK: EFFECT TWO LOTTIE:
-
-        effectTwoLottie.play()
-        effectTwoLottie.loopMode = .loop
-        effectTwoLottie.animationSpeed = 0.5
-        effectTwoLottie.transform = CGAffineTransform(scaleX: 1, y: 1)
 
         // MARK: ANIMATIONS:
 

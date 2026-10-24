@@ -70,7 +70,7 @@ final class EditJumpVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: newJumpLottie.bottomAnchor, constant: 10).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
     }
 

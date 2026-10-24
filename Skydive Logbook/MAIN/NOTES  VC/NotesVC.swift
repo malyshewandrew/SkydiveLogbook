@@ -82,7 +82,7 @@ final class NotesVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 10).isActive = true
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
     }
 

@@ -47,7 +47,8 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
     // MARK: - CONFIGURE TAB BAR UI:
 
     private func configureUI() {
-        tabBar.backgroundColor = .colorTabBar
+//        tabBar.backgroundColor = .colorTabBar
+        tabBar.backgroundColor = .clear
         tabBar.unselectedItemTintColor = .colorTabBarUnselected
         tabBar.tintColor = .colorTabBarSelected
         tabBar.layer.cornerRadius = 10

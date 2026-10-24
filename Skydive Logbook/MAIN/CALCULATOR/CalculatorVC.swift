@@ -9,9 +9,9 @@ final class CalculatorVC: UIViewController {
 
     private var player = AVAudioPlayer()
 
-    private let calculatorGradientLottie = LottieAnimationView(name: "CalculatorGradient")
+//    private let calculatorGradientLottie = LottieAnimationView(name: "CalculatorGradient")
     private let calculatorBlackView = UIView()
-    private let calculatorBackgroundLottie = LottieAnimationView(name: "CalculatorBackground")
+//    private let calculatorBackgroundLottie = LottieAnimationView(name: "CalculatorBackground")
 
     private let canopyTitleLabel = UILabel()
     private let canopyLogoLottie = LottieAnimationView(name: "Calculator")
@@ -75,20 +75,12 @@ final class CalculatorVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(calculatorGradientLottie, calculatorBlackView, calculatorBackgroundLottie, scrollView, pageControl)
+        view.addSubviews(calculatorBlackView, scrollView, pageControl)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
 
     private func configureConstrains() {
-        // MARK: CALCULATOR GRADIENT:
-
-        calculatorGradientLottie.translatesAutoresizingMaskIntoConstraints = false
-        calculatorGradientLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
-        calculatorGradientLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        calculatorGradientLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        calculatorGradientLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-
         // MARK: CALCULATOR VIEW:
 
         calculatorBlackView.translatesAutoresizingMaskIntoConstraints = false
@@ -96,14 +88,6 @@ final class CalculatorVC: UIViewController {
         calculatorBlackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         calculatorBlackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         calculatorBlackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-
-        // MARK: CALCULATOR BACKGROUND:
-
-        calculatorBackgroundLottie.translatesAutoresizingMaskIntoConstraints = false
-        calculatorBackgroundLottie.topAnchor.constraint(equalTo: view.topAnchor, constant: -175).isActive = true
-        calculatorBackgroundLottie.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        calculatorBackgroundLottie.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        calculatorBackgroundLottie.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
 
         // MARK: SCROLL VIEW:
 
@@ -133,24 +117,10 @@ final class CalculatorVC: UIViewController {
 
         navigationController?.navigationBar.isHidden = false
 
-        // MARK: CALCULATOR GRADIENT:
-
-        calculatorGradientLottie.play()
-        calculatorGradientLottie.loopMode = .loop
-        calculatorGradientLottie.animationSpeed = 1
-        calculatorGradientLottie.contentMode = .scaleAspectFill
-
         // MARK: CALCULATOR VIEW:
 
         calculatorBlackView.backgroundColor = .colorBackground
         calculatorBlackView.layer.opacity = 0.6
-
-        // MARK: CALCULATOR BACKGROUND:
-
-        calculatorBackgroundLottie.play()
-        calculatorBackgroundLottie.loopMode = .loop
-        calculatorBackgroundLottie.animationSpeed = 1
-        calculatorBackgroundLottie.contentMode = .scaleAspectFill
 
         // MARK: SCROLL VIEW:
 

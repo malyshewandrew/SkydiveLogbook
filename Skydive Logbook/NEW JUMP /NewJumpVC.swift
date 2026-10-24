@@ -93,7 +93,7 @@ final class NewJumpVC: UIViewController {
         firstTableView.translatesAutoresizingMaskIntoConstraints = false
         firstTableView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15).isActive = true
         firstTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        firstTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        firstTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         firstTableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: MORE TABLE VIEW:
@@ -101,7 +101,7 @@ final class NewJumpVC: UIViewController {
         secondTableView.translatesAutoresizingMaskIntoConstraints = false
         secondTableView.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 15).isActive = true
         secondTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        secondTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        secondTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         secondTableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
     }
 

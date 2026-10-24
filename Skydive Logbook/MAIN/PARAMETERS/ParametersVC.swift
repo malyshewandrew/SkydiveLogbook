@@ -287,7 +287,7 @@ final class ParametersVC: UIViewController {
         guard let savedDateString = UserDefaults.standard.string(forKey: "dateString") else { return }
         updateDate.text = "[ \(savedDateString) ]"
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            UIView.animate(withDuration: 1.5, animations: { [weak self] in
+            UIView.animate(withDuration: 1.5, animations: { [weak self = self] in
                 guard let self = self else { return }
                 loadingParametersLottie.layer.opacity = 0
                 altitudeLabel.layer.opacity = 1

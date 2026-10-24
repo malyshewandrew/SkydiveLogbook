@@ -521,7 +521,7 @@ extension ShareVC: PHPickerViewControllerDelegate {
             
         dispatchGroup.notify(queue: .main) {
             self.imageView.image = self.selectedImage.first
-            UIView.animate(withDuration: 1) { [weak self] in
+            UIView.animate(withDuration: 1) { [weak self = self] in
                 guard let self = self else { return }
                 self.updateConstraints()
                 self.selectNewButton.layer.opacity = 1

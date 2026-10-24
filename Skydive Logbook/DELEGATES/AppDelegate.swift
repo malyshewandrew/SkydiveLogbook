@@ -1,7 +1,6 @@
 import Adapty
 import AdaptyUI
-import FirebaseCore
-import OneSignalFramework
+//import FirebaseCore
 import UIKit
 import UserNotifications
 
@@ -11,14 +10,9 @@ import UserNotifications
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let ONESIGNAL_APP_ID = "482028d6-faec-4939-94da-dcc51e0a465b"
-    
     // MARK: - APPLICATION:
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // NOTIFICATIONS:
-        requestNotificationPermission()
         
         UNUserNotificationCenter.current().delegate = self
         
@@ -27,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AdaptyUI.activate()
         
         // FIREBASE:
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
     
         return true
     }
@@ -38,30 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     
-    // REQUEST NOTIFICATION PERMISSION:
-    private func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            if granted {
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                    self.oneSignalTurnOn()
-                }
-            } else {
-                if let error = error {
-                    print("Ошибка при запросе уведомлений: \(error.localizedDescription)")
-                }
-            }
-        }
-    }
-    
-    // ONE SIGNAL:
-    private func oneSignalTurnOn() {
-        OneSignal.initialize(ONESIGNAL_APP_ID)
-        OneSignal.Notifications.requestPermission({ accepted in
-            print("Пользователь разрешил уведомления: \(accepted)")
-        }, fallbackToSettings: true)
-    }
-
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
 }
 

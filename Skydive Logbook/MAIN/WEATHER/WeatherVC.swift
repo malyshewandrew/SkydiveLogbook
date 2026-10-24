@@ -377,7 +377,7 @@ final class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self?.cloudCover = "\(Int(result.currentWeather.cloudCover * 100)) %"
                 self?.humidity = "\(Int(result.currentWeather.humidity * 100)) %"
                 self?.dewPoint = "\(Int(result.currentWeather.dewPoint.value))\(result.currentWeather.temperature.unit.symbol)"
-                self?.precipitation = "\(result.currentWeather.precipitationIntensity.value) \(NSLocalizedString("mm/h", comment: ""))"
+                self?.precipitation = "\(String(format: "%.2f", result.currentWeather.precipitationIntensity.value)) \(NSLocalizedString("mm/h", comment: ""))"
                 self?.pressure = "\(Int(result.currentWeather.pressure.value * 0.750063755419211)) \(NSLocalizedString("mm / pressure", comment: ""))"
                 self?.uvIndex = "\(result.currentWeather.uvIndex.category): \(result.currentWeather.uvIndex.value)"
                 self?.windSpeed = "\(Int(result.currentWeather.wind.speed.value / 3.6)) \(NSLocalizedString("m/s", comment: ""))"

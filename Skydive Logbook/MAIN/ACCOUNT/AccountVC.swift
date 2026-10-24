@@ -6,7 +6,6 @@ class AccountVC: UIViewController {
     // MARK: - PROPERTIES:
     
     private let accountLottie = LottieAnimationView(name: "Account")
-    private let accountBackground = LottieAnimationView(name: "AccountBackground")
     private let nicknameView = UIView()
     private let nicknameLabel = UILabel()
     private let licenseView = UIView()
@@ -53,7 +52,7 @@ class AccountVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
     
     private func addSubviews() {
-        view.addSubviews(accountBackground, accountLottie, stackView, emptyAccountView)
+        view.addSubviews(accountLottie, stackView, emptyAccountView)
         stackView.addArrangedSubviews(nicknameView, licenseView, medicineView, insuranceView, reserveCanopyView)
         nicknameView.addSubviews(nicknameLabel)
         licenseView.addSubviews(licenseLabel)
@@ -66,14 +65,6 @@ class AccountVC: UIViewController {
     // MARK: - CONFIGURE CONSTRAINTS:
     
     private func configureConstraints() {
-        
-        // MARK: ACCOUNT BACKGROUND:
-
-        accountBackground.translatesAutoresizingMaskIntoConstraints = false
-        accountBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        accountBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        accountBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        accountBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         // MARK: ACCOUNT LOTTIE:
         
@@ -165,16 +156,11 @@ class AccountVC: UIViewController {
         
         view.backgroundColor = .colorBackground
         
-        // MARK: ACCOUNT BACKGROUND:
-        
-        accountBackground.play()
-        accountBackground.loopMode = .loop
-        accountBackground.contentMode = .scaleAspectFill
-        
         // MARK: ACCOUNT LOTTIE:
         
         accountLottie.play()
         accountLottie.loopMode = .loop
+        accountLottie.isHidden = true
         
         // MARK: EMPTY ACCOUNT:
         
@@ -357,7 +343,7 @@ class AccountVC: UIViewController {
             emptyAccountView.isHidden = false
             emptyAccountLabel.text = "\n\(NSLocalizedString("Edit/add account", comment: ""))"
         } else {
-            accountLottie.isHidden = false
+            accountLottie.isHidden = true
             emptyAccountView.isHidden = true
             nicknameLabel.text = nickname.uppercased()
             licenseLabel.text = licenseType + licenseDate

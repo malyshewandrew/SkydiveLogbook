@@ -11,7 +11,6 @@ final class SystemVC: UIViewController {
     private let blackView = UIView()
     private let systemLottie = LottieAnimationView(name: "EmptySystem")
     private let confettiLottie = LottieAnimationView(name: "SystemConfetti")
-    private let effectOneLottie = LottieAnimationView(name: "EffectSystem")
     private let emptyConfettiLottie = LottieAnimationView(name: "SystemConfetti")
     private let confettiButton = UIButton()
     private let emptyConfettiButton = UIButton()
@@ -51,7 +50,7 @@ final class SystemVC: UIViewController {
     // MARK: - ADD SUBVIEWS:
 
     private func addSubviews() {
-        view.addSubviews(backgroundFlowersLottie, blackView, confettiLottie, effectOneLottie, emptyConfettiLottie, systemLottie, emptySystemLottie, confettiButton, emptyConfettiButton, tableView, emptySystemButton, emptyNewSystemButton, emptySystemShimmer, newSystemButton)
+        view.addSubviews(backgroundFlowersLottie, blackView, confettiLottie, emptyConfettiLottie, systemLottie, emptySystemLottie, confettiButton, emptyConfettiButton, tableView, emptySystemButton, emptyNewSystemButton, emptySystemShimmer, newSystemButton)
     }
 
     // MARK: - CONFIGURE CONSTRAINS:
@@ -71,13 +70,6 @@ final class SystemVC: UIViewController {
         blackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         blackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         blackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        
-        // MARK: EFFECT ONE LOTTIE:
-
-        effectOneLottie.translatesAutoresizingMaskIntoConstraints = false
-        effectOneLottie.centerXAnchor.constraint(equalTo: systemLottie.centerXAnchor).isActive = true
-        effectOneLottie.centerYAnchor.constraint(equalTo: systemLottie.centerYAnchor, constant: -25).isActive = true
-        effectOneLottie.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
 
         // MARK: ANIMATION SYSTEM LOTTIE:
 
@@ -179,13 +171,6 @@ final class SystemVC: UIViewController {
 
         blackView.backgroundColor = .black
         blackView.layer.opacity = 0.5
-
-        // MARK: EFFECT LOTTIE:
-
-        effectOneLottie.play()
-        effectOneLottie.loopMode = .loop
-        effectOneLottie.animationSpeed = 0.5
-        effectOneLottie.layer.opacity = 0.7
 
         // MARK: ANIMATION SYSTEM LOTTIE:
 
@@ -296,7 +281,6 @@ final class SystemVC: UIViewController {
             emptyNewSystemButton.isHidden = false
             newSystemButton.isHidden = true
 
-            effectOneLottie.isHidden = true
             confettiLottie.isHidden = true
             systemLottie.isHidden = true
             confettiButton.isHidden = true
@@ -312,7 +296,6 @@ final class SystemVC: UIViewController {
             emptyNewSystemButton.isHidden = true
 
             confettiLottie.isHidden = false
-            effectOneLottie.isHidden = false
             systemLottie.isHidden = false
             confettiButton.isHidden = false
             tableView.isHidden = false

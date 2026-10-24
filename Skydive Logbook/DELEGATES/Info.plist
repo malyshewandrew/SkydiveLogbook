@@ -4,12 +4,6 @@
 <dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6099117882181654~9053220988</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>For select photos on community view</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>For select photos on community view</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>For select photos on community view</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

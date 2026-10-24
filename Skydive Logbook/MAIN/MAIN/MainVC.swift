@@ -154,7 +154,7 @@ final class MainVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: mainLottie.bottomAnchor, constant: 5).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         
         // MARK: - FIRST VIEW:
@@ -491,6 +491,7 @@ final class MainVC: UIViewController {
 
         // MARK: MAPS:
 
+        mapsButton.isHidden = true
         mapsButton.setImage(UIImage(systemName: "mappin.and.ellipse.circle.fill", withConfiguration: configurationImage), for: .normal)
         mapsButton.tintColor = .colorDarkGray
         mapsButton.addTarget(self, action: #selector(dropzonesButtonTapped), for: .touchUpInside)
@@ -501,6 +502,7 @@ final class MainVC: UIViewController {
 
         // MARK: COMMUNITY:
 
+        communityButton.isHidden = true
         communityButton.setImage(UIImage(systemName: "person.2.circle.fill", withConfiguration: configurationImage), for: .normal)
         communityButton.tintColor = .colorDarkGray
         communityButton.addTarget(self, action: #selector(skydiversButtonTapped), for: .touchUpInside)
@@ -601,8 +603,8 @@ final class MainVC: UIViewController {
             confettiButton.isHidden = false
             accountButton.isHidden = false
             weatherButton.isHidden = false
-            mapsButton.isHidden = false
-            communityButton.isHidden = false
+            mapsButton.isHidden = true
+            communityButton.isHidden = true
             calculatorButton.isHidden = false
             notesButton.isHidden = false
             checkJumps()
@@ -737,9 +739,9 @@ final class MainVC: UIViewController {
 
     @objc private func skydiversButtonTapped() {
         VibrationManager.instance.vibrationStandart()
-        let skydivers = SkydiversVC()
-        skydivers.isModalInPresentation = true
-        present(skydivers, animated: true)
+//        let skydivers = SkydiversVC()
+//        skydivers.isModalInPresentation = true
+//        present(skydivers, animated: true)
     }
 
     // MARK: TRANSITION ON CALCULATOR VIEW CONTROLLER:
