@@ -700,7 +700,7 @@ final class MainVC: UIViewController {
         let accountVC = AccountVC()
         if let sheetController = accountVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(accountVC, animated: true)
@@ -729,7 +729,7 @@ final class MainVC: UIViewController {
         let parametersVC = ParametersVC()
         if let sheetController = parametersVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.large()]
         }
         present(parametersVC, animated: true)
@@ -751,7 +751,7 @@ final class MainVC: UIViewController {
         let calculatorViewController = CalculatorVC()
         if let sheetController = calculatorViewController.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(calculatorViewController, animated: true)
@@ -764,7 +764,7 @@ final class MainVC: UIViewController {
         let notesViewController = NotesVC()
         if let sheetController = notesViewController.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium(), .large()]
         }
         present(notesViewController, animated: true, completion: nil)

@@ -171,6 +171,7 @@ final class SystemVC: UIViewController {
 
         blackView.backgroundColor = .black
         blackView.layer.opacity = 0.5
+        blackView.isHidden = true
 
         // MARK: ANIMATION SYSTEM LOTTIE:
 
@@ -272,7 +273,7 @@ final class SystemVC: UIViewController {
     private func startSystems() {
         if arraySystemsRealm.count == 0 {
             backgroundFlowersLottie.isHidden = true
-            blackView.isHidden = false
+            blackView.isHidden = true
             
             emptyConfettiLottie.isHidden = false
             emptySystemLottie.isHidden = false

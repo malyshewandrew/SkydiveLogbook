@@ -25,7 +25,7 @@ private let arrayUvIndex = [
 final class UvIndexVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let uvIndexBackgroundLottie = LottieAnimationView(name: "WeatherUvIndexBackground")
+    private let uvIndexBackgroundLottie = LottieAnimationView(name: "BackgroundGeneralInfo")
     private let uvIndexLogoLottie = LottieAnimationView(name: "WeatherUvIndex")
     private let uvIndexListView = UIView()
     private let tableView = UITableView()

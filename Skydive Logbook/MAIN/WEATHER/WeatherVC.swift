@@ -471,7 +471,7 @@ extension WeatherVC: WeatherCellDelegate {
         let windVC = WindVC()
         if let sheetController = windVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(windVC, animated: true)
@@ -487,7 +487,7 @@ extension WeatherVC: WeatherCellDelegate {
             temperatureVC.averageTemperature = averageTemperature
             temperatureVC.feelTemperature = feelTemperature
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(temperatureVC, animated: true)
@@ -499,7 +499,7 @@ extension WeatherVC: WeatherCellDelegate {
         let humidityVC = HumidityVC()
         if let sheetController = humidityVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(humidityVC, animated: true)
@@ -511,7 +511,7 @@ extension WeatherVC: WeatherCellDelegate {
         let cloudCoverVC = CloudCoverVC()
         if let sheetController = cloudCoverVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(cloudCoverVC, animated: true)
@@ -523,7 +523,7 @@ extension WeatherVC: WeatherCellDelegate {
         let dewPointVC = DewPointVC()
         if let sheetController = dewPointVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(dewPointVC, animated: true)
@@ -535,7 +535,7 @@ extension WeatherVC: WeatherCellDelegate {
         let visibilityVC = VisibilityVC()
         if let sheetController = visibilityVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(visibilityVC, animated: true)
@@ -547,7 +547,7 @@ extension WeatherVC: WeatherCellDelegate {
         let precipitationVC = PrecipitationVC()
         if let sheetController = precipitationVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(precipitationVC, animated: true)
@@ -559,7 +559,7 @@ extension WeatherVC: WeatherCellDelegate {
         let pressureVC = PressureVC()
         if let sheetController = pressureVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(pressureVC, animated: true)
@@ -571,7 +571,7 @@ extension WeatherVC: WeatherCellDelegate {
         let uvIndexVC = UvIndexVC()
         if let sheetController = uvIndexVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(uvIndexVC, animated: true)

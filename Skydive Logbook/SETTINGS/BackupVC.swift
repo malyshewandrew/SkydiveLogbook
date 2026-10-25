@@ -7,7 +7,7 @@ import UniformTypeIdentifiers
 final class BackupVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let backupBackground = LottieAnimationView(name: "BackupBackground")
+    private let backupBackground = LottieAnimationView(name: "BackgroundGeneralInfo")
     private let backupLottie = LottieAnimationView(name: "Backup")
     private let infoView = UIView()
     private let infoLabel = UILabel()

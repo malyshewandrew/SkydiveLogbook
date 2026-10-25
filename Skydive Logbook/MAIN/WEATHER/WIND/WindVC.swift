@@ -32,7 +32,7 @@ private let arrayWindSpeed = [
 final class WindVC: UIViewController {
     // MARK: - PROPERTIES:
     
-    private let windBackgroundLottie = LottieAnimationView(name: "WeatherWindBackground")
+    private let windBackgroundLottie = LottieAnimationView(name: "NotificationsBackgroundLottie")
     private let windLogoLottie = LottieAnimationView(name: "WeatherWind")
     private let windListView = UIView()
     private let tableView = UITableView()

@@ -61,6 +61,9 @@ final class PaywallVC: UIViewController {
                     }
                 case let .failure(error):
                     print(error)
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.removeFromSuperview()
+                    self.alertKitError()
                 }
             }
         }

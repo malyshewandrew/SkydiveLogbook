@@ -115,6 +115,7 @@ final class SettingsVC: UIViewController {
 
         blackView.backgroundColor = .black
         blackView.layer.opacity = 0.5
+        blackView.isHidden = true
 
         // MARK: ANIMATIONS:
 
@@ -247,7 +248,7 @@ extension SettingsVC: SettingsCellDelegate {
         let printVC = PrintVC()
         if let sheetController = printVC.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(printVC, animated: true)
@@ -285,6 +286,9 @@ extension SettingsVC: SettingsCellDelegate {
                     }
                 case let .failure(error):
                     print(error)
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.removeFromSuperview()
+                    self.alertKitError()
                 }
             }
         }
@@ -296,7 +300,7 @@ extension SettingsVC: SettingsCellDelegate {
         let notifications = NotificationsVS()
         if let sheetController = notifications.sheetPresentationController {
             sheetController.prefersGrabberVisible = true
-            sheetController.preferredCornerRadius = 100
+            sheetController.preferredCornerRadius = 50
             sheetController.detents = [.medium()]
         }
         present(notifications, animated: true, completion: nil)

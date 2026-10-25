@@ -824,11 +824,11 @@ final class SystemCell: UITableViewCell {
             layer.add(animationGroup, forKey: "fadeOut")
         }
 
-            self.snakeLayers.forEach { layer in
-                layer.opacity = 0.0
-                layer.removeFromSuperlayer()
-            }
-            self.snakeLayers.removeAll()
+        snakeLayers.forEach { layer in
+            layer.opacity = 0.0
+            layer.removeFromSuperlayer()
+        }
+        snakeLayers.removeAll()
         snakeLayers.removeAll()
     }
 

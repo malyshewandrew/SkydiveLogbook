@@ -8,8 +8,8 @@ import UIKit
 final class ParametersVC: UIViewController {
     // MARK: - PROPERTIES:
 
-    private let parametersBackgroundLottie = LottieAnimationView(name: "ParametersBackgroundLottie")
-    private let parametersEffectLottie = LottieAnimationView(name: "ParametersEffect")
+    private let parametersBackgroundLottie = LottieAnimationView(name: "BackgroundGeneralInfo")
+    private let parametersEffectLottie = LottieAnimationView(name: "MainShadowLottie")
     
     private let loadingParametersLottie = LottieAnimationView(name: "LoadingParameters")
     private let altitudeButton = UIButton()
